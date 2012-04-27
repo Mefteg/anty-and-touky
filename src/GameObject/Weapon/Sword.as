@@ -65,6 +65,7 @@ package GameObject.Weapon
 			m_enemiesHit = new Array();
 			m_state = "attack";
 			play("attack" + direction);
+			addToStage();
 		}
 		
 		public function attack2(direction:int):void {

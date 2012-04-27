@@ -41,10 +41,10 @@ package GameObject.Player
 			addAnimation("attack2" + DOWN, Utils.getArrayofNumbers(24,35), 40, false);
 			addAnimation("attack2" + LEFT, Utils.getArrayofNumbers(36,47), 40, false);
 			//throw anim
-			addAnimation("throw" + UP, Utils.getArrayofNumbers(11,0), 10, false);
-			addAnimation("throw" + RIGHT, Utils.getArrayofNumbers(23, 12), 10, false);
-			addAnimation("throw" + DOWN, Utils.getArrayofNumbers(35, 24), 10, false);
-			addAnimation("throw" + LEFT, Utils.getArrayofNumbers(47, 36), 10, false);
+			addAnimation("throw" + UP, [11,0], 10, false);
+			addAnimation("throw" + RIGHT, [23, 12], 10, false);
+			addAnimation("throw" + DOWN, [35, 24], 10, false);
+			addAnimation("throw" + LEFT, [47, 36], 10, false);
 			//defense anim
 			addAnimation("defense" + UP, [48], 10, false);
 			addAnimation("defense" + RIGHT, [60], 10, false);
@@ -63,6 +63,8 @@ package GameObject.Player
 		}
 		
 		override public function getMoves():void {
+			super.getMoves();
+			
 			if (isBusy() || m_blocked)
 				return;
 				

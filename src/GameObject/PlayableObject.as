@@ -81,7 +81,7 @@ package GameObject
 			thr.m_enemies = m_enemies;
 			thr.setCasterPlayer(this);
 			m_throwables.push(thr);
-			for (var i:int = 0; i < 3; i++) {
+			for (var i:int = 0; i < 15; i++) {
 				thr = Throwable.Slipper();
 				thr.m_enemies = m_enemies;
 				thr.setCasterPlayer(this);
@@ -142,10 +142,6 @@ package GameObject
 		public function attack():void {
 			if (isBusy())
 				return;
-			if (!getWeapon().visible) {
-				throwIt();
-				return;
-			}
 			//if it the second attack
 			if (m_state == "waitForAttack2") {
 				getWeapon().attack2(facing);
@@ -185,7 +181,6 @@ package GameObject
 		}
 		
 		override public function update():void {
-			checkEnemiesProximity();
 			switch(m_state) {
 				case "attack": if (finished) {
 									m_state = "waitForAttack2"; 
@@ -195,11 +190,13 @@ package GameObject
 				case "waitForAttack2": if (m_timerAttack2.finished) { m_state = "idle"; getWeapon().Idleize(); } break;
 				case "attack2" : if (finished) { m_state = "idle"; getWeapon().Idleize();} break;
 				case "idle": getWeapon().place(x, y); break;
-				case "throw": if (finished) m_state = "idle"; 
-								var thr:GameObject.Weapon.Throwable = getThrowable();
-								if (!thr) break;
-								thr.place(x,y);
-								thr.attack(facing);
+				case "throw": if (finished){
+									m_state = "idle"; 
+									var thr:GameObject.Weapon.Throwable = getThrowable();
+									if (!thr) break;
+									thr.place(x,y);
+									thr.attack(facing);
+								}
 								break;
 				case "walk": getWeapon().place(x, y); break;
 				case "defense": if (m_timerDefense.finished) m_state = "idle"; break;
@@ -216,7 +213,11 @@ package GameObject
 		}
 		
 		public function getMoves():void {
-			
+			if (FlxG.keys.justPressed(m_stringValidate) ){
+				throwIt();
+			}else if (FlxG.keys.justPressed(m_stringNext) ){
+				attack();
+			}
 		}
 		override public function move():void {
 			if (isBusy() || isAttacking())
@@ -263,48 +264,7 @@ package GameObject
 			/*if (m_stats.m_hp_current < 0)
 				removeFromStage();*/
 		}
-		
-		//if the current weapon is the throwable, draw the sword
-		public function drawSword():void {
-			if (isBusy() || getWeapon().visible)
-				return;
-			getWeapon().visible = true;
-			FX_drawWeapon.play();
-		}
-		//if the current weapon is the sword, shealthe it
-		public function shealtheSword():void {
-			if (isBusy())
-				return;
-			getWeapon().visible = false;
-		}
-		
-		public function checkEnemiesProximity():void {
-			//if no ennemies, skip this function
-			if ( !m_enemies || m_enemies.length == 0)
-				return;
-			//if the player has the sword but it hasnt finished displaying
-			if (getWeapon().visible && getWeapon().isInAttackState())
-				return;
-			var dist:Number;
-			var hasToDraw:Boolean = false;
-			for (var i:int = 0; i<m_enemies.length; i++) {
-				var enemy:GameObject.Enemy.Enemy = m_enemies[i];
-				//if the enemy doesnt exists for some reason, continue
-				if (!enemy || enemy.isDead())
-					continue;
-				//compute distance between player and enemy
-				dist = Utils.distance(getCenter(), enemy.getCenter());
-				//if the player is close enough, draw the sword
-				if (dist < m_hitbox.getWidth() + enemy.m_hitbox.getWidth()){
-					hasToDraw = true;
-					break;
-				}
-			}
-			if (hasToDraw)
-				drawSword();
-			else
-				shealtheSword();
-		}
+				
 		/**
 		 * Adds a new magic to the player magics list and dynamically load it
 		 * @param	magic

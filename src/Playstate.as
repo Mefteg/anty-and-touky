@@ -98,7 +98,8 @@ package
 			Global.player1.addToStage();
 			
 			m_menu_p1 = new Menu(Global.player1);
-			m_menu_p1.addToStage();
+			//m_menu_p1.addToStage();
+			
 
 			//creating player2
 			Global.player2 = new Player2(100, 110);
@@ -107,7 +108,7 @@ package
 						
 			m_menu_p2 = new Menu(Global.player2);
 			m_menu_p2.m_shift = new FlxPoint(640 - m_menu_p2.m_width, 0);
-			m_menu_p2.addToStage();
+			//m_menu_p2.addToStage();
 			
 			//create the camera
 			m_camera = new Camera(0, 0, 640, 480);

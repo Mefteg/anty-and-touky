@@ -45,15 +45,10 @@ package GameObject.Player
 			addAnimation("attack2" + DOWN, Utils.getArrayofNumbers(24,35), 40, false);
 			addAnimation("attack2" + LEFT, Utils.getArrayofNumbers(36,47), 40, false);
 			//throw anim
-			addAnimation("throw" + UP, Utils.getArrayofNumbers(11,0), 10, false);
-			addAnimation("throw" + RIGHT, Utils.getArrayofNumbers(23, 12), 10, false);
-			addAnimation("throw" + DOWN, Utils.getArrayofNumbers(35, 24), 10, false);
-			addAnimation("throw" + LEFT, Utils.getArrayofNumbers(47, 36), 10, false);
-			//defense anim
-			addAnimation("defense" + UP, [48], 10, false);
-			addAnimation("defense" + RIGHT, [60], 10, false);
-			addAnimation("defense" + DOWN, [72], 10, false);
-			addAnimation("defense" + LEFT, [84], 10, false);
+			addAnimation("throw" + UP, [11,0], 100, false);
+			addAnimation("throw" + RIGHT,[23, 12], 100, false);
+			addAnimation("throw" + DOWN, [35, 24], 100, false);
+			addAnimation("throw" + LEFT, [47, 36], 100, false);
 			//magic anim
 			addAnimation("magic" + UP, Utils.getArrayofNumbers(11,0), 10, true);
 			addAnimation("magic" + RIGHT, Utils.getArrayofNumbers(23, 12), 10, true);
@@ -67,21 +62,9 @@ package GameObject.Player
 		}
 		
 		override public function getMoves():void {	
+			super.getMoves();
 			if (isBusy() || m_blocked)
 				return;
-				
-			if (FlxG.keys.justPressed("SPACE")) {
-				m_itemManager.useItem("potion");
-			}
-			if (isBusy())
-				return;
-			//defense
-			if (FlxG.keys.justPressed("Q") && FlxG.keys.justPressed("D")) {
-				m_state = "defense";
-				play(m_state + facing);
-				m_timerDefense.start(1);
-				return;
-			}
 			
 			//Moving
 			var yForce:int = 0;
@@ -112,10 +95,12 @@ package GameObject.Player
 			if(pressedDirection){
 				m_direction.x = xForce;
 				m_direction.y = yForce;
-				m_state = "walk";
+				if(m_state != "throw")
+					m_state = "walk";
 				move();
 			}else {
-				m_state = "idle";
+				if(m_state != "throw")
+					m_state = "idle";
 			}
 			play(m_state + facing);
 			
