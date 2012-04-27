@@ -38,6 +38,8 @@ package Scene
 				m_currentObject = m_physicalObjects[i];
 				for (var j:int = i+1; j < m_length; j++) {
 					m_currentOther = m_physicalObjects[j];
+					if (m_currentObject.m_typeName == "Player" && m_currentOther.m_typeName == "Player")
+						continue;
 					collide();
 				}
 			}

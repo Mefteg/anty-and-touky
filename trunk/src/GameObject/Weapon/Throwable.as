@@ -45,15 +45,6 @@ package GameObject.Weapon
 			m_FX.play();
 			m_state = "attack";
 			play("attack" + direction);
-			if (direction == UP){ 
-				m_direction.y = -1;
-			}else if (direction == DOWN){
-				m_direction.y = 1;
-			} else	if (direction == LEFT){
-				m_direction.x = -1;
-			}else if (direction == RIGHT){
-				m_direction.x = 1;
-			}
 		}
 		
 		override public function load():void {
@@ -143,7 +134,7 @@ package GameObject.Weapon
 		//////////////////////////////////////////////
 		
 		public static function Slipper() : Throwable{
-			return new Throwable(2, "Images/Weapons/slipper.png", 2);
+			return new Throwable(2, "Images/Weapons/slipper.png", 10);
 		}
 		
 	}

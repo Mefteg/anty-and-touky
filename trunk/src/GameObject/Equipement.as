@@ -27,7 +27,7 @@ package GameObject
 		}
 		
 		public function addToStage():void {
-			Global.currentState.depthBuffer.addPlayer(m_weapon);
+			m_weapon.addToStage();
 		}
 		
 		public function load():void {
