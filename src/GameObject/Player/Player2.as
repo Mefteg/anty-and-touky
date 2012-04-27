@@ -105,6 +105,7 @@ package GameObject.Player
 			if(pressedDirection){
 				m_direction.x = xForce;
 				m_direction.y = yForce;
+				m_directionFacing = m_direction;
 				m_state = "walk";
 				move();
 			}else {

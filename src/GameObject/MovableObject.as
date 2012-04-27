@@ -9,6 +9,7 @@ package GameObject
 	{
 		public var m_speed:Number = 1;
 		public var m_direction:FlxPoint;
+		public var m_directionFacing:FlxPoint;
 		protected var m_blocked:Boolean = false;
 		public var m_oldPos:FlxPoint;
 		
@@ -16,6 +17,7 @@ package GameObject
 		{
 			super(X, Y, SimpleGraphic);
 			m_direction = new FlxPoint(0, 0);
+			m_directionFacing = new FlxPoint(1,0);
 			m_oldPos = new  FlxPoint(x,y);
 		}
 		

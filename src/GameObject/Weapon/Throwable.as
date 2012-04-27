@@ -11,7 +11,7 @@ package GameObject.Weapon
 	 */
 	public class Throwable extends Weapon
 	{
-		public var m_caster:DrawableObject;
+		public var m_caster:MovableObject;
 		public var m_player:PlayableObject;
 		public var m_enemy:Enemy;
 		protected var m_isPlayerCaster:Boolean = true;
@@ -45,15 +45,7 @@ package GameObject.Weapon
 			m_FX.play();
 			m_state = "attack";
 			play("attack" + direction);
-			if (direction == UP){ 
-				m_direction.y = -1;
-			}else if (direction == DOWN){
-				m_direction.y = 1;
-			} else	if (direction == LEFT){
-				m_direction.x = -1;
-			}else if (direction == RIGHT){
-				m_direction.x = 1;
-			}
+			m_direction = m_caster.m_directionFacing;
 		}
 		
 		override public function load():void {
