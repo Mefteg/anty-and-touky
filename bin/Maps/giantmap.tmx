@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="30" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="terrain2" tilewidth="32" tileheight="32">
+  <image source="../Images/Tilesets/terrain2.png" width="512" height="512"/>
+  <tile id="0">
+   <properties>
+    <property name="type" value="Grass"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="type" value="Rock"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Calque de Tile 1" width="40" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt1kEKACAIRFHz/ofuAlZkRR+cxUAEyWNwkZuZw9OCjO5nybxZzdv1zQwEH6W/nferXbk1/7QXQn+U/cvOo/l8cKb4XkY++Qi+yJn9V1Ts77dDPvmIkU8++eSr7iOnA8dKBVk=
+  </data>
+ </layer>
+ <objectgroup name="Calque d'objets 1" width="40" height="30">
+  <object name="WhiteSquare" type="WhiteSquare" x="525" y="57" width="67" height="24"/>
+ </objectgroup>
+ <objectgroup name="RespawnPoints" width="40" height="30">
+  <object name="TriggerScene" x="46" y="45" width="115" height="71"/>
+ </objectgroup>
+</map>

@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<cutscene name="cutscene1">
+	<actiongroup sync="0">
+		<action type="move" executor="Player1" targetX="256" targetY="150" />
+		<action type="move" executor="Player2" targetX="256" targetY="170" />
+	</actiongroup>
+	
+	<actiongroup sync="1">
+		<action type="message" executor="Player1" text="Drop Dead You SLime!"/>
+		<action type="message" executor="Slime1" text="Fuck !"/>
+	</actiongroup>
+</cutscene>
