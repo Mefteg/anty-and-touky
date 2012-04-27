@@ -43,7 +43,7 @@ package Scene
 			m_library = new Object();
 			
 			// we start by the tmp json
-			myRequest = new URLRequest(Global.serverAddress + "/" + m_filename+".tmp.json");
+			myRequest = new URLRequest(m_filename+".json");
 			myLoader = new URLLoader();
 			m_loaded = false;
 		}
@@ -76,14 +76,6 @@ package Scene
 		
 		private function ioErrorHandler(event:IOErrorEvent):void {
             trace("ioErrorHandler: " + event);
-			// if the tmp json opening failed
-			if ( !m_tmpAlreadyTry ) {
-				// we try with the basic json
-				myRequest = new URLRequest(Global.serverAddress + "/" + m_filename + ".json");
-				myLoader = new URLLoader();
-				this.load();
-				m_tmpAlreadyTry = true;
-			}
         }
 		
 		public function isLoadCOmplete():Boolean {

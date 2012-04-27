@@ -31,13 +31,6 @@ package Scene
 				//keep the current scene as previous
 				m_previousScene = m_currentScene;
 				m_currentScene.removeElementsFromStage();
-				
-				// keep the previous scene in a temporary jsonfile
-				var urlVar:URLVariables = new URLVariables();
-				urlVar.url = m_previousScene.m_filename + ".tmp.json";
-				urlVar.text = JSON.encode(m_previousScene.myData);
-				var request:URLRequestPHP = new URLRequestPHP("/Scripts/createFile.php", urlVar);
-				trace("Create : " + urlVar.url);
 			}
 			m_currentScene = new Scene.Scene(sceneName);
 			m_currentScene.setRespawn(respawn);
