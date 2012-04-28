@@ -12,10 +12,7 @@ package GameObject.Weapon
 	public class Throwable extends Weapon
 	{
 		public var m_caster:MovableObject;
-		public var m_player:PlayableObject;
-		public var m_enemy:Enemy;
-		protected var m_isPlayerCaster:Boolean = true;
-		public var m_enemies:Vector.<Enemy>;
+		public var m_straightShot:Boolean = false;
 		
 		public function Throwable(power:Number , url:String, speed:Number = 2 ) 
 		{
@@ -45,8 +42,7 @@ package GameObject.Weapon
 			m_FX.play();
 			m_state = "attack";
 			play("attack" + direction);
-			m_direction.x = m_caster.m_directionFacing.x;
-			m_direction.y = m_caster.m_directionFacing.y;
+			computeDirection();
 		}
 		
 		override public function load():void {
@@ -68,46 +64,23 @@ package GameObject.Weapon
 				super.place(X,Y);
 		}
 		
-		public function setCasterPlayer(object:PlayableObject) {
+		public function setCaster(object:MovableObject) {
 			m_caster = object;
-			m_player = object as PlayableObject;
-			m_isPlayerCaster = true;
-		}
-		public function setCasterEnemy(object:Enemy) {
-			m_caster = object;
-			m_enemy = object as Enemy;
-			m_isPlayerCaster = false;
 		}
 		
-		public function CheckDamageDealt():Boolean {
-			m_enemies = Global.currentState.m_enemies;
-			var result:Boolean = false;
-			if (m_isPlayerCaster) {
-				//check enemies for damage
-				for (var i:int = 0; i < m_enemies.length; i++) {
-					var enemy:Enemy = m_enemies[i];
-					if (enemy == null || enemy.isDead() )
-						continue;
-					//if collision with an enemy
-					if (collide(enemy)) {
-						result = true;
-						//deal damage
-						enemy.takeDamage(m_player , this);
-						break;
-					}
-				}
-			}else {
-				//check players for damage
-				if (collide(Global.player1)){
-					Global.player1.takeDamage(m_enemy, this);
-					result = true;
-				}
-				if (collide(Global.player2)){
-					Global.player2.takeDamage(m_enemy, this);
-					result = true;
-				}
+		public function CheckDamageDealt():Boolean { return false; }
+		
+		protected function computeDirection():void {
+			m_direction.x = m_caster.m_directionFacing.x;
+			m_direction.y = m_caster.m_directionFacing.y;
+			if (m_straightShot)
+				return;
+			if (m_direction.x == 0) {
+				m_direction.x = Utils.random( -0.1, 0.1);
+			}else if (m_direction.y == 0) {
+				m_direction.y = Utils.random( -0.1, 0.1);
 			}
-			return result;
+			m_direction = Utils.normalize(m_direction);
 		}
 		
 		override public function update():void {
@@ -129,14 +102,6 @@ package GameObject.Weapon
 			if ( collideWithEnv() ) {
 				touched();
 			}
-		}
-		
-		///////////////////////////////////////////////
-		//////////PREBUILDED THROWABLES///////////////
-		//////////////////////////////////////////////
-		
-		public static function Slipper() : Throwable{
-			return new Throwable(1, "Images/Weapons/slipper.png", 10);
 		}
 		
 	}

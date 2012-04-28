@@ -44,6 +44,7 @@ package GameObject.Enemy
 			m_timerAttack = new FlxTimer();
 			m_timerAttack.start(1);
 			m_timerDeath = new FlxTimer();
+			m_target = getRandomPlayer();
 			m_typeName = "Enemy";
 		}
 			
