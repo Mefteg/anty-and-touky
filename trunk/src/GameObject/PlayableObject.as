@@ -133,7 +133,7 @@ package GameObject
 		}
 		
 		override public function isBusy():Boolean {
-			return (m_state == "attack") || (m_state == "attack2") || (m_state == "defense") || (m_state == "magic") || (m_state == "item");
+			return isAttacking() || (m_state == "attack2") || (m_state == "defense") || (m_state == "magic") || (m_state == "item");
 		}
 		
 		public function isAttacking():Boolean {
@@ -141,7 +141,7 @@ package GameObject
 		}
 		
 		public function attack():void {
-			if (isBusy())
+			if (isBusy() && !m_state=="waitForAttack2")
 				return;
 			//if it the second attack
 			if (m_state == "waitForAttack2") {
@@ -182,13 +182,16 @@ package GameObject
 		}
 		
 		override public function update():void {
+			trace(m_state);
 			switch(m_state) {
 				case "attack": if (finished) {
 									m_state = "waitForAttack2"; 
 									m_timerAttack2.start(0.5); 
 								}
 								break;
-				case "waitForAttack2": if (m_timerAttack2.finished) { m_state = "idle"; getWeapon().Idleize(); } break;
+				case "waitForAttack2": if (m_timerAttack2.finished) { 
+					m_state = "idle"; 
+					getWeapon().Idleize(); } break;
 				case "attack2" : if (finished) { m_state = "idle"; getWeapon().Idleize();} break;
 				case "idle":  break;
 				case "throw": if (finished){

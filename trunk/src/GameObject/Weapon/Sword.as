@@ -116,7 +116,7 @@ package GameObject.Weapon
 		////////////////////////////////////////////////
 		public static function SwordBasic():Sword {
 			var sword:Sword = new Sword(5, "Images/Weapons/sword.png");
-			sword.setAttackFrameRange(1, 1);
+			sword.setAttackFrameRange(0, 3);
 			return sword;
 		}
 	}

@@ -12,12 +12,14 @@ package GameObject.Weapon
 	public class Throwable extends Weapon
 	{
 		public var m_caster:MovableObject;
+		protected var m_initSpeed:Number;
 		public var m_straightShot:Boolean = false;
 		
 		public function Throwable(power:Number , url:String, speed:Number = 2 ) 
 		{
 			super(power, url);
 			m_speed = speed;
+			m_initSpeed = m_speed;
 			m_state = "idle";			
 			m_width = 24;
 			m_height = 32;
@@ -33,6 +35,7 @@ package GameObject.Weapon
 			m_direction.x = 0;
 			m_direction.y = 0;
 			x = 0; y = 0;
+			m_speed = m_initSpeed;
 		}
 		
 		override public function attack(direction:int):void {
