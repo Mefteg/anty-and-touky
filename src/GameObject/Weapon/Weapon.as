@@ -36,6 +36,7 @@ package GameObject.Weapon
 			m_FX.play();
 			m_state = "attack";
 			play("attack" + direction);
+			addToStage();
 		}
 		
 		public function place(newX:Number, newY:Number ):void {
@@ -53,6 +54,7 @@ package GameObject.Weapon
 		public function Idleize() {
 			m_state = "idle";
 			play("idle" + facing);
+			removeFromStage();
 		}
 		public function isAttacking():Boolean {
 			return m_state = "attack";

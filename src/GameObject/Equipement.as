@@ -28,7 +28,6 @@ package GameObject
 		}
 		
 		public function addToStage():void {
-			m_weapon.addToStage();
 		}
 		
 		public function load():void {
