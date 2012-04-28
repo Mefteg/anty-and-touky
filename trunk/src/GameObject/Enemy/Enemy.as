@@ -72,8 +72,7 @@ package GameObject.Enemy
 			m_timerHit.start(m_timeHit);
 			m_state = "hit";
 			//calculate damage
-			var damage:int = weapon.m_power + player.m_stats.m_attack_current ;
-			damage = damage * Utils.random(0.9, 1.1) - m_stats.m_defense_current;
+			var damage:int = weapon.m_power ;
 			//display damage
 			var info:InfoDamage = new InfoDamage(x, y, String(damage));
 			info.addToStage();

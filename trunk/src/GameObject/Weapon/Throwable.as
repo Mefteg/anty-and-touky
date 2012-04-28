@@ -45,7 +45,8 @@ package GameObject.Weapon
 			m_FX.play();
 			m_state = "attack";
 			play("attack" + direction);
-			m_direction = m_caster.m_directionFacing;
+			m_direction.x = m_caster.m_directionFacing.x;
+			m_direction.y = m_caster.m_directionFacing.y;
 		}
 		
 		override public function load():void {
@@ -135,7 +136,7 @@ package GameObject.Weapon
 		//////////////////////////////////////////////
 		
 		public static function Slipper() : Throwable{
-			return new Throwable(2, "Images/Weapons/slipper.png", 10);
+			return new Throwable(1, "Images/Weapons/slipper.png", 10);
 		}
 		
 	}

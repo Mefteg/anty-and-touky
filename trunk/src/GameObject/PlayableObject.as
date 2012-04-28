@@ -189,7 +189,7 @@ package GameObject
 								break;
 				case "waitForAttack2": if (m_timerAttack2.finished) { m_state = "idle"; getWeapon().Idleize(); } break;
 				case "attack2" : if (finished) { m_state = "idle"; getWeapon().Idleize();} break;
-				case "idle": getWeapon().place(x, y); break;
+				case "idle":  break;
 				case "throw": if (finished){
 									m_state = "idle"; 
 									var thr:GameObject.Weapon.Throwable = getThrowable();
@@ -198,7 +198,7 @@ package GameObject
 									thr.attack(facing);
 								}
 								break;
-				case "walk": getWeapon().place(x, y); break;
+				case "walk":  break;
 				case "defense": if (m_timerDefense.finished) m_state = "idle"; break;
 				case "magic": 	if (m_timerMagicCast.finished && ( (m_currentMagic) && (m_currentMagic.m_state != "attack"))) {
 									m_stats.m_mp_current -= m_currentMagic.m_manaCons;
