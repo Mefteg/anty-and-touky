@@ -13,6 +13,11 @@ package
 			return new FlxPoint(p.x / dist, p.y / dist);
 		}
 		
+		public static function direction(p1:FlxPoint, p2:FlxPoint) : FlxPoint {
+			var dir:FlxPoint = new FlxPoint(p2.x - p1.x, p2.y - p1.y);
+			return normalize(dir);
+		}
+		
 		public static function distance(p1:FlxPoint, p2:FlxPoint) : Number {
 			var dir:FlxPoint = new FlxPoint(p2.x - p1.x, p2.y - p1.y);
 			return (Math.sqrt(dir.x*dir.x + dir.y*dir.y));

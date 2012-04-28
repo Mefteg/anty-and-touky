@@ -7,6 +7,7 @@ package GameObject
 	import GameObject.Item.ItemManager;
 	import GameObject.Magic.Magic;
 	import GameObject.Magic.MovableMagic;
+	import GameObject.Weapon.PlayerThrowable;
 	import GameObject.Weapon.Sword;
 	import GameObject.Weapon.Throwable;
 	import GameObject.Weapon.Weapon;
@@ -25,7 +26,7 @@ package GameObject
 	{	
 		public var m_equipement:Equipement;
 		
-		public var m_throwables:Vector.<GameObject.Weapon.Throwable>;
+		public var m_throwables:Vector.<PlayerThrowable>;
 		
 		public var m_magics:Vector.<Magic>;
 		public var m_currentMagic:GameObject.Magic.Magic = null;
@@ -71,20 +72,20 @@ package GameObject
 			m_magics.push(Magic.Tornado());
 			m_magics.push(Magic.Fireball());
 			m_itemManager = new GameObject.Item.ItemManager(this);
-			m_throwables = new Vector.<GameObject.Weapon.Throwable>();
+			m_throwables = new Vector.<PlayerThrowable>();
 			createThrowables();
 			getWeapon().m_player = this;
 		}
 		
 		public function createThrowables() :void {
-			var thr:Throwable = m_equipement.m_throwable;
+			var thr:PlayerThrowable = m_equipement.m_throwable;
 			thr.m_enemies = m_enemies;
-			thr.setCasterPlayer(this);
+			thr.setCaster(this);
 			m_throwables.push(thr);
 			for (var i:int = 0; i < 15; i++) {
-				thr = Throwable.Slipper();
+				thr = PlayerThrowable.Slipper();
 				thr.m_enemies = m_enemies;
-				thr.setCasterPlayer(this);
+				thr.setCaster(this);
 				m_throwables.push(thr);
 			}
 		}
@@ -300,8 +301,8 @@ package GameObject
 			return m_equipement.m_armor;
 		}
 		
-		public function getThrowable():GameObject.Weapon.Throwable {
-			var thr:GameObject.Weapon.Throwable;
+		public function getThrowable():PlayerThrowable {
+			var thr:PlayerThrowable;
 			for (var i:int = 0; i < m_throwables.length; i++) {
 				if (m_throwables[i].isFree()) {
 					thr = m_throwables[i];

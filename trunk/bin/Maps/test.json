@@ -41,27 +41,15 @@
                 }, 
                 {
                  "height":0,
-                 "name":"Slime",
+                 "name":"Monkey",
                  "properties":
                     {
 
                     },
-                 "type":"Slime",
+                 "type":"Monkey",
                  "width":0,
-                 "x":498,
-                 "y":373
-                }, 
-                {
-                 "height":0,
-                 "name":"Slime",
-                 "properties":
-                    {
-
-                    },
-                 "type":"Slime",
-                 "width":0,
-                 "x":564,
-                 "y":57
+                 "x":519,
+                 "y":82
                 }, 
                 {
                  "height":22,
