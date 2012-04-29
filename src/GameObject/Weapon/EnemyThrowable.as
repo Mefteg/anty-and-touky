@@ -52,7 +52,7 @@ package GameObject.Weapon
 			return false;
 		}
 		
-		private function Reject(player:PlayableObject) {
+		private function Reject(player:PlayableObject) : void {
 			var dir:uint = player.facing;
 			if(dir==RIGHT || dir==LEFT){
 				m_direction.x = 0;
@@ -66,7 +66,6 @@ package GameObject.Weapon
 		}
 		
 		override public function update():void {
-			trace("dfs");
 			switch(m_state) {
 				case "idle" : return; break;
 				//if attack is on

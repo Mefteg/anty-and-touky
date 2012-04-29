@@ -53,7 +53,6 @@ package Scene
 		}
 		
 		public function load():void {
-			trace("Load : " + myRequest.url);
 			myLoader.addEventListener(Event.COMPLETE, onload);
 			myLoader.addEventListener(IOErrorEvent.IO_ERROR, ioErrorHandler);
 			myLoader.load(myRequest);

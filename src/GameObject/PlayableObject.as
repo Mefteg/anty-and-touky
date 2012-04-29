@@ -182,7 +182,6 @@ package GameObject
 		}
 		
 		override public function update():void {
-			trace(m_state);
 			switch(m_state) {
 				case "attack": if (finished) {
 									m_state = "waitForAttack2"; 

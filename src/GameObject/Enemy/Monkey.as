@@ -78,8 +78,8 @@ package GameObject.Enemy
 			
 		}
 		
-		public function attack():void {
-			m_state == "attack";
+		override public function attack():void {
+			m_state = "attack";
 			m_directionFacing = Utils.direction(new FlxPoint(x, y), new FlxPoint(m_target.x, m_target.y));
 			var thr:EnemyThrowable = getThrowable();
 			thr.place(x, y);
