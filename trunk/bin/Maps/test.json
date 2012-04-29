@@ -62,6 +62,42 @@
                  "width":18,
                  "x":14,
                  "y":445
+                }, 
+                {
+                 "height":29,
+                 "name":"MonkeyTest1",
+                 "properties":
+                    {
+
+                    },
+                 "type":"MonkeyTest",
+                 "width":36,
+                 "x":171,
+                 "y":391
+                }, 
+                {
+                 "height":29,
+                 "name":"MonkeyTest0",
+                 "properties":
+                    {
+
+                    },
+                 "type":"MonkeyTest",
+                 "width":36,
+                 "x":106,
+                 "y":390
+                }, 
+                {
+                 "height":29,
+                 "name":"MonkeyTest2",
+                 "properties":
+                    {
+
+                    },
+                 "type":"MonkeyTest",
+                 "width":36,
+                 "x":160,
+                 "y":322
                 }],
          "opacity":1,
          "type":"objectgroup",

@@ -51,7 +51,7 @@ package GameObject.Weapon
 			Global.currentState.depthBuffer.removeNonPhysicalPlayer(this);
 		}
 		
-		public function Idleize() {
+		public function Idleize() : void {
 			m_state = "idle";
 			play("idle" + facing);
 			removeFromStage();

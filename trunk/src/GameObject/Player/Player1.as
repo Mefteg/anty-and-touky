@@ -106,7 +106,6 @@ package GameObject.Player
 			play(m_state + facing);
 			
 			freeScrollBlocking();
-			trace(m_directionFacing.x, m_directionFacing.y);
 		}
 		
 	}

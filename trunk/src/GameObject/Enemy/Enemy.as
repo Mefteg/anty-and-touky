@@ -5,6 +5,7 @@ package GameObject.Enemy
 	import GameObject.PlayableObject;
 	import GameObject.Weapon.Weapon;
 	import InfoObject.InfoDamage;
+	import org.flixel.FlxG;
 	import org.flixel.FlxPoint;
 	import org.flixel.FlxTimer;
 	import GameObject.Stats;
@@ -130,13 +131,18 @@ package GameObject.Enemy
 				case "dead": if (m_timerDeath.finished)
 									removeFromStage();
 							break;
+				case "attack":
+					attack();
+					break;
 				default:
 					break;
 			}
+
 			
 			//plays the animation	
 			play(m_anim + facing);
 		}
+
 		
 		override public function move() : void {
 			m_oldPos.x= this.x;
@@ -161,6 +167,10 @@ package GameObject.Enemy
 			else if (m_direction.y > 0) facing = DOWN;
 			
 			m_state = "lookfor";
+		}
+		
+		public function attack() : void {
+			
 		}
 		
 		public function lookfor() : void {
