@@ -16,6 +16,8 @@ package GameObject.Player
 			m_stringValidate = "NUMPADONE";
 			m_stringNext = "NUMPADTWO";
 			m_stringPrevious = "NUMPADTHREE";
+			
+			m_name = "Player2";
 		}
 		
 		override public function load():void {

@@ -1,5 +1,7 @@
 package GameObject.Enemy 
 {
+	import GameObject.DrawableObject;
+	import GameObject.PlayableObject;
 	import GameObject.Weapon.EnemyThrowable;
 	import org.flixel.FlxG;
 	import org.flixel.FlxPoint;
@@ -14,6 +16,8 @@ package GameObject.Enemy
 		private var m_fsm:Object;
 		
 		public var m_boss:MonkeyTest;
+		
+		private var m_hostileZone = 100;
 		
 		public function MonkeyTest(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
@@ -30,7 +34,7 @@ package GameObject.Enemy
 			m_fsm["hit"] = this.hit;
 			m_fsm["attack"] = this.attack;
 			m_fsm["dead"] = this.dead;
-			
+
 			m_state = "idle";
 			
 			s_monkeys.push(this);
@@ -77,9 +81,17 @@ package GameObject.Enemy
 					}
 					
 					// if I'm near enough to attack
-					// otherwhise I look for the nearest player
-					// now I focus my target
-					m_state = "walk";
+					var player:PlayableObject = this.nearestPlayer();
+					if ( this.isInHostileZone(player) ) {
+						m_target = player;
+						m_state = "attack";
+					}
+					else {
+						// otherwhise I look for the nearest player
+						m_target = player;
+						// now I focus my target
+						m_state = "walk";
+					}
 				}
 				else {
 					// I mimic my boss
@@ -105,8 +117,15 @@ package GameObject.Enemy
 		}
 		
 		protected function walk() : void {
-			m_direction = new FlxPoint(0, -1);
-			this.move();
+			var target:PlayableObject = m_target;
+			if ( m_boss ) {
+				target = m_boss.m_target;
+			}
+			
+			if ( target ) {
+				m_direction = Utils.direction(new FlxPoint(this.x, this.y), new FlxPoint(target.x, target.y));
+				this.move();
+			}
 			
 			m_state = "lookfor";
 		}
@@ -116,27 +135,64 @@ package GameObject.Enemy
 		}
 		
 		override public function attack() : void {
+			var target:PlayableObject = m_target;
+			if ( m_boss ) {
+				target = m_boss.m_target;
+			}
 			
+			if ( target ) {
+				//trace(m_name + " attacks : " + target.m_name);
+			}
+			
+			m_state = "lookfor";
 		}
 		
 		protected function dead() : void {
-			//if (m_timerDeath.finished) {
-				var newArray:Array = new Array();
-				var monkey:MonkeyTest;
-				
-				for ( var i:int = 0; i < s_monkeys.length; i++ ) {
-					monkey = s_monkeys[i];
-					if ( monkey != this ) {
-						if ( monkey.m_boss == this ) {
-							monkey.m_boss = null;
-						}
-						newArray.push(monkey);
+			var newArray:Array = new Array();
+			var monkey:MonkeyTest;
+			
+			for ( var i:int = 0; i < s_monkeys.length; i++ ) {
+				monkey = s_monkeys[i];
+				if ( monkey != this ) {
+					if ( monkey.m_boss == this ) {
+						monkey.m_boss = null;
 					}
+					newArray.push(monkey);
 				}
-				s_monkeys = newArray;
-								
-				removeFromStage();
-			//}
+			}
+			s_monkeys = newArray;
+							
+			removeFromStage();
+		}
+		
+		protected function nearestPlayer() : PlayableObject {
+			var p1:PlayableObject = Global.player1;
+			var p2:PlayableObject = Global.player2;
+			var p:PlayableObject;
+			
+			var d1:Number = Utils.distance( new FlxPoint(this.x, this.y), new FlxPoint(p1.x, p1.y));
+			var d2:Number = Utils.distance( new FlxPoint(this.x, this.y), new FlxPoint(p2.x, p2.y));
+			
+			if ( d1 < d2 ) {
+				p = p1;
+			}
+			else {
+				p = p2;
+			}
+			
+			return p;
+		}
+		
+		// Return the nearest player if he's in the hostile zone, null otherwhise
+		protected function isInHostileZone(obj:DrawableObject) : Boolean {
+			var nearEnough:Boolean = false;
+			var d:Number = Utils.distance( new FlxPoint(this.x, this.y), new FlxPoint(obj.x, obj.y));
+			
+			if ( d < m_hostileZone ) {
+				nearEnough = true;
+			}
+			
+			return nearEnough;
 		}
 		
 		override public function load():void {
