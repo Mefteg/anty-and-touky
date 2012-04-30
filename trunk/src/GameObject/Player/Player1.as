@@ -20,6 +20,8 @@ package GameObject.Player
 			m_stringNext = "G";
 			m_stringPrevious = "H";
 			m_stringValidate = "F";
+			
+			m_name = "Player1";
 		}		
 				
 		override public function load():void {
