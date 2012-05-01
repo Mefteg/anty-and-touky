@@ -43,6 +43,7 @@ package GameObject.Enemy
 		}
 		
 		override public function update() : void {
+			twinkle();
 			var action:Function = m_fsm[m_state];
 			if ( action ) {
 				action();
