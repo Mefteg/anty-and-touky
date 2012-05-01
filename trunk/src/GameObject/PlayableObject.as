@@ -37,6 +37,9 @@ package GameObject
 		public var m_timerMagicCast:FlxTimer;
 		private var m_timerAttack2:FlxTimer;
 		
+		public var m_timerSpecial:FlxTimer;
+		protected var m_timerSpecialAvailable:FlxTimer;
+		
 		//keys
 		protected var m_stringValidate:String;
 		protected var m_stringPrevious:String;
@@ -67,6 +70,9 @@ package GameObject
 			m_equipement = new GameObject.Equipement;
 			m_magics = new Vector.<Magic>;
 			m_stats = new GameObject.Stats();
+			m_timerSpecial = new FlxTimer();
+			m_timerSpecialAvailable = new FlxTimer();
+			m_timerSpecialAvailable.start(0.1);
 			m_timerDefense = new FlxTimer();
 			m_timerMagicCast = new FlxTimer();
 			m_timerAttack2 = new FlxTimer();
@@ -195,8 +201,12 @@ package GameObject
 		
 		override public function update():void {
 			twinkle();
-			if (m_onSpecial)
-				placeOtherPlayer();
+			if (m_onSpecial) {
+				if (m_timerSpecial.finished)
+					unspecial();
+				else
+					placeOtherPlayer();
+			}
 			switch(m_state) {
 				case "attack": if (finished) {
 									m_state = "waitForAttack2"; 
