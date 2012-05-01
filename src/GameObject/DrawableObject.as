@@ -13,6 +13,8 @@ package GameObject
 		protected var _twinkleHit:uint = 0xFF8000;
 		protected var _twinkleRestore:uint = 0x00FF00;
 		protected var _twinkleColor:uint;
+		protected var _twinkleCount:int;
+		protected var _twinkleStep:Number;
 		public var m_timerTwinkle:FlxTimer;
 		
 		public function DrawableObject(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
@@ -62,18 +64,31 @@ package GameObject
 			if (m_timerTwinkle.progress > 0.9){
 				unFlashColor();
 				_twinkleOn = false;
-			}else{
-				if( ! _twinkleOn && m_timerTwinkle.progress <0.1){
-					flashColor(_twinkleColor);
-					_twinkleOn = true;
-				}else if ( _twinkleOn && ( m_timerTwinkle.progress > 0.3 && m_timerTwinkle.progress < 0.6 )){
-					unFlashColor();
-					_twinkleOn = false;
-				}else if (!_twinkleOn && m_timerTwinkle.progress > 0.6) {
-					flashColor(_twinkleColor);
-					_twinkleOn = true;
+			}else {
+				var currentTwinkle:Number = _twinkleStep * _twinkleCount;
+				var nextTwinkle:Number = currentTwinkle + _twinkleStep;
+				
+				if ( !_twinkleOn ) {
+					if (m_timerTwinkle.progress > currentTwinkle && m_timerTwinkle.progress < nextTwinkle) {
+						flashColor(_twinkleColor);
+						_twinkleOn = true;
+						_twinkleCount++;
+					}
+				}else {
+					if (m_timerTwinkle.progress > currentTwinkle && m_timerTwinkle.progress < nextTwinkle) {
+						unFlashColor();
+						_twinkleOn = false;
+						_twinkleCount++;
+					}
 				}
 			}
+		}
+		
+		public function beginTwinkle(nbTwinkles:int,time:Number) {
+			_twinkleStep = 0.8 / nbTwinkles;
+			m_timerTwinkle.start(time);
+			_twinkleOn = false;
+			_twinkleCount = 0;
 		}
 	}
 

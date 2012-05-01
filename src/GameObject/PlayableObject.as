@@ -60,12 +60,14 @@ package GameObject
 			m_width = 24;
 			m_height = 32;
 			m_state = "idle";
+			_twinkleHit = 0xFFFFFF;
 			m_equipement = new GameObject.Equipement;
 			m_magics = new Vector.<Magic>;
 			m_stats = new GameObject.Stats();
 			m_timerDefense = new FlxTimer();
 			m_timerMagicCast = new FlxTimer();
 			m_timerAttack2 = new FlxTimer();
+			m_timerTwinkle.start(0.1);
 			//SOUNDS
 			FX_shieldClang = new FlxSound();
 			FX_drawWeapon = new FlxSound();
@@ -182,6 +184,7 @@ package GameObject
 		}
 		
 		override public function update():void {
+			twinkle();
 			switch(m_state) {
 				case "attack": if (finished) {
 									m_state = "waitForAttack2"; 
@@ -228,13 +231,12 @@ package GameObject
 			super.move();
 		}
 		
-		public function takeDamage(enemy:GameObject.Enemy.Enemy,weapon:Weapon = null):void {
-			if (m_state == "defense") {
-				FX_shieldClang.play();
+		public function takeDamage(enemy:GameObject.Enemy.Enemy, weapon:Weapon = null):void {
+			if (!m_timerTwinkle.finished)
 				return;
-			}
 			//start timer during when the enemy is hit
-			//m_timerHit.start(m_timeHit);
+			changeTwinkleColor(_twinkleHit);
+			beginTwinkle(20, 3);
 			//m_state = "hit";
 			//calculate damage
 			var damage:int;
