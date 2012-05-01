@@ -83,9 +83,8 @@ package GameObject.Enemy
 				m_state = "dead";
 				m_timerDeath.start(1);
 			//for twinkling
-			m_timerTwinkle.start(0.3);
-			_twinkleOn = false;
 			changeTwinkleColor(_twinkleHit);
+			beginTwinkle(3, 0.3);
 		}
 		
 		public function takeMagicDamage(player:PlayableObject, magic:Magic):void {
