@@ -113,6 +113,10 @@ package GameObject
 			this.visible = false;
 		}
 		
+		public function place(newX:Number, newY:Number ):void {
+			x = newX; y = newY;
+		}
+		
 		public function setHitbox(X:int, Y:int, width:int, height:int):void {			
 			m_hitbox = new Hitbox(X, Y, width, height);
 		}

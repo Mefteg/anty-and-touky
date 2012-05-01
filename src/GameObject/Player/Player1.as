@@ -110,6 +110,18 @@ package GameObject.Player
 			freeScrollBlocking();
 		}
 		
+		override public function special():void {
+			m_onSpecial = true;
+		}
+		
+		override public function unspecial():void {
+			m_onSpecial = false;
+		}
+		
+		override public function placeOtherPlayer():void {
+			Global.player2.place(x, y + 15);
+		}
+		
 	}
 
 }

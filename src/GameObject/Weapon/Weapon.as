@@ -39,10 +39,6 @@ package GameObject.Weapon
 			addToStage();
 		}
 		
-		public function place(newX:Number, newY:Number ):void {
-			x = newX; y = newY;
-		}
-		
 		override public function addToStage():void {
 			Global.currentState.depthBuffer.addNonPhysicalPlayer(this);
 		}
