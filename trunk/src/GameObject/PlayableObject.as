@@ -53,6 +53,9 @@ package GameObject
 		
 		public var m_enemies:Vector.<GameObject.Enemy.Enemy>;
 		
+		protected var m_onSpecial:Boolean = false;
+		
+		
 		public function PlayableObject(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, SimpleGraphic);
@@ -169,6 +172,13 @@ package GameObject
 			play("throw" + facing, true);
 		}
 		
+		public function special():void {
+			
+		}
+		
+		public function unspecial():void {
+			
+		}
 		public function magicAttack(i:int):void {
 			if (i >= m_magics.length || isBusy())
 				return;
@@ -185,6 +195,8 @@ package GameObject
 		
 		override public function update():void {
 			twinkle();
+			if (m_onSpecial)
+				placeOtherPlayer();
 			switch(m_state) {
 				case "attack": if (finished) {
 									m_state = "waitForAttack2"; 
@@ -219,10 +231,18 @@ package GameObject
 		}
 		
 		public function getMoves():void {
-			if (FlxG.keys.justPressed(m_stringValidate) ){
-				throwIt();
-			}else if (FlxG.keys.justPressed(m_stringNext) ){
-				attack();
+			if (FlxG.keys.justPressed(m_stringPrevious)) {
+				if(!m_onSpecial)
+					special()
+				else
+					unspecial();
+			}
+			if (!m_onSpecial){
+				if (FlxG.keys.justPressed(m_stringValidate) ){
+					throwIt();
+				}else if (FlxG.keys.justPressed(m_stringNext) ){
+					attack();
+				}
 			}
 		}
 		override public function move():void {
@@ -251,6 +271,10 @@ package GameObject
 			info.addToStage();
 			//substract damage to hp
 			m_stats.m_hp_current -= damage;
+			//FOR SPECIAL MOVES
+			if (m_onSpecial) {
+				Global.player2.takeDamage(enemy, weapon);
+			}
 		}
 		
 		public function takeMagicDamage(enemy:Enemy, magic:Magic):void {
@@ -289,6 +313,8 @@ package GameObject
 		public function addItem(item:String,qty:int) : void {
 			m_itemManager.addItem(item, qty);
 		}
+		
+		public function placeOtherPlayer():void{}
 		/////////////////////////////////////////////////////////////////:
 		////////////////////////GETTERS//////////////////////////////////
 		/////////////////////////////////////////////////////////////////

@@ -13,9 +13,14 @@ package GameObject.Player
 			super(X, Y, null);
 			m_url = "Images/Players/hero.png";
 			Global.player2 = this;
+			/*
 			m_stringValidate = "NUMPADONE";
 			m_stringNext = "NUMPADTWO";
-			m_stringPrevious = "NUMPADTHREE";
+			m_stringPrevious = "NUMPADTHREE";*/
+			
+			m_stringValidate = "K";
+			m_stringNext = "L";
+			m_stringPrevious = "M";
 			
 			m_name = "Player2";
 		}
@@ -43,10 +48,10 @@ package GameObject.Player
 			addAnimation("attack2" + DOWN, Utils.getArrayofNumbers(24,35), 40, false);
 			addAnimation("attack2" + LEFT, Utils.getArrayofNumbers(36,47), 40, false);
 			//throw anim
-			addAnimation("throw" + UP, [11,0], 10, false);
-			addAnimation("throw" + RIGHT, [23, 12], 10, false);
-			addAnimation("throw" + DOWN, [35, 24], 10, false);
-			addAnimation("throw" + LEFT, [47, 36], 10, false);
+			addAnimation("throw" + UP, [11,0], 100, false);
+			addAnimation("throw" + RIGHT,[23, 12], 100, false);
+			addAnimation("throw" + DOWN, [35, 24], 100, false);
+			addAnimation("throw" + LEFT, [47, 36], 100, false);
 			//defense anim
 			addAnimation("defense" + UP, [48], 10, false);
 			addAnimation("defense" + RIGHT, [60], 10, false);
@@ -108,10 +113,12 @@ package GameObject.Player
 				m_direction.x = xForce;
 				m_direction.y = yForce;
 				m_directionFacing = m_direction;
-				m_state = "walk";
+				if(m_state != "throw")
+					m_state = "walk";
 				move();
 			}else {
-				m_state = "idle";
+				if(m_state != "throw")
+					m_state = "idle";
 			}
 			play(m_state + facing);
 			

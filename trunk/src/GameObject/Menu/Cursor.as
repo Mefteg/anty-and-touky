@@ -30,7 +30,7 @@ package GameObject.Menu
 			
 			this.catchEvent();
 			
-			this.place();
+			this.placeCursor();
 		}
 		
 		override public function addToStage():void {
@@ -54,7 +54,7 @@ package GameObject.Menu
 		}
 		
 		// Place the cursor on the button
-		protected function place() : void {
+		public function placeCursor() : void {
 			this.x = m_currentButton.x;
 			this.y = m_currentButton.y;
 		}
