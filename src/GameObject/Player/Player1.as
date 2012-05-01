@@ -111,11 +111,15 @@ package GameObject.Player
 		}
 		
 		override public function special():void {
+			if (!this.collide(Global.player2) || !m_timerSpecialAvailable.finished)
+				return;
 			m_onSpecial = true;
+			m_timerSpecial.start(10);
 		}
 		
 		override public function unspecial():void {
 			m_onSpecial = false;
+			m_timerSpecialAvailable.start(5);
 		}
 		
 		override public function placeOtherPlayer():void {
