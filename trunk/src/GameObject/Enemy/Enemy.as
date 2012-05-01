@@ -39,6 +39,7 @@ package GameObject.Enemy
 			m_timeHit = 1;
 			m_distanceToAttack = m_width;
 			m_state = "lookfor";
+			m_timerTwinkle.start(0.1);
 			m_stats = new Stats();
 			m_timerHit = new FlxTimer();
 			m_timerHit.start(0.1);
@@ -70,9 +71,6 @@ package GameObject.Enemy
 		///////////////////////////////////////////////////////
 		
 		public function takeDamage(player:PlayableObject, weapon:Weapon):void {
-			//start timer during when the enemy is hit
-			m_timerHit.start(m_timeHit);
-			m_state = "hit";
 			//calculate damage
 			var damage:int = weapon.m_power ;
 			//display damage
@@ -84,6 +82,10 @@ package GameObject.Enemy
 			if (m_stats.m_hp_current < 0)
 				m_state = "dead";
 				m_timerDeath.start(1);
+			//for twinkling
+			m_timerTwinkle.start(0.3);
+			_twinkleOn = false;
+			changeTwinkleColor(_twinkleHit);
 		}
 		
 		public function takeMagicDamage(player:PlayableObject, magic:Magic):void {
@@ -107,7 +109,7 @@ package GameObject.Enemy
 		}
 		
 		override public function update() : void {
-			
+			twinkle();
 			if (m_blocked) return;
 												
 			switch ( m_state ) {
@@ -121,12 +123,6 @@ package GameObject.Enemy
 				case "lookfor":
 					m_anim = "walk";
 					lookfor();
-					break;
-				case "hit":
-					m_anim = "hit";
-					facing = m_hit;
-					if (m_timerHit.finished)
-						m_state = "lookfor";
 					break;
 				case "dead": if (m_timerDeath.finished)
 									removeFromStage();

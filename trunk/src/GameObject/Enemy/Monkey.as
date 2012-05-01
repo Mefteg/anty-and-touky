@@ -88,6 +88,7 @@ package GameObject.Enemy
 		
 		override public function update():void {
 			if (!onScreen()) return;
+			twinkle();
 			if (m_timerAttack.finished) {
 				attack();
 				m_timerAttack.start(2);

@@ -98,13 +98,13 @@ package
 			m_ennemies.add(element);
 			m_stage.addTalkers(element as MovableObject);
 			m_stage.addEnemy(element as Enemy);
-			m_stage.addPhysical(element as PhysicalObject);
+			//m_stage.addPhysical(element as PhysicalObject);
 		}
 		public function removeEnemy(element:FlxBasic):void {
 			m_ennemies.remove(element);
 			m_stage.removeTalkers(element as MovableObject);
 			m_stage.removeEnemy(element as Enemy);
-			m_stage.removePhysical(element as PhysicalObject);
+			//m_stage.removePhysical(element as PhysicalObject);
 		}
 				
 		public function addPlayer(element:FlxBasic):void
