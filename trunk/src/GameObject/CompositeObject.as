@@ -96,6 +96,10 @@ package GameObject
 			return m_objects[0];
 		}
 		
+		public function getLast() : GameObject {
+			return m_objects[(m_objects.length - 1)];
+		}
+		
 		public function isEmpty() : Boolean {
 			return (m_objects.length == 0);
 		}
