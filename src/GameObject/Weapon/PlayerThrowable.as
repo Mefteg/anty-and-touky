@@ -17,13 +17,13 @@ package GameObject.Weapon
 			super(power, url, speed);
 		}
 		
-		override public function setCaster(object:MovableObject) {
+		override public function setCaster(object:MovableObject) : void {
 			super.setCaster(object);
 			m_player = object as PlayableObject;
 		}
 		
 		override public function CheckDamageDealt():Boolean {
-			m_enemies = Global.currentState.m_enemies;
+			m_enemies = Global.currentPlaystate.m_enemies;
 			var result:Boolean = false;
 			//check enemies for damage
 			for (var i:int = 0; i < m_enemies.length; i++) {

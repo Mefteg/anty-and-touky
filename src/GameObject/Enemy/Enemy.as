@@ -50,12 +50,12 @@ package GameObject.Enemy
 			m_typeName = "Enemy";
 		}
 			
-		override public function addToStage():void {
-			Global.currentState.depthBuffer.addEnemy(this);
+		override public function addToStage() : void {
+			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_enemyGroup);
 		}
 		
 		override public function removeFromStage():void {
-			Global.currentState.depthBuffer.removeEnemy(this);
+			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_enemyGroup);
 		}
 				
 		public function giveDamage():void {

@@ -58,11 +58,11 @@ package GameObject.Menu
 		}
 		
 		override public function addToStage():void {
-			Global.currentState.depthBuffer.addMenu(this);
+			Global.currentState.depthBuffer.addElement(this, DepthBuffer.s_menuGroup);
 		}
 		
 		override public function removeFromStage():void {
-			Global.currentState.depthBuffer.removeMenu(this);
+			Global.currentState.depthBuffer.removeElement(this, DepthBuffer.s_menuGroup);
 		}
 	}
 

@@ -17,11 +17,11 @@ package GameObject
 		}
 		
 		override public function addToStage():void {
-			Global.currentState.depthBuffer.addTile(this);
+			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_tileGroup);
 		}
 		
 		override public function removeFromStage():void {
-			Global.currentState.depthBuffer.removeTile(this);
+			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_tileGroup);
 		}
 		
 		override public function load() : void {

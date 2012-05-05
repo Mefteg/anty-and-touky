@@ -108,7 +108,7 @@ package GameObject
 		}
 				
 		public function getEnemiesInScene():void {
-			m_enemies = Global.currentState.m_enemies;
+			m_enemies = Global.currentPlaystate.m_enemies;
 		}
 		/**
 		 * Add Bitmaps of all the elements of the object
@@ -124,7 +124,7 @@ package GameObject
 		}
 		
 		override public function addToStage():void {
-			Global.currentState.depthBuffer.addPlayer(this);
+			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_playerGroup);
 			//add the equipement
 			m_equipement.addToStage();
 		}
@@ -313,7 +313,7 @@ package GameObject
 			magic.m_caster = this;
 			magic.addBitmap();
 			magic.setCasterPlayer(this);
-			Global.currentState.loadNewBitmaps(magic);
+			Global.currentPlaystate.loadNewBitmaps(magic);
 		}
 		
 		/**

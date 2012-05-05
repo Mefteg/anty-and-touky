@@ -18,7 +18,7 @@ package GameObject
 			super(X, Y);
 		}
 		
-		public function setHitboxInteract(X:int, Y:int, W:int, H:int) {
+		public function setHitboxInteract(X:int, Y:int, W:int, H:int) : void {
 			m_hitboxInteraction = new Hitbox(X, Y, W, H);
 		}
 		
@@ -50,7 +50,7 @@ package GameObject
 		public function drawHitboxInter():void {
 			var spr:FlxSprite = new FlxSprite(x+m_hitboxInteraction.x, y+m_hitboxInteraction.y);
 			spr.makeGraphic(m_hitboxInteraction.width, m_hitboxInteraction.height);
-			Global.currentState.depthBuffer.addObjects(spr);
+			Global.currentPlaystate.depthBuffer.addElement(spr, DepthBufferPlaystate.s_objectGroup);
 		}
 		
 	}

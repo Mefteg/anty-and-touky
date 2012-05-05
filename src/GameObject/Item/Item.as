@@ -30,11 +30,11 @@ package GameObject.Item
 		}
 		
 		override public function addToStage():void {
-			Global.currentState.depthBuffer.addPlayer(this);
+			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_playerGroup);
 		}
 		
 		override public function removeFromStage():void {
-			Global.currentState.depthBuffer.removePlayer(this);
+			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_playerGroup);
 		}
 		
 		public function setAnimation(...rest):void {

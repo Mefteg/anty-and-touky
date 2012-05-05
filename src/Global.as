@@ -5,6 +5,7 @@ package
 	import GameObject.Menu.ButtonMenuMagic;
 	import GameObject.Player.Player1;
 	import GameObject.Player.Player2;
+	import org.flixel.FlxState;
 	import Scene.Library;
 	/**
 	 * ...
@@ -12,7 +13,8 @@ package
 	 */
 	public class Global 
 	{
-		static public var currentState:Playstate;
+		static public var currentState:State;
+		static public var currentPlaystate:Playstate;
 		static public var library;
 		static public var player1:GameObject.Player.Player1 = null;
 		static public var player2:GameObject.Player.Player2 = null;		

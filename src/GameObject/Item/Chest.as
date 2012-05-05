@@ -100,7 +100,7 @@ package GameObject.Item
 		}
 		
 		override public function addToStage():void {
-			Global.currentState.depthBuffer.addObjects(this);
+			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_objectGroup);
 		}
 		
 		override public function removeFromStage():void {
@@ -108,7 +108,7 @@ package GameObject.Item
 				Global.library.deleteBitmap(m_item.m_url);
 				Global.library.deleteBitmap(m_item.m_iconImage);
 			}
-			Global.currentState.depthBuffer.removeObject(this);
+			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_objectGroup);
 		}
 		
 	}

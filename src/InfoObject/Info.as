@@ -16,11 +16,11 @@ package InfoObject
 		}
 		
 		public function addToStage():void {
-			Global.currentState.depthBuffer.addMenu(this);
+			Global.currentState.depthBuffer.addElement(this, DepthBuffer.s_menuGroup);
 		}
 		
 		public function removeFromStage():void {
-			Global.currentState.depthBuffer.removeMenu(this);
+			Global.currentState.depthBuffer.removeElement(this, DepthBuffer.s_menuGroup);
 		}
 		
 	}

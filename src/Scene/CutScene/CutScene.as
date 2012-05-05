@@ -54,7 +54,7 @@ package Scene.CutScene
 			Global.currentState.add(this);
 			Global.player1.block();
 			Global.player2.block();
-			m_talkers = Global.currentState.m_talkersObjects;
+			m_talkers = Global.currentPlaystate.m_talkersObjects;
 			next();
 		}
 		

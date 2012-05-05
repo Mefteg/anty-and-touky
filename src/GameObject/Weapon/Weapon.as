@@ -40,11 +40,11 @@ package GameObject.Weapon
 		}
 		
 		override public function addToStage():void {
-			Global.currentState.depthBuffer.addNonPhysicalPlayer(this);
+			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_nppGroup);
 		}
 		
 		override public function removeFromStage():void {
-			Global.currentState.depthBuffer.removeNonPhysicalPlayer(this);
+			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_nppGroup);
 		}
 		
 		public function Idleize() : void {
@@ -52,11 +52,11 @@ package GameObject.Weapon
 			play("idle" + facing);
 			removeFromStage();
 		}
-		public function isAttacking():Boolean {
-			return m_state = "attack";
+		public function isAttacking() : Boolean {
+			return m_state == "attack";
 		}
-		public function isInAttackState():Boolean {
-			return m_state = "attack";
+		public function isInAttackState() : Boolean {
+			return m_state == "attack";
 		}		
 		
 	}

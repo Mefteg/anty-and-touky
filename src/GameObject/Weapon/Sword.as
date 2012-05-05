@@ -27,11 +27,11 @@ package GameObject.Weapon
 			m_enemiesHit = new Array();
 		}
 		
-		public function setAnimAttackSpeed(attack:int, attack2:int, heavy:int) {
+		public function setAnimAttackSpeed(attack:int, attack2:int, heavy:int) : void {
 			m_animAttackSpeed = attack; m_animAttack2Speed = attack2; m_animAttackHeavySpeed = heavy;
 		}
 		
-		public function setAttackFrameRange(min:int, max:int) {
+		public function setAttackFrameRange(min:int, max:int) : void {
 			m_frameHitMin = min; m_frameHitMax = max;
 		}
 				
@@ -61,7 +61,7 @@ package GameObject.Weapon
 		
 		override public function attack(direction:int):void {
 			m_FX.play();
-			m_enemies = Global.currentState.m_enemies;
+			m_enemies = Global.currentPlaystate.m_enemies;
 			m_enemiesHit = new Array();
 			m_state = "attack";
 			play("attack" + direction);

@@ -10,7 +10,7 @@ package
 	{
 		public function Main():void 
 		{
-			super(640, 480, Playstate, 1);
+			super(640, 480, Menustate, 1);
 		}
 	}
 	
