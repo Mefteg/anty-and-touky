@@ -12,6 +12,8 @@ package GameObject.Player
 	 */
 	public class Player1 extends PlayableObject
 	{
+		var m_normalSpeed:Number;
+		
 		public function Player1(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, null);
@@ -22,6 +24,8 @@ package GameObject.Player
 			m_stringValidate = "F";
 			
 			m_name = "Player1";
+			
+			m_normalSpeed = m_speed;
 		}		
 				
 		override public function load():void {
@@ -64,9 +68,20 @@ package GameObject.Player
 		}
 		
 		override public function getMoves():void {	
-			super.getMoves();
-			if (isBusy() || m_blocked)
+			if (isBusy() || m_blocked || m_onSpecial)
 				return;
+			
+			//in special state Anty can't shoot
+			if (!m_onSpecial) {
+				if (FlxG.keys.justPressed(m_stringPrevious)) {
+					triggerSpecial()
+					return;
+				}else if (FlxG.keys.justPressed(m_stringValidate) ){
+					throwIt();
+				}else if (FlxG.keys.justPressed(m_stringNext) ){
+					attack();
+				}
+			}
 			
 			//Moving
 			var yForce:int = 0;
@@ -110,20 +125,36 @@ package GameObject.Player
 			freeScrollBlocking();
 		}
 		
-		override public function special():void {
+		override public function triggerSpecial():void {
 			if (!this.collide(Global.player2) || !m_timerSpecialAvailable.finished)
 				return;
 			m_onSpecial = true;
+			m_state = "rushAttack";
+			Global.player2.m_state = "rushAttack";
 			m_timerSpecial.start(10);
+			//put the right direction
+			m_direction = m_directionFacing;
+			//...and speed
+			m_speed *= 5;
 		}
 		
 		override public function unspecial():void {
 			m_onSpecial = false;
+			m_state = "idle";
+			m_speed = m_normalSpeed;
+			Global.player2.m_state = "idle";
 			m_timerSpecialAvailable.start(5);
 		}
 		
 		override public function placeOtherPlayer():void {
-			Global.player2.place(x, y + 15);
+			Global.player2.place(x, y - 15);
+		}
+		
+		override public function rushAttack():void {
+			if (collideWithEnv())
+				unspecial();
+			else
+				move();
 		}
 		
 	}
