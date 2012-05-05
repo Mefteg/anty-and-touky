@@ -16,7 +16,7 @@ package GameObject.Tile
 		}
 		
 		override public function addToStage():void {
-			Global.currentState.depthBuffer.addForeground(this);
+			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_foregroundGroup);
 		}
 	}
 

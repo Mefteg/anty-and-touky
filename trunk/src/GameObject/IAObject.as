@@ -14,7 +14,7 @@ package GameObject
 		}
 		
 		override public function addToStage() : void {
-			Global.currentState.depthBuffer.addEnemy(this);
+			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_enemyGroup);
 		}
 	}
 

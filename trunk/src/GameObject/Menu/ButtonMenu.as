@@ -76,7 +76,7 @@ package GameObject.Menu
 		}
 		
 		override public function addElementToStage(element:FlxBasic):void {
-			Global.currentState.depthBuffer.addMenu(element);
+			Global.currentState.depthBuffer.addElement(element, DepthBuffer.s_menuGroup);
 		}
 		
 		override public function update() : void {

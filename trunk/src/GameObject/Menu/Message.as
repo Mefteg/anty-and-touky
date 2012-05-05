@@ -43,8 +43,8 @@ package GameObject.Menu
 		}
 		
 		override public function addToStage() : void {
-			Global.currentState.depthBuffer.addMenu(this);
-			Global.currentState.depthBuffer.addMenu(m_objectText);
+			Global.currentState.depthBuffer.addElement(this, DepthBuffer.s_menuGroup);
+			Global.currentState.depthBuffer.addElement(m_objectText, DepthBuffer.s_menuGroup);
 		}
 		
 		public function displayMessage(msg:String) :void {
@@ -55,8 +55,8 @@ package GameObject.Menu
 		}
 		
 		public function end():void {
-			Global.currentState.depthBuffer.removeMenu(this);
-			Global.currentState.depthBuffer.removeMenu(m_objectText);
+			Global.currentState.depthBuffer.removeElement(this, DepthBuffer.s_menuGroup);
+			Global.currentState.depthBuffer.removeElement(m_objectText, DepthBuffer.s_menuGroup);
 			m_state = "ended";
 		}
 		

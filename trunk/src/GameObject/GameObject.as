@@ -57,16 +57,16 @@ package GameObject
 		}
 		
 		public function addToStage():void {
-			Global.currentState.depthBuffer.addBackground(this);
+			Global.currentState.depthBuffer.addElement(this, DepthBuffer.s_backgroundGroup);
 		}
 		
-		public function removeFromStage():void {
-			Global.currentState.depthBuffer.removeBackground(this);
+		public function removeFromStage() : void {
+			Global.currentState.depthBuffer.removeElement(this, DepthBuffer.s_backgroundGroup);
 		}
 		
 		public function isBusy():Boolean { return false; }
 		
-		public function collide( object:GameObject) : int {	
+		public function collide( object:GameObject ) : int {	
 			if (!m_hitbox)
 				return 0;
 			var myRect:Rectangle = new Rectangle(x + m_hitbox.x, y + m_hitbox.y, m_hitbox.width, m_hitbox.height);

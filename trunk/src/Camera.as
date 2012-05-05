@@ -24,96 +24,54 @@ package
 		}
 		
 		override public function update() : void {
-			var pos_p1:FlxPoint = new FlxPoint(Global.player1.x, Global.player1.y);
-			var size_p1:FlxPoint = new FlxPoint(Global.player1.m_width, Global.player1.m_height);
-			
-			var pos_p2:FlxPoint = new FlxPoint(Global.player2.x, Global.player2.y);
-			var size_p2:FlxPoint = new FlxPoint(Global.player2.m_width, Global.player2.m_height);
-			
-			var pos_hori:FlxPoint = new FlxPoint();
-			var pos_vert:FlxPoint = new FlxPoint();
-			var size:FlxPoint = new FlxPoint();
-			
-			// get the leftmost and the rightmost
-			/*if ( pos_p1.x < pos_p2.x ) {
-				pos_hori.x = pos_p1.x;
-				pos_hori.y = pos_p2.x;
-			}
-			else {
-				pos_hori.x = pos_p2.x;
-				pos_hori.y = pos_p1.x;
-			}
-			// get the highest and the lowest
-			if ( pos_p1.y < pos_p2.y ) {
-				pos_vert.x = pos_p1.y;
-				pos_vert.y = pos_p2.y;
-			}
-			else {
-				pos_vert.x = pos_p2.y;
-				pos_vert.y = pos_p1.y;
-			}
-			
-			// si un des joueurs est en dehors du rectangle
-			//si le joueur sort par la gauche
-			if ( pos_hori.x < m_target.x - m_aabb.x * 0.5 ) {
-				m_target.x = pos_hori.x + m_aabb.x * 0.5;
-			}
-			//si le joueur sort par la droite
-			if ( pos_hori.y + size_p1.x > m_target.x + m_aabb.x * 0.5 ) {
-				m_target.x = pos_hori.y + size_p1.x - m_aabb.x * 0.5;
-			}
-			//si le joueur sort par le haut
-			if ( pos_vert.x < m_target.y - m_aabb.y * 0.5 ) {
-				m_target.y = pos_vert.x + m_aabb.y * 0.5;
-			}
-			//si le joueur sort par le bas
-			if ( pos_vert.y + size_p1.y > m_target.y + m_aabb.y * 0.5 ) {
-				m_target.y = pos_vert.y + size_p1.y - m_aabb.y * 0.5;
-			}*/
-			
-			// if player 1 is out
-			if ( !this.isIn(pos_p1, size_p1) ) {
-				// and if player 2 is in
-				if ( this.isIn(pos_p2, size_p2) ) {
-					// follow player 1
-					this.followPlayer(Global.player1);
-					//MOVE CAM
+			if ( Global.player1 && Global.player2 ) {
+				var pos_p1:FlxPoint = new FlxPoint(Global.player1.x, Global.player1.y);
+				var size_p1:FlxPoint = new FlxPoint(Global.player1.m_width, Global.player1.m_height);
+				
+				var pos_p2:FlxPoint = new FlxPoint(Global.player2.x, Global.player2.y);
+				var size_p2:FlxPoint = new FlxPoint(Global.player2.m_width, Global.player2.m_height);
+				
+				var pos_hori:FlxPoint = new FlxPoint();
+				var pos_vert:FlxPoint = new FlxPoint();
+				var size:FlxPoint = new FlxPoint();
+				
+				// if player 1 is out
+				if ( !this.isIn(pos_p1, size_p1) ) {
+					// and if player 2 is in
+					if ( this.isIn(pos_p2, size_p2) ) {
+						// follow player 1
+						this.followPlayer(Global.player1);
+						//MOVE CAM
+					}
+					// otherwise
+					else {
+						// stop player 1 & player 2 unless they are on the same bounderie
+						stopPlayer(Global.player1);
+						stopPlayer(Global.player2);
+					}
 				}
 				// otherwise
 				else {
-					// stop player 1 & player 2 unless they are on the same bounderie
-					stopPlayer(Global.player1);
-					stopPlayer(Global.player2);
+					// if player 2 is out
+					if ( !this.isIn(pos_p2, size_p2) ) {
+						// follow player 2
+						this.followPlayer(Global.player2);
+						//MOVE CAM
+					}
+					else {
+						// NOTHING
+					}
 				}
+				
+				this.focusOn(m_target);
 			}
-			// otherwise
-			else {
-				// if player 2 is out
-				if ( !this.isIn(pos_p2, size_p2) ) {
-					// follow player 2
-					this.followPlayer(Global.player2);
-					//MOVE CAM
-				}
-				else {
-					// NOTHING
-				}
-			}
-			
-			this.focusOn(m_target);
 		}
 		
 		public function getCornerPosition() : FlxPoint {
 			return new FlxPoint(m_target.x - this.width * 0.5, m_target.y - this.height * 0.5);
 		}
 		
-		protected function followPlayer(player:PlayableObject) : void {
-			/*var halfSize:FlxPoint = Utils.mult1v(size, 0.5);
-			var center:FlxPoint = Utils.add2v(pos, halfSize);
-			
-			var direction:FlxPoint = Utils.add2v(center, Utils.mult1v(m_target, -1));
-			
-			var normal:FlxPoint = Utils.normalize(direction);*/
-			
+		protected function followPlayer(player:PlayableObject) : void {			
 			m_target = Utils.add2v(m_target, Utils.mult1v(player.m_direction, player.m_speed));
 		}
 		

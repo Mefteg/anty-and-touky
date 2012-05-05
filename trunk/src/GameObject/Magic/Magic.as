@@ -104,11 +104,11 @@ package GameObject.Magic
 				Global.library.addUniqueBitmap(m_iconImage);
 		}
 		override public function addToStage():void {
-			Global.currentState.depthBuffer.addNonPhysicalPlayer(this);
+			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_nppGroup);
 		}
 		
 		override public function removeFromStage():void {
-			Global.currentState.depthBuffer.removeNonPhysicalPlayer(this);
+			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_nppGroup);
 		}
 		
 		public function addToMenu():void {
@@ -176,7 +176,7 @@ package GameObject.Magic
 		public function CheckDamageDealt():Boolean {
 			var result:Boolean = false;
 			if(m_isPlayerCaster)
-				m_enemies = Global.currentState.m_enemies;
+				m_enemies = Global.currentPlaystate.m_enemies;
 			if (m_isPlayerCaster) {
 				//check enemies for damage
 				for (var i:int = 0; i < m_enemies.length; i++) {

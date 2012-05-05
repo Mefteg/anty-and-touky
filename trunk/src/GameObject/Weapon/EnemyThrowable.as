@@ -21,7 +21,7 @@ package GameObject.Weapon
 			m_height = 32;
 		}
 		
-		override public function setCaster(object:MovableObject) {
+		override public function setCaster(object:MovableObject) : void {
 			super.setCaster(object);
 			m_enemy = object as Enemy;
 		}

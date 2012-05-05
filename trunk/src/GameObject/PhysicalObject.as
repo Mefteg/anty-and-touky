@@ -42,7 +42,7 @@ package GameObject
 			var collide:Boolean = false;
 			
 			// if the scene has been loaded
-			if ( Global.currentState.sceneManager.isLoadComplete() ) {
+			if ( Global.currentPlaystate.sceneManager.isLoadComplete() ) {
 				var tiles:Array = new Array();
 				
 				// get the top left corner of the object
@@ -58,7 +58,7 @@ package GameObject
 				for ( var i:int = topleftToGrid.x; i <= bottomrightToGrid.x; i++ ) {
 					for ( var j:int = topleftToGrid.y; j <= bottomrightToGrid.y; j++ ) {
 						var index:uint = j * Global.nb_tiles_width + i;
-						var env:Array = Global.currentState.getCurrentScene().tiles;
+						var env:Array = Global.currentPlaystate.getCurrentScene().tiles;
 						var tile:GameObject.DrawableObject = env[index];
 						tiles.push(tile);
 						

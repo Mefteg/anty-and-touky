@@ -67,7 +67,7 @@ package GameObject.Weapon
 				super.place(X,Y);
 		}
 		
-		public function setCaster(object:MovableObject) {
+		public function setCaster(object:MovableObject) : void {
 			m_caster = object;
 		}
 		

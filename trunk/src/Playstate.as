@@ -28,34 +28,18 @@ package
 	 * ...
 	 * @author Tom
 	 */
-	public class Playstate extends FlxState 
+	public class Playstate extends State 
 	{				
-		protected var m_library:Library;
-		//used to check if the unique objects have been loaded
-		protected var m_uniquesLoaded:Boolean;
-		protected var m_state:String ;
-		
 		protected var m_sceneManager:SceneManager;
 		
 		protected var m_menu_p1:Menu;
 		protected var m_menu_p2:Menu;
 		
-		public var depthBuffer:DepthBuffer;
 		//arrays for collisions
 		public var m_physicalObjects:Vector.<PhysicalObject>;
-		public var m_collisionManager:CollisionManager;
+		public var m_collisionManager:CollisionManager;	
 		public var m_talkersObjects:Vector.<MovableObject>;
 		public var m_enemies:Vector.<Enemy>;
-		
-		public var m_camera:Camera;
-		
-		public var m_sound:FlxSound;
-		
-		var player:Player1;
-		
-		var m_loadProgression:FlxText;
-		
-		private var m_dynamicLoadingObject:DrawableObject;
 		
 		public function Playstate() 
 		{
@@ -63,7 +47,8 @@ package
 			Global.library = m_library;
 			m_uniquesLoaded = false;
 			Global.currentState = this;
-			depthBuffer = new DepthBuffer();
+			Global.currentPlaystate = this;
+			depthBuffer = new DepthBufferPlaystate();
 			add(depthBuffer);
 			//text displaying loading advancement
 			m_loadProgression = new FlxText(400, 400, 600);
@@ -117,45 +102,14 @@ package
 			//create the message bitmap
 			Global.library.addUniqueBitmap("Images/Menu/bulle.png");
 		}
-				
-		override public function update() :void{
-			super.update();
+
+		override public function update() : void {
 			m_sceneManager.update();
-			
-			if (FlxG.keys.justPressed("A")) {
-				trace(Global.player1.y,Global.player2.y);
-			}
-			
-			switch(m_state) {
-				//load images
-				case "Loading":
-					this.loading();
-					break;
-				case "LoadingNewBitmap" : 
-										Global.library.loadAll();
-										 if (Global.library.loadComplete()) {
-											m_dynamicLoadingObject.load();
-											Global.library.cacheObjects();
-											if (m_dynamicLoadingObject.m_typeName == "Magic"){
-												var magic:Magic = m_dynamicLoadingObject as Magic;
-												magic.addToMenu();
-											}else if (m_dynamicLoadingObject.m_typeName == "Item") {
-												var item:Item = m_dynamicLoadingObject as Item;
-												item.addToMenu();
-											}
-											m_dynamicLoadingObject = null;
-											m_state = "Loaded";
-										 }
-										break;
-				default : break;
-			}
-			
+			super.update();
 		}
 		
-		protected function loading() : void {
-			//display loading advancement
-			m_loadProgression.text = m_library.getAdvancement().toString();
-			m_loadProgression.text += "\n" + m_library.getCurrentLoaded();
+		override protected function loading() : void {
+			super.loading();
 			//if the scene manager has finished the loading
 			if (m_sceneManager.isLoadComplete()) {
 				//stop displaying advancement
@@ -174,6 +128,23 @@ package
 				//m_menu_p2.load();
 				Global.player1.getEnemiesInScene();
 				Global.player2.getEnemiesInScene();
+			}
+		}
+		
+		override protected function loadingNewBitmap() : void  {
+			Global.library.loadAll();
+			if (Global.library.loadComplete()) {
+				m_dynamicLoadingObject.load();
+				Global.library.cacheObjects();
+				if (m_dynamicLoadingObject.m_typeName == "Magic"){
+					var magic:Magic = m_dynamicLoadingObject as Magic;
+					magic.addToMenu();
+				}else if (m_dynamicLoadingObject.m_typeName == "Item") {
+					var item:Item = m_dynamicLoadingObject as Item;
+					item.addToMenu();
+				}
+				m_dynamicLoadingObject = null;
+				m_state = "Loaded";
 			}
 		}
 		

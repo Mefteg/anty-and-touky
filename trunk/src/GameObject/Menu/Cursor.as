@@ -33,8 +33,8 @@ package GameObject.Menu
 			this.placeCursor();
 		}
 		
-		override public function addToStage():void {
-			Global.currentState.depthBuffer.addCursor(this);
+		override public function addToStage() : void {
+			Global.currentState.depthBuffer.addElement(this, DepthBuffer.s_cursorGroup);
 		}
 		
 		protected function catchEvent() : void {
