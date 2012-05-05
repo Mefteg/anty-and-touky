@@ -23,6 +23,9 @@ package GameObject.Menu
 			}
 		}
 		
+		public function addIcon() : void {
+			
+		}
 	}
 
 }

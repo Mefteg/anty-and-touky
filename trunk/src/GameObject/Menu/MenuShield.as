@@ -18,19 +18,13 @@ package GameObject.Menu
 		}
 		
 		override protected function create() : void {
-			var obj:GameObject;
-			// adding of the heart icon
-			obj = new Icon(this.x, this.y);
-			obj.m_url = "Images/Menu/icon_shield_basic.png";
-			obj.m_width = 12;
-			obj.m_height = 14;
-			obj.m_parent = this;
-			obj.m_shift = new FlxPoint(0, 8);
-			Global.library.addUniqueBitmap(obj.m_url);
-			this.add(obj);
-			
-			// adding of the heart icon
-			obj = new Icon(this.x, this.y);
+			this.addIcon();
+			this.addIcon();
+		}
+		
+		override public function addIcon() : void {
+			super.addIcon();
+			var obj:GameObject = new Icon(this.x, this.y);
 			obj.m_url = "Images/Menu/icon_shield_basic.png";
 			obj.m_width = 12;
 			obj.m_height = 14;
@@ -38,6 +32,8 @@ package GameObject.Menu
 			obj.m_shift = new FlxPoint(12, 8);
 			Global.library.addUniqueBitmap(obj.m_url);
 			this.add(obj);
+			
+			obj.m_shift.x = (m_objects.length - 1) * obj.m_width;
 		}
 		
 	}
