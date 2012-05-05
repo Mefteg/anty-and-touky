@@ -70,19 +70,25 @@ package GameObject.Player
 		}
 		
 		override public function getMoves():void {
-			super.getMoves();
 			
-			if (isBusy() || m_blocked)
+			if (isBusy() || m_blocked || m_state == "rushAttack")
 				return;
-				
-			//defense
-			if (FlxG.keys.justPressed("LEFT") && FlxG.keys.justPressed("RIGHT")){
-				m_state = "defense";
-				play(m_state + facing);
-				m_timerDefense.start(1);
-				return;
+			
+			if (FlxG.keys.justPressed(m_stringPrevious)) {
+				if(!m_onSpecial)
+					triggerSpecial()
+				else
+					unspecial();
 			}
-			
+			//on special/AntySpecial state Touky can't shoot
+			if (!m_onSpecial && m_state != "rushAttack"){
+				if (FlxG.keys.justPressed(m_stringValidate) ){
+					throwIt();
+				}else if (FlxG.keys.justPressed(m_stringNext) ){
+					attack();
+				}
+			}
+							
 			//moving
 			var yForce:int = 0;
 			var xForce:int = 0;
@@ -123,6 +129,22 @@ package GameObject.Player
 			play(m_state + facing);
 			
 			freeScrollBlocking();
+		}
+		
+		override public function triggerSpecial():void {
+			if (!this.collide(Global.player1) || !m_timerSpecialAvailable.finished)
+				return;
+			m_onSpecial = true;
+			m_timerSpecial.start(10);
+		}
+		
+		override public function unspecial():void {
+			m_onSpecial = false;
+			m_timerSpecialAvailable.start(5);
+		}
+		
+		override public function placeOtherPlayer():void {
+			Global.player2.place(x, y + 15);
 		}
 		
 	}

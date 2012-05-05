@@ -56,8 +56,7 @@ package GameObject
 		
 		public var m_enemies:Vector.<GameObject.Enemy.Enemy>;
 		
-		protected var m_onSpecial:Boolean = false;
-		
+		protected var m_onSpecial:Boolean = false;		
 		
 		public function PlayableObject(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
@@ -151,6 +150,10 @@ package GameObject
 			return (m_state == "attack") || (m_state == "attack2") || (m_state == "waitForAttack2");
 		}
 		
+		public function isRushing():Boolean {
+			return m_state == "rushAttack";
+		}
+		
 		public function attack():void {
 			if (isBusy() && !m_state=="waitForAttack2")
 				return;
@@ -178,7 +181,7 @@ package GameObject
 			play("throw" + facing, true);
 		}
 		
-		public function special():void {
+		public function triggerSpecial():void {
 			
 		}
 		
@@ -234,35 +237,41 @@ package GameObject
 								}
 								break;
 				case "item": if (finished) m_state = "idle"; break;
+				case "rushAttack" : rushAttack(); break;
 				default : break;
 			}
 			//to move the player
 			getMoves();
 		}
 		
-		public function getMoves():void {
-			if (FlxG.keys.justPressed(m_stringPrevious)) {
-				if(!m_onSpecial)
-					special()
-				else
-					unspecial();
-			}
-			if (!m_onSpecial){
-				if (FlxG.keys.justPressed(m_stringValidate) ){
-					throwIt();
-				}else if (FlxG.keys.justPressed(m_stringNext) ){
-					attack();
-				}
-			}
-		}
+		public function rushAttack():void { }
+		
+		public function getMoves():void { }
+		
 		override public function move():void {
 			if (isBusy() || isAttacking())
 				return;
-			super.move();
+			//it's useless to detect a collision if an object is not moving at all
+			if (m_canGoThrough || (m_direction.x == 0 && m_direction.y == 0))
+				return;
+			
+			//move 
+			m_oldPos.x = x; m_oldPos.y = y;
+			this.x = this.x + (m_direction.x * m_speed);
+			this.y = this.y + (m_direction.y * m_speed);
+			
+			// if the new position involves an environment collision
+			if ( this.collideWithEnv() ) {
+				if (m_state == "rushAttack")
+					Global.player1.unspecial();
+				this.x = m_oldPos.x;
+				this.y = m_oldPos.y;
+				
+			}
 		}
 		
 		public function takeDamage(enemy:GameObject.Enemy.Enemy, weapon:Weapon = null):void {
-			if (!m_timerTwinkle.finished)
+			if (!m_timerTwinkle.finished || isRushing())
 				return;
 			//start timer during when the enemy is hit
 			changeTwinkleColor(_twinkleHit);
