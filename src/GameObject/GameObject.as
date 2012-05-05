@@ -67,7 +67,7 @@ package GameObject
 		public function isBusy():Boolean { return false; }
 		
 		public function collide( object:GameObject ) : int {	
-			if (!m_hitbox)
+			if (!m_hitbox || !object.m_hitbox)
 				return 0;
 			var myRect:Rectangle = new Rectangle(x + m_hitbox.x, y + m_hitbox.y, m_hitbox.width, m_hitbox.height);
 			var otherRect:Rectangle = new Rectangle(object.x + object.m_hitbox.x, object.y + object.m_hitbox.y, object.m_hitbox.width, object.m_hitbox.height);
