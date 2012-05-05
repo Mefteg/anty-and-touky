@@ -63,16 +63,12 @@ package GameObject.Menu
 			this.x = pos_cam.x + m_shift.x;
 			this.y = pos_cam.y + m_shift.y;
 			
-			var shiftX:int = m_menuHeart.m_shift.x + (m_menuHeart.m_objects.length + 1) * 9;
+			var shiftX:int = m_menuHeart.m_shift.x + (m_menuHeart.m_objects.length) * 9;
 			var shiftY:int = m_menuHeart.m_shift.y;
 			m_menuShield.m_shift = new FlxPoint(shiftX, shiftY);
-			
-			if ( FlxG.keys.justPressed("N") ) {
-				this.takeDamage();
-			}
 		}
 		
-		public function takeDamage() {
+		public function takeDamage() : void {
 			if ( m_menuShield.m_objects.length > 0 ) {
 				m_menuShield.remove(m_menuShield.getLast());
 			}
@@ -81,6 +77,14 @@ package GameObject.Menu
 					m_menuHeart.remove(m_menuHeart.getLast());
 				}
 			}
+		}
+		
+		public function addHeart() : void {
+			m_menuHeart.addIcon();
+		}
+		
+		public function addShield() : void {
+			m_menuShield.addIcon();
 		}
 	}
 
