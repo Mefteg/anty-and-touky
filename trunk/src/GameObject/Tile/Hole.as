@@ -1,0 +1,32 @@
+package GameObject.Tile 
+{
+	import GameObject.PhysicalObject;
+	import GameObject.PhysicalTile;
+	import org.flixel.FlxPoint;
+	
+	/**
+	 * ...
+	 * @author ...
+	 */
+	public class Hole extends PhysicalTile 
+	{
+		static public var s_type:String = "Hole";
+		
+		public function Hole(X:Number=0, Y:Number=0, mapName:String=null, index:uint=0, SimpleGraphic:Class=null) 
+		{
+			super(X, Y, mapName, index, SimpleGraphic);
+			
+		}
+		
+		override public function action(object:PhysicalObject) : void {
+			object.m_canGoThrough = false;
+			var center:FlxPoint = object.getCenter();
+			if ( center.x > this.x && center.x < (this.x + m_width) ) {
+				if ( center.y > this.y && center.y < (this.y + m_height) ) {
+					object.respawn();
+				}
+			}
+		}
+	}
+
+}

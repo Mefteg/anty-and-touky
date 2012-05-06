@@ -14,6 +14,7 @@ package GameObject
 	import GameObject.Player.Player1;
 	import GameObject.Player.Player2;
 	import GameObject.Tile.Foreground;
+	import GameObject.Tile.Hole;
 	import GameObject.Trigger.TriggerCutScene;
 	import GameObject.Trigger.TriggerWarp;
 	import GameObject.Tile.Grass;
@@ -54,6 +55,7 @@ package GameObject
 			switch(type) {
 				case Grass.s_type:  return new GameObject.Tile.Grass(pos.x, pos.y, mapName, tileId); break;
 				case Rock.s_type:  return new GameObject.Tile.Rock(pos.x, pos.y, mapName, tileId); break;
+				case Hole.s_type:  return new Hole(pos.x, pos.y, mapName, tileId); break;
 				case PhysicalTile.s_type:  return new GameObject.PhysicalTile(pos.x, pos.y, mapName, tileId); break;
 				case Foreground.s_type:  return new GameObject.Tile.Foreground(pos.x, pos.y, mapName, tileId); break;
 				default:  return new GameObject.TileObject(pos.x, pos.y, mapName, tileId); break;

@@ -1,5 +1,6 @@
 package GameObject.Tile 
 {
+	import GameObject.PhysicalObject;
 	import GameObject.PhysicalTile;
 	
 	/**
@@ -15,6 +16,9 @@ package GameObject.Tile
 			super(X, Y, mapName, index, SimpleGraphic);
 		}
 		
+		override public function action(object:PhysicalObject) : void {
+			
+		}
 	}
 
 }

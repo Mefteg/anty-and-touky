@@ -188,6 +188,7 @@ package GameObject
 		public function unspecial():void {
 			
 		}
+		
 		public function magicAttack(i:int):void {
 			if (i >= m_magics.length || isBusy())
 				return;
@@ -249,19 +250,21 @@ package GameObject
 		public function getMoves():void { }
 		
 		override public function move():void {
+			m_canGoThrough = true;
 			if (isBusy() || isAttacking())
 				return;
 			//it's useless to detect a collision if an object is not moving at all
-			if (m_canGoThrough || (m_direction.x == 0 && m_direction.y == 0))
-				return;
+			/*if (m_canGoThrough || (m_direction.x == 0 && m_direction.y == 0))
+				return;*/
 			
 			//move 
 			m_oldPos.x = x; m_oldPos.y = y;
 			this.x = this.x + (m_direction.x * m_speed);
 			this.y = this.y + (m_direction.y * m_speed);
 			
+			this.collideWithEnv();
 			// if the new position involves an environment collision
-			if ( this.collideWithEnv() ) {
+			if ( !m_canGoThrough ) {
 				if (m_state == "rushAttack")
 					Global.player1.unspecial();
 				this.x = m_oldPos.x;
@@ -305,6 +308,12 @@ package GameObject
 			magic.addBitmap();
 			magic.setCasterPlayer(this);
 			Global.currentPlaystate.loadNewBitmaps(magic);
+		}
+		
+		override public function respawn() : void {
+			super.respawn();
+			this.m_oldPos.x = 50;
+			this.m_oldPos.y = 50;
 		}
 		
 		/**

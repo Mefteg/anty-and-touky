@@ -84,11 +84,14 @@ package GameObject
 			}
 		}
 		
-		public function beginTwinkle(nbTwinkles:int,time:Number) {
+		public function beginTwinkle(nbTwinkles:int,time:Number) : void {
 			_twinkleStep = 0.8 / nbTwinkles;
 			m_timerTwinkle.start(time);
 			_twinkleOn = false;
 			_twinkleCount = 0;
+		}
+		
+		public function respawn() : void {
 		}
 	}
 

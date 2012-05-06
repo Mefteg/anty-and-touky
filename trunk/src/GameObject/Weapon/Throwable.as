@@ -86,7 +86,8 @@ package GameObject.Weapon
 			m_direction = Utils.normalize(m_direction);
 		}
 		
-		override public function update():void {
+		override public function update() : void {
+			m_canGoThrough = true;
 			//if attack is on
 			if (m_state == "attack")
 				//and object not on screen anymore
@@ -101,8 +102,11 @@ package GameObject.Weapon
 			m_oldPos.x = x; m_oldPos.y = y;
 			this.x = this.x + (m_direction.x * m_speed);
 			this.y = this.y + (m_direction.y * m_speed);
+			
+			collideWithEnv();
+			
 			// if the new position involves an environment collision
-			if ( collideWithEnv() ) {
+			if ( !m_canGoThrough ) {
 				touched();
 			}
 		}

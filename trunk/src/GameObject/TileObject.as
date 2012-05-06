@@ -32,6 +32,12 @@ package GameObject
 			this.addAnimation(String(m_index), [m_index]);
 			play(String(m_index));
 		}
+		
+		public function action(object:GameObject.PhysicalObject) : void {
+			if ( m_collide ) {
+				trace("BLA!");
+			}
+		}
 	}
 
 }
