@@ -18,7 +18,7 @@ package Scene
 	 */
 	public class Scene 
 	{
-		var m_filename:String;
+		private var m_filename:String;
 		//GameObjects of the scene
 		protected var m_elements:Vector.<GameObject>;
 		protected var m_tiles:Array;
@@ -59,7 +59,7 @@ package Scene
 		}
 		
 		//the json is totally loaded
-		function onload(evt:Event):void
+		private function onload(evt:Event):void
 		{	
 			myData = JSON.decode(myLoader.data);
 
@@ -175,8 +175,8 @@ package Scene
 					// if there is no type and a tile exists
 					if ( cpt == 0 && data[i * width + j] > 0 ) {
 						//create the tile with no type
-						var tile:GameObject.DrawableObject = Converter.convertJsonTile("", pos, m_mapName, tileId);
-						m_tiles.push(tile); // ECRIT PAR DESSUS DU COUP !! :-/
+						var tile2:GameObject.DrawableObject = Converter.convertJsonTile("", pos, m_mapName, tileId);
+						m_tiles.push(tile2); // ECRIT PAR DESSUS DU COUP !! :-/
 					}
 				}
 			}
@@ -185,15 +185,15 @@ package Scene
 		//load all the graphics of the objects
 		public function loadGraphics() : void {
 			//load Map
-			for (var i:int = 0; i < m_tiles.length; i++ ) {
+			for ( var i:int= 0; i < m_tiles.length; i++ ) {
 				m_tiles[i].load();
 				m_tiles[i].addToStage();
 			}
 			//load objects
-			for (var i:int = 0; i < m_elements.length; i++ ) {
+			for ( var j:int = 0; j < m_elements.length; j++ ) {
 				//if the objects is drawable
-				m_elements[i].load();
-				m_elements[i].addToStage();
+				m_elements[j].load();
+				m_elements[j].addToStage();
 			}
 		}
 		

@@ -41,7 +41,7 @@ package GameObject
 				setHitbox(0, 0, m_width, m_height);
 		}
 		
-		public function changeTwinkleColor(Color:uint) {
+		public function changeTwinkleColor(Color:uint) : void {
 			_twinkleColor = Color;
 		}
 		public function unFlashColor():void

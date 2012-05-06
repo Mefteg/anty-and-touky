@@ -8,10 +8,10 @@ package Scene.CutScene
 	 */
 	public class CutSceneMessageObject extends CutSceneObject
 	{
-		var m_object:GameObject;
-		var m_messageObject:Message;
-		var m_messageText:String;
-		var m_active:Boolean = false;
+		private var m_object:GameObject;
+		private var m_messageObject:Message;
+		private var m_messageText:String;
+		private var m_active:Boolean = false;
 		
 		public function CutSceneMessageObject(object:GameObject,messageObject:Message, messageText:String) 
 		{

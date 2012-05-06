@@ -95,7 +95,7 @@ package GameObject.Player
 			//moving
 			var yForce:int = 0;
 			var xForce:int = 0;
-			var pressedDirection = false;
+			var pressedDirection:Boolean = false;
 			
 			if (FlxG.keys.UP && !m_scrollBlockUp) { 
 				pressedDirection = true;
