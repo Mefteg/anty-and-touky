@@ -8,6 +8,7 @@ package GameObject.Tile
 	 */
 	public class Foreground extends TileObject 
 	{
+		static public var s_type:String = "Foreground";
 		
 		public function Foreground(X:Number=0, Y:Number=0, mapName:String=null, index:uint=0, SimpleGraphic:Class=null) 
 		{

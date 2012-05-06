@@ -26,10 +26,8 @@ package
 		static public var nb_tiles_height:int;
 		static public var tile_width:int = 32;
 		static public var tile_height:int = 32;
-		static public var buttonMenuMagicPlayer1:ButtonMenuMagic;
-		static public var buttonMenuMagicPlayer2:ButtonMenuMagic;
-		static public var buttonMenuItemPlayer1:ButtonMenuItem;
-		static public var buttonMenuItemPlayer2:ButtonMenuItem;
+		static public var menuPlayer1:GameObject.Menu.Menu;
+		static public var menuPlayer2:GameObject.Menu.Menu;
 		static public var cursorPlayer1:GameObject.Menu.Cursor;
 		static public var cursorPlayer2:GameObject.Menu.Cursor;
 		static public var GLOBAL_ID = 0;

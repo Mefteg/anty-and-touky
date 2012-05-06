@@ -8,6 +8,7 @@ package GameObject.Tile
 	 */
 	public class Rock extends PhysicalTile
 	{
+		static public var s_type:String = "Rock";
 		
 		public function Rock(X:Number=0, Y:Number=0, mapName:String = null, index:uint=0, SimpleGraphic:Class=null) 
 		{

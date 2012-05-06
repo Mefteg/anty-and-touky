@@ -52,10 +52,10 @@ package GameObject
 		
 		static public function convertJsonTile(type:String, pos:FlxPoint, mapName:String, tileId:uint) : GameObject.DrawableObject{
 			switch(type) {
-				case "Grass":  return new GameObject.Tile.Grass(pos.x, pos.y, mapName, tileId); break;
-				case "Rock":  return new GameObject.Tile.Rock(pos.x, pos.y, mapName, tileId); break;
-				case "PhysicalTile":  return new GameObject.PhysicalTile(pos.x, pos.y, mapName, tileId); break;
-				case "Foreground":  return new GameObject.Tile.Foreground(pos.x, pos.y, mapName, tileId); break;
+				case Grass.s_type:  return new GameObject.Tile.Grass(pos.x, pos.y, mapName, tileId); break;
+				case Rock.s_type:  return new GameObject.Tile.Rock(pos.x, pos.y, mapName, tileId); break;
+				case PhysicalTile.s_type:  return new GameObject.PhysicalTile(pos.x, pos.y, mapName, tileId); break;
+				case Foreground.s_type:  return new GameObject.Tile.Foreground(pos.x, pos.y, mapName, tileId); break;
 				default:  return new GameObject.TileObject(pos.x, pos.y, mapName, tileId); break;
 			}
 			return null;

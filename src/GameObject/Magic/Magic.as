@@ -111,14 +111,6 @@ package GameObject.Magic
 			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_nppGroup);
 		}
 		
-		public function addToMenu():void {
-			if (!m_isPlayerCaster)
-				return;
-			if (m_caster.toString() == "Player1")
-				Global.buttonMenuMagicPlayer1.addMagic(m_player.m_magics.length - 1);
-			else
-				Global.buttonMenuMagicPlayer2.addMagic(m_player.m_magics.length - 1);
-		}
 		public function attack():void {
 			if (m_state != "idle")
 				return;

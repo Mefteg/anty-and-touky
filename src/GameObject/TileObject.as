@@ -6,7 +6,10 @@ package GameObject
 	 */
 	public class TileObject extends DrawableObject 
 	{
+		static public var s_type:String = "TileObject";
+		
 		protected var m_index:uint;
+		
 		public function TileObject(X:Number=0, Y:Number=0, mapName:String=null, index:uint=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, SimpleGraphic);

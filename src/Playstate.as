@@ -84,7 +84,7 @@ package
 			
 			m_menu_p1 = new Menu(Global.player1);
 			m_menu_p1.addToStage();
-			
+			Global.menuPlayer1 = m_menu_p1;
 
 			//creating player2
 			Global.player2 = new Player2(100, 110);
@@ -94,6 +94,8 @@ package
 			m_menu_p2 = new Menu(Global.player2);
 			m_menu_p2.m_shift = new FlxPoint(640 - m_menu_p2.m_width, 0);
 			m_menu_p2.addToStage();
+			Global.menuPlayer2 = m_menu_p2;
+			
 			
 			//create the camera
 			m_camera = new Camera(0, 0, 640, 480);
@@ -138,10 +140,8 @@ package
 				Global.library.cacheObjects();
 				if (m_dynamicLoadingObject.m_typeName == "Magic"){
 					var magic:Magic = m_dynamicLoadingObject as Magic;
-					magic.addToMenu();
 				}else if (m_dynamicLoadingObject.m_typeName == "Item") {
 					var item:Item = m_dynamicLoadingObject as Item;
-					item.addToMenu();
 				}
 				m_dynamicLoadingObject = null;
 				m_state = "Loaded";

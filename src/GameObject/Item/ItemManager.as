@@ -50,14 +50,11 @@ package GameObject.Item
 				
 			m_usableItem.push(m_items[name]);
 			
-			updateItemMenu();
-			
 			return true;
 		}
 		
 		public function removeUsableItem(name:String) : Boolean {
 			m_usableItem.splice(m_usableItem.indexOf(m_items[name]), 1);
-			updateItemMenu();
 			return true;
 		}
 		
@@ -73,18 +70,7 @@ package GameObject.Item
 		public function useItem(name:String):void {
 			if(m_items[name])
 				m_items[name].useIt();
-		}
-		
-		public function updateItemMenu():void {
-			if ( m_player.toString() == "Player1" ) {
-				Global.buttonMenuItemPlayer1.updateItems();
-			}
-			else {
-				Global.buttonMenuItemPlayer2.updateItems();
-				
-			}
-		}
-		
+		}		
 	}
 
 }
