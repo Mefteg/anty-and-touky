@@ -17,7 +17,7 @@ package GameObject.Enemy
 		
 		public var m_boss:MonkeyTest;
 		
-		private var m_hostileZone = 100;
+		private var m_hostileZone:Number = 100;
 		
 		public function MonkeyTest(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
@@ -45,7 +45,7 @@ package GameObject.Enemy
 		override public function update() : void {
 			twinkle();
 			var action:Function = m_fsm[m_state];
-			if ( action ) {
+			if ( action != null ) {
 				action();
 			}
 			else {

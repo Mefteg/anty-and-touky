@@ -15,16 +15,17 @@ package Scene.CutScene
 	public class CutScene extends FlxBasic
 	{
 		public var m_xml:XML;
-		var m_state:String;
-		var m_currentActionGroup:int;
-		var m_nbActionGroup:int;
-		var m_currentActors:Vector.<CutSceneObject>;	
-		var m_currentMessage:Message;
 		
-		var m_currentActor:int;
-		var m_allFinished:Boolean;
+		private var m_state:String;
+		private var m_currentActionGroup:int;
+		private var m_nbActionGroup:int;
+		private var m_currentActors:Vector.<CutSceneObject>;	
+		private var m_currentMessage:Message;
 		
-		var m_talkers:Vector.<MovableObject>;
+		private var m_currentActor:int;
+		private var m_allFinished:Boolean;
+		
+		private var m_talkers:Vector.<MovableObject>;
 		
 		public function CutScene(scriptUrl:String="") 
 		{
@@ -90,7 +91,7 @@ package Scene.CutScene
 					
 		}
 		
-		private function createMover(actionXML:XML) {
+		private function createMover(actionXML:XML) : void {
 			var executor:MovableObject
 			switch(actionXML.@executor.toString()) {
 				case "Player1" : executor = Global.player1; break;
@@ -103,7 +104,7 @@ package Scene.CutScene
 			//trace(executor.m_typeName,tx,ty)
 		}
 		
-		private function createTalker(actionXML:XML) {
+		private function createTalker(actionXML:XML) : void {
 			var executor:MovableObject
 			switch(actionXML.@executor.toString()) {
 				case "Player1" : executor = Global.player1; break;

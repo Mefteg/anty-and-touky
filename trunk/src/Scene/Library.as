@@ -144,8 +144,8 @@ package Scene
 				m_libNames.length = 0;
 			}
 			if(m_libUniNames.length > 0){
-				for ( var i:int = 0; i < m_libUniNames.length; i++ ) {
-					FlxG.addBitmapFromObject(m_libraryUnique[m_libUniNames[i]]);
+				for ( var j:int = 0; j < m_libUniNames.length; j++ ) {
+					FlxG.addBitmapFromObject(m_libraryUnique[m_libUniNames[j]]);
 				}
 				m_libUniNames.length = 0;
 			}

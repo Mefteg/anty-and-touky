@@ -22,12 +22,12 @@ package GameObject.Magic
 			}
 		}
 		
-		public function addStat(element:String) {
+		public function addStat(element:String) : void {
 			m_elementsStats[element] = true;
 			m_nbDefenses++;
 		}
 		
-		public function deleteStat(element:String) {
+		public function deleteStat(element:String) : void {
 			if (m_elementsStats[element]) {
 				m_elementsStats = null;
 				delete m_elementsStats[element];

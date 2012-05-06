@@ -65,7 +65,7 @@ package GameObject.Magic
 			m_elemental.setStats(rest);
 		}
 		
-		public function setTimes(castingTime:Number,hitTime:Number, actionTime:Number) {
+		public function setTimes(castingTime:Number,hitTime:Number, actionTime:Number) : void {
 			m_castingTime = castingTime; m_timeHit = hitTime; m_timeAction = actionTime;
 			if (actionTime == 0)
 				m_timeAction = 0.00001;
@@ -132,7 +132,7 @@ package GameObject.Magic
 		public function setAnimationAttack(...rest):void {
 			addAnimation("attack", rest, 8, true);
 		}
-		public function setFXAction(url:String, loop:Boolean = false ) {
+		public function setFXAction(url:String, loop:Boolean = false ) : void {
 			m_FXurl = url;
 			m_FXloop = loop;
 		}

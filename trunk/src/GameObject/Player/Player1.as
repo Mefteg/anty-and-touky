@@ -12,7 +12,7 @@ package GameObject.Player
 	 */
 	public class Player1 extends PlayableObject
 	{
-		var m_normalSpeed:Number;
+		private var m_normalSpeed:Number;
 		
 		public function Player1(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
@@ -92,7 +92,7 @@ package GameObject.Player
 			//Moving
 			var yForce:int = 0;
 			var xForce:int = 0;
-			var pressedDirection = false;
+			var pressedDirection:Boolean = false;
 						
 			if (FlxG.keys.Z && !m_scrollBlockUp) { 
 				pressedDirection = true;

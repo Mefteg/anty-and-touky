@@ -64,7 +64,7 @@ package Scene
 			}
 		}
 		
-		private function processCollisions(superior:PhysicalObject, inferior:PhysicalObject) {
+		private function processCollisions(superior:PhysicalObject, inferior:PhysicalObject) : void {
 			//if no force from the pusher, do nothing
 			if (superior.m_direction.x == 0 && superior.m_direction.y==0) {
 				repulseBoth();
