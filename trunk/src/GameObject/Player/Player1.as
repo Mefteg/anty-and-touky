@@ -158,7 +158,7 @@ package GameObject.Player
 		}
 		
 		override public function rushAttack():void {
-			if (collideWithEnv())
+			if (interactWithEnv())
 				unspecial();
 			else
 				move();
