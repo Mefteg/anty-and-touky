@@ -70,7 +70,10 @@ package GameObject.Player
 		}
 		
 		override public function getMoves():void {
-			
+			//check second attack
+			if (FlxG.keys.justPressed(m_stringNext) && m_state == "waitForAttack2" )
+				attack();
+				
 			if (isBusy() || m_blocked || m_state == "rushAttack")
 				return;
 			
@@ -144,9 +147,18 @@ package GameObject.Player
 		}
 		
 		override public function placeOtherPlayer():void {
-			Global.player2.place(x, y + 15);
+			Global.player1.place(x, y + 15);
 		}
 		
+		override public function takeDamage():void {
+			super.takeDamage();
+			
+			//FOR SPECIAL MOVES
+			if (m_onSpecial) {
+				Global.player1.takeDamage();
+			}
+			Global.menuPlayer2.takeDamage();
+		}
 	}
 
 }

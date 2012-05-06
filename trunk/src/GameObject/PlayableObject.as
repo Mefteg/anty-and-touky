@@ -35,7 +35,7 @@ package GameObject
 		
 		public var m_timerDefense:FlxTimer;
 		public var m_timerMagicCast:FlxTimer;
-		private var m_timerAttack2:FlxTimer;
+		public var m_timerAttack2:FlxTimer;
 		
 		public var m_timerSpecial:FlxTimer;
 		protected var m_timerSpecialAvailable:FlxTimer;
@@ -270,30 +270,12 @@ package GameObject
 			}
 		}
 		
-		public function takeDamage(enemy:GameObject.Enemy.Enemy, weapon:Weapon = null):void {
+		public function takeDamage():void {
 			if (!m_timerTwinkle.finished || isRushing())
 				return;
 			//start timer during when the enemy is hit
 			changeTwinkleColor(_twinkleHit);
-			beginTwinkle(20, 3);
-			//m_state = "hit";
-			//calculate damage
-			var damage:int;
-			if(!weapon)
-				damage = enemy.m_stats.m_attack_current - getArmor().m_defense;
-			else
-				damage = enemy.m_stats.m_attack_current + weapon.m_power - getArmor().m_defense;
-			damage = damage * Utils.random(0.95, 1.05) - m_stats.m_defense_current ;
-			//display damage
-			var info:InfoDamage = new InfoDamage(x, y, String(damage));
-			info.color = 0xFF8000;
-			info.addToStage();
-			//substract damage to hp
-			m_stats.m_hp_current -= damage;
-			//FOR SPECIAL MOVES
-			if (m_onSpecial) {
-				Global.player2.takeDamage(enemy, weapon);
-			}
+			beginTwinkle(20, 3);		
 		}
 		
 		public function takeMagicDamage(enemy:Enemy, magic:Magic):void {

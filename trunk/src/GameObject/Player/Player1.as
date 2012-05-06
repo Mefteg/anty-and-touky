@@ -68,6 +68,10 @@ package GameObject.Player
 		}
 		
 		override public function getMoves():void {	
+			//check second attack
+			if (FlxG.keys.justPressed(m_stringNext) && m_state == "waitForAttack2" )
+				attack();
+			//if busy or blocked or on special(for Anty) return
 			if (isBusy() || m_blocked || m_onSpecial)
 				return;
 			
@@ -78,8 +82,10 @@ package GameObject.Player
 					return;
 				}else if (FlxG.keys.justPressed(m_stringValidate) ){
 					throwIt();
+					return;
 				}else if (FlxG.keys.justPressed(m_stringNext) ){
 					attack();
+					return;
 				}
 			}
 			
@@ -117,8 +123,9 @@ package GameObject.Player
 					m_state = "walk";
 				move();
 			}else {
-				if(m_state != "throw")
+				if(m_state != "throw" ){
 					m_state = "idle";
+				}
 			}
 			play(m_state + facing);
 			
@@ -157,6 +164,10 @@ package GameObject.Player
 				move();
 		}
 		
+		override public function takeDamage():void {
+			super.takeDamage();
+			Global.menuPlayer1.takeDamage();
+		}
 	}
 
 }

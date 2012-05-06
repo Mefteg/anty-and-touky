@@ -105,7 +105,7 @@ package
 					this.removeTile(element);
 					break;
 				case s_objectGroup:
-					this.removeElement(element, DepthBufferPlaystate.s_objectGroup);
+					this.removeObject(element);
 					break;
 				case s_playerGroup:
 					this.removePlayer(element);
