@@ -59,11 +59,12 @@ package GameObject
 					for ( var j:int = topleftToGrid.y; j <= bottomrightToGrid.y; j++ ) {
 						var index:uint = j * Global.nb_tiles_width + i;
 						var env:Array = Global.currentPlaystate.getCurrentScene().tiles;
-						var tile:GameObject.DrawableObject = env[index];
+						var tile:GameObject.TileObject = env[index];
 						tiles.push(tile);
 						
 						// if the tile is physical
 						if ( tile.m_collide == true ) {
+							// METTRE LE TEST DU TYPE ICI OU DANS l'HERITAGE DE PLAYABLEOBJECT
 							collide = true;
 						}
 					}
