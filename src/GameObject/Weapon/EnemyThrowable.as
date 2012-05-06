@@ -30,11 +30,11 @@ package GameObject.Weapon
 			var result:Boolean = false;
 			//check players for damage
 			if (collide(Global.player1)){
-				Global.player1.takeDamage(m_enemy, this);
+				Global.player1.takeDamage();
 				result = true;
 			}
 			if (collide(Global.player2)){
-				Global.player2.takeDamage(m_enemy, this);
+				Global.player2.takeDamage();
 				result = true;
 			}
 			return result;

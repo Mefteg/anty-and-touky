@@ -60,9 +60,9 @@ package GameObject.Enemy
 				
 		public function giveDamage():void {
 			if (collide(Global.player1))
-				Global.player1.takeDamage(this);
+				Global.player1.takeDamage();
 			if (collide(Global.player2))
-				Global.player2.takeDamage(this);
+				Global.player2.takeDamage();
 		}
 	
 		
