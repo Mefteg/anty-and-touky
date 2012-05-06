@@ -14,6 +14,9 @@ package GameObject
 			m_collide = true;
 		}
 		
+		override public function action(object:GameObject.PhysicalObject) : void {
+			object.m_canGoThrough = false;
+		}
 	}
 
 }

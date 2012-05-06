@@ -19,15 +19,25 @@ package GameObject
 			super(X, Y, SimpleGraphic);
 			m_collide = true;
 		}
+		
+		override public function update() : void {
+			super.update();
+			
+			m_canGoThrough = true;
+		}
 				
 		override public function move() : void {
+			m_canGoThrough = true;
 			super.move();
+			
+			this.collideWithEnv();
+			
 			//it's useless to detect a collision if an object is not moving at all
-			if (m_canGoThrough || (m_direction.x == 0 && m_direction.y == 0))
-				return;
+			/*if (m_canGoThrough || (m_direction.x == 0 && m_direction.y == 0))
+				return;*/
 			
 			// if the new position involves an environment collision
-			if ( this.collideWithEnv() ) {
+			if ( !m_canGoThrough ) {
 				// keep the current position
 				this.x = m_oldPos.x;
 				this.y = m_oldPos.y;
@@ -62,11 +72,12 @@ package GameObject
 						var tile:GameObject.TileObject = env[index];
 						tiles.push(tile);
 						
+						tile.action(this);
 						// if the tile is physical
-						if ( tile.m_collide == true ) {
+						/*if ( tile.m_collide == true ) {
 							// METTRE LE TEST DU TYPE ICI OU DANS l'HERITAGE DE PLAYABLEOBJECT
 							collide = true;
-						}
+						}*/
 					}
 				}
 			}

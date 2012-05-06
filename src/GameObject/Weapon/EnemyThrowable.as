@@ -66,6 +66,7 @@ package GameObject.Weapon
 		}
 		
 		override public function update():void {
+			m_canGoThrough = true;
 			switch(m_state) {
 				case "idle" : return; break;
 				//if attack is on
