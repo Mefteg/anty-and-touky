@@ -30,7 +30,7 @@ package GameObject
 			m_canGoThrough = true;
 			super.move();
 			
-			this.collideWithEnv();
+			this.interactWithEnv();
 			
 			//it's useless to detect a collision if an object is not moving at all
 			/*if (m_canGoThrough || (m_direction.x == 0 && m_direction.y == 0))
@@ -48,7 +48,7 @@ package GameObject
 		 * Compute the collision with the environment
 		 * @return true if the object is colliding with the environment
 		 */
-		public function collideWithEnv() : Boolean {
+		public function interactWithEnv() : Boolean {
 			var collide:Boolean = false;
 			
 			// if the scene has been loaded
