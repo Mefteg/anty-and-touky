@@ -53,6 +53,11 @@ package GameObject.Enemy
 			m_throwables[0].addBitmap();
 		}
 		
+		override public function removeFromStage():void {
+			for (var i:int = 0; i < m_throwables.length ; i ++)
+				m_throwables[i].removeFromStage();
+		}
+		
 		override public function load():void {
 			super.load();
 			loadThrowables();

@@ -85,6 +85,7 @@ package Scene.CutScene
 				switch(act.@type.toString()) {
 					case "move" : createMover(act); break;
 					case "message": createTalker(act); break;
+					case "music" : m_currentActors.push(new CutSceneMusicObject(act.@name.toString())); break;
 					default: m_nbActionGroup--; trace("Failed : ",act.@type.toString()); break;
 				}
 			}

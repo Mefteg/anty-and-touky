@@ -49,7 +49,7 @@ package GameObject.Enemy
 				action();
 			}
 			else {
-				trace("unknown action");
+				//trace("unknown action");
 			}
 			
 			if ( FlxG.keys.justPressed("B") ) {
@@ -76,7 +76,7 @@ package GameObject.Enemy
 								// compute the distance ...
 								//nearest = s_monkeys[i];
 								s_monkeys[i].m_boss = this;
-								trace(m_name + " found a subordinate : " + s_monkeys[i].m_name);
+								//trace(m_name + " found a subordinate : " + s_monkeys[i].m_name);
 							}
 						}
 					}
