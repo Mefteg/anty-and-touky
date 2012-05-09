@@ -19,10 +19,11 @@ package Scene
 		
 		public var m_state:String;
 		
-		public var m_currentMusic:String;
+		public var m_music:FlxSound;
 		
 		public function SceneManager() 
 		{
+			m_music = new FlxSound;
 		}
 		
 		public function loadScene(sceneName:String,respawn:String=null) : void {
@@ -72,17 +73,24 @@ package Scene
 								m_currentScene.loadGraphics();//load Objects
 								m_currentScene.spawnPlayers();
 								//play music
-								if (m_currentScene.m_music && m_currentScene.m_music.name != m_currentMusic) {
-									m_currentMusic = new String(m_currentScene.m_music.name);
-									if (m_previousScene)
-										m_previousScene.m_music.stop();
-									//m_currentScene.m_music.play();
+								if (m_currentScene.m_music && m_currentScene.m_music != m_music.name) {
+									chargeMusic(m_currentScene.m_music);
 								}
 								m_state = "Loaded"; 
 								break;
 				default:break;
 			}
-			
+						
+		}
+		
+		public function chargeMusic(url:String) : void {
+			if (url == "stop") {
+				m_music.stop();
+				return;
+			}
+			m_music.loadStream("Music/" + url + ".mp3", true );
+			m_music.name = url ;
+			m_music.play();
 		}
 		
 		public function get currentScene():Scene.Scene 

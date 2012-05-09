@@ -33,7 +33,7 @@ package Scene
 		public var myData:Object;
 		private var m_tmpAlreadyTry:Boolean = false;
 		
-		public var m_music:FlxSound;
+		public var m_music:String;
 		
 		public function Scene(filename:String) 
 		{
@@ -97,9 +97,7 @@ package Scene
 				//object is an json object
 				object = objects[i];
 				if ((object.type) == "Music") {
-					m_music = new FlxSound();
-					m_music.loadStream("Music/" + object.properties.url + ".mp3", true );
-					m_music.name = object.properties.url;
+					m_music = object.properties.url;
 					continue;
 				}
 					

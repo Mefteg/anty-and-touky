@@ -7,7 +7,10 @@
 	</actiongroup>
 	
 	<actiongroup sync="1">
+		<action type="music" name="stop" />
 		<action type="message" executor="Player1" text="Drop Dead You SLime!"/>
 		<action type="message" executor="Slime1" text="Fuck !"/>
+		<action type="music" name="wrath of the coconuts" />
 	</actiongroup>
+	
 </cutscene>

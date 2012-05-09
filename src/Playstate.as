@@ -148,6 +148,10 @@ package
 			}
 		}
 		
+		public function chargeMusic(name:String) {
+			m_sceneManager.chargeMusic(name);
+		}
+		
 		public function getCurrentScene():Scene 
 		{
 			return m_sceneManager.currentScene;
