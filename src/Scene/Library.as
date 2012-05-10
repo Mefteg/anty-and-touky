@@ -35,6 +35,7 @@ package Scene
 			m_libUniNames = new Array();
 			m_loadComplete = false;
 			m_state = "Waiting";
+			m_loadAdvancement = 0;
 		}
 		
 		public function getLibrary():Object {
