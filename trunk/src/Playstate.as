@@ -30,6 +30,7 @@ package
 	 */
 	public class Playstate extends State 
 	{				
+		[Embed(source = "../bin/Images/Avatars/ladybug.png")] private var LadyBug:Class;
 		protected var m_sceneManager:SceneManager;
 		
 		protected var m_menu_p1:Menu;
@@ -40,6 +41,10 @@ package
 		public var m_collisionManager:CollisionManager;	
 		public var m_talkersObjects:Vector.<MovableObject>;
 		public var m_enemies:Vector.<Enemy>;
+		
+		private var m_ladyBug:FlxSprite;
+		private var m_rectLadyBug:FlxSprite;
+		private var m_initPosRect:Number;
 		
 		public function Playstate() 
 		{
@@ -52,15 +57,26 @@ package
 			add(depthBuffer);
 			//text displaying loading advancement
 			m_loadProgression = new FlxText(400, 400, 600);
-			add(m_loadProgression);
+			//add(m_loadProgression);
 			m_talkersObjects = new Vector.<MovableObject>;
 			m_collisionManager = new CollisionManager();
 			add(m_collisionManager);
 			m_enemies = new Vector.<Enemy>;
+			//lady Bug for loading screens
+			m_ladyBug = new FlxSprite(FlxG.width - 60 , FlxG.height - 60);
+			m_ladyBug.loadGraphic(LadyBug, false, false, 32, 32, true);
+			m_rectLadyBug = new FlxSprite(m_ladyBug.x, m_ladyBug.y);
+			m_rectLadyBug.makeGraphic(32, 32,FlxG.bgColor);
+			m_initPosRect = m_rectLadyBug.y;
+			
+			add(m_ladyBug);
+			add(m_rectLadyBug);
 		}
 		
 		public function changeScene(sceneName:String, respawn:String ) : void {
 			depthBuffer.clearBuffers();
+			add(m_ladyBug);
+			add(m_rectLadyBug);
 			m_sceneManager.loadScene(sceneName, respawn);
 			m_state = "Loading";
 			//prevent players from moving
@@ -112,11 +128,17 @@ package
 		
 		override protected function loading() : void {
 			super.loading();
+			//moving the rectangle that hides the ladybug
+			var h:int = 32 * (1 - m_library.getAdvancement() / 100) ;
+			if(h!=0)
+				m_rectLadyBug.y = m_initPosRect - ( m_rectLadyBug.height - h);
 			//if the scene manager has finished the loading
 			if (m_sceneManager.isLoadComplete()) {
 				//stop displaying advancement
 				m_loadProgression.text = "";
 				m_state = "Done";
+				remove(m_ladyBug);
+				remove(m_rectLadyBug);
 				//check uniques loading
 				if(!m_uniquesLoaded){
 					Global.player1.load();
