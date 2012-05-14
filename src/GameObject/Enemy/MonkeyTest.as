@@ -43,6 +43,7 @@ package GameObject.Enemy
 		}
 		
 		override public function update() : void {
+			checkPlayersDamage();
 			twinkle();
 			var action:Function = m_fsm[m_state];
 			if ( action != null ) {
@@ -100,6 +101,7 @@ package GameObject.Enemy
 				}
 			}
 			else {
+				play("dead");
 				m_state = "dead";
 			}
 		}
@@ -149,6 +151,8 @@ package GameObject.Enemy
 		}
 		
 		protected function dead() : void {
+			if (!finished)
+				return;
 			var newArray:Array = new Array();
 			var monkey:MonkeyTest;
 			
@@ -215,6 +219,7 @@ package GameObject.Enemy
 			addAnimation("attack" + RIGHT, [10,11,12,13,14], 3, false);
 			//hit
 			addAnimation("hit" + m_hit, [14], 1);
+			addAnimation("dead", [20, 21, 22 , 23 ], 5, false);
 			
 			play("idle" + UP);
 			

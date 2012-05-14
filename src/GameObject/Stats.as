@@ -58,6 +58,14 @@ package GameObject
 			m_magic_defense_current = 0;
 		}
 		
+		public function initHP( hp:int) {
+			m_hp_max = hp; m_hp_current = hp;
+		}
+		
+		public function initMP( mp:int) {
+			m_mp_max = mp; m_mp_current = mp;
+		}
+		
 		public static function EmptyStats():GameObject.Stats {
 			var stats:GameObject.Stats = new Stats();
 			stats.Reset();

@@ -17,6 +17,7 @@ package GameObject.Enemy
 			m_width = 24;
 			m_height = 24;
 			createThrowables();
+			m_state = "idle";
 		}
 		
 		protected function createThrowables():void {
@@ -54,6 +55,7 @@ package GameObject.Enemy
 		}
 		
 		override public function removeFromStage():void {
+			super.removeFromStage();
 			for (var i:int = 0; i < m_throwables.length ; i ++)
 				m_throwables[i].removeFromStage();
 		}
@@ -78,6 +80,7 @@ package GameObject.Enemy
 			addAnimation("attack" + RIGHT, [10,11,12,13,14], 3, false);
 			//hit
 			addAnimation("hit" + m_hit, [14], 1);
+			addAnimation("dead", [20, 21, 22 , 23 ], 5, false);
 			
 			play("idle" + UP);
 			
@@ -93,10 +96,19 @@ package GameObject.Enemy
 		
 		override public function update():void {
 			if (!onScreen()) return;
+			checkPlayersDamage();
 			twinkle();
-			if (m_timerAttack.finished) {
-				attack();
-				m_timerAttack.start(2);
+			switch(m_state) {
+				case "idle": if (m_timerAttack.finished) {
+								attack();
+								m_timerAttack.start(2);
+							} break;
+				case "attack": if (finished)
+								m_state = "idle"; 
+								break;
+				case "dead": if (finished)
+								removeFromStage();
+							break;
 			}
 		}
 		
