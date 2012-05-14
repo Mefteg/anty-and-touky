@@ -41,6 +41,7 @@ package GameObject.Enemy
 			m_state = "lookfor";
 			m_timerTwinkle.start(0.1);
 			m_stats = new Stats();
+			m_stats.initHP(4);
 			m_timerHit = new FlxTimer();
 			m_timerHit.start(0.1);
 			m_timerAttack = new FlxTimer();
@@ -79,9 +80,11 @@ package GameObject.Enemy
 			//substract damage to hp
 			m_stats.m_hp_current -= damage;
 			//check death
-			if (m_stats.m_hp_current < 0)
+			if (m_stats.m_hp_current < 0){
 				m_state = "dead";
 				m_timerDeath.start(1);
+				play("dead");
+			}
 			//for twinkling
 			changeTwinkleColor(_twinkleHit);
 			beginTwinkle(3, 0.3);
@@ -108,6 +111,7 @@ package GameObject.Enemy
 		}
 		
 		override public function update() : void {
+			checkPlayersDamage();
 			twinkle();
 			if (m_blocked) return;
 												
@@ -190,6 +194,43 @@ package GameObject.Enemy
 		
 		public function isDead():Boolean {
 			return m_state == "dead";
+		}
+		
+		protected function takeRushDamage():void {
+			//calculate damage
+			var damage:int = 5 ;
+			//display damage
+			var info:InfoDamage = new InfoDamage(x, y, String(damage));
+			info.addToStage();
+			//substract damage to hp
+			m_stats.m_hp_current -= damage;
+			//check death
+			if (m_stats.m_hp_current < 0)
+				m_state = "dead";
+				m_timerDeath.start(1);
+			//for twinkling
+			changeTwinkleColor(_twinkleHit);
+			beginTwinkle(3, 0.3);
+		}
+		
+		protected function checkPlayersDamage():void {
+			if (collide(Global.player1)) {
+				if (Global.player1.isRushing()) {
+					Global.player1.unspecial();
+					takeRushDamage();
+				}else{
+					Global.player1.takeDamage();
+				}
+			}
+			
+			if (collide(Global.player2)) {
+				if (Global.player2.isRushing()) {
+					Global.player1.unspecial();
+					takeRushDamage();
+				}else{
+					Global.player2.takeDamage();
+				}
+			}
 		}
 		
 	}
