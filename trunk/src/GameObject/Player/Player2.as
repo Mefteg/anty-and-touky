@@ -11,8 +11,10 @@ package GameObject.Player
 		public function Player2(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, null);
-			m_url = "Images/Players/hero.png";
+			m_url = "Images/Players/touky.png";
 			Global.player2 = this;
+			m_width = 48;
+			m_height = 48;
 			/*
 			m_stringValidate = "NUMPADONE";
 			m_stringNext = "NUMPADTWO";
@@ -28,18 +30,18 @@ package GameObject.Player
 		override public function load():void {
 			super.load();
 			//IDLE ANIM
-			addAnimation("idle" + UP, [49], 10, true);
-			addAnimation("idle" + RIGHT, [61], 10, true);
+			addAnimation("idle" + UP, [49], 15, true);
+			addAnimation("idle" + RIGHT, [0,1,2], 15, true);
 			addAnimation("idle" + DOWN, [73], 10, true);
-			addAnimation("idle" + LEFT, [85], 10, true);
+			addAnimation("idle" + LEFT, [5,6,7], 15, true);
 			//walk anim
-			addAnimation("walk" + UP, Utils.getArrayofNumbers(48,50), 10, true);
-			addAnimation("walk" + RIGHT, Utils.getArrayofNumbers(60, 62), 10, true);
+			addAnimation("walk" + UP, [0,1,2], 30, true);
+			addAnimation("walk" + RIGHT, [0,1,2], 30, true);
 			addAnimation("walk" + DOWN, Utils.getArrayofNumbers(72, 74), 10, true);
-			addAnimation("walk" + LEFT, Utils.getArrayofNumbers(84, 86), 10, true);	
+			addAnimation("walk" + LEFT, [5,6,7], 30, true);	
 			//attack anim
 			addAnimation("attack" + UP, Utils.getArrayofNumbers(11,0), 40, false);
-			addAnimation("attack" + RIGHT, Utils.getArrayofNumbers(23,12), 40, false);
+			addAnimation("attack" + RIGHT, [3,4], 1, false);
 			addAnimation("attack" + DOWN, Utils.getArrayofNumbers(35, 24), 40, false);
 			addAnimation("attack" + LEFT, Utils.getArrayofNumbers(47, 36), 40, false);
 			//attack anim
@@ -49,9 +51,9 @@ package GameObject.Player
 			addAnimation("attack2" + LEFT, Utils.getArrayofNumbers(36,47), 40, false);
 			//throw anim
 			addAnimation("throw" + UP, [11,0], 100, false);
-			addAnimation("throw" + RIGHT,[23, 12], 100, false);
+			addAnimation("throw" + RIGHT,[3,4], 20, false);
 			addAnimation("throw" + DOWN, [35, 24], 100, false);
-			addAnimation("throw" + LEFT, [47, 36], 100, false);
+			addAnimation("throw" + LEFT, [8, 9], 100, false);
 			//defense anim
 			addAnimation("defense" + UP, [48], 10, false);
 			addAnimation("defense" + RIGHT, [60], 10, false);
