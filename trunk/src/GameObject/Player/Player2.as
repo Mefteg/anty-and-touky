@@ -33,12 +33,12 @@ package GameObject.Player
 			addAnimation("idle" + UP, [49], 15, true);
 			addAnimation("idle" + RIGHT, [0,1,2], 15, true);
 			addAnimation("idle" + DOWN, [73], 10, true);
-			addAnimation("idle" + LEFT, [5,6,7], 15, true);
+			addAnimation("idle" + LEFT, [6,7,8], 15, true);
 			//walk anim
 			addAnimation("walk" + UP, [0,1,2], 30, true);
 			addAnimation("walk" + RIGHT, [0,1,2], 30, true);
 			addAnimation("walk" + DOWN, Utils.getArrayofNumbers(72, 74), 10, true);
-			addAnimation("walk" + LEFT, [5,6,7], 30, true);	
+			addAnimation("walk" + LEFT, [6,7,8], 30, true);	
 			//attack anim
 			addAnimation("attack" + UP, Utils.getArrayofNumbers(11,0), 40, false);
 			addAnimation("attack" + RIGHT, [3,4], 1, false);
@@ -53,22 +53,17 @@ package GameObject.Player
 			addAnimation("throw" + UP, [11,0], 100, false);
 			addAnimation("throw" + RIGHT,[3,4], 20, false);
 			addAnimation("throw" + DOWN, [35, 24], 100, false);
-			addAnimation("throw" + LEFT, [8, 9], 100, false);
+			addAnimation("throw" + LEFT, [9,10], 100, false);
 			//defense anim
-			addAnimation("defense" + UP, [48], 10, false);
-			addAnimation("defense" + RIGHT, [60], 10, false);
-			addAnimation("defense" + DOWN, [72], 10, false);
-			addAnimation("defense" + LEFT, [84], 10, false);
+			addAnimation("rush" + UP, [5], 10, false);
+			addAnimation("rush" + RIGHT, [5], 10, false);
+			addAnimation("rush" + DOWN, [72], 10, false);
+			addAnimation("rush" + LEFT, [11], 10, false);
 			//magic anim
 			addAnimation("magic" + UP, Utils.getArrayofNumbers(11,0), 10, true);
 			addAnimation("magic" + RIGHT, Utils.getArrayofNumbers(23, 12), 10, true);
 			addAnimation("magic" + DOWN, Utils.getArrayofNumbers(35, 24), 10, true);
 			addAnimation("magic" + LEFT, Utils.getArrayofNumbers(47, 36), 10, true);
-			//item anim
-			addAnimation("item" + UP, Utils.getArrayofNumbers(11,0), 10, false);
-			addAnimation("item" + RIGHT, Utils.getArrayofNumbers(23, 12), 10, false);
-			addAnimation("item" + DOWN, Utils.getArrayofNumbers(35, 24), 10, false);
-			addAnimation("item" + LEFT, Utils.getArrayofNumbers(47, 36), 10, false);
 		}
 		
 		override public function getMoves():void {
@@ -150,6 +145,12 @@ package GameObject.Player
 		
 		override public function placeOtherPlayer():void {
 			Global.player1.place(x, y + 15);
+		}
+		
+		override public function triggerRushAttack(p1facing:uint ):void { 
+			m_state = "rushAttack";
+			facing = p1facing;
+			play("rush" + facing);
 		}
 		
 		override public function takeDamage():void {
