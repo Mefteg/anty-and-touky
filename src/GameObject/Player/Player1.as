@@ -137,7 +137,8 @@ package GameObject.Player
 				return;
 			m_onSpecial = true;
 			m_state = "rushAttack";
-			Global.player2.m_state = "rushAttack";
+			//player 2
+			Global.player2.triggerRushAttack(facing);
 			m_timerSpecial.start(10);
 			//put the right direction
 			m_direction = m_directionFacing;

@@ -245,6 +245,7 @@ package GameObject
 			getMoves();
 		}
 		
+		public function triggerRushAttack(facing:uint ):void { }
 		public function rushAttack():void { }
 		
 		public function getMoves():void { }
