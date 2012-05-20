@@ -62,8 +62,8 @@ package GameObject
 		{
 			super(X, Y, SimpleGraphic);
 			m_typeName = "Player";
-			m_width = 24;
-			m_height = 32;
+			m_width = 48;
+			m_height = 48;
 			m_state = "idle";
 			_twinkleHit = 0xFFFFFF;
 			m_equipement = new GameObject.Equipement;
@@ -135,7 +135,7 @@ package GameObject
 		}
 		
 		public function isAttacking():Boolean {
-			return (m_state == "attack") || (m_state == "attack2") || (m_state == "waitForAttack2");
+			return (m_state == "attack") || (m_state == "attack2") || (m_state == "waitForAttack2") ;
 		}
 		
 		public function isRushing():Boolean {
@@ -165,6 +165,8 @@ package GameObject
 		}
 		
 		public function throwIt():void {
+			if (m_state == "throw")
+				return;
 			m_state = "throw";
 			play("throw" + facing, true);
 		}

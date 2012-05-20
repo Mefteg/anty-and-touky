@@ -54,6 +54,14 @@ package GameObject.Weapon
 			egg.setHitbox(12, 13, 9, 11);
 			return egg;
 		}
+		
+		public static function Ant():PlayerThrowable {
+			var ant:PlayerThrowable = new PlayerThrowable(1, "Images/Weapons/ant.png");
+			ant.setAnimationAttack(0);
+			//egg.setAnimationDead(8, 9, 10, 11);
+			ant.setHitbox(12, 13, 9, 11);
+			return ant;
+		}
 	}
 
 }
