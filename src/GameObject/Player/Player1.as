@@ -18,13 +18,15 @@ package GameObject.Player
 		public function Player1(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, null);
-			m_url = "Images/Players/hero.png";
+			m_url = "Images/Players/anty.png";
 			Global.player1 = this;
 			m_stringNext = "G";
 			m_stringPrevious = "H";
 			m_stringValidate = "F";
 			
 			m_name = "Player1";
+			
+			m_equipement.m_throwable = PlayerThrowable.Ant();
 			
 			m_normalSpeed = m_speed;
 		}		
@@ -36,7 +38,7 @@ package GameObject.Player
 			thr.setCaster(this);
 			m_throwables.push(thr);
 			for (var i:int = 0; i < 15; i++) {
-				thr = PlayerThrowable.Slipper();
+				thr = PlayerThrowable.Ant();
 				thr.m_enemies = m_enemies;
 				thr.setCaster(this);
 				m_throwables.push(thr);
@@ -47,14 +49,14 @@ package GameObject.Player
 			super.load();
 			//IDLE ANIM
 			addAnimation("idle" + UP, [49], 10, true);
-			addAnimation("idle" + RIGHT, [61], 10, true);
+			addAnimation("idle" + RIGHT, [5], 10, true);
 			addAnimation("idle" + DOWN, [73], 10, true);
-			addAnimation("idle" + LEFT, [85], 10, true);
+			addAnimation("idle" + LEFT, [14], 10, true);
 			//walk anim
 			addAnimation("walk" + UP, Utils.getArrayofNumbers(48,50), 10, true);
-			addAnimation("walk" + RIGHT, Utils.getArrayofNumbers(60,62), 10, true);
+			addAnimation("walk" + RIGHT, [0,1,2,1], 10, true);
 			addAnimation("walk" + DOWN, Utils.getArrayofNumbers(72, 74), 10, true);
-			addAnimation("walk" + LEFT, Utils.getArrayofNumbers(84, 86), 10, true);	
+			addAnimation("walk" + LEFT, [9,10,11,10], 10, true);	
 			//attack anim
 			addAnimation("attack" + UP, Utils.getArrayofNumbers(11,0), 40, false);
 			addAnimation("attack" + RIGHT, Utils.getArrayofNumbers(23,12), 40, false);
@@ -67,9 +69,14 @@ package GameObject.Player
 			addAnimation("attack2" + LEFT, Utils.getArrayofNumbers(36,47), 40, false);
 			//throw anim
 			addAnimation("throw" + UP, [11,0], 100, false);
-			addAnimation("throw" + RIGHT,[23, 12], 100, false);
+			addAnimation("throw" + RIGHT,[3,4], 10, false);
 			addAnimation("throw" + DOWN, [35, 24], 100, false);
-			addAnimation("throw" + LEFT, [47, 36], 100, false);
+			addAnimation("throw" + LEFT, [12,13], 100, false);
+			//rush attack
+			addAnimation("rush" + UP, [23], 40, true);
+			addAnimation("rush" + RIGHT, [6,7,8], 40, true);
+			addAnimation("rush" + DOWN, [17], 40, true);
+			addAnimation("rush" + LEFT, [15,16,17], 40, true);
 		}
 		
 		override public function getMoves():void {	
@@ -148,7 +155,8 @@ package GameObject.Player
 			//put the right direction
 			m_direction = m_directionFacing;
 			//...and speed
-			m_speed *= 5;
+			m_speed *= 4;
+			play("rush"+facing);
 		}
 		
 		override public function unspecial():void {
@@ -160,7 +168,7 @@ package GameObject.Player
 		}
 		
 		override public function placeOtherPlayer():void {
-			Global.player2.place(x, y - 15);
+			Global.player2.place(x+5, y - 15);
 		}
 		
 		override public function rushAttack():void {
