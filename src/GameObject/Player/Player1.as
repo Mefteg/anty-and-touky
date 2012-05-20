@@ -4,6 +4,7 @@ package GameObject.Player
 	import GameObject.Item.Item;
 	import GameObject.Item.ItemRestore;
 	import GameObject.PlayableObject;
+	import GameObject.Weapon.PlayerThrowable;
 	import org.flixel.FlxG;
 	import Server.URLRequestPHP;
 	/**
@@ -28,6 +29,20 @@ package GameObject.Player
 			m_normalSpeed = m_speed;
 		}		
 				
+		override public function createThrowables():void {
+			m_throwables = new Vector.<PlayerThrowable>();
+			var thr:PlayerThrowable = m_equipement.m_throwable;
+			thr.m_enemies = m_enemies;
+			thr.setCaster(this);
+			m_throwables.push(thr);
+			for (var i:int = 0; i < 15; i++) {
+				thr = PlayerThrowable.Slipper();
+				thr.m_enemies = m_enemies;
+				thr.setCaster(this);
+				m_throwables.push(thr);
+			}
+		}
+		
 		override public function load():void {
 			super.load();
 			//IDLE ANIM
@@ -55,16 +70,6 @@ package GameObject.Player
 			addAnimation("throw" + RIGHT,[23, 12], 100, false);
 			addAnimation("throw" + DOWN, [35, 24], 100, false);
 			addAnimation("throw" + LEFT, [47, 36], 100, false);
-			//magic anim
-			addAnimation("magic" + UP, Utils.getArrayofNumbers(11,0), 10, true);
-			addAnimation("magic" + RIGHT, Utils.getArrayofNumbers(23, 12), 10, true);
-			addAnimation("magic" + DOWN, Utils.getArrayofNumbers(35, 24), 10, true);
-			addAnimation("magic" + LEFT, Utils.getArrayofNumbers(47, 36), 10, true);
-			//item anim
-			addAnimation("item" + UP, Utils.getArrayofNumbers(11,0), 10, false);
-			addAnimation("item" + RIGHT, Utils.getArrayofNumbers(23, 12), 10, false);
-			addAnimation("item" + DOWN, Utils.getArrayofNumbers(35, 24), 10, false);
-			addAnimation("item" + LEFT, Utils.getArrayofNumbers(47, 36), 10, false);
 		}
 		
 		override public function getMoves():void {	
@@ -123,7 +128,7 @@ package GameObject.Player
 					m_state = "walk";
 				move();
 			}else {
-				if(m_state != "throw" ){
+				if (m_state != "throw" ) {
 					m_state = "idle";
 				}
 			}
