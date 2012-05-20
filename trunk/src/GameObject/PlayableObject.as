@@ -82,25 +82,13 @@ package GameObject
 			m_magics.push(Magic.Tornado());
 			m_magics.push(Magic.Fireball());
 			m_itemManager = new GameObject.Item.ItemManager(this);
-			m_throwables = new Vector.<PlayerThrowable>();
-			createThrowables();
 			getWeapon().m_player = this;
+			createThrowables();
 		}
 		
-		public function createThrowables() :void {
-			var thr:PlayerThrowable = m_equipement.m_throwable;
-			thr.m_enemies = m_enemies;
-			thr.setCaster(this);
-			m_throwables.push(thr);
-			for (var i:int = 0; i < 15; i++) {
-				thr = PlayerThrowable.Slipper();
-				thr.m_enemies = m_enemies;
-				thr.setCaster(this);
-				m_throwables.push(thr);
-			}
-		}
+		public function createThrowables() :void {}
 		
-		public function loadThrowables() : void {
+		public function loadThrowables() : void {	
 			for (var i:int = 0; i < m_throwables.length; i++) {
 				m_throwables[i].load();
 			}

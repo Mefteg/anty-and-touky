@@ -12,9 +12,11 @@ package GameObject.Weapon
 		public var m_player:PlayableObject;
 		public var m_enemies:Vector.<Enemy>;
 		
-		public function PlayerThrowable(power:int,url:String,speed:int = 10) 
+		public function PlayerThrowable(power:int,url:String,speed:int = 7) 
 		{
 			super(power, url, speed);
+			m_width = 32;
+			m_height = 32;
 		}
 		
 		override public function setCaster(object:MovableObject) : void {
@@ -43,6 +45,14 @@ package GameObject.Weapon
 		
 		public static function Slipper() : PlayerThrowable{
 			return new PlayerThrowable(1, "Images/Weapons/slipper.png", 10);
+		}
+		
+		public static function Egg():PlayerThrowable {
+			var egg:PlayerThrowable = new PlayerThrowable(1, "Images/Weapons/egg.png");
+			egg.setAnimationAttack(0, 1, 2, 3, 4, 5, 6, 7);
+			egg.setAnimationDead(8, 9, 10, 11);
+			egg.setHitbox(12, 13, 9, 11);
+			return egg;
 		}
 	}
 

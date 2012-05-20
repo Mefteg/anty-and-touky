@@ -14,6 +14,7 @@ package GameObject.Weapon
 		public var m_caster:MovableObject;
 		protected var m_initSpeed:Number;
 		public var m_straightShot:Boolean = false;
+		public var m_animationSpeed:int=10;
 		
 		public function Throwable(power:Number , url:String, speed:Number = 2 ) 
 		{
@@ -30,12 +31,14 @@ package GameObject.Weapon
 		}
 		
 		public function touched():void {
-			removeFromStage();
-			m_state = "idle";
+			if (m_state == "dead")
+				return;
+			m_state = "dead";
 			m_direction.x = 0;
 			m_direction.y = 0;
 			x = 0; y = 0;
 			m_speed = m_initSpeed;
+			play("dead");
 		}
 		
 		override public function attack(direction:int):void {
@@ -44,19 +47,22 @@ package GameObject.Weapon
 			addToStage();
 			m_FX.play();
 			m_state = "attack";
-			play("attack" + direction);
+			play("attack");
 			computeDirection();
+		}
+		
+		public function setAnimationAttack(...rest):void {
+			addAnimation("attack", rest, m_animationSpeed, true);
+		}
+		
+		public function setAnimationDead(...rest):void {
+			addAnimation("dead", rest, 1, false);
 		}
 		
 		override public function load():void {
 			loadGraphic2(Global.library.getBitmap(m_url), true, false, m_width, m_height);
-			m_hitbox = new Hitbox(0, 0, m_width, m_height);
 			
-			addAnimation("attack" + UP, [0,1,2,3], 5, true);
-			addAnimation("attack" + RIGHT,[0,1,2,3], 5, true);
-			addAnimation("attack" + DOWN, [0,1,2,3], 5, true);
-			addAnimation("attack" + LEFT, [0,1,2,3], 5, true);
-			play("attack" + facing);
+			play("attack");
 			
 			//sound
 			m_FX.loadStream(m_FXurl);
@@ -89,13 +95,19 @@ package GameObject.Weapon
 		override public function update() : void {
 			m_canGoThrough = true;
 			//if attack is on
-			if (m_state == "attack")
+			if (m_state == "attack") {
+				move();
 				//and object not on screen anymore
 				if (!onScreen() || CheckDamageDealt()) {
 					//deactivate the object
 					touched();
 				}
-			move();
+			}else if (m_state == "dead") {
+				if(finished){
+					removeFromStage();
+					m_state = "idle";
+				}
+			}
 		}
 		
 		override public function move() : void {
@@ -110,6 +122,11 @@ package GameObject.Weapon
 				touched();
 			}
 		}
+		
+		/////////////////////////////////////////////////////////:
+		///////////////// PREBUILDED THROWABLES//////////////////
+		////////////////////////////////////////////////////////
+		
 		
 	}
 

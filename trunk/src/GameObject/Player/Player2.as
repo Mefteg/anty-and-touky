@@ -1,6 +1,9 @@
 package GameObject.Player 
 {
 	import GameObject.PlayableObject;
+	import GameObject.Weapon.PlayerThrowable;
+	import GameObject.Weapon.Throwable;
+	import GameObject.Weapon.Weapon;
 	import org.flixel.FlxG;
 	/**
 	 * ...
@@ -19,51 +22,59 @@ package GameObject.Player
 			m_stringValidate = "NUMPADONE";
 			m_stringNext = "NUMPADTWO";
 			m_stringPrevious = "NUMPADTHREE";*/
-			
+			setHitbox(16, 16, 16, 16);
 			m_stringValidate = "K";
 			m_stringNext = "L";
-			m_stringPrevious = "M";
+			m_stringPrevious = "M";	
+			
+			m_equipement.m_throwable = PlayerThrowable.Egg();
 			
 			m_name = "Player2";
+		}
+		
+		override public function createThrowables():void {
+			m_throwables = new Vector.<PlayerThrowable>();
+			var thr:PlayerThrowable;
+			for (var i:int = 0; i < 15; i++) {
+				thr = PlayerThrowable.Egg();
+				thr.m_enemies = m_enemies;
+				thr.setCaster(this);
+				m_throwables.push(thr);
+			}
 		}
 		
 		override public function load():void {
 			super.load();
 			//IDLE ANIM
-			addAnimation("idle" + UP, [49], 15, true);
-			addAnimation("idle" + RIGHT, [0,1,2], 15, true);
-			addAnimation("idle" + DOWN, [73], 10, true);
-			addAnimation("idle" + LEFT, [6,7,8], 15, true);
+			addAnimation("idle" + UP, [18,19,20,19], 15, true);
+			addAnimation("idle" + RIGHT, [0,1,2,1], 15, true);
+			addAnimation("idle" + DOWN, [12,13,14,13], 15, true);
+			addAnimation("idle" + LEFT, [6,7,8,7], 15, true);
 			//walk anim
-			addAnimation("walk" + UP, [0,1,2], 30, true);
-			addAnimation("walk" + RIGHT, [0,1,2], 30, true);
-			addAnimation("walk" + DOWN, Utils.getArrayofNumbers(72, 74), 10, true);
-			addAnimation("walk" + LEFT, [6,7,8], 30, true);	
+			addAnimation("walk" + UP, [18,19,20,19], 25, true);
+			addAnimation("walk" + RIGHT, [0,1,2,1], 25, true);
+			addAnimation("walk" + DOWN, [12,13,14,13], 25, true);
+			addAnimation("walk" + LEFT, [6,7,8,7], 25, true);	
 			//attack anim
-			addAnimation("attack" + UP, Utils.getArrayofNumbers(11,0), 40, false);
-			addAnimation("attack" + RIGHT, [3,4], 1, false);
-			addAnimation("attack" + DOWN, Utils.getArrayofNumbers(35, 24), 40, false);
-			addAnimation("attack" + LEFT, Utils.getArrayofNumbers(47, 36), 40, false);
+			addAnimation("attack" + UP, [33,34,35], 10, false);
+			addAnimation("attack" + RIGHT, [24,25,26], 10, false);
+			addAnimation("attack" + DOWN, [30,31,32], 10, false);
+			addAnimation("attack" + LEFT, [27,28,29], 10, false);
 			//attack anim
-			addAnimation("attack2" + UP, Utils.getArrayofNumbers(0,11), 40, false);
-			addAnimation("attack2" + RIGHT, Utils.getArrayofNumbers(12,23), 40, false);
-			addAnimation("attack2" + DOWN, Utils.getArrayofNumbers(24,35), 40, false);
-			addAnimation("attack2" + LEFT, Utils.getArrayofNumbers(36,47), 40, false);
+			addAnimation("attack2" + UP, [35,34,33], 10, false);
+			addAnimation("attack2" + RIGHT, [26,25,24], 10, false);
+			addAnimation("attack2" + DOWN, [32,31,30], 10, false);
+			addAnimation("attack2" + LEFT, [29,28,27], 10, false);
 			//throw anim
-			addAnimation("throw" + UP, [11,0], 100, false);
+			addAnimation("throw" + UP, [21,22], 20, false);
 			addAnimation("throw" + RIGHT,[3,4], 20, false);
-			addAnimation("throw" + DOWN, [35, 24], 100, false);
-			addAnimation("throw" + LEFT, [9,10], 100, false);
+			addAnimation("throw" + DOWN, [15, 16], 20, false);
+			addAnimation("throw" + LEFT, [9,10], 20, false);
 			//defense anim
-			addAnimation("rush" + UP, [5], 10, false);
+			addAnimation("rush" + UP, [23], 10, false);
 			addAnimation("rush" + RIGHT, [5], 10, false);
-			addAnimation("rush" + DOWN, [72], 10, false);
+			addAnimation("rush" + DOWN, [17], 10, false);
 			addAnimation("rush" + LEFT, [11], 10, false);
-			//magic anim
-			addAnimation("magic" + UP, Utils.getArrayofNumbers(11,0), 10, true);
-			addAnimation("magic" + RIGHT, Utils.getArrayofNumbers(23, 12), 10, true);
-			addAnimation("magic" + DOWN, Utils.getArrayofNumbers(35, 24), 10, true);
-			addAnimation("magic" + LEFT, Utils.getArrayofNumbers(47, 36), 10, true);
 		}
 		
 		override public function getMoves():void {
@@ -75,17 +86,21 @@ package GameObject.Player
 				return;
 			
 			if (FlxG.keys.justPressed(m_stringPrevious)) {
-				if(!m_onSpecial)
-					triggerSpecial()
-				else
+				if(!m_onSpecial){
+					triggerSpecial();
+					return;
+				}else{
 					unspecial();
+				}
 			}
 			//on special/AntySpecial state Touky can't shoot
 			if (!m_onSpecial && m_state != "rushAttack"){
 				if (FlxG.keys.justPressed(m_stringValidate) ){
 					throwIt();
+					return;
 				}else if (FlxG.keys.justPressed(m_stringNext) ){
 					attack();
+					return;
 				}
 			}
 							
