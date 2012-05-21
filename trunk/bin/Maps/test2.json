@@ -147,23 +147,103 @@
                 },
              "1":
                 {
+                 "type":"PhysicalTile"
+                },
+             "16":
+                {
+                 "type":"PhysicalTile"
+                },
+             "17":
+                {
+                 "type":"Rock"
+                },
+             "18":
+                {
                  "type":"Rock"
                 },
              "21":
                 {
-                 "type":"Rock"
+                 "type":"PhysicalTile"
                 },
              "22":
                 {
-                 "type":"Rock"
+                 "type":"PhysicalTile"
+                },
+             "24":
+                {
+                 "type":"Foreground"
+                },
+             "25":
+                {
+                 "type":"Foreground"
+                },
+             "32":
+                {
+                 "type":"PhysicalTile"
+                },
+             "34":
+                {
+                 "type":"PhysicalTile"
+                },
+             "40":
+                {
+                 "type":"PhysicalTile"
+                },
+             "48":
+                {
+                 "type":"PhysicalTile"
+                },
+             "49":
+                {
+                 "type":"PhysicalTile"
                 },
              "5":
                 {
-                 "type":"Rock"
+                 "type":"PhysicalTile"
+                },
+             "50":
+                {
+                 "type":"PhysicalTile"
                 },
              "6":
                 {
-                 "type":"Rock"
+                 "type":"PhysicalTile"
+                },
+             "64":
+                {
+                 "type":"PhysicalTile"
+                },
+             "65":
+                {
+                 "type":"PhysicalTile"
+                },
+             "66":
+                {
+                 "type":"PhysicalTile"
+                },
+             "7":
+                {
+                 "type":"Foreground"
+                },
+             "8":
+                {
+                 "type":"Foreground"
+                },
+             "80":
+                {
+                 "type":"PhysicalTile"
+                },
+             "81":
+                {
+                 "type":"PhysicalTile"
+                },
+             "82":
+                {
+                 "type":"PhysicalTile"
+                },
+             "9":
+                {
+                 "type":"Foreground"
                 }
             },
          "tilewidth":32
