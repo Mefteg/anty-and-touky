@@ -106,24 +106,32 @@ package GameObject.Player
 			var xForce:int = 0;
 			var pressedDirection:Boolean = false;
 						
-			if (FlxG.keys.Z && !m_scrollBlockUp) { 
-				pressedDirection = true;
-				yForce-= 1;
+			if (FlxG.keys.Z ) { 
+				if(!m_scrollBlockUp){
+					pressedDirection = true;
+					yForce-= 1;
+				}
 				facing = UP;
 			}
-			if (FlxG.keys.S && !m_scrollBlockDown) {
-				pressedDirection = true;
-				yForce += 1;
+			if (FlxG.keys.S) {
+				if(!m_scrollBlockDown){
+					pressedDirection = true;
+					yForce += 1;
+				}
 				facing = DOWN;
 			}
-			if (FlxG.keys.Q && !m_scrollBlockLeft){
-				pressedDirection = true;
-				xForce -= 1;
+			if (FlxG.keys.Q) {
+				if(!m_scrollBlockLeft){
+					pressedDirection = true;
+					xForce -= 1;
+				}
 				facing = LEFT;
 			}
-			if (FlxG.keys.D && !m_scrollBlockRight){
-				pressedDirection = true;
-				xForce += 1;
+			if (FlxG.keys.D) {
+				if(!m_scrollBlockRight){
+					pressedDirection = true;
+					xForce += 1;
+				}
 				facing = RIGHT;
 			}		
 			
