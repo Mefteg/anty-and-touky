@@ -49,32 +49,32 @@ package GameObject.Player
 		override public function load():void {
 			super.load();
 			//IDLE ANIM
-			addAnimation("idle" + UP, [49], 10, true);
+			addAnimation("idle" + UP, [32], 10, true);
 			addAnimation("idle" + RIGHT, [5], 10, true);
 			addAnimation("idle" + DOWN, [23], 10, true);
 			addAnimation("idle" + LEFT, [14], 10, true);
 			//walk anim
-			addAnimation("walk" + UP, Utils.getArrayofNumbers(48,50), 10, true);
-			addAnimation("walk" + RIGHT, [0,1,2,1], 10, true);
-			addAnimation("walk" + DOWN, [18,19,20,19], 10, true);
-			addAnimation("walk" + LEFT, [9,10,11,10], 10, true);	
+			addAnimation("walk" + UP, [27,28,29,28], 15, true);
+			addAnimation("walk" + RIGHT, [0,1,2,1], 15, true);
+			addAnimation("walk" + DOWN, [18,19,20,19], 15, true);
+			addAnimation("walk" + LEFT, [9,10,11,10], 15, true);	
 			//attack anim
-			addAnimation("attack" + UP, Utils.getArrayofNumbers(11,0), 40, false);
-			addAnimation("attack" + RIGHT, Utils.getArrayofNumbers(23,12), 40, false);
-			addAnimation("attack" + DOWN, Utils.getArrayofNumbers(35, 24), 40, false);
-			addAnimation("attack" + LEFT, Utils.getArrayofNumbers(47, 36), 40, false);
+			addAnimation("attack" + UP, [54,55,56] , 10, false);
+			addAnimation("attack" + RIGHT, [36,37,38], 10, false);
+			addAnimation("attack" + DOWN, [42,43,44], 10, false);
+			addAnimation("attack" + LEFT, [39,40,41], 10, false);
 			//attack2d anim
-			addAnimation("attack2" + UP, Utils.getArrayofNumbers(0,11), 40, false);
-			addAnimation("attack2" + RIGHT, Utils.getArrayofNumbers(12,23), 40, false);
-			addAnimation("attack2" + DOWN, Utils.getArrayofNumbers(24,35), 40, false);
-			addAnimation("attack2" + LEFT, Utils.getArrayofNumbers(36,47), 40, false);
+			addAnimation("attack2" + UP, [57,58,59], 10, false);
+			addAnimation("attack2" + RIGHT, [45,46,47], 10, false);
+			addAnimation("attack2" + DOWN, [51,52,53], 10, false);
+			addAnimation("attack2" + LEFT, [48,49,50], 10, false);
 			//throw anim
-			addAnimation("throw" + UP, [11,0], 10, false);
+			addAnimation("throw" + UP, [30,31], 10, false);
 			addAnimation("throw" + RIGHT,[3,4], 10, false);
 			addAnimation("throw" + DOWN, [21,22], 10, false);
 			addAnimation("throw" + LEFT, [12,13], 10, false);
 			//rush attack
-			addAnimation("rush" + UP, [23], 40, true);
+			addAnimation("rush" + UP, [33,34,35], 40, true);
 			addAnimation("rush" + RIGHT, [6,7,8], 40, true);
 			addAnimation("rush" + DOWN, [24,25,26], 40, true);
 			addAnimation("rush" + LEFT, [15,16,17], 40, true);
