@@ -1,6 +1,7 @@
 package  
 {
 	import GameObject.PlayableObject;
+	import org.flixel.FlxParticle;
 	import org.flixel.FlxPoint;
 	/**
 	 * ...
@@ -66,6 +67,45 @@ package
 			}
 			
 			return tab;
+		}
+		
+		public static function getDirectionID(dir:FlxPoint):int {
+			if (dir.x > 0) {
+				//top
+				if (dir.y < 0) { return 1; }
+				//bottom
+				if (dir.y > 0) { return 3; }
+				//straight
+				else { return 2; }
+			//left
+			}else if (dir.x < 0){
+				//top
+				if (dir.y < 0) { return 7; }
+				//bottom
+				if (dir.y > 0) { return 5; }
+				//straight
+				else { return 6 ; }
+			//nor left either right
+			}else {
+				//top
+				if (dir.y < 0) { return 0; }
+				//bottom
+				else { return 4; }
+			}
+		}
+		
+		public static function getDirectionPoint(id:int):FlxPoint {
+			switch(id) {
+				case 0 : return new FlxPoint(0, -1); break;
+				case 1 : return new FlxPoint(1, -1); break;
+				case 2 : return new FlxPoint(1, 0); break;
+				case 3 : return new FlxPoint(1, 1); break;
+				case 4 : return new FlxPoint(0, 1); break;
+				case 5 : return new FlxPoint(-1, 1); break;
+				case 6 : return new FlxPoint(-1, 0); break;
+				case 7 : return new FlxPoint(-1, -1); break;
+			}
+			return null;
 		}
 	}
 

@@ -14,7 +14,10 @@ package GameObject.Weapon
 		public var m_caster:MovableObject;
 		protected var m_initSpeed:Number;
 		public var m_straightShot:Boolean = false;
-		public var m_animationSpeed:int=10;
+		public var m_animationSpeed:int = 10;
+		
+		public var m_rotative:Boolean = false;
+		protected var m_currentAttackName:String;
 		
 		public function Throwable(power:Number , url:String, speed:Number = 2 ) 
 		{
@@ -47,12 +50,24 @@ package GameObject.Weapon
 			addToStage();
 			m_FX.play();
 			m_state = "attack";
-			play("attack");
+			if(m_rotative)
+				play("attack");
+			else {
+				trace(m_currentAttackName);
+				play(m_currentAttackName);
+			}
 			computeDirection();
 		}
 		
-		public function setAnimationAttack(...rest):void {
-			addAnimation("attack", rest, m_animationSpeed, true);
+		public function setAnimationAttack(rotative:Boolean,...rest):void {
+			m_rotative = rotative;
+			if(rotative){
+				addAnimation("attack", rest, m_animationSpeed, true);
+			}else {
+				for (var i:int = 0; i < 8; i++)
+					addAnimation("attack" + i, [i], 1, true);
+				m_currentAttackName = "attack2";
+			}
 		}
 		
 		public function setAnimationDead(...rest):void {
@@ -61,9 +76,7 @@ package GameObject.Weapon
 		
 		override public function load():void {
 			loadGraphic2(Global.library.getBitmap(m_url), true, false, m_width, m_height);
-			
-			play("attack");
-			
+						
 			//sound
 			m_FX.loadStream(m_FXurl);
 		}
@@ -123,9 +136,9 @@ package GameObject.Weapon
 			}
 		}
 		
-		/////////////////////////////////////////////////////////:
-		///////////////// PREBUILDED THROWABLES//////////////////
-		////////////////////////////////////////////////////////
+		public function setAnimationWithDirection(dir: FlxPoint):void {
+			m_currentAttackName = "attack" + Utils.getDirectionID(dir);
+		}
 		
 		
 	}

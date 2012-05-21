@@ -6,6 +6,7 @@ package GameObject.Player
 	import GameObject.PlayableObject;
 	import GameObject.Weapon.PlayerThrowable;
 	import org.flixel.FlxG;
+	import org.flixel.FlxPoint;
 	import Server.URLRequestPHP;
 	/**
 	 * ...
@@ -14,6 +15,7 @@ package GameObject.Player
 	public class Player1 extends PlayableObject
 	{
 		private var m_normalSpeed:Number;
+		private var m_tabPlaceThrowable:Array;
 		
 		public function Player1(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
@@ -26,7 +28,7 @@ package GameObject.Player
 			
 			m_name = "Player1";
 			setHitbox(16, 16, 16, 16);
-			
+			createTabPlaceThrowable();
 			m_equipement.m_throwable = PlayerThrowable.Ant();
 			
 			m_normalSpeed = m_speed;
@@ -34,10 +36,7 @@ package GameObject.Player
 				
 		override public function createThrowables():void {
 			m_throwables = new Vector.<PlayerThrowable>();
-			var thr:PlayerThrowable = m_equipement.m_throwable;
-			thr.m_enemies = m_enemies;
-			thr.setCaster(this);
-			m_throwables.push(thr);
+			var thr:PlayerThrowable;
 			for (var i:int = 0; i < 15; i++) {
 				thr = PlayerThrowable.Ant();
 				thr.m_enemies = m_enemies;
@@ -182,6 +181,23 @@ package GameObject.Player
 		override public function takeDamage():void {
 			super.takeDamage();
 			Global.menuPlayer1.takeDamage();
+		}
+		
+		override public function placeThrowable(thr:PlayerThrowable):void {
+			var pt:FlxPoint = m_tabPlaceThrowable[Utils.getDirectionID(m_directionFacing)];
+			thr.place(x + pt.x, y + pt.y);
+		}
+		
+		private function createTabPlaceThrowable():void {
+			m_tabPlaceThrowable = new Array();
+			m_tabPlaceThrowable.push(new FlxPoint(10, -10)); //0
+			m_tabPlaceThrowable.push(new FlxPoint(30, 13)); //1
+			m_tabPlaceThrowable.push(new FlxPoint(30, 13)); //2
+			m_tabPlaceThrowable.push(new FlxPoint(30, 13)); //3
+			m_tabPlaceThrowable.push(new FlxPoint(10, 15)); //4
+			m_tabPlaceThrowable.push(new FlxPoint(-10, 13)); //5
+			m_tabPlaceThrowable.push(new FlxPoint(-10, 13)); //6
+			m_tabPlaceThrowable.push(new FlxPoint(-10, 13)); //7		
 		}
 	}
 

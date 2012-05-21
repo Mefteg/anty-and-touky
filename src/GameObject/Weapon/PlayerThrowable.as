@@ -49,7 +49,7 @@ package GameObject.Weapon
 		
 		public static function Egg():PlayerThrowable {
 			var egg:PlayerThrowable = new PlayerThrowable(1, "Images/Weapons/egg.png");
-			egg.setAnimationAttack(0, 1, 2, 3, 4, 5, 6, 7);
+			egg.setAnimationAttack(true,0, 1, 2, 3, 4, 5, 6, 7);
 			egg.setAnimationDead(8, 9, 10, 11);
 			egg.setHitbox(12, 13, 9, 11);
 			return egg;
@@ -57,8 +57,8 @@ package GameObject.Weapon
 		
 		public static function Ant():PlayerThrowable {
 			var ant:PlayerThrowable = new PlayerThrowable(1, "Images/Weapons/ant.png");
-			ant.setAnimationAttack(0);
-			//egg.setAnimationDead(8, 9, 10, 11);
+			ant.setAnimationAttack(false);
+			//ant.setAnimationDead(8, 9, 10, 11);
 			ant.setHitbox(12, 13, 9, 11);
 			return ant;
 		}
