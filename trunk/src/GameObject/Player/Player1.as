@@ -25,6 +25,7 @@ package GameObject.Player
 			m_stringValidate = "F";
 			
 			m_name = "Player1";
+			setHitbox(16, 16, 16, 16);
 			
 			m_equipement.m_throwable = PlayerThrowable.Ant();
 			
@@ -50,12 +51,12 @@ package GameObject.Player
 			//IDLE ANIM
 			addAnimation("idle" + UP, [49], 10, true);
 			addAnimation("idle" + RIGHT, [5], 10, true);
-			addAnimation("idle" + DOWN, [73], 10, true);
+			addAnimation("idle" + DOWN, [23], 10, true);
 			addAnimation("idle" + LEFT, [14], 10, true);
 			//walk anim
 			addAnimation("walk" + UP, Utils.getArrayofNumbers(48,50), 10, true);
 			addAnimation("walk" + RIGHT, [0,1,2,1], 10, true);
-			addAnimation("walk" + DOWN, Utils.getArrayofNumbers(72, 74), 10, true);
+			addAnimation("walk" + DOWN, [18,19,20,19], 10, true);
 			addAnimation("walk" + LEFT, [9,10,11,10], 10, true);	
 			//attack anim
 			addAnimation("attack" + UP, Utils.getArrayofNumbers(11,0), 40, false);
@@ -68,14 +69,14 @@ package GameObject.Player
 			addAnimation("attack2" + DOWN, Utils.getArrayofNumbers(24,35), 40, false);
 			addAnimation("attack2" + LEFT, Utils.getArrayofNumbers(36,47), 40, false);
 			//throw anim
-			addAnimation("throw" + UP, [11,0], 100, false);
+			addAnimation("throw" + UP, [11,0], 10, false);
 			addAnimation("throw" + RIGHT,[3,4], 10, false);
-			addAnimation("throw" + DOWN, [35, 24], 100, false);
-			addAnimation("throw" + LEFT, [12,13], 100, false);
+			addAnimation("throw" + DOWN, [21,22], 10, false);
+			addAnimation("throw" + LEFT, [12,13], 10, false);
 			//rush attack
 			addAnimation("rush" + UP, [23], 40, true);
 			addAnimation("rush" + RIGHT, [6,7,8], 40, true);
-			addAnimation("rush" + DOWN, [17], 40, true);
+			addAnimation("rush" + DOWN, [24,25,26], 40, true);
 			addAnimation("rush" + LEFT, [15,16,17], 40, true);
 		}
 		
