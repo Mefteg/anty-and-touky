@@ -214,9 +214,11 @@ package GameObject
 				case "idle":  break;
 				case "throw": if (finished){
 									m_state = "idle"; 
-									var thr:GameObject.Weapon.Throwable = getThrowable();
+									var thr:PlayerThrowable = getThrowable();
 									if (!thr) break;
-									thr.place(x,y);
+									if (!thr.m_rotative)
+										thr.setAnimationWithDirection(m_directionFacing);
+									placeThrowable(thr);
 									thr.attack(facing);
 								}
 								break;
@@ -315,7 +317,10 @@ package GameObject
 			m_itemManager.addItem(item, qty);
 		}
 		
-		public function placeOtherPlayer():void{}
+		public function placeOtherPlayer():void { }
+		public function placeThrowable(thr:GameObject.Weapon.PlayerThrowable):void {
+			thr.place(x, y);
+		}
 		/////////////////////////////////////////////////////////////////:
 		////////////////////////GETTERS//////////////////////////////////
 		/////////////////////////////////////////////////////////////////
