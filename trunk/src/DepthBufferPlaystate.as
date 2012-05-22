@@ -18,6 +18,7 @@ package
 		static public var s_npcGroup:int = 14;
 		static public var s_nppGroup:int = 15;
 		static public var s_foregroundGroup:int = 16;
+		static public var s_enemiesFG:int = 17;
 		
 		protected var m_playstate:Playstate;
 		protected var m_tiles:FlxGroup;
@@ -27,6 +28,7 @@ package
 		protected var m_npc:FlxGroup;
 		protected var m_NPP:FlxGroup;
 		protected var m_foreGround:FlxGroup;
+		protected var m_enemiesForeground:FlxGroup;
 		
 		public function DepthBufferPlaystate() 
 		{
@@ -43,6 +45,7 @@ package
 			m_foreGround = new FlxGroup();
 			m_menu = new FlxGroup();
 			m_cursor = new FlxGroup();
+			m_enemiesForeground = new FlxGroup();
 			
 			add(m_background);
 			add(m_tiles);
@@ -52,6 +55,7 @@ package
 			add(m_players);
 			add(m_NPP);
 			add(m_foreGround);
+			add(m_enemiesForeground);
 			add(m_menu);
 			add(m_cursor);
 		}
@@ -92,6 +96,9 @@ package
 				case s_foregroundGroup:
 					this.addForeground(element);
 					break;
+				case s_enemiesFG :
+					addEnemyFG(element);
+					break;
 				default:
 					break;
 			}
@@ -121,6 +128,9 @@ package
 					break;
 				case s_foregroundGroup:
 					this.removeForeground(element);
+					break;
+				case s_enemiesFG:
+					removeEnemyFG(element);
 					break;
 				default:
 					break;
@@ -153,6 +163,20 @@ package
 		}
 		protected function removeEnemy(element:FlxBasic):void {
 			m_enemies.remove(element);
+			m_playstate.removeTalkers(element as MovableObject);
+			m_playstate.removeEnemy(element as Enemy);
+			//m_stage.removePhysical(element as PhysicalObject);
+		}
+		
+		protected function addEnemyFG(element:FlxBasic):void
+		{
+			m_enemiesForeground.add(element);
+			m_playstate.addTalkers(element as MovableObject);
+			m_playstate.addEnemy(element as Enemy);
+			//m_stage.addPhysical(element as PhysicalObject);
+		}
+		protected function removeEnemyFG(element:FlxBasic):void {
+			m_enemiesForeground.remove(element);
 			m_playstate.removeTalkers(element as MovableObject);
 			m_playstate.removeEnemy(element as Enemy);
 			//m_stage.removePhysical(element as PhysicalObject);
