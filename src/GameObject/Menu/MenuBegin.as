@@ -40,7 +40,7 @@ package GameObject.Menu
 			
 			// adding of the play button
 			var button1:Button = new ButtonPlay(m_cursor, null, this.x, this.y);
-			button1.m_shift = new FlxPoint(220, 215);
+			button1.m_shift = new FlxPoint(220, 300);
 			button1.m_parent = this;
 			Global.library.addUniqueBitmap(button1.m_url);
 			this.add(button1);
