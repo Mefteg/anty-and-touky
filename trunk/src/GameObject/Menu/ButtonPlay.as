@@ -22,7 +22,7 @@ package GameObject.Menu
 		}
 		
 		override public function validate() : void {
-			FlxG.switchState( new Playstate() );
+			Global.currentState.end();
 		}
 		
 	}

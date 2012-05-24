@@ -194,6 +194,8 @@ package GameObject
 		}
 		
 		override public function update():void {
+			if (Global.frozen)
+				return;
 			twinkle();
 			if (m_onSpecial) {
 				if (m_timerSpecial.finished)
