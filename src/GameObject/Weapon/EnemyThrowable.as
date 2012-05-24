@@ -66,6 +66,8 @@ package GameObject.Weapon
 		}
 		
 		override public function update():void {
+			if (Global.frozen)
+				return;
 			m_canGoThrough = true;
 			switch(m_state) {
 				case "idle" : return; break;

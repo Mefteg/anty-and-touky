@@ -106,6 +106,8 @@ package GameObject.Weapon
 		}
 		
 		override public function update() : void {
+			if (Global.frozen)
+				return;
 			m_canGoThrough = true;
 			//if attack is on
 			if (m_state == "attack") {

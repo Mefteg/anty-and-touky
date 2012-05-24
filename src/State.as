@@ -3,8 +3,10 @@ package
 	import GameObject.DrawableObject;
 	import org.flixel.FlxG;
 	import org.flixel.FlxSound;
+	import org.flixel.FlxSprite;
 	import org.flixel.FlxState;
 	import org.flixel.FlxText;
+	import org.flixel.FlxTimer;
 	import Scene.Library;
 	
 	/**
@@ -13,6 +15,9 @@ package
 	 */
 	public class State extends FlxState 
 	{
+		
+		[Embed(source = "../bin/Images/Avatars/ladybug.png")] protected var LadyBug:Class;
+		
 		protected var m_library:Library;
 		//used to check if the unique objects have been loaded
 		protected var m_uniquesLoaded:Boolean;
@@ -28,6 +33,11 @@ package
 		
 		protected var m_dynamicLoadingObject:DrawableObject;
 		
+		protected var m_screenFade:FlxSprite;
+		protected var m_timerFade:FlxTimer;
+		protected var m_fadeOut:Boolean = false;
+		protected var m_fadeIn:Boolean = false;
+		
 		public function State() 
 		{
 			m_state = "Loading";
@@ -37,10 +47,21 @@ package
 			//create the camera
 			m_camera = new Camera(0, 0, 640, 480);
 			FlxG.addCamera(m_camera);
+			m_screenFade = new FlxSprite(0, 0);
+			m_screenFade.makeGraphic(640, 480, FlxG.bgColor);
+			m_screenFade.alpha = 1;
+			m_timerFade = new FlxTimer();
+			depthBuffer.addElement(m_screenFade, DepthBuffer.s_cursorGroup);
 		}
 		
 		override public function update() : void {
 			super.update();
+			
+			//for fades
+			if (m_fadeIn)
+				processFadeIn()
+			else if (m_fadeOut)
+				processFadeOut();
 			
 			switch(m_state) {
 				//load images
@@ -50,6 +71,8 @@ package
 				case "LoadingNewBitmap" : 
 					this.loadingNewBitmap();
 					break;
+				case "ChangingScene": changingScene();
+										break;
 				default : break;
 			}			
 		}
@@ -66,6 +89,45 @@ package
 				m_dynamicLoadingObject.load();
 				Global.library.cacheObjects();
 				m_state = "Loaded";
+			}
+		}
+		
+		protected function changingScene():void {
+			
+		}
+		
+		public function end():void {}
+		
+		/////FADE FUNCTIONS/////////////
+		public function fadeOut(time:Number = 1):void {
+			if (m_fadeOut)
+				return;
+			m_screenFade.alpha = 0.0;
+			m_timerFade.start(time);
+			m_fadeOut = true;
+		}
+		
+		protected function processFadeOut():void {
+			m_screenFade.alpha = m_timerFade.progress;
+			if (m_screenFade.alpha > 0.9) {
+				m_screenFade.alpha = 1.0;
+				m_fadeOut = false;
+			}
+		}
+		
+		public function fadeIn(time:Number = 1):void {
+			if (m_fadeIn)
+				return;
+			m_screenFade.alpha = 1.0;
+			m_timerFade.start(time);;
+			m_fadeIn = true;
+		}
+		
+		protected function processFadeIn():void {
+			m_screenFade.alpha = 1 - m_timerFade.progress;
+			if(m_screenFade.alpha <0.1){
+				m_fadeIn = false;
+				m_screenFade.alpha = 0;
 			}
 		}
 	}

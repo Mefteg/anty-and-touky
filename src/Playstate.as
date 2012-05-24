@@ -30,8 +30,10 @@ package
 	 */
 	public class Playstate extends State 
 	{				
-		[Embed(source = "../bin/Images/Avatars/ladybug.png")] private var LadyBug:Class;
 		protected var m_sceneManager:SceneManager;
+		
+		protected var m_sceneToLoad:String;
+		protected var m_respawnToLoad:String;
 		
 		protected var m_menu_p1:Menu;
 		protected var m_menu_p2:Menu;
@@ -68,20 +70,17 @@ package
 			m_rectLadyBug = new FlxSprite(m_ladyBug.x, m_ladyBug.y);
 			m_rectLadyBug.makeGraphic(32, 32,FlxG.bgColor);
 			m_initPosRect = m_rectLadyBug.y;
-			
-			add(m_ladyBug);
-			add(m_rectLadyBug);
 		}
 		
 		public function changeScene(sceneName:String, respawn:String ) : void {
-			depthBuffer.clearBuffers();
-			add(m_ladyBug);
-			add(m_rectLadyBug);
-			m_sceneManager.loadScene(sceneName, respawn);
-			m_state = "Loading";
+			fadeOut();
 			//prevent players from moving
 			Global.player1.block();
 			Global.player2.block();
+			m_sceneToLoad = sceneName;
+			m_respawnToLoad = respawn;
+			Global.frozen = true;
+			m_state = "ChangingScene";
 		}
 		
 		public function loadNewBitmaps(object:DrawableObject):void {
@@ -90,6 +89,9 @@ package
 		}
 		
 		override public function create() : void {
+			super.create();
+			depthBuffer.addElement(m_ladyBug, DepthBuffer.s_cursorGroup);
+			depthBuffer.addElement(m_rectLadyBug, DepthBuffer.s_cursorGroup);
 			m_sceneManager = new SceneManager();
 			m_sceneManager.loadScene("Maps/test.json");
 			m_state = "Loading";
@@ -128,6 +130,7 @@ package
 		
 		override protected function loading() : void {
 			super.loading();
+			
 			//moving the rectangle that hides the ladybug
 			var h:int = 32 * (1 - m_library.getAdvancement() / 100) ;
 			if(h!=0)
@@ -137,8 +140,9 @@ package
 				//stop displaying advancement
 				m_loadProgression.text = "";
 				m_state = "Done";
-				remove(m_ladyBug);
-				remove(m_rectLadyBug);
+				fadeIn();
+				depthBuffer.removeElement(m_ladyBug, DepthBuffer.s_cursorGroup);
+				depthBuffer.removeElement(m_rectLadyBug, DepthBuffer.s_cursorGroup);
 				//check uniques loading
 				if(!m_uniquesLoaded){
 					Global.player1.load();
@@ -147,8 +151,7 @@ package
 					m_menu_p2.load();
 					m_uniquesLoaded = true;
 				}
-				Global.player1.unblock();
-				Global.player2.unblock();
+				Global.frozen = false;
 				//m_menu_p2.load();
 				Global.player1.getEnemiesInScene();
 				Global.player2.getEnemiesInScene();
@@ -168,6 +171,18 @@ package
 				m_dynamicLoadingObject = null;
 				m_state = "Loaded";
 			}
+		}
+		
+		override protected function changingScene():void {
+			if (m_fadeOut)
+				return;
+			
+			depthBuffer.clearBuffers();
+			depthBuffer.addElement(m_ladyBug, DepthBuffer.s_cursorGroup);
+			depthBuffer.addElement(m_rectLadyBug, DepthBuffer.s_cursorGroup);
+			m_sceneManager.loadScene(m_sceneToLoad, m_respawnToLoad);
+			
+			m_state = "Loading";
 		}
 		
 		public function chargeMusic(name:String) {
