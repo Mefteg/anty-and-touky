@@ -7,9 +7,7 @@ package GameObject.Enemy
 	 * @author ...
 	 */
 	public class Monkey extends Enemy 
-	{
-		public var m_throwables:Vector.<EnemyThrowable>;
-		
+	{		
 		public function Monkey(X:Number,Y:Number) 
 		{
 			super(X, Y);
@@ -20,45 +18,17 @@ package GameObject.Enemy
 			m_state = "idle";
 		}
 		
-		protected function createThrowables():void {
+		override protected function createThrowables():void {
 			m_throwables = new Vector.<EnemyThrowable>;
-			var thr:EnemyThrowable = EnemyThrowable.Slipper() ;
+			var thr:EnemyThrowable = EnemyThrowable.PistolBullet() ;
 			thr.setCaster(this);
 			m_throwables.push(thr);
 			for (var i:int = 0; i < 15; i++) {
-				thr = EnemyThrowable.Slipper();
+				thr = EnemyThrowable.PistolBullet();
 				thr.setCaster(this);
 				m_throwables.push(thr);
 			}
-		}
-		
-		public function getThrowable():EnemyThrowable {
-			var thr:EnemyThrowable;
-			for (var i:int = 0; i < m_throwables.length; i++) {
-				if (m_throwables[i].isFree()) {
-					thr = m_throwables[i];
-					break;
-				}
-			}
-			return thr;
-		}
-		
-		public function loadThrowables() : void {
-			for (var i:int = 0; i < m_throwables.length; i++) {
-				m_throwables[i].load();
-			}
-		}
-		
-		override public function addBitmap():void {
-			super.addBitmap();
-			m_throwables[0].addBitmap();
-		}
-		
-		override public function removeFromStage():void {
-			super.removeFromStage();
-			for (var i:int = 0; i < m_throwables.length ; i ++)
-				m_throwables[i].removeFromStage();
-		}
+		}	
 		
 		override public function load():void {
 			super.load();

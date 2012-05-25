@@ -360,6 +360,33 @@ package GameObject
 			m_scrollBlockUp = false;
 			m_scrollBlockRight = false;
 		}
+		
+		override public function twinkle():void {
+			if (m_timerTwinkle.finished)
+				return;
+				
+			if (m_timerTwinkle.progress > 0.9){
+				alpha = 1;
+				_twinkleOn = false;
+			}else {
+				var currentTwinkle:Number = _twinkleStep * _twinkleCount;
+				var nextTwinkle:Number = currentTwinkle + _twinkleStep;
+				
+				if ( !_twinkleOn ) {
+					if (m_timerTwinkle.progress > currentTwinkle && m_timerTwinkle.progress < nextTwinkle) {
+						alpha = 0;
+						_twinkleOn = true;
+						_twinkleCount++;
+					}
+				}else {
+					if (m_timerTwinkle.progress > currentTwinkle && m_timerTwinkle.progress < nextTwinkle) {
+						alpha = 1;
+						_twinkleOn = false;
+						_twinkleCount++;
+					}
+				}
+			}
+		}
 	}	
 }
 	

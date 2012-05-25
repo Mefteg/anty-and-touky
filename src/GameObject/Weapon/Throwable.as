@@ -53,7 +53,6 @@ package GameObject.Weapon
 			if(m_rotative)
 				play("attack");
 			else {
-				trace(m_currentAttackName);
 				play(m_currentAttackName);
 			}
 			computeDirection();

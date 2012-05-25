@@ -3,6 +3,7 @@ package GameObject.Enemy
 	import GameObject.IAObject;
 	import GameObject.Magic.Magic;
 	import GameObject.PlayableObject;
+	import GameObject.Weapon.EnemyThrowable;
 	import GameObject.Weapon.Weapon;
 	import InfoObject.InfoDamage;
 	import org.flixel.FlxG;
@@ -32,6 +33,9 @@ package GameObject.Enemy
 		public var m_hit:uint = 1;
 		public var m_attackTime:Number = 2;
 		
+		
+		public var m_throwables:Vector.<EnemyThrowable>;
+		
 		public function Enemy(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, SimpleGraphic);
@@ -57,8 +61,40 @@ package GameObject.Enemy
 		
 		override public function removeFromStage():void {
 			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_enemyGroup);
+			if (!m_throwables)
+				return;
+			for (var i:int = 0; i < m_throwables.length ; i ++)
+				m_throwables[i].removeFromStage();
 		}
-				
+		
+		protected function createThrowables():void {}
+		
+		public function getThrowable():EnemyThrowable {
+			var thr:EnemyThrowable;
+			for (var i:int = 0; i < m_throwables.length; i++) {
+				if (m_throwables[i].isFree()) {
+					thr = m_throwables[i];
+					break;
+				}
+			}
+			return thr;
+		}
+		
+		public function loadThrowables() : void {
+			if (!m_throwables)
+				return;
+			for (var i:int = 0; i < m_throwables.length; i++) {
+				m_throwables[i].load();
+			}
+		}
+		
+		override public function addBitmap():void {
+			super.addBitmap();
+			if (!m_throwables)
+				return;
+			m_throwables[0].addBitmap();
+		}
+						
 		public function giveDamage():void {
 			if (collide(Global.player1))
 				Global.player1.takeDamage();
@@ -231,6 +267,16 @@ package GameObject.Enemy
 					Global.player2.takeDamage();
 				}
 			}
+		}
+		/**
+		 * Return the facing uint value to the target
+		 * @return
+		 */
+		protected function getFacingToTarget():uint {
+			if (!m_target)
+				return LEFT;
+				
+			return LEFT;
 		}
 		
 	}
