@@ -93,6 +93,13 @@ package GameObject.Weapon
 		public static function Slipper() : EnemyThrowable{
 			return new EnemyThrowable(1, "Images/Weapons/slipper.png", 2);
 		}
+		
+		public static function PistolBullet():EnemyThrowable {
+			var bullet:EnemyThrowable = new EnemyThrowable(1, "Images/Weapons/bullets.png", 2);
+			bullet.m_width = 16; bullet.m_height = 16;
+			bullet.setHitbox(6, 6, 4, 4);
+			return bullet;
+		}
 	}
 
 }
