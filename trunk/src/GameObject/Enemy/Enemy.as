@@ -267,18 +267,7 @@ package GameObject.Enemy
 					Global.player2.takeDamage();
 				}
 			}
-		}
-		/**
-		 * Return the facing uint value to the target
-		 * @return
-		 */
-		protected function getFacingToTarget():uint {
-			if (!m_target)
-				return LEFT;
-				
-			return LEFT;
-		}
-		
+		}		
 	}
 
 }

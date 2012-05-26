@@ -124,6 +124,30 @@ package GameObject
 		public function drawHitbox():void {
 		}
 		
+		/**
+		 * Return the facing uint value to the target
+		 * @return
+		 */
+		public function getFacingToTarget(target:GameObject):uint {
+			if (!target)
+				return LEFT;
+			var dir:FlxPoint = Utils.direction(new FlxPoint(x, y), new FlxPoint(target.x, target.y));
+			if (Math.abs(dir.x) > 0.5) {
+				if(dir.x < 0)
+					facing = LEFT;
+				else
+					facing = RIGHT;
+			}else {
+				if (dir.x > 0)
+					facing = DOWN;
+				else
+					facing = UP;
+			}
+				
+			
+			return facing;
+		}
+		
 		//COLLISION RECTANGLES FOR SIDING
 		public function getLeftSideRect():Rectangle {
 			return new Rectangle(x + m_hitbox.x - 1 , y + m_hitbox.y, m_hitbox.width*0.5 , m_hitbox.height);
