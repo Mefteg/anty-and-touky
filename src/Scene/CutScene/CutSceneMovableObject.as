@@ -22,6 +22,7 @@ package Scene.CutScene
 		override public function act():void {
 			if (m_finished)
 				return;
+			m_object.facing = m_object.getFacingToTarget(m_target);
 			m_object.goTo(m_target);
 			m_object.move();
 			if (m_object.collide(m_target)){

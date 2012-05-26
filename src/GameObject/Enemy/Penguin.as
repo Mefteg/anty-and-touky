@@ -73,7 +73,7 @@ package GameObject.Enemy
 			twinkle();
 			switch(m_state) {
 				case "idle": 
-							facing = getFacingToTarget();
+							facing = getFacingToTarget(m_target);
 							play("idle" + facing);
 							if (m_timerAttack.finished) {
 								m_state = "draw";
