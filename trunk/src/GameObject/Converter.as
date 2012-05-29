@@ -5,6 +5,7 @@ package GameObject
 	 * @author ...
 	 */
 	import GameObject.Enemy.BlackSquare;
+	import GameObject.Enemy.Centipede.Centipede;
 	import GameObject.Enemy.Monkey;
 	import GameObject.Enemy.MonkeyTest;
 	import GameObject.Enemy.Penguin;
@@ -35,6 +36,7 @@ package GameObject
 				//enemies
 				case "Monkey": return new GameObject.Enemy.Monkey(object.x, object.y); break;
 				case "Penguin" : return new Penguin(object.x, object.y); break;
+				case "Centipede" : return new Centipede(object.x, object.y); break;
 				case "MonkeyTest": return new GameObject.Enemy.MonkeyTest(object.x,object.y); break;
 				case "Slime" : var m_gobj:MovableObject = new GameObject.Enemy.Slime(object.x, object.y);
 								if (object.properties.blocked != null)

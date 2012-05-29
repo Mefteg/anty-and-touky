@@ -138,7 +138,7 @@ package GameObject
 				else
 					facing = RIGHT;
 			}else {
-				if (dir.x > 0)
+				if (dir.y < 0)
 					facing = DOWN;
 				else
 					facing = UP;
