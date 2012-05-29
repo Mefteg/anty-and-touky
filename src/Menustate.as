@@ -17,6 +17,8 @@ package
 	 */
 	public class Menustate extends State 
 	{
+		[Embed(source = "../bin/Images/Menu/LadyBugRidersScreen.png")] protected var LadyBugScreen:Class;
+		
 		protected var m_menuBegin:MenuBegin;
 		protected var m_timer:FlxTimer;
 		protected var m_music:FlxSound;
@@ -45,8 +47,8 @@ package
 			//text displaying loading advancement
 			m_loadProgression = new FlxText(400, 400, 600);
 			add(m_loadProgression);
-			m_ladyBug = new FlxSprite(FlxG.width / 2 , FlxG.height / 2);
-			m_ladyBug.loadGraphic(LadyBug, false, false, 32, 32, true);
+			m_ladyBug = new FlxSprite(150 , 130);
+			m_ladyBug.loadGraphic(LadyBugScreen, false, false, 300, 200, true);
 		}
 		
 		override public function create() : void {

@@ -45,7 +45,6 @@ package GameObject.Enemy
 			addAnimation("dead", [20, 21, 22 , 23 ], 5, false);
 			
 			play("idle" + UP);
-			
 		}
 		
 		override protected function createThrowables():void {

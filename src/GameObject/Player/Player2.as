@@ -28,7 +28,7 @@ package GameObject.Player
 			m_stringPrevious = "M";	
 			
 			m_equipement.m_throwable = PlayerThrowable.Egg();
-			
+			setHitbox(8, 14, 31, 24);
 			m_name = "Player2";
 		}
 		

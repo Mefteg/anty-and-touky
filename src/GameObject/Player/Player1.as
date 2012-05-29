@@ -27,7 +27,7 @@ package GameObject.Player
 			m_stringValidate = "F";
 			
 			m_name = "Player1";
-			setHitbox(16, 16, 16, 16);
+			setHitbox(8, 18, 31, 20);
 			createTabPlaceThrowable();
 			m_equipement.m_throwable = PlayerThrowable.Ant();
 			
