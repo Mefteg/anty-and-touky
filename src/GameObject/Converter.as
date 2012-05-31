@@ -13,6 +13,7 @@ package GameObject
 	import GameObject.Enemy.WhiteSquare;
 	import GameObject.Item.Chest;
 	import GameObject.Item.Item;
+	import GameObject.Other.Breakable;
 	import GameObject.Player.Player1;
 	import GameObject.Player.Player2;
 	import GameObject.Tile.Foreground;
@@ -50,7 +51,11 @@ package GameObject
 				//triggers
 				case "TriggerWarp": return new GameObject.Trigger.TriggerWarp(object.x, object.y, null,object.properties.url,object.properties.respawn, object.width, object.height); break;
 				case "TriggerCutScene": return new TriggerCutScene(object.x, object.y, object.width, object.height, object.properties.url); break;
+				//other
+				case "BreakableRock" : return Breakable.Rock(object.x, object.y); break;
+				
 				default:  return new GameObject.Enemy.WhiteSquare(object.x, object.y); break;
+				
 			}
 			return null;
 		}

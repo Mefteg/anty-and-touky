@@ -61,6 +61,7 @@ package
 			m_loadProgression = new FlxText(400, 400, 600);
 			//add(m_loadProgression);
 			m_talkersObjects = new Vector.<MovableObject>;
+			m_physicalObjects = new Vector.<PhysicalObject>;
 			m_collisionManager = new CollisionManager();
 			add(m_collisionManager);
 			m_enemies = new Vector.<Enemy>;
