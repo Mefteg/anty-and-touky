@@ -36,6 +36,9 @@ package Scene
 			m_length = m_physicalObjects.length;
 			for (var i:int = 0; i < m_length ; i++) {
 				m_currentObject = m_physicalObjects[i];
+				//if the object does not collide, do not go further
+				if (!m_currentObject.m_collideWithObjects)
+					continue;
 				for (var j:int = i+1; j < m_length; j++) {
 					m_currentOther = m_physicalObjects[j];
 					if (m_currentObject.m_typeName == "Player" && m_currentOther.m_typeName == "Player")
@@ -47,7 +50,7 @@ package Scene
 		
 		public function collide():void {
 			//if collision is activated for both objects
-			if (m_currentObject.m_canGoThrough || m_currentOther.m_canGoThrough)
+			if (!m_currentOther.m_collideWithObjects)
 				return;
 			//if real collision between the two of 'em
 			if (m_currentObject.collide(m_currentOther)) {

@@ -11,6 +11,7 @@ package GameObject
 	{
 		public var m_stats:GameObject.Stats;
 		public var m_canGoThrough:Boolean = false;
+		public var m_collideWithObjects = true;
 		public var m_weight:int = 10;
 		public var m_pushed:Boolean = false;
 		
@@ -23,7 +24,7 @@ package GameObject
 		override public function update() : void {
 			super.update();
 			
-			m_canGoThrough = true;
+			//m_canGoThrough = true;
 		}
 				
 		override public function move() : void {

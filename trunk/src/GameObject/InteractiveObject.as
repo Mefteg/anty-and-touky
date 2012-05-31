@@ -22,6 +22,11 @@ package GameObject
 			m_hitboxInteraction = new Hitbox(X, Y, W, H);
 		}
 		
+		override public function setHitbox(X:int, Y:int, W:int, H:int):void {
+			super.setHitbox(X, Y, W, H);
+			m_hitboxInteraction = new Hitbox(m_hitbox.x - 5,m_hitbox.y - 5, m_hitbox.width + 10,m_hitbox.height + 10);
+		}
+		
 		public function canInteract(player:PlayableObject):Boolean {
 			var myRect:Rectangle = new Rectangle(x + m_hitboxInteraction.x, y + m_hitboxInteraction.y, m_hitboxInteraction.width, m_hitboxInteraction.height);
 			var otherRect:Rectangle = new Rectangle(player.x + player.m_hitbox.x, player.y + player.m_hitbox.y, player.m_hitbox.width, player.m_hitbox.height);

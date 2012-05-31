@@ -1,13 +1,12 @@
 package GameObject.Other 
 {
-	import GameObject.DrawableObject;
-	import GameObject.PhysicalObject;
+	import GameObject.InteractiveObject;
 	
 	/**
 	 * ...
 	 * @author ...
 	 */
-	public class Breakable extends PhysicalObject 
+	public class Breakable extends InteractiveObject 
 	{
 		
 		public function Breakable(X:Number, Y:Number ) 
@@ -38,7 +37,7 @@ package GameObject.Other
 		
 		override public function update():void {
 			switch(m_state) {
-				case "idle" : if (collide(Global.player1) && Global.player1.isRushing()) {
+				case "idle" : if (canInteract(Global.player1) && Global.player1.isRushing()) {
 								m_state = "breaking";
 								Global.player1.unspecial();
 								play("breaking");
