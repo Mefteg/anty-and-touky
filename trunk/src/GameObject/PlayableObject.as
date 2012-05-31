@@ -53,6 +53,7 @@ package GameObject
 		//SOUNDS
 		public var FX_shieldClang:FlxSound;
 		public var FX_drawWeapon:FlxSound;
+		public var FX_hit:FlxSound;
 		
 		public var m_enemies:Vector.<GameObject.Enemy.Enemy>;
 		
@@ -79,6 +80,7 @@ package GameObject
 			//SOUNDS
 			FX_shieldClang = new FlxSound();
 			FX_drawWeapon = new FlxSound();
+			FX_hit = new FlxSound();
 			m_magics.push(Magic.Tornado());
 			m_magics.push(Magic.Fireball());
 			m_itemManager = new GameObject.Item.ItemManager(this);
@@ -122,6 +124,7 @@ package GameObject
 			//sounds
 			FX_shieldClang.loadStream("FX/clang.mp3");
 			FX_drawWeapon.loadStream("FX/swordDrawn.mp3");
+			FX_hit.loadStream("FX/hit.mp3");
 			//magic
 			for (var i:int = 0; i < m_magics.length; i++){
 				m_magics[i].load();
@@ -271,6 +274,7 @@ package GameObject
 		public function takeDamage():void {
 			if (!m_timerTwinkle.finished || isRushing())
 				return;
+			FX_hit.play();
 			//start timer during when the enemy is hit
 			changeTwinkleColor(_twinkleHit);
 			beginTwinkle(20, 3);		

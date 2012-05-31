@@ -34,14 +34,13 @@ package GameObject.Weapon
 		}
 		
 		public function touched():void {
-			if (m_state == "dead")
+			if (m_state == "idle")
 				return;
-			m_state = "dead";
+			m_state = "idle";
 			m_direction.x = 0;
 			m_direction.y = 0;
 			x = 0; y = 0;
 			m_speed = m_initSpeed;
-			play("dead");
 		}
 		
 		override public function attack(direction:int):void {
