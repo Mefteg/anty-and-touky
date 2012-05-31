@@ -283,9 +283,6 @@ package GameObject
 			//calculate damage
 			var damage:int = magic.m_power + enemy.m_stats.m_magic_attack_current ;
 			damage = damage * Utils.random(0.9, 1.1) - m_stats.m_magic_defense_current;
-			//display damage
-			var info:InfoDamage = new InfoDamage(x, y, String(damage));
-			info.addToStage();
 			//substract damage to hp
 			m_stats.m_hp_current -= damage;
 			//check death

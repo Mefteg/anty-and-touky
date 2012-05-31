@@ -1,6 +1,7 @@
 package GameObject.Other 
 {
 	import GameObject.InteractiveObject;
+	import org.flixel.FlxSound;
 	
 	/**
 	 * ...
@@ -8,21 +9,22 @@ package GameObject.Other
 	 */
 	public class Breakable extends InteractiveObject 
 	{
+		private var m_FX:FlxSound;
+		public var m_FXurl:String = "FX/rock_explode.mp3";
 		
 		public function Breakable(X:Number, Y:Number ) 
 		{
 			super(X, Y);
 			m_state = "idle";
+			m_FX = new FlxSound();
+			m_bufferGroup = DepthBufferPlaystate.s_objectGroup;
 		}
 		
-		override public function addToStage():void {
-			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_objectGroup);
+		override public function load():void {
+			super.load();
+			m_FX.loadStream(m_FXurl);
 		}
-		
-		override public function removeFromStage():void {
-			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_objectGroup);
-		}
-		
+				
 		public function setIdleAnim(...rest):void {
 			addAnimation("idle", rest, 0, true);
 		}
@@ -41,11 +43,12 @@ package GameObject.Other
 								m_state = "breaking";
 								Global.player1.unspecial();
 								play("breaking");
+								m_FX.play();
 							}
 							break;
 				case "breaking": if (finished){
 									m_state = "broken";
-									m_canGoThrough = true;
+									m_collideWithObjects = false;
 									play("broken");
 								}
 								break;
@@ -64,6 +67,7 @@ package GameObject.Other
 			rock.setIdleAnim(0);
 			rock.setBreakAnim(1, 2, 3, 4, 5, 6, 7, 8);
 			rock.setBrokenAnim(9);
+			rock.m_FXurl = "FX/rock_explode.mp3";
 			return rock;
 		}
 		
