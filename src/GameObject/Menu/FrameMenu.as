@@ -10,10 +10,10 @@ package GameObject.Menu
 	public class FrameMenu extends DrawableObject 
 	{
 		
-		public function FrameMenu(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
+		public function FrameMenu(X:Number = 0, Y:Number = 0, SimpleGraphic:Class = null) 
 		{
 			super(X, Y, SimpleGraphic);
-			m_url = "Images/Menu/menu_frame.png";
+			m_url = "Images/Menu/menu_frame.png";;
 			m_width = 120;
 			m_height = 45;
 			
