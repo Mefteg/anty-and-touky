@@ -37,6 +37,10 @@ package GameObject.Menu
 			// adding of the frame
 			obj = new FrameMenu();
 			obj.m_parent = this;
+			if (m_player.m_name == "Player1")
+				obj.m_url = "Images/Menu/menu_frame_anty.png";
+			else	
+				obj.m_url = "Images/Menu/menu_frame_touky.png";
 			Global.library.addUniqueBitmap(obj.m_url);
 			this.add(obj);
 			
