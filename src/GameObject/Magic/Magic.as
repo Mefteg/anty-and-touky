@@ -59,6 +59,7 @@ package GameObject.Magic
 			m_timerHit = new FlxTimer();
 			m_elemental = new Elemental();
 			m_typeName = "Magic";
+			m_bufferGroup = DepthBufferPlaystate.s_nppGroup;
 		}
 		
 		public function setElemental(...rest):void {
@@ -102,13 +103,6 @@ package GameObject.Magic
 			Global.library.addUniqueBitmap(m_url);
 			if(m_iconImage)
 				Global.library.addUniqueBitmap(m_iconImage);
-		}
-		override public function addToStage():void {
-			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_nppGroup);
-		}
-		
-		override public function removeFromStage():void {
-			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_nppGroup);
 		}
 		
 		public function attack():void {

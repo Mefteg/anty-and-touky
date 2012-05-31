@@ -23,6 +23,7 @@ package GameObject.Weapon
 		{
 			super(0, 0, null);
 			m_typeName = "Weapon";
+			m_bufferGroup = DepthBufferPlaystate.s_nppGroup;
 			m_url = url;
 			m_power = power;
 			m_width = 24;
@@ -37,14 +38,6 @@ package GameObject.Weapon
 			m_state = "attack";
 			play("attack" + direction);
 			addToStage();
-		}
-		
-		override public function addToStage():void {
-			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_nppGroup);
-		}
-		
-		override public function removeFromStage():void {
-			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_nppGroup);
 		}
 		
 		public function Idleize() : void {
