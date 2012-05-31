@@ -58,17 +58,17 @@
  </tile>
  <tile id="16">
   <properties>
-   <property name="type" value="PhysicalTile"/>
+   <property name="type" value="Grass"/>
   </properties>
  </tile>
  <tile id="17">
   <properties>
-   <property name="type" value="PhysicalTile"/>
+   <property name="type" value="Grass"/>
   </properties>
  </tile>
  <tile id="18">
   <properties>
-   <property name="type" value="Rock"/>
+   <property name="type" value="Grass"/>
   </properties>
  </tile>
  <tile id="20">
@@ -111,14 +111,24 @@
    <property name="type" value="Foreground"/>
   </properties>
  </tile>
- <tile id="32">
+ <tile id="29">
   <properties>
    <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
+ <tile id="32">
+  <properties>
+   <property name="type" value="Grass"/>
+  </properties>
+ </tile>
+ <tile id="33">
+  <properties>
+   <property name="type" value="Grass"/>
+  </properties>
+ </tile>
  <tile id="34">
   <properties>
-   <property name="type" value="PhysicalTile"/>
+   <property name="type" value="Grass"/>
   </properties>
  </tile>
  <tile id="40">
@@ -128,17 +138,17 @@
  </tile>
  <tile id="48">
   <properties>
-   <property name="type" value="PhysicalTile"/>
+   <property name="type" value="Grass"/>
   </properties>
  </tile>
  <tile id="49">
   <properties>
-   <property name="type" value="PhysicalTile"/>
+   <property name="type" value="Grass"/>
   </properties>
  </tile>
  <tile id="50">
   <properties>
-   <property name="type" value="PhysicalTile"/>
+   <property name="type" value="Grass"/>
   </properties>
  </tile>
  <tile id="64">
@@ -169,6 +179,26 @@
  <tile id="82">
   <properties>
    <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="96">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="97">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="98">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="112">
+  <properties>
+   <property name="type" value="Hole"/>
   </properties>
  </tile>
 </tileset>

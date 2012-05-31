@@ -29,7 +29,7 @@ package GameObject.Other
 		}
 		
 		public function setBreakAnim(...rest):void {
-			addAnimation("breaking", rest, 10, true);
+			addAnimation("breaking", rest, 10, false);
 		}
 		
 		public function setBrokenAnim(...rest):void {

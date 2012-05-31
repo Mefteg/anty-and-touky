@@ -47,7 +47,7 @@ package Scene
 		
 		public function collide():void {
 			//if collision is activated for both objects
-			if (m_currentObject.m_canGoThrough || m_currentObject.m_canGoThrough)
+			if (m_currentObject.m_canGoThrough || m_currentOther.m_canGoThrough)
 				return;
 			//if real collision between the two of 'em
 			if (m_currentObject.collide(m_currentOther)) {
