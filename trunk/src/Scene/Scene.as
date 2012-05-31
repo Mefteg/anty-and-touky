@@ -202,8 +202,8 @@ package Scene
 				//place player a la mano si si abuelo
 				Global.player1.x = 100;
 				Global.player1.y = 100;
-				Global.player2.x = 140;
-				Global.player2.y = 140;
+				Global.player2.x = 160;
+				Global.player2.y = 160;
 				return;
 			}
 			//search for the layer RespawnPoints in the jsonmap data
