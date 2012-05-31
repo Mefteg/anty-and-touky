@@ -33,6 +33,8 @@ package GameObject.Enemy
 		public var m_hit:uint = 1;
 		public var m_attackTime:Number = 2;
 		
+		private var m_smoke:EnemySmoke;
+		
 		
 		public var m_throwables:Vector.<EnemyThrowable>;
 		
@@ -52,15 +54,18 @@ package GameObject.Enemy
 			m_timerAttack.start(1);
 			m_timerDeath = new FlxTimer();
 			m_target = getRandomPlayer();
+			m_smoke = new EnemySmoke();
 			m_typeName = "Enemy";
-		}
-			
-		override public function addToStage() : void {
-			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_enemyGroup);
+			m_bufferGroup = DepthBufferPlaystate.s_enemyGroup;
 		}
 		
+		override public function load():void {
+			super.load();
+			m_smoke.load();
+		}
+							
 		override public function removeFromStage():void {
-			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_enemyGroup);
+			super.removeFromStage();
 			if (!m_throwables)
 				return;
 			for (var i:int = 0; i < m_throwables.length ; i ++)
@@ -93,6 +98,7 @@ package GameObject.Enemy
 			if (!m_throwables)
 				return;
 			m_throwables[0].addBitmap();
+			m_smoke.addBitmap();
 		}
 						
 		public function giveDamage():void {
@@ -268,6 +274,12 @@ package GameObject.Enemy
 				}
 			}
 		}		
+		
+		public function die():void {
+			m_state = "anihilated";
+			removeFromStage();
+			m_smoke.playSmoke(x, y);
+		}
 	}
 
 }

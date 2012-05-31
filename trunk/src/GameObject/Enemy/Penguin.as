@@ -87,8 +87,7 @@ package GameObject.Enemy
 									m_timerAttack.start(2);
 								}
 								break;
-				case "dead": if (finished)
-								removeFromStage();
+				case "dead": die();
 							break;
 			}
 		}

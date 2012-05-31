@@ -11,6 +11,8 @@ package GameObject
 	 */
 	public class GameObject extends FlxSprite 
 	{
+		
+		protected var m_bufferGroup:int = DepthBuffer.s_backgroundGroup;
 		public var m_typeName:String = "GameObject";
 		public var m_name:String;
 		public var m_width:int= 1;
@@ -57,11 +59,11 @@ package GameObject
 		}
 		
 		public function addToStage():void {
-			Global.currentState.depthBuffer.addElement(this, DepthBuffer.s_backgroundGroup);
+			Global.currentState.depthBuffer.addElement(this, m_bufferGroup);
 		}
 		
 		public function removeFromStage() : void {
-			Global.currentState.depthBuffer.removeElement(this, DepthBuffer.s_backgroundGroup);
+			Global.currentState.depthBuffer.removeElement(this, m_bufferGroup);
 		}
 		
 		public function isBusy():Boolean { return false; }
