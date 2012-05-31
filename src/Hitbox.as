@@ -51,6 +51,22 @@ package
 		public function get height():Number {
 			return m_size.y;
 		}
+		
+		public function set x(X:Number): void {
+			m_position.x = X;
+		}
+		
+		public function set y(Y:Number):void {
+			m_position.y = Y;
+		}
+		
+		public function set width(W:Number):void {
+			m_size.x = W;
+		}
+		
+		public function set height(H:Number):void {
+			m_size.y = H;
+		}
 	}
 
 }
