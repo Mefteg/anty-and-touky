@@ -35,6 +35,8 @@ package GameObject.Enemy
 		public var m_attackTime:Number = 2;
 		
 		private var m_smoke:EnemySmoke;
+		
+		private var m_FXhit:FlxSound;
 				
 		public var m_throwables:Vector.<EnemyThrowable>;
 		
@@ -55,6 +57,7 @@ package GameObject.Enemy
 			m_timerDeath = new FlxTimer();
 			m_target = getRandomPlayer();
 			m_smoke = new EnemySmoke();
+			m_FXhit = new FlxSound();
 			m_typeName = "Enemy";
 			m_bufferGroup = DepthBufferPlaystate.s_enemyGroup;
 		}
@@ -62,6 +65,7 @@ package GameObject.Enemy
 		override public function load():void {
 			super.load();
 			m_smoke.load();
+			m_FXhit.loadStream("FX/hit.mp3");
 		}
 							
 		override public function removeFromStage():void {
@@ -118,6 +122,7 @@ package GameObject.Enemy
 			var damage:int = weapon.m_power ;
 			//substract damage to hp
 			m_stats.m_hp_current -= damage;
+			m_FXhit.play();
 			//check death
 			if (m_stats.m_hp_current < 0){
 				m_state = "dead";
