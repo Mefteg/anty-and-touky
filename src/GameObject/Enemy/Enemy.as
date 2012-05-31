@@ -8,6 +8,7 @@ package GameObject.Enemy
 	import InfoObject.InfoDamage;
 	import org.flixel.FlxG;
 	import org.flixel.FlxPoint;
+	import org.flixel.FlxSound;
 	import org.flixel.FlxTimer;
 	import GameObject.Stats;
 	/**
@@ -34,8 +35,7 @@ package GameObject.Enemy
 		public var m_attackTime:Number = 2;
 		
 		private var m_smoke:EnemySmoke;
-		
-		
+				
 		public var m_throwables:Vector.<EnemyThrowable>;
 		
 		public function Enemy(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
@@ -116,9 +116,6 @@ package GameObject.Enemy
 		public function takeDamage(player:PlayableObject, weapon:Weapon):void {
 			//calculate damage
 			var damage:int = weapon.m_power ;
-			//display damage
-			var info:InfoDamage = new InfoDamage(x, y, String(damage));
-			info.addToStage();
 			//substract damage to hp
 			m_stats.m_hp_current -= damage;
 			//check death

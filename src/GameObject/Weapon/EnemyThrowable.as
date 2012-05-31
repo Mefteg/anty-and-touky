@@ -98,6 +98,7 @@ package GameObject.Weapon
 			var bullet:EnemyThrowable = new EnemyThrowable(1, "Images/Weapons/bullets.png", 2);
 			bullet.m_width = 16; bullet.m_height = 16;
 			bullet.setHitbox(6, 6, 4, 4);
+			bullet.m_FXurl = "FX/pistol_fire.mp3";
 			return bullet;
 		}
 	}

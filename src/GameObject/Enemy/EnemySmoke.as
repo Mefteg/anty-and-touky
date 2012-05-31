@@ -17,11 +17,13 @@ package GameObject.Enemy
 			m_url = "Images/Enemies/enemy_smoke.png";
 			m_width = 48; m_height = 48;
 			m_bufferGroup = DepthBufferPlaystate.s_enemyGroup;
+			m_sound = new FlxSound();
 		}
 		
 		override public function load():void {
 			super.load();
-			addAnimation("pouf", [0, 1, 2, 3, 4, 5, 6, 7], 20,false);
+			addAnimation("pouf", [0, 1, 2, 3, 4, 5, 6, 7], 20, false);
+			m_sound.loadStream("FX/smoke_enemy.mp3");
 		}
 		
 		public function playSmoke(X:Number, Y:Number ):void {
@@ -29,6 +31,7 @@ package GameObject.Enemy
 			m_state = "pouf";
 			addToStage();
 			play("pouf");
+			m_sound.play();
 		}
 		
 		override public function update():void {
