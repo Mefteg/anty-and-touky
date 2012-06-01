@@ -99,10 +99,10 @@ package GameObject.Enemy
 		
 		override public function addBitmap():void {
 			super.addBitmap();
+			m_smoke.addBitmap();
 			if (!m_throwables)
 				return;
 			m_throwables[0].addBitmap();
-			m_smoke.addBitmap();
 		}
 						
 		public function giveDamage():void {
