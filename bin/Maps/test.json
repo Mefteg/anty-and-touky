@@ -65,15 +65,15 @@
                 }, 
                 {
                  "height":0,
-                 "name":"Penguin",
+                 "name":"PenguinJetpack",
                  "properties":
                     {
 
                     },
-                 "type":"Penguin",
+                 "type":"PenguinJetpack",
                  "width":0,
-                 "x":473,
-                 "y":191
+                 "x":461,
+                 "y":223
                 }],
          "opacity":1,
          "type":"objectgroup",

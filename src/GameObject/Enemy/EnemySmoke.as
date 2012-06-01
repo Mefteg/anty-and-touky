@@ -44,6 +44,12 @@ package GameObject.Enemy
 			}
 		}
 		
+		public static function Explosion():EnemySmoke {
+			var smoke:EnemySmoke = new EnemySmoke();
+			smoke.m_url = "Images/Enemies/explosion.png";
+			return smoke;
+		}
+		
 	}
 
 }
