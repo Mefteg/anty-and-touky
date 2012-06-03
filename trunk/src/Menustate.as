@@ -32,7 +32,7 @@ package
 		private var m_menuAppeared:Boolean = false;
 		private var m_ending:Boolean = false;
 
-		public function Menustate() 
+		public function Menustate()
 		{
 			m_state = "Loading";
 			m_music = new FlxSound();

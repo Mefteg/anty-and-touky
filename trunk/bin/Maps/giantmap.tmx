@@ -13,14 +13,17 @@
    </properties>
   </tile>
  </tileset>
- <layer name="Calque de Tile 1" width="40" height="30">
+ <layer name="Background" width="40" height="30">
   <data encoding="base64" compression="zlib">
    eJzt1kEKACAIRFHz/ofuAlZkRR+cxUAEyWNwkZuZw9OCjO5nybxZzdv1zQwEH6W/nferXbk1/7QXQn+U/cvOo/l8cKb4XkY++Qi+yJn9V1Ts77dDPvmIkU8++eSr7iOnA8dKBVk=
   </data>
  </layer>
- <objectgroup name="Calque d'objets 1" width="40" height="30">
-  <object name="WhiteSquare" type="WhiteSquare" x="525" y="57" width="67" height="24"/>
- </objectgroup>
+ <layer name="Foreground" width="40" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20ND6AAAAAA4NcAEsAAAQ==
+  </data>
+ </layer>
+ <objectgroup name="Calque d'objets 1" width="40" height="30"/>
  <objectgroup name="RespawnPoints" width="40" height="30">
   <object name="TriggerScene" x="46" y="45" width="115" height="71"/>
  </objectgroup>

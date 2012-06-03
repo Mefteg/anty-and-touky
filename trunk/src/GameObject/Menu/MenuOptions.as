@@ -1,22 +1,19 @@
 package GameObject.Menu 
 {
-	import flash.display.Stage;
 	import GameObject.CompositeObject;
-	import org.flixel.FlxG;
 	import org.flixel.FlxPoint;
 	
 	/**
 	 * ...
-	 * @author Tom
+	 * @author ...
 	 */
-	public class MenuBegin extends CompositeObject 
+	public class MenuOptions extends CompositeObject 
 	{
 		public var m_cursor:GameObject.Menu.Cursor;
 		
-		public function MenuBegin(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
+		public function MenuOptions(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, SimpleGraphic);
-			
 			this.create();
 		}
 		
@@ -35,32 +32,31 @@ package GameObject.Menu
 			
 			// adding of the background
 			var background:MenuBackground = new MenuBackground(this.x, this.y);
+			background.m_url = "Images/Menu/optionsstate_background.png";
 			background.m_shift = new FlxPoint(0, 0);
 			background.m_parent = this;
 			Global.library.addUniqueBitmap(background.m_url);
 			this.add(background);
 			
-			// adding of the play button
-			var button1:Button = new ButtonPlay(m_cursor, null, this.x, this.y);
-			button1.m_shift = new FlxPoint(220, 300);
-			button1.m_parent = this;
-			Global.library.addUniqueBitmap(button1.m_url);
-			this.add(button1);
+			// adding of the incremental menu for the lifes
+			var menuLifes:MenuIncremental = new MenuIncremental(m_cursor, null, this.x, this.y);
+			menuLifes.m_shift = new FlxPoint(220, 215);
+			menuLifes.m_parent = this;
+			this.add(menuLifes);
 			
 			// adding of the option button
-			var button2:Button = new ButtonOptions(m_cursor, null, this.x, this.y);
-			button2.m_shift = new FlxPoint(220, 265);
-			button2.m_parent = this;
-			Global.library.addUniqueBitmap(button2.m_url);
-			this.add(button2);
-			
-			button1.m_next = button2;
-			button2.m_next = button1;
+			var back:Button = new ButtonBack(m_cursor, null, this.x, this.y);
+			back.m_shift = new FlxPoint(220, 315);
+			back.m_parent = this;
+			Global.library.addUniqueBitmap(back.m_url);
+			this.add(back);
 
-			m_cursor.m_firstButton = button1;
-			m_cursor.m_currentButton = button1;
+			m_cursor.m_firstButton = menuLifes.getFirst() as Button;
+			m_cursor.m_currentButton = menuLifes.getFirst() as Button;
+			
+			(menuLifes.getLast() as Button).m_next = back;
+			back.m_next = menuLifes.getFirst() as Button;
 		}
-		
 	}
 
 }

@@ -35,6 +35,10 @@ package
 		//static public var serverAddress:String = "http://localhost/minority-resort/bin";
 		static public var frozen = false;
 		
+		//OPTIONS
+		static public var nbLifesMax = 3;
+		static public var nbContinuesMax = 3;
+		
 		//ELEMENTS
 		public static var elementsID:Object = { "fire":0, "ice":1, "thunder":2, "water":3, "earth":4, "wind":5 };
 		public static var elementsName:Array = [ "fire", "ice", "thunder","water", "earth", "wind" ];
