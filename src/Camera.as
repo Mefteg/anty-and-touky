@@ -27,40 +27,19 @@ package
 			if ( Global.player1 && Global.player2 ) {
 				var pos_p1:FlxPoint = new FlxPoint(Global.player1.x, Global.player1.y);
 				var size_p1:FlxPoint = new FlxPoint(Global.player1.m_width, Global.player1.m_height);
+				var center_p1:FlxPoint = Utils.add2v(pos_p1, Utils.mult1v(size_p1, 0.5));
 				
 				var pos_p2:FlxPoint = new FlxPoint(Global.player2.x, Global.player2.y);
 				var size_p2:FlxPoint = new FlxPoint(Global.player2.m_width, Global.player2.m_height);
+				var center_p2:FlxPoint = Utils.add2v(pos_p2, Utils.mult1v(size_p2, 0.5));
 				
-				var pos_hori:FlxPoint = new FlxPoint();
-				var pos_vert:FlxPoint = new FlxPoint();
-				var size:FlxPoint = new FlxPoint();
+				m_target = Utils.mult1v(Utils.add2v(pos_p1, pos_p2), 0.5);
 				
-				// if player 1 is out
 				if ( !this.isIn(pos_p1, size_p1) ) {
-					// and if player 2 is in
-					if ( this.isIn(pos_p2, size_p2) ) {
-						// follow player 1
-						this.followPlayer(Global.player1);
-						//MOVE CAM
-					}
-					// otherwise
-					else {
-						// stop player 1 & player 2 unless they are on the same bounderie
-						stopPlayer(Global.player1);
-						stopPlayer(Global.player2);
-					}
+					stopPlayer(Global.player1);
 				}
-				// otherwise
-				else {
-					// if player 2 is out
-					if ( !this.isIn(pos_p2, size_p2) ) {
-						// follow player 2
-						this.followPlayer(Global.player2);
-						//MOVE CAM
-					}
-					else {
-						// NOTHING
-					}
+				if ( !this.isIn(pos_p2, size_p2) ) {
+					stopPlayer(Global.player2);
 				}
 				
 				this.focusOn(m_target);
