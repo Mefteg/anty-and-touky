@@ -1,8 +1,10 @@
 package GameObject 
 {
+	import flash.display.Scene;
 	import flash.sampler.NewObjectSample;
 	import org.flixel.FlxG;
 	import org.flixel.FlxPoint;
+	import Scene.Scene;
 	/**
 	 * ...
 	 * @author Tom
@@ -30,15 +32,9 @@ package GameObject
 		override public function move() : void {
 			m_canGoThrough = true;
 			super.move();
-			
-			this.interactWithEnv();
-			
-			//it's useless to detect a collision if an object is not moving at all
-			/*if (m_canGoThrough || (m_direction.x == 0 && m_direction.y == 0))
-				return;*/
-			
+				
 			// if the new position involves an environment collision
-			if ( !m_canGoThrough ) {
+			if ( this.collideWithEnv() ) {
 				// keep the current position
 				this.x = m_oldPos.x;
 				this.y = m_oldPos.y;
@@ -49,7 +45,23 @@ package GameObject
 		 * Compute the collision with the environment
 		 * @return true if the object is colliding with the environment
 		 */
-		public function interactWithEnv() : Boolean {
+		public function collideWithEnv() : Boolean {
+			var scene:Scene.Scene = Global.currentPlaystate.getCurrentScene();
+			// if the new position involves an environment collision
+			if ( this.collideWithTiles(scene.tilesBackground) /*|| this.collideWithTiles(scene.tilesForeground)*/ ) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		
+		/**
+		 * Compute the collision with the environment
+		 * @param env	the array containing tiles ( Background or Foreground )
+		 * @return true if the object is colliding with the tiles
+		 */
+		public function collideWithTiles(env:Array) : Boolean {
 			var collide:Boolean = false;
 			
 			// if the scene has been loaded
@@ -69,16 +81,18 @@ package GameObject
 				for ( var i:int = topleftToGrid.x; i <= bottomrightToGrid.x; i++ ) {
 					for ( var j:int = topleftToGrid.y; j <= bottomrightToGrid.y; j++ ) {
 						var index:uint = j * Global.nb_tiles_width + i;
-						var env:Array = Global.currentPlaystate.getCurrentScene().tiles;
-						var tile:GameObject.TileObject = env[index];
-						tiles.push(tile);
-						
-						tile.action(this);
-						// if the tile is physical
-						/*if ( tile.m_collide == true ) {
-							// METTRE LE TEST DU TYPE ICI OU DANS l'HERITAGE DE PLAYABLEOBJECT
-							collide = true;
-						}*/
+						//if ( index < env.length ) {
+							var tile:GameObject.TileObject = env[index];
+							if ( tile.m_typeName == "PhysicalTile" ) {
+								trace("ICI");
+							}
+							tiles.push(tile);
+							
+							// if the tile is physical
+							if ( tile.m_collide == true ) {
+								collide = true;
+							}
+						//}
 					}
 				}
 			}

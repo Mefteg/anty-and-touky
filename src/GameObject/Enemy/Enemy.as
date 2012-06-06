@@ -194,10 +194,10 @@ package GameObject.Enemy
 			this.x = this.x + (m_direction.x * m_speed);
 			this.y = this.y + (m_direction.y * m_speed);
 			
-			if ( this.interactWithEnv() ) {
+			if ( this.collideWithEnv() ) {
 				this.x = m_oldPos.x;
 			}
-			if ( this.interactWithEnv() ) {
+			if ( this.collideWithEnv() ) {
 				this.y = m_oldPos.y;
 			}
 			else {
