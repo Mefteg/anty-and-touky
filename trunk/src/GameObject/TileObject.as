@@ -34,9 +34,6 @@ package GameObject
 		}
 		
 		public function action(object:GameObject.PhysicalObject) : void {
-			if ( m_collide ) {
-				trace("BLA!");
-			}
 		}
 	}
 

@@ -21,7 +21,8 @@ package Scene
 		private var m_filename:String;
 		//GameObjects of the scene
 		protected var m_elements:Vector.<GameObject>;
-		protected var m_tiles:Array;
+		protected var m_tilesBackground:Array;
+		protected var m_tilesForeground:Array;
 		//library containing filename loaded for this scene
 		public var m_library:Object;
 		private var m_mapName:String;
@@ -39,7 +40,8 @@ package Scene
 		{
 			m_filename = filename.substr(0, filename.indexOf("."));
 			m_elements = new Vector.<GameObject>();
-			m_tiles = new Array();
+			m_tilesBackground = new Array();
+			m_tilesForeground = new Array();
 			m_library = new Object();
 			
 			// we start by the tmp json
@@ -64,9 +66,9 @@ package Scene
 			myData = JSON.decode(myLoader.data);
 
 			// load tiles in background
-			loadTiles(0);
+			loadTiles(0, m_tilesBackground);
 			// load tiles in foreground
-			loadTiles(1);
+			loadTiles(1, m_tilesForeground);
 			
 			loadObjects();
 			//all the objects are loaded
@@ -121,7 +123,7 @@ package Scene
 			}
 		}
 		
-		public function loadTiles(layer:int) : void {
+		public function loadTiles(layer:int, tilesGround:Array) : void {
 			///LOAD THE IMAGE TILESET///
 			m_mapName = myData.tilesets[0].image;
 			m_mapName = m_mapName.replace(/\.\.\//g, "");
@@ -166,7 +168,7 @@ package Scene
 						if ( id == "type" ) {
 							//create the tile
 							var tile:GameObject.DrawableObject = Converter.convertJsonTile(type[id], pos, m_mapName, tileId);
-							m_tiles.push(tile);
+							m_tilesBackground.push(tile);
 						}
 						cpt++;
 					}
@@ -174,7 +176,7 @@ package Scene
 					if ( cpt == 0 && data[i * width + j] > 0 ) {
 						//create the tile with no type
 						var tile2:GameObject.DrawableObject = Converter.convertJsonTile("", pos, m_mapName, tileId);
-						m_tiles.push(tile2); // ECRIT PAR DESSUS DU COUP !! :-/
+						tilesGround.push(tile2); // ECRIT PAR DESSUS DU COUP !! :-/
 					}
 				}
 			}
@@ -183,9 +185,9 @@ package Scene
 		//load all the graphics of the objects
 		public function loadGraphics() : void {
 			//load Map
-			for ( var i:int= 0; i < m_tiles.length; i++ ) {
-				m_tiles[i].load();
-				m_tiles[i].addToStage();
+			for ( var i:int= 0; i < m_tilesBackground.length; i++ ) {
+				m_tilesBackground[i].load();
+				m_tilesBackground[i].addToStage();
 			}
 			//load objects
 			for ( var j:int = 0; j < m_elements.length; j++ ) {
@@ -234,8 +236,8 @@ package Scene
 				m_elements[i].removeFromStage();
 			}
 			
-			for (var j:int = 0; j < m_tiles.length; j++ ) {
-				FlxG.state.remove(m_tiles[j]);
+			for (var j:int = 0; j < m_tilesBackground.length; j++ ) {
+				FlxG.state.remove(m_tilesBackground[j]);
 			}
 		}
 		//return true if an image is used in the scene
@@ -246,9 +248,14 @@ package Scene
 				return false;
 		}
 		
-		public function get tiles():Array 
+		public function get tilesBackground():Array 
 		{
-			return m_tiles;
+			return m_tilesBackground;
+		}
+		
+		public function get tilesForeground():Array 
+		{
+			return m_tilesForeground;
 		}
 	}
 

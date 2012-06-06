@@ -12,10 +12,7 @@ package GameObject
 		{
 			super(X, Y, mapName, index, SimpleGraphic);
 			m_collide = true;
-		}
-		
-		override public function action(object:GameObject.PhysicalObject) : void {
-			object.m_canGoThrough = false;
+			m_typeName = s_type;
 		}
 	}
 
