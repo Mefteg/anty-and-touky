@@ -1,9 +1,13 @@
 package  
 {
+	import flash.events.Event;
+	import flash.net.URLLoader;
+	import flash.net.URLRequest;
 	import org.flixel.FlxBasic;
 	import org.flixel.FlxG;
 	import org.flixel.FlxSound;
 	import org.flixel.FlxSprite;
+	import org.flixel.FlxText;
 	import org.flixel.FlxTimer;
 	import Scene.Library;
 	/**
@@ -12,6 +16,15 @@ package
 	 */
 	public class StoryState extends State 
 	{
+		private var m_xml:XML;
+		private var m_textsToDisplay:XML;
+		private var m_nbTTD:int;
+		private var m_currentTextID:int;
+		private var m_currentText:String;
+		private var m_displayedText:String;
+		private var m_index:int;
+		private var m_counterLetter:int;
+		private var m_writing:Boolean;
 		// to switch between images
 		private var m_firstImage:Boolean = false;
 		private var m_timerSwitch:FlxTimer;
@@ -20,8 +33,10 @@ package
 		private var m_imageB:FlxSprite;
 		private var m_currentImageName:String;
 		
+		private var m_text:FlxText;
+		
 		private var m_currentStory:int = 0;
-		private var m_timerImages:FlxTimer;
+		private var m_timerMessage:FlxTimer;
 		
 		public function StoryState() 
 		{
@@ -30,17 +45,20 @@ package
 			depthBuffer = new DepthBuffer();
 			add(depthBuffer);
 			depthBuffer.addElement(m_imageA, DepthBuffer.s_backgroundGroup);
-			depthBuffer.addElement(m_imageB, DepthBuffer.s_cursorGroup);
-			m_state = "Loading";
+			depthBuffer.addElement(m_imageB, DepthBuffer.s_backgroundGroup);
+			m_text = new FlxText(70, 400, 480, "EEDDEE");
+			m_text.color = 0x804040;
+			depthBuffer.addElement(m_text, DepthBuffer.s_backgroundGroup);
+			m_state = "Beginning";
 			m_sound = new FlxSound();
 			m_sound.loadStream("Music/TwoBuddies.mp3",true);
 			m_sound.play();
 			m_library = new Library();
 			m_timerSwitch = new FlxTimer();
 			m_timerSwitch.start(0.1);
-			m_timerImages = new FlxTimer();
-			m_timerImages.start(0.1);
-			nextImage();
+			m_timerMessage = new FlxTimer();
+			m_timerMessage.start(0.1);
+			loadXML("Scripts/story.xml");
 		}
 		
 		override public function update():void {
@@ -48,6 +66,7 @@ package
 			
 			switch(m_state) {
 				//load images
+				case "Beginning" : if (m_xml) nextImage(); break;
 				case "Loading": loading();break;
 				case "Switching":switching(); break;
 				case "Ending":ending(); break;
@@ -61,7 +80,7 @@ package
 				m_library.cacheObjects();
 				loadGraphics();
 				m_state = "Switching";
-				m_timerImages.start(10);
+				m_timerMessage.start(m_nbTTD * 5);
 				fadeIn();
 			}
 		}
@@ -80,26 +99,46 @@ package
 		private function nextImage():void {
 			m_currentStory ++;
 			//if the story's finishedn end
-			if (m_currentStory >= 3) {
+			if (m_currentStory >= 4) {
 				end();
 				return;
 			}
 			loadBitmaps();
+			m_textsToDisplay = m_xml.story[m_currentStory - 1];
+			m_nbTTD = m_textsToDisplay.message.length();
+			m_currentTextID = 0;
+			initWriting();
+		}
+		
+		private function nextMessage():void {
+			if (m_timerMessage.finished && !m_writing) {
+				m_currentTextID++; 
+				//if all the messages have been displayed
+				if(m_currentTextID >= m_nbTTD){
+					nextImage();
+					fadeOut(1);
+					return;
+				}
+				//else
+				initWriting();
+			}
 		}
 		
 		private function switching():void {
+			//write the message
+			write();
+			//check for a new message to display
+			nextMessage();
 			//m_library.loadAll(); // load next images to avoid lags
-			if (m_timerImages.finished){
-				nextImage();
-				fadeOut(1);
-			}
 			if (m_timerSwitch.finished) {
 				m_timerSwitch.start(1);
 				if (m_firstImage) {
+					m_text.y += 8;
 					m_imageA.visible = true;
 					m_imageB.visible = false;
 					m_firstImage = false;
 				}else {
+					m_text.y -= 8;
 					m_imageA.visible = false;
 					m_imageB.visible = true;
 					m_firstImage = true;
@@ -140,6 +179,43 @@ package
 			
 		}
 		
+		/**************************************************************/
+		//////////////////// XML LOADING///////////////////////////////
+		private function loadXML(url:String):void 
+		{
+			var request:URLRequest = new URLRequest(url);
+			var loader:URLLoader = new URLLoader();
+			loader.addEventListener(Event.COMPLETE, onComplete);
+			loader.load(request);
+		}
+		
+		private function onComplete(e:Event):void
+		{
+			m_xml = new XML(e.target.data);
+		}
+		/***************************************************************/
+		
+		private function initWriting():void {
+			m_index = 0;
+			m_counterLetter = 0;
+			m_displayedText = "";
+			m_currentText = m_textsToDisplay.message[m_currentTextID].@text.toString();
+			m_writing = true;
+		}
+		
+		private function write():void {
+			m_counterLetter ++;
+			if ( !m_writing || m_counterLetter< 10)
+				return;
+			m_displayedText += m_currentText.charAt(m_index);
+			m_text.text = m_displayedText;
+			m_index++;
+			m_counterLetter = 0;
+			if(m_index >= m_currentText.length){
+				m_timerMessage.start(5);
+				m_writing = false;
+			}
+		}
 	}
 
 }
