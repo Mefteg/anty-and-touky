@@ -51,6 +51,8 @@ package
 			m_screenFade.makeGraphic(640, 480, FlxG.bgColor);
 			m_screenFade.alpha = 1;
 			m_timerFade = new FlxTimer();
+			if (!depthBuffer)
+				depthBuffer = new DepthBuffer();
 			depthBuffer.addElement(m_screenFade, DepthBuffer.s_cursorGroup);
 		}
 		
