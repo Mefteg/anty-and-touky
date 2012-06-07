@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<intro>
+	<story id="1">
+		<message text="Yo soy el cavallero del amor" />
+		<message text="mi tu" />
+	</story>
+
+	<story id="2">
+		<message text="AT rocks" />
+		<message text="oh yeah" />
+	</story>
+	
+	<story id="2">
+		<message text="Beware of EL SQUALO" />
+		<message text="End" />
+	</story>
+</intro>
