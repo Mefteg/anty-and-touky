@@ -115,7 +115,7 @@ package
 			if (m_fadeOut)
 				return;
 			m_music.stop();
-			FlxG.switchState( new Playstate() );
+			FlxG.switchState( new StoryState() );
 		}
 	}
 
