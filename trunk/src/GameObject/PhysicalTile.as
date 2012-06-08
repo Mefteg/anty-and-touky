@@ -12,7 +12,7 @@ package GameObject
 		{
 			super(X, Y, mapName, index, SimpleGraphic);
 			m_collide = true;
-			m_typeName = s_type;
+			m_typeName = PhysicalTile.s_type;
 		}
 	}
 

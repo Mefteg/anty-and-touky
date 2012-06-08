@@ -7,6 +7,7 @@ package Scene
 	import flash.net.URLRequest;
 	import GameObject.*;
 	import GameObject.Player.Player1;
+	import GameObject.Tile.Foreground;
 	import org.flixel.FlxG;
 	import com.adobe.serialization.json.JSON;
 	import org.flixel.FlxPoint;
@@ -168,7 +169,7 @@ package Scene
 						if ( id == "type" ) {
 							//create the tile
 							var tile:GameObject.DrawableObject = Converter.convertJsonTile(type[id], pos, m_mapName, tileId);
-							m_tilesBackground.push(tile);
+							tilesGround.push(tile);
 						}
 						cpt++;
 					}

@@ -23,7 +23,6 @@ package GameObject.Menu
 				Global.nbLifesMax = 1;
 			}
 			
-			trace(Global.nbLifesMax);
 		}
 	}
 
