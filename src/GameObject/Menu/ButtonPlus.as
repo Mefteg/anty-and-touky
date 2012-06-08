@@ -22,8 +22,6 @@ package GameObject.Menu
 			if ( Global.nbLifesMax > 5 ) {
 				Global.nbLifesMax = 5;
 			}
-			
-			trace(Global.nbLifesMax);
 		}
 	}
 }

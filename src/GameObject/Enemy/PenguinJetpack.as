@@ -58,7 +58,7 @@ package GameObject.Enemy
 			switch(m_state) {
 				case "idle": 
 							facing = getFacingToTarget(m_target);
-							trace(facing);
+							//trace(facing);
 							play("idle" + facing);
 							if (m_timerAttack.finished) {
 								m_state = "attack";

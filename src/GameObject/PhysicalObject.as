@@ -2,6 +2,7 @@ package GameObject
 {
 	import flash.display.Scene;
 	import flash.sampler.NewObjectSample;
+	import GameObject.Tile.Foreground;
 	import org.flixel.FlxG;
 	import org.flixel.FlxPoint;
 	import Scene.Scene;
@@ -48,7 +49,7 @@ package GameObject
 		public function collideWithEnv() : Boolean {
 			var scene:Scene.Scene = Global.currentPlaystate.getCurrentScene();
 			// if the new position involves an environment collision
-			if ( this.collideWithTiles(scene.tilesBackground) /*|| this.collideWithTiles(scene.tilesForeground)*/ ) {
+			if ( this.collideWithTiles(scene.tilesBackground, 0) || this.collideWithTiles(scene.tilesForeground, 1) ) {
 				return true;
 			}
 			else {
@@ -61,7 +62,7 @@ package GameObject
 		 * @param env	the array containing tiles ( Background or Foreground )
 		 * @return true if the object is colliding with the tiles
 		 */
-		public function collideWithTiles(env:Array) : Boolean {
+		public function collideWithTiles(env:Array, id:int=0) : Boolean {
 			var collide:Boolean = false;
 			
 			// if the scene has been loaded
@@ -81,18 +82,22 @@ package GameObject
 				for ( var i:int = topleftToGrid.x; i <= bottomrightToGrid.x; i++ ) {
 					for ( var j:int = topleftToGrid.y; j <= bottomrightToGrid.y; j++ ) {
 						var index:uint = j * Global.nb_tiles_width + i;
-						//if ( index < env.length ) {
+						if ( index < env.length ) { // <- PAS BEAU !!!
 							var tile:GameObject.TileObject = env[index];
-							if ( tile.m_typeName == "PhysicalTile" ) {
-								trace("ICI");
-							}
 							tiles.push(tile);
+							
+							if ( tile.m_typeName == Foreground.s_type ) {
+								trace("FOREGROUND");
+							}
+							if ( id == 1 && tile.m_typeName == GameObject.PhysicalTile.s_type ) {
+								trace(tile.m_typeName + " collide : " + tile.m_collide);
+							}
 							
 							// if the tile is physical
 							if ( tile.m_collide == true ) {
 								collide = true;
 							}
-						//}
+						}
 					}
 				}
 			}
