@@ -11,9 +11,9 @@ package GameObject.Tile
 	{
 		static public var s_type:String = "Rock";
 		
-		public function Rock(X:Number=0, Y:Number=0, mapName:String = null, index:uint=0, SimpleGraphic:Class=null) 
+		public function Rock(layer:uint, X:Number=0, Y:Number=0, mapName:String = null, index:uint=0, SimpleGraphic:Class=null) 
 		{
-			super(X, Y, mapName, index, SimpleGraphic);
+			super(layer, X, Y, mapName, index, SimpleGraphic);
 		}
 		
 		override public function action(object:PhysicalObject) : void {
