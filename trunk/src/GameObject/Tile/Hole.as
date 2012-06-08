@@ -12,9 +12,9 @@ package GameObject.Tile
 	{
 		static public var s_type:String = "Hole";
 		
-		public function Hole(X:Number=0, Y:Number=0, mapName:String=null, index:uint=0, SimpleGraphic:Class=null) 
+		public function Hole(layer:uint, X:Number=0, Y:Number=0, mapName:String=null, index:uint=0, SimpleGraphic:Class=null) 
 		{
-			super(X, Y, mapName, index, SimpleGraphic);
+			super(layer, X, Y, mapName, index, SimpleGraphic);
 			
 		}
 		

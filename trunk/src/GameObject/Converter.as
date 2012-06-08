@@ -62,14 +62,19 @@ package GameObject
 			return null;
 		}
 		
-		static public function convertJsonTile(type:String, pos:FlxPoint, mapName:String, tileId:uint) : GameObject.DrawableObject{
+		static public function convertJsonTile(layer:uint, type:String, pos:FlxPoint, mapName:String, tileId:uint) : GameObject.DrawableObject{
 			switch(type) {
-				case Grass.s_type:  return new GameObject.Tile.Grass(pos.x, pos.y, mapName, tileId); break;
-				case Rock.s_type:  return new GameObject.Tile.Rock(pos.x, pos.y, mapName, tileId); break;
-				case Hole.s_type:  return new Hole(pos.x, pos.y, mapName, tileId); break;
-				case PhysicalTile.s_type:  return new GameObject.PhysicalTile(pos.x, pos.y, mapName, tileId); break;
-				case Foreground.s_type:  return new GameObject.Tile.Foreground(pos.x, pos.y, mapName, tileId); break;
-				default:  return new GameObject.TileObject(pos.x, pos.y, mapName, tileId); break;
+			case Grass.s_type:  return new GameObject.Tile.Grass(layer, pos.x, pos.y, mapName, tileId); break;
+			case Rock.s_type:  return new GameObject.Tile.Rock(layer, pos.x, pos.y, mapName, tileId); break;
+			case Hole.s_type:  return new Hole(layer, pos.x, pos.y, mapName, tileId); break;
+			case PhysicalTile.s_type:  return new GameObject.PhysicalTile(layer, pos.x, pos.y, mapName, tileId); break;
+			case Foreground.s_type:  return new GameObject.Tile.Foreground(pos.x, pos.y, mapName, tileId); break;
+		default:
+			if ( layer == 0 )
+				return new GameObject.TileObject(layer, pos.x, pos.y, mapName, tileId);
+			else
+				return new GameObject.TileObject(layer, pos.x, pos.y, mapName, 3); // empty slot
+				break;
 			}
 			return null;
 		}

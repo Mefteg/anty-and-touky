@@ -82,21 +82,16 @@ package GameObject
 				for ( var i:int = topleftToGrid.x; i <= bottomrightToGrid.x; i++ ) {
 					for ( var j:int = topleftToGrid.y; j <= bottomrightToGrid.y; j++ ) {
 						var index:uint = j * Global.nb_tiles_width + i;
-						if ( index < env.length ) { // <- PAS BEAU !!!
-							var tile:GameObject.TileObject = env[index];
-							tiles.push(tile);
-							
-							if ( tile.m_typeName == Foreground.s_type ) {
-								trace("FOREGROUND");
-							}
-							if ( id == 1 && tile.m_typeName == GameObject.PhysicalTile.s_type ) {
-								trace(tile.m_typeName + " collide : " + tile.m_collide);
-							}
-							
-							// if the tile is physical
-							if ( tile.m_collide == true ) {
-								collide = true;
-							}
+						var tile:GameObject.TileObject = env[index];
+						tiles.push(tile);
+
+						if ( id == 1 && tile.m_typeName == GameObject.PhysicalTile.s_type ) {
+							//trace(tile.m_typeName + " collide : " + tile.m_collide);
+						}
+						
+						// if the tile is physical
+						if ( tile.m_collide == true ) {
+							collide = true;
 						}
 					}
 				}

@@ -124,9 +124,15 @@ package Scene
 			}
 		}
 		
+		/**
+		 * Load tiles in the appropiated array
+		 * @param	layer O : Background ; 1 : Foreground
+		 * @param	tilesGround
+		 */
 		public function loadTiles(layer:int, tilesGround:Array) : void {
 			///LOAD THE IMAGE TILESET///
 			m_mapName = myData.tilesets[0].image;
+			trace("layer : " + layer + " | mapName : " + m_mapName);
 			m_mapName = m_mapName.replace(/\.\.\//g, "");
 			//check if the image has been loaded
 			if (!Global.library.getBitmap(m_mapName)) {
@@ -168,15 +174,16 @@ package Scene
 					for(var id:String in type) {
 						if ( id == "type" ) {
 							//create the tile
-							var tile:GameObject.DrawableObject = Converter.convertJsonTile(type[id], pos, m_mapName, tileId);
+							var tile:GameObject.DrawableObject = Converter.convertJsonTile(layer, type[id], pos, m_mapName, tileId);
 							tilesGround.push(tile);
 						}
 						cpt++;
 					}
 					// if there is no type and a tile exists
-					if ( cpt == 0 && data[i * width + j] > 0 ) {
+					//if ( cpt == 0 && data[i * width + j] > 0 ) {
+					if ( cpt == 0 ) {
 						//create the tile with no type
-						var tile2:GameObject.DrawableObject = Converter.convertJsonTile("", pos, m_mapName, tileId);
+						var tile2:GameObject.DrawableObject = Converter.convertJsonTile(layer, "", pos, m_mapName, tileId);
 						tilesGround.push(tile2); // ECRIT PAR DESSUS DU COUP !! :-/
 					}
 				}
@@ -185,10 +192,15 @@ package Scene
 		
 		//load all the graphics of the objects
 		public function loadGraphics() : void {
-			//load Map
+			//load Background
 			for ( var i:int= 0; i < m_tilesBackground.length; i++ ) {
 				m_tilesBackground[i].load();
 				m_tilesBackground[i].addToStage();
+			}
+			//load Foreground
+			for ( var i:int= 0; i < m_tilesForeground.length; i++ ) {
+				m_tilesForeground[i].load();
+				m_tilesForeground[i].addToStage();
 			}
 			//load objects
 			for ( var j:int = 0; j < m_elements.length; j++ ) {
