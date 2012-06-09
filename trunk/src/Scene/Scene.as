@@ -132,7 +132,6 @@ package Scene
 		public function loadTiles(layer:int, tilesGround:Array) : void {
 			///LOAD THE IMAGE TILESET///
 			m_mapName = myData.tilesets[0].image;
-			trace("layer : " + layer + " | mapName : " + m_mapName);
 			m_mapName = m_mapName.replace(/\.\.\//g, "");
 			//check if the image has been loaded
 			if (!Global.library.getBitmap(m_mapName)) {
