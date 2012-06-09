@@ -72,6 +72,10 @@ package
 				case "Ending":ending(); break;
 				default : break;
 			}
+			
+			if ( FlxG.keys.justPressed("ENTER") ) {
+				this.end();
+			}
 		}
 		
 		override protected function loading():void {
