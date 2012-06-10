@@ -73,7 +73,7 @@ package GameObject
 			if ( layer == 0 )
 				return new GameObject.TileObject(layer, pos.x, pos.y, mapName, tileId);
 			else
-				return new GameObject.TileObject(layer, pos.x, pos.y, mapName, 3); // empty slot
+				return new GameObject.TileObject(layer, pos.x, pos.y, mapName, 0); // empty slot
 				break;
 			}
 			return null;
