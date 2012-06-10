@@ -9,6 +9,7 @@ package GameObject.Enemy
 	public class PenguinJetpack extends Enemy 
 	{
 		var m_explosion:EnemySmoke;
+		var m_targetHit:Boolean = false;
 		
 		public function PenguinJetpack(X:Number, Y:Number) 
 		{
@@ -52,7 +53,7 @@ package GameObject.Enemy
 		}
 		
 		override public function update():void {
-			if (!onScreen()) return;
+			if (!onScreen() || Global.frozen) return;
 			checkPlayersDamage();
 			twinkle();
 			switch(m_state) {
@@ -69,9 +70,11 @@ package GameObject.Enemy
 				case "attack":  move();
 								if (collide(Global.player1)) {
 									m_target = Global.player1;
+									m_targetHit = true;
 									explode();
 								}else if (collide(Global.player2)) {
 									m_target = Global.player2;
+									m_targetHit = true;
 									explode();
 								}
 								break;
@@ -80,10 +83,11 @@ package GameObject.Enemy
 			}
 		}
 		
-		protected function explode() {
+		protected function explode():void {
 			m_explosion.playSmoke(x, y);
 			removeFromStage();
-			m_target.takeDamage();
+			if(m_targetHit)
+				m_target.takeDamage();
 			m_state = "exploded";
 		}
 		

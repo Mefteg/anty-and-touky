@@ -23,8 +23,6 @@ package GameObject.Trigger
 			if (!m_active && ( collide(Global.player1) || collide(Global.player2))) {
 				m_active = true;
 				Global.currentPlaystate.changeScene(m_sceneName, m_respawnPoint);
-				Global.player1.block();
-				Global.player2.block();
 			}
 		}
 		

@@ -16,6 +16,8 @@ package
 	 */
 	public class StoryState extends State 
 	{
+		[Embed(source = "../bin/Images/Wicken.ttf", fontFamily = "Wickenden")] private static var myFont:Class;
+		
 		private var m_xml:XML;
 		private var m_textsToDisplay:XML;
 		private var m_nbTTD:int;
@@ -47,7 +49,7 @@ package
 			depthBuffer.addElement(m_imageA, DepthBuffer.s_backgroundGroup);
 			depthBuffer.addElement(m_imageB, DepthBuffer.s_backgroundGroup);
 			m_text = new FlxText(70, 400, 480, "EEDDEE");
-			m_text.color = 0x804040;
+			m_text.setFormat(null, 18, 0xD76B00);
 			depthBuffer.addElement(m_text, DepthBuffer.s_backgroundGroup);
 			m_state = "Beginning";
 			m_sound = new FlxSound();

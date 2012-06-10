@@ -75,9 +75,6 @@ package
 		
 		public function changeScene(sceneName:String, respawn:String ) : void {
 			fadeOut();
-			//prevent players from moving
-			Global.player1.block();
-			Global.player2.block();
 			m_sceneToLoad = sceneName;
 			m_respawnToLoad = respawn;
 			Global.frozen = true;
