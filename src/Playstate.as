@@ -48,6 +48,11 @@ package
 		private var m_rectLadyBug:FlxSprite;
 		private var m_initPosRect:Number;
 		
+		
+		//buttons
+		protected var m_pauseButton:FlxButton;
+		protected var m_controlsPanel:FlxSprite;
+		
 		public function Playstate() 
 		{
 			m_library = new Library();
@@ -71,6 +76,13 @@ package
 			m_rectLadyBug = new FlxSprite(m_ladyBug.x, m_ladyBug.y);
 			m_rectLadyBug.makeGraphic(32, 32,FlxG.bgColor);
 			m_initPosRect = m_rectLadyBug.y;
+			//PAUSE BUTTON
+			m_pauseButton = new FlxButton(200, 0, "P");
+			//m_library.addUniqueBitmap("Images/Menu/pauseButton.png");
+			depthBuffer.addElement(m_pauseButton, DepthBuffer.s_menuGroup );
+			//loading control panel
+			m_controlsPanel = new FlxSprite(0, 0);
+			m_library.addUniqueBitmap("Images/Menu/controlpanel.png");
 		}
 		
 		public function changeScene(sceneName:String, respawn:String ) : void {
@@ -124,6 +136,10 @@ package
 
 		override public function update() : void {
 			m_sceneManager.update();
+			if (m_state == "showingControls"){
+				showingControls();
+				return;
+			}
 			super.update();
 		}
 		
@@ -148,12 +164,17 @@ package
 					m_menu_p1.load();
 					Global.player2.load();
 					m_menu_p2.load();
+					m_controlsPanel.loadGraphic2(m_library.getBitmap("Images/Menu/controlpanel.png"));
 					m_uniquesLoaded = true;
 				}
 				Global.frozen = false;
 				//m_menu_p2.load();
 				Global.player1.getEnemiesInScene();
 				Global.player2.getEnemiesInScene();
+				if (!Global.hasSeenControls) {
+					Global.hasSeenControls = true;
+					//showControls();
+				}
 			}
 		}
 		
@@ -203,6 +224,22 @@ package
 			clearTalkers();
 			clearEnemies();
 		}
+		
+		public function showControls():void {
+			depthBuffer.addElement(m_controlsPanel, DepthBuffer.s_cursorGroup);
+			Global.frozen = true;
+			m_state = "showingControls";
+		}
+		
+		public function showingControls():void {
+			if (FlxG.keys.ESCAPE) {
+				m_state = "Done";
+				depthBuffer.removeElement(m_controlsPanel, DepthBuffer.s_cursorGroup);
+				Global.frozen = false;
+				return;
+			}
+		}
+		
 		//////////PHYSICALS/////////////
 		public function addPhysical(object:PhysicalObject):void {
 			m_collisionManager.m_physicalObjects.push(object);
