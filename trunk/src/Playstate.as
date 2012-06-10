@@ -51,6 +51,7 @@ package
 		
 		//buttons
 		protected var m_pauseButton:FlxButton;
+		protected var m_controlButton:FlxButton;
 		protected var m_controlsPanel:FlxSprite;
 		protected var m_controlShown:Boolean = false;
 		
@@ -78,14 +79,20 @@ package
 			m_rectLadyBug.makeGraphic(32, 32,FlxG.bgColor);
 			m_initPosRect = m_rectLadyBug.y;
 			//PAUSE BUTTON
-			m_pauseButton = new FlxButton(200, 0, "P");
-			//m_library.addUniqueBitmap("Images/Menu/pauseButton.png");
+			m_pauseButton = new FlxButton(600, 460, "",pause);
+			m_library.addUniqueBitmap("Images/Menu/pauseButton.png");
+			m_pauseButton.scrollFactor = new FlxPoint(0, 0);
 			depthBuffer.addElement(m_pauseButton, DepthBuffer.s_menuGroup );
+			//TOOL BUTTON
+			m_controlButton = new FlxButton(620, 460, "",showControls);
+			m_library.addUniqueBitmap("Images/Menu/toolButton.png");
+			m_controlButton.scrollFactor = new FlxPoint(0, 0);
+			depthBuffer.addElement(m_controlButton, DepthBuffer.s_menuGroup );
 			//loading control panel
 			m_controlsPanel = new FlxSprite(0, 0);
-			m_controlsPanel.scrollFactor.x = 0;
-			m_controlsPanel.scrollFactor.y = 0;
+			m_controlsPanel.scrollFactor = new FlxPoint(0, 0);
 			m_library.addUniqueBitmap("Images/Menu/controlpanel.png");
+			FlxG.mouse.show();
 		}
 		
 		public function changeScene(sceneName:String, respawn:String ) : void {
@@ -166,6 +173,8 @@ package
 					Global.player2.load();
 					m_menu_p2.load();
 					m_controlsPanel.loadGraphic2(m_library.getBitmap("Images/Menu/controlpanel.png"));
+					m_pauseButton.loadGraphic2(m_library.getBitmap("Images/Menu/pauseButton.png"), false, false, 16, 16);
+					m_controlButton.loadGraphic2(m_library.getBitmap("Images/Menu/toolButton.png"), false, false, 16, 16);
 					m_uniquesLoaded = true;
 				}
 				Global.frozen = false;
@@ -241,6 +250,16 @@ package
 				}else {
 					showControls();
 				}
+			}
+		}
+		
+		public function pause():void {
+			if(Global.frozen){
+				Global.frozen = false;
+				m_screenFade.alpha = 0.0;
+			}else {
+				Global.frozen = true;
+				m_screenFade.alpha = 0.5;
 			}
 		}
 		
