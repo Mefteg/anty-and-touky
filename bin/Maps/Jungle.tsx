@@ -1,29 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset name="Jungle" tilewidth="32" tileheight="32">
  <image source="../Images/Tilesets/Jungle.png" width="512" height="512"/>
- <tile id="0">
-  <properties>
-   <property name="type" value="Grass"/>
-  </properties>
- </tile>
  <tile id="1">
   <properties>
    <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
- <tile id="4">
+ <tile id="3">
   <properties>
-   <property name="type" value="Foreground"/>
+   <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
  <tile id="5">
   <properties>
-   <property name="type" value="PhysicalTile"/>
+   <property name="type" value="Foreground"/>
   </properties>
  </tile>
  <tile id="6">
   <properties>
-   <property name="type" value="PhysicalTile"/>
+   <property name="type" value="Foreground"/>
   </properties>
  </tile>
  <tile id="7">
@@ -41,34 +36,19 @@
    <property name="type" value="Foreground"/>
   </properties>
  </tile>
- <tile id="10">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
- <tile id="11">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
- <tile id="12">
+ <tile id="13">
   <properties>
    <property name="type" value="Foreground"/>
   </properties>
  </tile>
  <tile id="16">
   <properties>
-   <property name="type" value="Grass"/>
-  </properties>
- </tile>
- <tile id="17">
-  <properties>
-   <property name="type" value="Grass"/>
+   <property name="" value=""/>
   </properties>
  </tile>
  <tile id="18">
   <properties>
-   <property name="type" value="Grass"/>
+   <property name="" value=""/>
   </properties>
  </tile>
  <tile id="20">
@@ -96,59 +76,14 @@
    <property name="type" value="Foreground"/>
   </properties>
  </tile>
- <tile id="26">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
- <tile id="27">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
- <tile id="28">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
  <tile id="29">
   <properties>
    <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
- <tile id="32">
-  <properties>
-   <property name="type" value="Grass"/>
-  </properties>
- </tile>
- <tile id="33">
-  <properties>
-   <property name="type" value="Grass"/>
-  </properties>
- </tile>
- <tile id="34">
-  <properties>
-   <property name="type" value="Grass"/>
-  </properties>
- </tile>
  <tile id="40">
   <properties>
    <property name="type" value="PhysicalTile"/>
-  </properties>
- </tile>
- <tile id="48">
-  <properties>
-   <property name="type" value="Grass"/>
-  </properties>
- </tile>
- <tile id="49">
-  <properties>
-   <property name="type" value="Grass"/>
-  </properties>
- </tile>
- <tile id="50">
-  <properties>
-   <property name="type" value="Grass"/>
   </properties>
  </tile>
  <tile id="64">
@@ -183,22 +118,22 @@
  </tile>
  <tile id="96">
   <properties>
-   <property name="type" value="Hole"/>
+   <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
  <tile id="97">
   <properties>
-   <property name="type" value="Hole"/>
+   <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
  <tile id="98">
   <properties>
-   <property name="type" value="Hole"/>
+   <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
- <tile id="112">
+ <tile id="113">
   <properties>
-   <property name="type" value="Hole"/>
+   <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
 </tileset>
