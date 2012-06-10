@@ -50,6 +50,8 @@ package
 			m_screenFade = new FlxSprite(0, 0);
 			m_screenFade.makeGraphic(640, 480, FlxG.bgColor);
 			m_screenFade.alpha = 1;
+			m_screenFade.scrollFactor.x = 0;
+			m_screenFade.scrollFactor.y = 0;
 			m_timerFade = new FlxTimer();
 			if (!depthBuffer)
 				depthBuffer = new DepthBuffer();
@@ -107,6 +109,7 @@ package
 			m_screenFade.alpha = 0.0;
 			m_timerFade.start(time);
 			m_fadeOut = true;
+			m_fadeIn = false;
 		}
 		
 		protected function processFadeOut():void {
@@ -123,6 +126,7 @@ package
 			m_screenFade.alpha = 1.0;
 			m_timerFade.start(time);;
 			m_fadeIn = true;
+			m_fadeOut = false;
 		}
 		
 		protected function processFadeIn():void {
