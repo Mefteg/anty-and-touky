@@ -12,6 +12,7 @@ package GameObject
 	import GameObject.Weapon.Throwable;
 	import GameObject.Weapon.Weapon;
 	import InfoObject.InfoDamage;
+	import org.flixel.FlxButton;
 	import org.flixel.FlxG;
 	import org.flixel.FlxSave;
 	import org.flixel.FlxSound;
@@ -57,7 +58,7 @@ package GameObject
 		
 		public var m_enemies:Vector.<GameObject.Enemy.Enemy>;
 		
-		protected var m_onSpecial:Boolean = false;		
+		protected var m_onSpecial:Boolean = false;	
 		
 		public function PlayableObject(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{

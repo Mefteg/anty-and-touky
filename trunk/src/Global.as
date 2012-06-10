@@ -33,7 +33,8 @@ package
 		static public var GLOBAL_ID = 0;
 		static public var serverAddress:String = "http://ramboserver.dyndns.org/minority-resort/bin";
 		//static public var serverAddress:String = "http://localhost/minority-resort/bin";
-		static public var frozen = false;
+		static public var frozen:Boolean = false;
+		static public var hasSeenControls:Boolean = false;
 		
 		//OPTIONS
 		static public var nbLifesMax = 3;

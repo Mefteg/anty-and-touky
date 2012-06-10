@@ -30,7 +30,7 @@ package GameObject.Player
 			setHitbox(8, 18, 31, 20);
 			createTabPlaceThrowable();
 			m_equipement.m_throwable = PlayerThrowable.Ant();
-			
+			m_equipement.m_weapon.visible = false;
 			m_normalSpeed = m_speed;
 		}		
 				

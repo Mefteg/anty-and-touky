@@ -213,12 +213,7 @@ package Scene
 		public function spawnPlayers():void {
 			//if the scene has no respawn point 
 			if (!m_respawnName) {
-				//place player a la mano si si abuelo
-				Global.player1.x = 100;
-				Global.player1.y = 100;
-				Global.player2.x = 160;
-				Global.player2.y = 160;
-				return;
+				m_respawnName = "init";
 			}
 			//search for the layer RespawnPoints in the jsonmap data
 			for (var i:int; i < myData.layers.length; i++ ) {
