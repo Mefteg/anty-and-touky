@@ -1,17 +1,23 @@
 <?xml version="1.0" ?>
 <intro>
 	<story id="1">
-		<message text="Yo soy el cavallero del amor" />
-		<message text="mi tu" />
+		<message text="Pocacosta Island" />
+		<message text="Surrounded by water, its inhabitants " />
+		<message text="have been living peacefully since long."/>
 	</story>
 
 	<story id="2">
-		<message text="AT rocks" />
-		<message text="oh yeah" />
+		<message text="Among them," />
+		<message text="Anty, a lazy anteater," />
+		<message text="and Touky, a fearful toucan," />
+		<message text="are two buddies wandering with no goal." />
 	</story>
 	
 	<story id="2">
-		<message text="Beware of EL SQUALO" />
-		<message text="End" />
+		<message text="Suddenly, one day,"/>
+		<message text="a penguin named El Squalo attacked." />
+		<message text="With his army of evil penguins,"/>
+		<message text="his goal is to take over the island." />
+		<message text="It's time for Anty & Touky to fight !" />
 	</story>
 </intro>

@@ -62,6 +62,7 @@ package GameObject
 		public function PlayableObject(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, SimpleGraphic);
+			m_speed = 1.5;
 			m_typeName = "Player";
 			m_width = 48;
 			m_height = 48;

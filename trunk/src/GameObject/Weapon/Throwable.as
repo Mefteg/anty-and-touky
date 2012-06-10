@@ -41,6 +41,7 @@ package GameObject.Weapon
 			m_direction.y = 0;
 			x = 0; y = 0;
 			m_speed = m_initSpeed;
+			removeFromStage();
 		}
 		
 		override public function attack(direction:int):void {
