@@ -52,6 +52,7 @@ package
 		//buttons
 		protected var m_pauseButton:FlxButton;
 		protected var m_controlsPanel:FlxSprite;
+		protected var m_controlShown:Boolean = false;
 		
 		public function Playstate() 
 		{
@@ -82,6 +83,8 @@ package
 			depthBuffer.addElement(m_pauseButton, DepthBuffer.s_menuGroup );
 			//loading control panel
 			m_controlsPanel = new FlxSprite(0, 0);
+			m_controlsPanel.scrollFactor.x = 0;
+			m_controlsPanel.scrollFactor.y = 0;
 			m_library.addUniqueBitmap("Images/Menu/controlpanel.png");
 		}
 		
@@ -137,10 +140,7 @@ package
 
 		override public function update() : void {
 			m_sceneManager.update();
-			if (m_state == "showingControls"){
-				showingControls();
-				return;
-			}
+			checkingControlPanel();
 			super.update();
 		}
 		
@@ -174,7 +174,7 @@ package
 				Global.player2.getEnemiesInScene();
 				if (!Global.hasSeenControls) {
 					Global.hasSeenControls = true;
-					//showControls();
+					showControls();
 				}
 			}
 		}
@@ -229,15 +229,18 @@ package
 		public function showControls():void {
 			depthBuffer.addElement(m_controlsPanel, DepthBuffer.s_cursorGroup);
 			Global.frozen = true;
-			m_state = "showingControls";
+			m_controlShown = true;
 		}
 		
-		public function showingControls():void {
-			if (FlxG.keys.ESCAPE) {
-				m_state = "Done";
-				depthBuffer.removeElement(m_controlsPanel, DepthBuffer.s_cursorGroup);
-				Global.frozen = false;
-				return;
+		public function checkingControlPanel():void {
+			if (FlxG.keys.justPressed("ESCAPE")) {
+				if(m_controlShown){
+					depthBuffer.removeElement(m_controlsPanel, DepthBuffer.s_cursorGroup);
+					Global.frozen = false;
+					m_controlShown = false;
+				}else {
+					showControls();
+				}
 			}
 		}
 		
