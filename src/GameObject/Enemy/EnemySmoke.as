@@ -50,6 +50,12 @@ package GameObject.Enemy
 			return smoke;
 		}
 		
+		public static function PlayerSmoke():EnemySmoke {
+			var smoke:EnemySmoke = new EnemySmoke();
+			smoke.m_url = "Images/Players/player_smoke.png";
+			return smoke;
+		}
+		
 	}
 
 }

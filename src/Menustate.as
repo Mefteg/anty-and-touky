@@ -18,6 +18,7 @@ package
 	public class Menustate extends State 
 	{
 		[Embed(source = "../bin/Images/Menu/LadyBugRidersScreen.png")] protected var LadyBugScreen:Class;
+		[Embed(source = "../bin/Images/Menu/cursor.png")] protected var Cursor:Class;
 		
 		protected var m_menuBegin:MenuBegin;
 		protected var m_timer:FlxTimer;
@@ -115,6 +116,9 @@ package
 			if (m_fadeOut)
 				return;
 			m_music.stop();
+			
+			FlxG.mouse.load(Cursor);
+			FlxG.mouse.hide();
 			FlxG.switchState( new StoryState() );
 		}
 	}
