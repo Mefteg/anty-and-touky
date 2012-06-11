@@ -11,6 +11,11 @@
    <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
+ <tile id="4">
+  <properties>
+   <property name="type" value="Foreground"/>
+  </properties>
+ </tile>
  <tile id="5">
   <properties>
    <property name="type" value="Foreground"/>
@@ -36,6 +41,21 @@
    <property name="type" value="Foreground"/>
   </properties>
  </tile>
+ <tile id="10">
+  <properties>
+   <property name="type" value="Foreground"/>
+  </properties>
+ </tile>
+ <tile id="11">
+  <properties>
+   <property name="type" value="Foreground"/>
+  </properties>
+ </tile>
+ <tile id="12">
+  <properties>
+   <property name="type" value="Foreground"/>
+  </properties>
+ </tile>
  <tile id="13">
   <properties>
    <property name="type" value="Foreground"/>
@@ -43,12 +63,17 @@
  </tile>
  <tile id="16">
   <properties>
-   <property name="" value=""/>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="17">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
  <tile id="18">
   <properties>
-   <property name="" value=""/>
+   <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
  <tile id="20">
@@ -76,14 +101,49 @@
    <property name="type" value="Foreground"/>
   </properties>
  </tile>
+ <tile id="26">
+  <properties>
+   <property name="type" value="Foreground"/>
+  </properties>
+ </tile>
+ <tile id="27">
+  <properties>
+   <property name="type" value="Foreground"/>
+  </properties>
+ </tile>
+ <tile id="28">
+  <properties>
+   <property name="type" value="Foreground"/>
+  </properties>
+ </tile>
  <tile id="29">
   <properties>
    <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
+ <tile id="38">
+  <properties>
+   <property name="type" value="Foreground"/>
+  </properties>
+ </tile>
+ <tile id="39">
+  <properties>
+   <property name="type" value="Foreground"/>
+  </properties>
+ </tile>
  <tile id="40">
   <properties>
    <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="54">
+  <properties>
+   <property name="type" value="Foreground"/>
+  </properties>
+ </tile>
+ <tile id="55">
+  <properties>
+   <property name="type" value="Foreground"/>
   </properties>
  </tile>
  <tile id="64">
@@ -99,6 +159,16 @@
  <tile id="66">
   <properties>
    <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="70">
+  <properties>
+   <property name="type" value="Foreground"/>
+  </properties>
+ </tile>
+ <tile id="71">
+  <properties>
+   <property name="type" value="Foreground"/>
   </properties>
  </tile>
  <tile id="80">
