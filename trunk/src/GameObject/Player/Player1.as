@@ -185,9 +185,11 @@ package GameObject.Player
 				move();
 		}
 		
-		override public function takeDamage():void {
-			super.takeDamage();
+		override public function takeDamage():Boolean {
+			if ( !super.takeDamage())
+				return false;
 			Global.menuPlayer1.takeDamage();
+			return true;
 		}
 		
 		override public function placeThrowable(thr:PlayerThrowable):void {

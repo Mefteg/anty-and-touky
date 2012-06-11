@@ -2,11 +2,13 @@ package GameObject
 {
 	import GameObject.Armor.Armor;
 	import GameObject.Enemy.Enemy;
+	import GameObject.Enemy.EnemySmoke;
 	import GameObject.Equipement;
 	import GameObject.Item.Item;
 	import GameObject.Item.ItemManager;
 	import GameObject.Magic.Magic;
 	import GameObject.Magic.MovableMagic;
+	import GameObject.Menu.Menu;
 	import GameObject.Weapon.PlayerThrowable;
 	import GameObject.Weapon.Sword;
 	import GameObject.Weapon.Throwable;
@@ -25,6 +27,7 @@ package GameObject
 	 */
 	public class PlayableObject extends PhysicalObject 
 	{	
+		public var m_menu:GameObject.Menu.Menu;
 		public var m_equipement:Equipement;
 		
 		public var m_throwables:Vector.<PlayerThrowable>;
@@ -60,6 +63,10 @@ package GameObject
 		
 		protected var m_onSpecial:Boolean = false;	
 		
+		public var m_lifes:int = 3;
+		public var m_initHealth:int = 5;
+		protected var m_smoke:EnemySmoke;
+		
 		public function PlayableObject(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, SimpleGraphic);
@@ -72,6 +79,7 @@ package GameObject
 			m_equipement = new GameObject.Equipement;
 			m_magics = new Vector.<Magic>;
 			m_stats = new GameObject.Stats();
+			m_stats.initHP(m_initHealth);
 			m_timerSpecial = new FlxTimer();
 			m_timerSpecialAvailable = new FlxTimer();
 			m_timerSpecialAvailable.start(0.1);
@@ -79,6 +87,7 @@ package GameObject
 			m_timerMagicCast = new FlxTimer();
 			m_timerAttack2 = new FlxTimer();
 			m_timerTwinkle.start(0.1);
+			m_smoke = EnemySmoke.PlayerSmoke();
 			//SOUNDS
 			FX_shieldClang = new FlxSound();
 			FX_drawWeapon = new FlxSound();
@@ -112,6 +121,7 @@ package GameObject
 			}
 			m_equipement.addToLibrary();
 			m_itemManager.addToLibrary();
+			m_smoke.addBitmap();
 		}
 		
 		override public function addToStage():void {
@@ -123,6 +133,7 @@ package GameObject
 		override public function load():void {
 			super.load();
 			m_equipement.load();
+			m_smoke.load();
 			//sounds
 			FX_shieldClang.loadStream("FX/clang.mp3");
 			FX_drawWeapon.loadStream("FX/swordDrawn.mp3");
@@ -136,7 +147,7 @@ package GameObject
 		}
 		
 		override public function isBusy():Boolean {
-			return isAttacking() || (m_state == "attack2") || (m_state == "defense") || (m_state == "magic") || (m_state == "item");
+			return isAttacking() || (m_state == "attack2") || (m_state == "defense") || (m_state == "magic") || (m_state == "item") || (m_state == "respawn");
 		}
 		
 		public function isAttacking():Boolean {
@@ -185,12 +196,12 @@ package GameObject
 		}
 		
 		public function magicAttack(i:int):void {
-			if (i >= m_magics.length || isBusy())
+			/*if (i >= m_magics.length || isBusy())
 				return;
 			m_currentMagic = m_magics[i];
 			m_timerMagicCast.start(m_currentMagic.m_castingTime);
 			m_state = "magic";
-			play(m_state + facing);
+			play(m_state + facing);*/
 		}
 		
 		public function useItem() :void {
@@ -238,6 +249,7 @@ package GameObject
 								break;
 				case "item": if (finished) m_state = "idle"; break;
 				case "rushAttack" : rushAttack(); break;
+				case "respawn" : respawning(); break;
 				default : break;
 			}
 			//to move the player
@@ -272,13 +284,24 @@ package GameObject
 			}
 		}
 		
-		public function takeDamage():void {
+		public function takeDamage():Boolean {
 			if (!m_timerTwinkle.finished || isRushing())
-				return;
+				return false;
 			FX_hit.play();
 			//start timer during when the enemy is hit
 			changeTwinkleColor(_twinkleHit);
-			beginTwinkle(20, 3);		
+			beginTwinkle(20, 3);
+			m_stats.m_hp_current --;
+			//if no more health
+			if (m_stats.m_hp_current == 0 ){
+				if(m_lifes > 0){ 
+					respawn();
+				}else{
+					die();
+					//return false;
+				}
+			}
+			return true;
 		}
 		
 		public function takeMagicDamage(enemy:Enemy, magic:Magic):void {
@@ -308,9 +331,26 @@ package GameObject
 		}
 		
 		override public function respawn() : void {
-			super.respawn();
-			this.m_oldPos.x = 50;
-			this.m_oldPos.y = 50;
+			visible = false;
+			m_timerMagicCast.start(4);
+			m_lifes --;
+			m_state = "respawn";
+			m_smoke.playSmoke(x, y);
+		}
+		
+		public function respawning():void {
+			if (m_timerMagicCast.finished) {
+				visible = true;
+				m_state = "idle";
+				m_stats.initHP(m_initHealth);
+				m_menu.addHearts(m_initHealth);
+				changeTwinkleColor(_twinkleHit);
+				beginTwinkle(20, 3);
+			}
+		}
+		
+		public function die():void {
+			Global.currentPlaystate.end();
 		}
 		
 		/**

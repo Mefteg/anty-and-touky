@@ -21,6 +21,7 @@ package GameObject.Menu
 		private var m_menuHeart:GameObject.Menu.MenuHeart;
 		private var m_menuShield:GameObject.Menu.MenuShield;
 		
+		
 		public function Menu(player:PlayableObject, X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, SimpleGraphic);
@@ -48,13 +49,14 @@ package GameObject.Menu
 			m_menuHeart = new GameObject.Menu.MenuHeart(m_player, this.x, this.y);
 			m_menuHeart.m_parent = this;
 			m_menuHeart.m_shift = new FlxPoint(10, 8);
+			m_menuHeart.addIcons(m_player.m_initHealth);
 			this.add(m_menuHeart);
 			
 			// adding of the shield menu
 			m_menuShield = new GameObject.Menu.MenuShield(m_player, this.x, this.y);
 			m_menuShield.m_parent = this;
 			m_menuShield.m_shift = new FlxPoint(10, 8);
-			this.add(m_menuShield);
+			//this.add(m_menuShield);			
 		}
 		
 		override public function addElementToStage(element:FlxBasic):void {
@@ -73,13 +75,8 @@ package GameObject.Menu
 		}
 		
 		public function takeDamage() : void {
-			if ( m_menuShield.m_objects.length > 0 ) {
-				m_menuShield.remove(m_menuShield.getLast());
-			}
-			else {
-				if ( m_menuHeart.m_objects.length > 0 ) {
-					m_menuHeart.remove(m_menuHeart.getLast());
-				}
+			if ( m_menuHeart.m_objects.length > 0 ) {
+				m_menuHeart.remove(m_menuHeart.getLast());
 			}
 		}
 		
@@ -87,9 +84,14 @@ package GameObject.Menu
 			m_menuHeart.addIcon();
 		}
 		
+		public function addHearts(count:int) : void {
+			m_menuHeart.addIcons(count);
+		}
+		
 		public function addShield() : void {
 			m_menuShield.addIcon();
 		}
+		
 	}
 
 }

@@ -53,9 +53,7 @@ package GameObject.Enemy
 		}
 		
 		override public function update():void {
-			if (!onScreen() || Global.frozen) return;
-			checkPlayersDamage();
-			twinkle();
+			commonEnemyUpdate();
 			switch(m_state) {
 				case "idle": 
 							facing = getFacingToTarget(m_target);

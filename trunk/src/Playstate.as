@@ -55,6 +55,12 @@ package
 		protected var m_controlsPanel:FlxSprite;
 		protected var m_controlShown:Boolean = false;
 		
+		//lifes
+		protected var m_textLife1:FlxText;
+		protected var m_textLife2:FlxText;
+		
+		private var m_ending:Boolean = false;
+		
 		public function Playstate() 
 		{
 			m_library = new Library();
@@ -93,6 +99,19 @@ package
 			m_controlsPanel.scrollFactor = new FlxPoint(0, 0);
 			m_library.addUniqueBitmap("Images/Menu/controlpanel.png");
 			FlxG.mouse.show();
+			
+			//text life for player 1
+			m_textLife1 = new FlxText(96, 25, 40);
+			m_textLife1.size = 12;
+			m_textLife1.scrollFactor = new FlxPoint(0, 0);
+			m_textLife1.color = 0x000000;
+			depthBuffer.addElement(m_textLife1, DepthBuffer.s_cursorGroup);
+			
+			m_textLife2 = new FlxText(616, 25, 40);
+			m_textLife2.size = 12;
+			m_textLife2.scrollFactor = new FlxPoint(0, 0);
+			m_textLife2.color = 0x000000;
+			depthBuffer.addElement(m_textLife2, DepthBuffer.s_cursorGroup);
 		}
 		
 		public function changeScene(sceneName:String, respawn:String ) : void {
@@ -114,8 +133,7 @@ package
 			depthBuffer.addElement(m_rectLadyBug, DepthBuffer.s_cursorGroup);
 			m_sceneManager = new SceneManager();
 			//m_sceneManager.loadScene("Maps/test.json");
-			//m_sceneManager.loadScene("Maps/test.json");
-			m_sceneManager.loadScene("Maps/W1M1.json");
+			m_sceneManager.loadScene("Maps/W1B1.json");
 			m_state = "Loading";
 			//creating player 1
 			Global.player1 = new Player1(100, 100);
@@ -125,7 +143,7 @@ package
 			m_menu_p1 = new Menu(Global.player1);
 			m_menu_p1.addToStage();
 			Global.menuPlayer1 = m_menu_p1;
-
+			Global.player1.m_menu = Global.menuPlayer1;
 			//creating player2
 			Global.player2 = new Player2(100, 110);
 			Global.player2.addBitmap();
@@ -135,8 +153,8 @@ package
 			m_menu_p2.m_shift = new FlxPoint(640 - m_menu_p2.m_width, 0);
 			m_menu_p2.addToStage();
 			Global.menuPlayer2 = m_menu_p2;
-			
-			
+			Global.player2.m_menu = Global.menuPlayer2;
+						
 			//create the camera
 			m_camera = new Camera(0, 0, 640, 480);
 			FlxG.addCamera(m_camera);
@@ -148,6 +166,8 @@ package
 		override public function update() : void {
 			m_sceneManager.update();
 			checkingControlPanel();
+			m_textLife1.text = "x" + Global.player1.m_lifes;
+			m_textLife2.text = "x" + Global.player2.m_lifes;
 			super.update();
 		}
 		
@@ -260,6 +280,18 @@ package
 			}else {
 				Global.frozen = true;
 				m_screenFade.alpha = 0.5;
+			}
+		}
+		
+		override public function end():void {
+			m_ending = true;
+		}
+		
+		override public function postUpdate():void {
+			if(m_ending){
+				m_ending = false;
+				this.clear();
+				FlxG.switchState(new Menustate());
 			}
 		}
 		

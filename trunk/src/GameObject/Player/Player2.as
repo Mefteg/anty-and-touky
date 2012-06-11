@@ -177,14 +177,16 @@ package GameObject.Player
 			play("rush" + facing);
 		}
 		
-		override public function takeDamage():void {
-			super.takeDamage();
+		override public function takeDamage():Boolean {
+			if ( !super.takeDamage())
+				return false;
 			
 			//FOR SPECIAL MOVES
 			if (m_onSpecial) {
 				Global.player1.takeDamage();
 			}
 			Global.menuPlayer2.takeDamage();
+			return true;
 		}
 	}
 

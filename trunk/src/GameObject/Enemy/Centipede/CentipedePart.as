@@ -27,7 +27,9 @@ package GameObject.Enemy.Centipede
 			play("walk" + LEFT);
 		}
 		
-		override public function update() : void {}
+		override public function update() : void {
+			commonEnemyUpdate();
+		}
 	}
 
 }

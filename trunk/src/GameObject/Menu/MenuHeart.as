@@ -18,9 +18,7 @@ package GameObject.Menu
 		}
 		
 		override protected function create() : void {
-			this.addIcon();
-			this.addIcon();
-			this.addIcon();
+			
 		}
 		
 		override public function addIcon() : void {

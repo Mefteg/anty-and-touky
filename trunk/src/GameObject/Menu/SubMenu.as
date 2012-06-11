@@ -26,6 +26,11 @@ package GameObject.Menu
 		public function addIcon() : void {
 			
 		}
+		
+		public function addIcons(count:int ):void {
+			for (var i:int = 0; i < count; i++)
+				this.addIcon();
+		}
 	}
 
 }

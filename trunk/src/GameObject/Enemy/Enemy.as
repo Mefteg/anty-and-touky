@@ -282,6 +282,12 @@ package GameObject.Enemy
 			removeFromStage();
 			m_smoke.playSmoke(x, y);
 		}
+		
+		protected function commonEnemyUpdate():void {
+			if (!onScreen() || Global.frozen) return;
+			checkPlayersDamage();
+			twinkle();
+		}
 	}
 
 }
