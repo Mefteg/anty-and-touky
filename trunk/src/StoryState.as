@@ -16,7 +16,7 @@ package
 	 */
 	public class StoryState extends State 
 	{
-		[Embed(source = "../bin/Images/Wicken.ttf", fontFamily = "Wickenden")] private static var myFont:Class;
+		//[Embed(source = "../bin/Images/Wicken.ttf", fontFamily = "Wickenden")] private static var myFont:Class;
 		
 		private var m_xml:XML;
 		private var m_textsToDisplay:XML;
