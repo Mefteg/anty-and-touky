@@ -77,6 +77,7 @@ package
 					break;
 				case "ChangingScene": changingScene();
 										break;
+				case "Ending" : ending(); break;
 				default : break;
 			}			
 		}
@@ -100,6 +101,7 @@ package
 			
 		}
 		
+		protected function ending():void { };
 		public function end():void {}
 		
 		/////FADE FUNCTIONS/////////////

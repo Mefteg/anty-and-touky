@@ -298,7 +298,7 @@ package GameObject
 					respawn();
 				}else{
 					die();
-					//return false;
+					return false;
 				}
 			}
 			return true;
@@ -350,6 +350,8 @@ package GameObject
 		}
 		
 		public function die():void {
+			visible = false;
+			m_smoke.playSmoke(x, y);
 			Global.currentPlaystate.end();
 		}
 		

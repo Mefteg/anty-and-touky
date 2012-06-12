@@ -112,7 +112,7 @@ package
 			m_ending = true;
 		}
 		
-		public function ending():void {
+		override protected function ending():void {
 			if (m_fadeOut)
 				return;
 			m_music.stop();

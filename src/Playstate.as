@@ -59,7 +59,8 @@ package
 		protected var m_textLife1:FlxText;
 		protected var m_textLife2:FlxText;
 		
-		private var m_ending:Boolean = false;
+		private var m_timerEnd:FlxTimer;
+		private var m_goSwitch:Boolean = false;
 		
 		public function Playstate() 
 		{
@@ -99,6 +100,7 @@ package
 			m_controlsPanel.scrollFactor = new FlxPoint(0, 0);
 			m_library.addUniqueBitmap("Images/Menu/controlpanel.png");
 			FlxG.mouse.show();
+			m_timerEnd = new FlxTimer();
 			
 			//text life for player 1
 			m_textLife1 = new FlxText(96, 25, 40);
@@ -284,17 +286,26 @@ package
 		}
 		
 		override public function end():void {
-			m_ending = true;
+			m_state = "Ending";
+			Global.frozen = true;
+			m_timerEnd.start(3);
 		}
 		
-		override public function postUpdate():void {
-			if(m_ending){
-				m_ending = false;
-				this.clear();
+		override protected function ending():void {
+			if (m_goSwitch && !m_fadeOut) {
+				m_sceneManager = null;
+				Global.player1.x = Global.player2.x = 320;
+				Global.player1.y = Global.player2.y = 240;
+				depthBuffer.clearBuffers();
 				FlxG.switchState(new Menustate());
+				return;
+			}
+			if (m_timerEnd.finished) {
+				fadeOut();
+				m_goSwitch = true;
 			}
 		}
-		
+				
 		//////////PHYSICALS/////////////
 		public function addPhysical(object:PhysicalObject):void {
 			m_collisionManager.m_physicalObjects.push(object);
