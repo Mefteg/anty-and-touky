@@ -1,7 +1,9 @@
 package GameObject.Enemy.Centipede 
 {
+	import flash.geom.Rectangle;
 	import GameObject.Enemy.Enemy;
 	import org.flixel.FlxG;
+	import org.flixel.FlxPoint;
 	/**
 	 * ...
 	 * @author ...
@@ -10,15 +12,30 @@ package GameObject.Enemy.Centipede
 	{
 		private var m_parts:Array;
 		private var m_nbParts:int = 6;
+		private var m_area:Rectangle;
 		
-		public function Centipede(X:Number,Y:Number) 
+		private var m_spawnPoints:Array;
+		
+		public function Centipede(X:Number, Y:Number, areaWidth:int, areaHeight:int ) 
 		{
 			super(X, Y);
 			m_url = "Images/Enemies/centipedeHead.png";
 			m_width = 48;
 			m_height = 32;
 			createParts();
+			m_area = new Rectangle(X, Y, areaWidth, areaHeight);
+			m_spawnPoints = new Array(
+							new CentipedeSpawnPoint(new FlxPoint(X, Y), RIGHT), // UP LEFT
+							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth, Y), LEFT), // UP RIGHT
+							new CentipedeSpawnPoint(new FlxPoint(X, Y+areaHeight*0.3), RIGHT), // LEFT 1
+							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth, Y+areaHeight*0.3), LEFT), // RIGHT 1
+							new CentipedeSpawnPoint(new FlxPoint(X, Y+height*0.6), RIGHT), // LEFT 2
+							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth, Y+areaHeight*0.6), LEFT), // RIGHT 2
+							new CentipedeSpawnPoint(new FlxPoint(X, Y+height), RIGHT), // DOWN LEFT
+							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth, Y+areaHeight), LEFT) // DOWN RIGHT
+							);
 			//m_direction.x = -1;
+			spawn(m_spawnPoints[1]);
 		}
 			
 		private function createParts():void {
@@ -38,12 +55,17 @@ package GameObject.Enemy.Centipede
 			moveParts();
 		}
 		
+		private function spawn(spPt:CentipedeSpawnPoint) {
+			x = spPt.m_pos.x; y = spPt.m_pos.y;
+		}
+		
 		private function moveParts():void {
 			for (var i:int = 0; i < m_nbParts; i++) {
 				m_parts[i].m_direction = m_direction;
 				m_parts[i].move();
 			}
 		}
+		
 		////////////////////////////////////////////////
 		////////////LOADING/////////////////////////::
 		override public function addToStage() : void {
@@ -76,6 +98,7 @@ package GameObject.Enemy.Centipede
 			
 			play("walk" + LEFT);
 		}
+		
 	}
 
 }
