@@ -1,6 +1,7 @@
 package GameObject 
 {
 	import flash.geom.Rectangle;
+	import org.flixel.FlxCamera;
 	import org.flixel.FlxPoint;
 	import org.flixel.FlxSprite;
 	import org.flixel.FlxG;
@@ -148,6 +149,25 @@ package GameObject
 				
 			
 			return facing;
+		}
+		
+		override public function onScreen(Camera:FlxCamera = null) : Boolean {
+			if(Camera == null)
+				Camera = FlxG.camera;
+				
+				var xCam:int = Camera.scroll.x;
+				var yCam:int = Camera.scroll.y;
+				var xCamBound:int = xCam + Camera.width;
+				var yCamBound:int = yCam + Camera.height;
+			
+				if ( this.x + this.width < xCam || this.x > xCamBound ) {
+					return false;
+				}
+				if ( this.y + this.height < yCam || this.y > yCamBound ) {
+					return false;
+				}
+				
+				return true;
 		}
 		
 		//COLLISION RECTANGLES FOR SIDING
