@@ -71,6 +71,14 @@ package
 			m_background.clear();
 		}
 		
+		override public function clearAllBuffers():void {
+			super.clearAllBuffers();
+			m_NPP.clear();
+			m_players.clear();
+			m_menu.clear();
+			m_cursor.clear();
+		}
+		
 		override public function addElement( element:FlxBasic, group:int ) : void {
 			super.addElement(element, group );
 			

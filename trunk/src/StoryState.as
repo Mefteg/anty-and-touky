@@ -157,7 +157,7 @@ package
 			fadeOut(4);
 		}
 		
-		private function ending():void {
+		override protected function ending():void {
 			if (m_fadeOut)
 				return;
 			m_sound.stop();

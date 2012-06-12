@@ -155,8 +155,7 @@ package GameObject.Enemy
 		}
 		
 		override public function update() : void {
-			checkPlayersDamage();
-			twinkle();
+			commonEnemyUpdate();
 			if (m_blocked) return;
 												
 			switch ( m_state ) {

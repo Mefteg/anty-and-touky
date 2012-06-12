@@ -45,6 +45,10 @@ package
 			m_cursor.clear();
 		}
 		
+		public function clearAllBuffers():void {
+			clearBuffers();
+		}
+		
 		public function addElement( element:FlxBasic, group:int ) : void {
 			switch ( group ) {
 				case s_backgroundGroup:
