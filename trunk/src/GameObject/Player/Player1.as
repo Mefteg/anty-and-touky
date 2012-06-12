@@ -79,7 +79,7 @@ package GameObject.Player
 			addAnimation("rush" + LEFT, [15,16,17], 40, true);
 		}
 		
-		override public function getMoves():void {	
+		override public function getMoves():void {
 			//check second attack
 			if (FlxG.keys.justPressed(m_stringNext) && m_state == "waitForAttack2" )
 				attack();
