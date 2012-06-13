@@ -3,6 +3,8 @@ package GameObject.Enemy.Centipede
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import GameObject.Enemy.Enemy;
+	import GameObject.PlayableObject;
+	import GameObject.Weapon.Weapon;
 	import org.flixel.FlxG;
 	import org.flixel.FlxPoint;
 	import org.flixel.FlxTimer;
@@ -16,7 +18,8 @@ package GameObject.Enemy.Centipede
 		private var TIME_WAIT_IN:int = 1;
 		
 		private var m_parts:Array;
-		private var m_nbParts:int = 6;
+		private var m_nbParts:int = 1;
+		private var m_livingParts:int;
 		private var m_area:Rectangle;
 		
 		private var m_spawnPoints:Array;
@@ -24,14 +27,18 @@ package GameObject.Enemy.Centipede
 		
 		private var m_timerWait:FlxTimer;
 		
+		private var m_invincible:Boolean = true;
+		
 		public function Centipede(X:Number, Y:Number, areaWidth:int, areaHeight:int ) 
 		{
 			super(X, Y);
 			m_url = "Images/Enemies/centipedeHead.png";
 			m_width = 48;
 			m_height = 32;
-			m_speed =2.5;
+			m_speed = 2.5;
+			m_stats.initHP(1);
 			createParts();
+			m_livingParts = m_nbParts;
 			m_area = new Rectangle(X, Y, areaWidth, areaHeight);
 			m_spawnPoints = new Array(
 							new CentipedeSpawnPoint(new FlxPoint(X+1, Y-1), RIGHT,new FlxPoint(1,-1)), // UP LEFT
@@ -54,7 +61,7 @@ package GameObject.Enemy.Centipede
 			m_parts = new Array();
 			var part:CentipedePart;
 			for (var i:int = 0; i < m_nbParts; i++) {
-				part = new CentipedePart(0, 0);
+				part = new CentipedePart(this);
 				m_parts.push(part);
 			}
 		}	
@@ -63,6 +70,7 @@ package GameObject.Enemy.Centipede
 			if (Global.frozen)
 				return;
 			move();
+			checkPlayersDamage();
 			switch(m_state) {
 				case "waitingOutside": waitingOutside(); break;
 				case "waitingInside": waitingInside(); break;
@@ -82,6 +90,7 @@ package GameObject.Enemy.Centipede
 		private function initPartsMove():void {
 			for (var i:int = 0; i < m_nbParts; i++) {
 				m_parts[i].m_direction = m_direction;
+				m_parts[i].changeDirection(facing);
 				m_parts[i].m_speed = m_speed;
 			}
 		}
@@ -99,10 +108,11 @@ package GameObject.Enemy.Centipede
 		
 		private function outOfArea() : Boolean {
 			//TO DO : if( !obj.OnScreen())
+			//return ! m_parts[m_nbParts-1].onScreen();
 			var obj:Enemy = m_parts[m_nbParts - 1];
 			if (obj.x > m_area.x + 800 ||  obj.x < m_area.x -300)
 				return true;
-			if (obj.y < 0 ||  obj.y > m_area.y +600)
+			if (obj.y < -100  ||  obj.y > m_area.y +600)
 				return true;
 			return false;
 		}
@@ -192,6 +202,17 @@ package GameObject.Enemy.Centipede
 			}
 		}
 		
+		public function removePart():void {
+			m_livingParts --;
+			if (m_livingParts == 0) {
+				m_invincible = false;
+			}
+		}
+		
+		public function killParts():void {
+			for (var i:int = 0; i < m_nbParts; i++)
+				m_parts[i].die();
+		}
 		////////////////////////////////////////////////
 		////////////LOADING/////////////////////////::
 		override public function addToStage() : void {
@@ -230,6 +251,30 @@ package GameObject.Enemy.Centipede
 			this.x = this.x + (m_direction.x * m_speed);
 			this.y = this.y + (m_direction.y * m_speed);
 			
+		}
+		
+		override public function takeDamage(player:PlayableObject, weapon:Weapon):void
+		{
+			if (m_invincible)
+				return;
+			//calculate damage
+			var damage:int = weapon.m_power;
+			//substract damage to hp
+			m_stats.m_hp_current -= damage;
+			//check death
+			if (m_stats.m_hp_current <= 0)
+			{
+				die();
+			}
+			//for twinkling
+			changeTwinkleColor(_twinkleHit);
+			beginTwinkle(3, 0.3);
+		}
+		
+		override public function die():void {
+			m_state = "dying";
+			m_direction = new FlxPoint(0, 0);
+			killParts();
 		}
 		
 	}
