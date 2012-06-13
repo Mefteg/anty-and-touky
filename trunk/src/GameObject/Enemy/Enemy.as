@@ -200,7 +200,7 @@ package GameObject.Enemy
 				this.y = m_oldPos.y;
 			}
 			else {
-				m_state = "lookfor";
+				//m_state = "lookfor";
 			}
 			
 			if (m_direction.x < 0) facing = LEFT;
@@ -208,7 +208,7 @@ package GameObject.Enemy
 			else if (m_direction.y < 0) facing = UP;
 			else if (m_direction.y > 0) facing = DOWN;
 			
-			m_state = "lookfor";
+			//_state = "lookfor";
 		}
 		
 		public function attack() : void {
