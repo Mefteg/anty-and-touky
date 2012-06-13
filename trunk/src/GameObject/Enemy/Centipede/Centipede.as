@@ -36,20 +36,20 @@ package GameObject.Enemy.Centipede
 			m_url = "Images/Enemies/centipedeHead.png";
 			m_width = 48;
 			m_height = 32;
-			m_speed = 3.2;
+			m_speed = 3.0;
 			m_stats.initHP(12);
 			createParts();
 			m_livingParts = m_nbParts;
 			m_area = new Rectangle(X, Y, areaWidth, areaHeight);
 			m_spawnPoints = new Array(
-							new CentipedeSpawnPoint(new FlxPoint(X, Y+areaHeight*0.2), RIGHT,new FlxPoint(1,0)), // LEFT 1
+							new CentipedeSpawnPoint(new FlxPoint(X, Y+areaHeight*0.2), RIGHT,new FlxPoint(1,0.2)), // LEFT 1
 							new CentipedeSpawnPoint(new FlxPoint(X, Y+areaHeight*0.4), RIGHT,new FlxPoint(1,0)), // LEFT 2
 							new CentipedeSpawnPoint(new FlxPoint(X, Y+areaHeight*0.6), RIGHT,new FlxPoint(1,0)), // LEFT 3
-							new CentipedeSpawnPoint(new FlxPoint(X, Y+areaHeight*0.8), RIGHT,new FlxPoint(1,0)), //LEFT 4
-							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth-1, Y+areaHeight*0.2), LEFT,new FlxPoint(-1,0)), // RIGHT 1
+							new CentipedeSpawnPoint(new FlxPoint(X, Y+areaHeight*0.8), RIGHT,new FlxPoint(1,-0.2)), //LEFT 4
+							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth-1, Y+areaHeight*0.2), LEFT,new FlxPoint(-1,0.1)), // RIGHT 1
 							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth, Y+areaHeight*0.4), LEFT,new FlxPoint(-1,0)), // RIGHT 2
 							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth-1, Y+areaHeight*0.6), LEFT,new FlxPoint(-1,0)), // RIGHT 3
-							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth-1, Y+areaHeight*0.8), LEFT,new FlxPoint(-1,0)) // RIGHT
+							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth-1, Y+areaHeight*0.8), LEFT,new FlxPoint(-1,-0.1)) // RIGHT
 							);
 			x = -150; y = -150;
 			m_currentSpawn = new CentipedeSpawnPoint(new FlxPoint(x, y), LEFT, m_direction);
