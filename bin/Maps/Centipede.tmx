@@ -3,24 +3,29 @@
  <tileset firstgid="1" source="Jungle.tsx"/>
  <layer name="Background" width="28" height="20">
   <data encoding="base64" compression="zlib">
-   eJztzj0KgDAMhuFCexHrCdQT+LtUB/X+dzFChiApfNSOGR4CheStd855tpCVbeK9JUFoSCI76BC3esDw6XXgnmYCzOJ/rxHcK1WzdwFu7kSeJ7inCQqviKKH0m7nevEn61nPeuW9GtCeMTkPrS40sg==
+   eJzt0z0KgDAMBeBCexHrCdQT+LtUB/X+dzFChxBaeZS6ZfiWwMsrhVhjjI0WskYbm7fEMQ0JZAcdbFcPGERfB+ZSJsDM3vcawVypmn0X4Bb/eYK5FJdhBR/JOZfbhfAFtE/7tK9O39dd/3HvSqU8VCIx4A==
   </data>
  </layer>
  <layer name="Foreground" width="28" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBicQBqIZYGYg0rmsdLZDFEq2EeMGUlYMLUALc0mFrABMTsd7RMDYnE62jcKRsFgBnx0tk+OzvZRE4yGFf0BAHgFBNs=
+   eJzVldEKgzAMRduBm/qwt23oWF/F39r/f8RSaCCTJKa2TnbgYiFyG5uYOvfNnJ7B2bmDHoLPVp6gF6gt9EGaH3vcVuJXoq0ekTcjjkCkEc+7A/UZ3qUMoFGInUGXyvthb56YGNfL/8Z0dAIHgr1bE/pPLNF6twTJt3SuSki+2nzag5x7pwZYV63GVixnReuKa7o3XXsiLr9gyHsW1lweOGs98470DVa4PHDWTknSXNZ6/gNOiwrS
   </data>
  </layer>
  <objectgroup name="objects" width="28" height="20">
-  <object name="Centipede" type="Centipede" x="161" y="170" width="572" height="308"/>
+  <object name="Centipede" type="Centipede" x="75" y="159" width="638" height="319"/>
+  <object name="Music" type="Music" x="13" y="83">
+   <properties>
+    <property name="url" value="Music/wrath of the coconuts.mp3"/>
+   </properties>
+  </object>
  </objectgroup>
- <objectgroup name="RespawnPoints" width="28" height="20" visible="0">
-  <object name="RespawnTop" type="RespawnPoint" x="368" y="149">
+ <objectgroup name="RespawnPoints" width="28" height="20">
+  <object name="RespawnTop" type="RespawnPoint" x="370" y="187">
    <properties>
     <property name="location" value="top"/>
    </properties>
   </object>
-  <object name="RespawnInit" type="RespawnPoint" x="369" y="150">
+  <object name="RespawnInit" type="RespawnPoint" x="370" y="185">
    <properties>
     <property name="location" value="init"/>
    </properties>
