@@ -34,9 +34,9 @@ package GameObject.Enemy
 		public var m_hit:uint = 1;
 		public var m_attackTime:Number = 2;
 		
-		private var m_smoke:EnemySmoke;
+		protected var m_smoke:EnemySmoke;
 		
-		private var m_FXhit:FlxSound;
+		protected var m_FXhit:FlxSound;
 				
 		public var m_throwables:Vector.<EnemyThrowable>;
 		
@@ -282,10 +282,11 @@ package GameObject.Enemy
 			m_smoke.playSmoke(x, y);
 		}
 		
-		protected function commonEnemyUpdate():void {
-			if (!onScreen() || Global.frozen) return;
+		protected function commonEnemyUpdate():Boolean {
+			if (!onScreen() || Global.frozen) return false;
 			checkPlayersDamage();
 			twinkle();
+			return true;
 		}
 	}
 

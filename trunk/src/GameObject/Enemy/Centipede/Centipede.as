@@ -14,7 +14,7 @@ package GameObject.Enemy.Centipede
 	 */
 	public class Centipede extends Enemy 
 	{
-		private var TIME_WAIT_OUT:int = 4;
+		private var TIME_WAIT_OUT:int = 3;
 		private var TIME_WAIT_IN:int = 1;
 		
 		private var m_parts:Array;
@@ -28,6 +28,7 @@ package GameObject.Enemy.Centipede
 		private var m_timerWait:FlxTimer;
 		
 		private var m_invincible:Boolean = true;
+		private var m_dead:Boolean = false;
 		
 		public function Centipede(X:Number, Y:Number, areaWidth:int, areaHeight:int ) 
 		{
@@ -35,22 +36,23 @@ package GameObject.Enemy.Centipede
 			m_url = "Images/Enemies/centipedeHead.png";
 			m_width = 48;
 			m_height = 32;
-			m_speed = 2.5;
+			m_speed = 2.8;
 			m_stats.initHP(1);
 			createParts();
 			m_livingParts = m_nbParts;
 			m_area = new Rectangle(X, Y, areaWidth, areaHeight);
 			m_spawnPoints = new Array(
-							new CentipedeSpawnPoint(new FlxPoint(X+1, Y-1), RIGHT,new FlxPoint(1,-1)), // UP LEFT
-							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth-1, Y), LEFT,new FlxPoint(-1,1)), // UP RIGHT
-							new CentipedeSpawnPoint(new FlxPoint(X, Y+areaHeight*0.3), RIGHT,new FlxPoint(1,0)), // LEFT 1
-							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth, Y+areaHeight*0.3), LEFT,new FlxPoint(-1,0)), // RIGHT 1
-							new CentipedeSpawnPoint(new FlxPoint(X+1, Y+height*0.6), RIGHT,new FlxPoint(1,0)), // LEFT 2
-							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth-1, Y+areaHeight*0.6), LEFT,new FlxPoint(-1,0)), // RIGHT 2
-							new CentipedeSpawnPoint(new FlxPoint(X+1, Y+height-1), RIGHT,new FlxPoint(1,-1)), // DOWN LEFT
-							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth-1, Y+areaHeight-1), LEFT,new FlxPoint(-1,-1)) // DOWN RIGHT
+							new CentipedeSpawnPoint(new FlxPoint(X, Y+areaHeight*0.2), RIGHT,new FlxPoint(1,0)), // LEFT 1
+							new CentipedeSpawnPoint(new FlxPoint(X, Y+areaHeight*0.4), RIGHT,new FlxPoint(1,0)), // LEFT 2
+							new CentipedeSpawnPoint(new FlxPoint(X, Y+areaHeight*0.6), RIGHT,new FlxPoint(1,0)), // LEFT 3
+							new CentipedeSpawnPoint(new FlxPoint(X, Y+areaHeight*0.8), RIGHT,new FlxPoint(1,0)), //LEFT 4
+							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth-1, Y+areaHeight*0.2), LEFT,new FlxPoint(-1,0)), // RIGHT 1
+							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth, Y+areaHeight*0.4), LEFT,new FlxPoint(-1,0)), // RIGHT 2
+							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth-1, Y+areaHeight*0.6), LEFT,new FlxPoint(-1,0)), // RIGHT 3
+							new CentipedeSpawnPoint(new FlxPoint(X+areaWidth-1, Y+areaHeight*0.8), LEFT,new FlxPoint(-1,0)) // RIGHT
 							);
-			spawn(m_spawnPoints[1]);
+			x = -150; y = -150;
+			m_currentSpawn = new CentipedeSpawnPoint(new FlxPoint(x, y), LEFT, m_direction);
 			placeParts();
 			m_timerWait = new FlxTimer();
 			m_state = "waitingOutside";
@@ -70,12 +72,15 @@ package GameObject.Enemy.Centipede
 			if (Global.frozen)
 				return;
 			move();
-			checkPlayersDamage();
+			if(!m_dead)
+				checkPlayersDamage();
 			switch(m_state) {
 				case "waitingOutside": waitingOutside(); break;
 				case "waitingInside": waitingInside(); break;
 				case "moving" : moving(); break;
 				case "spawning" : spawning(); break;
+				case "dying": die(); break;
+				case "ending": ending(); break;
 				default : break;
 			}
 		}
@@ -220,13 +225,7 @@ package GameObject.Enemy.Centipede
 			for (var i:int = 0; i < m_nbParts; i++)
 				m_parts[i].addToStage();
 		}
-		
-		override public function removeFromStage():void {
-			super.removeFromStage();
-			for (var i:int = 0; i < m_nbParts; i++)
-				m_parts[i].removeToStage();
-		}
-		
+				
 		override public function addBitmap():void {
 			super.addBitmap();
 			m_parts[0].addBitmap();
@@ -261,20 +260,37 @@ package GameObject.Enemy.Centipede
 			var damage:int = weapon.m_power;
 			//substract damage to hp
 			m_stats.m_hp_current -= damage;
+			m_FXhit.play();
 			//check death
 			if (m_stats.m_hp_current <= 0)
 			{
-				die();
+				triggerDeath();
 			}
 			//for twinkling
 			changeTwinkleColor(_twinkleHit);
 			beginTwinkle(3, 0.3);
 		}
 		
-		override public function die():void {
+		public function triggerDeath():void {
+			m_dead = true;
 			m_state = "dying";
 			m_direction = new FlxPoint(0, 0);
 			killParts();
+			m_timerDeath.start(2);
+		}
+		
+		override public function die():void {
+			if (m_timerDeath.finished) {
+				m_state = "ending";
+				m_timerDeath.start(5);
+				m_smoke.playSmoke(x+6, y-4);
+				visible = false;
+			}
+		}
+		
+		private function ending():void {
+			if (m_timerDeath.finished)
+				Global.currentPlaystate.end();
 		}
 		
 	}

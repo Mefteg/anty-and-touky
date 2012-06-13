@@ -46,6 +46,7 @@ package GameObject.Enemy.Centipede
 			var damage:int = weapon.m_power;
 			//substract damage to hp
 			m_stats.m_hp_current -= damage;
+			m_FXhit.play();
 			//check death
 			if (m_stats.m_hp_current <= 0)
 			{
