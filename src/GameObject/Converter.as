@@ -39,7 +39,7 @@ package GameObject
 				case "Monkey": return new GameObject.Enemy.Monkey(object.x, object.y); break;
 				case "Penguin" : return new Penguin(object.x, object.y); break;
 				case "PenguinJetpack" : return new PenguinJetpack(object.x, object.y); break;
-				case "Centipede" : return new Centipede(object.x, object.y); break;
+				case "Centipede" : return new Centipede(object.x, object.y,object.width,object.height); break;
 				case "MonkeyTest": return new GameObject.Enemy.MonkeyTest(object.x,object.y); break;
 				case "Slime" : var m_gobj:MovableObject = new GameObject.Enemy.Slime(object.x, object.y);
 								if (object.properties.blocked != null)

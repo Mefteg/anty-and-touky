@@ -19,9 +19,7 @@ package GameObject.Enemy.Centipede
 		override public function load():void {
 			super.load();
 			//walk anim
-			addAnimation("walk" + UP, [1,2,3], 15, true);
-			addAnimation("walk" + RIGHT, [0], 15, true);
-			addAnimation("walk" + DOWN, [9], 15, true);
+			addAnimation("walk" + RIGHT, [5,6,7], 15, true);
 			addAnimation("walk" + LEFT, [1, 2, 3], 15, true);
 			
 			play("walk" + LEFT);
@@ -29,6 +27,15 @@ package GameObject.Enemy.Centipede
 		
 		override public function update() : void {
 			commonEnemyUpdate();
+		}
+		
+		override public function move() : void {
+			m_oldPos.x= this.x;
+			m_oldPos.y = this.y;
+			
+			this.x = this.x + (m_direction.x * m_speed);
+			this.y = this.y + (m_direction.y * m_speed);
+			
 		}
 	}
 
