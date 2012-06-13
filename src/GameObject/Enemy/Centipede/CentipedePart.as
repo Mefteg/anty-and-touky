@@ -16,7 +16,7 @@ package GameObject.Enemy.Centipede
 			super(0, 0);
 			m_boss = boss;
 			m_url = "Images/Enemies/centipedePart.png";
-			m_stats.initHP(1);
+			m_stats.initHP(3);
 			m_width = 32;
 			m_height = 32;
 		}

@@ -18,7 +18,7 @@ package GameObject.Enemy.Centipede
 		private var TIME_WAIT_IN:int = 1;
 		
 		private var m_parts:Array;
-		private var m_nbParts:int = 1;
+		private var m_nbParts:int = 13;
 		private var m_livingParts:int;
 		private var m_area:Rectangle;
 		
@@ -36,8 +36,8 @@ package GameObject.Enemy.Centipede
 			m_url = "Images/Enemies/centipedeHead.png";
 			m_width = 48;
 			m_height = 32;
-			m_speed = 2.8;
-			m_stats.initHP(1);
+			m_speed = 3.2;
+			m_stats.initHP(12);
 			createParts();
 			m_livingParts = m_nbParts;
 			m_area = new Rectangle(X, Y, areaWidth, areaHeight);
@@ -115,7 +115,7 @@ package GameObject.Enemy.Centipede
 			//TO DO : if( !obj.OnScreen())
 			//return ! m_parts[m_nbParts-1].onScreen();
 			var obj:Enemy = m_parts[m_nbParts - 1];
-			if (obj.x > m_area.x + 800 ||  obj.x < m_area.x -300)
+			if (obj.x > m_area.x + 1000 ||  obj.x < m_area.x -500)
 				return true;
 			if (obj.y < -100  ||  obj.y > m_area.y +600)
 				return true;
@@ -173,7 +173,7 @@ package GameObject.Enemy.Centipede
 			var part:CentipedePart;
 			for (var i:int = 0; i < m_nbParts; i++) {
 				part = m_parts[i];
-				part.x = x -17; part.y = y;
+				part.x = x -24; part.y = y;
 				part.x -= (part.m_width -8 ) * i ;
 			}
 		}
