@@ -8,6 +8,7 @@ package GameObject
 	import GameObject.Item.ItemManager;
 	import GameObject.Magic.Magic;
 	import GameObject.Magic.MovableMagic;
+	import GameObject.Menu.Camembert;
 	import GameObject.Menu.Menu;
 	import GameObject.Weapon.PlayerThrowable;
 	import GameObject.Weapon.Sword;
@@ -28,6 +29,7 @@ package GameObject
 	public class PlayableObject extends PhysicalObject 
 	{	
 		public var m_menu:GameObject.Menu.Menu;
+		public var m_camembert:GameObject.Menu.Camembert;
 		public var m_equipement:Equipement;
 		
 		public var m_throwables:Vector.<PlayerThrowable>;
@@ -88,6 +90,7 @@ package GameObject
 			m_timerAttack2 = new FlxTimer();
 			m_timerTwinkle.start(0.1);
 			m_smoke = EnemySmoke.PlayerSmoke();
+			m_camembert = new GameObject.Menu.Camembert(this);
 			//SOUNDS
 			FX_shieldClang = new FlxSound();
 			FX_drawWeapon = new FlxSound();
@@ -122,6 +125,7 @@ package GameObject
 			m_equipement.addToLibrary();
 			m_itemManager.addToLibrary();
 			m_smoke.addBitmap();
+			m_camembert.addBitmap();
 		}
 		
 		override public function addToStage():void {
@@ -133,6 +137,7 @@ package GameObject
 		override public function load():void {
 			super.load();
 			m_equipement.load();
+			m_camembert.load();
 			m_smoke.load();
 			//sounds
 			FX_shieldClang.loadStream("FX/clang.mp3");

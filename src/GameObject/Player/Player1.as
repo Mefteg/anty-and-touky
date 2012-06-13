@@ -172,6 +172,7 @@ package GameObject.Player
 			m_speed = m_normalSpeed;
 			Global.player2.m_state = "idle";
 			m_timerSpecialAvailable.start(5);
+			m_camembert.trigger(5);
 		}
 		
 		override public function placeOtherPlayer():void {

@@ -160,11 +160,13 @@ package GameObject.Player
 				return;
 			m_onSpecial = true;
 			m_timerSpecial.start(10);
+			m_camembert.trigger(10,true);
 		}
 		
 		override public function unspecial():void {
 			m_onSpecial = false;
 			m_timerSpecialAvailable.start(5);
+			m_camembert.trigger(5);
 		}
 		
 		override public function placeOtherPlayer():void {

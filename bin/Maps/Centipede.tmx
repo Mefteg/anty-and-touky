@@ -15,7 +15,7 @@
   <object name="Centipede" type="Centipede" x="75" y="159" width="638" height="319"/>
   <object name="Music" type="Music" x="13" y="83">
    <properties>
-    <property name="url" value="Music/wrath of the coconuts.mp3"/>
+    <property name="url" value="wrath of the coconuts"/>
    </properties>
   </object>
  </objectgroup>
