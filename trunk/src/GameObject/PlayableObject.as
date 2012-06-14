@@ -290,7 +290,7 @@ package GameObject
 		}
 		
 		public function takeDamage():Boolean {
-			if (!m_timerTwinkle.finished || isRushing())
+			if (!m_timerTwinkle.finished || isRushing() || m_state == "respawn")
 				return false;
 			FX_hit.play();
 			//start timer during when the enemy is hit
@@ -348,7 +348,7 @@ package GameObject
 				visible = true;
 				m_state = "idle";
 				m_stats.initHP(m_initHealth);
-				m_menu.addHearts(m_initHealth);
+				m_menu.reInitHearts();
 				changeTwinkleColor(_twinkleHit);
 				beginTwinkle(20, 3);
 			}
