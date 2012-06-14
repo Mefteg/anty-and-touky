@@ -21,6 +21,7 @@ package GameObject.Menu
 		private var m_menuHeart:GameObject.Menu.MenuHeart;
 		private var m_menuShield:GameObject.Menu.MenuShield;
 		
+		private var m_lastHeart:int;
 		
 		public function Menu(player:PlayableObject, X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
@@ -50,6 +51,7 @@ package GameObject.Menu
 			m_menuHeart.m_parent = this;
 			m_menuHeart.m_shift = new FlxPoint(10, 8);
 			m_menuHeart.addIcons(m_player.m_initHealth);
+			m_lastHeart = m_player.m_initHealth -1;
 			this.add(m_menuHeart);
 			
 			// adding of the shield menu
@@ -72,12 +74,16 @@ package GameObject.Menu
 			var shiftX:int = m_menuHeart.m_shift.x + (m_menuHeart.m_objects.length) * 9;
 			var shiftY:int = m_menuHeart.m_shift.y;
 			m_menuShield.m_shift = new FlxPoint(shiftX, shiftY);
+			if (FlxG.keys.A)
+				m_menuHeart.load();
 		}
 		
 		public function takeDamage() : void {
-			if ( m_menuHeart.m_objects.length > 0 ) {
+			/*if ( m_menuHeart.m_objects.length > 0 ) {
 				m_menuHeart.remove(m_menuHeart.getLast());
-			}
+			}*/
+			m_menuHeart.m_objects[m_lastHeart].visible = false;
+			m_lastHeart --;
 		}
 		
 		public function addHeart() : void {
@@ -86,6 +92,12 @@ package GameObject.Menu
 		
 		public function addHearts(count:int) : void {
 			m_menuHeart.addIcons(count);
+		}
+		
+		public function reInitHearts():void {
+			m_lastHeart = m_player.m_initHealth -1;
+			for (var i:int = 0; i < m_lastHeart + 1; i++)
+				m_menuHeart.m_objects[i].visible = true;
 		}
 		
 		public function addShield() : void {

@@ -218,7 +218,7 @@
    eJytlkFuAjEMRTNItLSLWbSiqC0dqepqlkX0BuUiHIH7L3CkRDJWbH9n+NIXmmD7OQnJkNKt1snWWnx6knFanldvG+RuxXMvNxqH5sn+NKFxKNfT2Jm3lDsFYgfysZOzRCPI3ZCfyM934k4gN+ud/KF8NxSj8tZ5YJ7Fc8RRbo3xemoxrL3Jcf/kU/GfwV8p/UjmgcVoeyNz5dxfjT5a+T/kM/m3jM9JX2eLi4jPN3Mvhf0tGEu42p0kuReAy9keV7uTeJ2XYjneyslaAVxNSH1tHDnLEa53x0XWOcLNss4R59aznPVJ3pO/EtY759az7p0jXlebM3I/W3ej1metq3FngyFZyDtC3vvIHsv9ib6PWjWiXDmm9eHdOfy3ZXG1/NY6ZE9AXnTNRjDPeldGmVl1Lj3/BbRz8kB+7OiFy+LWcyI5b+RdkNPTaw/nnjWuRYIOjw==
   </data>
  </layer>
- <objectgroup name="Objects" width="30" height="30" visible="0">
+ <objectgroup name="Objects" width="30" height="30">
   <object name="PenguinJetpack0" type="PenguinJetpack" x="288" y="452" width="22" height="23"/>
   <object name="PenguinJetpack0" type="PenguinJetpack" x="764" y="529" width="22" height="23"/>
   <object name="PenguinJetpack0" type="PenguinJetpack" x="20" y="398" width="22" height="23"/>
@@ -241,12 +241,12 @@
   <object name="PenguinJetpack0" type="PenguinJetpack" x="293" y="833" width="22" height="23"/>
   <object name="TriggerWarpW1M1Bottom" type="TriggerWarp" x="261" y="896" width="51" height="57">
    <properties>
-    <property name="respawn" value="bottom"/>
+    <property name="respawn" value="top"/>
     <property name="url" value="Maps/W1M5.json"/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="RespawnPoints" width="30" height="30" visible="0">
+ <objectgroup name="RespawnPoints" width="30" height="30">
   <object name="RespawnPointTop" type="RespawnPoint" x="615" y="156" width="113" height="46">
    <properties>
     <property name="location" value="init"/>

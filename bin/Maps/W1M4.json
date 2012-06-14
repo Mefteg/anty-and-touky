@@ -271,7 +271,7 @@
                  "name":"TriggerWarpW1M1Bottom",
                  "properties":
                     {
-                     "respawn":"bottom",
+                     "respawn":"top",
                      "url":"Maps\/W1M5.json"
                     },
                  "type":"TriggerWarp",
@@ -281,7 +281,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "width":30,
          "x":0,
          "y":0
@@ -316,7 +316,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "width":30,
          "x":0,
          "y":0
