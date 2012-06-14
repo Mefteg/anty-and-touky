@@ -270,7 +270,7 @@ package
 		}
 		
 		public function checkingControlPanel():void {
-			if (FlxG.keys.justPressed("ESCAPE")) {
+			if (FlxG.keys.justPressed("ESCAPE") || FlxG.keys.justPressed("ENTER")) {
 				if(m_controlShown){
 					depthBuffer.removeElement(m_controlsPanel, DepthBuffer.s_cursorGroup);
 					Global.frozen = false;
