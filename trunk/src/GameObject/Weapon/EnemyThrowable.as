@@ -33,7 +33,7 @@ package GameObject.Weapon
 				Global.player1.takeDamage();
 				result = true;
 			}
-			if (collide(Global.player2)){
+			if (Global.nbPlayers==2 && collide(Global.player2)){
 				Global.player2.takeDamage();
 				result = true;
 			}

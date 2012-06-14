@@ -1,9 +1,216 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="30" height="30" tilewidth="32" tileheight="32">
- <tileset firstgid="1" source="Jungle.tsx"/>
+ <tileset firstgid="1" name="Jungle" tilewidth="32" tileheight="32">
+  <image source="../Images/Tilesets/Jungle.png" width="512" height="512"/>
+  <tile id="1">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="26">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="27">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="28">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="29">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="38">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="39">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="40">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="54">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="55">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="64">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="65">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="66">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="70">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="71">
+   <properties>
+    <property name="type" value="Foreground"/>
+   </properties>
+  </tile>
+  <tile id="80">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="81">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="82">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="96">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="97">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="98">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="113">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+ </tileset>
  <layer name="Background" width="30" height="30">
   <data encoding="base64" compression="zlib">
-   eJzNlkFOwzAQRUeNT5IAG9odVKIpC1pASgsLxA3K/e+AIzzqZzqe2K6pWLyVJ3mx52eSjog2Fdh6WsGTUd9V9N565oHFBb29Zx14/MfeQwU+Fe+HUT96X87klX5yJL2NZ+a5Vxi980o8ZHrXf0CK981g8OwmarA2x9sY9HCPKXL7e0Ons4ZhbxvuE6uzvAh6l8p9ePaMWVnR7zmU48Ua9Fr7lH0dYO81vJ1xvlee69CL/oLeu1C3LPQ2hd5nOs6kHO+YiUWhF/PEGUv1amed4t2TPjfeE727UJvjxVrrbEv6O6vsbRO87YRXy1dsHf9ttO9RqlfWSW9juBDMs9Zj9jpjv1quMWtDgtvyOsXPPZMzE3O9p/g3Ubo5W5oX/ezV5p6WaXyWYeLamNfBmcbeW+mV74LmdQlevs4l7Df2XqHXZXhXxroF953nluwhevFfe0vHnGzo9D+95Fmk96DwBWemrZ3j/Qbh6Zvm
+   eJzNlkFOwzAQRUeNT5JAN7Q7qERTFrSAlBYWiBuU+98BR/Won2E8sY2pWLyVJ3mx52eSjoi2Fdh5nODRqO8qem88i8Dygt7eswk8/GPvsQIfivfdqB+9z7/kxdMq3sYz89wpjN5FJe4zvZs/IMX7ajB49hM1WJvjbQx6uMcUuf2d0ykXGuxtw31idZYXQe9KuQ/PnjEra/o+h3K8WINea5+yrwPsvYa3M873ynMdetFf0Hsb6laF3qbQ+0TnmZTjHTOxLPRinjhjqV7trFO8B9Lnxluidx9qc7xYa51tSX9nlb1tgred8Gr5iq3jv432PUr1yjrpbQwXgnnWesxeZ+xXyzVmbUhwW16n+LlncmZirg8U/yZKN2dL86Kfvdrc0zKNzzJErnUTXgdnGntvpVe+C6Vevs4l7Df2XqHXZXjXxroF953nluwhevFfe0fnnGzp5396ybNI71HhE+qstRK+ABWPmxQ=
   </data>
  </layer>
  <layer name="Foreground" width="30" height="30">
@@ -11,7 +218,7 @@
    eJytlkFuAjEMRTNItLSLWbSiqC0dqepqlkX0BuUiHIH7L3CkRDJWbH9n+NIXmmD7OQnJkNKt1snWWnx6knFanldvG+RuxXMvNxqH5sn+NKFxKNfT2Jm3lDsFYgfysZOzRCPI3ZCfyM934k4gN+ud/KF8NxSj8tZ5YJ7Fc8RRbo3xemoxrL3Jcf/kU/GfwV8p/UjmgcVoeyNz5dxfjT5a+T/kM/m3jM9JX2eLi4jPN3Mvhf0tGEu42p0kuReAy9keV7uTeJ2XYjneyslaAVxNSH1tHDnLEa53x0XWOcLNss4R59aznPVJ3pO/EtY759az7p0jXlebM3I/W3ej1metq3FngyFZyDtC3vvIHsv9ib6PWjWiXDmm9eHdOfy3ZXG1/NY6ZE9AXnTNRjDPeldGmVl1Lj3/BbRz8kB+7OiFy+LWcyI5b+RdkNPTaw/nnjWuRYIOjw==
   </data>
  </layer>
- <objectgroup name="Objects" width="30" height="30">
+ <objectgroup name="Objects" width="30" height="30" visible="0">
   <object name="PenguinJetpack0" type="PenguinJetpack" x="288" y="452" width="22" height="23"/>
   <object name="PenguinJetpack0" type="PenguinJetpack" x="764" y="529" width="22" height="23"/>
   <object name="PenguinJetpack0" type="PenguinJetpack" x="20" y="398" width="22" height="23"/>
@@ -34,7 +241,7 @@
   <object name="PenguinJetpack0" type="PenguinJetpack" x="293" y="833" width="22" height="23"/>
   <object name="TriggerWarpW1M1Bottom" type="TriggerWarp" x="261" y="896" width="51" height="57">
    <properties>
-    <property name="respawn" value="top"/>
+    <property name="respawn" value="bottom"/>
     <property name="url" value="Maps/W1M5.json"/>
    </properties>
   </object>

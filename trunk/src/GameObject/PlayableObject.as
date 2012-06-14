@@ -295,7 +295,7 @@ package GameObject
 			FX_hit.play();
 			//start timer during when the enemy is hit
 			changeTwinkleColor(_twinkleHit);
-			beginTwinkle(20, 3);
+			beginTwinkle(20, 1.5);
 			m_stats.m_hp_current --;
 			//if no more health
 			if (m_stats.m_hp_current == 0 ){
