@@ -24,7 +24,6 @@
   <object name="PenguinJetpack0" type="PenguinJetpack" x="244" y="441" width="22" height="23"/>
   <object name="PenguinJetpack0" type="PenguinJetpack" x="181" y="308" width="22" height="23"/>
   <object name="Penguin1" type="Penguin" x="348" y="552"/>
-  <object x="576" y="501"/>
   <object name="Penguin1" type="Penguin" x="797" y="362"/>
   <object name="Penguin1" type="Penguin" x="678" y="570"/>
   <object name="Penguin1" type="Penguin" x="713" y="571" width="20" height="16"/>

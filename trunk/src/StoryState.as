@@ -211,14 +211,14 @@ package
 		
 		private function write():void {
 			m_counterLetter ++;
-			if ( !m_writing || m_counterLetter< 10)
+			if ( !m_writing || m_counterLetter< 5)
 				return;
 			m_displayedText += m_currentText.charAt(m_index);
 			m_text.text = m_displayedText;
 			m_index++;
 			m_counterLetter = 0;
 			if(m_index >= m_currentText.length){
-				m_timerMessage.start(5);
+				m_timerMessage.start(3.5);
 				m_writing = false;
 			}
 		}
