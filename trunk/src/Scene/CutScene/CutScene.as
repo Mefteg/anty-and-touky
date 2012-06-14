@@ -53,15 +53,13 @@ package Scene.CutScene
 		
 		public function start():void {
 			Global.currentState.add(this);
-			Global.player1.block();
-			Global.player2.block();
+			Global.frozen = true;
 			m_talkers = Global.currentPlaystate.m_talkersObjects;
 			next();
 		}
 		
 		public function end():void {
-			Global.player1.unblock();
-			Global.player2.unblock();
+			Global.frozen = false;
 			trace(m_talkers.length);
 			for (var i:int = 0; i < m_talkers.length ; i++) 
 				m_talkers[i].unblock();
