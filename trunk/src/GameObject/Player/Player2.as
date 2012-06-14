@@ -31,6 +31,8 @@ package GameObject.Player
 			m_equipement.m_weapon.visible = false;
 			setHitbox(8, 14, 31, 24);
 			m_name = "Player2";
+			if (Global.nbPlayers == 1)
+				visible = false;
 		}
 		
 		override public function createThrowables():void {
@@ -78,7 +80,14 @@ package GameObject.Player
 			addAnimation("rush" + LEFT, [11], 10, false);
 		}
 		
+		override public function update():void {
+			if(Global.nbPlayers == 2)
+				super.update();
+		}
+		
 		override public function getMoves():void {
+			if (Global.nbPlayers == 1)
+				return;
 			//check second attack
 			if (FlxG.keys.justPressed(m_stringNext) && m_state == "waitForAttack2" )
 				attack();

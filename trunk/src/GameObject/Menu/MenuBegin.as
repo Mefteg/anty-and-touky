@@ -41,21 +41,27 @@ package GameObject.Menu
 			this.add(background);
 			
 			// adding of the play button
-			var button1:Button = new ButtonPlay(m_cursor, null, this.x, this.y);
+			var button1:Button = new ButtonPlay(m_cursor, null, 1,this.x, this.y);
 			button1.m_shift = new FlxPoint(220, 300);
 			button1.m_parent = this;
 			Global.library.addUniqueBitmap(button1.m_url);
 			this.add(button1);
 			
+			var button3:Button = new ButtonPlay(m_cursor, null, 2,this.x, this.y);
+			button3.m_shift = new FlxPoint(220, 350);
+			button3.m_parent = this;
+			Global.library.addUniqueBitmap(button3.m_url);
+			this.add(button3);
+			
 			// adding of the option button
-			var button2:Button = new ButtonOptions(m_cursor, null, this.x, this.y);
+			/*var button2:Button = new ButtonOptions(m_cursor, null, this.x, this.y);
 			button2.m_shift = new FlxPoint(220, 265);
 			button2.m_parent = this;
 			Global.library.addUniqueBitmap(button2.m_url);
-			this.add(button2);
+			this.add(button2);*/
 			
-			button1.m_next = button2;
-			button2.m_next = button1;
+			button1.m_next = button3;
+			button3.m_next = button1;
 
 			m_cursor.m_firstButton = button1;
 			m_cursor.m_currentButton = button1;

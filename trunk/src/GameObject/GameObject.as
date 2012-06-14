@@ -152,6 +152,8 @@ package GameObject
 		}
 		
 		override public function onScreen(cam:FlxCamera = null ) : Boolean {
+			if (!Global.camera)
+			return super.onScreen();
 				var t_cam:Camera = Global.camera;
 				
 				var xCam:int = t_cam.scroll.x;
