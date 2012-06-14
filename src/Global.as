@@ -31,6 +31,7 @@ package
 		static public var cursorPlayer1:GameObject.Menu.Cursor;
 		static public var cursorPlayer2:GameObject.Menu.Cursor;
 		static public var GLOBAL_ID = 0;
+		static public var camera:Camera;
 		static public var serverAddress:String = "http://ramboserver.dyndns.org/minority-resort/bin";
 		//static public var serverAddress:String = "http://localhost/minority-resort/bin";
 		static public var frozen:Boolean = false;
