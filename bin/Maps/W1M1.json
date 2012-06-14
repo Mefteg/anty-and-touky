@@ -109,18 +109,6 @@
                  "width":55,
                  "x":446,
                  "y":234
-                }, 
-                {
-                 "height":49,
-                 "name":"RespawnBottom",
-                 "properties":
-                    {
-                     "location":"bottom"
-                    },
-                 "type":"RespawnPoint",
-                 "width":106,
-                 "x":490,
-                 "y":710
                 }],
          "opacity":1,
          "type":"objectgroup",
