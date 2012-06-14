@@ -122,6 +122,114 @@
                  "width":26,
                  "x":186,
                  "y":309
+                }, 
+                {
+                 "height":27,
+                 "name":"Penguin2",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":26,
+                 "x":232,
+                 "y":718
+                }, 
+                {
+                 "height":27,
+                 "name":"Penguin2",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":26,
+                 "x":285,
+                 "y":683
+                }, 
+                {
+                 "height":27,
+                 "name":"Penguin0",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":26,
+                 "x":635,
+                 "y":736
+                }, 
+                {
+                 "height":27,
+                 "name":"Penguin1",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":26,
+                 "x":566,
+                 "y":560
+                }, 
+                {
+                 "height":23,
+                 "name":"PenguinJetpack1",
+                 "properties":
+                    {
+
+                    },
+                 "type":"PenguinJetpack",
+                 "width":22,
+                 "x":711,
+                 "y":201
+                }, 
+                {
+                 "height":27,
+                 "name":"Penguin4",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":26,
+                 "x":212,
+                 "y":269
+                }, 
+                {
+                 "height":27,
+                 "name":"Penguin4",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":26,
+                 "x":182,
+                 "y":225
+                }, 
+                {
+                 "height":27,
+                 "name":"Penguin1",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":26,
+                 "x":554,
+                 "y":442
+                }, 
+                {
+                 "height":27,
+                 "name":"Penguin1",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":26,
+                 "x":493,
+                 "y":466
                 }],
          "opacity":1,
          "type":"objectgroup",
