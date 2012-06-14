@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="30" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" source="Jungle.tsx"/>
+ <layer name="Background" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztlVEOgjAMhptwA27AOAF4guFJgBPA/R8cyRpnbUdxFBPjwxeMw36OtT8DAAwG3ANNwAXagDfy/L1572TETLwjWV8NSb2Wnl/yLoH6IO6AV6rvEioFTuFdhPocXN2NXiDnbRS+nPMGfC5sM9zF9U+9krON9SWvj1fJy9XkzpNb3zKC5sKUfD8r9ksd0mdKrq8lb6c83xJqxuuju8/8LncO2ntoX3t49gX6j6L9D6l3hLL3I86Ltv/pnku8XummXpyDEi91c/MnZRc3h3vgnFI3l9kW78TU3cBrf+FVysyz3B289zVmqoU3dWP+Vhd5V+Cf9eaVMvPMPXNeSyfybe/e7F7pfQBnmQIX
+  </data>
+ </layer>
+ <layer name="Foreground" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4B+gG+gHTBCgeAQN3+g7AKB0TRLHhBG4zNiwbQCTHjsRncXvcFA2z8QYCT6eRSMAkKAGnXLaP00CqgFALB7AMI=
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="30" height="30"/>
+ <objectgroup name="RespawnPoints" width="30" height="30">
+  <object name="TriggerWarpBoss1" type="TriggerWarp" x="741" y="861" width="153" height="91">
+   <properties>
+    <property name="respawn" value="top"/>
+    <property name="url" value="Maps/W1B1.json"/>
+   </properties>
+  </object>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="181" y="308" width="22" height="23"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="244" y="441" width="22" height="23"/>
+  <object name="Penguin1" type="Penguin" x="282" y="311"/>
+  <object name="Penguin1" type="Penguin" x="321" y="335"/>
+  <object name="Penguin1" type="Penguin" x="291" y="410"/>
+  <object name="Penguin1" type="Penguin" x="348" y="552"/>
+  <object name="Penguin1" type="Penguin" x="678" y="570"/>
+  <object name="Penguin1" type="Penguin" x="713" y="571" width="20" height="16"/>
+  <object name="Penguin1" type="Penguin" x="771" y="536"/>
+  <object name="Penguin1" type="Penguin" x="797" y="362"/>
+  <object x="576" y="501"/>
+  <object name="RespawnPointTop" type="RespawnPoint" x="760" y="137" width="31" height="30">
+   <properties>
+    <property name="location" value="top"/>
+   </properties>
+  </object>
+  <object name="RespawnPointTop" type="RespawnPoint" x="766" y="140" width="25" height="27">
+   <properties>
+    <property name="location" value="top"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
