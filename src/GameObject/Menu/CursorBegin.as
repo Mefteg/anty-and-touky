@@ -20,15 +20,15 @@ package GameObject.Menu
 		
 		override protected function catchEvent() : void {
 			if ( m_enabled ) {
-				if ( FlxG.keys.justPressed("F") ) {
+				if ( FlxG.keys.justPressed("ENTER") ) {
 					m_currentButton.validate();
 				}
 				
-				if ( FlxG.keys.justPressed("S") ) {
+				if ( FlxG.keys.justPressed("DOWN") ) {
 					m_currentButton.next();
 				}
 
-				if ( FlxG.keys.justPressed("G") ) {
+				if ( FlxG.keys.justPressed("UP") ) {
 					m_currentButton.cancel();
 				}
 			}

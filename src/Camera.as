@@ -24,6 +24,7 @@ package
 		}
 		
 		override public function update() : void {
+			var oldScroll:FlxPoint = this.scroll;
 			if ( Global.player1 && Global.player2 ) {
 				var pos_p1:FlxPoint = new FlxPoint(Global.player1.x, Global.player1.y);
 				var size_p1:FlxPoint = new FlxPoint(Global.player1.m_width, Global.player1.m_height);
@@ -43,6 +44,12 @@ package
 				}
 				
 				this.focusOn(m_target);
+
+				/*var scroll:FlxPoint = this.scroll;
+				if ( m_target.x - this.width * 0.5 < 0 || m_target.y - this.height * 0.5 < 0 ) {
+					trace("out!!");
+					this.scroll.make(0,0);
+				}*/
 			}
 		}
 		
