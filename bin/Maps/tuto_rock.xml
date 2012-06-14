@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+
+<cutscene name="tutoRock">	
+	<actiongroup sync="1">
+		<action type="message" executor="Player1" text="You can do a rush attack by pressing H with Anty when you are near Touky"/>
+		<action type="message" executor="Player1" text="Try it on this rock that seems fragile"/>
+		<action type="music" name="wrath of the coconuts" />
+	</actiongroup>
+	
+</cutscene>
