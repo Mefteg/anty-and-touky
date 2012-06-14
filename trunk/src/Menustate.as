@@ -1,5 +1,6 @@
 package  
 {
+	import flash.display.MovieClip;
 	import GameObject.DrawableObject;
 	import GameObject.Menu.MenuBegin;
 	import org.flixel.FlxG;
@@ -17,6 +18,7 @@ package
 	 */
 	public class Menustate extends State 
 	{
+		[Embed(source = "../bin/Images/trailerJeuxCom.swf")] protected var Trailer:Class;
 		[Embed(source = "../bin/Images/Menu/LadyBugRidersScreen.png")] protected var LadyBugScreen:Class;
 		[Embed(source = "../bin/Images/Menu/cursor.png")] protected var Cursor:Class;
 		
@@ -24,6 +26,8 @@ package
 		protected var m_timer:FlxTimer;
 		protected var m_music:FlxSound;
 		
+		//trailer de merde
+		protected var m_trailer:MovieClip;
 		
 		private var m_ladyBug:FlxSprite;
 		
@@ -48,8 +52,14 @@ package
 			//text displaying loading advancement
 			m_loadProgression = new FlxText(400, 400, 600);
 			add(m_loadProgression);
-			m_ladyBug = new FlxSprite(150 , 130);
+			m_ladyBug = new FlxSprite(410 , 320);
 			m_ladyBug.loadGraphic(LadyBugScreen, false, false, 300, 200, true);
+			//trailer de merde
+			m_trailer = new MovieClip();
+			m_trailer = new Trailer();
+			m_trailer.scaleX = 0.6;
+			m_trailer.scaleY = 0.6;
+			m_trailer.scaleZ = 0.6;
 		}
 		
 		override public function create() : void {
@@ -64,6 +74,7 @@ package
 			depthBuffer.addElement(m_ladyBug, DepthBuffer.s_cursorGroup);
 			m_ladyBug.alpha = 0;
 			m_timerLB.start(2);
+			FlxG.stage.addChild(m_trailer);
 		}
 		
 		override public function update() :void{
@@ -71,6 +82,7 @@ package
 			//make the menu appear via fade in
 			if (!m_menuAppeared && m_timer.finished) {
 				m_menuAppeared = true;
+				FlxG.stage.removeChild(m_trailer);
 				fadeIn();
 			}
 			manageLadyBug();
