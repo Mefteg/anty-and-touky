@@ -151,14 +151,13 @@ package GameObject
 			return facing;
 		}
 		
-		override public function onScreen(Camera:FlxCamera = null) : Boolean {
-			if(Camera == null)
-				Camera = FlxG.camera;
+		override public function onScreen(cam:FlxCamera = null ) : Boolean {
+				var t_cam:Camera = Global.camera;
 				
-				var xCam:int = Camera.scroll.x;
-				var yCam:int = Camera.scroll.y;
-				var xCamBound:int = xCam + Camera.width;
-				var yCamBound:int = yCam + Camera.height;
+				var xCam:int = t_cam.scroll.x;
+				var yCam:int = t_cam.scroll.y;
+				var xCamBound:int = xCam + t_cam.width;
+				var yCamBound:int = yCam + t_cam.height;
 			
 				if ( this.x + this.width < xCam || this.x > xCamBound ) {
 					return false;
