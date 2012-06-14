@@ -43,6 +43,22 @@ package
 					stopPlayer(Global.player2);
 				}
 				
+				if ( m_target.x - 320 < 0 ) {
+					m_target.x = 320;
+				}
+				
+				if ( m_target.y - 240 < 0 ) {
+					m_target.y = 240;
+				}
+				
+				if ( m_target.x + 320 > Global.nb_tiles_width * 32 ) {
+					m_target.x = Global.nb_tiles_width * 32;
+				}
+				
+				if ( m_target.y + 240 > Global.nb_tiles_height * 32 ) {
+					m_target.y = Global.nb_tiles_height * 32;
+				}
+				
 				this.focusOn(m_target);
 
 				/*var scroll:FlxPoint = this.scroll;
