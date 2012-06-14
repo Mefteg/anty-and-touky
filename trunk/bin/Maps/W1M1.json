@@ -86,6 +86,18 @@
                  "width":0,
                  "x":651,
                  "y":471
+                }, 
+                {
+                 "height":32,
+                 "name":"Music",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Music",
+                 "width":42,
+                 "x":646,
+                 "y":109
                 }],
          "opacity":1,
          "type":"objectgroup",
