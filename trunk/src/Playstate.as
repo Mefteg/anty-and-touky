@@ -137,7 +137,7 @@ package
 			depthBuffer.addElement(m_rectLadyBug, DepthBuffer.s_cursorGroup);
 			m_sceneManager = new SceneManager();
 			//m_sceneManager.loadScene("Maps/test.json");
-			m_sceneManager.loadScene("Maps/W1M1.json");
+			m_sceneManager.loadScene("Maps/W1M4.json");
 			m_state = "Loading";
 			//creating player 1
 			Global.player1 = new Player1(100, 100);
@@ -162,6 +162,7 @@ package
 						
 			//create the camera
 			m_camera = new Camera(0, 0, 640, 480);
+			Global.camera = m_camera;
 			FlxG.addCamera(m_camera);
 			Global.camera = m_camera;
 			//create the message bitmap
@@ -303,6 +304,7 @@ package
 				Global.player1.x = Global.player2.x = 320;
 				Global.player1.y = Global.player2.y = 240;
 				depthBuffer.clearBuffers();
+				Global.camera = null;
 				FlxG.switchState(new Menustate());
 				return;
 			}
