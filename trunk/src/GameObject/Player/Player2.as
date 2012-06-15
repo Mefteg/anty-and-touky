@@ -85,6 +85,7 @@ package GameObject.Player
 				super.update();
 			else {
 				x = Global.player1.x; y = Global.player1.y;
+				m_oldPos.x = x; m_oldPos.y = y;
 			}
 		}
 		

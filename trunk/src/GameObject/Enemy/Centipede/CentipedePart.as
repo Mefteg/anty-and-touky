@@ -58,6 +58,21 @@ package GameObject.Enemy.Centipede
 			changeTwinkleColor(_twinkleHit);
 			beginTwinkle(3, 0.3);
 		}
+		override protected function takeRushDamage():void {
+			//calculate damage
+			var damage:int = 5 ;
+			//substract damage to hp
+			m_stats.m_hp_current -= damage;
+			//check death
+			if (m_stats.m_hp_current <= 0){
+				m_state = "walkD";
+				play(m_state + facing);
+				m_boss.removePart();
+			}
+			//for twinkling
+			changeTwinkleColor(_twinkleHit);
+			beginTwinkle(3, 0.3);
+		}
 		
 		public function changeDirection(face:uint):void {
 			facing = face;

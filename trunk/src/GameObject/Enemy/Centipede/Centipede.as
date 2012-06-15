@@ -271,6 +271,20 @@ package GameObject.Enemy.Centipede
 			beginTwinkle(3, 0.3);
 		}
 		
+		override protected function takeRushDamage():void {
+			//calculate damage
+			var damage:int = 5 ;
+			//substract damage to hp
+			m_stats.m_hp_current -= damage;
+			//check death
+			if (m_stats.m_hp_current <= 0){
+				triggerDeath();
+			}
+			//for twinkling
+			changeTwinkleColor(_twinkleHit);
+			beginTwinkle(3, 0.3);
+		}
+		
 		public function triggerDeath():void {
 			m_dead = true;
 			m_state = "dying";
