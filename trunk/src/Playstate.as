@@ -137,7 +137,7 @@ package
 			depthBuffer.addElement(m_rectLadyBug, DepthBuffer.s_cursorGroup);
 			m_sceneManager = new SceneManager();
 			//m_sceneManager.loadScene("Maps/test.json");
-			m_sceneManager.loadScene("Maps/W1M4.json");
+			m_sceneManager.loadScene("Maps/W1M1.json");
 			m_state = "Loading";
 			//creating player 1
 			Global.player1 = new Player1(100, 100);
@@ -167,7 +167,6 @@ package
 			Global.camera = m_camera;
 			//create the message bitmap
 			Global.library.addUniqueBitmap("Images/Menu/bulle.png");
-			add(m_loadProgression);
 		}
 
 		override public function update() : void {

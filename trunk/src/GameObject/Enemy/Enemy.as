@@ -242,9 +242,6 @@ package GameObject.Enemy
 		protected function takeRushDamage():void {
 			//calculate damage
 			var damage:int = 5 ;
-			//display damage
-			var info:InfoDamage = new InfoDamage(x, y, String(damage));
-			info.addToStage();
 			//substract damage to hp
 			m_stats.m_hp_current -= damage;
 			//check death

@@ -48,14 +48,13 @@ package
 			add(depthBuffer);
 			depthBuffer.addElement(m_imageA, DepthBuffer.s_backgroundGroup);
 			depthBuffer.addElement(m_imageB, DepthBuffer.s_backgroundGroup);
-			m_text = new FlxText(70, 400, 480, "EEDDEE");
+			m_text = new FlxText(70, 400, 480, "");
 			m_text.setFormat(null, 18, 0xD76B00);
 			depthBuffer.addElement(m_text, DepthBuffer.s_backgroundGroup);
-			m_state = "Beginning";
+			m_state = "Loading";
 			m_sound = new FlxSound();
 			m_sound.loadStream("Music/TwoBuddies.mp3",true);
-			m_sound.play();
-			m_library = new Library();
+			m_library = Global.library;
 			m_timerSwitch = new FlxTimer();
 			m_timerSwitch.start(0.1);
 			m_timerMessage = new FlxTimer();
@@ -68,8 +67,14 @@ package
 			
 			switch(m_state) {
 				//load images
-				case "Beginning" : if (m_xml) nextImage(); break;
-				case "Loading": loading();break;
+				case "Beginning" : if (m_xml) { nextImage(); m_state = "Switching";} break;
+				case "Loading": loading(); break;
+				case "Fading" : m_library.loadAll();
+								if ( ! m_fadeOut && m_library.loadComplete() ) { 
+									fadeIn(); m_state = "Switching"; 
+									m_library.cacheObjects();
+									loadGraphics(); 
+								} break;
 				case "Switching":switching(); break;
 				case "Ending":ending(); break;
 				default : break;
@@ -82,24 +87,28 @@ package
 		
 		override protected function loading():void {
 			m_library.loadAll();
-			if (m_library.loadComplete() && !m_fadeOut) {
+			if (m_library.loadComplete()) {
 				m_library.cacheObjects();
-				loadGraphics();
-				m_state = "Switching";
-				m_timerMessage.start(m_nbTTD * 5);
+				m_currentStory = 0;
+				m_sound.play();
+				m_state = "Beginning";
 				fadeIn();
 			}
 		}
 		
-		private function loadBitmaps():void {
-			m_library.addBitmap("Images/StoryScenes/story"+m_currentStory+"_a.png");
-			m_library.addBitmap("Images/StoryScenes/story"+m_currentStory+"_b.png");
-			m_state = "Loading";
+		public static function loadFirstBitmap():void {
+			Global.library.addBitmap("Images/StoryScenes/story1_a.png");
+			Global.library.addBitmap("Images/StoryScenes/story1_b.png");
+		}
+		
+		private function loadNextBitmap():void {
+			Global.library.addBitmap("Images/StoryScenes/story"+(m_currentStory+1)+"_a.png");
+			Global.library.addBitmap("Images/StoryScenes/story" +(m_currentStory+1) + "_b.png");
 		}
 		
 		private function loadGraphics():void {
 			m_imageA.loadGraphic2(m_library.getBitmap("Images/StoryScenes/story"+m_currentStory+"_a.png"),false,false,640,480,true);
-			m_imageB.loadGraphic2(m_library.getBitmap("Images/StoryScenes/story"+m_currentStory+"_b.png"),false,false,640,480,true);
+			m_imageB.loadGraphic2(m_library.getBitmap("Images/StoryScenes/story" + m_currentStory + "_b.png"), false, false, 640, 480, true);
 		}
 		
 		private function nextImage():void {
@@ -108,12 +117,21 @@ package
 			if (m_currentStory >= 4) {
 				end();
 				return;
+			}else if (m_currentStory < 3) {
+				loadNextBitmap();
 			}
-			loadBitmaps();
+			
 			m_textsToDisplay = m_xml.story[m_currentStory - 1];
 			m_nbTTD = m_textsToDisplay.message.length();
 			m_currentTextID = 0;
 			initWriting();
+			m_timerMessage.start(m_nbTTD * 5);
+			if(m_currentStory >1){
+				fadeOut();
+				m_state = "Fading";
+			}else {				
+				loadGraphics();
+			}
 		}
 		
 		private function nextMessage():void {
@@ -135,7 +153,7 @@ package
 			write();
 			//check for a new message to display
 			nextMessage();
-			//m_library.loadAll(); // load next images to avoid lags
+			m_library.loadAll(); // load next images to avoid lags
 			if (m_timerSwitch.finished) {
 				m_timerSwitch.start(1);
 				if (m_firstImage) {
@@ -161,6 +179,10 @@ package
 			if (m_fadeOut)
 				return;
 			m_sound.stop();
+			for (var i:int = 1; i < 4 ; i++ ) {
+				Global.library.deleteBitmap("Images/StoryScenes/Story"+i+"_a.png");
+				Global.library.deleteBitmap("Images/StoryScenes/Story" + i + "_b.png");
+			}
 			FlxG.switchState( new Playstate() );
 		}
 		
