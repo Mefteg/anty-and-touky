@@ -167,6 +167,7 @@ package
 			Global.camera = m_camera;
 			//create the message bitmap
 			Global.library.addUniqueBitmap("Images/Menu/bulle.png");
+			add(m_loadProgression);
 		}
 
 		override public function update() : void {

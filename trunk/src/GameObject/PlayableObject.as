@@ -118,12 +118,12 @@ package GameObject
 		 */
 		override public function addBitmap():void {
 			super.addBitmap();
-			for (var i:int = 0; i < m_magics.length; i++){
+			/*for (var i:int = 0; i < m_magics.length; i++){
 				m_magics[i].addBitmap();
 				m_magics[i].setCasterPlayer(this);
-			}
+			}*/
 			m_equipement.addToLibrary();
-			m_itemManager.addToLibrary();
+			//m_itemManager.addToLibrary();
 			m_smoke.addBitmap();
 			m_camembert.addBitmap();
 		}
@@ -144,10 +144,10 @@ package GameObject
 			FX_drawWeapon.loadStream("FX/swordDrawn.mp3");
 			FX_hit.loadStream("FX/hit.mp3");
 			//magic
-			for (var i:int = 0; i < m_magics.length; i++){
+			/*for (var i:int = 0; i < m_magics.length; i++){
 				m_magics[i].load();
 			}
-			m_itemManager.load();
+			m_itemManager.load();*/
 			loadThrowables();
 		}
 		
