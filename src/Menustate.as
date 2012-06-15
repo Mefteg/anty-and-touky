@@ -99,6 +99,8 @@ package
 				Global.library.cacheObjects();
 				//load the graphics
 				m_menuBegin.load();
+				//load future images of story state
+				StoryState.loadFirstBitmap();
 				m_state = "Loaded";
 			}
 			
@@ -125,6 +127,7 @@ package
 		}
 		
 		override protected function ending():void {
+			Global.library.loadAll();
 			if (m_fadeOut)
 				return;
 			m_music.stop();
