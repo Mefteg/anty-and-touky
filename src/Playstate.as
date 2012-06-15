@@ -50,6 +50,7 @@ package
 		
 		
 		//buttons
+		public var m_enablePanels:Boolean = true;
 		protected var m_pauseButton:FlxButton;
 		protected var m_controlButton:FlxButton;
 		protected var m_controlsPanel:FlxSprite;
@@ -136,7 +137,6 @@ package
 			depthBuffer.addElement(m_ladyBug, DepthBuffer.s_cursorGroup);
 			depthBuffer.addElement(m_rectLadyBug, DepthBuffer.s_cursorGroup);
 			m_sceneManager = new SceneManager();
-			//m_sceneManager.loadScene("Maps/test.json");
 			m_sceneManager.loadScene("Maps/W1M1.json");
 			m_state = "Loading";
 			//creating player 1
@@ -271,7 +271,7 @@ package
 		}
 		
 		public function checkingControlPanel():void {
-			if (FlxG.keys.justPressed("ESCAPE") || FlxG.keys.justPressed("ENTER")) {
+			if (m_enablePanels && ( FlxG.keys.justPressed("ESCAPE") || FlxG.keys.justPressed("ENTER") ) ) {
 				if(m_controlShown){
 					depthBuffer.removeElement(m_controlsPanel, DepthBuffer.s_cursorGroup);
 					Global.frozen = false;

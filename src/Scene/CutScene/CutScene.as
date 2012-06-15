@@ -54,11 +54,13 @@ package Scene.CutScene
 		public function start():void {
 			Global.currentState.add(this);
 			Global.frozen = true;
+			Global.currentPlaystate.m_enablePanels = false;
 			m_talkers = Global.currentPlaystate.m_talkersObjects;
 			next();
 		}
 		
 		public function end():void {
+			Global.currentPlaystate.m_enablePanels = true;
 			Global.frozen = false;
 			trace(m_talkers.length);
 			for (var i:int = 0; i < m_talkers.length ; i++) 

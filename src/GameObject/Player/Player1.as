@@ -171,6 +171,7 @@ package GameObject.Player
 			m_state = "idle";
 			m_speed = m_normalSpeed;
 			Global.player2.m_state = "idle";
+			Global.player2.x = x; Global.player2.y = y;
 			m_timerSpecialAvailable.start(5);
 			m_camembert.trigger(5);
 		}

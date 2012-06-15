@@ -245,9 +245,10 @@ package GameObject.Enemy
 			//substract damage to hp
 			m_stats.m_hp_current -= damage;
 			//check death
-			if (m_stats.m_hp_current < 0)
+			if (m_stats.m_hp_current < 0){
 				m_state = "dead";
 				m_timerDeath.start(1);
+			}
 			//for twinkling
 			changeTwinkleColor(_twinkleHit);
 			beginTwinkle(3, 0.3);
