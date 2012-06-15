@@ -92,14 +92,14 @@ package
 		}
 		
 		private function loadBitmaps():void {
-			m_library.addBitmap("Images/StoryScenes/Story"+m_currentStory+"_a.png");
-			m_library.addBitmap("Images/StoryScenes/Story"+m_currentStory+"_b.png");
+			m_library.addBitmap("Images/StoryScenes/story"+m_currentStory+"_a.png");
+			m_library.addBitmap("Images/StoryScenes/story"+m_currentStory+"_b.png");
 			m_state = "Loading";
 		}
 		
 		private function loadGraphics():void {
-			m_imageA.loadGraphic2(m_library.getBitmap("Images/StoryScenes/Story"+m_currentStory+"_a.png"),false,false,640,480,true);
-			m_imageB.loadGraphic2(m_library.getBitmap("Images/StoryScenes/Story"+m_currentStory+"_b.png"),false,false,640,480,true);
+			m_imageA.loadGraphic2(m_library.getBitmap("Images/StoryScenes/story"+m_currentStory+"_a.png"),false,false,640,480,true);
+			m_imageB.loadGraphic2(m_library.getBitmap("Images/StoryScenes/story"+m_currentStory+"_b.png"),false,false,640,480,true);
 		}
 		
 		private function nextImage():void {
