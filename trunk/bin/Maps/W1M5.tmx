@@ -19,14 +19,30 @@
    </properties>
   </object>
   <object name="Penguin1" type="Penguin" x="282" y="311"/>
-  <object name="Penguin1" type="Penguin" x="321" y="335"/>
+  <object name="Penguin1" type="Penguin" x="321" y="335">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object name="Penguin1" type="Penguin" x="291" y="410"/>
-  <object name="PenguinJetpack0" type="PenguinJetpack" x="244" y="441" width="22" height="23"/>
-  <object name="PenguinJetpack0" type="PenguinJetpack" x="181" y="308" width="22" height="23"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="244" y="441" width="22" height="23">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="181" y="308" width="22" height="23">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object name="Penguin1" type="Penguin" x="348" y="552"/>
   <object name="Penguin1" type="Penguin" x="797" y="362"/>
   <object name="Penguin1" type="Penguin" x="678" y="570"/>
-  <object name="Penguin1" type="Penguin" x="713" y="571" width="20" height="16"/>
+  <object name="Penguin1" type="Penguin" x="713" y="571" width="20" height="16">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object name="Penguin1" type="Penguin" x="771" y="536"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="30" height="30">

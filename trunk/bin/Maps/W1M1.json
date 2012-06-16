@@ -44,36 +44,12 @@
                  "name":"Penguin2",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":0,
                  "x":576,
                  "y":550
-                }, 
-                {
-                 "height":0,
-                 "name":"Penguin3",
-                 "properties":
-                    {
-
-                    },
-                 "type":"Penguin",
-                 "width":0,
-                 "x":673,
-                 "y":647
-                }, 
-                {
-                 "height":0,
-                 "name":"Penguin0",
-                 "properties":
-                    {
-
-                    },
-                 "type":"Penguin",
-                 "width":0,
-                 "x":750,
-                 "y":469
                 }, 
                 {
                  "height":0,
@@ -98,18 +74,6 @@
                  "width":42,
                  "x":646,
                  "y":109
-                }, 
-                {
-                 "height":0,
-                 "name":"Penguin2",
-                 "properties":
-                    {
-
-                    },
-                 "type":"Penguin",
-                 "width":0,
-                 "x":448,
-                 "y":556
                 }, 
                 {
                  "height":0,
@@ -146,6 +110,42 @@
                  "width":0,
                  "x":757,
                  "y":568
+                }, 
+                {
+                 "height":0,
+                 "name":"Penguin2",
+                 "properties":
+                    {
+                     "coop":""
+                    },
+                 "type":"Penguin",
+                 "width":0,
+                 "x":449,
+                 "y":553
+                }, 
+                {
+                 "height":16,
+                 "name":"Penguin2",
+                 "properties":
+                    {
+                     "coop":""
+                    },
+                 "type":"Penguin",
+                 "width":25,
+                 "x":757,
+                 "y":470
+                }, 
+                {
+                 "height":0,
+                 "name":"Penguin2",
+                 "properties":
+                    {
+                     "coop":""
+                    },
+                 "type":"Penguin",
+                 "width":0,
+                 "x":673,
+                 "y":647
                 }],
          "opacity":1,
          "type":"objectgroup",

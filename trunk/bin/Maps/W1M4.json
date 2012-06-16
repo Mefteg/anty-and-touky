@@ -55,19 +55,19 @@
                  "name":"PenguinJetpack0",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"PenguinJetpack",
                  "width":22,
-                 "x":20,
-                 "y":398
+                 "x":68,
+                 "y":394
                 }, 
                 {
                  "height":0,
                  "name":"Penguin1",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":0,
@@ -115,7 +115,7 @@
                  "name":"Penguin1",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":0,
@@ -151,7 +151,7 @@
                  "name":"Penguin1",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":0,
@@ -163,7 +163,7 @@
                  "name":"Penguin1",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":0,
@@ -199,7 +199,7 @@
                  "name":"Penguin1",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":0,
