@@ -56,7 +56,7 @@
                  "name":"Penguin1",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":0,
@@ -80,7 +80,7 @@
                  "name":"PenguinJetpack0",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"PenguinJetpack",
                  "width":22,
@@ -92,7 +92,7 @@
                  "name":"PenguinJetpack0",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"PenguinJetpack",
                  "width":22,
@@ -140,7 +140,7 @@
                  "name":"Penguin1",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":20,

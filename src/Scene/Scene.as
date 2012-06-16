@@ -105,6 +105,10 @@ package Scene
 				}
 					
 				///A DRAWABLE object creation///
+				//if for 2 players game but solo, continue
+				if (object.properties.coop=="")
+					if(Global.nbPlayers == 1)
+						continue;
 				//instantiate the object
 				var newElement:GameObject = Converter.convertJsonObject(object);
 				//set the parser
