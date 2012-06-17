@@ -47,9 +47,9 @@ package GameObject
 		protected var m_timerSpecialAvailable:FlxTimer;
 		
 		//keys
-		protected var m_stringValidate:String;
-		protected var m_stringPrevious:String;
-		protected var m_stringNext:String;
+		public var m_stringValidate:String;
+		public var m_stringPrevious:String;
+		public var m_stringNext:String;
 		
 		public var m_scrollBlockUp:Boolean = false;
 		public var m_scrollBlockDown:Boolean = false;
@@ -68,7 +68,7 @@ package GameObject
 		public var m_lifes:int = 3;
 		public var m_initHealth:int = 5;
 		protected var m_smoke:EnemySmoke;
-		
+				
 		public function PlayableObject(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, SimpleGraphic);
@@ -217,6 +217,8 @@ package GameObject
 		override public function update():void {
 			if (Global.frozen)
 				return;
+			if ( ! this.isToUpdate() )
+				return;
 			twinkle();
 			if (m_onSpecial) {
 				if (m_timerSpecial.finished)
@@ -290,6 +292,8 @@ package GameObject
 		}
 		
 		public function takeDamage():Boolean {
+			if (Global.soloPlayer && Global.soloPlayer.m_name != m_name)
+				return false;
 			if (!m_timerTwinkle.finished || isRushing() || m_state == "respawn")
 				return false;
 			FX_hit.play();
@@ -408,6 +412,16 @@ package GameObject
 			m_scrollBlockLeft = false;
 			m_scrollBlockUp = false;
 			m_scrollBlockRight = false;
+		}
+		
+		protected function isToUpdate():Boolean {
+			if(Global.nbPlayers == 2)
+				return true;
+			if (Global.soloPlayer.m_name == this.m_name)
+				return true;
+			x = Global.soloPlayer.x; y = Global.soloPlayer.y;
+			m_oldPos.x = x; m_oldPos.y = y;
+			return false;
 		}
 		
 		override public function twinkle():void {

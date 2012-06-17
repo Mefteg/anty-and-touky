@@ -3,6 +3,7 @@ package
 	import GameObject.GameObject;
 	import GameObject.Menu.ButtonMenuItem;
 	import GameObject.Menu.ButtonMenuMagic;
+	import GameObject.PlayableObject;
 	import GameObject.Player.Player1;
 	import GameObject.Player.Player2;
 	import org.flixel.FlxState;
@@ -16,8 +17,9 @@ package
 		static public var currentState:State;
 		static public var currentPlaystate:Playstate;
 		static public var library;
-		static public var player1:GameObject.Player.Player1 = null;
-		static public var player2:GameObject.Player.Player2 = null;		
+		static public var soloPlayer:GameObject.PlayableObject = null;
+		static public var player1:GameObject.PlayableObject = null;
+		static public var player2:GameObject.PlayableObject = null;		
 		static public const RIGHT:int = 1;
 		static public const LEFT:int = 2;
 		static public const TOP:int = 3;

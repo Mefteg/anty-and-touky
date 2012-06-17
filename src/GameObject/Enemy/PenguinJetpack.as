@@ -66,15 +66,7 @@ package GameObject.Enemy
 								m_speed *= 1.5;
 							} break;
 				case "attack":  move();
-								if (collide(Global.player1)) {
-									m_target = Global.player1;
-									m_targetHit = true;
-									explode();
-								}else if (collide(Global.player2)) {
-									m_target = Global.player2;
-									m_targetHit = true;
-									explode();
-								}
+								checkExplosionOnPlayers();
 								break;
 				case "dead": die();
 							break;
@@ -84,9 +76,29 @@ package GameObject.Enemy
 		protected function explode():void {
 			m_explosion.playSmoke(x, y);
 			removeFromStage();
-			if(m_targetHit)
+			if (m_targetHit)
 				m_target.takeDamage();
 			m_state = "exploded";
+		}
+		
+		private function checkExplosionOnPlayers():void {
+			if (Global.soloPlayer) {
+				if (collide(Global.soloPlayer)) {
+					m_target = Global.soloPlayer;
+					m_targetHit = true;
+					explode();
+				}
+				return;
+			}
+			if (collide(Global.player1)) {
+				m_target = Global.player1;
+				m_targetHit = true;
+				explode();
+			}else if (collide(Global.player2)) {
+				m_target = Global.player2;
+				m_targetHit = true;
+				explode();
+			}
 		}
 		
 		override public function move() : void {

@@ -11,6 +11,8 @@ package GameObject.Player
 	 */
 	public class Player2 extends PlayableObject
 	{		
+		private var m_controlMgmt:Object;
+		
 		public function Player2(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, null);
@@ -31,8 +33,15 @@ package GameObject.Player
 			m_equipement.m_weapon.visible = false;
 			setHitbox(8, 14, 31, 24);
 			m_name = "Player2";
-			if (Global.nbPlayers == 1)
+			if (Global.nbPlayers == 1){
 				visible = false;
+				m_controlMgmt = process1playerControl;
+				m_stringNext = Global.player1.m_stringNext;
+				m_stringPrevious = Global.player1.m_stringPrevious;
+				m_stringValidate = Global.player1.m_stringValidate;
+			}else {
+				m_controlMgmt = process2playerControl;
+			}
 		}
 		
 		override public function createThrowables():void {
@@ -79,19 +88,8 @@ package GameObject.Player
 			addAnimation("rush" + DOWN, [17], 10, false);
 			addAnimation("rush" + LEFT, [11], 10, false);
 		}
-		
-		override public function update():void {
-			if(Global.nbPlayers == 2)
-				super.update();
-			else {
-				x = Global.player1.x; y = Global.player1.y;
-				m_oldPos.x = x; m_oldPos.y = y;
-			}
-		}
-		
+				
 		override public function getMoves():void {
-			if (Global.nbPlayers == 1)
-				return;
 			//check second attack
 			if (FlxG.keys.justPressed(m_stringNext) && m_state == "waitForAttack2" )
 				attack();
@@ -117,7 +115,105 @@ package GameObject.Player
 					return;
 				}
 			}
-							
+			
+			m_controlMgmt();
+		
+			play(m_state + facing);
+			
+			freeScrollBlocking();
+		}
+		
+		override public function triggerSpecial():void {
+			if (!this.collide(Global.player1) || !m_timerSpecialAvailable.finished)
+				return;
+			m_onSpecial = true;
+			m_timerSpecial.start(10);
+			m_camembert.trigger(10,true);
+		}
+		
+		override public function unspecial():void {
+			m_onSpecial = false;
+			m_timerSpecialAvailable.start(5);
+			m_camembert.trigger(5);
+		}
+		
+		override public function placeOtherPlayer():void {
+			Global.player1.place(x, y + 15);
+		}
+		
+		override public function triggerRushAttack(p1facing:uint ):void { 
+			m_state = "rushAttack";
+			facing = p1facing;
+			play("rush" + facing);
+		}
+		
+		override public function takeDamage():Boolean {
+			if ( !super.takeDamage())
+				return false;
+			
+			//FOR SPECIAL MOVES
+			if (m_onSpecial) {
+				Global.player1.takeDamage();
+			}
+			Global.menuPlayer2.takeDamage();
+			return true;
+		}
+		
+		
+		/////////////////////////////////////////////////////////////////////////
+		/////////// DONT LOOK AT THAT PLEASE///////////////////////////////////
+		///////////////////////////////////////////////////////////////////////
+		
+		private function process1playerControl():void {
+			
+			//moving
+			var yForce:int = 0;
+			var xForce:int = 0;
+			var pressedDirection:Boolean = false;
+			
+			if (FlxG.keys.Z) { 
+				if(!m_scrollBlockUp){
+					pressedDirection = true;
+					yForce-= 1;
+				}
+				facing = UP;
+			}
+			if (FlxG.keys.S ) {
+				if(!m_scrollBlockDown){
+					pressedDirection = true;
+					yForce += 1;
+				}
+				facing = DOWN;
+			}
+			if (FlxG.keys.Q ) {
+				if(!m_scrollBlockLeft){
+					pressedDirection = true;
+					xForce -= 1;
+				}
+				facing = LEFT;
+			}
+			if (FlxG.keys.D ) {
+				if(!m_scrollBlockRight){
+					pressedDirection = true;
+					xForce += 1;
+				}
+				facing = RIGHT;
+			}
+			if(pressedDirection){
+				m_direction.x = xForce;
+				m_direction.y = yForce;
+				m_directionFacing = m_direction;
+				if(m_state != "throw")
+					m_state = "walk";
+				move();
+			}else {
+				if(m_state != "throw")
+					m_state = "idle";
+			}
+		}
+		
+		private function process2playerControl():void {
+			
 			//moving
 			var yForce:int = 0;
 			var xForce:int = 0;
@@ -151,7 +247,7 @@ package GameObject.Player
 				}
 				facing = RIGHT;
 			}
-		
+			
 			if(pressedDirection){
 				m_direction.x = xForce;
 				m_direction.y = yForce;
@@ -163,47 +259,6 @@ package GameObject.Player
 				if(m_state != "throw")
 					m_state = "idle";
 			}
-			play(m_state + facing);
-			
-			freeScrollBlocking();
-		}
-		
-		override public function triggerSpecial():void {
-			if (!this.collide(Global.player1) || !m_timerSpecialAvailable.finished)
-				return;
-			m_onSpecial = true;
-			m_timerSpecial.start(10);
-			m_camembert.trigger(10,true);
-		}
-		
-		override public function unspecial():void {
-			m_onSpecial = false;
-			m_timerSpecialAvailable.start(5);
-			m_camembert.trigger(5);
-		}
-		
-		override public function placeOtherPlayer():void {
-			Global.player1.place(x, y + 15);
-		}
-		
-		override public function triggerRushAttack(p1facing:uint ):void { 
-			m_state = "rushAttack";
-			facing = p1facing;
-			play("rush" + facing);
-		}
-		
-		override public function takeDamage():Boolean {
-			if (Global.nbPlayers == 1)
-				return false;
-			if ( !super.takeDamage())
-				return false;
-			
-			//FOR SPECIAL MOVES
-			if (m_onSpecial) {
-				Global.player1.takeDamage();
-			}
-			Global.menuPlayer2.takeDamage();
-			return true;
 		}
 	}
 
