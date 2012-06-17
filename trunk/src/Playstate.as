@@ -110,13 +110,12 @@ package
 			m_textLife1.color = 0x000000;
 			depthBuffer.addElement(m_textLife1, DepthBuffer.s_cursorGroup);
 			
-			if(Global.nbPlayers >1){
-				m_textLife2 = new FlxText(616, 25, 40);
-				m_textLife2.size = 12;
-				m_textLife2.scrollFactor = new FlxPoint(0, 0);
-				m_textLife2.color = 0x000000;
-				depthBuffer.addElement(m_textLife2, DepthBuffer.s_cursorGroup);
-			}
+			m_textLife2 = new FlxText(616, 25, 40);
+			m_textLife2.size = 12;
+			m_textLife2.scrollFactor = new FlxPoint(0, 0);
+			m_textLife2.color = 0x000000;
+			depthBuffer.addElement(m_textLife2, DepthBuffer.s_cursorGroup);
+			
 		}
 		
 		public function changeScene(sceneName:String, respawn:String ) : void {
@@ -151,13 +150,15 @@ package
 			//creating player2
 			Global.player2 = new Player2(100, 110);
 			Global.player2.addBitmap();
-			Global.player2.addToStage();
-			if(Global.nbPlayers ==2){			
-				m_menu_p2 = new Menu(Global.player2);
-				m_menu_p2.m_shift = new FlxPoint(640 - m_menu_p2.m_width, 0);
-				m_menu_p2.addToStage();
-				Global.menuPlayer2 = m_menu_p2;
-				Global.player2.m_menu = Global.menuPlayer2;
+			Global.player2.addToStage();	
+			m_menu_p2 = new Menu(Global.player2);
+			m_menu_p2.m_shift = new FlxPoint(640 - m_menu_p2.m_width, 0);
+			m_menu_p2.addToStage();
+			Global.menuPlayer2 = m_menu_p2;
+			Global.player2.m_menu = Global.menuPlayer2;
+			if (Global.nbPlayers == 1) {
+				//the soloplayer by default is the first one
+				Global.soloPlayer = Global.player1;
 			}
 						
 			//create the camera
@@ -172,9 +173,9 @@ package
 		override public function update() : void {
 			m_sceneManager.update();
 			checkingControlPanel();
+			changePlayer();
 			m_textLife1.text = "x" + Global.player1.m_lifes;
-			if(m_textLife2)
-				m_textLife2.text = "x" + Global.player2.m_lifes;
+			m_textLife2.text = "x" + Global.player2.m_lifes;
 			super.update();
 		}
 		
@@ -198,8 +199,7 @@ package
 					Global.player1.load();
 					m_menu_p1.load();
 					Global.player2.load();
-					if(Global.nbPlayers>1)
-						m_menu_p2.load();
+					m_menu_p2.load();
 					m_controlsPanel.loadGraphic2(m_library.getBitmap("Images/Menu/controlpanel.png"));
 					m_pauseButton.loadGraphic2(m_library.getBitmap("Images/Menu/pauseButton.png"), false, false, 16, 16);
 					m_controlButton.loadGraphic2(m_library.getBitmap("Images/Menu/toolButton.png"), false, false, 16, 16);
@@ -208,8 +208,7 @@ package
 				Global.frozen = false;
 				//m_menu_p2.load();
 				Global.player1.getEnemiesInScene();
-				if(Global.nbPlayers == 2)
-					Global.player2.getEnemiesInScene();
+				Global.player2.getEnemiesInScene();
 				if (!Global.hasSeenControls) {
 					Global.hasSeenControls = true;
 					showControls();
@@ -311,6 +310,24 @@ package
 			if (m_timerEnd.finished) {
 				fadeOut();
 				m_goSwitch = true;
+			}
+		}
+		
+		public function changePlayer():void {
+			if ( ! Global.soloPlayer) 
+				return;
+			if ( ! FlxG.keys.justPressed("SPACE") )
+				return;
+			if (Global.soloPlayer.m_state == "respawn")
+				return;
+			if (Global.soloPlayer.m_name == Global.player1.m_name){
+				Global.soloPlayer = Global.player2;
+				Global.soloPlayer.visible = true;
+				Global.player1.visible = false;
+			}else {
+				Global.soloPlayer = Global.player1;
+				Global.soloPlayer.visible = true;
+				Global.player2.visible = false;
 			}
 		}
 				

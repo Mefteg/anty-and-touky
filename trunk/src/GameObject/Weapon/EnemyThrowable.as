@@ -28,12 +28,18 @@ package GameObject.Weapon
 		
 		override public function CheckDamageDealt():Boolean {
 			var result:Boolean = false;
+			if ( Global.soloPlayer) {
+				if (collide(Global.soloPlayer) && Global.soloPlayer.visible){
+					Global.soloPlayer.takeDamage();
+					return true;
+				}
+			}
 			//check players for damage
-			if (collide(Global.player1)){
+			if (collide(Global.player1) && Global.player1.visible ) {
 				Global.player1.takeDamage();
 				result = true;
 			}
-			if (Global.nbPlayers==2 && collide(Global.player2)){
+			if (collide(Global.player2) && Global.player2.visible){
 				Global.player2.takeDamage();
 				result = true;
 			}

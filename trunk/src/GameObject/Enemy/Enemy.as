@@ -73,7 +73,8 @@ package GameObject.Enemy
 			if (!m_throwables)
 				return;
 			for (var i:int = 0; i < m_throwables.length ; i ++)
-				m_throwables[i].removeFromStage();
+				if(! m_throwables[i].isAttacking())
+					m_throwables[i].removeFromStage();
 		}
 		
 		protected function createThrowables():void {}
@@ -255,24 +256,24 @@ package GameObject.Enemy
 		}
 		
 		protected function checkPlayersDamage():void {
-			if (collide(Global.player1)) {
-				if (Global.player1.isRushing()) {
-					Global.player1.unspecial();
-					takeRushDamage();
-				}else{
-					Global.player1.takeDamage();
-				}
-			}
-			
-			if (collide(Global.player2)) {
-				if (Global.player2.isRushing()) {
-					Global.player1.unspecial();
-					takeRushDamage();
-				}else{
-					Global.player2.takeDamage();
-				}
+			if (Global.nbPlayers == 1) {
+				checkPlayerDamage(Global.soloPlayer);
+			}else {
+				checkPlayerDamage(Global.player1);
+				checkPlayerDamage(Global.player2);
 			}
 		}		
+		
+		protected function checkPlayerDamage(player:PlayableObject):void {
+			if (collide(player)) {
+				if (player.isRushing()) {
+					player.unspecial();
+					takeRushDamage();
+				}else{
+					player.takeDamage();
+				}
+			}
+		}
 		
 		public function die():void {
 			m_state = "anihilated";
