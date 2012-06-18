@@ -14,6 +14,7 @@ package GameObject
 	import GameObject.Enemy.WhiteSquare;
 	import GameObject.Item.Chest;
 	import GameObject.Item.Item;
+	import GameObject.Other.Box;
 	import GameObject.Other.Breakable;
 	import GameObject.Player.Player1;
 	import GameObject.Player.Player2;
@@ -50,6 +51,8 @@ package GameObject
 				case "BlackSquare":  return new GameObject.Enemy.BlackSquare(object.x, object.y); break;
 				//items
 				case "Chest" : return new GameObject.Item.Chest(object.x, object.y,object.properties.item,object.properties.quantity,object.properties.collected); break;
+				case "Box": return new GameObject.Other.Box(object.x, object.y); break;
+				case "BoxHole": return new GameObject.Other.BoxHole(object.x, object.y); break;
 				//triggers
 				case "TriggerWarp": return new GameObject.Trigger.TriggerWarp(object.x, object.y, null,object.properties.url,object.properties.respawn, object.width, object.height); break;
 				case "TriggerCutScene": return new TriggerCutScene(object.x, object.y, object.width, object.height, object.properties.url); break;

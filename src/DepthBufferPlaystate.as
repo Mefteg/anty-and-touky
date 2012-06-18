@@ -148,7 +148,6 @@ package
 		protected function addObjects(element:FlxBasic):void
 		{
 			m_objects.add(element);
-			m_playstate.addPhysical(element as PhysicalObject);
 		}
 		
 		protected function addNPC(element:FlxBasic):void {

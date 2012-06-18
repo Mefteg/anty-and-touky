@@ -127,6 +127,9 @@ package GameObject
 		public function drawHitbox():void {
 		}
 		
+		//function fourre tout, use this for specific actions when u know what u're doin
+		public function act():void{}
+		
 		/**
 		 * Return the facing uint value to the target
 		 * @return

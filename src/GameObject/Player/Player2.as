@@ -1,5 +1,7 @@
 package GameObject.Player 
 {
+	import GameObject.DrawableObject;
+	import GameObject.Other.Box;
 	import GameObject.PlayableObject;
 	import GameObject.Weapon.PlayerThrowable;
 	import GameObject.Weapon.Throwable;
@@ -12,6 +14,8 @@ package GameObject.Player
 	public class Player2 extends PlayableObject
 	{		
 		private var m_controlMgmt:Object;
+		public var m_boxes:Vector.<Box>;
+		public var m_objectCarried:DrawableObject;
 		
 		public function Player2(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
@@ -42,6 +46,11 @@ package GameObject.Player
 			}else {
 				m_controlMgmt = process2playerControl;
 			}
+		}
+		
+		override public function getEnemiesInScene():void {
+			super.getEnemiesInScene();
+			m_boxes = Global.currentPlaystate.m_boxes;
 		}
 		
 		override public function createThrowables():void {
@@ -124,7 +133,22 @@ package GameObject.Player
 		}
 		
 		override public function triggerSpecial():void {
-			if (!this.collide(Global.player1) || !m_timerSpecialAvailable.finished)
+			if (!m_timerSpecialAvailable.finished)
+				return;
+			var t_found:Boolean = false;
+			if (!Global.soloPlayer && this.collide(Global.player1) ) {
+				m_objectCarried = Global.player1;
+				t_found = true;
+			}else {
+				for (var i:int = 0; i < m_boxes.length; i++) {
+					if (collide(m_boxes[i])){
+						m_objectCarried = m_boxes[i];
+						t_found = true;
+						break;
+					}
+				}
+			}
+			if (!t_found)
 				return;
 			m_onSpecial = true;
 			m_timerSpecial.start(10);
@@ -135,10 +159,13 @@ package GameObject.Player
 			m_onSpecial = false;
 			m_timerSpecialAvailable.start(5);
 			m_camembert.trigger(5);
+			if (m_objectCarried.m_name == "Box")
+				m_objectCarried.act();
+			m_objectCarried = null;
 		}
 		
 		override public function placeOtherPlayer():void {
-			Global.player1.place(x, y + 15);
+			m_objectCarried.place(x, y + 15);
 		}
 		
 		override public function triggerRushAttack(p1facing:uint ):void { 

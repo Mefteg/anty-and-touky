@@ -57,7 +57,7 @@ package GameObject
 			spr.makeGraphic(m_hitboxInteraction.width, m_hitboxInteraction.height);
 			Global.currentPlaystate.depthBuffer.addElement(spr, DepthBufferPlaystate.s_objectGroup);
 		}
-		
+				
 	}
 
 }

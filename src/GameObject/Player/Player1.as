@@ -106,7 +106,7 @@ package GameObject.Player
 			var xForce:int = 0;
 			var pressedDirection:Boolean = false;
 				
-			if (FlxG.keys.Z ) { 
+			if (FlxG.keys.Z ||FlxG.keys.W ) { 
 				if(!m_scrollBlockUp){
 					pressedDirection = true;
 					yForce-= 1;
@@ -120,7 +120,7 @@ package GameObject.Player
 				}
 				facing = DOWN;
 			}
-			if (FlxG.keys.Q) {
+			if (FlxG.keys.Q || FlxG.keys.A) {
 				if(!m_scrollBlockLeft){
 					pressedDirection = true;
 					xForce -= 1;
