@@ -100,6 +100,7 @@ package GameObject.Item
 		}
 		
 		override public function addToStage():void {
+			Global.currentPlaystate.addPhysical(element as PhysicalObject);
 			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_objectGroup);
 		}
 		

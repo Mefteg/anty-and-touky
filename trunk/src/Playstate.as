@@ -2,6 +2,8 @@ package
 {
 	import GameObject.Enemy.Enemy;
 	import GameObject.MovableObject;
+	import GameObject.Other.Box;
+	import GameObject.Other.BoxHole;
 	import GameObject.PhysicalObject;
 	import Scene.CollisionManager;
 	import Scene.CutScene.CutScene;
@@ -43,6 +45,8 @@ package
 		public var m_collisionManager:CollisionManager;	
 		public var m_talkersObjects:Vector.<MovableObject>;
 		public var m_enemies:Vector.<Enemy>;
+		public var m_boxes:Vector.<Box>;
+		public var m_holeboxes:Vector.<BoxHole>;
 		
 		private var m_ladyBug:FlxSprite;
 		private var m_rectLadyBug:FlxSprite;
@@ -78,6 +82,8 @@ package
 			m_talkersObjects = new Vector.<MovableObject>;
 			m_physicalObjects = new Vector.<PhysicalObject>;
 			m_collisionManager = new CollisionManager();
+			m_boxes = new Vector.<Box>();
+			m_holeboxes = new Vector.<BoxHole>();
 			add(m_collisionManager);
 			m_enemies = new Vector.<Enemy>;
 			//lady Bug for loading screens
@@ -136,7 +142,8 @@ package
 			depthBuffer.addElement(m_ladyBug, DepthBuffer.s_cursorGroup);
 			depthBuffer.addElement(m_rectLadyBug, DepthBuffer.s_cursorGroup);
 			m_sceneManager = new SceneManager();
-			m_sceneManager.loadScene("Maps/W1M1.json");
+			//m_sceneManager.loadScene("Maps/W1M1.json");
+			m_sceneManager.loadScene("Maps/test2.json");
 			m_state = "Loading";
 			//creating player 1
 			Global.player1 = new Player1(100, 100);
@@ -360,6 +367,26 @@ package
 		}
 		public function clearEnemies():void {
 			m_enemies = new Vector.<Enemy>;
+		}
+		//BOXES
+		public function addBox(object:Box):void {
+			m_boxes.push(object);
+		}
+		public function removeBox(object:Box):void {
+			m_boxes.splice(m_boxes.indexOf(object), 1);
+		}
+		public function clearBoxes():void {
+			m_enemies = new Vector.<Enemy>;
+		}
+		//HOLEBOXES
+		public function addHoleBox(object:BoxHole):void {
+			m_holeboxes.push(object);
+		}
+		public function removeHoleBox(object:BoxHole):void {
+			m_holeboxes.splice(m_holeboxes.indexOf(object), 1);
+		}
+		public function clearHoleBoxes():void {
+			m_holeboxes = new Vector.<BoxHole>;
 		}
 	}
 
