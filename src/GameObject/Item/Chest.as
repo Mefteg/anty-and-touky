@@ -5,6 +5,7 @@ package GameObject.Item
 	import GameObject.GameObject;
 	import GameObject.Magic.Magic;
 	import GameObject.Magic.MovableMagic;
+	import GameObject.PhysicalObject;
 	import GameObject.PlayableObject;
 	import InfoObject.InfoCollected;
 	import org.flixel.FlxG;
@@ -100,7 +101,7 @@ package GameObject.Item
 		}
 		
 		override public function addToStage():void {
-			Global.currentPlaystate.addPhysical(element as PhysicalObject);
+			Global.currentPlaystate.addPhysical(this as PhysicalObject);
 			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_objectGroup);
 		}
 		
