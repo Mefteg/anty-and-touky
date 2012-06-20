@@ -43,12 +43,24 @@
                  "name":"HOle",
                  "properties":
                     {
-
+                     "door":"Door1"
                     },
                  "type":"BoxHole",
                  "width":0,
                  "x":523,
                  "y":496
+                }, 
+                {
+                 "height":0,
+                 "name":"Door1",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Door",
+                 "width":0,
+                 "x":469,
+                 "y":492
                 }],
          "opacity":1,
          "type":"objectgroup",

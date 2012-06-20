@@ -4,6 +4,7 @@ package
 	import GameObject.MovableObject;
 	import GameObject.Other.Box;
 	import GameObject.Other.BoxHole;
+	import GameObject.Other.Door;
 	import GameObject.PhysicalObject;
 	import Scene.CollisionManager;
 	import Scene.CutScene.CutScene;
@@ -47,6 +48,7 @@ package
 		public var m_enemies:Vector.<Enemy>;
 		public var m_boxes:Vector.<Box>;
 		public var m_holeboxes:Vector.<BoxHole>;
+		public var m_doors:Vector.<Door>;
 		
 		private var m_ladyBug:FlxSprite;
 		private var m_rectLadyBug:FlxSprite;
@@ -84,6 +86,7 @@ package
 			m_collisionManager = new CollisionManager();
 			m_boxes = new Vector.<Box>();
 			m_holeboxes = new Vector.<BoxHole>();
+			m_doors = new Vector.<Door>();
 			add(m_collisionManager);
 			m_enemies = new Vector.<Enemy>;
 			//lady Bug for loading screens
@@ -387,6 +390,24 @@ package
 		}
 		public function clearHoleBoxes():void {
 			m_holeboxes = new Vector.<BoxHole>;
+		}
+		//DOORS
+		public function addDoor(object:Door):void {
+			m_doors.push(object);
+		}
+		public function removeDoor(object:Door):void {
+			m_doors.splice(m_doors.indexOf(object), 1);
+		}
+		public function clearDoors():void {
+			m_doors = new Vector.<Door>;
+		}
+		
+		public function getDoor(door:String):Door {
+			for (var i:int = 0; i < m_doors.length; i++) {
+				if (m_doors[i].m_name == door)
+					return m_doors[i];
+			}
+			return null;
 		}
 	}
 
