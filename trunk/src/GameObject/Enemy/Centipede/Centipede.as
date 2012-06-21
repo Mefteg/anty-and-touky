@@ -87,6 +87,7 @@ package GameObject.Enemy.Centipede
 		
 		private function spawn(spPt:CentipedeSpawnPoint) {
 			x = spPt.m_pos.x; y = spPt.m_pos.y;
+			facing = spPt.m_facing;
 			play("walk" + spPt.m_facing);
 			m_currentSpawn = spPt;
 			placeParts();
@@ -112,13 +113,16 @@ package GameObject.Enemy.Centipede
 		}
 		
 		private function outOfArea() : Boolean {
-			//TO DO : if( !obj.OnScreen())
-			//return ! m_parts[m_nbParts-1].onScreen();
 			var obj:Enemy = m_parts[m_nbParts - 1];
-			if (obj.x > m_area.x + 1000 ||  obj.x < m_area.x -500)
+			if (obj.y < m_area.y || obj.y > m_area.y + m_area.height)
 				return true;
-			if (obj.y < -100  ||  obj.y > m_area.y +600)
-				return true;
+			if (facing == LEFT) {
+				if (obj.x < m_area.x - obj.width)
+					return true;
+			}else {
+				if (obj.x > m_area.x + m_area.width)
+					return true;
+			}
 			return false;
 		}
 		
@@ -136,7 +140,13 @@ package GameObject.Enemy.Centipede
 		private function waitingInside():void {
 			if (m_timerWait.finished) {
 				m_state = "moving";
-				m_direction = m_currentSpawn.m_dir;
+				// Randomly go its way (30%) or go to one player (70%)
+				var r:Number = Utils.random(0, 100);
+				if(r<30){
+					m_direction = m_currentSpawn.m_dir;
+				}else {
+					goTo(getRandomPlayer());
+				}
 				initPartsMove();
 			}
 		}
