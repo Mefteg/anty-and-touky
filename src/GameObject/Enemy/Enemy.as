@@ -229,8 +229,11 @@ package GameObject.Enemy
 		}
 		
 		public function getRandomPlayer():PlayableObject {
-			var r:Number = Utils.random(0, 2);
-			if (r < 1)
+			if (Global.soloPlayer)
+				return Global.soloPlayer;
+				
+			var r:Number = Utils.random(0, 100);
+			if (r < 50)
 				return Global.player1;
 			else
 				return Global.player2;
