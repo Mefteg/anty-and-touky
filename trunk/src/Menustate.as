@@ -81,6 +81,8 @@ package
 		
 		override public function update() :void{
 			super.update();
+			if (! m_library.loadComplete())
+				m_library.loadAll();
 			//make the menu appear via fade in
 			if (!m_menuAppeared && m_timer.finished) {
 				m_menuAppeared = true;
@@ -102,7 +104,7 @@ package
 				//load the graphics
 				m_menuBegin.load();
 				//load future images of story state
-				StoryState.loadFirstBitmap();
+				StoryState.loadAllBitmaps();
 				m_state = "Loaded";
 			}
 			
@@ -129,7 +131,6 @@ package
 		}
 		
 		override protected function ending():void {
-			Global.library.loadAll();
 			if (m_fadeOut)
 				return;
 			m_music.stop();

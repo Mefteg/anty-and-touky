@@ -24,12 +24,12 @@ package GameObject.Other
 		
 		override public function addToStage():void {
 			Global.currentPlaystate.addBox(this);
-			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_foregroundGroup);
+			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_objectGroupFG);
 		}
 		
 		override public function removeFromStage():void {
 			Global.currentPlaystate.removeBox(this);
-			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_foregroundGroup);
+			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_objectGroupFG);
 		}
 		
 		override public function place(newX:Number, newY:Number):void {
