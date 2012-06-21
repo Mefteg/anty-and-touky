@@ -45,7 +45,7 @@ package Scene
 		public function addBitmap(filename:String) : void {
 			if(m_library[filename]!=null)
 				return;
-			m_state = "Waiting"
+			m_state = "Waiting";
 			m_library[filename] = new FlxExtBitmap(filename);
 			m_libNames.push(filename);
 		}
@@ -53,7 +53,7 @@ package Scene
 		public function addUniqueBitmap(filename:String) : void {
 			if(m_libraryUnique[filename]!=null)
 				return;
-			m_state = "Waiting"
+			m_state = "Waiting";
 			m_libraryUnique[filename] = new FlxExtBitmap(filename);
 			m_libUniNames.push(filename);
 		}
