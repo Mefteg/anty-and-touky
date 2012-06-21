@@ -21,11 +21,11 @@ package GameObject.Other
 		
 		override public function addToStage():void {
 			Global.currentPlaystate.addHoleBox(this);
-			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_nppGroup);
+			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_objectGroup);
 		}
 		
 		override public function removeFromStage():void {
-			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_nppGroup);
+			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_objectGroup);
 		}
 		
 		override public function act():void {

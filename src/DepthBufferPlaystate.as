@@ -1,5 +1,6 @@
 package  
 {
+	import flash.text.engine.BreakOpportunity;
 	import GameObject.Enemy.Enemy;
 	import GameObject.MovableObject;
 	import GameObject.PhysicalObject;
@@ -13,6 +14,7 @@ package
 	{
 		static public var s_tileGroup:int = 10;
 		static public var s_objectGroup:int = 11;
+		static public var s_objectGroupFG:int = 18;
 		static public var s_playerGroup:int = 12;
 		static public var s_enemyGroup:int = 13;
 		static public var s_npcGroup:int = 14;
@@ -22,7 +24,11 @@ package
 		
 		protected var m_playstate:Playstate;
 		protected var m_tiles:FlxGroup;
+		//OBJECTS
 		protected var m_objects:FlxGroup;
+		protected var m_objectsBG:FlxGroup;
+		protected var m_objectsFG:FlxGroup;
+		
 		protected var m_players:FlxGroup;
 		protected var m_enemies:FlxGroup;
 		protected var m_npc:FlxGroup;
@@ -37,7 +43,13 @@ package
 			m_playstate = Global.currentPlaystate;
 			m_background = new FlxGroup();
 			m_tiles = new FlxGroup();
+			//OBJECTS
 			m_objects = new FlxGroup();
+			m_objectsBG = new FlxGroup();
+			m_objectsFG = new FlxGroup();
+			m_objects.add(m_objectsBG);
+			m_objects.add(m_objectsFG);
+			
 			m_players = new FlxGroup();
 			m_enemies = new FlxGroup();
 			m_npc = new FlxGroup();
@@ -88,6 +100,9 @@ package
 					break;
 				case s_objectGroup:
 					this.addObjects(element);
+					break;
+				case s_objectGroupFG:
+					this.addObjects(element,false);
 					break;
 				case s_playerGroup:
 					this.addPlayer(element);
@@ -145,9 +160,12 @@ package
 			}
 		}
 		
-		protected function addObjects(element:FlxBasic):void
+		public function addObjects(element:FlxBasic, background:Boolean = true ):void
 		{
-			m_objects.add(element);
+			if(background)
+				m_objectsBG.add(element);
+			else
+				m_objectsFG.add(element);
 		}
 		
 		protected function addNPC(element:FlxBasic):void {

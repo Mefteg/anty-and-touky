@@ -163,6 +163,14 @@ package Scene
 			return null;
 		}
 		
+		public function isBitmapLoaded(filename:String):Boolean {
+			if(m_library[filename])
+				return m_library[filename].loadComplete();
+			if (m_libraryUnique[filename])
+				return m_libraryUnique[filename].loadComplete();
+			return true;
+		}
+		
 		public function getAdvancement():Number {
 			return m_loadAdvancement;
 		}

@@ -333,11 +333,15 @@ package
 			if (Global.soloPlayer.m_name == Global.player1.m_name){
 				Global.soloPlayer = Global.player2;
 				Global.soloPlayer.visible = true;
+				Global.soloPlayer.m_camembert.visible = true;
 				Global.player1.visible = false;
+				Global.player1.m_camembert.visible = false;
 			}else {
 				Global.soloPlayer = Global.player1;
 				Global.soloPlayer.visible = true;
 				Global.player2.visible = false;
+				Global.soloPlayer.m_camembert.visible = true;
+				Global.player2.m_camembert.visible = false;
 			}
 		}
 				

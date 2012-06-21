@@ -64,13 +64,14 @@ package
 		
 		override public function update():void {
 			doStateUpdate();
-			
+			if (!m_library.loadComplete)
+				m_library.loadAll();
 			switch(m_state) {
 				//load images
 				case "Beginning" : if (m_xml) { nextImage(); m_state = "Switching";} break;
 				case "Loading": loading(); break;
 				case "Fading" : m_library.loadAll();
-								if ( ! m_fadeOut && m_library.loadComplete() ) { 
+								if ( ! m_fadeOut && currentBitmapsLoaded() ) { 
 									fadeIn(); m_state = "Switching"; 
 									m_library.cacheObjects();
 									loadGraphics(); 
@@ -96,19 +97,23 @@ package
 			}
 		}
 		
-		public static function loadFirstBitmap():void {
+		public static function loadAllBitmaps():void {
 			Global.library.addBitmap("Images/StoryScenes/story1_a.png");
 			Global.library.addBitmap("Images/StoryScenes/story1_b.png");
-		}
-		
-		private function loadNextBitmap():void {
-			Global.library.addBitmap("Images/StoryScenes/story"+(m_currentStory+1)+"_a.png");
-			Global.library.addBitmap("Images/StoryScenes/story" +(m_currentStory+1) + "_b.png");
+			Global.library.addBitmap("Images/StoryScenes/story2_a.png");
+			Global.library.addBitmap("Images/StoryScenes/story2_b.png");
+			Global.library.addBitmap("Images/StoryScenes/story3_a.png");
+			Global.library.addBitmap("Images/StoryScenes/story3_b.png");
 		}
 		
 		private function loadGraphics():void {
 			m_imageA.loadGraphic2(m_library.getBitmap("Images/StoryScenes/story"+m_currentStory+"_a.png"),false,false,640,480,true);
 			m_imageB.loadGraphic2(m_library.getBitmap("Images/StoryScenes/story" + m_currentStory + "_b.png"), false, false, 640, 480, true);
+		}
+		
+		private function currentBitmapsLoaded():Boolean {
+			return m_library.isBitmapLoaded("Images/StoryScenes/story" + m_currentStory + "_a.png") && 
+					m_library.isBitmapLoaded("Images/StoryScenes/story" + m_currentStory + "_b.png");
 		}
 		
 		private function nextImage():void {
@@ -117,8 +122,6 @@ package
 			if (m_currentStory >= 4) {
 				end();
 				return;
-			}else if (m_currentStory < 3) {
-				loadNextBitmap();
 			}
 			
 			m_textsToDisplay = m_xml.story[m_currentStory - 1];
