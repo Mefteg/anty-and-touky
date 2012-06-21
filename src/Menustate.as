@@ -50,7 +50,7 @@ package
 			add(depthBuffer);
 			Global.currentState = this;
 			//text displaying loading advancement
-			m_loadProgression = new FlxText(400, 400, 600);
+			m_loadProgression = new FlxText(400, 400, 600,"DEEE");
 			//add(m_loadProgression);
 			//m_ladyBug = new FlxSprite(410 , 320);//for CASUAL GAME CUP
 			m_ladyBug = new FlxSprite(200 , 150);
@@ -66,7 +66,6 @@ package
 		
 		override public function create() : void {
 			super.create();
-			
 			m_menuBegin = new MenuBegin();
 			m_menuBegin.addToStage();
 			m_timer = new FlxTimer();

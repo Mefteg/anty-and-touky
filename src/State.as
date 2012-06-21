@@ -84,7 +84,7 @@ package
 		
 		protected function loading() : void {
 			//display loading advancement
-			m_loadProgression.text = m_library.getAdvancement().toString();
+			m_loadProgression.text = "Total : " + m_library.getAdvancement().toString();
 			m_loadProgression.text += "\n" + m_library.getCurrentLoaded();
 		}
 		

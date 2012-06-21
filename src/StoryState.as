@@ -183,8 +183,8 @@ package
 				return;
 			m_sound.stop();
 			for (var i:int = 1; i < 4 ; i++ ) {
-				Global.library.deleteBitmap("Images/StoryScenes/Story"+i+"_a.jpg");
-				Global.library.deleteBitmap("Images/StoryScenes/Story" + i + "_b.jpg");
+				Global.library.deleteBitmap("Images/StoryScenes/story"+i+"_a.jpg");
+				Global.library.deleteBitmap("Images/StoryScenes/story" + i + "_b.jpg");
 			}
 			FlxG.switchState( new Playstate() );
 		}
