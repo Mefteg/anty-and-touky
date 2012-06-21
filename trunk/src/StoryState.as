@@ -98,22 +98,22 @@ package
 		}
 		
 		public static function loadAllBitmaps():void {
-			Global.library.addBitmap("Images/StoryScenes/story1_a.png");
-			Global.library.addBitmap("Images/StoryScenes/story1_b.png");
-			Global.library.addBitmap("Images/StoryScenes/story2_a.png");
-			Global.library.addBitmap("Images/StoryScenes/story2_b.png");
-			Global.library.addBitmap("Images/StoryScenes/story3_a.png");
-			Global.library.addBitmap("Images/StoryScenes/story3_b.png");
+			Global.library.addBitmap("Images/StoryScenes/story1_a.jpg");
+			Global.library.addBitmap("Images/StoryScenes/story1_b.jpg");
+			Global.library.addBitmap("Images/StoryScenes/story2_a.jpg");
+			Global.library.addBitmap("Images/StoryScenes/story2_b.jpg");
+			Global.library.addBitmap("Images/StoryScenes/story3_a.jpg");
+			Global.library.addBitmap("Images/StoryScenes/story3_b.jpg");
 		}
 		
 		private function loadGraphics():void {
-			m_imageA.loadGraphic2(m_library.getBitmap("Images/StoryScenes/story"+m_currentStory+"_a.png"),false,false,640,480,true);
-			m_imageB.loadGraphic2(m_library.getBitmap("Images/StoryScenes/story" + m_currentStory + "_b.png"), false, false, 640, 480, true);
+			m_imageA.loadGraphic2(m_library.getBitmap("Images/StoryScenes/story"+m_currentStory+"_a.jpg"),false,false,640,480,true);
+			m_imageB.loadGraphic2(m_library.getBitmap("Images/StoryScenes/story" + m_currentStory + "_b.jpg"), false, false, 640, 480, true);
 		}
 		
 		private function currentBitmapsLoaded():Boolean {
-			return m_library.isBitmapLoaded("Images/StoryScenes/story" + m_currentStory + "_a.png") && 
-					m_library.isBitmapLoaded("Images/StoryScenes/story" + m_currentStory + "_b.png");
+			return m_library.isBitmapLoaded("Images/StoryScenes/story" + m_currentStory + "_a.jpg") && 
+					m_library.isBitmapLoaded("Images/StoryScenes/story" + m_currentStory + "_b.jpg");
 		}
 		
 		private function nextImage():void {
@@ -183,8 +183,8 @@ package
 				return;
 			m_sound.stop();
 			for (var i:int = 1; i < 4 ; i++ ) {
-				Global.library.deleteBitmap("Images/StoryScenes/Story"+i+"_a.png");
-				Global.library.deleteBitmap("Images/StoryScenes/Story" + i + "_b.png");
+				Global.library.deleteBitmap("Images/StoryScenes/Story"+i+"_a.jpg");
+				Global.library.deleteBitmap("Images/StoryScenes/Story" + i + "_b.jpg");
 			}
 			FlxG.switchState( new Playstate() );
 		}
