@@ -14,6 +14,12 @@ package GameObject
 			m_collide = true;
 			m_typeName = PhysicalTile.s_type;
 		}
+		
+		override public function collideWith(object:GameObject.PhysicalObject) : Boolean {
+			var color:uint = this.framePixels.getPixel32(0, 0);
+			trace(color);
+			return true;
+		}
 	}
 
 }

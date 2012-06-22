@@ -90,7 +90,10 @@ package GameObject
 						}
 						
 						// if the tile is physical
-						if ( tile.m_collide == true ) {
+						/*if ( tile.m_collide == true ) {
+							collide = true;
+						}*/
+						if ( tile.collideWith(this) ) {
 							collide = true;
 						}
 					}

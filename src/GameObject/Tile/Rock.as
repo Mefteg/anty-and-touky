@@ -15,10 +15,6 @@ package GameObject.Tile
 		{
 			super(layer, X, Y, mapName, index, SimpleGraphic);
 		}
-		
-		override public function action(object:PhysicalObject) : void {
-			
-		}
 	}
 
 }
