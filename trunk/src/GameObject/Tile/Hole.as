@@ -18,7 +18,7 @@ package GameObject.Tile
 			
 		}
 		
-		override public function action(object:PhysicalObject) : void {
+		/*override public function action(object:PhysicalObject) : void {
 			object.m_canGoThrough = false;
 			var center:FlxPoint = object.getCenter();
 			if ( center.x > this.x && center.x < (this.x + m_width) ) {
@@ -26,7 +26,7 @@ package GameObject.Tile
 					object.respawn();
 				}
 			}
-		}
+		}*/
 	}
 
 }

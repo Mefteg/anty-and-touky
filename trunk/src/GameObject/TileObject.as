@@ -45,7 +45,8 @@ package GameObject
 			play(String(m_index));
 		}
 		
-		public function action(object:GameObject.PhysicalObject) : void {
+		public function collideWith(object:GameObject.PhysicalObject) : Boolean {
+			return false;
 		}
 	}
 
