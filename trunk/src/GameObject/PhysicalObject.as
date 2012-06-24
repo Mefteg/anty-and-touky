@@ -70,9 +70,9 @@ package GameObject
 				var tiles:Array = new Array();
 				
 				// get the top left corner of the object
-				var topleft:FlxPoint = new FlxPoint(this.x, this.y);
+				var topleft:FlxPoint = new FlxPoint(this.x + m_hitbox.x, this.y + m_hitbox.y);
 				// get the bottom right corner of the object
-				var bottomright:FlxPoint = new FlxPoint(this.x + m_width, this.y + m_height);
+				var bottomright:FlxPoint = new FlxPoint(topleft.x + m_hitbox.width, topleft.y + m_hitbox.height);
 				
 				// convert them for the grid
 				var topleftToGrid:FlxPoint = new FlxPoint(int(topleft.x/Global.tile_width), int(topleft.y/Global.tile_height));

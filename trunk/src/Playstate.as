@@ -147,7 +147,7 @@ package
 			m_sceneManager = new SceneManager();
 			//m_sceneManager.loadScene("Maps/W1M1.json");
 			//m_sceneManager.loadScene("Maps/test2.json");
-			m_sceneManager.loadScene("Maps/W1B1.json");
+			m_sceneManager.loadScene("Maps/W1M1.json");
 			m_state = "Loading";
 			//creating player 1
 			Global.player1 = new Player1(100, 100);
