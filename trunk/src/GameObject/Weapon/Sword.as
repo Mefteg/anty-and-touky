@@ -25,6 +25,7 @@ package GameObject.Weapon
 			super(power, url);
 			setAnimAttackSpeed(10, 10, 10);
 			m_enemiesHit = new Array();
+			m_name = "Sword";
 		}
 		
 		public function setAnimAttackSpeed(attack:int, attack2:int, heavy:int) : void {
