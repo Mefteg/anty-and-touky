@@ -40,7 +40,7 @@ package GameObject.Enemy.Centipede
 		
 		override public function takeDamage(player:PlayableObject, weapon:Weapon):void
 		{
-			if (m_state == "walkD")
+			if (m_state == "walkD" || weapon.m_name == "Sword")
 				return;
 			//calculate damage
 			var damage:int = weapon.m_power;
