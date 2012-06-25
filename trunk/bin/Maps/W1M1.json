@@ -40,30 +40,6 @@
                  "y":777
                 }, 
                 {
-                 "height":0,
-                 "name":"Penguin2",
-                 "properties":
-                    {
-                     "coop":""
-                    },
-                 "type":"Penguin",
-                 "width":0,
-                 "x":576,
-                 "y":550
-                }, 
-                {
-                 "height":0,
-                 "name":"Penguin1",
-                 "properties":
-                    {
-
-                    },
-                 "type":"Penguin",
-                 "width":0,
-                 "x":651,
-                 "y":471
-                }, 
-                {
                  "height":32,
                  "name":"Music",
                  "properties":
@@ -74,18 +50,6 @@
                  "width":42,
                  "x":646,
                  "y":109
-                }, 
-                {
-                 "height":0,
-                 "name":"Penguin3",
-                 "properties":
-                    {
-
-                    },
-                 "type":"Penguin",
-                 "width":0,
-                 "x":486,
-                 "y":498
                 }, 
                 {
                  "height":0,
@@ -112,18 +76,6 @@
                  "y":568
                 }, 
                 {
-                 "height":0,
-                 "name":"Penguin2",
-                 "properties":
-                    {
-                     "coop":""
-                    },
-                 "type":"Penguin",
-                 "width":0,
-                 "x":449,
-                 "y":553
-                }, 
-                {
                  "height":16,
                  "name":"Penguin2",
                  "properties":
@@ -146,6 +98,20 @@
                  "width":0,
                  "x":673,
                  "y":647
+                }, 
+                {
+                 "height":112,
+                 "name":"TrigBee1",
+                 "properties":
+                    {
+                     "location":"5",
+                     "number":"3",
+                     "type":"bee"
+                    },
+                 "type":"TriggerEnemies",
+                 "width":231,
+                 "x":366,
+                 "y":364
                 }],
          "opacity":1,
          "type":"objectgroup",
