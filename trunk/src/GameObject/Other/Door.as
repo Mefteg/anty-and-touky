@@ -31,6 +31,11 @@ package GameObject.Other
 			m_collideWithObjects = false;
 			frame = 1;
 		}
+		
+		public function close():void {
+			m_collideWithObjects = true;
+			frame = 0;
+		}
 	}
 
 }

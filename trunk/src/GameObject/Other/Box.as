@@ -57,6 +57,10 @@ package GameObject.Other
 		override public function update():void {
 		}
 		
+		/*override public function die():void {
+			place(m_initPos.x, m_initPos.y);
+		}*/
+		
 		public function take():void {
 			m_state = "taken";
 		}

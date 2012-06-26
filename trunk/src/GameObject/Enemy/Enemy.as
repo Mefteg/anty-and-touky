@@ -299,7 +299,6 @@ package GameObject.Enemy
 		
 		protected function dropItem():void {
 			var rand:Number = Utils.random(0, 100);
-			trace(rand);
 			if (rand > m_dropRatio)
 				return;
 			var item:Collectable = Collectable.HeartDrop();

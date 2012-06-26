@@ -17,6 +17,7 @@ package GameObject
 	import GameObject.Other.Box;
 	import GameObject.Other.Breakable;
 	import GameObject.Other.Door;
+	import GameObject.Other.Switch;
 	import GameObject.Player.Player1;
 	import GameObject.Player.Player2;
 	import GameObject.Tile.Foreground;
@@ -57,6 +58,7 @@ package GameObject
 				case "Box": return new GameObject.Other.Box(object.x, object.y); break;
 				case "BoxHole": return new GameObject.Other.BoxHole(object.x, object.y, object.properties.door); break;
 				case "Door" : return new Door(object.x, object.y, object.name); break;
+				case "Switch": return new Switch(object.x, object.y, object.properties.door,object.properties.time); break;
 				//triggers
 				case "TriggerWarp": return new GameObject.Trigger.TriggerWarp(object.x, object.y, null,object.properties.url,object.properties.respawn, object.width, object.height); break;
 				case "TriggerCutScene": return new TriggerCutScene(object.x, object.y, object.width, object.height, object.properties.url); break;
