@@ -34,6 +34,8 @@ package GameObject.Enemy
 		public var m_hit:uint = 1;
 		public var m_attackTime:Number = 2;
 		
+		public var m_activeOffscreen:Boolean = false;
+		
 		protected var m_smoke:EnemySmoke;
 		
 		protected var m_FXhit:FlxSound;
@@ -125,7 +127,7 @@ package GameObject.Enemy
 			m_stats.m_hp_current -= damage;
 			m_FXhit.play();
 			//check death
-			if (m_stats.m_hp_current < 0){
+			if (m_stats.m_hp_current <= 0){
 				m_state = "dead";
 				m_timerDeath.start(1);
 				play("dead");
@@ -285,7 +287,7 @@ package GameObject.Enemy
 		}
 		
 		protected function commonEnemyUpdate():Boolean {
-			if (!onScreen() || Global.frozen) return false;
+			if (Global.frozen || ( !m_activeOffscreen && !onScreen() ) ) return false;
 			checkPlayersDamage();
 			twinkle();
 			return true;

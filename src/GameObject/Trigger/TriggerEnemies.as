@@ -2,6 +2,7 @@ package GameObject.Trigger
 {
 	import com.adobe.protocols.dict.events.ConnectedEvent;
 	import GameObject.Enemy.Enemy;
+	import GameObject.Enemy.Mosquito;
 	import GameObject.Enemy.Penguin;
 	import GameObject.TriggerObject;
 	import org.flixel.FlxPoint;
@@ -34,8 +35,10 @@ package GameObject.Trigger
 		}
 		
 		protected function spawnEnemies():void {
-			for (var i:int = 0; i < m_number ; i++)
+			for (var i:int = 0; i < m_number ; i++) {
+				m_enemiesToPop[i].load();
 				m_enemiesToPop[i].addToStage();
+			}
 		}
 		
 		override public function addBitmap():void {
@@ -53,13 +56,16 @@ package GameObject.Trigger
 			popFirst(type,location);
 			for (var i:int = 1; i < m_number ; i++) {
 				lastObj = m_enemiesToPop[i - 1];
-				m_enemiesToPop.push(new s_ennemiesArrayInstantiate[type]( lastObj.x+m_offset.x,lastObj.y+m_offset.y));
+				m_enemiesToPop.push(new s_ennemiesArrayInstantiate[type]( lastObj.x + m_offset.x, lastObj.y + m_offset.y));
+				m_enemiesToPop[i].m_directionFacing = Utils.normalize(m_offset);
+				m_enemiesToPop[i].m_directionFacing.x *= -1;m_enemiesToPop[i].m_directionFacing.y *= -1;
 			}
 		}
 		
 		protected function popFirst(type:String, location:int) {
 			m_enemiesToPop.push(new s_ennemiesArrayInstantiate[type](0, 0));
 			var obj:Enemy = m_enemiesToPop[0];
+			obj.addBitmap();
 			switch(location) {
 				case 0: obj.place( x + m_width / 2 - obj.m_width, y + m_height / 2 - obj.m_height / 2 );
 						m_offset = new FlxPoint(0, obj.m_height); break; //CENTER
@@ -81,12 +87,14 @@ package GameObject.Trigger
 						m_offset = new FlxPoint(-obj.m_width, -obj.m_height);break;//UP LEFT
 				default : break;
 			}
+			obj.m_directionFacing = Utils.normalize(m_offset);
+			obj.m_directionFacing.x *= -1;obj.m_directionFacing.y *= -1;
 		}
 		
 		///STATIC ARRAY TO CREATE ENNEMIES WITHOUT MUCH degueulasse CODE///
 		public static var s_ennemiesArrayInstantiate:Object =
 		{
-			"bee" : Penguin
+			"mosquito" : Mosquito
 		};
 		
 	}
