@@ -1,6 +1,7 @@
 package GameObject.Enemy 
 {
 	import GameObject.IAObject;
+	import GameObject.Item.Collectable;
 	import GameObject.Magic.Magic;
 	import GameObject.PlayableObject;
 	import GameObject.Weapon.EnemyThrowable;
@@ -41,6 +42,8 @@ package GameObject.Enemy
 		protected var m_FXhit:FlxSound;
 				
 		public var m_throwables:Vector.<EnemyThrowable>;
+		
+		public var m_dropRatio:Number = 7;
 		
 		public function Enemy(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
@@ -284,6 +287,7 @@ package GameObject.Enemy
 			m_state = "anihilated";
 			removeFromStage();
 			m_smoke.playSmoke(x, y);
+			dropItem();
 		}
 		
 		protected function commonEnemyUpdate():Boolean {
@@ -291,6 +295,16 @@ package GameObject.Enemy
 			checkPlayersDamage();
 			twinkle();
 			return true;
+		}
+		
+		protected function dropItem():void {
+			var rand:Number = Utils.random(0, 100);
+			trace(rand);
+			if (rand > m_dropRatio)
+				return;
+			var item:Collectable = Collectable.HeartDrop();
+			item.place(x, y);
+			item.addToStage();
 		}
 	}
 

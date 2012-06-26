@@ -11,6 +11,7 @@ package GameObject.Other
 	public class Box extends DrawableObject 
 	{
 		public var m_offset:FlxPoint;
+		public var m_initPos:FlxPoint;
 		
 		public function Box(X:Number,Y:Number ) 
 		{
@@ -20,6 +21,7 @@ package GameObject.Other
 			m_url = "Images/Others/box.png";
 			m_width = 32; m_height = 32;
 			m_offset = new FlxPoint(10, 34);
+			m_initPos = new FlxPoint(X, Y);
 		}
 		
 		override public function addToStage():void {
