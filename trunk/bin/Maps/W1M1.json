@@ -100,16 +100,16 @@
                  "y":647
                 }, 
                 {
-                 "height":112,
+                 "height":222,
                  "name":"TrigBee1",
                  "properties":
                     {
-                     "location":"5",
+                     "location":"4",
                      "number":"3",
-                     "type":"bee"
+                     "type":"mosquito"
                     },
                  "type":"TriggerEnemies",
-                 "width":231,
+                 "width":223,
                  "x":366,
                  "y":364
                 }],
