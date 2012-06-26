@@ -68,6 +68,8 @@ package GameObject
 		public var m_lifes:int = 3;
 		public var m_initHealth:int = 5;
 		protected var m_smoke:EnemySmoke;
+		
+		public var m_score:int = 0;
 				
 		public function PlayableObject(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
@@ -362,6 +364,16 @@ package GameObject
 			visible = false;
 			m_smoke.playSmoke(x, y);
 			Global.currentPlaystate.end();
+		}
+		
+		public function addEnergy(energy:int):void {
+			if (m_stats.m_hp_current + energy > m_initHealth ) {
+				m_stats.initHP(m_initHealth);
+				m_menu.reInitHearts();
+			}else {
+				m_stats.m_hp_current += energy;
+				m_menu.addHearts(energy);
+			}
 		}
 		
 		/**

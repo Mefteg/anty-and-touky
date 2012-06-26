@@ -74,8 +74,6 @@ package GameObject.Menu
 			var shiftX:int = m_menuHeart.m_shift.x + (m_menuHeart.m_objects.length) * 9;
 			var shiftY:int = m_menuHeart.m_shift.y;
 			m_menuShield.m_shift = new FlxPoint(shiftX, shiftY);
-			if (FlxG.keys.A)
-				m_menuHeart.load();
 		}
 		
 		public function takeDamage() : void {
@@ -87,11 +85,15 @@ package GameObject.Menu
 		}
 		
 		public function addHeart() : void {
-			m_menuHeart.addIcon();
+			if (m_lastHeart < m_player.m_initHealth - 1) {
+				m_lastHeart++;
+				m_menuHeart.m_objects[m_lastHeart].visible = true;
+			}
 		}
 		
 		public function addHearts(count:int) : void {
-			m_menuHeart.addIcons(count);
+			for (var i:int = 0; i < count; i++)
+				addHeart();
 		}
 		
 		public function reInitHearts():void {
