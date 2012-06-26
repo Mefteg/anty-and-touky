@@ -100,7 +100,7 @@
                  "y":647
                 }, 
                 {
-                 "height":222,
+                 "height":58,
                  "name":"TrigBee1",
                  "properties":
                     {
@@ -109,9 +109,34 @@
                      "type":"mosquito"
                     },
                  "type":"TriggerEnemies",
-                 "width":223,
-                 "x":366,
-                 "y":364
+                 "width":200,
+                 "x":387,
+                 "y":448
+                }, 
+                {
+                 "height":0,
+                 "name":"Door1",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Door",
+                 "width":0,
+                 "x":253,
+                 "y":278
+                }, 
+                {
+                 "height":0,
+                 "name":"Switch",
+                 "properties":
+                    {
+                     "door":"Door1",
+                     "time":"1"
+                    },
+                 "type":"Switch",
+                 "width":0,
+                 "x":367,
+                 "y":272
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -133,8 +158,8 @@
                     },
                  "type":"RespawnPoint",
                  "width":55,
-                 "x":446,
-                 "y":234
+                 "x":460,
+                 "y":245
                 }],
          "opacity":1,
          "type":"objectgroup",
