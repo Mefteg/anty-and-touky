@@ -77,12 +77,14 @@ package GameObject
 			case Rock.s_type:  return new GameObject.Tile.Rock(layer, pos.x, pos.y, mapName, tileId); break;
 			case Hole.s_type:  return new Hole(layer, pos.x, pos.y, mapName, tileId); break;
 			case PhysicalTile.s_type:  return new GameObject.PhysicalTile(layer, pos.x, pos.y, mapName, tileId); break;
-			case Foreground.s_type:  return new GameObject.Tile.Foreground(pos.x, pos.y, mapName, tileId); break;
+			//case Foreground.s_type:  return new GameObject.Tile.Foreground(pos.x, pos.y, mapName, tileId); break;
 		default:
-			if ( layer == 0 )
+			if ( layer == 0 ) {
 				return new GameObject.TileObject(layer, pos.x, pos.y, mapName, tileId);
-			else
-				return new GameObject.TileObject(layer, pos.x, pos.y, mapName, 0); // empty slot
+			}
+			else {
+				return new GameObject.TileObject(layer, pos.x, pos.y, mapName, tileId); // empty slot
+			}
 				break;
 			}
 			return null;
