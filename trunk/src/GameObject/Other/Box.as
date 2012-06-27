@@ -57,6 +57,10 @@ package GameObject.Other
 		override public function update():void {
 		}
 		
+		override public function respawn():void {
+			place(m_initPos.x, m_initPos.y);
+		}
+		
 		/*override public function die():void {
 			place(m_initPos.x, m_initPos.y);
 		}*/

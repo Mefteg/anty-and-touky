@@ -16,14 +16,16 @@ package GameObject.Trigger
 		var m_type:String;
 		var m_number:int = 1;
 		var m_offset:FlxPoint;
+		var m_direction:FlxPoint;
 		
-		public function TriggerEnemies(X:Number, Y:Number, W:int, H:int , type:String, number:int, location:int ) 
+		public function TriggerEnemies(X:Number, Y:Number, W:int, H:int , type:String, number:int, direction:int , location:int) 
 		{
 			super(X, Y, null, W, H);
 			this.visible = false;
 			m_type = type;
 			if(number!=0)
 				m_number = number;
+			m_direction = Utils.getDirectionPoint(direction);
 			createEnemies(type,location);
 		}
 		
@@ -57,8 +59,7 @@ package GameObject.Trigger
 			for (var i:int = 1; i < m_number ; i++) {
 				lastObj = m_enemiesToPop[i - 1];
 				m_enemiesToPop.push(new s_ennemiesArrayInstantiate[type]( lastObj.x + m_offset.x, lastObj.y + m_offset.y));
-				m_enemiesToPop[i].m_directionFacing = Utils.normalize(m_offset);
-				m_enemiesToPop[i].m_directionFacing.x *= -1;m_enemiesToPop[i].m_directionFacing.y *= -1;
+				m_enemiesToPop[i].m_directionFacing = m_direction;
 			}
 		}
 		
@@ -67,28 +68,27 @@ package GameObject.Trigger
 			var obj:Enemy = m_enemiesToPop[0];
 			obj.addBitmap();
 			switch(location) {
-				case 0: obj.place( x + m_width / 2 - obj.m_width, y + m_height / 2 - obj.m_height / 2 );
+				case 8: obj.place( x + m_width / 2 - obj.m_width, y + m_height / 2 - obj.m_height / 2 );
 						m_offset = new FlxPoint(0, obj.m_height); break; //CENTER
-				case 1: obj.place( x + m_width / 2 - obj.m_width , y ); 
+				case 0: obj.place( x + m_width / 2 - obj.m_width , y ); 
 						m_offset = new FlxPoint(0, -obj.m_height); break; //UP
-				case 2: obj.place( x + m_width - obj.m_width , y ); 
+				case 1: obj.place( x + m_width - obj.m_width , y ); 
 						m_offset = new FlxPoint(obj.m_width, -obj.m_height); break;//UP RIGHT
-				case 3: obj.place( x + m_width - obj.m_width , y + m_height / 2 - obj.m_height / 2 ); 
+				case 2: obj.place( x + m_width - obj.m_width , y + m_height / 2 - obj.m_height / 2 ); 
 						m_offset = new FlxPoint(obj.m_width, 0); break;//RIGHT
-				case 4: obj.place( x + m_width - obj.m_width , y + m_height - obj.m_height ); 
+				case 3: obj.place( x + m_width - obj.m_width , y + m_height - obj.m_height ); 
 						m_offset = new FlxPoint(obj.m_width, obj.m_height); break;//DOWN RIGHT
-				case 5: obj.place( x + m_width / 2 - obj.m_width , y + m_height - obj.m_height ); 
+				case 4: obj.place( x + m_width / 2 - obj.m_width , y + m_height - obj.m_height ); 
 						m_offset = new FlxPoint(0, obj.m_height); break;//DOWN
-				case 6: obj.place( x , y + m_height - obj.m_height ); 
+				case 5: obj.place( x , y + m_height - obj.m_height ); 
 						m_offset = new FlxPoint(-obj.m_width, obj.m_height);break;//DOWN LEFT
-				case 7: obj.place( x , y + m_height / 2 - obj.m_height / 2 ); 
+				case 6: obj.place( x , y + m_height / 2 - obj.m_height / 2 ); 
 						m_offset = new FlxPoint(-obj.m_width, 0);break;//LEFT
-				case 8: obj.place( x , y ); 
+				case 7: obj.place( x , y ); 
 						m_offset = new FlxPoint(-obj.m_width, -obj.m_height);break;//UP LEFT
 				default : break;
 			}
-			obj.m_directionFacing = Utils.normalize(m_offset);
-			obj.m_directionFacing.x *= -1;obj.m_directionFacing.y *= -1;
+			obj.m_directionFacing = m_direction;
 		}
 		
 		///STATIC ARRAY TO CREATE ENNEMIES WITHOUT MUCH degueulasse CODE///
