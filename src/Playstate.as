@@ -140,7 +140,8 @@ package
 			m_textScore2.scrollFactor = new FlxPoint(0, 0);
 			m_textScore1.alignment = "right";
 			//m_textScore2.color = 0x000000;
-			depthBuffer.addElement(m_textScore2, DepthBuffer.s_cursorGroup);
+			if(Global.nbPlayers == 2)
+				depthBuffer.addElement(m_textScore2, DepthBuffer.s_cursorGroup);
 		}
 		
 		public function changeScene(sceneName:String, respawn:String ) : void {

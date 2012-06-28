@@ -38,6 +38,7 @@ package GameObject.Enemy.Centipede
 			m_height = 32;
 			m_speed = 3.0;
 			m_stats.initHP(12);
+			m_points = 1000;
 			createParts();
 			m_livingParts = m_nbParts;
 			m_area = new Rectangle(X, Y, areaWidth, areaHeight);
@@ -278,6 +279,8 @@ package GameObject.Enemy.Centipede
 			if (m_stats.m_hp_current <= 0)
 			{
 				triggerDeath();
+				if (!Global.soloPlayer)
+					m_killer = player;
 			}
 			//for twinkling
 			changeTwinkleColor(_twinkleHit);
@@ -292,6 +295,8 @@ package GameObject.Enemy.Centipede
 			//check death
 			if (m_stats.m_hp_current <= 0){
 				triggerDeath();
+				if (!Global.soloPlayer)
+					m_killer = player;
 			}
 			//for twinkling
 			changeTwinkleColor(_twinkleHit);
