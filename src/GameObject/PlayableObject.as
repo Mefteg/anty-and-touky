@@ -69,7 +69,7 @@ package GameObject
 		public var m_initHealth:int = 5;
 		protected var m_smoke:EnemySmoke;
 		
-		public var m_score:int = 0;
+		public var m_score:Number = 0;
 				
 		public function PlayableObject(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{

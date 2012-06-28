@@ -58,7 +58,7 @@ package GameObject.Enemy.Centipede
 			changeTwinkleColor(_twinkleHit);
 			beginTwinkle(3, 0.3);
 		}
-		override protected function takeRushDamage():void {
+		override protected function takeRushDamage(player:PlayableObject):void {
 			//calculate damage
 			var damage:int = 5 ;
 			//substract damage to hp

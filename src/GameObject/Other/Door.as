@@ -1,6 +1,7 @@
 package GameObject.Other 
 {
 	import GameObject.PhysicalObject;
+	import GameObject.PlayableObject;
 	
 	/**
 	 * ...
@@ -35,6 +36,17 @@ package GameObject.Other
 		public function close():void {
 			m_collideWithObjects = true;
 			frame = 0;
+			if (collide(Global.player1)) {
+				replace(Global.player1);
+			}
+			if (collide(Global.player2)) {
+				replace(Global.player2);
+			}
+		}
+		
+		private function replace(player:PlayableObject):void {
+			player.takeDamage();
+			player.place(x + m_width + 1, y);
 		}
 	}
 

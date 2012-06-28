@@ -60,6 +60,8 @@ package GameObject.Enemy.Centipede
 		}
 			
 		private function createParts():void {
+			if (Global.soloPlayer)
+				m_nbParts /= 2;
 			m_parts = new Array();
 			var part:CentipedePart;
 			for (var i:int = 0; i < m_nbParts; i++) {
@@ -72,6 +74,7 @@ package GameObject.Enemy.Centipede
 			if (Global.frozen)
 				return;
 			move();
+			twinkle();
 			if(!m_dead)
 				checkPlayersDamage();
 			switch(m_state) {
@@ -281,7 +284,7 @@ package GameObject.Enemy.Centipede
 			beginTwinkle(3, 0.3);
 		}
 		
-		override protected function takeRushDamage():void {
+		override protected function takeRushDamage(player:PlayableObject):void {
 			//calculate damage
 			var damage:int = 5 ;
 			//substract damage to hp
