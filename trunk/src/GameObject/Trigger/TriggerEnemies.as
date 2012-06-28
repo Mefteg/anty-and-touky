@@ -63,7 +63,7 @@ package GameObject.Trigger
 			}
 		}
 		
-		protected function popFirst(type:String, location:int) {
+		protected function popFirst(type:String, location:int) : void {
 			m_enemiesToPop.push(new s_ennemiesArrayInstantiate[type](0, 0));
 			var obj:Enemy = m_enemiesToPop[0];
 			obj.addBitmap();

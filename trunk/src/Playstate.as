@@ -62,9 +62,11 @@ package
 		protected var m_controlsPanel:FlxSprite;
 		protected var m_controlShown:Boolean = false;
 		
-		//lifes
+		//texts
 		protected var m_textLife1:FlxText;
 		protected var m_textLife2:FlxText;
+		protected var m_textScore1:FlxText;
+		protected var m_textScore2:FlxText;
 		
 		private var m_timerEnd:FlxTimer;
 		private var m_goSwitch:Boolean = false;
@@ -112,7 +114,7 @@ package
 			FlxG.mouse.show();
 			m_timerEnd = new FlxTimer();
 			
-			//text life for player 1
+			//text lifes
 			m_textLife1 = new FlxText(96, 25, 40);
 			m_textLife1.size = 12;
 			m_textLife1.scrollFactor = new FlxPoint(0, 0);
@@ -125,6 +127,20 @@ package
 			m_textLife2.color = 0x000000;
 			depthBuffer.addElement(m_textLife2, DepthBuffer.s_cursorGroup);
 			
+			//text scores
+			m_textScore1 = new FlxText(20, 47,100);
+			m_textScore1.size = 12;
+			m_textScore1.scrollFactor = new FlxPoint(0, 0);
+			m_textScore1.alignment = "right";
+			//m_textScore1.color = 0x000000;
+			depthBuffer.addElement(m_textScore1, DepthBuffer.s_cursorGroup);
+			
+			m_textScore2 = new FlxText(625, 47,100);
+			m_textScore2.size = 12;
+			m_textScore2.scrollFactor = new FlxPoint(0, 0);
+			m_textScore1.alignment = "right";
+			//m_textScore2.color = 0x000000;
+			depthBuffer.addElement(m_textScore2, DepthBuffer.s_cursorGroup);
 		}
 		
 		public function changeScene(sceneName:String, respawn:String ) : void {
@@ -187,6 +203,8 @@ package
 			changePlayer();
 			m_textLife1.text = "x" + Global.player1.m_lifes;
 			m_textLife2.text = "x" + Global.player2.m_lifes;
+			m_textScore1.text = ""+Global.player1.m_score;
+			m_textScore2.text = ""+Global.player2.m_score;
 			super.update();
 		}
 		

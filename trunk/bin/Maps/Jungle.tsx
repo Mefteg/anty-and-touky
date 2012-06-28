@@ -186,21 +186,6 @@
    <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
- <tile id="83">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
- <tile id="84">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
- <tile id="85">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
  <tile id="96">
   <properties>
    <property name="type" value="PhysicalTile"/>
@@ -216,59 +201,9 @@
    <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
- <tile id="99">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
- <tile id="100">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
- <tile id="101">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
  <tile id="113">
   <properties>
    <property name="type" value="Hole"/>
-  </properties>
- </tile>
- <tile id="115">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
- <tile id="116">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
- <tile id="117">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
- <tile id="131">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
- <tile id="132">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
- <tile id="147">
-  <properties>
-   <property name="type" value="Foreground"/>
-  </properties>
- </tile>
- <tile id="148">
-  <properties>
-   <property name="type" value="Foreground"/>
   </properties>
  </tile>
 </tileset>

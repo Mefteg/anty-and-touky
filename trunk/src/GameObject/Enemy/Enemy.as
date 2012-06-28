@@ -44,6 +44,9 @@ package GameObject.Enemy
 		public var m_throwables:Vector.<EnemyThrowable>;
 		
 		public var m_dropRatio:Number = 7;
+
+		protected var m_points:int = 10;
+		protected var m_killer:PlayableObject;
 		
 		public function Enemy(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
@@ -130,7 +133,8 @@ package GameObject.Enemy
 			m_stats.m_hp_current -= damage;
 			m_FXhit.play();
 			//check death
-			if (m_stats.m_hp_current <= 0){
+			if (m_stats.m_hp_current <= 0) {
+				m_killer = player;
 				m_state = "dead";
 				m_timerDeath.start(1);
 				play("dead");
@@ -248,7 +252,7 @@ package GameObject.Enemy
 			return m_state == "dead";
 		}
 		
-		protected function takeRushDamage():void {
+		protected function takeRushDamage(player:PlayableObject):void {
 			//calculate damage
 			var damage:int = 5 ;
 			//substract damage to hp
@@ -257,6 +261,7 @@ package GameObject.Enemy
 			if (m_stats.m_hp_current < 0){
 				m_state = "dead";
 				m_timerDeath.start(1);
+				m_killer = player;
 			}
 			//for twinkling
 			changeTwinkleColor(_twinkleHit);
@@ -276,7 +281,7 @@ package GameObject.Enemy
 			if (collide(player)) {
 				if (player.isRushing()) {
 					player.unspecial();
-					takeRushDamage();
+					takeRushDamage(player);
 				}else{
 					player.takeDamage();
 				}
@@ -288,6 +293,7 @@ package GameObject.Enemy
 			removeFromStage();
 			m_smoke.playSmoke(x, y);
 			dropItem();
+			m_killer.m_score += m_points;
 		}
 		
 		protected function commonEnemyUpdate():Boolean {
