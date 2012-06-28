@@ -69,11 +69,14 @@ package GameObject
 		public var m_initHealth:int = 5;
 		protected var m_smoke:EnemySmoke;
 		
-		public var m_score:Number = 0;
+		public var m_score:int = 0;
+		public var m_thresoldScore:int = 0;
+		public var m_thresoldDelta:int = 5000;
 				
 		public function PlayableObject(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, SimpleGraphic);
+			m_thresoldScore += m_thresoldDelta;
 			m_speed = 1.5;
 			m_typeName = "Player";
 			m_width = 48;
@@ -376,6 +379,13 @@ package GameObject
 			}
 		}
 		
+		public function addScore(n:int):void {
+			m_score += n;
+			if (m_score >= m_thresoldScore) {
+				m_thresoldScore += m_thresoldDelta;
+				m_lifes++;
+			}
+		}
 		/**
 		 * Adds a new item to the player ItemManager
 		 * @return

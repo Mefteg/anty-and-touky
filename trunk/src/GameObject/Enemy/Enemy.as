@@ -45,7 +45,7 @@ package GameObject.Enemy
 		
 		public var m_dropRatio:Number = 7;
 
-		protected var m_points:int = 10;
+		protected var m_points:int = 100;
 		protected var m_killer:PlayableObject;
 		
 		public function Enemy(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
@@ -67,6 +67,8 @@ package GameObject.Enemy
 			m_smoke = new EnemySmoke();
 			m_FXhit = new FlxSound();
 			m_typeName = "Enemy";
+			if (Global.soloPlayer)
+				m_killer = Global.player1;
 			m_bufferGroup = DepthBufferPlaystate.s_enemyGroup;
 		}
 		
@@ -134,7 +136,8 @@ package GameObject.Enemy
 			m_FXhit.play();
 			//check death
 			if (m_stats.m_hp_current <= 0) {
-				m_killer = player;
+				if(!Global.soloPlayer)
+					m_killer = player;
 				m_state = "dead";
 				m_timerDeath.start(1);
 				play("dead");
@@ -261,7 +264,8 @@ package GameObject.Enemy
 			if (m_stats.m_hp_current < 0){
 				m_state = "dead";
 				m_timerDeath.start(1);
-				m_killer = player;
+				if(!Global.soloPlayer)
+					m_killer = player;
 			}
 			//for twinkling
 			changeTwinkleColor(_twinkleHit);
@@ -293,7 +297,7 @@ package GameObject.Enemy
 			removeFromStage();
 			m_smoke.playSmoke(x, y);
 			dropItem();
-			m_killer.m_score += m_points;
+			m_killer.addScore(m_points);
 		}
 		
 		protected function commonEnemyUpdate():Boolean {

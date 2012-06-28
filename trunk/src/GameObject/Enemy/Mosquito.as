@@ -16,6 +16,7 @@ package GameObject.Enemy
 			m_stats.initHP(1);
 			setHitbox(5, 7, 18, 17);
 			m_canGoThrough = false;
+			m_points = 10;
 		}
 		
 		override public function load():void {
