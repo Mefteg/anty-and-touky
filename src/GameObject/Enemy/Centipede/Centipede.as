@@ -82,6 +82,7 @@ package GameObject.Enemy.Centipede
 				case "waitingOutside": waitingOutside(); break;
 				case "waitingInside": waitingInside(); break;
 				case "moving" : moving(); break;
+				case "stunned" : stunned(); break;
 				case "spawning" : spawning(); break;
 				case "dying": die(); break;
 				case "ending": ending(); break;
@@ -171,6 +172,12 @@ package GameObject.Enemy.Centipede
 				
 		}
 		
+		private function stunned():void {
+			if (m_timerWait.finished) {
+				m_state = "moving";
+			}
+		}
+		
 		//OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO//
 		///////////////////// PLACE PARTS //////////////////
 		//OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO//
@@ -258,6 +265,8 @@ package GameObject.Enemy.Centipede
 		}
 		
 		override public function move() : void {
+			if (m_state == "stunned")
+				return;
 			m_oldPos.x= this.x;
 			m_oldPos.y = this.y;
 			
@@ -288,6 +297,11 @@ package GameObject.Enemy.Centipede
 		}
 		
 		override protected function takeRushDamage(player:PlayableObject):void {
+			if (m_invincible) {
+				m_timerWait.start(1.5);
+				m_state = "stunned";
+				return;
+			}
 			//calculate damage
 			var damage:int = 5 ;
 			//substract damage to hp

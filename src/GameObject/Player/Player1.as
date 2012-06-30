@@ -1,8 +1,10 @@
 package GameObject.Player 
 {
 	import flash.net.URLVariables;
+	import GameObject.GameObject;
 	import GameObject.Item.Item;
 	import GameObject.Item.ItemRestore;
+	import GameObject.Menu.Menu;
 	import GameObject.PlayableObject;
 	import GameObject.Weapon.PlayerThrowable;
 	import org.flixel.FlxG;
@@ -32,6 +34,8 @@ package GameObject.Player
 			m_equipement.m_throwable = PlayerThrowable.Ant();
 			m_equipement.m_weapon.visible = false;
 			m_normalSpeed = m_speed;
+			
+			m_camembert = new GameObject.Menu.Camembert(this);
 		}		
 				
 		override public function createThrowables():void {
@@ -172,8 +176,8 @@ package GameObject.Player
 			m_speed = m_normalSpeed;
 			Global.player2.m_state = "idle";
 			Global.player2.x = x; Global.player2.y = y;
-			m_timerSpecialAvailable.start(5);
-			m_camembert.trigger(5);
+			m_timerSpecialAvailable.start(15);
+			m_camembert.trigger(15);
 		}
 		
 		override public function placeOtherPlayer():void {
