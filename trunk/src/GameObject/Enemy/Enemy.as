@@ -285,6 +285,8 @@ package GameObject.Enemy
 			if (collide(player)) {
 				if (player.isRushing()) {
 					player.unspecial();
+					player.x = player.m_oldPos.x;
+					player.y = player.m_oldPos.y;
 					takeRushDamage(player);
 				}else{
 					player.takeDamage();

@@ -96,7 +96,6 @@ package GameObject
 			m_timerAttack2 = new FlxTimer();
 			m_timerTwinkle.start(0.1);
 			m_smoke = EnemySmoke.PlayerSmoke();
-			m_camembert = new GameObject.Menu.Camembert(this);
 			//SOUNDS
 			FX_shieldClang = new FlxSound();
 			FX_drawWeapon = new FlxSound();

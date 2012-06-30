@@ -197,7 +197,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "width":30,
          "x":0,
          "y":0
@@ -217,10 +217,22 @@
                  "width":65,
                  "x":719,
                  "y":678
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "location":"init"
+                    },
+                 "type":"Respawn",
+                 "width":0,
+                 "x":315,
+                 "y":752
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "width":30,
          "x":0,
          "y":0

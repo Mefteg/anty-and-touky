@@ -1,6 +1,8 @@
 package GameObject.Player 
 {
 	import GameObject.DrawableObject;
+	import GameObject.GameObject;
+	import GameObject.Menu.Menu;
 	import GameObject.Other.Box;
 	import GameObject.PlayableObject;
 	import GameObject.Weapon.PlayerThrowable;
@@ -46,6 +48,8 @@ package GameObject.Player
 			}else {
 				m_controlMgmt = process2playerControl;
 			}
+			
+			m_camembert = new GameObject.Menu.Camembert(this);
 		}
 		
 		override public function getEnemiesInScene():void {

@@ -2,6 +2,7 @@ package GameObject.Menu
 {
 	import GameObject.DrawableObject;
 	import GameObject.GameObject;
+	import org.flixel.FlxPoint;
 	import org.flixel.FlxTimer;
 	
 	/**
