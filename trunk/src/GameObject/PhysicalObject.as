@@ -36,9 +36,19 @@ package GameObject
 				
 			// if the new position involves an environment collision
 			if ( this.collideWithEnv() ) {
-				// keep the current position
-				this.x = m_oldPos.x;
+				var newPos:FlxPoint = new FlxPoint(this.x, this.y);
+				
 				this.y = m_oldPos.y;
+				// if the collision is on the x axis
+				if ( this.collideWithEnv() ) {
+					this.x = m_oldPos.x;
+				}
+				
+				this.y = newPos.y;
+				// if the collision is also on the y axis
+				if ( this.collideWithEnv() ) {
+					this.y = m_oldPos.y;
+				}
 			}
 		}
 		
