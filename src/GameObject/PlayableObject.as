@@ -17,6 +17,7 @@ package GameObject
 	import InfoObject.InfoDamage;
 	import org.flixel.FlxButton;
 	import org.flixel.FlxG;
+	import org.flixel.FlxPoint;
 	import org.flixel.FlxSave;
 	import org.flixel.FlxSound;
 	import org.flixel.FlxText;
@@ -290,9 +291,20 @@ package GameObject
 			if ( this.collideWithEnv() ) {
 				if (m_state == "rushAttack")
 					Global.player1.unspecial();
-				this.x = m_oldPos.x;
-				this.y = m_oldPos.y;
+					
+				var newPos:FlxPoint = new FlxPoint(this.x, this.y);
 				
+				this.y = m_oldPos.y;
+				// if the collision is on the x axis
+				if ( this.collideWithEnv() ) {
+					this.x = m_oldPos.x;
+				}
+				
+				this.y = newPos.y;
+				// if the collision is also on the y axis
+				if ( this.collideWithEnv() ) {
+					this.y = m_oldPos.y;
+				}
 			}
 		}
 		
