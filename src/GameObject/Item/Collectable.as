@@ -24,6 +24,7 @@ package GameObject.Item
 		
 		override public function addToStage():void {
 			load();
+			Global.currentPlaystate.addCollectable(this);
 			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_nppGroup);
 		}
 		

@@ -17,12 +17,22 @@ package GameObject.Other
 			super(X, Y);
 			m_state = "idle";
 			m_FX = new FlxSound();
-			m_bufferGroup = DepthBufferPlaystate.s_objectGroup;
+			m_bufferGroup = DepthBufferPlaystate.s_objectGroupFG;
 		}
 		
 		override public function load():void {
 			super.load();
 			m_FX.loadStream(m_FXurl);
+		}
+		
+		override public function addToStage():void {
+			super.addToStage();
+			Global.currentPlaystate.addPhysical(this);
+		}
+		
+		override public function removeFromStage():void {
+			super.removeFromStage();
+			Global.currentPlaystate.removePhysical(this);
 		}
 				
 		public function setIdleAnim(...rest):void {
@@ -38,6 +48,7 @@ package GameObject.Other
 		}
 		
 		override public function update():void {
+			trace("ddd");
 			switch(m_state) {
 				case "idle" : if (canInteract(Global.player1) && Global.player1.isRushing()) {
 								m_state = "breaking";
