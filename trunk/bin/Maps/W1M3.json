@@ -227,8 +227,8 @@
                     },
                  "type":"Respawn",
                  "width":0,
-                 "x":315,
-                 "y":752
+                 "x":301,
+                 "y":665
                 }],
          "opacity":1,
          "type":"objectgroup",

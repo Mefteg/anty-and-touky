@@ -1,6 +1,7 @@
 package  
 {
 	import GameObject.Enemy.Enemy;
+	import GameObject.Item.Collectable;
 	import GameObject.MovableObject;
 	import GameObject.Other.Box;
 	import GameObject.Other.BoxHole;
@@ -49,6 +50,7 @@ package
 		public var m_boxes:Vector.<Box>;
 		public var m_holeboxes:Vector.<BoxHole>;
 		public var m_doors:Vector.<Door>;
+		public var m_collectables:Vector.<Collectable>;
 		
 		private var m_ladyBug:FlxSprite;
 		private var m_rectLadyBug:FlxSprite;
@@ -89,6 +91,7 @@ package
 			m_boxes = new Vector.<Box>();
 			m_holeboxes = new Vector.<BoxHole>();
 			m_doors = new Vector.<Door>();
+			m_collectables = new Vector.<Collectable>();
 			add(m_collisionManager);
 			m_enemies = new Vector.<Enemy>;
 			//lady Bug for loading screens
@@ -148,6 +151,7 @@ package
 			fadeOut();
 			m_sceneToLoad = sceneName;
 			m_respawnToLoad = respawn;
+			clearCollectables();
 			Global.frozen = true;
 			m_state = "ChangingScene";
 		}
@@ -162,9 +166,9 @@ package
 			depthBuffer.addElement(m_ladyBug, DepthBuffer.s_cursorGroup);
 			depthBuffer.addElement(m_rectLadyBug, DepthBuffer.s_cursorGroup);
 			m_sceneManager = new SceneManager();
-			//m_sceneManager.loadScene("Maps/W1M1.json");
-			//m_sceneManager.loadScene("Maps/test2.json");
 			m_sceneManager.loadScene("Maps/W1M3.json");
+			//m_sceneManager.loadScene("Maps/test2.json");
+			//m_sceneManager.loadScene("Maps/W1M3.json");
 			m_state = "Loading";
 			//creating player 1
 			Global.player1 = new Player1(100, 100);
@@ -425,13 +429,24 @@ package
 		public function clearDoors():void {
 			m_doors = new Vector.<Door>;
 		}
-		
 		public function getDoor(door:String):Door {
 			for (var i:int = 0; i < m_doors.length; i++) {
 				if (m_doors[i].m_name == door)
 					return m_doors[i];
 			}
 			return null;
+		}
+		//COLLECTABLES
+		public function addCollectable(object:Collectable):void {
+			m_collectables.push(object);
+		}
+		public function removeCollectable(object:Collectable):void {
+			m_collectables.splice(m_collectables.indexOf(object), 1);
+		}
+		public function clearCollectables():void {
+			for (var i:int = 0; i < m_collectables.length; i++)
+				m_collectables[i].removeFromStage();
+			m_collectables = new Vector.<Collectable>;
 		}
 	}
 

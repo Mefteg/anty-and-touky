@@ -75,7 +75,8 @@ package
 		 * Clear all objects except for players
 		 */
 		override public function clearBuffers():void {
-			m_objects.clear();
+			m_objectsBG.clear();
+			m_objectsFG.clear();
 			m_enemies.clear();
 			m_npc.clear();
 			m_foreGround.clear();
@@ -137,6 +138,9 @@ package
 				case s_objectGroup:
 					this.removeObject(element);
 					break;
+				case s_objectGroupFG:
+					this.removeObject(element,false);
+					break;
 				case s_playerGroup:
 					this.removePlayer(element);
 					break;
@@ -166,6 +170,14 @@ package
 				m_objectsBG.add(element);
 			else
 				m_objectsFG.add(element);
+		}
+		
+		protected function removeObject(element:FlxBasic,background:Boolean = true):void
+		{
+			if(background)
+				m_objectsBG.remove(element);
+			else
+				m_objectsFG.remove(element);
 		}
 		
 		protected function addNPC(element:FlxBasic):void {
@@ -226,12 +238,6 @@ package
 		protected function removePlayer(element:FlxBasic):void
 		{
 			m_players.remove(element);
-			m_playstate.removePhysical(element as PhysicalObject);
-		}
-		
-		protected function removeObject(element:FlxBasic):void
-		{
-			m_objects.remove(element);
 			m_playstate.removePhysical(element as PhysicalObject);
 		}
 		
