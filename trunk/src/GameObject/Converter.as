@@ -16,6 +16,7 @@ package GameObject
 	import GameObject.Item.Item;
 	import GameObject.Other.Box;
 	import GameObject.Other.Breakable;
+	import GameObject.Other.Butterfly;
 	import GameObject.Other.Door;
 	import GameObject.Other.Switch;
 	import GameObject.Player.Player1;
@@ -64,6 +65,7 @@ package GameObject
 				case "TriggerCutScene": return new TriggerCutScene(object.x, object.y, object.width, object.height, object.properties.url); break;
 				//other
 				case "BreakableRock" : return Breakable.Rock(object.x, object.y); break;
+				case "Butterfly" : return new Butterfly(object.x, object.y); break;
 				
 				default:  return new GameObject.Enemy.WhiteSquare(object.x, object.y); break;
 				
