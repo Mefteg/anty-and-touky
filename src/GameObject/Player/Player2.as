@@ -5,6 +5,8 @@ package GameObject.Player
 	import GameObject.Menu.Menu;
 	import GameObject.Other.Box;
 	import GameObject.PlayableObject;
+	import GameObject.Tile.Hole;
+	import GameObject.TileObject;
 	import GameObject.Weapon.PlayerThrowable;
 	import GameObject.Weapon.Throwable;
 	import GameObject.Weapon.Weapon;
@@ -163,8 +165,24 @@ package GameObject.Player
 			m_onSpecial = false;
 			m_timerSpecialAvailable.start(5);
 			m_camembert.trigger(5);
-			if (m_objectCarried.m_name == "Box")
+			if ( m_objectCarried == Global.player1 ) {
+				var tiles:Array = Global.player1.tilesUnder();
+				var i:int = 0;
+				var find:Boolean = false;
+				while ( i < tiles.length && find == false ) {
+					var tile:TileObject = tiles[i];
+					if ( tile.m_typeName == Hole.s_type ) {
+						Global.player1.takeDamage();
+						Global.player1.m_state = "waitToukyPosition";
+						find = true;
+					}
+					i++;
+				}
+			}
+			if (m_objectCarried.m_name == "Box") {
 				m_objectCarried.act();
+				// APPELER FONCTION RESPAWN
+			}
 			m_objectCarried = null;
 		}
 		

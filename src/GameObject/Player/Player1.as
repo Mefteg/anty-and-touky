@@ -6,6 +6,7 @@ package GameObject.Player
 	import GameObject.Item.ItemRestore;
 	import GameObject.Menu.Menu;
 	import GameObject.PlayableObject;
+	import GameObject.TileObject;
 	import GameObject.Weapon.PlayerThrowable;
 	import org.flixel.FlxG;
 	import org.flixel.FlxPoint;
@@ -34,9 +35,20 @@ package GameObject.Player
 			m_equipement.m_throwable = PlayerThrowable.Ant();
 			m_equipement.m_weapon.visible = false;
 			m_normalSpeed = m_speed;
-			
 			m_camembert = new GameObject.Menu.Camembert(this);
 		}		
+
+
+		override public function update() : void {
+			super.update();
+			switch ( m_state ) {
+				case "waitToukyPosition":
+					waitToukyPosition();
+					break;
+				default:
+					break;
+			}
+		}
 				
 		override public function createThrowables():void {
 			m_throwables = new Vector.<PlayerThrowable>();
@@ -213,6 +225,28 @@ package GameObject.Player
 			m_tabPlaceThrowable.push(new FlxPoint(-10, 13)); //5
 			m_tabPlaceThrowable.push(new FlxPoint(-10, 13)); //6
 			m_tabPlaceThrowable.push(new FlxPoint(-10, 13)); //7		
+		}
+		
+		public function waitToukyPosition() : void {
+			var touky:PlayableObject = Global.player2;
+			//var tiles:Array = touky.tilesOver() + touky.tilesUnder();
+			var tiles:Array = touky.tilesUnder();
+			trace(tiles.length);
+			var findRightPlace:Boolean = false;
+			var i:int = 0;
+			while ( i < tiles.length && findRightPlace == false ) {
+				var tile:TileObject = tiles[i];
+				if ( tile.collideWith(this) == false ) {
+					this.x = tile.x;
+					this.y = tile.y;
+					if ( this.collideWithEnv() == false ) {
+						m_state = "respawn";
+						findRightPlace = true;
+						trace("FOUND!");
+					}
+				}
+				i++;
+			}
 		}
 	}
 

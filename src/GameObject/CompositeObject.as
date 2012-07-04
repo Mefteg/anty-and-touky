@@ -100,6 +100,10 @@ package GameObject
 			return m_objects[(m_objects.length - 1)];
 		}
 		
+		public function getLength() : int {
+			return m_objects.length;
+		}
+		
 		public function isEmpty() : Boolean {
 			return (m_objects.length == 0);
 		}

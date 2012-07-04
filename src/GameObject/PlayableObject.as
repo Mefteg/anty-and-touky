@@ -157,7 +157,7 @@ package GameObject
 		}
 		
 		override public function isBusy():Boolean {
-			return isAttacking() || (m_state == "attack2") || (m_state == "defense") || (m_state == "magic") || (m_state == "item") || (m_state == "respawn");
+			return isAttacking() || (m_state == "attack2") || (m_state == "defense") || (m_state == "magic") || (m_state == "item") || (m_state == "respawn") || (m_state == "waitToukyPosition");
 		}
 		
 		public function isAttacking():Boolean {
@@ -409,7 +409,7 @@ package GameObject
 		public function placeThrowable(thr:GameObject.Weapon.PlayerThrowable):void {
 			thr.place(x, y);
 		}
-		/////////////////////////////////////////////////////////////////:
+		/////////////////////////////////////////////////////////////////
 		////////////////////////GETTERS//////////////////////////////////
 		/////////////////////////////////////////////////////////////////
 		
