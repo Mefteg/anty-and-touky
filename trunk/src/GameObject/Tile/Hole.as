@@ -15,7 +15,7 @@ package GameObject.Tile
 		public function Hole(layer:uint, X:Number=0, Y:Number=0, mapName:String=null, index:uint=0, SimpleGraphic:Class=null) 
 		{
 			super(layer, X, Y, mapName, index, SimpleGraphic);
-			
+			this.m_typeName = s_type;
 		}
 		
 		/*override public function action(object:PhysicalObject) : void {
@@ -27,6 +27,15 @@ package GameObject.Tile
 				}
 			}
 		}*/
+		
+		override public function collideWith(object:GameObject.PhysicalObject) : Boolean {
+			// Touky can fly
+			if ( object == Global.player2 ) {
+				return false;
+			}
+			
+			return true;
+		}
 	}
 
 }
