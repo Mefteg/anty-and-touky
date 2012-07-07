@@ -6,6 +6,7 @@ package GameObject
 	 */
 	import GameObject.Enemy.BlackSquare;
 	import GameObject.Enemy.Centipede.Centipede;
+	import GameObject.Enemy.ElSqualo.ElSqualo;
 	import GameObject.Enemy.Monkey;
 	import GameObject.Enemy.MonkeyTest;
 	import GameObject.Enemy.Penguin;
@@ -54,6 +55,7 @@ package GameObject
 				case "WhiteSquare":  return new GameObject.Enemy.WhiteSquare(object.x, object.y); break;
 				case "BlackSquare":  return new GameObject.Enemy.BlackSquare(object.x, object.y); break;
 				case "TriggerEnemies": return new TriggerEnemies(object.x, object.y, object.width, object.height, object.properties.type, object.properties.number,object.properties.direction, object.properties.location); break;
+				case "ElSqualo" : return new ElSqualo(object.x, object.y, object.width, object.height); break;
 				//items
 				case "Chest" : return new GameObject.Item.Chest(object.x, object.y,object.properties.item,object.properties.quantity,object.properties.collected); break;
 				case "Box": return new GameObject.Other.Box(object.x, object.y); break;

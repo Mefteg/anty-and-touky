@@ -73,6 +73,18 @@
                  "width":0,
                  "x":607,
                  "y":489
+                }, 
+                {
+                 "height":234,
+                 "name":"ElsQualo",
+                 "properties":
+                    {
+
+                    },
+                 "type":"ElSqualo",
+                 "width":441,
+                 "x":281,
+                 "y":131
                 }],
          "opacity":1,
          "type":"objectgroup",

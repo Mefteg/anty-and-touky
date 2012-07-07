@@ -13,7 +13,7 @@ package GameObject
 	public class GameObject extends FlxSprite 
 	{
 		
-		protected var m_bufferGroup:int = DepthBuffer.s_backgroundGroup;
+		public var m_bufferGroup:int = DepthBuffer.s_backgroundGroup;
 		public var m_typeName:String = "GameObject";
 		public var m_name:String;
 		public var m_width:int= 1;
