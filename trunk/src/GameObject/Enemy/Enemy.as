@@ -48,6 +48,8 @@ package GameObject.Enemy
 		protected var m_points:int = 100;
 		protected var m_killer:PlayableObject;
 		
+		protected var m_invincible:Boolean = false;
+		
 		public function Enemy(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, SimpleGraphic);
@@ -129,6 +131,8 @@ package GameObject.Enemy
 		///////////////////////////////////////////////////////
 		
 		public function takeDamage(player:PlayableObject, weapon:Weapon):void {
+			if (m_invincible)
+				return;
 			//calculate damage
 			var damage:int = weapon.m_power ;
 			//substract damage to hp
@@ -256,6 +260,8 @@ package GameObject.Enemy
 		}
 		
 		protected function takeRushDamage(player:PlayableObject):void {
+			if (m_invincible)
+				return;
 			//calculate damage
 			var damage:int = 5 ;
 			//substract damage to hp

@@ -34,6 +34,10 @@ package GameObject
 			m_direction = Utils.normalize(new FlxPoint((object.getCenter().x - this.x), (object.getCenter().y - this.y)));;
 		}
 		
+		public function goToPoint(point:FlxPoint):void {
+			m_direction = Utils.normalize(new FlxPoint((point.x - this.x), (point.y - this.y)));;
+		}
+		
 		public function block():void {
 			m_blocked = true;
 		}

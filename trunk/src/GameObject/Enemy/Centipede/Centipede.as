@@ -26,8 +26,7 @@ package GameObject.Enemy.Centipede
 		private var m_currentSpawn:CentipedeSpawnPoint;
 		
 		private var m_timerWait:FlxTimer;
-		
-		private var m_invincible:Boolean = true;
+	
 		private var m_dead:Boolean = false;
 		
 		public function Centipede(X:Number, Y:Number, areaWidth:int, areaHeight:int ) 
@@ -39,6 +38,7 @@ package GameObject.Enemy.Centipede
 			m_speed = 3.0;
 			m_stats.initHP(12);
 			m_points = 1000;
+			m_invincible = true;
 			createParts();
 			m_livingParts = m_nbParts;
 			m_area = new Rectangle(X, Y, areaWidth, areaHeight);
