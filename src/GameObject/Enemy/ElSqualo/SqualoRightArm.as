@@ -26,6 +26,8 @@ package GameObject.Enemy.ElSqualo
 		protected var m_timerSwing:FlxTimer;
 		protected var m_dir:int;
 		
+		private var m_over:Boolean = true;
+		
 		public function SqualoRightArm(body:Enemy) 
 		{
 			m_body = body;
@@ -34,6 +36,10 @@ package GameObject.Enemy.ElSqualo
 			m_activeOffscreen = true;
 			createFlames();
 			m_timerSwing = new FlxTimer();
+		}
+		
+		public function isOver():Boolean {
+			 return m_over;
 		}
 		
 		override public function update():void {
@@ -45,6 +51,12 @@ package GameObject.Enemy.ElSqualo
 				default : break;
 			}
 			x = m_body.x - 26; y = m_body.y +16;
+		}
+		
+		public function init(stage:int):void {
+			switch(stage) {
+				case 0 : break;
+			}
 		}
 		
 		override public function attack():void {
@@ -118,6 +130,7 @@ package GameObject.Enemy.ElSqualo
 		
 		private function hideFlames():void {
 			m_state = "idle";
+			m_over = true;
 			frame = 0;
 			m_dirTab[0] = false; m_dirTab[1] = false;
 			for (var i:int = 0; i < NB_FLAMES; i++) {
