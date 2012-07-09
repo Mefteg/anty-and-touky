@@ -1,5 +1,6 @@
 package GameObject.Enemy.ElSqualo 
 {
+	import adobe.utils.CustomActions;
 	import GameObject.Enemy.Enemy;
 	import org.flixel.FlxTimer;
 	
@@ -12,12 +13,21 @@ package GameObject.Enemy.ElSqualo
 		protected var m_body:GameObject.Enemy.Enemy;
 		
 		protected var TIME_RETRACT:int = 2;
-		protected var TIME_RESPAWN:int = 6;
+		protected var TIME_RESPAWN:int = 3;
+		
+		protected var TIME_MIN:int;
+		protected var TIME_MAX:int;
 		
 		protected var m_spikes:Array;
 		
 		private var m_timerRetract:FlxTimer;
 		private var m_timerWaitRespawn:FlxTimer;
+		
+		private var m_attackCount:int;
+		private var m_attackMax:int;
+		private var TIME_ATTACK:Number;
+		
+		private var m_over:Boolean = true;
 		
 		public function SqualoLeftArm(body:Enemy) 
 		{
@@ -43,6 +53,10 @@ package GameObject.Enemy.ElSqualo
 			for (var i:int = 0; i < m_spikes.length ; i++)
 				m_spikes[i].prepare();
 		}
+		
+		public function isOver():Boolean {
+			 return m_over;
+		}
 				
 		override public function update():void {
 			if (!commonEnemyUpdate())
@@ -51,6 +65,9 @@ package GameObject.Enemy.ElSqualo
 			
 			switch(m_state) {
 				case "idle" : break;
+				case "waitForAttack": if (m_timerAttack.finished)
+										attack();
+										break;
 				case "attack": if (m_timerRetract.finished) {
 									m_state = "waitRespawn";
 									m_timerWaitRespawn.start(TIME_RESPAWN);
@@ -58,12 +75,35 @@ package GameObject.Enemy.ElSqualo
 								}
 								break;
 				case "waitRespawn": if (m_timerWaitRespawn.finished) {
-										m_state = "idle";
 										for (var i:int = 0; i < m_spikes.length ; i++)
 											m_spikes[i].getBack();
+										m_attackCount++;
+										if (m_attackCount >= m_attackMax) {
+											m_state = "idle";
+											m_over = true;
+										}else {
+											m_state = "waitForAttack";
+											m_timerAttack.start(TIME_ATTACK);
+										}
+										
 									}
 									break;
 			}
+		}
+		
+		public function init(stage:int) {
+			m_attackCount = 0;
+			switch(stage) {
+				case 0 : m_attackMax = 2;
+						TIME_MIN = 2;
+						TIME_MAX = 5;
+						break;
+			}
+			
+			TIME_ATTACK = Utils.random(TIME_MIN, TIME_MAX);
+			m_timerAttack.start(TIME_ATTACK);
+			m_over = false;
+			m_state = "waitForAttack";
 		}
 				
 		///////////// OVERRIDES /////////////////
@@ -88,6 +128,12 @@ package GameObject.Enemy.ElSqualo
 			super.removeFromStage();
 			for (var i:int = 0; i < m_spikes.length; i++)
 				m_spikes[i].removeFromStage();
+		}
+		
+		public function setVisible(v:Boolean) {
+			visible = v;
+			for (var i:int = 0; i < m_spikes.length; i++)
+				m_spikes[i].visible = v;
 		}
 		
 	}

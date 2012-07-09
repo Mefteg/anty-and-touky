@@ -17,9 +17,13 @@ package GameObject.Enemy.ElSqualo
 		private var m_leftLauncher:FlxPoint;
 		private var m_rightLauncher:FlxPoint;
 		
-		private var m_missToShoot:int;
+		private var m_missToShoot:int=2;
 		private var m_currentShot:int;
 		private var m_timerShoot:FlxTimer;
+		private var m_timerFirstShoot:FlxTimer;
+		private var TIME_FIRST_SHOOT:int;
+		
+		private var m_over:Boolean = true;
 		
 		public function SqualoMissilesManager(nbPA:int,squalo:ElSqualo) 
 		{
@@ -34,14 +38,21 @@ package GameObject.Enemy.ElSqualo
 			m_squalo = squalo;
 			
 			m_timerShoot = new FlxTimer();
+			m_timerFirstShoot = new FlxTimer();
+		}
+				
+		private function shootPineapple():void {
+			m_state = "waitForShooting";
+			m_timerFirstShoot.start(TIME_FIRST_SHOOT);
+			m_currentShot = 0;
 		}
 		
-		public function shootPineapple(nb:int = 2):void {
-			m_state = "shooting";
-			m_pineapples[0].shoot(m_squalo.x + m_rightLauncher.x, m_squalo.y +m_rightLauncher.y );
-			m_missToShoot = nb;
-			m_timerShoot.start(1);
-			m_currentShot = 0;
+		private function waitForShoot():void {
+			if(m_timerFirstShoot.finished){
+				m_pineapples[0].shoot(m_squalo.x + m_rightLauncher.x, m_squalo.y +m_rightLauncher.y );
+				m_timerShoot.start(1);
+				m_state = "shooting";
+			}
 		}
 		
 		private function shooting():void {
@@ -51,15 +62,30 @@ package GameObject.Enemy.ElSqualo
 					m_pineapples[m_currentShot].shoot(m_squalo.x + m_rightLauncher.x, m_squalo.y +m_rightLauncher.y );
 				else
 					m_pineapples[m_currentShot].shoot(m_squalo.x + m_leftLauncher.x, m_squalo.y +m_leftLauncher.y );
-				if (m_currentShot >= m_missToShoot-1)
+				if (m_currentShot >= m_missToShoot-1){
 					m_state = "idle";
+					m_over = true;
+				}
 			}
 		}
 		
 		override public function update():void {
 			switch(m_state) {
+				case "waitForShooting": waitForShoot(); break;
 				case "shooting":shooting(); break;
 				default : break;
+			}
+		}
+		
+		public function init(stage:int ):void {
+			switch(stage){
+				case 0 : m_over = true;
+						break;
+				case 1 :m_missToShoot = Utils.random( 2 , 4);
+						TIME_FIRST_SHOOT = Utils.random(3, 6);
+						m_over = false;
+						shootPineapple();
+						break;
 			}
 		}
 		
@@ -90,7 +116,7 @@ package GameObject.Enemy.ElSqualo
 		}
 		
 		public function over():Boolean {
-			return m_state != "shooting";
+			return m_over;
 		}
 		
 	}
