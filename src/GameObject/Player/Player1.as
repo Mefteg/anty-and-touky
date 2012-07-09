@@ -231,7 +231,6 @@ package GameObject.Player
 			var touky:PlayableObject = Global.player2;
 			//var tiles:Array = touky.tilesOver() + touky.tilesUnder();
 			var tiles:Array = touky.tilesUnder();
-			trace(tiles.length);
 			var findRightPlace:Boolean = false;
 			var i:int = 0;
 			while ( i < tiles.length && findRightPlace == false ) {
@@ -242,7 +241,6 @@ package GameObject.Player
 					if ( this.collideWithEnv() == false ) {
 						m_state = "respawn";
 						findRightPlace = true;
-						trace("FOUND!");
 					}
 				}
 				i++;
