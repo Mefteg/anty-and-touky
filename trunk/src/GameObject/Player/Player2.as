@@ -173,6 +173,7 @@ package GameObject.Player
 					var tile:TileObject = tiles[i];
 					if ( tile.m_typeName == Hole.s_type ) {
 						Global.player1.takeDamage();
+						Global.player1.respawn();
 						Global.player1.m_state = "waitToukyPosition";
 						find = true;
 					}
@@ -182,6 +183,7 @@ package GameObject.Player
 			if (m_objectCarried.m_name == "Box") {
 				m_objectCarried.act();
 				// APPELER FONCTION RESPAWN
+				m_objectCarried.respawn();
 			}
 			m_objectCarried = null;
 		}
