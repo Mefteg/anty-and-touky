@@ -24,6 +24,8 @@ package GameObject.Enemy.ElSqualo
 			super(0, 0);
 			m_url = "Images/Enemies/ElSqualo/pineapple.png";
 			m_width = 32; m_height = 32;
+			m_invincible = true;
+			m_collideEvtFree = true;
 			//create shadow
 			m_shadow = new DrawableObject();
 			m_shadow.m_url = m_url;

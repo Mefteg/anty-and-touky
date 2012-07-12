@@ -81,8 +81,18 @@ package GameObject.Enemy.ElSqualo
 			switch(stage){
 				case 0 : m_over = true;
 						break;
-				case 1 :m_missToShoot = Utils.random( 2 , 4);
+				case 1 :m_missToShoot = Utils.random( 2 , 3);
 						TIME_FIRST_SHOOT = Utils.random(3, 6);
+						m_over = false;
+						shootPineapple();
+						break;
+				case 2 :m_missToShoot = Utils.random( 3 , 4);
+						TIME_FIRST_SHOOT = Utils.random(2, 3);
+						m_over = false;
+						shootPineapple();
+						break;
+				case 3 :m_missToShoot = Utils.random( 5 , 6);
+						TIME_FIRST_SHOOT = 1;
 						m_over = false;
 						shootPineapple();
 						break;
@@ -115,7 +125,7 @@ package GameObject.Enemy.ElSqualo
 				m_pineapples.push(new Pineapple());
 		}
 		
-		public function over():Boolean {
+		public function isOver():Boolean {
 			return m_over;
 		}
 		

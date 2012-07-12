@@ -25,6 +25,8 @@ package GameObject.Enemy.ElSqualo
 			m_width = 32; m_height = 32;
 			m_speed = 4;
 			m_state = "idle";
+			m_invincible = true;
+			m_collideEvtFree = true;
 		}
 		
 		private function moving():void {
