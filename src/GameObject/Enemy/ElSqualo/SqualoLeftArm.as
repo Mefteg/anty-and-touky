@@ -2,6 +2,9 @@ package GameObject.Enemy.ElSqualo
 {
 	import adobe.utils.CustomActions;
 	import GameObject.Enemy.Enemy;
+	import GameObject.Enemy.EnemySmoke;
+	import GameObject.PlayableObject;
+	import GameObject.Weapon.Weapon;
 	import org.flixel.FlxTimer;
 	
 	/**
@@ -10,7 +13,7 @@ package GameObject.Enemy.ElSqualo
 	 */
 	public class SqualoLeftArm extends Enemy 
 	{
-		protected var m_body:GameObject.Enemy.Enemy;
+		protected var m_body:ElSqualo;
 		
 		protected var TIME_RETRACT:int = 2;
 		protected var TIME_RESPAWN:int = 3;
@@ -27,9 +30,14 @@ package GameObject.Enemy.ElSqualo
 		private var m_attackMax:int;
 		private var TIME_ATTACK:Number;
 		
+		private var m_haldDead:Boolean = false;
 		private var m_over:Boolean = true;
 		
-		public function SqualoLeftArm(body:Enemy) 
+		private var m_currentSmoke:int = 0;
+		private var m_initY:Number;
+		public var m_dead:Boolean = false;
+		
+		public function SqualoLeftArm(body:ElSqualo) 
 		{
 			m_body = body;
 			m_url = "Images/Enemies/ElSqualo/left_arm.png";
@@ -44,6 +52,10 @@ package GameObject.Enemy.ElSqualo
 			m_timerWaitRespawn = new FlxTimer();
 			
 			m_state = "idle";
+			
+			m_smoke = EnemySmoke.Explosion();
+			m_stats.initHP(100);
+			m_speed = 1;
 		}
 		
 		override public function attack():void {
@@ -61,7 +73,10 @@ package GameObject.Enemy.ElSqualo
 		override public function update():void {
 			if (!commonEnemyUpdate())
 				return;
-			x = m_body.x + 26; y = m_body.y +16;
+			if(!m_dead){
+				x = m_body.x + 26; 
+				y = m_body.y +16;
+			}
 			
 			switch(m_state) {
 				case "idle" : break;
@@ -88,15 +103,25 @@ package GameObject.Enemy.ElSqualo
 										
 									}
 									break;
+				case "fall" : fall(); break;
+				case "dying": dying(); break;
 			}
 		}
 		
-		public function init(stage:int) {
+		public function init(stage:int) : void {
 			m_attackCount = 0;
 			switch(stage) {
 				case 0 : m_attackMax = 2;
-						TIME_MIN = 2;
-						TIME_MAX = 5;
+						TIME_MIN = 1;
+						TIME_MAX = 3;
+						break;
+				case 1 : m_attackMax = 3;
+						TIME_MIN = 0.5;
+						TIME_MAX = 2;
+						break;
+				case 2 : m_attackMax = 3;
+						TIME_MIN = 0.5;
+						TIME_MAX = 1.5;
 						break;
 			}
 			
@@ -136,6 +161,59 @@ package GameObject.Enemy.ElSqualo
 				m_spikes[i].visible = v;
 		}
 		
+		override public function takeDamage(player:PlayableObject, weapon:Weapon):void {
+			if (m_invincible || m_dead)
+				return;
+			//calculate damage
+			var damage:int = weapon.m_power ;
+			//substract damage to hp
+			m_stats.m_hp_current -= damage;
+			if ( ! m_haldDead && m_stats.m_hp_current < m_stats.m_hp_max / 2 ) {
+				m_haldDead = true;
+				m_smoke.playSmoke(x, y);
+				m_body.changeState(1);
+			}
+			m_FXhit.play();
+			//check death
+			if (m_stats.m_hp_current <= 0) {
+				if(!Global.soloPlayer)
+					m_killer = player;
+				m_state = "fall";
+				m_initY = y;
+				m_direction.y = 1;
+				m_body.changeState(2);
+				m_body.loseArm(true);
+				m_timerDeath.start(1);
+				m_dead = true;
+			}
+			//for twinkling
+			changeTwinkleColor(_twinkleHit);
+			beginTwinkle(3, 0.3);
+		}
+		
+		private function fall():void {
+			move();
+			if (y > m_initY + 20)
+				die();
+		}
+		
+		override public function die():void {
+			m_state = "dying";
+			m_smoke.playSmoke(x+10, y + 40);
+		}
+		
+		private function dying():void {
+			if (m_smoke.finished) {
+				m_currentSmoke ++;
+				if (m_currentSmoke < 5) {
+					m_smoke.playSmoke(x + 10, y + 40 - m_currentSmoke * 10);
+					alpha -= 0.1;
+				}else {
+					removeFromStage();
+				}
+					
+			}
+		}
 	}
 
 }

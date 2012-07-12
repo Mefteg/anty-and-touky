@@ -3,6 +3,9 @@ package GameObject.Enemy.ElSqualo
 	import com.adobe.protocols.dict.events.ConnectedEvent;
 	import flash.geom.Rectangle;
 	import GameObject.Enemy.Enemy;
+	import GameObject.Enemy.EnemySmoke;
+	import GameObject.PlayableObject;
+	import GameObject.Weapon.Weapon;
 	import org.flixel.FlxG;
 	import org.flixel.FlxPoint;
 	import org.flixel.FlxTimer;
@@ -23,6 +26,11 @@ package GameObject.Enemy.ElSqualo
 		
 		private var m_stage:int = 0;
 		
+		private var m_dead:Boolean = false;
+		
+		private var m_tabExplode:Array;
+		private var m_currentExplosion:int;
+		
 		public function ElSqualo(X:Number, Y:Number,areaWidth:int,areaHeight:int) 
 		{
 			super(X, Y);
@@ -32,7 +40,12 @@ package GameObject.Enemy.ElSqualo
 			m_leftArm = new SqualoLeftArm(this);
 			m_area = new Rectangle(X, Y, areaWidth, areaHeight);
 			m_missilesManager = new SqualoMissilesManager(NB_PINEAPPLES, this);
+			m_invincible = true;
+			m_tabExplode = new Array( new FlxPoint(0, 0), new FlxPoint(40, 10), new FlxPoint(10, 60), new FlxPoint(30, 30), new FlxPoint(10, 10) );
 			m_state = "onGround";
+			m_smoke = EnemySmoke.Explosion();
+			m_collideEvtFree = true;
+			m_stats.initHP(120);
 		}
 		
 		private function jump():void {
@@ -52,7 +65,9 @@ package GameObject.Enemy.ElSqualo
 		private function inAir():void {
 			if (m_timerAttack.finished) {
 				m_direction.y = 1;
+				x = getRandomPlayer().x;
 				m_state = "goDown";
+				m_speed = 5;
 				setVisible(true);
 			}
 		}
@@ -72,30 +87,47 @@ package GameObject.Enemy.ElSqualo
 		}
 		
 		override public function update():void {
-			/*if (FlxG.keys.justPressed("R"))
-				m_rightArm.attack();
-			if (FlxG.keys.justPressed("L"))
-				m_leftArm.attack();
-			if (FlxG.keys.justPressed("P"))
-				m_missilesManager.init(1);
-			if (FlxG.keys.justPressed("J"))
-				jump();
-				*/
+			commonEnemyUpdate();
 			switch(m_state) {
 				case "onGround": onGround(); break;
 				case "jumping" : jumping(); break;
 				case "inAir":inAir(); break;
 				case "goDown":goDown(); break;
+				case "dying": dying(); break;
 				default : break;
 			}
 		}
 		
 		private function initActions():void {
 			m_missilesManager.init(m_stage);
-			if(m_leftArm)
+			if(!m_leftArm.m_dead)
 				m_leftArm.init(m_stage);
-			if (m_rightArm)
+			if (!m_rightArm.m_dead)
 				m_rightArm.init(m_stage);
+		}
+		
+		public function changeState(i:int) : void {
+			if (i > m_stage)
+				m_stage = i;
+			else if (m_stage == 2 && i == 2){
+				m_stage = 3;
+				jump();
+				m_invincible = false;
+			}
+		}
+		
+		public function loseArm(left:Boolean):void {
+			if (left)
+				if (m_rightArm.m_dead)
+					frame = 3;
+				else
+					frame = 2;
+					
+			else
+				if (m_leftArm.m_dead)
+					frame = 3;
+				else
+					frame = 1;
 		}
 		
 		////////////////////////////////////////////////////////////
@@ -124,19 +156,54 @@ package GameObject.Enemy.ElSqualo
 		
 		private function setVisible(vis:Boolean) {
 			visible = vis;
-			if (m_rightArm)
+			if (!m_rightArm.m_dead)
 				m_rightArm.visible = vis;
-			if (m_leftArm)
+			if (!m_leftArm.m_dead)
 				m_leftArm.setVisible(vis);
 		}
 		
 		private function actionsOver():Boolean {
+			if (m_stage == 3)
+				return m_missilesManager.isOver();
 			var over:Boolean = true;
-			if (m_rightArm) 
+			if (!m_rightArm.m_dead) 
 				over =  over && m_rightArm.isOver();
-			if (m_leftArm)
+			if (!m_leftArm.m_dead)
 				over = over && m_leftArm.isOver();	
 			return over;
+		}
+		
+		override public function takeDamage(player:PlayableObject, weapon:Weapon):void {
+			if (m_invincible || m_dead)
+				return;
+			//calculate damage
+			var damage:int = weapon.m_power ;
+			//substract damage to hp
+			m_stats.m_hp_current -= damage;
+			m_FXhit.play();
+			//check death
+			if (m_stats.m_hp_current <= 0) {
+				if(!Global.soloPlayer)
+					m_killer = player;
+				m_timerDeath.start(1);
+				m_dead = true;
+				m_state = "dying";
+				m_smoke.playSmoke(x + m_width / 2, y + m_height / 2);
+			}
+			//for twinkling
+			changeTwinkleColor(_twinkleHit);
+			beginTwinkle(3, 0.3);
+		}
+		
+		protected function dying():void {
+			if (m_smoke.finished) {
+				m_smoke.playSmoke(x + m_tabExplode[m_currentExplosion].x, y + m_tabExplode[m_currentExplosion].y);
+				m_currentExplosion ++;
+				if (m_currentExplosion >= m_tabExplode.length){
+					removeFromStage();
+					Global.currentPlaystate.end();
+				}
+			}
 		}
 	}
 

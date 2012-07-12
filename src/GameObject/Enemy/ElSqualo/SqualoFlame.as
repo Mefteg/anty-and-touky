@@ -15,6 +15,8 @@ package GameObject.Enemy.ElSqualo
 		var m_targetPos:FlxPoint;
 		var FLAME_OFFSET:int = 10;
 		
+		var m_arrived:Boolean = false;
+		
 		public function SqualoFlame(id:int,arm:SqualoRightArm) 
 		{
 			super(80, 80);
@@ -24,25 +26,28 @@ package GameObject.Enemy.ElSqualo
 			m_arm = arm;
 			m_id = id;
 			m_state = "idle";
+			
+			m_invincible = true;
 		}
 		
 		public function moveTo(target:FlxPoint):void {
 			m_state = "movingTo";
 			m_targetPos = target;
 			goToPoint(m_targetPos);
+			m_arrived = false;
 			m_speed = 5;
 		}
 		
 		private function movingTo():void {
-			if (isArrived()){
+			if (isArrived())
 				m_state = "idle";
-			}
-			
 			goToPoint(m_targetPos);
 			move();
 		}
 		
 		private function isArrived():Boolean {
+			if (m_arrived)
+				return true;
 			if (x < m_targetPos.x +1 && x > m_targetPos.x-1 && y<m_targetPos.y+1 && y>m_targetPos.y-1)
 				return true;
 			return false;
@@ -61,6 +66,26 @@ package GameObject.Enemy.ElSqualo
 			addAnimation("burn", [0, 1], 10, true);
 			play("burn");
 		}
+		
+		override public function move() : void {
+			m_oldPos.x= this.x;
+			m_oldPos.y = this.y;
+			
+			this.x = this.x + (m_direction.x * m_speed);
+			this.y = this.y + (m_direction.y * m_speed);
+			
+			if(!m_collideEvtFree){
+				if ( this.collideWithEnv() ) {
+					m_arrived = true;
+					this.x = m_oldPos.x;
+				}
+				if ( this.collideWithEnv() ) {
+					m_arrived = true;
+					this.y = m_oldPos.y;
+				}
+			}
+		}
+		
 	}
 
 }

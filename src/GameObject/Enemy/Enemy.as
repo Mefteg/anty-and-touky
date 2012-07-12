@@ -49,6 +49,7 @@ package GameObject.Enemy
 		protected var m_killer:PlayableObject;
 		
 		protected var m_invincible:Boolean = false;
+		protected var m_collideEvtFree:Boolean = false;
 		
 		public function Enemy(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
@@ -210,14 +211,13 @@ package GameObject.Enemy
 			this.x = this.x + (m_direction.x * m_speed);
 			this.y = this.y + (m_direction.y * m_speed);
 			
-			if ( this.collideWithEnv() ) {
-				this.x = m_oldPos.x;
-			}
-			if ( this.collideWithEnv() ) {
-				this.y = m_oldPos.y;
-			}
-			else {
-				//m_state = "lookfor";
+			if(!m_collideEvtFree){
+				if ( this.collideWithEnv() ) {
+					this.x = m_oldPos.x;
+				}
+				if ( this.collideWithEnv() ) {
+					this.y = m_oldPos.y;
+				}
 			}
 			
 			if (m_direction.x < 0) facing = LEFT;
