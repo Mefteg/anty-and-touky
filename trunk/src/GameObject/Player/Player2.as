@@ -258,7 +258,7 @@ package GameObject.Player
 					m_state = "walk";
 				move();
 			}else {
-				if(m_state != "throw")
+				if(m_state != "throw" && m_state != "waitForAttack2")
 					m_state = "idle";
 			}
 		}
@@ -307,7 +307,7 @@ package GameObject.Player
 					m_state = "walk";
 				move();
 			}else {
-				if(m_state != "throw")
+				if(m_state != "throw" && m_state != "waitForAttack2")
 					m_state = "idle";
 			}
 		}
