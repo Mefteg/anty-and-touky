@@ -1,5 +1,6 @@
 package GameObject.Enemy.ElSqualo 
 {
+	import flash.geom.Rectangle;
 	import GameObject.GameObject;
 	import org.flixel.FlxPoint;
 	import org.flixel.FlxTimer;
@@ -30,17 +31,18 @@ package GameObject.Enemy.ElSqualo
 			super();
 			visible = false;
 			NB_PINEAPPLES = nbPA;
-			createPineapple();
 			
 			m_leftLauncher = new FlxPoint();
 			m_rightLauncher = new FlxPoint(30,0);
 			
 			m_squalo = squalo;
 			
+			createPineapple();
+			
 			m_timerShoot = new FlxTimer();
 			m_timerFirstShoot = new FlxTimer();
 		}
-				
+						
 		private function shootPineapple():void {
 			m_state = "waitForShooting";
 			m_timerFirstShoot.start(TIME_FIRST_SHOOT);
@@ -50,7 +52,7 @@ package GameObject.Enemy.ElSqualo
 		private function waitForShoot():void {
 			if(m_timerFirstShoot.finished){
 				m_pineapples[0].shoot(m_squalo.x + m_rightLauncher.x, m_squalo.y +m_rightLauncher.y );
-				m_timerShoot.start(1);
+				m_timerShoot.start(0.4);
 				m_state = "shooting";
 			}
 		}
@@ -62,6 +64,7 @@ package GameObject.Enemy.ElSqualo
 					m_pineapples[m_currentShot].shoot(m_squalo.x + m_rightLauncher.x, m_squalo.y +m_rightLauncher.y );
 				else
 					m_pineapples[m_currentShot].shoot(m_squalo.x + m_leftLauncher.x, m_squalo.y +m_leftLauncher.y );
+				m_timerShoot.start(0.4);
 				if (m_currentShot >= m_missToShoot-1){
 					m_state = "idle";
 					m_over = true;
@@ -98,7 +101,6 @@ package GameObject.Enemy.ElSqualo
 						break;
 			}
 		}
-		
 		//////////   OVERRIDES    ///////////////::
 		override public function load():void {
 			super.load();
@@ -122,7 +124,7 @@ package GameObject.Enemy.ElSqualo
 		public function createPineapple():void {
 			m_pineapples = new Array();
 			for (var i:int = 0 ; i < NB_PINEAPPLES ; i++)
-				m_pineapples.push(new Pineapple());
+				m_pineapples.push(new Pineapple(m_squalo.m_area));
 		}
 		
 		public function isOver():Boolean {
