@@ -78,7 +78,7 @@ package GameObject
 		{
 			super(X, Y, SimpleGraphic);
 			m_thresoldScore += m_thresoldDelta;
-			m_speed = 1.5;
+			m_speed = 1.9;
 			m_typeName = "Player";
 			m_width = 48;
 			m_height = 48;
@@ -161,7 +161,7 @@ package GameObject
 		}
 		
 		public function isAttacking():Boolean {
-			return (m_state == "attack") || (m_state == "attack2") || (m_state == "waitForAttack2") ;
+			return (m_state == "attack") || (m_state == "attack2") || (m_state == "waitForAttack2" && finished) ;
 		}
 		
 		public function isRushing():Boolean {
@@ -183,10 +183,10 @@ package GameObject
 			}
 			//place weapon
 			switch(facing) {
-				case UP : getWeapon().place(x,y - getWeapon().m_height); break;
-				case DOWN :getWeapon().place(x,y+m_height); break;
-				case RIGHT :getWeapon().place(x+m_width, y); break;
-				case LEFT :getWeapon().place( x-getWeapon().m_width,y); break;
+				case UP : getWeapon().place(x+12,y-5); break;
+				case DOWN :getWeapon().place(x+12,y+35); break;
+				case RIGHT :getWeapon().place(x+45, y+15); break;
+				case LEFT :getWeapon().place( x-24,y+15); break;
 			}
 		}
 		
@@ -238,8 +238,9 @@ package GameObject
 								}
 								break;
 				case "waitForAttack2": if (m_timerAttack2.finished) { 
-					m_state = "idle"; 
-					getWeapon().Idleize(); } break;
+											m_state = "idle"; 
+											getWeapon().Idleize(); 
+										} break;
 				case "attack2" : if (finished) { m_state = "idle"; getWeapon().Idleize();} break;
 				case "idle":  break;
 				case "throw": if (finished){
