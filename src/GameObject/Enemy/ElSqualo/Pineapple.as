@@ -1,5 +1,6 @@
 package GameObject.Enemy.ElSqualo 
 {
+	import flash.geom.Rectangle;
 	import GameObject.DrawableObject;
 	import GameObject.Enemy.Enemy;
 	import GameObject.Enemy.EnemySmoke;
@@ -19,9 +20,12 @@ package GameObject.Enemy.ElSqualo
 		private var m_lastTrailY:int;
 		private var OFFSET_TRAIL:int = 15;
 		
-		public function Pineapple() 
+		private var m_area:Rectangle;
+		
+		public function Pineapple(area:Rectangle) 
 		{
 			super(0, 0);
+			m_area = area;
 			m_url = "Images/Enemies/ElSqualo/pineapple.png";
 			m_width = 32; m_height = 32;
 			m_invincible = true;
@@ -49,12 +53,10 @@ package GameObject.Enemy.ElSqualo
 			m_goSmoke.playSmoke(x-8, y-16);
 			frame = 2;
 			m_speed = 8;
-			m_target = getRandomPlayer();
 			//SHADOW
 			
-			var rangeX:int = Utils.random( -40, 40);
-			var rangeY:int = Utils.random( -40, 40);
-			m_shadow.place(m_target.x+rangeX, m_target.y + rangeY);
+			var targetGround = getRandomTarget();
+			m_shadow.place(targetGround.x, targetGround.y);
 		}
 		
 		override public function update():void {
@@ -141,6 +143,23 @@ package GameObject.Enemy.ElSqualo
 			m_trail = new Array();
 			for (var i:int = 0; i < 10; i++)
 				m_trail.push(new PineappleSteam());
+		}
+		
+		private function getRandomTarget():FlxPoint {
+			var target:FlxPoint = new FlxPoint();
+			
+			var chance:Number = Utils.random(0, 100);
+			if(chance < 30){
+				target.x = Utils.random(m_area.left, m_area.right);
+				target.y = Utils.random(m_area.top, m_area.bottom);
+			}else{
+				m_target = getRandomPlayer();
+				var rangeX:int = Utils.random( -40, 40);
+				var rangeY:int = Utils.random( -40, 40);
+				target.x = m_target.x + rangeX;
+				target.y = m_target.y + rangeY;
+			}
+			return target;
 		}
 	}
 

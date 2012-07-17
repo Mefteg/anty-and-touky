@@ -22,9 +22,9 @@ package GameObject.Enemy.ElSqualo
 		
 		protected var NB_PINEAPPLES:int = 6;
 		
-		private var m_area:Rectangle;
+		public var m_area:Rectangle;
 		
-		private var m_stage:int = 0;
+		private var m_stage:int = 3;
 		
 		private var m_dead:Boolean = false;
 		
