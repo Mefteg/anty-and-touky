@@ -2,6 +2,7 @@ package GameObject.Other
 {
 	import GameObject.PhysicalObject;
 	import GameObject.PlayableObject;
+	import org.flixel.FlxPoint;
 	
 	/**
 	 * ...
@@ -9,13 +10,15 @@ package GameObject.Other
 	 */
 	public class Door extends PhysicalObject 
 	{
+		protected var m_respawnOffset:FlxPoint;
 		
-		public function Door(X:Number, Y:Number, name:String ) 
+		public function Door(X:Number, Y:Number, name:String, respawn:String ) 
 		{
 			super(X, Y);
 			m_url = "Images/Others/spikes.png";
 			m_name = name;
 			m_width = 48; m_height = 48;
+			computeRespawnPoint(respawn);			
 		}
 		override public function addToStage():void {
 			Global.currentPlaystate.addPhysical(this as PhysicalObject);
@@ -46,7 +49,21 @@ package GameObject.Other
 		
 		private function replace(player:PlayableObject):void {
 			player.takeDamage();
-			player.place(x + m_width + 1, y);
+			player.place(m_respawnOffset.x,m_respawnOffset.y);
+		}
+		
+		private function computeRespawnPoint(respawn:String):void {
+			switch(respawn) {
+				case "right": m_respawnOffset = new FlxPoint(x + m_width + 1, y);
+					break;
+				case "left": m_respawnOffset = new FlxPoint( x - 50, y);
+					break;
+				case "down": m_respawnOffset = new FlxPoint(x, y+m_height+1);
+					break;
+				case "up": m_respawnOffset = new FlxPoint(x, y-50);
+					break;
+				default :  m_respawnOffset = new FlxPoint(x + m_width + 1, y);
+			}
 		}
 	}
 

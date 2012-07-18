@@ -56,7 +56,9 @@ package GameObject.Other
 		
 		override public function update():void {
 			switch(m_state){
-				case "idle" :if (!m_active && collide(Global.player1)){
+				case "idle" :if (!m_active && collide(Global.player1)) {
+								if (!Global.player1.visible)
+									return;
 								act();
 							}else if (m_active && !collide(Global.player1)) {
 								m_state = "timer";

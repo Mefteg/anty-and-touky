@@ -63,6 +63,7 @@ package
 		protected var m_controlButton:FlxButton;
 		protected var m_controlsPanel:FlxSprite;
 		protected var m_controlShown:Boolean = false;
+		protected var m_panelPath:String;
 		
 		//texts
 		protected var m_textLife1:FlxText;
@@ -113,7 +114,11 @@ package
 			//loading control panel
 			m_controlsPanel = new FlxSprite(0, 0);
 			m_controlsPanel.scrollFactor = new FlxPoint(0, 0);
-			m_library.addUniqueBitmap("Images/Menu/controlpanel.png");
+			if (Global.nbPlayers == 1)
+				m_panelPath = "Images/Menu/controlpanelsolo.png";
+			else
+				m_panelPath = "Images/Menu/controlpanel.png";
+			m_library.addUniqueBitmap(m_panelPath);
 			FlxG.mouse.show();
 			m_timerEnd = new FlxTimer();
 			
@@ -166,8 +171,8 @@ package
 			depthBuffer.addElement(m_ladyBug, DepthBuffer.s_cursorGroup);
 			depthBuffer.addElement(m_rectLadyBug, DepthBuffer.s_cursorGroup);
 			m_sceneManager = new SceneManager();
-			//m_sceneManager.loadScene("Maps/W1M1.json");
-			m_sceneManager.loadScene("Maps/test2.json");
+			m_sceneManager.loadScene("Maps/W1M1.json");
+			//m_sceneManager.loadScene("Maps/test2.json");
 			//m_sceneManager.loadScene("Maps/W1M3.json");
 			m_state = "Loading";
 			//creating player 1
@@ -234,7 +239,7 @@ package
 					m_menu_p1.load();
 					Global.player2.load();
 					m_menu_p2.load();
-					m_controlsPanel.loadGraphic2(m_library.getBitmap("Images/Menu/controlpanel.png"));
+					m_controlsPanel.loadGraphic2(m_library.getBitmap(m_panelPath));
 					m_pauseButton.loadGraphic2(m_library.getBitmap("Images/Menu/pauseButton.png"), false, false, 16, 16);
 					m_controlButton.loadGraphic2(m_library.getBitmap("Images/Menu/toolButton.png"), false, false, 16, 16);
 					m_uniquesLoaded = true;
