@@ -1,5 +1,6 @@
 package GameObject.Enemy 
 {
+	import org.flixel.FlxPoint;
 	/**
 	 * ...
 	 * @author ...
@@ -17,6 +18,7 @@ package GameObject.Enemy
 			setHitbox(5, 7, 18, 17);
 			m_canGoThrough = false;
 			m_points = 10;
+			m_smoke.scale = new FlxPoint(0.8, 0.8);
 		}
 		
 		override public function load():void {

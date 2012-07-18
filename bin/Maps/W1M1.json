@@ -119,7 +119,7 @@
                  "name":"Door1",
                  "properties":
                     {
-
+                     "respawn":"up"
                     },
                  "type":"Door",
                  "width":0,

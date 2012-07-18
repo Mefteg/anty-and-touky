@@ -60,7 +60,7 @@ package GameObject
 				case "Chest" : return new GameObject.Item.Chest(object.x, object.y,object.properties.item,object.properties.quantity,object.properties.collected); break;
 				case "Box": return new GameObject.Other.Box(object.x, object.y); break;
 				case "BoxHole": return new GameObject.Other.BoxHole(object.x, object.y, object.properties.door); break;
-				case "Door" : return new Door(object.x, object.y, object.name); break;
+				case "Door" : return new Door(object.x, object.y, object.name,object.properties.respawn); break;
 				case "Switch": return new Switch(object.x, object.y, object.properties.door,object.properties.time); break;
 				//triggers
 				case "TriggerWarp": return new GameObject.Trigger.TriggerWarp(object.x, object.y, null,object.properties.url,object.properties.respawn, object.width, object.height); break;
