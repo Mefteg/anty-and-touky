@@ -65,6 +65,8 @@ package GameObject.Menu
 
 			m_cursor.m_firstButton = button1;
 			m_cursor.m_currentButton = button1;
+			
+			var mvcButton:MVCButton = new MVCButton();
 		}
 		
 	}

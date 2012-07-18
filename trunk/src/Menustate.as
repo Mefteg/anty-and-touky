@@ -3,6 +3,7 @@ package
 	import flash.display.MovieClip;
 	import GameObject.DrawableObject;
 	import GameObject.Menu.MenuBegin;
+	import GameObject.Menu.MVCButton;
 	import org.flixel.FlxG;
 	import org.flixel.FlxSound;
 	import org.flixel.FlxSprite;
@@ -36,6 +37,8 @@ package
 		
 		private var m_menuAppeared:Boolean = false;
 		private var m_ending:Boolean = false;
+		
+		protected var m_mvcButton:MVCButton;
 
 		public function Menustate()
 		{
@@ -62,6 +65,11 @@ package
 			m_trailer.scaleX = 0.6;
 			m_trailer.scaleY = 0.6;
 			m_trailer.scaleZ = 0.6;*/
+			
+			m_mvcButton = new MVCButton();
+			depthBuffer.addElement(m_mvcButton, DepthBuffer.s_menuGroup);
+			
+			FlxG.mouse.show();
 		}
 		
 		override public function create() : void {
@@ -69,7 +77,8 @@ package
 			m_menuBegin = new MenuBegin();
 			m_menuBegin.addToStage();
 			m_timer = new FlxTimer();
-			m_timer.start(12);
+			//m_timer.start(12);
+			m_timer.start(1);
 			m_screenFade.alpha = 1;
 			//LADYBUG
 			depthBuffer.addElement(m_ladyBug, DepthBuffer.s_cursorGroup);
