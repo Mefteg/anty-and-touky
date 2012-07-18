@@ -13,13 +13,39 @@ package GameObject.Menu
 			
 		}
 		
+		public function onOver(button:MyButton) : void {
+			var action:String = button.m_name;
+			switch ( action ) {
+				default:
+					this.onOverButton(button);
+					break;
+			}
+		}
+		
+		public function onOut(button:MyButton) : void {
+			var action:String = button.m_name;
+			switch ( action ) {
+				default:
+					this.onOutButton(button);
+					break;
+			}
+		}
+		
+		public function onClick(button:MyButton) : void {
+			var action:String = button.m_name;
+			switch ( action ) {
+				case "start":
+					this.onClickStart(button);
+					break;
+				default:
+					this.onClickButton(button);
+					break;
+			}
+		}
+		
 		public function updatePrint() : void {
 			m_view.clear();
 			m_view.print();
-		}
-		
-		public function mouseIsOver() : void {
-			m_view.changeBackgroundColor();
 		}
 		
 		public function setModel(model:Model) : void {
@@ -28,6 +54,26 @@ package GameObject.Menu
 		
 		public function setView(view:View) : void {
 			m_view = view;
+		}
+		
+		/////////////
+		// ACTIONS //
+		/////////////
+		
+		protected function onOverButton(button:MyButton) : void {
+			m_view.changeToColorOver(button);
+		}
+		
+		protected function onOutButton(button:MyButton) : void {
+			m_view.changeToColorOut(button);
+		}
+		
+		protected function onClickButton(button:MyButton) : void {
+			trace("CLICKBUTTON");
+		}
+		
+		protected function onClickStart(button:MyButton) : void {
+			trace("CLICKSTART");
 		}
 	}
 
