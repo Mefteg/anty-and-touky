@@ -66,7 +66,7 @@ package
 			m_trailer.scaleY = 0.6;
 			m_trailer.scaleZ = 0.6;*/
 			
-			m_mvcButton = new MVCButton();
+			m_mvcButton = new MVCButton("Menu/menustate.xml");
 			depthBuffer.addElement(m_mvcButton, DepthBuffer.s_menuGroup);
 			
 			FlxG.mouse.show();

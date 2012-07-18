@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-	<button positionx="0" positiony="0" sizex="100" sizey="20" name="start" label="Start!"/>
-	<button positionx="0" positiony="20" sizex="100" sizey="20" name="options" label="Options!"/>
+	<item type="button" positionx="0" positiony="0" sizex="100" sizey="20" name="start" label="Start!"/>
+	<item type="button" positionx="0" positiony="20" sizex="100" sizey="20" name="options" label="Options!"/>
 </data>

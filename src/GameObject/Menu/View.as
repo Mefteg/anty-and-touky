@@ -14,36 +14,34 @@ package GameObject.Menu
 		protected var m_model:Model;
 		protected var m_controler:Controler;
 		
-		protected var m_loadXml:LoadXml;
-		
+		protected var m_infos:Array;
 		protected var m_buttons:Array;
 		
-		protected var m_start:MyButton;
-		
 		public function View() {
+			m_infos = new Array();
 			m_buttons = new Array();
-			// Récuperer le xml et créer les boutons
-			m_loadXml = new LoadXml("Menu/menustate.xml");
 		}
 		
 		override public function update() : void {
-			if ( m_loadXml.isComplete() ) {
+			if ( m_infos.length > 0 ) {
 				if ( m_buttons.length == 0 ) {
 					// creer les boutons
-					var data:XML = m_loadXml.m_xml;
-					var buttons:XMLList = data.elements();
-					trace(buttons.length());
-					for ( var i:int = 0; i < buttons.length(); i++ ) {
-						var button:XML = buttons[i];
-						var pos:FlxPoint = new FlxPoint(button.@positionx, button.@positiony);
-						var size:FlxPoint = new FlxPoint(button.@sizex, button.@sizey);
-						var name = button.@name;
-						var label = button.@label;
+					for ( var i:int = 0; i < m_infos.length; i++ ) {
+						var type:String = m_infos[i]["type"];
+						var pos:FlxPoint = m_infos[i]["position"];
+						var size:FlxPoint = m_infos[i]["size"];
+						var name:String = m_infos[i]["name"];
+						var label:String = m_infos[i]["label"];
 						
-						var mybutton = new MyButton(pos, size, name, label);
-						m_buttons.push(mybutton);
-						Global.currentState.depthBuffer.addElement(mybutton, DepthBuffer.s_menuGroup);
-						
+						switch ( type ) {
+							case "button":
+								var mybutton = new MyButton(pos, size, name, label);
+								m_buttons.push(mybutton);
+								Global.currentState.depthBuffer.addElement(mybutton, DepthBuffer.s_menuGroup);
+								break;
+							default:
+								break;
+						}
 					}
 				}
 				
@@ -115,6 +113,10 @@ package GameObject.Menu
 		
 		public function changeToColorOut(button:MyButton) : void {
 			button.fill(FlxG.WHITE);
+		}
+		
+		public function setInfos(_infos:Array) : void {
+			m_infos = _infos;
 		}
 		
 		public function setModel(model:Model) : void {
