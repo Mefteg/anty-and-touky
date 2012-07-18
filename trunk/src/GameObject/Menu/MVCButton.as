@@ -14,7 +14,7 @@ package GameObject.Menu
 		
 		public function MVCButton() 
 		{
-			m_model = new Model(new FlxPoint(), new FlxPoint(100, 50), "test");
+			m_model = new Model(new FlxPoint(), new FlxPoint(100, 20), "test");
 			m_view = new View();
 			m_controler = new Controler();
 			
@@ -25,8 +25,6 @@ package GameObject.Menu
 			m_controler.setView(m_view);
 			
 			Global.currentState.depthBuffer.addElement(m_view, DepthBuffer.s_menuGroup);
-			
-			m_controler.updatePrint();
 		}
 		
 	}
