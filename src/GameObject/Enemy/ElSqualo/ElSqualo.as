@@ -24,7 +24,7 @@ package GameObject.Enemy.ElSqualo
 		
 		public var m_area:Rectangle;
 		
-		private var m_stage:int = 3;
+		private var m_stage:int = 0;
 		
 		private var m_dead:Boolean = false;
 		
