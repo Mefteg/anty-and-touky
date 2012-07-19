@@ -26,23 +26,7 @@ package GameObject.Menu
 			if ( m_infos.length > 0 ) {
 				if ( m_buttons.length == 0 ) {
 					// creer les boutons
-					for ( var i:int = 0; i < m_infos.length; i++ ) {
-						var type:String = m_infos[i]["type"];
-						var pos:FlxPoint = m_infos[i]["position"];
-						var size:FlxPoint = m_infos[i]["size"];
-						var name:String = m_infos[i]["name"];
-						var label:String = m_infos[i]["label"];
-						
-						switch ( type ) {
-							case "button":
-								var mybutton = new MyButton(pos, size, name, label);
-								m_buttons.push(mybutton);
-								Global.currentState.depthBuffer.addElement(mybutton, DepthBuffer.s_menuGroup);
-								break;
-							default:
-								break;
-						}
-					}
+					this.createButtons();
 				}
 				
 				for ( var i:int = 0; i < m_buttons.length; i++ ) {
@@ -51,7 +35,26 @@ package GameObject.Menu
 			}
 		}
 		
-		protected function checkButton(button:MyButton) {
+		protected function createButtons() : void {
+			for ( var i:int = 0; i < m_infos.length; i++ ) {
+				var type:String = m_infos[i]["type"];
+				var pos:FlxPoint = m_infos[i]["position"];
+				var size:FlxPoint = m_infos[i]["size"];
+				var name:String = m_infos[i]["name"];
+				var label:String = m_infos[i]["label"];
+				
+				switch ( type ) {
+					case "button":
+						var mybutton:MyButton = new MyButton(pos, size, name, label);
+						m_buttons.push(mybutton);
+						break;
+					default:
+						break;
+				}
+			}
+		}
+		
+		protected function checkButton(button:MyButton) : void {
 			if ( isOver(button) ) {
 				m_controler.onOver(button);
 			}
@@ -68,14 +71,14 @@ package GameObject.Menu
 		protected function isOver(button:MyButton) : Boolean {
 			var isOver:Boolean = false;
 			
-			var pos:FlxPoint = m_model.getPosition();
-			var size:FlxPoint = m_model.getSize();
+			var pos:FlxPoint = button.m_position;
+			var size:FlxPoint = button.m_size;
 			
 			var mouseX:int = FlxG.mouse.screenX;
 			var mouseY:int = FlxG.mouse.screenY;
 			
-			if ( mouseX > button.x + pos.x && mouseX < button.x + pos.x + size.x ) {
-				if ( mouseY > button.y + pos.y && mouseY < button.y + pos.y + size.y ) {
+			if ( mouseX > pos.x && mouseX < pos.x + size.x ) {
+				if ( mouseY > pos.y && mouseY < pos.y + size.y ) {
 					isOver = true;
 				}
 			}
@@ -108,11 +111,11 @@ package GameObject.Menu
 		}
 		
 		public function changeToColorOver(button:MyButton) : void {
-			button.fill(FlxG.BLACK);
+			button.changeBackgroundColor(FlxG.BLACK);
 		}
 		
 		public function changeToColorOut(button:MyButton) : void {
-			button.fill(FlxG.WHITE);
+			button.changeBackgroundColor(FlxG.WHITE);
 		}
 		
 		public function setInfos(_infos:Array) : void {
