@@ -7,6 +7,8 @@ package
 	import GameObject.Other.BoxHole;
 	import GameObject.Other.Door;
 	import GameObject.PhysicalObject;
+	import GameObject.Tile.Hole;
+	import GameObject.TileObject;
 	import Scene.CollisionManager;
 	import Scene.CutScene.CutScene;
 	import flash.display.Stage;
@@ -359,6 +361,11 @@ package
 				return;
 			if (Global.soloPlayer.m_state == "respawn")
 				return;
+			var tiles:Array = Global.soloPlayer.tilesUnder();
+			for each (var tile:TileObject in tiles) {
+				if (tile.m_typeName == Hole.s_type)
+					return;
+			}
 			if (Global.soloPlayer.m_name == Global.player1.m_name){
 				Global.soloPlayer = Global.player2;
 				Global.soloPlayer.visible = true;
