@@ -9,7 +9,7 @@ package GameObject.Menu
 	 * ...
 	 * @author ...
 	 */
-	public class View extends FlxBasic
+	public class View extends FlxBasic implements ViewInterface
 	{
 		protected var m_model:Model;
 		protected var m_controler:Controler;
@@ -35,17 +35,13 @@ package GameObject.Menu
 			}
 		}
 		
-		protected function createButtons() : void {
+		public function createButtons() : void {
 			for ( var i:int = 0; i < m_infos.length; i++ ) {
 				var type:String = m_infos[i]["type"];
-				var pos:FlxPoint = m_infos[i]["position"];
-				var size:FlxPoint = m_infos[i]["size"];
-				var name:String = m_infos[i]["name"];
-				var label:String = m_infos[i]["label"];
 				
 				switch ( type ) {
 					case "button":
-						var mybutton:MyButton = new MyButton(pos, size, name, label);
+						var mybutton:MyButton = new MyButton(m_infos[i]);
 						m_buttons.push(mybutton);
 						break;
 					default:
@@ -54,7 +50,7 @@ package GameObject.Menu
 			}
 		}
 		
-		protected function checkButton(button:MyButton) : void {
+		public function checkButton(button:MyButton) : void {
 			if ( isOver(button) ) {
 				m_controler.onOver(button);
 			}
@@ -68,7 +64,7 @@ package GameObject.Menu
 			}
 		}
 		
-		protected function isOver(button:MyButton) : Boolean {
+		public function isOver(button:MyButton) : Boolean {
 			var isOver:Boolean = false;
 			
 			var pos:FlxPoint = button.m_position;
@@ -86,11 +82,11 @@ package GameObject.Menu
 			return isOver;
 		}
 		
-		protected function isOut(button:MyButton) : Boolean {
+		public function isOut(button:MyButton) : Boolean {
 			return !this.isOver(button);
 		}
 		
-		protected function isClicked(button:MyButton) : Boolean {
+		public function isClicked(button:MyButton) : Boolean {
 			var isClicked:Boolean = false;
 			
 			if ( this.isOver(button) && FlxG.mouse.justPressed() ) {
@@ -111,11 +107,13 @@ package GameObject.Menu
 		}
 		
 		public function changeToColorOver(button:MyButton) : void {
-			button.changeBackgroundColor(FlxG.BLACK);
+			button.changeBackgroundColor(button.m_backgroundOnOver);
+			button.changeTextColor(button.m_textOnOver);
 		}
 		
 		public function changeToColorOut(button:MyButton) : void {
-			button.changeBackgroundColor(FlxG.WHITE);
+			button.changeBackgroundColor(button.m_backgroundOnOut);
+			button.changeTextColor(button.m_textOnOut);
 		}
 		
 		public function setInfos(_infos:Array) : void {
