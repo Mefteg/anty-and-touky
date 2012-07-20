@@ -5,7 +5,7 @@ package GameObject.Enemy
 	 * ...
 	 * @author ...
 	 */
-	public class Mosquito extends Enemy 
+	public class Mosquito extends FlyingEnemy 
 	{
 		
 		public function Mosquito(X:Number,Y:Number) 

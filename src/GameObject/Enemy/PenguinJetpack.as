@@ -6,7 +6,7 @@ package GameObject.Enemy
 	 * ...
 	 * @author ...
 	 */
-	public class PenguinJetpack extends Enemy 
+	public class PenguinJetpack extends FlyingEnemy 
 	{
 		var m_explosion:EnemySmoke;
 		var m_targetHit:Boolean = false;
