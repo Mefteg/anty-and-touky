@@ -19,6 +19,8 @@ package GameObject.Weapon
 		public var m_rotative:Boolean = false;
 		protected var m_currentAttackName:String;
 		
+		static public var s_type:String = "Throwable";
+		
 		public function Throwable(power:Number , url:String, speed:Number = 2 ) 
 		{
 			super(power, url);
@@ -27,6 +29,8 @@ package GameObject.Weapon
 			m_state = "idle";			
 			m_width = 24;
 			m_height = 32;
+			
+			m_typeName = s_type;
 		}
 		
 		public function isFree():Boolean {

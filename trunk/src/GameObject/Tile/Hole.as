@@ -1,7 +1,9 @@
 package GameObject.Tile 
 {
+	import GameObject.Enemy.FlyingEnemy;
 	import GameObject.PhysicalObject;
 	import GameObject.PhysicalTile;
+	import GameObject.Weapon.Throwable;
 	import org.flixel.FlxPoint;
 	
 	/**
@@ -30,7 +32,7 @@ package GameObject.Tile
 		
 		override public function collideWith(object:GameObject.PhysicalObject) : Boolean {
 			// Touky can fly
-			if ( object == Global.player2 ) {
+			if ( object == Global.player2 || object.m_typeName == FlyingEnemy.s_type || object.m_typeName == Throwable.s_type ) {
 				return false;
 			}
 			

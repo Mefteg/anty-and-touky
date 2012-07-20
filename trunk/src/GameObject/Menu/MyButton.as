@@ -40,7 +40,6 @@ package GameObject.Menu
 			m_background.makeGraphic(m_size.x, m_size.y);
 			m_label = new FlxText(m_position.x, m_position.y, m_size.x, label);
 			m_label.color = FlxG.PINK;
-			trace(FlxG.WHITE);
 			m_label.alignment = "center";
 			
 			Global.currentState.depthBuffer.addElement(m_background, DepthBuffer.s_menuGroup);
