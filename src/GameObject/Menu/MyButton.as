@@ -16,22 +16,32 @@ package GameObject.Menu
 		public var m_position:FlxPoint;
 		public var m_size:FlxPoint;
 		
+		public var m_backgroundOnOver:uint;
+		public var m_backgroundOnOut:uint;
+		public var m_textOnOver:uint;
+		public var m_textOnOut:uint;
+		
 		protected var m_background:FlxSprite;
 		protected var m_label:FlxText;
 		
-		public function MyButton(pos:FlxPoint, size:FlxPoint, name:String, label:String=null) 
+		public function MyButton(infos:Array) 
 		{
-			m_name = name;
-			m_position = pos;
-			m_size = size;
-			if ( m_name == "" ) {
-				m_name = "button";
-			}
+			m_position = infos["position"];
+			m_size = infos["size"];
+			m_name = infos["name"];
+			m_backgroundOnOver = infos["backgroundOnOver"];
+			m_backgroundOnOut = infos["backgroundOnOut"];
+			m_textOnOver = infos["textOnOver"];
+			m_textOnOut = infos["textOnOut"];
 			
-			m_background = new FlxSprite(pos.x, pos.y);
-			m_background.makeGraphic(size.x, size.y);
-			m_label = new FlxText(pos.x, pos.y, size.x, label);
+			var label:String = infos["label"];
+			
+			m_background = new FlxSprite(m_position.x, m_position.y);
+			m_background.makeGraphic(m_size.x, m_size.y);
+			m_label = new FlxText(m_position.x, m_position.y, m_size.x, label);
 			m_label.color = FlxG.PINK;
+			trace(FlxG.WHITE);
+			m_label.alignment = "center";
 			
 			Global.currentState.depthBuffer.addElement(m_background, DepthBuffer.s_menuGroup);
 			Global.currentState.depthBuffer.addElement(m_label, DepthBuffer.s_menuGroup);
@@ -39,6 +49,10 @@ package GameObject.Menu
 		
 		public function changeBackgroundColor(_color:uint) : void {
 			m_background.makeGraphic(m_size.x, m_size.y, _color);
+		}
+		
+		public function changeTextColor(_color:uint) : void {
+			m_label.color = _color;
 		}
 		
 	}
