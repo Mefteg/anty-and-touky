@@ -26,19 +26,19 @@ package GameObject.Enemy
 			super.load();
 			loadThrowables();
 			//IDLE ANIM
-			addAnimation("idle" + UP, [6], 5, false);
+			addAnimation("idle" + UP, [9], 5, false);
 			addAnimation("idle" + RIGHT, [0], 5, false);
-			addAnimation("idle" + DOWN, [9], 5, false);
+			addAnimation("idle" + DOWN, [6], 5, false);
 			addAnimation("idle" + LEFT, [3], 5, false);	
 			//walk anim
-			addAnimation("draw" + UP, [7], 3, false);
+			addAnimation("draw" + UP, [10], 3, false);
 			addAnimation("draw" + RIGHT,[1], 3, false);
-			addAnimation("draw" + DOWN, [10], 3, false);
+			addAnimation("draw" + DOWN, [7], 3, false);
 			addAnimation("draw" + LEFT, [4], 3, false);
 			//attack anim
-			addAnimation("attack" + UP, [8,8,7], 10, false);
+			addAnimation("attack" + UP, [11,11,10], 10, false);
 			addAnimation("attack" + LEFT, [5,5,4], 10, false);
-			addAnimation("attack" + DOWN, [11,11,10], 10, false);
+			addAnimation("attack" + DOWN, [8,8,7], 10, false);
 			addAnimation("attack" + RIGHT, [2,2,1], 10, false);
 			//hit
 			addAnimation("hit" + m_hit, [14], 1);
