@@ -4,6 +4,7 @@ package GameObject.Enemy.ElSqualo
 	import flash.geom.Rectangle;
 	import GameObject.Enemy.Enemy;
 	import GameObject.Enemy.EnemySmoke;
+	import GameObject.Enemy.PenguinJetpack;
 	import GameObject.PlayableObject;
 	import GameObject.Weapon.Weapon;
 	import org.flixel.FlxG;
@@ -24,12 +25,14 @@ package GameObject.Enemy.ElSqualo
 		
 		public var m_area:Rectangle;
 		
-		private var m_stage:int = 0;
+		private var m_stage:int = 2;
 		
 		private var m_dead:Boolean = false;
 		
 		private var m_tabExplode:Array;
 		private var m_currentExplosion:int;
+		
+		private var m_penguinManager:ElSqualoPenguinManager;
 		
 		public function ElSqualo(X:Number, Y:Number,areaWidth:int,areaHeight:int) 
 		{
@@ -46,11 +49,13 @@ package GameObject.Enemy.ElSqualo
 			m_smoke = EnemySmoke.Explosion();
 			m_collideEvtFree = true;
 			m_stats.initHP(120);
+			m_penguinManager = new ElSqualoPenguinManager(this);
 		}
 		
 		private function jump():void {
 			m_direction.y = -1;
 			m_state = "jumping";
+			m_penguinManager.popPinguins();
 		}
 		
 		private function jumping():void {
@@ -138,6 +143,7 @@ package GameObject.Enemy.ElSqualo
 			m_rightArm.load();
 			m_leftArm.load();
 			m_missilesManager.load();
+			m_penguinManager.load();
 		}
 		
 		override public function addBitmap():void {
@@ -145,6 +151,7 @@ package GameObject.Enemy.ElSqualo
 			m_rightArm.addBitmap();
 			m_leftArm.addBitmap();
 			m_missilesManager.addBitmap();
+			m_penguinManager.addBitmap();
 		}
 		
 		override public function addToStage():void {
@@ -152,6 +159,7 @@ package GameObject.Enemy.ElSqualo
 			m_rightArm.addToStage();
 			m_leftArm.addToStage();
 			m_missilesManager.addToStage();
+			m_penguinManager.addToStage();
 		}
 		
 		private function setVisible(vis:Boolean) {

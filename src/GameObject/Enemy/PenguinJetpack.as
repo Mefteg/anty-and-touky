@@ -45,6 +45,13 @@ package GameObject.Enemy
 			
 		}
 		
+		public function init(X:Number,Y:Number):void {
+			x = X; y = Y;
+			m_timerAttack.start(4);
+			m_stats.initHP(2);
+			m_state = "idle";
+			addToStage();
+		}
 		
 		override public function attack():void {
 			m_state = "attack";
