@@ -25,7 +25,7 @@ package GameObject.Enemy.ElSqualo
 		
 		public var m_area:Rectangle;
 		
-		private var m_stage:int = 2;
+		private var m_stage:int = 0;
 		
 		private var m_dead:Boolean = false;
 		
@@ -48,6 +48,7 @@ package GameObject.Enemy.ElSqualo
 			m_state = "onGround";
 			m_smoke = EnemySmoke.Explosion();
 			m_collideEvtFree = true;
+			m_activeOffscreen = true;
 			m_stats.initHP(120);
 			m_penguinManager = new ElSqualoPenguinManager(this);
 		}
@@ -55,7 +56,7 @@ package GameObject.Enemy.ElSqualo
 		private function jump():void {
 			m_direction.y = -1;
 			m_state = "jumping";
-			m_penguinManager.popPinguins();
+			m_penguinManager.popPinguins(m_stage);
 		}
 		
 		private function jumping():void {
@@ -92,7 +93,8 @@ package GameObject.Enemy.ElSqualo
 		}
 		
 		override public function update():void {
-			commonEnemyUpdate();
+			if ( !commonEnemyUpdate() )
+				return;
 			switch(m_state) {
 				case "onGround": onGround(); break;
 				case "jumping" : jumping(); break;

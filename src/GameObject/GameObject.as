@@ -206,6 +206,10 @@ package GameObject
 		public function collideFromUp( obj2:GameObject):Boolean {
 			return getTopSideRect().intersects(obj2.getBottomSideRect());
 		}
+		
+		public function getHitboxRect():Rectangle {
+			return new Rectangle(x + m_hitbox.x, y + m_hitbox.y, m_hitbox.width, m_hitbox.height);
+		}
 	}
 
 }

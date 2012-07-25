@@ -45,12 +45,21 @@ package GameObject.Enemy
 			
 		}
 		
-		public function init(X:Number,Y:Number):void {
+		public function init(X:Number, Y:Number):void {
+			if (m_state =="attacking")
+				return;
 			x = X; y = Y;
-			m_timerAttack.start(4);
 			m_stats.initHP(2);
-			m_state = "idle";
+			m_state = "goToBeforeAction";
+			facing = getFacingToTarget(m_target);
+			play("idle" + facing);
+			m_targetHit = false;
 			addToStage();
+		}
+		
+		public function activate():void {
+			m_state = "idle";
+			m_timerAttack.start(2);
 		}
 		
 		override public function attack():void {
@@ -70,13 +79,13 @@ package GameObject.Enemy
 								m_state = "attack";
 								play("attack" + facing);
 								goTo(m_target);
-								m_speed *= 1.5;
+								m_speed = 4;
 							} break;
 				case "attack":  move();
 								checkExplosionOnPlayers();
 								break;
-				case "dead": die();
-							break;
+				case "dead": die(); break;
+				default : break;
 			}
 		}
 		
@@ -107,13 +116,16 @@ package GameObject.Enemy
 				explode();
 			}
 		}
-		
+				
 		override public function move() : void {
 			m_oldPos.x= this.x;
 			m_oldPos.y = this.y;
 			
 			this.x = this.x + (m_direction.x * m_speed);
 			this.y = this.y + (m_direction.y * m_speed);
+			
+			if (m_state == "goToBeforeAction")
+				return;
 			
 			if ( this.collideWithEnv() ) {
 				this.x = m_oldPos.x;
