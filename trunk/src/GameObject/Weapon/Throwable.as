@@ -82,6 +82,7 @@ package GameObject.Weapon
 						
 			//sound
 			m_FX.loadStream(m_FXurl);
+			m_FX.volume = 0.3;
 		}
 		
 		override public function place(X:Number, Y:Number ) : void{ 

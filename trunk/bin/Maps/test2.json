@@ -85,6 +85,18 @@
                  "width":309,
                  "x":70,
                  "y":266
+                }, 
+                {
+                 "height":0,
+                 "name":"Music",
+                 "properties":
+                    {
+                     "url":"EvilMachinery"
+                    },
+                 "type":"Music",
+                 "width":0,
+                 "x":684,
+                 "y":315
                 }],
          "opacity":1,
          "type":"objectgroup",

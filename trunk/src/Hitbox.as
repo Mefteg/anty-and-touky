@@ -19,7 +19,7 @@ package
 			m_size = new FlxPoint(width, height);
 			m_center = new FlxPoint(x + width / 2, y + height / 2);
 		}
-		
+				
 		public function getCenter():FlxPoint {
 			return m_center;
 		}

@@ -14,17 +14,19 @@ package GameObject.Enemy.ElSqualo
 		private var m_pinguins:Array;
 		private var m_squalo:ElSqualo;
 		private var m_nbPg:int;
+		private var m_pinguinsDone:Array;
 		
 		public function ElSqualoPenguinManager(squalo:ElSqualo) 
 		{
 			m_pinguins = new Array();
 			createPinguins();
 			m_squalo = squalo;
+			m_state = "idle";
 		}
 		
 		private function putAtRandomPosition(pg:PenguinJetpack):void {
 			var rand:Number = Utils.random(0, 100);
-			var ordinees:Number = Global.camera.scroll.y + Utils.random(10, m_squalo.m_area.height);
+			var ordinees:Number = m_squalo.m_area.y + Utils.random(10, m_squalo.m_area.height-10);
 			if (rand<50) {
 				var pgx:Number = Global.camera.scroll.x;
 				pg.init(pgx, ordinees);
@@ -37,8 +39,25 @@ package GameObject.Enemy.ElSqualo
 		}
 		
 		override public function update():void {
-			/*for (var i:int = 0; i < m_nbPg; i++)
-				m_pinguins[i].move();*/
+			switch(m_state){
+				case "moving" : var boo:Boolean = true;
+								for (var i:int = 0; i < m_nbPg; i++) {
+									if (m_pinguinsDone[i]) {
+										boo = boo && true;
+										return;
+									}
+									m_pinguins[i].move();
+									if (m_squalo.m_area.containsRect(m_pinguins[i].getHitboxRect())) {
+										boo = boo && true;
+										m_pinguins[i].activate();
+									}else {
+										boo = false;
+									}
+								}
+								if (boo)
+									m_state = "idle";
+								break;
+			}
 		}
 		
 		///PINGINS .....
@@ -49,10 +68,12 @@ package GameObject.Enemy.ElSqualo
 		}
 		
 		public function popPinguins(nbPing:int = 1):void {
+			m_state = "moving";
 			m_nbPg = nbPing;
-			for (var i:int = 0; i < nbPing; i++) {
+			for (var i:int = 0; i < m_nbPg; i++) {
 				putAtRandomPosition(m_pinguins[i]);
 			}
+			initPDone();
 		}
 		
 		override public function load():void {
@@ -64,6 +85,11 @@ package GameObject.Enemy.ElSqualo
 			m_pinguins[0].addBitmap();
 		}
 		
+		private function initPDone():void {
+			m_pinguinsDone = new Array();
+			for (var i:int = 0; i < m_nbPg; i++)
+				m_pinguinsDone.push(false);
+		}
 		
 	}
 
