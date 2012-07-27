@@ -71,6 +71,12 @@ package GameObject.Other
 								} break;
 			}
 		}
+		
+		public static function SwitchMetal(X:Number,Y:Number,target:String,time:int):Switch {
+			var swMetal:Switch = new Switch(X, Y, target, time);
+			swMetal.m_url = "Images/Others/switchMetal.png";
+			return swMetal;
+		}
 	}
 
 }
