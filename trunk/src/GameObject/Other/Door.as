@@ -65,6 +65,12 @@ package GameObject.Other
 				default :  m_respawnOffset = new FlxPoint(x + m_width + 1, y);
 			}
 		}
+		
+		public static function Cylinders(X:Number, Y:Number, name:String, respawn:String ):Door {
+			var cyl:Door = new Door(X, Y, name, respawn);
+			cyl.m_url = "Images/Others/cylinders.png";
+			return cyl;
+		}
 	}
 
 }
