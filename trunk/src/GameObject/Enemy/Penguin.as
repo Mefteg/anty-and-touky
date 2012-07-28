@@ -50,7 +50,7 @@ package GameObject.Enemy
 		override protected function createThrowables():void {
 			m_throwables = new Vector.<EnemyThrowable>;
 			var thr:EnemyThrowable;
-			for (var i:int = 0; i < 4; i++) {
+			for (var i:int = 0; i < 3; i++) {
 				thr = EnemyThrowable.PistolBullet();
 				thr.setCaster(this);
 				m_throwables.push(thr);

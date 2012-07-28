@@ -6,6 +6,7 @@ package GameObject
 	 */
 	import GameObject.Enemy.BlackSquare;
 	import GameObject.Enemy.Centipede.Centipede;
+	import GameObject.Enemy.ElectricSnake.ElectricSnake;
 	import GameObject.Enemy.ElSqualo.ElSqualo;
 	import GameObject.Enemy.Monkey;
 	import GameObject.Enemy.MonkeyTest;
@@ -47,11 +48,7 @@ package GameObject
 				case "PenguinJetpack" : return new PenguinJetpack(object.x, object.y); break;
 				case "Centipede" : return new Centipede(object.x, object.y,object.width,object.height); break;
 				case "MonkeyTest": return new GameObject.Enemy.MonkeyTest(object.x,object.y); break;
-				case "Slime" : var m_gobj:MovableObject = new GameObject.Enemy.Slime(object.x, object.y);
-								if (object.properties.blocked != null)
-									m_gobj.block();
-								m_gobj.m_name = object.name;
-								return m_gobj; break;
+				case "ElectricSnake": return new ElectricSnake(object.x, object.y); break;
 				case "WhiteSquare":  return new GameObject.Enemy.WhiteSquare(object.x, object.y); break;
 				case "BlackSquare":  return new GameObject.Enemy.BlackSquare(object.x, object.y); break;
 				case "TriggerEnemies": return new TriggerEnemies(object.x, object.y, object.width, object.height, object.properties.type, object.properties.number,object.properties.direction, object.properties.location); break;

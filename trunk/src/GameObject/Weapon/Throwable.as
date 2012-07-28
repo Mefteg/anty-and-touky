@@ -19,6 +19,8 @@ package GameObject.Weapon
 		public var m_rotative:Boolean = false;
 		protected var m_currentAttackName:String;
 		
+		public var m_fragile:Boolean = true;
+		
 		static public var s_type:String = "Throwable";
 		
 		public function Throwable(power:Number , url:String, speed:Number = 2 ) 
