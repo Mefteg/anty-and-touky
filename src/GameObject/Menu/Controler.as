@@ -26,6 +26,9 @@ package GameObject.Menu
 		public function onOut(button:MyButton) : void {
 			var action:String = button.m_name;
 			switch ( action ) {
+				case "printDifficulty":
+					this.onOutPrintDifficulty(button);
+					break;
 				default:
 					this.onOutButton(button);
 					break;
@@ -43,6 +46,15 @@ package GameObject.Menu
 					break;
 				case "options":
 					this.onClickOptions(button);
+					break;
+				case "difficultyDown":
+					this.onClickDifficultyDown(button);
+					break;
+				case "difficultyUp":
+					this.onClickDifficultyUp(button);
+					break;
+				case "backToMenu":
+					this.onClickBackToMenu(button);
 					break;
 				default:
 					this.onClickButton(button);
@@ -67,13 +79,24 @@ package GameObject.Menu
 		// ACTIONS //
 		/////////////
 		
+		//// ONOVER ////
+		
 		protected function onOverButton(button:MyButton) : void {
 			m_view.changeToColorOver(button);
 		}
 		
+		//// ONOUT ////
+		
 		protected function onOutButton(button:MyButton) : void {
 			m_view.changeToColorOut(button);
 		}
+		
+		protected function onOutPrintDifficulty(button:MyButton) : void {
+			m_view.changeToColorOut(button);
+			button.m_text = Global.difficulty.toString();
+		}
+		
+		//// ONCLICK ////
 		
 		protected function onClickButton(button:MyButton) : void {
 			trace("CLICKBUTTON");
@@ -92,6 +115,27 @@ package GameObject.Menu
 		protected function onClickOptions(button:MyButton) : void {
 			m_model.clearInfos();
 			m_view.clear();
+			m_model.loadUrl("Menu/options.xml");
+		}
+		
+		protected function onClickDifficultyDown(button:MyButton) : void {
+			Global.difficulty--;
+			if ( Global.difficulty < 1 ) {
+				Global.difficulty = 1;
+			}
+		}
+		
+		protected function onClickDifficultyUp(button:MyButton) : void {
+			Global.difficulty++;
+			if ( Global.difficulty > 3 ) {
+				Global.difficulty = 3;
+			}
+		}
+		
+		protected function onClickBackToMenu(button:MyButton) : void {
+			m_model.clearInfos();
+			m_view.clear();
+			m_model.loadUrl("Menu/menustate.xml");
 		}
 	}
 

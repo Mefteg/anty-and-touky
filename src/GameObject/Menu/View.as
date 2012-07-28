@@ -96,10 +96,7 @@ package GameObject.Menu
 			return isClicked;
 		}
 				
-		public function print() : void {
-			var pos:FlxPoint = m_model.getPosition();
-			var size:FlxPoint = m_model.getSize();
-			
+		public function print() : void {			
 			trace("PRINT!");
 		}
 		

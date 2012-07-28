@@ -10,9 +10,6 @@ package GameObject.Menu
 	{
 		protected var m_view:View;
 		
-		protected var m_position:FlxPoint;
-		protected var m_size:FlxPoint;
-		
 		protected var m_url:String;
 		
 		protected var m_loadXml:LoadXml;
@@ -20,15 +17,8 @@ package GameObject.Menu
 		
 		protected var m_alreadySetInfos:Boolean;
 		
-		public function Model(position:FlxPoint, size:FlxPoint, _url:String) {
-			m_position = position;
-			m_size = size;
-			m_url = _url;
-			
-			m_loadXml = new LoadXml(m_url);
-			m_infos = new Array();
-			
-			this.m_alreadySetInfos = false;
+		public function Model(_url:String) {
+			this.loadUrl(_url);
 		}
 		
 		override public function update() : void {
@@ -76,16 +66,17 @@ package GameObject.Menu
 			m_view = view;
 		}
 		
-		public function getPosition() : FlxPoint {
-			return m_position;
-		}
-		
-		public function getSize() : FlxPoint {
-			return m_size;
-		}
-		
 		public function clearInfos() : void {
 			m_infos = new Array();
+		}
+		
+		public function loadUrl(_url:String) : void {
+			m_url = _url;
+			
+			m_loadXml = new LoadXml(m_url);
+			m_infos = new Array();
+			
+			this.m_alreadySetInfos = false;
 		}
 	}
 

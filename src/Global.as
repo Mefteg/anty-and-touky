@@ -39,6 +39,7 @@ package
 		static public var frozen:Boolean = false;
 		static public var hasSeenControls:Boolean = false;
 		static public var nbPlayers:int=1;
+		static public var difficulty:int=1;
 		
 		//OPTIONS
 		static public var nbLifesMax = 3;
