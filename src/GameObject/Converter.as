@@ -17,6 +17,7 @@ package GameObject
 	import GameObject.Item.Chest;
 	import GameObject.Item.Item;
 	import GameObject.Other.Box;
+	import GameObject.Other.BoxHole;
 	import GameObject.Other.Breakable;
 	import GameObject.Other.Butterfly;
 	import GameObject.Other.Door;
@@ -56,7 +57,9 @@ package GameObject
 				//items
 				case "Chest" : return new GameObject.Item.Chest(object.x, object.y,object.properties.item,object.properties.quantity,object.properties.collected); break;
 				case "Box": return new GameObject.Other.Box(object.x, object.y); break;
+				case "Barrel" : return Box.Barrel(object.x, object.y); break;
 				case "BoxHole": return new GameObject.Other.BoxHole(object.x, object.y, object.properties.door); break;
+				case "BarrelHole" : return BoxHole.BarrelHole(object.x, object.y, object.properties.door); break;
 				///DOORS
 				case "Spikes" : return new Door(object.x, object.y, object.name, object.properties.respawn); break;
 				case "Cylinders" : return Door.Cylinders(object.x, object.y, object.name,object.properties.respawn); break;

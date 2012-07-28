@@ -37,6 +37,42 @@
                  "width":22,
                  "x":427,
                  "y":446
+                }, 
+                {
+                 "height":0,
+                 "name":"Door",
+                 "properties":
+                    {
+                     "respawn":"up"
+                    },
+                 "type":"Cylinders",
+                 "width":0,
+                 "x":262,
+                 "y":228
+                }, 
+                {
+                 "height":0,
+                 "name":"BarelHole",
+                 "properties":
+                    {
+                     "door":"Door"
+                    },
+                 "type":"BarrelHole",
+                 "width":0,
+                 "x":268,
+                 "y":326
+                }, 
+                {
+                 "height":0,
+                 "name":"Barel",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Barrel",
+                 "width":0,
+                 "x":150,
+                 "y":335
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -63,7 +99,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "width":28,
          "x":0,
          "y":0
