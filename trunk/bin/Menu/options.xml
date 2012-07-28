@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<item type="button" positionx="10" positiony="280" sizex="200" sizey="50" name="difficultyDown" label="Difficulty - !" backgroundOnOver="4294967295" backgroundOnOut="4294967295" textOnOut="4293926655" textOnOver="4278190080" fontSize="20" textPaddingY="15" />
+	<item type="button" positionx="220" positiony="280" sizex="200" sizey="50" name="printDifficulty" label="" backgroundOnOver="4294967295" backgroundOnOut="4294967295" textOnOut="4293926655" textOnOver="4278190080" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="430" positiony="280" sizex="200" sizey="50" name="difficultyUp" label="Difficulty + !" backgroundOnOver="4294967295" backgroundOnOut="4294967295" textOnOut="4293926655" textOnOver="4278190080" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="220" positiony="400" sizex="200" sizey="50" name="backToMenu" label="Back !" backgroundOnOver="4294967295" backgroundOnOut="4294967295" textOnOut="4293926655" textOnOver="4278190080" fontSize="20" textPaddingY="15"/>
+</data>

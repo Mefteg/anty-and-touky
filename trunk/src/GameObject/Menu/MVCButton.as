@@ -14,7 +14,7 @@ package GameObject.Menu
 		
 		public function MVCButton(_url:String) 
 		{
-			m_model = new Model(new FlxPoint(), new FlxPoint(100, 20), _url);
+			m_model = new Model(_url);
 			m_view = new View();
 			m_controler = new Controler();
 			
@@ -26,12 +26,7 @@ package GameObject.Menu
 			
 			Global.currentState.depthBuffer.addElement(m_model, DepthBuffer.s_menuGroup);
 			Global.currentState.depthBuffer.addElement(m_view, DepthBuffer.s_menuGroup);
-		}
-		
-		public function loadUrl(_url:String) : void {
-			
-		}
-		
+		}		
 	}
 
 }
