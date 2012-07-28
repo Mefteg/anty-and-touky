@@ -104,6 +104,16 @@ package GameObject.Menu
 		}
 		
 		public function clear() : void {
+			this.destroyButtons();
+			m_infos = new Array();
+		}
+		
+		protected function destroyButtons() : void {
+			for ( var i:int = 0; i < m_buttons.length; i++ ) {
+				var b:MyButton = m_buttons[i];
+				b.destroy();
+			}
+			m_buttons = new Array();
 		}
 		
 		public function changeToColorOver(button:MyButton) : void {

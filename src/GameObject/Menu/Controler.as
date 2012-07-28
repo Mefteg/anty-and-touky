@@ -1,5 +1,6 @@
 package GameObject.Menu 
 {
+	import org.flixel.FlxG;
 	/**
 	 * ...
 	 * @author ...
@@ -34,8 +35,14 @@ package GameObject.Menu
 		public function onClick(button:MyButton) : void {
 			var action:String = button.m_name;
 			switch ( action ) {
-				case "start":
-					this.onClickStart(button);
+				case "start1p":
+					this.onClickStart1P(button);
+					break;
+				case "start2p":
+					this.onClickStart2P(button);
+					break;
+				case "options":
+					this.onClickOptions(button);
 					break;
 				default:
 					this.onClickButton(button);
@@ -72,8 +79,19 @@ package GameObject.Menu
 			trace("CLICKBUTTON");
 		}
 		
-		protected function onClickStart(button:MyButton) : void {
-			trace("CLICKSTART");
+		protected function onClickStart1P(button:MyButton) : void {
+			Global.nbPlayers = 1;
+			Global.currentState.m_state = "Ending";
+		}
+		
+		protected function onClickStart2P(button:MyButton) : void {
+			Global.nbPlayers = 2;
+			Global.currentState.m_state = "Ending";
+		}
+		
+		protected function onClickOptions(button:MyButton) : void {
+			m_model.clearInfos();
+			m_view.clear();
 		}
 	}
 

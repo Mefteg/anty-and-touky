@@ -28,6 +28,10 @@ package GameObject.Menu
 			Global.currentState.depthBuffer.addElement(m_view, DepthBuffer.s_menuGroup);
 		}
 		
+		public function loadUrl(_url:String) : void {
+			
+		}
+		
 	}
 
 }

@@ -18,6 +18,8 @@ package GameObject.Menu
 		protected var m_loadXml:LoadXml;
 		protected var m_infos:Array;
 		
+		protected var m_alreadySetInfos:Boolean;
+		
 		public function Model(position:FlxPoint, size:FlxPoint, _url:String) {
 			m_position = position;
 			m_size = size;
@@ -25,15 +27,18 @@ package GameObject.Menu
 			
 			m_loadXml = new LoadXml(m_url);
 			m_infos = new Array();
+			
+			this.m_alreadySetInfos = false;
 		}
 		
 		override public function update() : void {
-			if ( m_loadXml.isComplete() ) {
+			if ( m_loadXml.isComplete() && m_alreadySetInfos == false ) {
 				if ( m_infos.length == 0 ) {
 					this.loadInfos();
 					
 					if ( m_view != null ) {
 						m_view.setInfos(m_infos);
+						m_alreadySetInfos = true;
 					}
 					else
 						trace("too soon");
@@ -41,7 +46,7 @@ package GameObject.Menu
 			}
 		}
 		
-		protected function loadInfos() {
+		protected function loadInfos() :void {
 			var data:XML = m_loadXml.m_xml;
 			var items:XMLList = data.elements();
 			for ( var i:int = 0; i < items.length(); i++ ) {
@@ -62,6 +67,8 @@ package GameObject.Menu
 				m_infos[i]["backgroundOnOut"] = item.@backgroundOnOut;
 				m_infos[i]["textOnOver"] = item.@textOnOver;
 				m_infos[i]["textOnOut"] = item.@textOnOut;
+				m_infos[i]["fontSize"] = item.@fontSize;
+				m_infos[i]["textPaddingY"] = item.@textPaddingY;
 			}
 		}
 		
@@ -75,6 +82,10 @@ package GameObject.Menu
 		
 		public function getSize() : FlxPoint {
 			return m_size;
+		}
+		
+		public function clearInfos() : void {
+			m_infos = new Array();
 		}
 	}
 

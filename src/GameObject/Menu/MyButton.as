@@ -20,6 +20,8 @@ package GameObject.Menu
 		public var m_backgroundOnOut:uint;
 		public var m_textOnOver:uint;
 		public var m_textOnOut:uint;
+		public var m_fontSize:uint;
+		public var m_paddingY:int;
 		
 		protected var m_background:FlxSprite;
 		protected var m_label:FlxText;
@@ -33,14 +35,17 @@ package GameObject.Menu
 			m_backgroundOnOut = infos["backgroundOnOut"];
 			m_textOnOver = infos["textOnOver"];
 			m_textOnOut = infos["textOnOut"];
+			m_fontSize = infos["fontSize"];
+			m_paddingY = infos["textPaddingY"];
 			
 			var label:String = infos["label"];
 			
 			m_background = new FlxSprite(m_position.x, m_position.y);
 			m_background.makeGraphic(m_size.x, m_size.y);
-			m_label = new FlxText(m_position.x, m_position.y, m_size.x, label);
+			m_label = new FlxText(m_position.x, m_position.y + m_paddingY, m_size.x, label);
 			m_label.color = FlxG.PINK;
 			m_label.alignment = "center";
+			m_label.size = m_fontSize;
 			
 			Global.currentState.depthBuffer.addElement(m_background, DepthBuffer.s_menuGroup);
 			Global.currentState.depthBuffer.addElement(m_label, DepthBuffer.s_menuGroup);
@@ -52,6 +57,11 @@ package GameObject.Menu
 		
 		public function changeTextColor(_color:uint) : void {
 			m_label.color = _color;
+		}
+		
+		public function destroy() : void {
+			Global.currentState.depthBuffer.removeElement(m_background, DepthBuffer.s_menuGroup);
+			Global.currentState.depthBuffer.removeElement(m_label, DepthBuffer.s_menuGroup);
 		}
 		
 	}
