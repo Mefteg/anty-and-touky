@@ -69,6 +69,12 @@ package GameObject.Other
 			m_state = "taken";
 		}
 		
+		public static function Barrel(X:Number,Y:Number):Box {
+			var barrel:Box = new Box(X, Y);
+			barrel.m_url = "Images/Others/barrel.png";
+			return barrel;
+		}
+		
 	}
 
 }

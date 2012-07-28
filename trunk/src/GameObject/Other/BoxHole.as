@@ -21,7 +21,13 @@ package GameObject.Other
 			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_objectGroup);
 		}
 		
-		override public function update():void {}
+		override public function update():void { }
+		
+		public static function BarrelHole(X:Number, Y:Number, target:String) {
+			var bh:BoxHole = new BoxHole(X, Y, target);
+			bh.m_url = "Images/Others/barrelHole.png";
+			return bh;
+		}
 		
 	}
 
