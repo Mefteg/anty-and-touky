@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-	<item type="button" positionx="0" positiony="0" sizex="100" sizey="20" name="start" label="Start!" backgroundOnOver="4294967295" backgroundOnOut="4294967295" textOnOut="4293926655" textOnOver="4278190080"/>
-	<item type="button" positionx="0" positiony="40" sizex="100" sizey="20" name="options" label="Options!" backgroundOnOver="4294967295" backgroundOnOut="4294967295" textOnOut="4293926655" textOnOver="4278190080"/>
+	<item type="button" positionx="220" positiony="280" sizex="200" sizey="50" name="start1p" label="Start 1P !" backgroundOnOver="4294967295" backgroundOnOut="4294967295" textOnOut="4293926655" textOnOver="4278190080" fontSize="20" textPaddingY="15" />
+	<item type="button" positionx="220" positiony="340" sizex="200" sizey="50" name="start2p" label="Start 2P !" backgroundOnOver="4294967295" backgroundOnOut="4294967295" textOnOut="4293926655" textOnOver="4278190080" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="220" positiony="400" sizex="200" sizey="50" name="options" label="Options !" backgroundOnOver="4294967295" backgroundOnOut="4294967295" textOnOut="4293926655" textOnOver="4278190080" fontSize="20" textPaddingY="15"/>
 </data>

@@ -21,7 +21,7 @@ package
 		protected var m_library:Library;
 		//used to check if the unique objects have been loaded
 		protected var m_uniquesLoaded:Boolean;
-		protected var m_state:String ;
+		public var m_state:String ;
 		
 		public var depthBuffer:DepthBuffer;
 		

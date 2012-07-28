@@ -23,7 +23,6 @@ package
 		[Embed(source = "../bin/Images/Menu/LadyBugRidersScreen.png")] protected var LadyBugScreen:Class;
 		[Embed(source = "../bin/Images/Menu/cursor.png")] protected var Cursor:Class;
 		
-		protected var m_menuBegin:MenuBegin;
 		protected var m_timer:FlxTimer;
 		protected var m_music:FlxSound;
 		
@@ -66,16 +65,13 @@ package
 			m_trailer.scaleY = 0.6;
 			m_trailer.scaleZ = 0.6;*/
 			
-			m_mvcButton = new MVCButton("Menu/menustate.xml");
-			depthBuffer.addElement(m_mvcButton, DepthBuffer.s_menuGroup);
+
 			
 			FlxG.mouse.show();
 		}
 		
 		override public function create() : void {
 			super.create();
-			m_menuBegin = new MenuBegin();
-			m_menuBegin.addToStage();
 			m_timer = new FlxTimer();
 			//m_timer.start(12);
 			m_timer.start(1);
@@ -87,12 +83,14 @@ package
 			//FlxG.stage.addChild(m_trailer);
 		}
 		
-		override public function update() :void{
+		override public function update() : void {
 			super.update();
 			if (! m_library.loadComplete())
 				m_library.loadAll();
 			//make the menu appear via fade in
 			if (!m_menuAppeared && m_timer.finished) {
+				m_mvcButton = new MVCButton("Menu/menustate.xml");
+				depthBuffer.addElement(m_mvcButton, DepthBuffer.s_menuGroup);
 				m_menuAppeared = true;
 				//FlxG.stage.removeChild(m_trailer);
 				fadeIn();
@@ -109,8 +107,6 @@ package
 			if (Global.library.loadComplete()) {
 				//cache them
 				Global.library.cacheObjects();
-				//load the graphics
-				m_menuBegin.load();
 				//load future images of story state
 				StoryState.loadAllBitmaps();
 				m_state = "Loaded";
