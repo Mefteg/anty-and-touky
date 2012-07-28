@@ -25,7 +25,19 @@
         {
          "height":20,
          "name":"Objects",
-         "objects":[],
+         "objects":[
+                {
+                 "height":26,
+                 "name":"ElectricSnake",
+                 "properties":
+                    {
+
+                    },
+                 "type":"ElectricSnake",
+                 "width":22,
+                 "x":427,
+                 "y":446
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -36,7 +48,19 @@
         {
          "height":20,
          "name":"Respawn",
-         "objects":[],
+         "objects":[
+                {
+                 "height":0,
+                 "name":"Respawn",
+                 "properties":
+                    {
+                     "location":"init"
+                    },
+                 "type":"Respawn",
+                 "width":0,
+                 "x":478,
+                 "y":301
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,

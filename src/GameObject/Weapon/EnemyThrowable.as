@@ -31,22 +31,24 @@ package GameObject.Weapon
 			if ( Global.soloPlayer) {
 				if (collide(Global.soloPlayer) && Global.soloPlayer.visible){
 					Global.soloPlayer.takeDamage();
-					return true;
+					return m_fragile;
 				}
 			}
 			//check players for damage
 			if (collide(Global.player1) && Global.player1.visible ) {
 				Global.player1.takeDamage();
-				result = true;
+				result = m_fragile;
 			}
 			if (collide(Global.player2) && Global.player2.visible){
 				Global.player2.takeDamage();
-				result = true;
+				result = m_fragile;
 			}
 			return result;
 		}
 		
 		public function CheckRejection():Boolean {
+			if (!m_fragile)
+				return false;
 			if (Global.player1.getWeapon().isAttacking() && Global.player1.getWeapon().collide(this)) {
 				Reject(Global.player1);
 				return true;
@@ -106,6 +108,16 @@ package GameObject.Weapon
 			bullet.setHitbox(6, 6, 4, 4);
 			bullet.m_FXurl = "FX/pistol_fire.mp3";
 			return bullet;
+		}
+		
+		public static function ElecBall():EnemyThrowable {
+			var ball:EnemyThrowable = new EnemyThrowable(1, "Images/Enemies/ElectricSnake/elecBall.png", 2);
+			ball.m_width = 24; ball.m_height = 24;
+			ball.setHitbox(0, 9, 24, 24);
+			ball.setAnimationAttack(true, 0, 1, 2);
+			ball.m_fragile = false;
+			//ball.m_FXurl = "FX/pistol_fire.mp3";
+			return ball;
 		}
 	}
 

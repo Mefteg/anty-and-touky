@@ -173,6 +173,7 @@ package
 			depthBuffer.addElement(m_ladyBug, DepthBuffer.s_cursorGroup);
 			depthBuffer.addElement(m_rectLadyBug, DepthBuffer.s_cursorGroup);
 			m_sceneManager = new SceneManager();
+			//m_sceneManager.loadScene("Maps/W1M1.json");
 			m_sceneManager.loadScene("Maps/W2M1.json");
 			//m_sceneManager.loadScene("Maps/test2.json");
 			//m_sceneManager.loadScene("Maps/W1M3.json");
