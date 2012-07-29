@@ -73,8 +73,8 @@ package
 		override public function create() : void {
 			super.create();
 			m_timer = new FlxTimer();
-			//m_timer.start(12);
-			m_timer.start(1);
+			m_timer.start(12);
+			//m_timer.start(1);
 			m_screenFade.alpha = 1;
 			//LADYBUG
 			depthBuffer.addElement(m_ladyBug, DepthBuffer.s_cursorGroup);
@@ -85,8 +85,9 @@ package
 		
 		override public function update() : void {
 			super.update();
-			if (! m_library.loadComplete())
+			if (! m_library.loadComplete()) {
 				m_library.loadAll();
+			}
 			//make the menu appear via fade in
 			if (!m_menuAppeared && m_timer.finished) {
 				m_mvcButton = new MVCButton("Menu/menustate.xml");

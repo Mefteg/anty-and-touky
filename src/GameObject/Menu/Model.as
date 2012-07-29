@@ -52,13 +52,22 @@ package GameObject.Menu
 				m_infos[i]["position"] = new FlxPoint(item.@positionx, item.@positiony);
 				m_infos[i]["size"] = new FlxPoint(item.@sizex, item.@sizey);
 				m_infos[i]["name"] = item.@name;
-				m_infos[i]["label"] = item.@label;
-				m_infos[i]["backgroundOnOver"] = item.@backgroundOnOver;
-				m_infos[i]["backgroundOnOut"] = item.@backgroundOnOut;
-				m_infos[i]["textOnOver"] = item.@textOnOver;
-				m_infos[i]["textOnOut"] = item.@textOnOut;
-				m_infos[i]["fontSize"] = item.@fontSize;
-				m_infos[i]["textPaddingY"] = item.@textPaddingY;
+				
+				
+				switch ( type ) {
+					case "button":
+						m_infos[i]["label"] = item.@label;
+						m_infos[i]["backgroundOnOver"] = item.@backgroundOnOver;
+						m_infos[i]["backgroundOnOut"] = item.@backgroundOnOut;
+						m_infos[i]["textOnOver"] = item.@textOnOver;
+						m_infos[i]["textOnOut"] = item.@textOnOut;
+						m_infos[i]["fontSize"] = item.@fontSize;
+						m_infos[i]["textPaddingY"] = item.@textPaddingY;
+						break;
+					case "background":
+						m_infos[i]["backgroundImg"] = item.@backgroundImg;
+						break;
+				}
 			}
 		}
 		
