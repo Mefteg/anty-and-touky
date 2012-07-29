@@ -47,9 +47,10 @@ package GameObject.Menu
 						m_buttons.push(mybutton);
 						break;
 					case "background":
-						//var myBackground:MyBackground = new MyBackground(m_infos[i]);
-						//myBackground.addToStage();
-						//m_backgrounds.push(myBackground);
+						var myBackground:MyBackground = new MyBackground(m_infos[i]);
+						myBackground.addToStage();
+						Global.library.addUniqueBitmap(myBackground.m_url);
+						m_backgrounds.push(myBackground);
 						break;
 					default:
 						break;
@@ -109,7 +110,16 @@ package GameObject.Menu
 		
 		public function clear() : void {
 			this.destroyButtons();
+			this.destroyBackgrounds();
 			m_infos = new Array();
+		}
+		
+		protected function destroyBackgrounds() : void {
+			for ( var i:int = 0; i < m_backgrounds.length; i++ ) {
+				var b:MyBackground = m_backgrounds[i];
+				b.destroy();
+			}
+			m_backgrounds = new Array();
 		}
 		
 		protected function destroyButtons() : void {

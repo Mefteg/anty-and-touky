@@ -14,8 +14,8 @@ package GameObject.Menu
 		{
 			super(0, 0, null);
 			m_url = _infos["backgroundImg"];
-			m_width = _infos["sizex"];
-			m_height = _infos["sizey"];
+			m_width = _infos["size"].x;
+			m_height = _infos["size"].y;
 			m_bufferGroup = DepthBuffer.s_backgroundGroup;
 			
 			m_alreadyLoaded = false;
@@ -23,9 +23,14 @@ package GameObject.Menu
 		
 		override public function update() : void {
 			if ( Global.library.loadComplete() && m_alreadyLoaded == false ) {
+				//Global.library.cacheObjects();
 				this.load();
 				m_alreadyLoaded = true;
 			}
+		}
+		
+		override public function destroy() : void {
+			Global.currentState.depthBuffer.removeElement(this, m_bufferGroup);
 		}
 		
 	}

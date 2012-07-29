@@ -81,6 +81,8 @@ package
 			m_ladyBug.alpha = 0;
 			m_timerLB.start(2);
 			//FlxG.stage.addChild(m_trailer);
+			
+			m_mvcButton = new MVCButton("Menu/menustate.xml");
 		}
 		
 		override public function update() : void {
@@ -90,7 +92,7 @@ package
 			}
 			//make the menu appear via fade in
 			if (!m_menuAppeared && m_timer.finished) {
-				m_mvcButton = new MVCButton("Menu/menustate.xml");
+				//m_mvcButton = new MVCButton("Menu/menustate.xml");
 				depthBuffer.addElement(m_mvcButton, DepthBuffer.s_menuGroup);
 				m_menuAppeared = true;
 				//FlxG.stage.removeChild(m_trailer);
