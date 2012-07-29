@@ -16,10 +16,12 @@ package GameObject.Menu
 		
 		protected var m_infos:Array;
 		protected var m_buttons:Array;
+		protected var m_backgrounds:Array;
 		
 		public function View() {
 			m_infos = new Array();
 			m_buttons = new Array();
+			m_backgrounds = new Array();
 		}
 		
 		override public function update() : void {
@@ -43,6 +45,11 @@ package GameObject.Menu
 					case "button":
 						var mybutton:MyButton = new MyButton(m_infos[i]);
 						m_buttons.push(mybutton);
+						break;
+					case "background":
+						//var myBackground:MyBackground = new MyBackground(m_infos[i]);
+						//myBackground.addToStage();
+						//m_backgrounds.push(myBackground);
 						break;
 					default:
 						break;
