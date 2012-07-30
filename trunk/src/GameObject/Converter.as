@@ -21,6 +21,7 @@ package GameObject
 	import GameObject.Other.Breakable;
 	import GameObject.Other.Butterfly;
 	import GameObject.Other.Door;
+	import GameObject.Other.NPC;
 	import GameObject.Other.Switch;
 	import GameObject.Player.Player1;
 	import GameObject.Player.Player2;
@@ -54,6 +55,9 @@ package GameObject
 				case "BlackSquare":  return new GameObject.Enemy.BlackSquare(object.x, object.y); break;
 				case "TriggerEnemies": return new TriggerEnemies(object.x, object.y, object.width, object.height, object.properties.type, object.properties.number,object.properties.direction, object.properties.location); break;
 				case "ElSqualo" : return new ElSqualo(object.x, object.y, object.width, object.height); break;
+				//NPC
+				case "Raccoon" : return NPC.Raccoon(object.x, object.y, object.properties.url); break;
+				case "MexicanRaccoon" : return NPC.MexicanRaccoon(object.x, object.y,object.properties.url); break;
 				//items
 				case "Chest" : return new GameObject.Item.Chest(object.x, object.y,object.properties.item,object.properties.quantity,object.properties.collected); break;
 				case "Box": return new GameObject.Other.Box(object.x, object.y); break;
