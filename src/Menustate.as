@@ -52,11 +52,12 @@ package
 			add(depthBuffer);
 			Global.currentState = this;
 			//text displaying loading advancement
-			m_loadProgression = new FlxText(400, 400, 600,"DEEE");
+			m_loadProgression = new FlxText(400, 400, 600,"");
 			//add(m_loadProgression);
 			//m_ladyBug = new FlxSprite(410 , 320);//for CASUAL GAME CUP
 			m_ladyBug = new FlxSprite(200 , 150);
 			m_ladyBug.loadGraphic(LadyBugScreen, false, false, 300, 200, true);
+			Global.library.addBitmap("Images/Menu/menustate_background.png");
 			/*
 			//trailer de merde
 			m_trailer = new MovieClip();
@@ -141,7 +142,6 @@ package
 			if (m_fadeOut)
 				return;
 			m_music.stop();
-			
 			FlxG.mouse.load(Cursor);
 			FlxG.mouse.hide();
 			FlxG.switchState( new StoryState() );
