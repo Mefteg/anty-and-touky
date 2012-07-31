@@ -273,7 +273,7 @@
   </object>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="30" height="30">
-  <object name="RespawnPointLeft" type="RespawnPoint" x="71" y="320" width="33" height="64">
+  <object name="RespawnPointLeftTuto1" type="RespawnPoint" x="71" y="320" width="33" height="64">
    <properties>
     <property name="location" value="left"/>
    </properties>

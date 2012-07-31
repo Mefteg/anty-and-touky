@@ -36,8 +36,8 @@
                     },
                  "type":"TriggerWarp",
                  "width":55,
-                 "x":677,
-                 "y":291
+                 "x":842,
+                 "y":294
                 }, 
                 {
                  "height":32,
@@ -100,7 +100,7 @@
          "objects":[
                 {
                  "height":64,
-                 "name":"RespawnPointLeft",
+                 "name":"RespawnPointLeftTuto2",
                  "properties":
                     {
                      "location":"left"
