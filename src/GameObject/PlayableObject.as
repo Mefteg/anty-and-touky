@@ -473,6 +473,8 @@ package GameObject
 			return false;
 		}
 		
+		public function hasFallen():Boolean { return false; }
+		
 		override public function twinkle():void {
 			if (m_timerTwinkle.finished)
 				return;

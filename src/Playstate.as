@@ -38,8 +38,8 @@ package
 	{				
 		protected var m_sceneManager:SceneManager;
 		
-		protected var m_sceneToLoad:String;
-		protected var m_respawnToLoad:String;
+		protected var m_sceneToLoad:String = "Maps/test2.json";
+		protected var m_respawnToLoad:String = "init";
 		
 		protected var m_menu_p1:Menu;
 		protected var m_menu_p2:Menu;
@@ -163,6 +163,10 @@ package
 			m_state = "ChangingScene";
 		}
 		
+		public function rebootScene():void {
+			changeScene(m_sceneToLoad, m_respawnToLoad);
+		}
+		
 		public function loadNewBitmaps(object:DrawableObject):void {
 			m_state = "LoadingNewBitmap";
 			m_dynamicLoadingObject = object;
@@ -175,8 +179,8 @@ package
 			m_sceneManager = new SceneManager();
 
 			//m_sceneManager.loadScene("Maps/W1M1BIS.json");
-			m_sceneManager.loadScene("Maps/W1M1.json");
-			//m_sceneManager.loadScene("Maps/test2.json");
+			//m_sceneManager.loadScene("Maps/W1M1.json");
+			m_sceneManager.loadScene("Maps/test2.json");
 			//m_sceneManager.loadScene("Maps/W1M3.json");
 			m_state = "Loading";
 			//creating player 1
