@@ -16,6 +16,7 @@ package GameObject
 	import GameObject.Enemy.WhiteSquare;
 	import GameObject.Item.Chest;
 	import GameObject.Item.Item;
+	import GameObject.Item.SpecialFiller;
 	import GameObject.Other.Box;
 	import GameObject.Other.BoxHole;
 	import GameObject.Other.Breakable;
@@ -64,6 +65,7 @@ package GameObject
 				case "Barrel" : return Box.Barrel(object.x, object.y); break;
 				case "BoxHole": return new GameObject.Other.BoxHole(object.x, object.y, object.properties.door); break;
 				case "BarrelHole" : return BoxHole.BarrelHole(object.x, object.y, object.properties.door); break;
+				case "GoldFeather" : return SpecialFiller.GoldFeather(object.x, object.y); break;
 				///DOORS
 				case "Spikes" : return new Door(object.x, object.y, object.name, object.properties.respawn); break;
 				case "Cylinders" : return Door.Cylinders(object.x, object.y, object.name,object.properties.respawn); break;

@@ -48,7 +48,6 @@ package GameObject.Other
 		}
 		
 		override public function update():void {
-			trace("ddd");
 			switch(m_state) {
 				case "idle" : if (Global.player1.isRushing() && ( canInteract(Global.player1) || canInteract(Global.player2) ) ) {
 								m_state = "breaking";
