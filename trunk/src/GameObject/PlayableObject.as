@@ -391,6 +391,18 @@ package GameObject
 			}
 		}
 		
+		public function addSpecial(spec:int):void {
+			//si on va ajouter trop de temps
+			if (m_timerSpecial.time - m_timerSpecial.timeLeft < spec) {
+				//relancer un timer entier
+				m_timerSpecial.start(m_timerSpecial.time);
+				m_camembert.trigger(m_timerSpecial.time, true);
+			}else { //sinon
+				//relancer un timer avec le temps ajouté
+				m_timerSpecial.start(m_timerSpecial.timeLeft + spec);
+				m_camembert.trigger(m_timerSpecial.timeLeft + spec, true);			}
+		}
+		
 		public function addScore(n:int):void {
 			m_score += n;
 			if (m_score >= m_thresoldScore) {
@@ -426,6 +438,9 @@ package GameObject
 			return m_equipement.m_armor;
 		}
 		
+		public function isOnSpecial():Boolean {
+			return m_onSpecial;
+		}
 		public function getThrowable():PlayerThrowable {
 			var thr:PlayerThrowable;
 			for (var i:int = 0; i < m_throwables.length; i++) {
