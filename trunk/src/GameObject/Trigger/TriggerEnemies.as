@@ -2,6 +2,7 @@ package GameObject.Trigger
 {
 	import com.adobe.protocols.dict.events.ConnectedEvent;
 	import GameObject.Enemy.Enemy;
+	import GameObject.Enemy.GoldenMosquito;
 	import GameObject.Enemy.Mosquito;
 	import GameObject.Enemy.Penguin;
 	import GameObject.TriggerObject;
@@ -94,7 +95,8 @@ package GameObject.Trigger
 		///STATIC ARRAY TO CREATE ENNEMIES WITHOUT MUCH degueulasse CODE///
 		public static var s_ennemiesArrayInstantiate:Object =
 		{
-			"mosquito" : Mosquito
+			"mosquito" : Mosquito,
+			"goldenMosquito": GoldenMosquito
 		};
 		
 	}
