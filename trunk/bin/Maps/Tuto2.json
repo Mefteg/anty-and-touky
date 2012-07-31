@@ -68,7 +68,7 @@
                  "name":"TriggerCutScenePary",
                  "properties":
                     {
-                     "url":"Maps\/tuto2_cutscene1"
+                     "url":"CutScenes\/tuto2_cutscene1"
                     },
                  "type":"TriggerCutScene",
                  "width":66,
