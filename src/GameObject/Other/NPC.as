@@ -27,7 +27,7 @@ package GameObject.Other
 		{
 			super(X, Y);
 			m_state = "idle";
-			loadXML("Dialogues/"+urlXml+".xml");
+			loadXML("Dialogues/" + urlXml + ".xml");
 		}
 		
 		private function speak(player:PlayableObject ):void {
@@ -83,6 +83,7 @@ package GameObject.Other
 		
 		override public function addToStage():void {
 			Global.currentPlaystate.addPhysical(this as PhysicalObject);
+			Global.currentPlaystate.addTalkers(this);
 			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_objectGroup);
 		}
 		

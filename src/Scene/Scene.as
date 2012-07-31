@@ -111,6 +111,7 @@ package Scene
 						continue;
 				//instantiate the object
 				var newElement:GameObject = Converter.convertJsonObject(object);
+				newElement.m_name = object.name;
 				//set the parser
 				newElement.setParser(object);
 				var url:String = newElement.m_url;
