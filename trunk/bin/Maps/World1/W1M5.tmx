@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="30" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" source="Jungle.tsx"/>
+ <layer name="Background" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztl1EOgjAMhpvgCbgB4wTgCYYnAU4A939wS7ZYazuKUE2MD18wTvs51/6EAQAGA26BC8Ibef5egCbgAi3jnYyYiXck66sh2Gvp+SXvEqh34nZ4pfoOUSlwCu8i1Ofg6kZ6gZK3UfhKzivwuRBnuEvr73olZ5vqS16frpKXq8mdJ7ceM4LmwoTenxX7pQ7pNaXU15K3U57vEWrG65O7L3yvdA7az9C+9vDoi+zfi/Y3YO8Ix+6PeV60/U/3fMTrlW7qzXNwxEvd3PxJ2cXN4RZ5Tqmby2yLeyJ2N/DcX/kqZeZZ7g5e+zpnqoUXu3P+Vh/yrsD/19ErZeaZe+a8ls7Mt71bs2vhxc8q2HsHbscArw==
+  </data>
+ </layer>
+ <layer name="Foreground" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAdsEJpUTQ+shgtACsB/nC3l5Zhi89eagI+GppNK8ABxJxAzEVlc4kJC0kglqKCXYJIbDki1GsSoQY5XAQJqKUmANlFrXAhBiDHEzHhQm1Aq/RHDKAknIXR+IxYMC5AaTgz4bEb3V3kAnLjhRr20zP9IwNy44VaYT6YwEDVZcSU36NgaABqpKGh2KYaBYMTAABHYwNd
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="30" height="30">
+  <object name="TriggerWarpBoss1" type="TriggerWarp" x="741" y="861" width="153" height="91">
+   <properties>
+    <property name="respawn" value="top"/>
+    <property name="url" value="Maps/W1B1.json"/>
+   </properties>
+  </object>
+  <object name="Penguin1" type="Penguin" x="282" y="311"/>
+  <object name="Penguin1" type="Penguin" x="321" y="335">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="Penguin1" type="Penguin" x="291" y="410"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="244" y="441" width="22" height="23">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="181" y="308" width="22" height="23">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="Penguin1" type="Penguin" x="348" y="552"/>
+  <object name="Penguin1" type="Penguin" x="797" y="362"/>
+  <object name="Penguin1" type="Penguin" x="678" y="570"/>
+  <object name="Penguin1" type="Penguin" x="713" y="571" width="20" height="16">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="Penguin1" type="Penguin" x="771" y="536"/>
+ </objectgroup>
+ <objectgroup name="RespawnPoints" width="30" height="30">
+  <object name="RespawnPointTop" type="RespawnPoint" x="760" y="137" width="31" height="30">
+   <properties>
+    <property name="location" value="top"/>
+   </properties>
+  </object>
+  <object name="RespawnPointTop" type="RespawnPoint" x="766" y="140" width="25" height="27">
+   <properties>
+    <property name="location" value="top"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
