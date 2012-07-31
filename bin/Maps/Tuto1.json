@@ -68,7 +68,7 @@
                  "name":"TriggerCutSceneThrowable",
                  "properties":
                     {
-                     "url":"Maps\/tuto1_cutscene1"
+                     "url":"CutScenes\/tuto1_cutscene1"
                     },
                  "type":"TriggerCutScene",
                  "width":66,

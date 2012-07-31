@@ -268,7 +268,7 @@
   </object>
   <object name="TriggerCutSceneThrowable" type="TriggerCutScene" x="132" y="225" width="66" height="255">
    <properties>
-    <property name="url" value="Maps/tuto1_cutscene1"/>
+    <property name="url" value="CutScenes/tuto1_cutscene1"/>
    </properties>
   </object>
  </objectgroup>
