@@ -246,6 +246,10 @@ package GameObject.Player
 				i++;
 			}
 		}
+		
+		override public function hasFallen():Boolean {
+			return m_state == "waitToukyPosition";
+		}
 	}
 
 }

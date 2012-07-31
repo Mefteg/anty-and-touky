@@ -76,6 +76,7 @@ package GameObject
 				//other
 				case "BreakableRock" : return Breakable.Rock(object.x, object.y); break;
 				case "Butterfly" : return new Butterfly(object.x, object.y); break;
+				case "FallenResetChecker": return new GameObject.Other.FallenResetChecker(object.x, object.y); break;
 				
 				default:  return new GameObject.Enemy.WhiteSquare(object.x, object.y); break;
 				

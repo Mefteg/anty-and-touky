@@ -30,9 +30,17 @@ package GameObject.Item
 		}
 		
 		override public function update():void {
-			if (Global.soloPlayer && Global.soloPlayer.m_name == m_player.m_name) {
+			//si on joue tout seul
+			if (Global.soloPlayer) {
+				//si c'est le bon player qui est courant
+				if (Global.soloPlayer.m_name == m_player.m_name) 
+					//et enfin si il collide bien
+					if(collide(m_player))
+						act();
+			//sinon
+			}else {
 				if(collide(m_player))
-					act();
+						act();
 			}
 		}
 		

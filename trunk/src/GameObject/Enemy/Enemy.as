@@ -224,8 +224,6 @@ package GameObject.Enemy
 			else if (m_direction.x > 0) facing = RIGHT;
 			else if (m_direction.y < 0) facing = UP;
 			else if (m_direction.y > 0) facing = DOWN;
-			
-			//_state = "lookfor";
 		}
 		
 		public function attack() : void {
