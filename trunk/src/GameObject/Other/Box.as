@@ -1,7 +1,10 @@
 package GameObject.Other 
 {
 	import GameObject.DrawableObject;
+	import GameObject.Enemy.EnemySmoke;
 	import GameObject.InteractiveObject;
+	import GameObject.Tile.Hole;
+	import GameObject.TileObject;
 	import org.flixel.FlxPoint;
 	
 	/**
@@ -13,6 +16,8 @@ package GameObject.Other
 		public var m_offset:FlxPoint;
 		public var m_initPos:FlxPoint;
 		
+		private var m_smokeDestroy:EnemySmoke;
+		
 		public function Box(X:Number,Y:Number ) 
 		{
 			super(X, Y);
@@ -22,6 +27,17 @@ package GameObject.Other
 			m_width = 32; m_height = 32;
 			m_offset = new FlxPoint(10, 34);
 			m_initPos = new FlxPoint(X, Y);
+			m_smokeDestroy = EnemySmoke.PlayerSmoke();
+		}
+		
+		override public function addBitmap():void {
+			super.addBitmap();
+			m_smokeDestroy.addBitmap();
+		}
+		
+		override public function load():void {
+			super.load();
+			m_smokeDestroy.load();
 		}
 		
 		override public function addToStage():void {
@@ -39,6 +55,14 @@ package GameObject.Other
 		}
 		
 		override public function act():void {
+			//check if the player is not on a hole
+			var tiles:Array = Global.player2.tilesUnder();
+			for each (var tile:TileObject in tiles) {
+				if (tile.m_typeName == Hole.s_type) {
+					respawn();
+					return;
+				}
+			}
 			var holes:Vector.<BoxHole> = Global.currentPlaystate.m_holeboxes;
 			var goodHole:BoxHole;
 			for (var i:int = 0; i < holes.length; i++) {
@@ -55,16 +79,23 @@ package GameObject.Other
 		}
 		
 		override public function update():void {
+			if (m_state == "respawning") {
+				if (m_smokeDestroy.finished) {
+					m_state = "idle";
+					m_smokeDestroy.playSmoke(x, y);
+					visible = true;
+				}
+			}
 		}
 		
 		override public function respawn():void {
-			place(m_initPos.x, m_initPos.y);
+			m_smokeDestroy.playSmoke(x, y);
+			m_state = "respawning";
+			x = m_initPos.x;
+			y = m_initPos.y;
+			visible = false;
 		}
-		
-		/*override public function die():void {
-			place(m_initPos.x, m_initPos.y);
-		}*/
-		
+				
 		public function take():void {
 			m_state = "taken";
 		}
