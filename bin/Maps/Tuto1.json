@@ -52,16 +52,16 @@
                  "y":336
                 }, 
                 {
-                 "height":255,
-                 "name":"TriggerCutSceneThrowable",
+                 "height":27,
+                 "name":"MexicanRaccoon",
                  "properties":
                     {
-                     "url":"Maps\/tuto1_cutscene1"
+                     "url":"mexicanRaccoon_tuto1"
                     },
-                 "type":"TriggerCutScene",
-                 "width":66,
-                 "x":132,
-                 "y":225
+                 "type":"MexicanRaccoon",
+                 "width":86,
+                 "x":216,
+                 "y":433
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -96,7 +96,19 @@
         {
          "height":30,
          "name":"DisabledObjects",
-         "objects":[],
+         "objects":[
+                {
+                 "height":255,
+                 "name":"TriggerCutSceneThrowable",
+                 "properties":
+                    {
+                     "url":"Maps\/tuto1_cutscene1"
+                    },
+                 "type":"TriggerCutScene",
+                 "width":66,
+                 "x":132,
+                 "y":225
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,

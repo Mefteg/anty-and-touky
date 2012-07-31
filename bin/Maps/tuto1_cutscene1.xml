@@ -2,8 +2,8 @@
 
 <cutscene name="tuto1_cutscene1">
 	<actiongroup sync="1">
-		<action type="message" executor="Player1" text="Hey! I bet I can kick this penguin's ass with ants!"/>
-		<action type="message" executor="Player1" text="Just press F button to make me throw an ant in front of me!"/>
-		<action type="message" executor="Player1" text="Hurry! I want to teach him how ugly he is mwahahahaaa! Prick..."/>
+		<action type="message" executor="MexicanRaccoon" text="Hey! I bet you can kick this penguin's ass with ants or eggs!"/>
+		<action type="message" executor="MexicanRaccoon" text="Just press F or K button to throw something in front of you!"/>
+		<action type="message" executor="MexicanRaccoon" text="Hurry! I want you to teach him how ugly he is mwahahahaaa! Prick..."/>
 	</actiongroup>
 </cutscene>
