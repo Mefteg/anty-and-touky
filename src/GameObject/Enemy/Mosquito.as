@@ -27,6 +27,30 @@ package GameObject.Enemy
 			play("fly");
 		}
 		
+		override public function move() : void {
+			m_oldPos.x= this.x;
+			m_oldPos.y = this.y;
+			
+			this.x = this.x + (m_direction.x * m_speed);
+			this.y = this.y + (m_direction.y * m_speed);
+			
+			var collided:Boolean = false;
+			if ( this.collideWithEnv() ) {
+				collided = true;
+				this.x = m_oldPos.x;
+			}
+			if ( this.collideWithEnv() ) {
+				collided = true;
+				this.y = m_oldPos.y;
+			}
+			if (collided) {
+				if (!onScreen())
+					removeFromStage();
+				m_direction.x *= -1;
+				m_direction.y *= -1;
+			}
+		}
+		
 		override public function update():void {
 			commonEnemyUpdate();
 			m_direction = m_directionFacing;
