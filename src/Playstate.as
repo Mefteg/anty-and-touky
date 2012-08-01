@@ -155,6 +155,8 @@ package
 		}
 		
 		public function changeScene(sceneName:String, respawn:String ) : void {
+			Global.player1.unspecial();
+			Global.player2.unspecial();
 			fadeOut();
 			m_sceneToLoad = sceneName;
 			m_respawnToLoad = respawn;
@@ -180,8 +182,8 @@ package
 
 			//m_sceneManager.loadScene("Maps/W1M1BIS.json");
 			//m_sceneManager.loadScene("Maps/W1M1.json");
-			m_sceneManager.loadScene("Maps/test2.json");
-			//m_sceneManager.loadScene("Maps/W1M3.json");
+			//m_sceneManager.loadScene("Maps/test2.json");
+			m_sceneManager.loadScene("Maps/W1M3.json");
 			m_state = "Loading";
 			//creating player 1
 			Global.player1 = new Player1(100, 100);

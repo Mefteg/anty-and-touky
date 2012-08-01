@@ -183,6 +183,8 @@ package GameObject.Player
 		}
 		
 		override public function unspecial():void {
+			if (!m_onSpecial)
+				return;
 			m_onSpecial = false;
 			m_state = "idle";
 			m_speed = m_normalSpeed;
