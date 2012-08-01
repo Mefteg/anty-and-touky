@@ -5,6 +5,7 @@ package GameObject.Trigger
 	import GameObject.Enemy.GoldenMosquito;
 	import GameObject.Enemy.Mosquito;
 	import GameObject.Enemy.Penguin;
+	import GameObject.Enemy.Snake;
 	import GameObject.TriggerObject;
 	import org.flixel.FlxPoint;
 	/**
@@ -96,7 +97,8 @@ package GameObject.Trigger
 		public static var s_ennemiesArrayInstantiate:Object =
 		{
 			"mosquito" : Mosquito,
-			"goldenMosquito": GoldenMosquito
+			"goldenMosquito": GoldenMosquito,
+			"snake" : Snake
 		};
 		
 	}
