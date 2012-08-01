@@ -162,6 +162,8 @@ package GameObject.Player
 		}
 		
 		override public function unspecial():void {
+			if (!m_onSpecial)
+				return;
 			m_onSpecial = false;
 			m_timerSpecialAvailable.start(5);
 			m_camembert.trigger(5);
