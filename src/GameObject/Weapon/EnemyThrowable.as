@@ -12,10 +12,9 @@ package GameObject.Weapon
 		
 		public var m_enemy:Enemy;
 		
-		public function EnemyThrowable(power:int,url:String,speed:int = 10) 
+		public function EnemyThrowable(power:int,url:String,speed:int = 4) 
 		{
-			super(power, url);
-			m_speed = speed;
+			super(power, url,speed );
 			m_state = "idle";			
 			m_width = 24;
 			m_height = 32;
@@ -118,6 +117,14 @@ package GameObject.Weapon
 			ball.m_fragile = false;
 			//ball.m_FXurl = "FX/pistol_fire.mp3";
 			return ball;
+		}
+		
+		public static function Harpoon():EnemyThrowable {
+			var har:EnemyThrowable = new EnemyThrowable(1, "Images/Weapons/harpoon.png");
+			har.m_fourDirection = true;
+			har.m_width = 32; har.m_height = 32;
+			har.setHitbox(6, 6, 20, 20);
+			return har;
 		}
 	}
 
