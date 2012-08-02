@@ -22,6 +22,7 @@ package GameObject
 	import GameObject.Other.Breakable;
 	import GameObject.Other.Butterfly;
 	import GameObject.Other.Door;
+	import GameObject.Other.Generator;
 	import GameObject.Other.NPC;
 	import GameObject.Other.Switch;
 	import GameObject.Player.Player1;
@@ -70,7 +71,8 @@ package GameObject
 				///DOORS
 				case "Spikes" : return new Door(object.x, object.y, object.name, object.properties.respawn); break;
 				case "Cylinders" : return Door.Cylinders(object.x, object.y, object.name,object.properties.respawn); break;
-				case "Switch": return new Switch(object.x, object.y, object.properties.door,object.properties.time); break;
+				case "Switch": return new Switch(object.x, object.y, object.properties.door, object.properties.time); break;
+				case "ElectricDoor" : return Door.ElectricDoor(object.x, object.y, object.name, object.properties.respawn); break;
 				//triggers
 				case "TriggerWarp": return new GameObject.Trigger.TriggerWarp(object.x, object.y, null,object.properties.url,object.properties.respawn, object.width, object.height); break;
 				case "TriggerCutScene": return new TriggerCutScene(object.x, object.y, object.width, object.height, object.properties.url); break;
@@ -78,6 +80,7 @@ package GameObject
 				case "BreakableRock" : return Breakable.Rock(object.x, object.y); break;
 				case "Butterfly" : return new Butterfly(object.x, object.y); break;
 				case "FallenResetChecker": return new GameObject.Other.FallenResetChecker(object.x, object.y); break;
+				case "Generator" : return new Generator(object.x, object.y, object.properties.door); break;
 				
 				default:  return new GameObject.Enemy.WhiteSquare(object.x, object.y); break;
 				
