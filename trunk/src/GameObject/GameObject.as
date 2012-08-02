@@ -154,6 +154,22 @@ package GameObject
 			return facing;
 		}
 		
+		public function getFacingFromDirection(dir:FlxPoint):uint {
+			var res:uint;
+			if (Math.abs(dir.x) > 0.5) {
+				if(dir.x < 0)
+					res = LEFT;
+				else
+					res = RIGHT;
+			}else {
+				if (dir.y < 0)
+					res = UP;
+				else
+					res = DOWN;
+			}
+				
+			return res;
+		}
 		override public function onScreen(cam:FlxCamera = null ) : Boolean {
 			if (!Global.camera)
 			return super.onScreen();

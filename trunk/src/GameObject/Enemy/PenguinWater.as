@@ -1,5 +1,6 @@
 package GameObject.Enemy 
 {
+	import GameObject.Weapon.EnemyThrowable;
 	/**
 	 * ...
 	 * @author ...
@@ -20,6 +21,16 @@ package GameObject.Enemy
 			addAnimation("waving", [12, 13, 14], 7, false);
 			addAnimation("appearing", [15, 16, 17], 3, false);
 			visible = false;
+		}
+		
+		override protected function createThrowables():void {
+			m_throwables = new Vector.<EnemyThrowable>;
+			var thr:EnemyThrowable;
+			for (var i:int = 0; i < 3; i++) {
+				thr = EnemyThrowable.Harpoon();
+				thr.setCaster(this);
+				m_throwables.push(thr);
+			}
 		}
 		
 		override public function update():void {

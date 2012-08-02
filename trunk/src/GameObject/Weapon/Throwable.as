@@ -17,6 +17,8 @@ package GameObject.Weapon
 		public var m_animationSpeed:int = 10;
 		
 		public var m_rotative:Boolean = false;
+		public var m_fourDirection:Boolean = false;
+		
 		protected var m_currentAttackName:String;
 		
 		public var m_fragile:Boolean = true;
@@ -62,6 +64,19 @@ package GameObject.Weapon
 				play(m_currentAttackName);
 			}
 			computeDirection();
+			
+			if (m_fourDirection)
+				setAnimFour();
+		}
+		
+		public function setAnimFour():void {
+			facing = m_caster.facing;
+			switch(facing) {
+				case LEFT : frame = 3; break;
+				case RIGHT : frame = 1; break;
+				case UP : frame = 0; break;
+				case DOWN : frame = 2; break;
+			}
 		}
 		
 		public function setAnimationAttack(rotative:Boolean,...rest):void {
@@ -101,8 +116,10 @@ package GameObject.Weapon
 		protected function computeDirection():void {
 			m_direction.x = m_caster.m_directionFacing.x;
 			m_direction.y = m_caster.m_directionFacing.y;
-			if (m_straightShot)
+			if (m_straightShot) {
+				m_direction = Utils.normalize(m_direction);
 				return;
+			}
 			if (m_direction.x == 0) {
 				m_direction.x = Utils.random( -0.1, 0.1);
 			}else if (m_direction.y == 0) {
