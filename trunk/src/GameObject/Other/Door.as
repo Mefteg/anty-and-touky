@@ -1,5 +1,6 @@
 package GameObject.Other 
 {
+	import GameObject.InteractiveObject;
 	import GameObject.PhysicalObject;
 	import GameObject.PlayableObject;
 	import org.flixel.FlxPoint;
@@ -8,9 +9,13 @@ package GameObject.Other
 	 * ...
 	 * @author ...
 	 */
-	public class Door extends PhysicalObject 
+	public class Door extends InteractiveObject 
 	{
 		protected var m_respawnOffset:FlxPoint;
+		public var m_hazardous:Boolean = false;
+		
+		public var m_animationSpeed:int = 0;
+		public var m_frameOpen:int = 1;
 		
 		public function Door(X:Number, Y:Number, name:String, respawn:String ) 
 		{
@@ -24,6 +29,8 @@ package GameObject.Other
 			Global.currentPlaystate.addPhysical(this as PhysicalObject);
 			Global.currentPlaystate.addDoor(this);
 			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_objectGroup);
+			if (m_hazardous)
+				play("idle");
 		}
 		
 		override public function removeFromStage():void {
@@ -33,7 +40,26 @@ package GameObject.Other
 		
 		override public function act():void {
 			m_collideWithObjects = false;
-			frame = 1;
+			m_hazardous = false;
+			frame = m_frameOpen;
+		}
+		
+		public function setAnimation(...rest):void {
+			addAnimation("idle", rest, m_animationSpeed, true);
+		}
+		
+		override public function update():void {
+			if (m_hazardous) {
+				if (Global.soloPlayer) {
+					if (canInteract(Global.soloPlayer))
+						Global.soloPlayer.takeDamage();
+					return;
+				}
+				if (canInteract(Global.player1))
+					Global.player1.takeDamage();
+				if (canInteract(Global.player2))
+					Global.player2.takeDamage();
+			}
 		}
 		
 		public function close():void {
@@ -70,6 +96,16 @@ package GameObject.Other
 			var cyl:Door = new Door(X, Y, name, respawn);
 			cyl.m_url = "Images/Others/cylinders.png";
 			return cyl;
+		}
+		
+		public static function ElectricDoor(X:Number, Y:Number, name:String, respawn:String ):Door {
+			var ed:Door = new Door(X, Y, name, respawn);
+			ed.m_url = "Images/Others/electric_door.png";
+			ed.m_animationSpeed = 13;
+			ed.setAnimation(0, 1);
+			ed.m_frameOpen = 2;
+			ed.m_hazardous = true;
+			return ed;
 		}
 	}
 

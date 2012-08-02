@@ -54,6 +54,9 @@ package Scene
 				return;
 			//if real collision between the two of 'em
 			if (m_currentObject.collide(m_currentOther)) {
+				//in the case the player1 is rushing
+				if (m_currentObject.m_name == "Player1")
+					Global.player1.unspecial();
 				//if the same weight, replace both
 				if (m_currentObject.m_weight == m_currentOther.m_weight) {
 					repulseBoth();

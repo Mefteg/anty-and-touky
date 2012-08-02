@@ -173,7 +173,8 @@ package GameObject.Enemy
 		}
 		
 		override public function update() : void {
-			commonEnemyUpdate();
+			if (!commonEnemyUpdate())
+				return;
 			if (m_blocked) return;
 												
 			switch ( m_state ) {
