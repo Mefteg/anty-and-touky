@@ -47,8 +47,8 @@
                     },
                  "type":"Cylinders",
                  "width":0,
-                 "x":262,
-                 "y":228
+                 "x":129,
+                 "y":395
                 }, 
                 {
                  "height":0,
@@ -59,20 +59,44 @@
                     },
                  "type":"BarrelHole",
                  "width":0,
-                 "x":268,
-                 "y":326
+                 "x":157,
+                 "y":434
                 }, 
                 {
-                 "height":0,
+                 "height":16,
                  "name":"Barel",
                  "properties":
                     {
 
                     },
                  "type":"Barrel",
+                 "width":17,
+                 "x":89,
+                 "y":427
+                }, 
+                {
+                 "height":0,
+                 "name":"Gene",
+                 "properties":
+                    {
+                     "door":"DoorElec"
+                    },
+                 "type":"Generator",
                  "width":0,
-                 "x":150,
-                 "y":335
+                 "x":315,
+                 "y":200
+                }, 
+                {
+                 "height":0,
+                 "name":"DoorElec",
+                 "properties":
+                    {
+                     "respawn":"down"
+                    },
+                 "type":"ElectricDoor",
+                 "width":0,
+                 "x":125,
+                 "y":156
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -86,16 +110,16 @@
          "name":"Respawn",
          "objects":[
                 {
-                 "height":0,
+                 "height":20,
                  "name":"Respawn",
                  "properties":
                     {
                      "location":"init"
                     },
                  "type":"RespawnPoint",
-                 "width":0,
-                 "x":478,
-                 "y":301
+                 "width":17,
+                 "x":172,
+                 "y":237
                 }],
          "opacity":1,
          "type":"objectgroup",
