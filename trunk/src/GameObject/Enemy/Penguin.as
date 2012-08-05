@@ -90,6 +90,11 @@ package GameObject.Enemy
 			}
 		}
 		
+		public static function Scientist(X:Number, Y:Number) {
+			var scientist:Penguin = new Penguin(X, Y);
+			scientist.m_url = "Images/Enemies/pinguin_scientist.png";
+			return scientist;
+		}
 	}
 
 }

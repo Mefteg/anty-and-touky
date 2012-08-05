@@ -49,6 +49,7 @@ package GameObject
 				//enemies
 				case "Monkey": return new GameObject.Enemy.Monkey(object.x, object.y); break;
 				case "Penguin" : return new Penguin(object.x, object.y); break;
+				case "PenguinScientist": return Penguin.Scientist(object.x, object.y); break;
 				case "PenguinJetpack" : return new PenguinJetpack(object.x, object.y); break;
 				case "WaterPenguin" : return new GameObject.Enemy.PenguinWater(object.x, object.y); break;
 				case "Centipede" : return new Centipede(object.x, object.y,object.width,object.height); break;
@@ -81,6 +82,7 @@ package GameObject
 				case "Butterfly" : return new Butterfly(object.x, object.y); break;
 				case "FallenResetChecker": return new GameObject.Other.FallenResetChecker(object.x, object.y); break;
 				case "Generator" : return new Generator(object.x, object.y, object.properties.door); break;
+				case "Lift" : return new GameObject.Other.Lift(object.x, object.y,object.properties.range); break;
 				
 				default:  return new GameObject.Enemy.WhiteSquare(object.x, object.y); break;
 				

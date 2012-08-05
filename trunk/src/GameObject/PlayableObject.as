@@ -288,7 +288,7 @@ package GameObject
 			this.y = this.y + (m_direction.y * m_speed);
 			
 			// if the new position involves an environment collision
-			if ( this.collideWithEnv() ) {
+			if ( !m_collideEvtFree && this.collideWithEnv() ) {
 				if (m_state == "rushAttack")
 					Global.player1.unspecial();
 					

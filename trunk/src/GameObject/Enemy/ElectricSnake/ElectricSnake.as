@@ -46,20 +46,22 @@ package GameObject.Enemy.ElectricSnake
 		}
 		
 		private function createParts():void {
+			var step:Number = 0.5 / m_nbParts;
 			m_parts = new Array();
 			for (var i:int = 0; i < m_nbParts; i++){
 				m_parts.push(new ElectricSnakePart(x+10, y+20));
 				m_parts[i].m_direction = m_direction;
+				m_parts[i].scale = new FlxPoint(0.4+i*step,0.5+i*step);
 			}
 		}
 		////////////////ACTIONS/////////////////////////////
 		
 		private function moveUp():void {
 			move();
-			if (y < m_initialY - m_nbParts * 36)
+			if (y < m_initialY - m_nbParts * 30)
 				attack();
 			
-			var ind:int = (m_initialY -y) / 38;
+			var ind:int = (m_initialY -y) / 30;
 			trace(ind);
 			for (var i:int = ind+1; i < m_nbParts; i++)
 				m_parts[i].move();

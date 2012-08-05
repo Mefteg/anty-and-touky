@@ -17,6 +17,7 @@ package GameObject
 		public var m_collideWithObjects = true;
 		public var m_weight:int = 10;
 		public var m_pushed:Boolean = false;
+		public var m_collideEvtFree:Boolean = false;
 		
 		public function PhysicalObject(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
@@ -40,13 +41,13 @@ package GameObject
 				
 				this.y = m_oldPos.y;
 				// if the collision is on the x axis
-				if ( this.collideWithEnv() ) {
+				if ( !m_collideEvtFree && this.collideWithEnv() ) {
 					this.x = m_oldPos.x;
 				}
 				
 				this.y = newPos.y;
 				// if the collision is also on the y axis
-				if ( this.collideWithEnv() ) {
+				if ( !m_collideEvtFree && this.collideWithEnv() ) {
 					this.y = m_oldPos.y;
 				}
 			}
