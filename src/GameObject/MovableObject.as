@@ -42,6 +42,10 @@ package GameObject
 			m_blocked = true;
 		}
 		
+		public function replaceToOld():void {
+			x = m_oldPos.x; y = m_oldPos.y;
+		}
+		
 		public function unblock():void {
 			m_blocked = false;
 		}

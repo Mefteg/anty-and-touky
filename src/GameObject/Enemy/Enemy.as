@@ -49,7 +49,6 @@ package GameObject.Enemy
 		protected var m_killer:PlayableObject;
 		
 		protected var m_invincible:Boolean = false;
-		protected var m_collideEvtFree:Boolean = false;
 		
 		public function Enemy(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
