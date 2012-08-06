@@ -11,6 +11,8 @@ package
 	{
 		public static function normalize(p:FlxPoint) : FlxPoint {
 			var dist:Number = Math.sqrt(p.x * p.x + p.y * p.y);
+			if (dist == 0)
+				return new FlxPoint();
 			return new FlxPoint(p.x / dist, p.y / dist);
 		}
 		

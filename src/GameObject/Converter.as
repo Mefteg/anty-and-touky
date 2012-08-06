@@ -17,6 +17,7 @@ package GameObject
 	import GameObject.Item.Chest;
 	import GameObject.Item.Item;
 	import GameObject.Item.SpecialFiller;
+	import GameObject.Other.AnimatedObject;
 	import GameObject.Other.Box;
 	import GameObject.Other.BoxHole;
 	import GameObject.Other.Breakable;
@@ -73,6 +74,7 @@ package GameObject
 				case "Spikes" : return new Door(object.x, object.y, object.name, object.properties.respawn); break;
 				case "Cylinders" : return Door.Cylinders(object.x, object.y, object.name,object.properties.respawn); break;
 				case "Switch": return new Switch(object.x, object.y, object.properties.door, object.properties.time); break;
+				case "SwitchMetal": return Switch.SwitchMetal(object.x, object.y, object.properties.door, object.properties.time); break;
 				case "ElectricDoor" : return Door.ElectricDoor(object.x, object.y, object.name, object.properties.respawn); break;
 				//triggers
 				case "TriggerWarp": return new GameObject.Trigger.TriggerWarp(object.x, object.y, null,object.properties.url,object.properties.respawn, object.width, object.height); break;
@@ -82,7 +84,9 @@ package GameObject
 				case "Butterfly" : return new Butterfly(object.x, object.y); break;
 				case "FallenResetChecker": return new GameObject.Other.FallenResetChecker(object.x, object.y); break;
 				case "Generator" : return new Generator(object.x, object.y, object.properties.door); break;
-				case "Lift" : return new GameObject.Other.Lift(object.x, object.y,object.properties.range); break;
+				case "Lift" : return new GameObject.Other.Lift(object.x, object.y, object.properties.range); break;
+				//animated objects
+				case "Alarm" : return AnimatedObject.Alarm(object.x, object.y); break;
 				
 				default:  return new GameObject.Enemy.WhiteSquare(object.x, object.y); break;
 				

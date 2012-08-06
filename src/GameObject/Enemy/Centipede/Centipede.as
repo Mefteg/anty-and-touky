@@ -26,6 +26,11 @@ package GameObject.Enemy.Centipede
 		private var m_currentSpawn:CentipedeSpawnPoint;
 		
 		private var m_timerWait:FlxTimer;
+		
+		private var m_initSpeed:Number;
+		private var m_rageCount:int = 0;
+		private var m_rage:Boolean = false;
+		private var m_rageMax:int;
 	
 		private var m_dead:Boolean = false;
 		
@@ -36,6 +41,7 @@ package GameObject.Enemy.Centipede
 			m_width = 48;
 			m_height = 32;
 			m_speed = 3.0;
+			m_initSpeed = m_speed;
 			m_stats.initHP(12);
 			m_points = 1000;
 			m_invincible = true;
@@ -135,7 +141,14 @@ package GameObject.Enemy.Centipede
 		/////////  ACTIONS /////////////////////////////
 		
 		private function waitingOutside():void {
-			if (m_timerWait.finished) {
+			//check rage & deactivate if over
+			if (m_rage) {
+				m_rageCount++;
+				if (m_rageCount > m_rageMax) 
+					unrage();
+			}
+			//if waited long enough or in rage
+			if (m_timerWait.finished || m_rage) {
 				m_timerWait.start(TIME_WAIT_IN);
 				m_state = "waitingInside";
 				spawn(getSpawnPoint());
@@ -143,7 +156,7 @@ package GameObject.Enemy.Centipede
 		}
 		
 		private function waitingInside():void {
-			if (m_timerWait.finished) {
+			if (m_timerWait.finished || m_rage) {
 				m_state = "moving";
 				// Randomly go its way (30%) or go to one player (70%)
 				var r:Number = Utils.random(0, 100);
@@ -176,6 +189,22 @@ package GameObject.Enemy.Centipede
 			if (m_timerWait.finished) {
 				m_state = "moving";
 			}
+		}
+		
+		private function triggerRage():void {
+			m_rage = true;
+			m_speed *= 2;
+			m_rageCount = 0;
+			m_rageMax = Utils.random(3, 5);
+			for (var i:int = 0; i < m_nbParts; i++)
+				m_parts[i].m_speed = m_speed;
+		}
+		
+		private function unrage():void {
+			m_rage = false;
+			m_speed = m_initSpeed;
+			for (var i:int = 0; i < m_nbParts; i++)
+				m_parts[i].m_speed = m_initSpeed;
 		}
 		
 		//OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO//
@@ -233,6 +262,10 @@ package GameObject.Enemy.Centipede
 			if (m_livingParts == 0) {
 				m_invincible = false;
 			}
+			if (!m_rage)
+				triggerRage();
+			if (m_livingParts == m_nbParts * 0.5)
+				m_initSpeed += 0.2;
 		}
 		
 		public function killParts():void {
@@ -267,6 +300,7 @@ package GameObject.Enemy.Centipede
 		override public function move() : void {
 			if (m_state == "stunned")
 				return;
+			m_direction = Utils.normalize(m_direction);
 			m_oldPos.x= this.x;
 			m_oldPos.y = this.y;
 			
