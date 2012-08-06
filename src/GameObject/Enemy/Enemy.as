@@ -77,6 +77,7 @@ package GameObject.Enemy
 		override public function load():void {
 			super.load();
 			m_smoke.load();
+			loadThrowables();
 			m_FXhit.loadStream("FX/hit.mp3");
 		}
 							
@@ -89,7 +90,15 @@ package GameObject.Enemy
 					m_throwables[i].removeFromStage();
 		}
 		
-		protected function createThrowables():void {}
+		protected function createThrowables():void {
+			m_throwables = new Vector.<EnemyThrowable>;
+			var thr:EnemyThrowable;
+			for (var i:int = 0; i < 3; i++) {
+				thr = EnemyThrowable.PistolBullet();
+				thr.setCaster(this);
+				m_throwables.push(thr);
+			}
+		}
 		
 		public function getThrowable():EnemyThrowable {
 			var thr:EnemyThrowable;

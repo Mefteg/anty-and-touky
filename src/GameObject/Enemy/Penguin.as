@@ -24,7 +24,6 @@ package GameObject.Enemy
 		
 		override public function load():void {
 			super.load();
-			loadThrowables();
 			//IDLE ANIM
 			addAnimation("idle" + UP, [9], 5, false);
 			addAnimation("idle" + RIGHT, [0], 5, false);

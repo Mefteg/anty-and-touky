@@ -109,6 +109,14 @@ package GameObject.Weapon
 			return bullet;
 		}
 		
+		public static function CannonBullet():EnemyThrowable {
+			var bullet:EnemyThrowable = new EnemyThrowable(1, "Images/Weapons/bulletCannon.png", 2);
+			bullet.m_width = 16; bullet.m_height = 16;
+			bullet.setHitbox(6, 6, 4, 4);
+			bullet.m_FXurl = "FX/pistol_fire.mp3";
+			return bullet;
+		}
+		
 		public static function ElecBall():EnemyThrowable {
 			var ball:EnemyThrowable = new EnemyThrowable(1, "Images/Enemies/ElectricSnake/elecBall.png", 2);
 			ball.m_width = 24; ball.m_height = 24;
