@@ -5,6 +5,7 @@ package GameObject
 	 * @author ...
 	 */
 	import GameObject.Enemy.BlackSquare;
+	import GameObject.Enemy.Cannon;
 	import GameObject.Enemy.Centipede.Centipede;
 	import GameObject.Enemy.ElectricSnake.ElectricSnake;
 	import GameObject.Enemy.ElSqualo.ElSqualo;
@@ -56,6 +57,7 @@ package GameObject
 				case "Centipede" : return new Centipede(object.x, object.y,object.width,object.height); break;
 				case "MonkeyTest": return new GameObject.Enemy.MonkeyTest(object.x,object.y); break;
 				case "ElectricSnake": return new ElectricSnake(object.x, object.y); break;
+				case "Cannon" : return new Cannon(object.x, object.y,object.properties.lift); break;
 				case "WhiteSquare":  return new GameObject.Enemy.WhiteSquare(object.x, object.y); break;
 				case "BlackSquare":  return new GameObject.Enemy.BlackSquare(object.x, object.y); break;
 				case "TriggerEnemies": return new TriggerEnemies(object.x, object.y, object.width, object.height, object.properties.type, object.properties.number,object.properties.direction, object.properties.location); break;
