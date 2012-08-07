@@ -154,7 +154,7 @@ package GameObject.Weapon
 			this.y = this.y + (m_direction.y * m_speed);
 			
 			// if the new position involves an environment collision
-			if ( collideWithEnv() ) {
+			if ( !m_collideEvtFree && collideWithEnv() ) {
 				touched();
 			}
 		}

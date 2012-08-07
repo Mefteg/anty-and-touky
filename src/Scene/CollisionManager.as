@@ -73,7 +73,7 @@ package Scene
 		private function processCollisions(superior:PhysicalObject, inferior:PhysicalObject) : void {
 			//if no force from the pusher, do nothing
 			if (superior.m_direction.x == 0 && superior.m_direction.y==0) {
-				repulseBoth();
+				repulseObject(inferior);
 				return;
 			}
 			
@@ -85,6 +85,8 @@ package Scene
 				pushUp(superior, inferior);
 			}else if ( superior.m_direction.y> 0  && inferior.collideFromUp(superior)){
 				pushDown(superior, inferior);
+			}else {
+				repulseObject(inferior);
 			}
 		}
 		
@@ -96,6 +98,12 @@ package Scene
 			m_currentOther.x = m_currentOther.m_oldPos.x;
 			m_currentOther.y = m_currentOther.m_oldPos.y;
 		}
+		
+		private function repulseObject(obj:PhysicalObject) {
+			obj.x = obj.m_oldPos.x;
+			obj.y = obj.m_oldPos.y;
+		}
+		
 		private function pushRight(pusher:PhysicalObject, bePushed:PhysicalObject):void {
 			if (pusher.m_direction.y != 0) {
 				repulseBoth();

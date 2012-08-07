@@ -51,6 +51,8 @@ package GameObject.Enemy.Centipede
 			if (m_stats.m_hp_current <= 0)
 			{
 				m_state = "walkD";
+				if(Global.difficulty==1)
+					m_stopBullets = false;
 				play(m_state + facing);
 				m_boss.removePart();
 			}

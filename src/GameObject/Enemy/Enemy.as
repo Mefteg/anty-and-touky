@@ -49,6 +49,7 @@ package GameObject.Enemy
 		protected var m_killer:PlayableObject;
 		
 		protected var m_invincible:Boolean = false;
+		public var m_stopBullets:Boolean = true;
 		
 		public function Enemy(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
