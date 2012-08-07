@@ -19,9 +19,9 @@ package GameObject.Enemy
 			m_stats.initHP(7);
 			m_points = 200;
 			m_state = "idle";
-			createThrowables();
 			if (lift != null) 
 				m_straight = false;
+			createThrowables();
 			m_timerAttack.start(3);
 		}
 		
@@ -83,6 +83,7 @@ package GameObject.Enemy
 			for (var i:int = 0; i < 3; i++) {
 				thr = EnemyThrowable.CannonBullet();
 				thr.setCaster(this);
+				thr.m_collideEvtFree = !m_straight;
 				m_throwables.push(thr);
 			}
 		}

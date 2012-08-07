@@ -30,7 +30,7 @@ package GameObject.Weapon
 			//check enemies for damage
 			for (var i:int = 0; i < m_enemies.length; i++) {
 				var enemy:Enemy = m_enemies[i];
-				if (enemy == null || enemy.isDead() )
+				if (enemy == null || enemy.isDead() || !enemy.m_stopBullets )
 					continue;
 				//if collision with an enemy
 				if (collide(enemy)) {

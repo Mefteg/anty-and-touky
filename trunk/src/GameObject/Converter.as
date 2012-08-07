@@ -87,6 +87,7 @@ package GameObject
 				case "FallenResetChecker": return new GameObject.Other.FallenResetChecker(object.x, object.y); break;
 				case "Generator" : return new Generator(object.x, object.y, object.properties.door); break;
 				case "Lift" : return new GameObject.Other.Lift(object.x, object.y, object.properties.range); break;
+				case "HorizontalPillar" : return new GameObject.Other.HorizontalPillar(object); break;
 				//animated objects
 				case "Alarm" : return AnimatedObject.Alarm(object.x, object.y); break;
 				

@@ -22,6 +22,7 @@ package GameObject.Enemy.ElectricSnake
 			m_initX = x;
 			m_angle = 0;
 			setHitbox(10, 10, 30, 30);
+			m_stopBullets = false;
 		}
 		
 		override public function load():void {
@@ -31,6 +32,8 @@ package GameObject.Enemy.ElectricSnake
 		}
 		
 		override public function update():void {
+			if (!commonEnemyUpdate())
+				return;
 			if (m_timerDeath.finished && m_state != "anihilated")
 				die();
 			m_angle+=Utils.random(0.05,0.2);
