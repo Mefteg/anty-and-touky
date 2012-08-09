@@ -7,6 +7,7 @@ package Scene.CutScene
 	import GameObject.GameObject;
 	import GameObject.Menu.Message;
 	import GameObject.MovableObject;
+	import GameObject.PlayableObject;
 	import org.flixel.FlxBasic;
 	/**
 	 * ...
@@ -26,6 +27,9 @@ package Scene.CutScene
 		private var m_allFinished:Boolean;
 		
 		private var m_talkers:Vector.<MovableObject>;
+		
+		private var m_player1:GameObject.PlayableObject;
+		private var m_player2:GameObject.PlayableObject;
 		
 		public function CutScene(scriptUrl:String="") 
 		{
@@ -55,6 +59,8 @@ package Scene.CutScene
 			Global.currentState.add(this);
 			Global.frozen = true;
 			Global.currentPlaystate.m_enablePanels = false;
+			m_player1 = Global.player1;
+			m_player2 = Global.player2;
 			m_talkers = Global.currentPlaystate.m_talkersObjects;
 			next();
 		}
@@ -77,7 +83,6 @@ package Scene.CutScene
 		
 		//ACTOR CREATION FUNCTIONS
 		private function createActors():void {
-			//trace("CreateActors for action group ",m_currentActionGroup);
 			m_currentActors = new Vector.<CutSceneObject>();
 			var actionGroup:XML = m_xml.actiongroup[m_currentActionGroup];
 			
@@ -86,10 +91,12 @@ package Scene.CutScene
 					case "move" : createMover(act); break;
 					case "message": createTalker(act); break;
 					case "music" : m_currentActors.push(new CutSceneMusicObject(act.@name.toString())); break;
+					case "scroll" : m_currentActors.push( new CutSceneScrollCamera(new GameObject(act.@targetX, act.@targetY),m_player1,m_player2)); break;
+					case "scrollBack" : m_currentActors.push( new CutSceneScrollCamera(m_player1 , m_player1, m_player2,true)); break;
 					default: m_nbActionGroup--; trace("Failed : ",act.@type.toString()); break;
 				}
 			}
-					
+
 		}
 		
 		private function createMover(actionXML:XML) : void {

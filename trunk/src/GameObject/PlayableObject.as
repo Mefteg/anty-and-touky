@@ -80,6 +80,7 @@ package GameObject
 			m_thresoldScore += m_thresoldDelta;
 			m_speed = 1.9;
 			m_typeName = "Player";
+			m_url = "Images/Players/anty.png";
 			m_width = 48;
 			m_height = 48;
 			m_state = "idle";
