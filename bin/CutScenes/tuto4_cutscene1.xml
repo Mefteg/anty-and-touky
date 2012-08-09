@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+
+<cutscene name="tuto1_cutscene1">
+	<actiongroup sync="1">
+		<action type="message" executor="MexicanRaccoon" text="Just one more thing."/>
+		<action type="message" executor="MexicanRaccoon" text="Anty can't jump but Touky can carry him!"/>
+		<action type="message" executor="MexicanRaccoon" text="Touky has to overlap ( hum hum ) and press M."/>
+		<action type="message" executor="MexicanRaccoon" text="In this pose, Anty is the only one who can trhow things."/>
+	</actiongroup>
+</cutscene>

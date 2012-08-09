@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+
+<cutscene name="tuto1_cutscene1">
+	<actiongroup sync="1">
+		<action type="message" executor="MexicanRaccoon" text="Oh! I forgot"/>
+		<action type="message" executor="MexicanRaccoon" text="Touky can carry some objects."/>
+		<action type="message" executor="MexicanRaccoon" text="Try to put this box on the switch."/>
+		<action type="message" executor="MexicanRaccoon" text="In this pose, Anty is the only one who can trhow things."/>
+	</actiongroup>
+</cutscene>
