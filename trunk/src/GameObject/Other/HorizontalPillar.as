@@ -11,6 +11,7 @@ package GameObject.Other
 	{
 		private var m_timerAttack:FlxTimer;
 		private var m_initX:Number;
+		private var m_timeWait:Number;
 		
 		public function HorizontalPillar(object:Object) 
 		{
@@ -28,6 +29,10 @@ package GameObject.Other
 			}else{
 				m_direction.x = 1;
 			}
+			if (object.properties.wait)
+				m_timeWait = object.properties.wait;
+			else
+				m_timeWait = 2;
 			m_bufferGroup = DepthBufferPlaystate.s_objectGroup;
 			m_state = "idle";
 			m_weight = 20;
@@ -47,14 +52,14 @@ package GameObject.Other
 			if (m_direction.x > 0) {
 				if (x >= m_initX) {
 					m_state = "idle";
-					m_timerAttack.start(2);
+					m_timerAttack.start(m_timeWait);
 					x = m_initX;
 					m_direction.x *= -1;
 				}
 			}else {
 				if (x <= m_initX) {
 					m_state = "idle";
-					m_timerAttack.start(2);
+					m_timerAttack.start(m_timeWait);
 					x = m_initX;
 					m_direction.x *= -1;
 				}
@@ -104,7 +109,7 @@ package GameObject.Other
 		
 		function triggerRetract():void {
 			m_state = "retract";
-			m_speed = 2;
+			m_speed = 3.5;
 			m_direction.x *= -1;
 		}
 		
