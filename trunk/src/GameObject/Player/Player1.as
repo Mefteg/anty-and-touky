@@ -168,7 +168,7 @@ package GameObject.Player
 		}
 		
 		override public function triggerSpecial():void {
-			if (!this.collide(Global.player2) || !m_timerSpecialAvailable.finished)
+			if (!this.collide(Global.player2) || !m_timerSpecialAvailable.finished || Global.player2.isCarryingPlayer())
 				return;
 			m_onSpecial = true;
 			m_state = "rushAttack";
@@ -190,7 +190,7 @@ package GameObject.Player
 			m_speed = m_normalSpeed;
 			Global.player2.m_state = "idle";
 			Global.player2.x = x; Global.player2.y = y;
-			m_timerSpecialAvailable.start(15);
+			m_timerSpecialAvailable.start(10);
 			m_camembert.trigger(15);
 		}
 		
