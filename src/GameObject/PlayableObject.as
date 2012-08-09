@@ -64,7 +64,7 @@ package GameObject
 		
 		public var m_enemies:Vector.<GameObject.Enemy.Enemy>;
 		
-		protected var m_onSpecial:Boolean = false;	
+		public var m_onSpecial:Boolean = false;	
 		
 		public var m_lifes:int = 3;
 		public var m_initHealth:int = 5;
@@ -442,6 +442,9 @@ package GameObject
 		public function isOnSpecial():Boolean {
 			return m_onSpecial;
 		}
+		
+		public function isCarryingPlayer():Boolean { return false; }
+		
 		public function getThrowable():PlayerThrowable {
 			var thr:PlayerThrowable;
 			for (var i:int = 0; i < m_throwables.length; i++) {

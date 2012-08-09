@@ -212,6 +212,12 @@ package GameObject.Player
 			return true;
 		}
 		
+		override public function isCarryingPlayer():Boolean { 
+			if (m_objectCarried && m_objectCarried.m_name == Global.player1.m_name)
+				return true;
+			return false; 
+		}
+		
 		
 		/////////////////////////////////////////////////////////////////////////
 		/////////// DONT LOOK AT THAT PLEASE///////////////////////////////////
