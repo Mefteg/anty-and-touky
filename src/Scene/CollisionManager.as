@@ -91,12 +91,17 @@ package Scene
 		}
 		
 		private function repulseBoth():void {
-			//replace first object
-			m_currentObject.x = m_currentObject.m_oldPos.x;
-			m_currentObject.y = m_currentObject.m_oldPos.y;
-			//replace the other
-			m_currentOther.x = m_currentOther.m_oldPos.x;
-			m_currentOther.y = m_currentOther.m_oldPos.y;
+			//if the X directions are not the same
+			if (m_currentObject.m_direction.x * m_currentOther.m_direction.x <= 0) {
+				if(m_currentObject.m_direction.x != 0)
+					m_currentObject.x = m_currentObject.m_oldPos.x;
+				if (m_currentOther.m_direction.x != 0)
+					m_currentOther.x = m_currentOther.m_oldPos.x;
+			}
+			if(m_currentObject.m_direction.y * m_currentOther.m_direction.y <= 0){
+				m_currentObject.y = m_currentObject.m_oldPos.y;
+				m_currentOther.y = m_currentOther.m_oldPos.y;
+			}
 		}
 		
 		private function repulseObject(obj:PhysicalObject) {
