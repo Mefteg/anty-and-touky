@@ -89,6 +89,7 @@ package GameObject.Other
 		
 		override public function removeFromStage():void {
 			Global.currentPlaystate.depthBuffer.removeElement(this, DepthBufferPlaystate.s_objectGroup);
+			Global.currentPlaystate.removePhysical(this as PhysicalObject);
 		}
 		
 		/**************************************************************/
