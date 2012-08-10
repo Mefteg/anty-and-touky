@@ -206,6 +206,12 @@ package GameObject
 			
 		}
 		
+		public function resetSpecial():void {
+			unspecial();
+			m_timerSpecialAvailable.start(0.1);
+			m_camembert.trigger(0.1);
+		}
+		
 		public function magicAttack(i:int):void {
 			/*if (i >= m_magics.length || isBusy())
 				return;

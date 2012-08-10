@@ -191,7 +191,7 @@ package GameObject.Player
 			Global.player2.m_state = "idle";
 			Global.player2.x = x; Global.player2.y = y;
 			m_timerSpecialAvailable.start(10);
-			m_camembert.trigger(15);
+			m_camembert.trigger(10);
 		}
 		
 		override public function placeOtherPlayer():void {
