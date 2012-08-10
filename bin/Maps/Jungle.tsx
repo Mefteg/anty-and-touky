@@ -68,7 +68,7 @@
  </tile>
  <tile id="17">
   <properties>
-   <property name="type" value="PhysicalTile"/>
+   <property name="" value=""/>
   </properties>
  </tile>
  <tile id="18">
