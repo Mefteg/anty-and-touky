@@ -18,6 +18,7 @@ package GameObject.Other
 			m_state = "idle";
 			m_FX = new FlxSound();
 			m_bufferGroup = DepthBufferPlaystate.s_objectGroupFG;
+			m_typeName = "Breakable";
 		}
 		
 		override public function load():void {

@@ -40,7 +40,6 @@ package Scene.CutScene
 				m_mover.place(Global.player1.x, Global.player1.y);
 				Global.player1 = m_mover;
 				Global.player2 = m_mover;
-				trace(m_target.x, m_target.y, m_mover.x, m_mover.y);
 			}
 			m_mover.goTo(m_target);
 			m_mover.move();
