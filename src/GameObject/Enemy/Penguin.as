@@ -54,6 +54,7 @@ package GameObject.Enemy
 				thr.setCaster(this);
 				m_throwables.push(thr);
 			}
+			commomThrowPlacement();
 		}
 		
 		override public function attack():void {
