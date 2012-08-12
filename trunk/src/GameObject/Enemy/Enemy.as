@@ -90,7 +90,7 @@ package GameObject.Enemy
 			if (!m_throwables)
 				return;
 			for (var i:int = 0; i < m_throwables.length ; i ++)
-				if(! m_throwables[i].isAttacking())
+				if(! m_throwables[i].isAttacking() || Global.currentPlaystate.isEnding())
 					m_throwables[i].removeFromStage();
 		}
 		

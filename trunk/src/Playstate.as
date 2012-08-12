@@ -182,8 +182,8 @@ package
 			m_sceneManager = new SceneManager();
 
 			//m_sceneManager.loadScene("Maps/W1M1BIS.json");
-			//m_sceneManager.loadScene("Maps/W1M1.json");
-			m_sceneManager.loadScene("Maps/test2.json");
+			m_sceneManager.loadScene("Maps/W1M1.json");
+			//m_sceneManager.loadScene("Maps/test2.json");
 			//m_sceneManager.loadScene("Maps/W3M1.json");
 			m_state = "Loading";
 			//creating player 1
@@ -401,6 +401,10 @@ package
 		
 		public function findObjectByName(name:String):GameObject {
 			return m_sceneManager.findObjectByName(name);
+		}
+		
+		public function isEnding():Boolean {
+			return m_state == "ChangingScene";
 		}
 				
 		//////////PHYSICALS/////////////
