@@ -55,6 +55,9 @@ package GameObject.Menu
 				}
 			}
 		}
+		public function resetTime():void {
+			m_timer.stop();
+		}
 		
 		public function manageGraphic():void {
 			if(!m_reverse)
