@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+
+<cutscene name="tuto1_cutscene1">
+	<actiongroup sync="1">
+		<action type="music" name="RoughClimb" />
+	</actiongroup>
+</cutscene>

@@ -230,10 +230,10 @@ package GameObject.Enemy
 				}
 			}
 			
-			if (m_direction.x < 0) facing = LEFT;
+			/*if (m_direction.x < 0) facing = LEFT;
 			else if (m_direction.x > 0) facing = RIGHT;
 			else if (m_direction.y < 0) facing = UP;
-			else if (m_direction.y > 0) facing = DOWN;
+			else if (m_direction.y > 0) facing = DOWN;*/
 		}
 		
 		public function attack() : void {

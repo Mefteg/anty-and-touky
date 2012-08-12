@@ -27,6 +27,7 @@ package GameObject.Other
 			m_width = 96; m_height = 96;
 			m_bufferGroup = DepthBufferPlaystate.s_objectGroup;
 			m_direction = new FlxPoint(0, -1);
+			m_typeName = "Lift";
 			m_state = "idle";
 		}
 		
@@ -48,6 +49,8 @@ package GameObject.Other
 			if (waitFor(Global.player1) && waitFor(Global.player2)) {
 				Global.player1.m_collideEvtFree = true;
 				Global.player2.m_collideEvtFree = true;
+				Global.player1.setThrowablesPierce(true);
+				Global.player2.setThrowablesPierce(true);
 				m_state = "movingUp";
 			}
 		}
@@ -65,8 +68,11 @@ package GameObject.Other
 			Global.player2.y += y - m_oldPos.y;
 			move();
 			
-			if (y < m_initY - range )
+			if (y < m_initY - range ){
 				m_state = "stopped";
+				Global.player1.setThrowablesPierce(false);
+				Global.player2.setThrowablesPierce(false);
+			}
 		}
 		
 		function stay():void {			

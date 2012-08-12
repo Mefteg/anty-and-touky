@@ -1,5 +1,6 @@
 package GameObject.Enemy 
 {
+	import GameObject.Other.Lift;
 	import GameObject.PhysicalObject;
 	import GameObject.Weapon.EnemyThrowable;
 	import org.flixel.FlxPoint;
@@ -10,6 +11,8 @@ package GameObject.Enemy
 	public class Cannon extends Enemy 
 	{
 		private var m_straight:Boolean = true;
+		private var m_lift:Lift;
+		
 		public function Cannon(X:Number,Y:Number,lift:String) 
 		{
 			super(X, Y);
@@ -18,11 +21,12 @@ package GameObject.Enemy
 			m_smoke = EnemySmoke.Explosion();
 			m_stats.initHP(7);
 			m_points = 200;
-			m_state = "idle";
-			if (lift != null) 
+			m_state = "offScreen";
+			if (lift != null){
 				m_straight = false;
+				m_stats.initHP(3);
+			}
 			createThrowables();
-			m_timerAttack.start(3);
 		}
 		
 		public function prepareShot():void {
@@ -35,7 +39,10 @@ package GameObject.Enemy
 		override public function attack():void {
 			m_state = "idle";
 			m_timerAttack.start(3);
-			m_directionFacing = Utils.direction(new FlxPoint(x, y), new FlxPoint(m_target.x, m_target.y));
+			if(m_straight)
+				m_directionFacing = Utils.direction(new FlxPoint(x, y), new FlxPoint(m_target.x, m_target.y));
+			else
+				m_directionFacing = Utils.direction(new FlxPoint(x, y), new FlxPoint(m_lift.x , m_lift.y-m_lift.m_speed * Utils.random(80,100)));
 			var thr:EnemyThrowable = getThrowable();
 			thr.place(x, y);
 			thr.attack(facing);
@@ -47,6 +54,9 @@ package GameObject.Enemy
 			if (!commonEnemyUpdate())
 				return;
 			switch(m_state) {
+				case "offScreen" : m_timerAttack.start(0.2, 1);
+									m_state = "idle";
+									break;
 				case "idle" : if (m_timerAttack.finished)
 								prepareShot();
 							break;
@@ -61,6 +71,8 @@ package GameObject.Enemy
 		override public function addToStage():void {
 			super.addToStage();
 			Global.currentPlaystate.addPhysical(this as PhysicalObject);
+			if (!m_straight)
+				m_lift = Global.currentPlaystate.findObjectByType("Lift") as Lift;
 		}
 		
 		override public function load():void {
@@ -87,7 +99,7 @@ package GameObject.Enemy
 				m_throwables.push(thr);
 			}
 		}
-		
+				
 	}
 
 }

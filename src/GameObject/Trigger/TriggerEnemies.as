@@ -2,7 +2,9 @@ package GameObject.Trigger
 {
 	import com.adobe.protocols.dict.events.ConnectedEvent;
 	import GameObject.Enemy.Enemy;
+	import GameObject.Enemy.FlyingCannon;
 	import GameObject.Enemy.GoldenMosquito;
+	import GameObject.Enemy.MechMouse;
 	import GameObject.Enemy.Mosquito;
 	import GameObject.Enemy.Penguin;
 	import GameObject.Enemy.Snake;
@@ -19,16 +21,18 @@ package GameObject.Trigger
 		var m_number:int = 1;
 		var m_offset:FlxPoint;
 		var m_direction:FlxPoint;
+		var m_speed:Number;
 		
-		public function TriggerEnemies(X:Number, Y:Number, W:int, H:int , type:String, number:int, direction:int , location:int) 
+		public function TriggerEnemies(object:Object) 
 		{
-			super(X, Y, null, W, H);
+			super(object.x, object.y, null, object.width, object.height);
 			this.visible = false;
-			m_type = type;
-			if(number!=0)
-				m_number = number;
-			m_direction = Utils.getDirectionPoint(direction);
-			createEnemies(type,location);
+			m_type = object.properties.type;
+			if(object.properties.number!=0)
+				m_number = object.properties.number;
+			m_direction = Utils.getDirectionPoint(object.properties.direction);
+			m_speed = object.properties.speed;
+			createEnemies(m_type, object.properties.location);
 		}
 		
 		override public function update() : void {
@@ -62,11 +66,15 @@ package GameObject.Trigger
 				lastObj = m_enemiesToPop[i - 1];
 				m_enemiesToPop.push(new s_ennemiesArrayInstantiate[type]( lastObj.x + m_offset.x, lastObj.y + m_offset.y));
 				m_enemiesToPop[i].m_directionFacing = m_direction;
+				if (m_speed > 0)
+					m_enemiesToPop[i].m_speed = m_speed;
 			}
 		}
 		
 		protected function popFirst(type:String, location:int) : void {
 			m_enemiesToPop.push(new s_ennemiesArrayInstantiate[type](0, 0));
+			if (m_speed > 0)
+					m_enemiesToPop[0].m_speed = m_speed;
 			var obj:Enemy = m_enemiesToPop[0];
 			obj.addBitmap();
 			switch(location) {
@@ -98,7 +106,9 @@ package GameObject.Trigger
 		{
 			"mosquito" : Mosquito,
 			"goldenMosquito": GoldenMosquito,
-			"snake" : Snake
+			"snake" : Snake,
+			"mouse" : MechMouse,
+			"flyingCannon" : FlyingCannon
 		};
 		
 	}

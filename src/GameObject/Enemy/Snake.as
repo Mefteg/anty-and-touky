@@ -64,6 +64,7 @@ package GameObject.Enemy
 			if (m_state == "dead")
 				die();
 		}
+		
 	}
 
 }

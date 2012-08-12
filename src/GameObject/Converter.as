@@ -60,7 +60,7 @@ package GameObject
 				case "Cannon" : return new Cannon(object.x, object.y,object.properties.lift); break;
 				case "WhiteSquare":  return new GameObject.Enemy.WhiteSquare(object.x, object.y); break;
 				case "BlackSquare":  return new GameObject.Enemy.BlackSquare(object.x, object.y); break;
-				case "TriggerEnemies": return new TriggerEnemies(object.x, object.y, object.width, object.height, object.properties.type, object.properties.number,object.properties.direction, object.properties.location); break;
+				case "TriggerEnemies": return new TriggerEnemies(object); break;
 				case "ElSqualo" : return new ElSqualo(object.x, object.y, object.width, object.height); break;
 				//NPC
 				case "Raccoon" : return NPC.Raccoon(object.x, object.y, object.properties.url); break;

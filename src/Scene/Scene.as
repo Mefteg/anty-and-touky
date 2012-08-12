@@ -269,6 +269,22 @@ package Scene
 		{
 			return m_tilesForeground;
 		}
+		
+		public function findObjectByType(name:String):GameObject {
+			for (var i:int = 0 ; m_elements.length; i++) {
+				if (m_elements[i].m_typeName == name)
+					return m_elements[i];
+			}
+			return null;
+		}
+		
+		public function findObjectByName(name:String):GameObject {
+			for (var i:int = 0 ; m_elements.length; i++) {
+				if (m_elements[i].m_name == name)
+					return m_elements[i];
+			}
+			return null;
+		}
 	}
 
 }
