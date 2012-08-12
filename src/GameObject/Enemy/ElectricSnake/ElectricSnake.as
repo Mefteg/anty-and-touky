@@ -43,6 +43,7 @@ package GameObject.Enemy.ElectricSnake
 				thr.setCaster(this);
 				m_throwables.push(thr);
 			}
+			commomThrowPlacement();
 		}
 		
 		private function createParts():void {
@@ -76,7 +77,7 @@ package GameObject.Enemy.ElectricSnake
 				facing = RIGHT;
 			m_state = "Attacking";
 			var thr:EnemyThrowable = getThrowable();
-			thr.place(x+20, y+35);
+			thr.place(x+m_throwPlaceArray[facing].x, y+m_throwPlaceArray[facing].y);
 			thr.attack(facing);
 			play("attack" + facing);
 			m_timerAttack.start(0.5);

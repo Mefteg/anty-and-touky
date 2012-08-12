@@ -60,7 +60,7 @@ package GameObject.Enemy
 			m_state = "attack";
 			m_directionFacing = Utils.direction(new FlxPoint(x, y), new FlxPoint(m_target.x, m_target.y));
 			var thr:EnemyThrowable = getThrowable();
-			thr.place(x, y);
+			thr.place(x+m_throwPlaceArray[facing].x, y+m_throwPlaceArray[facing].y);
 			thr.attack(facing);
 			play("attack" + facing);
 		}

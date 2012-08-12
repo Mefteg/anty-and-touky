@@ -44,7 +44,7 @@ package GameObject.Enemy
 			else
 				m_directionFacing = Utils.direction(new FlxPoint(x, y), new FlxPoint(m_lift.x , m_lift.y-m_lift.m_speed * Utils.random(80,100)));
 			var thr:EnemyThrowable = getThrowable();
-			thr.place(x, y);
+			thr.place(x+m_throwPlaceArray[facing].x, y+m_throwPlaceArray[facing].y);
 			thr.attack(facing);
 			play("idle" + facing);
 		}
@@ -98,6 +98,7 @@ package GameObject.Enemy
 				thr.m_collideEvtFree = !m_straight;
 				m_throwables.push(thr);
 			}
+			commomThrowPlacement();
 		}
 				
 	}
