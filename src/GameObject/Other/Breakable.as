@@ -1,6 +1,7 @@
 package GameObject.Other 
 {
 	import GameObject.InteractiveObject;
+	import GameObject.Item.SpecialFiller;
 	import org.flixel.FlxSound;
 	
 	/**
@@ -11,6 +12,7 @@ package GameObject.Other
 	{
 		private var m_FX:FlxSound;
 		public var m_FXurl:String = "FX/rock_explode.mp3";
+		private var item:SpecialFiller;
 		
 		public function Breakable(X:Number, Y:Number ) 
 		{
@@ -19,16 +21,23 @@ package GameObject.Other
 			m_FX = new FlxSound();
 			m_bufferGroup = DepthBufferPlaystate.s_objectGroupFG;
 			m_typeName = "Breakable";
+			item = SpecialFiller.GoldAnt(0,0);
 		}
 		
 		override public function load():void {
 			super.load();
 			m_FX.loadStream(m_FXurl);
+			item.load();
 		}
 		
 		override public function addToStage():void {
 			super.addToStage();
 			Global.currentPlaystate.addPhysical(this);
+		}
+		
+		override public function addBitmap():void {
+			super.addBitmap();
+			item.addBitmap();
 		}
 		
 		override public function removeFromStage():void {
@@ -61,6 +70,8 @@ package GameObject.Other
 									m_state = "broken";
 									m_collideWithObjects = false;
 									play("broken");
+									item.place(x +10 , y+10);
+									item.addToStage();
 								}
 								break;
 				default:break;

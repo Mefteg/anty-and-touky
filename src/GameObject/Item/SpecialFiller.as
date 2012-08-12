@@ -23,9 +23,7 @@ package GameObject.Item
 		}
 		
 		override public function act():void {
-			if (!m_player.isOnSpecial())
-				return;
-			m_player.addSpecial(10);
+			m_player.addSpecial(m_power);
 			removeFromStage();
 		}
 		
@@ -49,6 +47,16 @@ package GameObject.Item
 			gf.m_url = "Images/Items/gold_feather.png";
 			gf.m_width = 32; gf.m_height = 32;
 			gf.m_player = Global.player2;
+			gf.m_power = 10;
+			return gf;
+		}
+		
+		public static function GoldAnt(X:Number, Y:Number) : SpecialFiller {
+			var gf:SpecialFiller = new SpecialFiller(X, Y);
+			gf.m_url = "Images/Items/gold_ant.png";
+			gf.m_width = 32; gf.m_height = 32;
+			gf.m_player = Global.player1;
+			gf.m_power = 6;
 			return gf;
 		}
 		
