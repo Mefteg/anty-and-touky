@@ -209,7 +209,11 @@ package GameObject
 		public function resetSpecial():void {
 			unspecial();
 			m_timerSpecialAvailable.start(0.1);
-			m_camembert.trigger(0.1);
+			m_camembert.resetTime();
+			//twinkling reset
+			m_timerTwinkle.stop();
+			alpha = 1;
+			_twinkleOn = false;
 		}
 		
 		public function magicAttack(i:int):void {
