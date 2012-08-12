@@ -5,6 +5,7 @@ package GameObject.Enemy
 	import GameObject.Magic.Magic;
 	import GameObject.PlayableObject;
 	import GameObject.Weapon.EnemyThrowable;
+	import GameObject.Weapon.Throwable;
 	import GameObject.Weapon.Weapon;
 	import InfoObject.InfoDamage;
 	import org.flixel.FlxG;
@@ -50,6 +51,8 @@ package GameObject.Enemy
 		
 		protected var m_invincible:Boolean = false;
 		public var m_stopBullets:Boolean = true;
+		
+		public var m_throwPlaceArray:Object;
 		
 		public function Enemy(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
@@ -99,6 +102,22 @@ package GameObject.Enemy
 				thr.setCaster(this);
 				m_throwables.push(thr);
 			}
+			commomThrowPlacement();
+		}
+		
+		protected function commomThrowPlacement():void {
+			var thr:Throwable = m_throwables[0];
+			createThrowPlacement(new FlxPoint(m_width * 0.5 - thr.m_width * 0.5, 0 - thr.m_height) , //UP
+								new FlxPoint(m_width * 0.5- thr.m_width * 0.5, m_height), //DOWN
+								new FlxPoint(0, m_height * 0.5 - thr.m_height * 0.5), //LEFT
+								new FlxPoint(m_width, m_height * 0.5- thr.m_height * 0.5)); //RIGHT
+		}
+		protected function createThrowPlacement(up:FlxPoint, down:FlxPoint, left:FlxPoint, right:FlxPoint):void {
+			m_throwPlaceArray = new Object();
+			m_throwPlaceArray[LEFT] = left;
+			m_throwPlaceArray[RIGHT] = right;
+			m_throwPlaceArray[UP] = up;
+			m_throwPlaceArray[DOWN] = down;
 		}
 		
 		public function getThrowable():EnemyThrowable {
