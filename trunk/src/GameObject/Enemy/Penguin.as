@@ -19,7 +19,7 @@ package GameObject.Enemy
 			m_height = 32;
 			createThrowables();
 			m_timerDraw = new FlxTimer();
-			m_state = "idle";
+			m_state = "offScreen";
 		}
 		
 		override public function load():void {
@@ -68,6 +68,9 @@ package GameObject.Enemy
 		override public function update():void {
 			if ( !commonEnemyUpdate()) return;
 			switch(m_state) {
+				case "offScreen" : m_timerAttack.start(Utils.random(1, 2));
+									m_state = "idle";
+									break;
 				case "idle": 
 							facing = getFacingToTarget(m_target);
 							play("idle" + facing);

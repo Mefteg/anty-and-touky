@@ -93,6 +93,14 @@ package Scene
 			m_music.play();
 		}
 		
+		public function findObjectByType(name:String):GameObject {
+			return m_currentScene.findObjectByType(name);
+		}
+		
+		public function findObjectByName(name:String):GameObject {
+			return m_currentScene.findObjectByName(name);
+		}
+		
 		public function get currentScene():Scene.Scene 
 		{
 			return m_currentScene;

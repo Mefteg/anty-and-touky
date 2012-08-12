@@ -91,8 +91,8 @@ package Scene.CutScene
 					case "move" : createMover(act); break;
 					case "message": createTalker(act); break;
 					case "music" : m_currentActors.push(new CutSceneMusicObject(act.@name.toString())); break;
-					case "scroll" : m_currentActors.push( new CutSceneScrollCamera(new GameObject(act.@targetX, act.@targetY),m_player1,m_player2)); break;
-					case "scrollBack" : m_currentActors.push( new CutSceneScrollCamera(m_player1 , m_player1, m_player2,true)); break;
+					//case "scroll" : m_currentActors.push( new CutSceneScrollCamera(new GameObject(act.@targetX, act.@targetY),m_player1,m_player2)); break;
+					//case "scrollBack" : m_currentActors.push( new CutSceneScrollCamera(m_player1 , m_player1, m_player2,true)); break;
 					default: m_nbActionGroup--; trace("Failed : ",act.@type.toString()); break;
 				}
 			}

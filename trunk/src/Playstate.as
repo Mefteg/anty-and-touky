@@ -1,6 +1,7 @@
 package  
 {
 	import GameObject.Enemy.Enemy;
+	import GameObject.GameObject;
 	import GameObject.Item.Collectable;
 	import GameObject.MovableObject;
 	import GameObject.Other.Box;
@@ -160,7 +161,7 @@ package
 			fadeOut();
 			m_sceneToLoad = sceneName;
 			m_respawnToLoad = respawn;
-			clearCollectables();
+			clearArrays();
 			Global.frozen = true;
 			m_state = "ChangingScene";
 		}
@@ -181,9 +182,9 @@ package
 			m_sceneManager = new SceneManager();
 
 			//m_sceneManager.loadScene("Maps/W1M1BIS.json");
-			m_sceneManager.loadScene("Maps/W1M1.json");
-			//m_sceneManager.loadScene("Maps/test2.json");
-			//m_sceneManager.loadScene("Maps/W1M3.json");
+			//m_sceneManager.loadScene("Maps/W1M1.json");
+			m_sceneManager.loadScene("Maps/test2.json");
+			//m_sceneManager.loadScene("Maps/W3M1.json");
 			m_state = "Loading";
 			//creating player 1
 			Global.player1 = new Player1(100, 100);
@@ -310,6 +311,10 @@ package
 			clearPhysical();
 			clearTalkers();
 			clearEnemies();
+			clearDoors();
+			clearHoleBoxes();
+			clearBoxes();
+			clearCollectables();
 		}
 		
 		public function showControls():void {
@@ -388,6 +393,14 @@ package
 				Global.soloPlayer.m_camembert.visible = true;
 				Global.player2.m_camembert.visible = false;
 			}
+		}
+		
+		public function findObjectByType(name:String):GameObject {
+			return m_sceneManager.findObjectByType(name);
+		}
+		
+		public function findObjectByName(name:String):GameObject {
+			return m_sceneManager.findObjectByName(name);
 		}
 				
 		//////////PHYSICALS/////////////

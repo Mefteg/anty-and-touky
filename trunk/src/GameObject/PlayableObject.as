@@ -483,6 +483,11 @@ package GameObject
 			return false;
 		}
 		
+		public function setThrowablesPierce(canPierce:Boolean):void {
+			for (var i:int = 0; i < m_throwables.length ; i++)
+				m_throwables[i].m_collideEvtFree = canPierce;
+		}
+		
 		public function hasFallen():Boolean { return false; }
 		
 		override public function twinkle():void {
