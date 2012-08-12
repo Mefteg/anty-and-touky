@@ -403,15 +403,31 @@ package GameObject
 		}
 		
 		public function addSpecial(spec:int):void {
-			//si on va ajouter trop de temps
-			if (m_timerSpecial.time - m_timerSpecial.timeLeft < spec) {
-				//relancer un timer entier
-				m_timerSpecial.start(m_timerSpecial.time);
-				m_camembert.trigger(m_timerSpecial.time, true);
-			}else { //sinon
-				//relancer un timer avec le temps ajouté
-				m_timerSpecial.start(m_timerSpecial.timeLeft + spec);
-				m_camembert.trigger(m_timerSpecial.timeLeft + spec, true);			}
+			if(m_onSpecial){
+				//si on va ajouter trop de temps
+				if (m_timerSpecial.time - m_timerSpecial.timeLeft < spec) {
+					//relancer un timer entier
+					m_timerSpecial.start(m_timerSpecial.time);
+					m_camembert.trigger(m_timerSpecial.time, true);
+				}else { //sinon
+					//relancer un timer avec le temps ajouté
+					m_timerSpecial.start(m_timerSpecial.timeLeft + spec);
+					m_camembert.trigger(m_timerSpecial.timeLeft + spec, true);			
+				}
+			}else {
+				if (m_timerSpecialAvailable.finished)
+					return;
+				//si on va enlever trop de temps
+				if ( m_timerSpecialAvailable.timeLeft - spec < 0) {
+					//stopper le timer
+					m_timerSpecialAvailable.stop();
+					m_camembert.resetTime();
+				}else { //sinon
+					//relancer un timer avec le temps ajouté
+					m_timerSpecialAvailable.start(m_timerSpecialAvailable.timeLeft - spec);
+					m_camembert.trigger(m_timerSpecialAvailable.timeLeft - spec, false);			
+				}
+			}
 		}
 		
 		public function addScore(n:int):void {
