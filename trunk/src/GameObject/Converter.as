@@ -83,6 +83,7 @@ package GameObject
 				case "TriggerCutScene": return new TriggerCutScene(object.x, object.y, object.width, object.height, object.properties.url); break;
 				//other
 				case "BreakableRock" : return Breakable.Rock(object.x, object.y); break;
+				case "ExplosiveBarrel": return Breakable.ExplosiveBarrel(object.x, object.y); break;
 				case "Butterfly" : return new Butterfly(object.x, object.y); break;
 				case "FallenResetChecker": return new GameObject.Other.FallenResetChecker(object.x, object.y); break;
 				case "Generator" : return new Generator(object.x, object.y, object.properties.door); break;

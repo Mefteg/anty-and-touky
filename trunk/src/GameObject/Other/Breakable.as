@@ -21,6 +21,8 @@ package GameObject.Other
 			m_FX = new FlxSound();
 			m_bufferGroup = DepthBufferPlaystate.s_objectGroupFG;
 			m_typeName = "Breakable";
+			m_width = 48; m_height = 48;
+			setHitbox(0, 0, 48, 48);
 			item = SpecialFiller.GoldAnt(0,0);
 		}
 		
@@ -93,6 +95,15 @@ package GameObject.Other
 			return rock;
 		}
 		
+		public static function ExplosiveBarrel(X:Number, Y:Number):Breakable {
+			var barr:Breakable = new Breakable(X, Y);
+			barr.m_url = "Images/Others/breakable_barrel.png";
+			barr.setIdleAnim(0);
+			barr.setBreakAnim( 4, 5, 6, 7, 8,9,10,11);
+			barr.setBrokenAnim(1);
+			barr.m_FXurl = "FX/rock_explode.mp3";
+			return barr;
+		}
 	}
 
 }
