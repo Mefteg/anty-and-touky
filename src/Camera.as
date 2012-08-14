@@ -60,12 +60,6 @@ package
 				}
 				
 				this.focusOn(m_target);
-
-				/*var scroll:FlxPoint = this.scroll;
-				if ( m_target.x - this.width * 0.5 < 0 || m_target.y - this.height * 0.5 < 0 ) {
-					trace("out!!");
-					this.scroll.make(0,0);
-				}*/
 			}
 		}
 		
