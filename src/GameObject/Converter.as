@@ -75,6 +75,7 @@ package GameObject
 				case "GoldFeather" : return SpecialFiller.GoldFeather(object.x, object.y); break;
 				case "BigAnt" : return SuperShotFiller.BigAnt(object.x, object.y); break;
 				case "BigEgg" : return SuperShotFiller.BigEgg(object.x, object.y); break;
+				case "Life" : return new GameObject.Item.Life(object.x, object.y); break;
 				///DOORS
 				case "Spikes" : return new Door(object.x, object.y, object.name, object.properties.respawn); break;
 				case "Cylinders" : return Door.Cylinders(object.x, object.y, object.name,object.properties.respawn); break;
