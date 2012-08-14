@@ -73,6 +73,11 @@ package GameObject
 		public var m_score:int = 0;
 		public var m_thresoldScore:int = 0;
 		public var m_thresoldDelta:int = 5000;
+		
+		//SuperShots
+		public var m_superShot:Boolean = false;
+		public var m_superShotCount:int;
+		private var SHOT_COUNT_MAX:int = 15;
 				
 		public function PlayableObject(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
@@ -132,6 +137,7 @@ package GameObject
 			//m_itemManager.addToLibrary();
 			m_smoke.addBitmap();
 			m_camembert.addBitmap();
+			m_throwables[0].addBitmap();
 		}
 		
 		override public function addToStage():void {
@@ -198,6 +204,8 @@ package GameObject
 			play("throw" + facing, true);
 		}
 		
+		public function throwBullet():void{}
+		
 		public function triggerSpecial():void {
 			
 		}
@@ -255,13 +263,7 @@ package GameObject
 				case "attack2" : if (finished) { m_state = "idle"; getWeapon().Idleize();} break;
 				case "idle":  break;
 				case "throw": if (finished){
-									m_state = "idle"; 
-									var thr:PlayerThrowable = getThrowable();
-									if (!thr) break;
-									if (!thr.m_rotative)
-										thr.setAnimationWithDirection(m_directionFacing);
-									placeThrowable(thr);
-									thr.attack(facing);
+									throwBullet();
 								}
 								break;
 				case "walk":  break;
@@ -390,6 +392,11 @@ package GameObject
 			visible = false;
 			m_smoke.playSmoke(x, y);
 			Global.currentPlaystate.end();
+		}
+		
+		public function addSuperShots():void {
+			m_superShot = true;
+			m_superShotCount += SHOT_COUNT_MAX;
 		}
 		
 		public function addEnergy(energy:int):void {

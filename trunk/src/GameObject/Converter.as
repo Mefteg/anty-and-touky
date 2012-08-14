@@ -18,6 +18,7 @@ package GameObject
 	import GameObject.Item.Chest;
 	import GameObject.Item.Item;
 	import GameObject.Item.SpecialFiller;
+	import GameObject.Item.SuperShotFiller;
 	import GameObject.Other.AnimatedObject;
 	import GameObject.Other.Box;
 	import GameObject.Other.BoxHole;
@@ -72,6 +73,8 @@ package GameObject
 				case "BoxHole": return new GameObject.Other.BoxHole(object.x, object.y, object.properties.door); break;
 				case "BarrelHole" : return BoxHole.BarrelHole(object.x, object.y, object.properties.door); break;
 				case "GoldFeather" : return SpecialFiller.GoldFeather(object.x, object.y); break;
+				case "BigAnt" : return SuperShotFiller.BigAnt(object.x, object.y); break;
+				case "BigEgg" : return SuperShotFiller.BigEgg(object.x, object.y); break;
 				///DOORS
 				case "Spikes" : return new Door(object.x, object.y, object.name, object.properties.respawn); break;
 				case "Cylinders" : return Door.Cylinders(object.x, object.y, object.name,object.properties.respawn); break;

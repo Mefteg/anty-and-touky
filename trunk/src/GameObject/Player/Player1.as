@@ -249,6 +249,29 @@ package GameObject.Player
 			}
 		}
 		
+		override public function throwBullet():void {
+			m_state = "idle"; 
+			var thr:PlayerThrowable = getThrowable();
+			if (!thr) return;
+			if (!thr.m_rotative)
+				thr.setAnimationWithDirection(m_directionFacing);
+			placeThrowable(thr);
+			thr.attack(facing);
+			if (m_superShot) {
+				for (var i:int = 0; i < 2 ; i++){
+					thr = getThrowable();
+					if (!thr) return;
+					if (!thr.m_rotative)
+						thr.setAnimationWithDirection(m_directionFacing);
+					placeThrowable(thr);
+					thr.attack(facing);
+				}
+				m_superShotCount --;
+				if (m_superShotCount == 0)
+					m_superShot = false;
+			}
+		}
+		
 		override public function hasFallen():Boolean {
 			return m_state == "waitToukyPosition";
 		}
