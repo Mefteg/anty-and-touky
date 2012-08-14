@@ -168,7 +168,7 @@ package Scene
 				return m_library[filename].loadComplete();
 			if (m_libraryUnique[filename])
 				return m_libraryUnique[filename].loadComplete();
-			return true;
+			return false;
 		}
 		
 		public function getAdvancement():Number {

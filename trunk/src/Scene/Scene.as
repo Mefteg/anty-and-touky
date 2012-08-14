@@ -67,9 +67,11 @@ package Scene
 			myData = JSON.decode(myLoader.data);
 
 			// load tiles in background
-			loadTiles(0, m_tilesBackground);
+			//loadTiles(0, m_tilesBackground);
 			// load tiles in foreground
-			loadTiles(1, m_tilesForeground);
+			//loadTiles(1, m_tilesForeground);
+			
+			Global.tilesManager.loadTiles(myData);
 			
 			loadObjects();
 			//all the objects are loaded

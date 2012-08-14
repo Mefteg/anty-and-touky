@@ -19,11 +19,14 @@ package GameObject
 			m_height = Global.tile_height;
 			m_layer = layer;
 			m_index = index;
+			
+			this.active = false;
+			//this.exists = false;
 		}
 		
 		override public function addToStage():void {
 			if ( m_layer == 0 ) {
-				Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_tileGroup);
+				Global.currentPlaystate.depthBuffer.addElement(this, DepthBuffer.s_backgroundGroup);
 			}
 			if ( m_layer == 1 ) {
 				Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_foregroundGroup);
@@ -41,8 +44,7 @@ package GameObject
 		
 		override public function load() : void {
 			super.load();
-			this.addAnimation(String(m_index), [m_index]);
-			play(String(m_index));
+			this.frame = m_index;
 		}
 		
 		public function collideWith(object:GameObject.PhysicalObject) : Boolean {

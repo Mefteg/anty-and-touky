@@ -19,7 +19,8 @@ package
 		static public var library;
 		static public var soloPlayer:GameObject.PlayableObject = null;
 		static public var player1:GameObject.PlayableObject = null;
-		static public var player2:GameObject.PlayableObject = null;		
+		static public var player2:GameObject.PlayableObject = null;
+		static public var tilesManager:TilesManager = null;
 		static public const RIGHT:int = 1;
 		static public const LEFT:int = 2;
 		static public const TOP:int = 3;

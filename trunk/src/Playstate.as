@@ -153,6 +153,8 @@ package
 			//m_textScore2.color = 0x000000;
 			if(Global.nbPlayers == 2)
 				depthBuffer.addElement(m_textScore2, DepthBuffer.s_cursorGroup);
+				
+			Global.tilesManager = new TilesManager();
 		}
 		
 		public function changeScene(sceneName:String, respawn:String ) : void {
@@ -181,10 +183,11 @@ package
 			depthBuffer.addElement(m_rectLadyBug, DepthBuffer.s_cursorGroup);
 			m_sceneManager = new SceneManager();
 
-			//m_sceneManager.loadScene("Maps/W1M1BIS.json");
 			m_sceneManager.loadScene("Maps/W1M1.json");
+			//m_sceneManager.loadScene("Maps/test500.json");
 			//m_sceneManager.loadScene("Maps/test2.json");
-			//m_sceneManager.loadScene("Maps/W3M1.json");
+			//m_sceneManager.loadScene("Maps/W2M1.json");
+
 			m_state = "Loading";
 			//creating player 1
 			Global.player1 = new Player1(100, 100);
@@ -225,7 +228,8 @@ package
 			m_textLife1.text = "x" + Global.player1.m_lifes;
 			m_textLife2.text = "x" + Global.player2.m_lifes;
 			m_textScore1.text = ""+Global.player1.m_score;
-			m_textScore2.text = ""+Global.player2.m_score;
+			m_textScore2.text = "" + Global.player2.m_score;
+			
 			super.update();
 		}
 		

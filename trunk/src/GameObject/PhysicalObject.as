@@ -95,18 +95,14 @@ package GameObject
 						var index:uint = j * Global.nb_tiles_width + i;
 						var tile:GameObject.TileObject = env[index];
 						tiles.push(tile);
-
-						if ( id == 1 && tile.m_typeName == GameObject.PhysicalTile.s_type ) {
-							//trace(tile.m_typeName + " collide : " + tile.m_collide);
-						}
 						
 						// if the tile is physical
 						/*if ( tile.m_collide == true ) {
 							collide = true;
 						}*/
-						if ( tile.collideWith(this) ) {
+						/*if ( tile.collideWith(this) ) {
 							collide = true;
-						}
+						}*/
 					}
 				}
 			}
