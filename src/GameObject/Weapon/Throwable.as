@@ -120,10 +120,18 @@ package GameObject.Weapon
 				m_direction = Utils.normalize(m_direction);
 				return;
 			}
-			if (m_direction.x == 0) {
+			//if the shot is to up or down
+			if (m_direction.x == 0)
 				m_direction.x = Utils.random( -0.1, 0.1);
-			}else if (m_direction.y == 0) {
+			//if the shot is to right or left
+			if (m_direction.y == 0)
 				m_direction.y = Utils.random( -0.1, 0.1);
+			//if the shot is diagonal
+			if (m_direction.y != 0 && m_direction.x != 0) {
+				var newX:Number = Utils.random(0.8, 1.0);
+				var newY:Number = Utils.random(0.8, 1.0);
+				m_direction.x *= newX;
+				m_direction.y *= newY;
 			}
 			m_direction = Utils.normalize(m_direction);
 		}

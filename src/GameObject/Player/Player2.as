@@ -218,6 +218,21 @@ package GameObject.Player
 			return false; 
 		}
 		
+		override public function throwBullet():void {
+			m_state = "idle"; 
+			var thr:PlayerThrowable = getThrowable();
+			if (!thr) return;
+			if (m_superShot) {
+				thr.m_explosive = true;
+				m_superShotCount --;
+				if (m_superShotCount == 0)
+					m_superShot = false;
+			}
+			if (!thr.m_rotative)
+				thr.setAnimationWithDirection(m_directionFacing);
+			placeThrowable(thr);
+			thr.attack(facing);
+		}
 		
 		/////////////////////////////////////////////////////////////////////////
 		/////////// DONT LOOK AT THAT PLEASE///////////////////////////////////
