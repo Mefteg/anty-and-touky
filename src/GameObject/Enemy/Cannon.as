@@ -75,6 +75,11 @@ package GameObject.Enemy
 				m_lift = Global.currentPlaystate.findObjectByType("Lift") as Lift;
 		}
 		
+		override public function removeFromStage():void {
+			super.removeFromStage();
+			Global.currentPlaystate.removePhysical(this as PhysicalObject);
+		}
+		
 		override public function load():void {
 			super.load();
 			

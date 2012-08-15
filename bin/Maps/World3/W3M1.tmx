@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="60" height="22" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" source="../Metal.tsx"/>
+ <layer name="Background" width="60" height="22">
+  <data encoding="base64" compression="zlib">
+   eJztl0tuwjAQQC3xi8RnVSgSoRKftEjtopfgJi17jtBdzwGcoHAC4GCMlVgdWdM442QCSlk8YRzk4U1mHGeplFr+U6YVxnYdAnWgATSt8dcf80WN7f8mEYPyfQD6wKDkse0rEYPynQMR8Fzy2PaViEH5XqOvZsTcpOAYLRXXdeOGfb8RPus+ofGjiuu6z/DtCvri/AcC9/dFxXUdqd/nUCDgss7oi/M/FPDFGF8dpyMUo+fwxflflOSr47yi+TbwhuDk4p3xW+37AXwmrHL4ZqknfK4aIb8Q2ABbYGddy8LY8d3kT/vWLIwvVRe61wPl339p58gfYA8cPNdOw9RSmi9FK/nk+lJnZ1zDOv9H4ASck2tjBOfeUoQ5fM0+zukpyhf3r12/oWN9X7i+Zi/nnhcoX8opyx7gym2RvmYvXxTgK4ErX1xfXyR8056zVfT1wceX0y+U6zWdqfcFyft6p9pcAGARzE0=
+  </data>
+ </layer>
+ <layer name="Foreground" width="60" height="22">
+  <data encoding="base64" compression="zlib">
+   eJztll0SgiAQx/EGHoFDaD1Xls99P3eLukHX6AjdMB5gZHYWllVArX4zO4K4H38EVIjf5TySbYGliA/Zgf6SmJsVMc7xbUSnFdYRo54GuQfztFb7xYi/Vrbx5MZ8Q/S2jvswJpY/RO/Var898SEHZUeitj1SD6b37qjHFxPLfxLd2ja45jUFN9DH9D6UPfW1T0yKnHoh9vxfwFihLTYwT24wTQWwWMR+t6W+cmqcs17Zw8enJ/Z6HnPvGkI1VcpqZQtGbONT6/4U9IZiznKq5tJq2+e/CPCdEuYsp85XabWx/w3O+qAo6UeyEvJ/NQQZMVYMOHpTfOtT4ao19fsNqWEI3P2SU28KJPP5uevlUHnG6i+0P7/FB6EoOaI=
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="60" height="22">
+  <object name="Music" type="Music" x="12" y="27" width="50" height="34">
+   <properties>
+    <property name="url" value="MakeTheEggsFly"/>
+   </properties>
+  </object>
+  <object name="Cannon" type="Cannon" x="611" y="259" width="27" height="30"/>
+  <object name="Cannon" type="Cannon" x="610" y="509" width="27" height="30"/>
+  <object name="Penguin" type="PenguinScientist" x="1215" y="457"/>
+  <object name="Penguin" type="Penguin" x="1214" y="360"/>
+  <object name="Penguin" type="Penguin" x="1217" y="567"/>
+  <object name="Alarm" type="Alarm" x="1470" y="86"/>
+  <object name="Alarm" type="Alarm" x="565" y="89"/>
+  <object name="MexicanRaccoon" type="MexicanRaccoon" x="1752" y="163" width="53" height="50">
+   <properties>
+    <property name="url" value="World3/mexicanRaccoon1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="RespawnPoints" width="60" height="22">
+  <object name="RespInit" type="RespawnPoint" x="137" y="397">
+   <properties>
+    <property name="location" value="init"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
