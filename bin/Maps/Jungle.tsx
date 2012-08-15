@@ -236,6 +236,16 @@
    <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
+ <tile id="107">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="109">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
  <tile id="112">
   <properties>
    <property name="type" value="Hole"/>
@@ -291,6 +301,11 @@
    <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
+ <tile id="140">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
  <tile id="144">
   <properties>
    <property name="type" value="PhysicalTile"/>
@@ -307,6 +322,11 @@
   </properties>
  </tile>
  <tile id="160">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="172">
   <properties>
    <property name="type" value="PhysicalTile"/>
   </properties>

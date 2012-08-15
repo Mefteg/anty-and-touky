@@ -275,6 +275,21 @@ package GameObject.Player
 		override public function hasFallen():Boolean {
 			return m_state == "waitToukyPosition";
 		}
+		
+		override public function collideWithTileType(_type:int) : Boolean
+		{
+			var collide:Boolean = false;
+			
+			if (
+			_type == TilesManager.PHYSICAL_TILE ||
+			_type == TilesManager.HOLE_TILE
+			)
+			{
+				collide = true;
+			}
+			
+			return collide;
+		}
 	}
 
 }

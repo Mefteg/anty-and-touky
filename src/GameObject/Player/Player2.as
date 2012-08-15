@@ -334,6 +334,21 @@ package GameObject.Player
 					m_state = "idle";
 			}
 		}
+		
+		override public function collideWithTileType(_type:int) : Boolean
+		{
+			var collide:Boolean = false;
+			
+			if (
+			_type == TilesManager.PHYSICAL_TILE ||
+			_type == TilesManager.PIPE_TILE
+			)
+			{
+				collide = true;
+			}
+			
+			return collide;
+		}
 	}
 
 }
