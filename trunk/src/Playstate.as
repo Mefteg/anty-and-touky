@@ -371,7 +371,8 @@ package
 			}
 		}
 		
-		public function changePlayer():void {
+		public function changePlayer() : void
+		{
 			if ( ! Global.soloPlayer) 
 				return;
 			if ( ! FlxG.keys.justPressed("SPACE") )
@@ -379,9 +380,9 @@ package
 			if (Global.soloPlayer.m_state == "respawn")
 				return;
 			//check if the player is not on a hole
-			var tiles:Array = Global.soloPlayer.tilesUnder();
-			for each (var tile:TileObject in tiles) {
-				if (tile.m_typeName == Hole.s_type)
+			var tilesType:Array = Global.soloPlayer.tilesUnder();
+			for each (var type:int in tilesType) {
+				if ( type == TilesManager.HOLE_TILE )
 					return;
 			}
 			if (Global.soloPlayer.m_name == Global.player1.m_name){
