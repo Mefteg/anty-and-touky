@@ -235,7 +235,7 @@ package
 				case "Hole":
 					id = HOLE_TILE;
 					break;
-				case "PIPE":
+				case "Pipe":
 					id = PIPE_TILE;
 					break;
 			}
