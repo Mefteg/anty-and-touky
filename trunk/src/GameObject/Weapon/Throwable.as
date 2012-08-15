@@ -171,7 +171,19 @@ package GameObject.Weapon
 			m_currentAttackName = "attack" + Utils.getDirectionID(dir);
 		}
 		
-		
+		override public function collideWithTileType(_type:int) : Boolean
+		{
+			var collide:Boolean = false;
+			
+			if (
+			_type == TilesManager.PHYSICAL_TILE
+			)
+			{
+				collide = true;
+			}
+			
+			return collide;
+		}
 	}
 
 }
