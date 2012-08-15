@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="Jungle.tsx"/>
  <layer name="Background" width="30" height="30">
   <data encoding="base64" compression="zlib">
-   eJzllrtqAkEUhuch9glEbWK6mMLVzghGrRPx0irk0qRIAialNmqhYJrEQlv1Gf0XZuG4nJkdd8dVSPGxsLOc79xYJiWESP1DrkAuBtcyzgN4VNBkvC4oxqAk4/RAX0GL5JCk9wl8SHxvDdSPpMp430nsIJ8R5s/hMt4kUHnfzuTlsJmL7T7PEvSauui3p9grk3lc2j5fgndlqbdR6l1rztIgw9AGHdAl77IW+3wD8gRHPp/BC3glZ7cn8Dok/g8YgC/wDRYxvKoZBuul8X3GYAKmGq/JHh3r/QV/YMl4CyL8LhLmdRTeDdiCHeM1uROY1jsSh7s9JPnMI3i5GXNeFZ7X+0fr7ijcXURXr7fDdwwLxmvjn+J7aW+zsp9p0mNu7ja83D4Hz2x6y0xvK4qziuyDzluTM74HDYM8beKG1HoO7x5aEa0/
+   eJzllr9OAkEQh/ch7gmI0IidWnjawSWI1mpAW0gEGgs1QUttwEITbIACWuAZ/V0ylwyX2b3lbjlILL7m9jLfzp9spqCUKvxDDkE5A0cU5wbcargTvD44z8AFxWmBtoYGu0Oe3kfwQkTeOrjakJrgfWax47ym6L+EL3jzQOd92pFXwuVdXNf5O0evrYv/u425sunHvs3zPnhnjmqbJt+54ewAFGM0wT3xwL6XHNb5GJwwPNABXaLHzk634PVY/D54I97BKINX18N4vjx+xAAMwZfBazNHm3rHYAKmgvdMJe8iSV4vhddmJ7DN91Otz/cCLMEK/KTwSj2WvDrCOoRvtGlHkXYRU76/oCowErwu3pTIy2tbonqGb8qH0s+bC680z/Ezl96KUNtAcxZQHUzeOvX4Elxb3NMlfkKuu/D+AZ8Arns=
   </data>
  </layer>
  <layer name="Foreground" width="30" height="30">

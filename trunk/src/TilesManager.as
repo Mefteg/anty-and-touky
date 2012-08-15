@@ -14,9 +14,18 @@ package
 	 */
 	public class TilesManager extends FlxBasic 
 	{
-		// They save the index of each tile of the map
-		public var m_tilesBackground:Array;
-		public var m_tilesForeground:Array;
+		public static var NORMAL_TILE:int = 0;
+		public static var PHYSICAL_TILE:int = 1;
+		public static var HOLE_TILE:int = 2;
+		public static var PIPE_TILE:int = 3;
+		
+		// They save the frame index of each tile of the map
+		public var m_tilesFrameBackground:Array;
+		public var m_tilesFrameForeground:Array;
+		
+		// They save the type index of each tile of the map
+		public var m_tilesTypeBackground:Array;
+		public var m_tilesTypeForeground:Array;
 		
 		protected var m_mapName:String;
 		protected var m_tileset:FlxExtBitmap;
@@ -35,8 +44,8 @@ package
 		{
 			super();
 			
-			m_tilesBackground = new Array();
-			m_tilesForeground = new Array();
+			m_tilesFrameBackground = new Array();
+			m_tilesFrameForeground = new Array();
 			
 			m_tileStamps = new Array();
 			
@@ -121,17 +130,17 @@ package
 					var worldPosX:Number = (posX + j) * Global.tile_width;
 					var worldPosY:Number = (posY + i) * Global.tile_width;
 					
-					var typeIdBackground:int = m_tilesBackground[(posY + i) * Global.nb_tiles_width + (posX + j)];
-					m_backgroundBuffer[i * m_bufferSize.x + j].frame = typeIdBackground;
+					var frameIdBackground:int = m_tilesFrameBackground[(posY + i) * Global.nb_tiles_width + (posX + j)];
+					m_backgroundBuffer[i * m_bufferSize.x + j].frame = frameIdBackground;
 					m_backgroundBuffer[i * m_bufferSize.x + j].x = worldPosX;
 					m_backgroundBuffer[i * m_bufferSize.x + j].y = worldPosY;
 					
-					var typeIdForeground:int = m_tilesForeground[(posY + i) * Global.nb_tiles_width + (posX + j)];
-					if ( typeIdForeground == -1 )
+					var frameIdForeground:int = m_tilesFrameForeground[(posY + i) * Global.nb_tiles_width + (posX + j)];
+					if ( frameIdForeground == -1 )
 					{
-						typeIdForeground = 0;
+						frameIdForeground = 0;
 					}
-					m_foregroundBuffer[i * m_bufferSize.x + j].frame = typeIdForeground;
+					m_foregroundBuffer[i * m_bufferSize.x + j].frame = frameIdForeground;
 					m_foregroundBuffer[i * m_bufferSize.x + j].x = worldPosX;
 					m_foregroundBuffer[i * m_bufferSize.x + j].y = worldPosY;
 				}
@@ -140,17 +149,21 @@ package
 		
 		public function loadTiles(_data:Object) : void
 		{
-			m_tilesBackground = new Array();
-			m_tilesForeground = new Array();
+			// clear old tiles' informations
+			m_tilesFrameBackground = new Array();
+			m_tilesFrameForeground = new Array();
+			m_tilesTypeBackground = new Array();
+			m_tilesTypeForeground = new Array();
+			
 			//load background
-			this.loadLayerTiles(_data, 0, m_tilesBackground);
+			this.loadLayerTiles(_data, 0, m_tilesFrameBackground, m_tilesTypeBackground);
 			//load foreground
-			this.loadLayerTiles(_data, 1, m_tilesForeground);
+			this.loadLayerTiles(_data, 1, m_tilesFrameForeground, m_tilesTypeForeground);
 			
 			m_state = "LOADING";
 		}
 		
-		protected function loadLayerTiles(_data:Object, _layer:int, _tilesGroup:Array) : void
+		protected function loadLayerTiles(_data:Object, _layer:int, _tilesFrameGroup:Array, _tilesTypeGroup:Array) : void
 		{
 			///LOAD THE IMAGE TILESET///
 			m_mapName = _data.tilesets[0].image;
@@ -179,7 +192,7 @@ package
 			Global.tile_width = _data.tilewidth;
 			Global.tile_width = _data.tileheight;
 
-			var _tilesGroup:Array;
+			var _tilesFrameGroup:Array;
 			// for each tile
 			for ( var i:int = 0; i < height; i++ ) {
 				for ( var j:int = 0; j < width; j++ ) {
@@ -196,17 +209,55 @@ package
 					for(var id:String in type) {
 						if ( id == "type" ) {
 							//create the tile
-							_tilesGroup.push(tileId);
+							_tilesFrameGroup.push(tileId);
+							_tilesTypeGroup.push(this.convertTypeToId(type[id]));
 						}
 						cpt++;
 					}
 					// if there is no type and a tile exists
 					if ( cpt == 0 ) {
 						//create the tile with no type
-						_tilesGroup.push(tileId);
+						_tilesFrameGroup.push(tileId);
+						_tilesTypeGroup.push(NORMAL_TILE);
 					}
 				}
 			}
+		}
+		
+		protected function convertTypeToId(_type:String) : int
+		{
+			var id:int = NORMAL_TILE;
+			switch ( _type )
+			{
+				case "PhysicalTile":
+					id = PHYSICAL_TILE;
+					break;
+				case "Hole":
+					id = HOLE_TILE;
+					break;
+				case "PIPE":
+					id = PIPE_TILE;
+					break;
+			}
+			
+			return id;
+		}
+		
+		// _layer : Background == 0 ; Foreground == 1
+		public function getTileType(_layer:int, _index:int) : int
+		{
+			var type:int;
+			
+			if ( _layer == 0 )
+			{
+				type = m_tilesTypeBackground[_index];
+			}
+			else
+			{
+				type = m_tilesTypeForeground[_index];
+			}
+			
+			return type;
 		}
 	}
 
