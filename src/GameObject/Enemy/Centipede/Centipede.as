@@ -18,7 +18,7 @@ package GameObject.Enemy.Centipede
 		private var TIME_WAIT_IN:int = 1;
 		
 		private var m_parts:Array;
-		private var m_nbParts:int = 13;
+		private var m_nbParts:int = 1;// 13;
 		private var m_livingParts:int;
 		private var m_area:Rectangle;
 		
@@ -42,7 +42,7 @@ package GameObject.Enemy.Centipede
 			m_height = 32;
 			m_speed = 3.0;
 			m_initSpeed = m_speed;
-			m_stats.initHP(12);
+			m_stats.initHP(1);//12);
 			m_points = 1000;
 			m_invincible = true;
 			createParts();
@@ -365,6 +365,8 @@ package GameObject.Enemy.Centipede
 				m_timerDeath.start(5);
 				m_smoke.playSmoke(x+6, y-4);
 				visible = false;
+				if(m_killer)
+					m_killer.addScore(m_points);
 			}
 		}
 		

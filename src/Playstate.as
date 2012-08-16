@@ -328,12 +328,12 @@ package
 		}
 		
 		public function checkingControlPanel():void {
-			if (m_enablePanels && ( FlxG.keys.justPressed("ESCAPE") || FlxG.keys.justPressed("ENTER") ) ) {
-				if(m_controlShown){
+			if (m_enablePanels) {
+				if(m_controlShown && FlxG.keys.any()){
 					depthBuffer.removeElement(m_controlsPanel, DepthBuffer.s_cursorGroup);
 					Global.frozen = false;
 					m_controlShown = false;
-				}else {
+				}else if( FlxG.keys.justPressed("ESCAPE") || FlxG.keys.justPressed("ENTER")){
 					showControls();
 				}
 			}
@@ -361,6 +361,7 @@ package
 				Global.player1.x = Global.player2.x = 320;
 				Global.player1.y = Global.player2.y = 240;
 				depthBuffer.clearBuffers();
+				m_sceneManager.m_music.stop();
 				Global.camera = null;
 				FlxG.switchState(new Menustate());
 				return;
