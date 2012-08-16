@@ -54,17 +54,17 @@ package
 			//text displaying loading advancement
 			m_loadProgression = new FlxText(400, 400, 600,"");
 			//add(m_loadProgression);
-			//m_ladyBug = new FlxSprite(410 , 320);//for CASUAL GAME CUP
-			m_ladyBug = new FlxSprite(200 , 150);
+			m_ladyBug = new FlxSprite(410 , 320);//for CASUAL GAME CUP
+			//m_ladyBug = new FlxSprite(200 , 150);
 			m_ladyBug.loadGraphic(LadyBugScreen, false, false, 300, 200, true);
 			Global.library.addBitmap("Images/Menu/menustate_background.png");
-			/*
+			
 			//trailer de merde
 			m_trailer = new MovieClip();
 			m_trailer = new Trailer();
 			m_trailer.scaleX = 0.6;
 			m_trailer.scaleY = 0.6;
-			m_trailer.scaleZ = 0.6;*/
+			m_trailer.scaleZ = 0.6;
 			
 
 			
@@ -81,7 +81,7 @@ package
 			depthBuffer.addElement(m_ladyBug, DepthBuffer.s_cursorGroup);
 			m_ladyBug.alpha = 0;
 			m_timerLB.start(2);
-			//FlxG.stage.addChild(m_trailer);
+			FlxG.stage.addChild(m_trailer);
 			
 			m_mvcButton = new MVCButton("Menu/menustate.xml");
 		}
@@ -96,7 +96,7 @@ package
 				//m_mvcButton = new MVCButton("Menu/menustate.xml");
 				depthBuffer.addElement(m_mvcButton, DepthBuffer.s_menuGroup);
 				m_menuAppeared = true;
-				//FlxG.stage.removeChild(m_trailer);
+				FlxG.stage.removeChild(m_trailer);
 				fadeIn();
 			}
 			manageLadyBug();

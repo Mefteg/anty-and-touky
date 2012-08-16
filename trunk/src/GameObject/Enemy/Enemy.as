@@ -332,7 +332,8 @@ package GameObject.Enemy
 			removeFromStage();
 			m_smoke.playSmoke(x, y);
 			dropItem();
-			m_killer.addScore(m_points);
+			if(m_killer)
+				m_killer.addScore(m_points);
 		}
 		
 		protected function commonEnemyUpdate():Boolean {
