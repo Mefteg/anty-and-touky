@@ -22,7 +22,7 @@ package GameObject.Other
 		{
 			super(X, Y);
 			m_state = "idle";
-			m_name = "Box";
+			m_typeName = "Box";
 			m_url = "Images/Others/box.png";
 			m_width = 32; m_height = 32;
 			m_offset = new FlxPoint(10, 34);
@@ -57,8 +57,8 @@ package GameObject.Other
 		override public function act():void {
 			//check if the player is not on a hole
 			var tiles:Array = Global.player2.tilesUnder();
-			for each (var tile:TileObject in tiles) {
-				if (tile.m_typeName == Hole.s_type) {
+			for each (var tile:int in tiles) {
+				if (tile == TilesManager.HOLE_TILE) {
 					respawn();
 					return;
 				}

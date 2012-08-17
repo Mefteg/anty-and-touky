@@ -182,7 +182,7 @@ package GameObject.Player
 					i++;
 				}
 			}
-			if (m_objectCarried.m_name == "Box") {
+			if (m_objectCarried.m_typeName == "Box") {
 				m_objectCarried.act();
 				// APPELER FONCTION RESPAWN
 				//m_objectCarried.respawn();

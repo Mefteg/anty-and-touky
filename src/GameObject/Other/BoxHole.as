@@ -23,7 +23,7 @@ package GameObject.Other
 		
 		override public function update():void { }
 		
-		public static function BarrelHole(X:Number, Y:Number, target:String) {
+		public static function BarrelHole(X:Number, Y:Number, target:String) : BoxHole {
 			var bh:BoxHole = new BoxHole(X, Y, target);
 			bh.m_url = "Images/Others/barrelHole.png";
 			return bh;
