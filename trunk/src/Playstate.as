@@ -183,7 +183,7 @@ package
 			depthBuffer.addElement(m_rectLadyBug, DepthBuffer.s_cursorGroup);
 			m_sceneManager = new SceneManager();
 
-			m_sceneManager.loadScene("Maps/W1M1.json");
+			m_sceneManager.loadScene("Maps/W3M2.json");
 			//m_sceneManager.loadScene("Maps/test500.json");
 			//m_sceneManager.loadScene("Maps/test2.json");
 			//m_sceneManager.loadScene("Maps/W2M1.json");
@@ -381,9 +381,10 @@ package
 			if (Global.soloPlayer.m_state == "respawn")
 				return;
 			//check if the player is not on a hole
-			var tilesType:Array = Global.soloPlayer.tilesUnder();
+			var tilesType:Array = Global.soloPlayer.tilesUnder() 
+			tilesType = tilesType.concat(Global.soloPlayer.tilesOver());
 			for each (var type:int in tilesType) {
-				if ( type == TilesManager.HOLE_TILE )
+				if ( type == TilesManager.HOLE_TILE || type == TilesManager.PIPE_TILE  )
 					return;
 			}
 			if (Global.soloPlayer.m_name == Global.player1.m_name){
