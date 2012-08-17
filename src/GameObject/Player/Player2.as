@@ -172,8 +172,8 @@ package GameObject.Player
 				var i:int = 0;
 				var find:Boolean = false;
 				while ( i < tiles.length && find == false ) {
-					var tile:TileObject = tiles[i];
-					if ( tile.m_typeName == Hole.s_type ) {
+					var tile:int = tiles[i];
+					if ( tile == TilesManager.HOLE_TILE ) {
 						Global.player1.takeDamage();
 						Global.player1.respawn();
 						Global.player1.m_state = "waitToukyPosition";
