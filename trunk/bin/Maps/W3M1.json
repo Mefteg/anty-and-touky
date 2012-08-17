@@ -133,6 +133,18 @@
                  "width":53,
                  "x":1752,
                  "y":163
+                }, 
+                {
+                 "height":130,
+                 "name":"ToM2",
+                 "properties":
+                    {
+                     "respawn":"left"
+                    },
+                 "type":"TriggerWarp",
+                 "width":47,
+                 "x":1867,
+                 "y":233
                 }],
          "opacity":1,
          "type":"objectgroup",

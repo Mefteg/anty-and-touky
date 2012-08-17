@@ -12,6 +12,7 @@ package GameObject.Other
 		private var m_target:String;
 		private var m_time:int;
 		private var m_timerClose:FlxTimer;
+		private var m_permanent:Boolean = false;
 		
 		public function Switch(X:Number,Y:Number,target:String,time:int) 
 		{
@@ -26,6 +27,8 @@ package GameObject.Other
 			
 			if (m_time == 0 || !Global.soloPlayer)
 				m_timerClose.start(0.1);
+			if (m_time < 0)
+				m_permanent = true;
 		}
 				
 		override public function addToStage():void {
@@ -66,7 +69,7 @@ package GameObject.Other
 									m_timerClose.start(m_time);
 							}
 							break;
-				case "timer": if ( m_timerClose.finished) {
+				case "timer": if ( !m_permanent && m_timerClose.finished) {
 									close();
 								} break;
 			}
