@@ -19,6 +19,8 @@ package GameObject.Enemy
 			createThrowables();
 			m_stats.initHP(3);
 			m_state = "offScreen";
+			m_direction = new FlxPoint(0, 0);
+			m_directionFacing = new FlxPoint(0, 0);
 		}
 		
 		public function prepareShot():void {

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="63" height="77" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" source="../Metal.tsx"/>
+ <layer name="Background" width="63" height="77">
+  <data encoding="base64" compression="zlib">
+   eJztm11u1DAQxyNtl60EVAIVFqlQqUvLIrW8cIdI7Q3gAJXgsY/cYM8BnAA4AXAwxlIsDWbijO0Zf2R5+EtO4tj5eRLPTOL0Xdf1//WPNhE6AC1B9xLLPbP+Iehi0MpTH+/bKLEfg56AniaWe2b9Z6jvtac+3qfFfj7Y4FViuWfWf4363nrqH6B9WuxS8vX/EnQLOpto4xK0G3RMtJ9zLpBkXzDYT0AvBp3PhH3DZMdaNcQ+NS6h12DYXT+Swi7lz6jyoTC78QGuH0lhl/JnVBn7Li77kecc4wNcP5LCLuXPqDL2XRz2O0/9+6ArpNTnveQzH9r/pacNH1vpeU2C/c0es4faPaTOmHxzdS3ssddA+SZ7bMpPhegTktleBbZ9osBO+SZ7bMpPhWiHZLbXEW2PxXUx12PGnfJN9viUn0rRNqLtsbgult3nU2vTWFwXy16axyc3xhuL62pl98WoqaqdXVOtsuO4Kzb+sHVi8swa2H3bXPaYPHPMv2o+o9LsY3465P1oTXb33fM4l7XspRgk2ak8xD3PxvV3w3GpuLM0OzUWU+wl791YubE5NTYc9tIcMVp3f9/nXB83B/Ytw/bUPDYHdmv7UB/ssrfK7+YmHB9s3mFgH6fJznkmudK6Nom2qFx+X9i17S49HlLsYzG8Nnvquo6W7Z66rqNl9gVDj0CPCe0Du1mf8NBzbXNnT53rYt5H18BOceSI61YZ+EOV65437MtOZ01KaDk3u8k3tNak4PKOUSc3u8k3LjqdNSm4bL9T+upYVhuHpbCfKo5ZiHaOKH9GsWrbvSZZVu15Xur77GfQF9BXQfZW7P4N9B30I+Jc95lsjf0n6Bfo90Q9zreg1tglhVlPPWORM74qwe7brkUa7O48/wH0sQJWH3vq+IzZ+Rp0UwFrDPtbpnCbRzNhv2Vqjnbn5PALBntt+XZu9mWXJ6/OzW753XnesufKt7n/q9h5SdPu70Dvu3z5Nvd/FUm7u2uvqT6k5a6BDomjamKXXD8WOt+lsrvrznPYvRZ2u+489d2F+88VVw8KsuNvFFQexxX1/0noeVLsIf2fEe21wE6tLeK2wZ1PuQxj70M12ZedfHzVgt014q5W2DXiLtt+yD1cgn1KVAzlxlOuYuyO16mF6Lkie4xC25f6FqXJzo0/S417LXavWfvKra0/Xqcgtg==
+  </data>
+ </layer>
+ <layer name="Foreground" width="63" height="77">
+  <data encoding="base64" compression="zlib">
+   eJztm7lyFDEQhsUTQABUEbGpSXDAERtsEwMGx/AAQDgRR0bEkUFIAIaQAAxv4JTT9hv4Meiukgoh1OrWNSPt7l/118xoe2f1jbSSRqNRitcmeN1J2yBiNwr6VkHb55XIxBr2klycNwP5OqbN6bK17+afU+/s1/R28OSfU+/s25r7qSf/nHpnt5XCrhTd1s0zu1Fr7BfAlyLyj9pS/7b5UlHsJfsg17cD+VlX4WvDyWUJycfO1cmQ1iJ+26dU9rvW96WKZeckZT9BpLdc7pyuC+NmRPpY7FQfl/Pbd4Rxq0R6KXZpu7PlSZtC+D8oxX6xomP7IYlmqmydT+2Dc/qpVK2qNHYcE5gyMf176bHHK/Br6/gt+J3QO4J4jMH/X+x19Y3rSrO/B3+wjj+BPwu9K4jfjWQ2cturGuxfwF+t41/g30LvC+L3E9ld5dyb5bQ1LagW+3HtllWL/ax2y6rFfl67luz+KnVsYdhL32PWlqTMuPYod3w0lZbs+exT1t1UlWJHfQf/AH/TW8n+z3Io0cph37PO0aNy2A+sc/QoHJunsh/qba/sKK7s55ndvS+Tjj/sOl9jbqVlHelt7f5dMvacau6rNnup55c18jgGe64Mf+l5VFTr7CiqPqTcg9lzVj2w+4T5Pgk+BT6t91c8afa+OV5TfdR5Sr58rwi/i8/EFpUdn4nNG/sZ8Dmh541dIrM2oGd2VMoYaSx2bsw9ps0YaSx2Sk8i07nYIfCZWVtpWKdmfxOZLokdiM/M2krDOlZbR+ljZHoo1mYenM9Q23rbSrlPoSX7kt0+XgQt2f9v58265FJzTFPNQ4VElbthH3uNfIlrQ607dWMk7GMpdo7OVyfx+swEv4UxLbGH5GP31UmModad2rLX5PXK7iqmnV6y0+38IrBT5T7m/XZIU7DnKuZdkFAd64X9Cviq3g+xu/ML88B+A3xT7/veBRnU33cT3bxQqsFu1l5TbV2upO+CKMWzo+2xXS47yuac8l5Gwm7njWKXrss3qsV+D3wf/EAQy/WnUnbpunzf75dkfwh+BH4siB2THb3jfLc0+zPwc/ALQaxkHMWx5zyXr7WmQaJY9hrjLo59j/k8VbHsMZI+4+DOf0CkS9s1Kq4m+0thHHf+QyJd2q5RcaXZB8u+5xYp56fKXdquUXE1y12q1HLPVQvsqNB84VHgezlqhT2kWnPUEtVe89myel4TUkI1690fPeTDJg==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="63" height="77">
+  <object name="ExplosiveBarrel" type="ExplosiveBarrel" x="1422" y="144"/>
+  <object name="MetalSwitch" type="SwitchMetal" x="1266" y="145">
+   <properties>
+    <property name="door" value="Door1"/>
+    <property name="time" value="-1"/>
+   </properties>
+  </object>
+  <object name="Door1" type="Cylinders" x="1581" y="115"/>
+  <object name="Barrel" type="Barrel" x="1595" y="74"/>
+  <object name="BarrelHole" type="BarrelHole" x="1897" y="390">
+   <properties>
+    <property name="door" value="Door2"/>
+   </properties>
+  </object>
+  <object name="Door2" type="Cylinders" x="45" y="1608"/>
+  <object name="Generator" type="Generator" x="641" y="2205" width="28" height="29">
+   <properties>
+    <property name="door" value="Door3"/>
+   </properties>
+  </object>
+  <object name="Door3" type="ElectricDoor" x="1292" y="1997"/>
+  <object name="BigAnt" type="BigAnt" x="319" y="410"/>
+  <object name="Life" type="Life" x="1517" y="1226"/>
+  <object name="Alarm" type="Alarm" x="1334" y="54"/>
+  <object name="TriggerWarp" type="TriggerWarp" x="1986" y="2247" width="27" height="147">
+   <properties>
+    <property name="url" value="W3M3.json"/>
+   </properties>
+  </object>
+  <object name="Alarm" type="Alarm" x="236" y="765"/>
+  <object name="Penguin" type="PenguinScientist" x="1126" y="409"/>
+  <object name="Penguin" type="PenguinScientist" x="1045" y="503"/>
+  <object type="Penguin" x="1358" y="409"/>
+  <object name="Cannon" type="Cannon" x="1538" y="252"/>
+  <object type="Penguin" x="1484" y="603"/>
+  <object type="Penguin" x="1930" y="339">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object type="Penguin" x="1929" y="432">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object type="Cannon" x="1940" y="741"/>
+  <object name="Cannon" type="Cannon" x="1693" y="1606"/>
+  <object type="PenguinScientist" x="1709" y="1534"/>
+  <object type="PenguinScientist" x="1623" y="1677"/>
+  <object type="PenguinScientist" x="1730" y="1685">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="Cannon" type="Cannon" x="1804" y="1543">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="TriggerMice" type="TriggerEnemies" x="994" y="1475" width="330" height="190">
+   <properties>
+    <property name="direction" value="6"/>
+    <property name="location" value="2"/>
+    <property name="number" value="1"/>
+    <property name="type" value="mouse"/>
+   </properties>
+  </object>
+  <object name="TriggerMice" type="TriggerEnemies" x="994" y="1451" width="331" height="279">
+   <properties>
+    <property name="direction" value="6"/>
+    <property name="location" value="2"/>
+    <property name="number" value="3"/>
+    <property name="type" value="mouse"/>
+   </properties>
+  </object>
+  <object name="TriggerMice" type="TriggerEnemies" x="993" y="1409" width="331" height="241">
+   <properties>
+    <property name="direction" value="6"/>
+    <property name="location" value="2"/>
+    <property name="number" value="3"/>
+    <property name="type" value="mouse"/>
+   </properties>
+  </object>
+  <object type="Cannon" x="59" y="2187"/>
+  <object name="Penguin" type="Penguin" x="406" y="2048"/>
+  <object name="Penguin" type="Penguin" x="549" y="2194"/>
+  <object type="PenguinScientist" x="855" y="2139"/>
+  <object name="Penguin" type="Penguin" x="397" y="2252"/>
+  <object type="FlyingCannon" x="521" y="2083"/>
+  <object name="TriggerMice" type="TriggerEnemies" x="269" y="1987" width="157" height="242">
+   <properties>
+    <property name="direction" value="7"/>
+    <property name="location" value="3"/>
+    <property name="number" value="3"/>
+    <property name="type" value="mouse"/>
+   </properties>
+  </object>
+  <object name="TriggerMice" type="TriggerEnemies" x="1930" y="1332" width="27" height="280">
+   <properties>
+    <property name="direction" value="4"/>
+    <property name="location" value="0"/>
+    <property name="number" value="1"/>
+    <property name="speed" value="2"/>
+    <property name="type" value="mouse"/>
+   </properties>
+  </object>
+  <object name="TriggerMice" type="TriggerEnemies" x="1953" y="1332" width="29" height="229">
+   <properties>
+    <property name="direction" value="4"/>
+    <property name="location" value="0"/>
+    <property name="number" value="1"/>
+    <property name="speed" value="2"/>
+    <property name="type" value="mouse"/>
+   </properties>
+  </object>
+  <object type="ExplosiveBarrel" x="1929" y="1623"/>
+  <object name="TriggerMice" type="TriggerEnemies" x="1380" y="2242" width="330" height="223">
+   <properties>
+    <property name="direction" value="6"/>
+    <property name="location" value="2"/>
+    <property name="number" value="1"/>
+    <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="RespawnPoints" width="63" height="77">
+  <object name="Respawn" type="RespawnPoint" x="1290" y="2320" width="48" height="34">
+   <properties>
+    <property name="location" value="init"/>
+   </properties>
+  </object>
+  <object name="Respawn" type="RespawnPoint" x="41" y="944" width="50" height="40">
+   <properties>
+    <property name="location" value="left"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
