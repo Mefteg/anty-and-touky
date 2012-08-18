@@ -16,6 +16,7 @@ package GameObject.Enemy
 			m_width = 32; m_height = 32;
 			m_collideEvtFree = true;
 			m_collideWithObjects = false;
+			m_activeOffscreen = true;
 			createThrowables();
 			m_stats.initHP(2);
 			m_state = "offScreen";
@@ -32,7 +33,7 @@ package GameObject.Enemy
 		
 		override public function attack():void {
 			m_state = "idle";
-			m_timerAttack.start(Utils.random(0.7, 1.2));
+			m_timerAttack.start(Utils.random(1.4, 2.6));
 			m_directionFacing = Utils.direction(new FlxPoint(x, y), new FlxPoint(m_target.x, m_target.y+m_direction.y*-50));
 			var thr:EnemyThrowable = getThrowable();
 			if (thr != null){

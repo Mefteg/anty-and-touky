@@ -3,12 +3,12 @@
  <tileset firstgid="1" source="../Metal.tsx"/>
  <layer name="Background" width="30" height="130">
   <data encoding="base64" compression="zlib">
-   eJzt0DkOgDAMRcFcOtCzngC4Li7dIDk1UzzpF7EiTW+tTdEc9cJeojXaiu+/9h4d0Vnc+d/R27yv6I6e4s7/jt7mPerDmTNnzpw5c+bMmTNnzpw5c+bMmTNnzpw5c+bMmTNnzpw5c+bMmTNnzpw5c+bMmTNnzpw5c+bMmTNnzpw5c+bMmfMfnF9+a/OQ
+   eJztWUtOQzEMzBWgFNhSUWBLORmLwp7vCaB74ATACYCD4Yo+yXqNHadJTKGzGClSXjTqZOqMk2kI4YJwSZgaxleEa8KN8XtpfEu4I9wbx5w3dy0fPxAeCTPjmPPmruXjXH2gM3SGztAZOkNn6AydofN662yBpLN1bUxnCySdrWtjmnvwcp09eddB5+63WyD52boWfoaf4Wf4GX720bnEzyX/o5Jct0MYEnZ74/3Fd1qeLMl1h4Qx4ag3Pllo0SrXbQsYhOW6ULNuTIS9PAvLnqvpZ21/a/NynbX9rc0b83YMLevGb5+D6AfRD3qeg0+EZ8KLwMvnc+pGiveV8EZ4F3j5fE7dSPF+ED4JXwIvn0fdQN1A3cjnLfFzCe9ekHPSkKE/F8tQObzHQc5JY4b+XJeRV60bW0HOwSmU+PmAMFoRJTpvGu9p+Ok3NMR8MinkTf2PtF6kxM+p/5HWi/yX+nyurLXU59h63CPlrUWu27xcB52hM3ROn3ctdbacdy101uqwZz84/07LXqV9irR2/p2WvWJ3vbV4tR5m0JC3y9axszh2l1+LN7W/LfLGzLC/65afW+RY6/3GqDIv8rN/fk69h7bys+d7Gdc5p4ZKvFLvqfnZ8z2U6+z5Hsp1Tr13t/Iz8jPu+Vv42ZMX56D/OYi68Xf6bugMnTdd52/QaJLj
   </data>
  </layer>
  <layer name="Foreground" width="30" height="130">
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAAA+BjzwAAE=
+   eJzt2LsNwjAUBVBnHRagBgpqYAJGYwS2oOVTwAaMgZHSpEgUlNgWyTnSlSwl8pXTxHohAAAAQy1n1rst1Du371yqF4D5Wsds6vUpY+8+5lCvzxl7AQCgj1Vo3pVz2YXmXXkst5hrzL3Od/2Iqernx5H7ulQtKdGbS84uAAAAfrMolFQuCffu8irU++zxTooZT5/zppjxvEfe79+1zZlSz2JK9QLDTe2/DzAVH3cJGjk=
   </data>
  </layer>
  <objectgroup name="Objects" width="30" height="130">
@@ -22,11 +22,11 @@
     <property name="url" value="RoughClimb"/>
    </properties>
   </object>
-  <object type="TriggerEnemies" x="264" y="3369" width="371" height="293">
+  <object type="TriggerEnemies" x="254" y="3550" width="371" height="293">
    <properties>
     <property name="direction" value="4"/>
     <property name="location" value="1"/>
-    <property name="number" value="3"/>
+    <property name="number" value="1"/>
     <property name="speed" value="0.3"/>
     <property name="type" value="flyingCannon"/>
    </properties>
@@ -37,8 +37,89 @@
     <property name="url" value="Maps/W3M5.json"/>
    </properties>
   </object>
+  <object type="Cannon" x="177" y="3445">
+   <properties>
+    <property name="lift" value=""/>
+   </properties>
+  </object>
+  <object type="TriggerEnemies" x="194" y="3251" width="619" height="102">
+   <properties>
+    <property name="direction" value="7"/>
+    <property name="location" value="3"/>
+    <property name="number" value="3"/>
+    <property name="speed" value="3"/>
+    <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
+  <object type="FlyingCannon" x="434" y="3278"/>
+  <object type="Cannon" x="736" y="3054" width="44" height="42">
+   <properties>
+    <property name="lift" value=""/>
+   </properties>
+  </object>
+  <object type="TriggerEnemies" x="49" y="2704" width="653" height="215">
+   <properties>
+    <property name="direction" value="6"/>
+    <property name="location" value="2"/>
+    <property name="number" value="1"/>
+    <property name="speed" value="1"/>
+    <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
+  <object type="TriggerEnemies" x="48" y="2740" width="653" height="215">
+   <properties>
+    <property name="direction" value="6"/>
+    <property name="location" value="1"/>
+    <property name="number" value="1"/>
+    <property name="speed" value="2"/>
+    <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
+  <object type="FlyingCannon" x="326" y="2917"/>
+  <object type="FlyingCannon" x="250" y="3187">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object type="Penguin" x="496" y="2300"/>
+  <object type="FlyingCannon" x="555" y="2683"/>
+  <object type="TriggerEnemies" x="45" y="1970" width="653" height="215">
+   <properties>
+    <property name="direction" value="6"/>
+    <property name="location" value="1"/>
+    <property name="number" value="1"/>
+    <property name="speed" value="2"/>
+    <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
+  <object type="TriggerEnemies" x="45" y="1970" width="653" height="215">
+   <properties>
+    <property name="direction" value="2"/>
+    <property name="location" value="7"/>
+    <property name="number" value="1"/>
+    <property name="speed" value="2"/>
+    <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
+  <object type="TriggerEnemies" x="257" y="1615" width="522" height="363">
+   <properties>
+    <property name="direction" value="7"/>
+    <property name="location" value="3"/>
+    <property name="number" value="1"/>
+    <property name="speed" value="2"/>
+    <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
+  <object type="Cannon" x="174" y="1462">
+   <properties>
+    <property name="lift" value=""/>
+   </properties>
+  </object>
+  <object type="FlyingCannon" x="276" y="1165"/>
+  <object type="FlyingCannon" x="546" y="1077"/>
+  <object type="FlyingCannon" x="438" y="877"/>
  </objectgroup>
- <objectgroup name="RespawnPoints" width="30" height="130">
+ <objectgroup name="RespawnPoints" width="30" height="130" visible="0">
   <object type="RespawnPoint" x="422" y="3979">
    <properties>
     <property name="location" value="down"/>
