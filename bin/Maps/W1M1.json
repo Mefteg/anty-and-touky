@@ -99,6 +99,42 @@
                  "width":46,
                  "x":281,
                  "y":638
+                }, 
+                {
+                 "height":0,
+                 "name":"dk",
+                 "properties":
+                    {
+
+                    },
+                 "type":"ExplosiveBarrel",
+                 "width":0,
+                 "x":378,
+                 "y":123
+                }, 
+                {
+                 "height":32,
+                 "name":"Penguin1",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":41,
+                 "x":611,
+                 "y":779
+                }, 
+                {
+                 "height":0,
+                 "name":"BigEgg",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Life",
+                 "width":0,
+                 "x":542,
+                 "y":274
                 }],
          "opacity":1,
          "type":"objectgroup",

@@ -61,8 +61,6 @@ package GameObject
 				case "ElectricSnake": return new ElectricSnake(object.x, object.y); break;
 				case "Cannon" : return new Cannon(object.x, object.y, object.properties.lift); break;
 				case "FlyingCannon" : return new GameObject.Enemy.FlyingCannon(object.x, object.y); break;
-				case "WhiteSquare":  return new GameObject.Enemy.WhiteSquare(object.x, object.y); break;
-				case "BlackSquare":  return new GameObject.Enemy.BlackSquare(object.x, object.y); break;
 				case "TriggerEnemies": return new TriggerEnemies(object); break;
 				case "ElSqualo" : return new ElSqualo(object.x, object.y, object.width, object.height); break;
 				//NPC
@@ -99,7 +97,7 @@ package GameObject
 				//animated objects
 				case "Alarm" : return AnimatedObject.Alarm(object.x, object.y); break;
 				
-				default:  return new GameObject.Enemy.WhiteSquare(object.x, object.y); break;
+				default:  return null;
 				
 			}
 			return null;

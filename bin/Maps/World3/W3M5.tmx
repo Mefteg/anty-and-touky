@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="63" height="70" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" source="../Metal.tsx"/>
+ <layer name="Background" width="63" height="70">
+  <data encoding="base64" compression="zlib">
+   eJzt0rsNAjEQRdEJ+DTAJwYqADoDKgAqAApmViReZ5sh+xzpSpYmetqNAAAAAAAAAAAAAAAAAAAA/tF+Qq2Zsr21/fW2U1FP2w/ZJbtmt2wXfW2/Z4/sGe1vL//xc4y3H6t7WQtm2TxbZJsYb19W9/LdgnLPUE/bV9k6ft986JW9s0+2re7luwVfwRYUBQ==
+  </data>
+ </layer>
+ <layer name="Foreground" width="63" height="70">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20KP6AAAAAAAAAAAAAAAAAAAAAAAL4GROgAAQ==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="63" height="70" visible="0">
+  <object name="Lift" type="Lift" x="130" y="2145" width="91" height="88">
+   <properties>
+    <property name="range" value="3"/>
+   </properties>
+  </object>
+  <object name="Music" type="Music" x="17" y="2172" width="63" height="56">
+   <properties>
+    <property name="url" value="MakeTheEggsFly"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="RespawnPoints" width="63" height="70">
+  <object name="Respawn" type="RespawnPoint" x="171" y="2180">
+   <properties>
+    <property name="location" value="down"/>
+   </properties>
+  </object>
+  <object name="Respawn" type="RespawnPoint" x="185" y="2180">
+   <properties>
+    <property name="location" value="init"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

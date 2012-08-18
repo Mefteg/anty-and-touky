@@ -17,7 +17,7 @@ package GameObject.Enemy
 			m_collideEvtFree = true;
 			m_collideWithObjects = false;
 			createThrowables();
-			m_stats.initHP(3);
+			m_stats.initHP(2);
 			m_state = "offScreen";
 			m_direction = new FlxPoint(0, 0);
 			m_directionFacing = new FlxPoint(0, 0);
@@ -32,11 +32,13 @@ package GameObject.Enemy
 		
 		override public function attack():void {
 			m_state = "idle";
-			m_timerAttack.start(3);
-			m_directionFacing = Utils.direction(new FlxPoint(x, y), new FlxPoint(m_target.x, m_target.y));
+			m_timerAttack.start(Utils.random(0.7, 1.2));
+			m_directionFacing = Utils.direction(new FlxPoint(x, y), new FlxPoint(m_target.x, m_target.y+m_direction.y*-50));
 			var thr:EnemyThrowable = getThrowable();
-			thr.place(x+m_throwPlaceArray[facing].x, y+m_throwPlaceArray[facing].y);
-			thr.attack(facing);
+			if (thr != null){
+				thr.place(x+m_throwPlaceArray[facing].x, y+m_throwPlaceArray[facing].y);
+				thr.attack(facing);
+			}
 			play("idle" + facing);
 		}
 		
@@ -84,6 +86,7 @@ package GameObject.Enemy
 			for (var i:int = 0; i < 3; i++) {
 				thr = EnemyThrowable.CannonBullet();
 				thr.setCaster(this);
+				thr.m_speed = 4;
 				thr.m_collideEvtFree = true;
 				m_throwables.push(thr);
 			}

@@ -3,12 +3,12 @@
  <tileset firstgid="1" source="../Metal.tsx"/>
  <layer name="Background" width="115" height="77">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="Foreground" width="115" height="77">
   <data encoding="base64" compression="zlib">
-   eJztnUtOwzAUANMlV+ACCNYte37d8+uewwEnoFyBLYjvDTgGtlRLwXISu03ynOcZaaQ2uBHW1FWahnJRVdUFZumy+s95Br8T0rJ0aalHWuqRlnqkpR5pqUda5u1tgiuv5Y33c+m5lKy/ziwngW2xsE7lW54azza3aTlNXcsr4/Xm9mVTqAhoKd+yzl1gWyy0zKvlLtCSlkhLpKVGaalHWuqRlnrso+XcuNgoPZ+StS3vjQ8BH2u9msZYWYt5aFs+GdcBn2stm8asaZmNtNSjbflh/Az4VWvZNMbKZ5h52PdxrMWt0yqD+ZUkLfVISz3SUo+25UtXnERoKdfyuytOIrSUa/nTFScRWsq1ZF1Oy7Zrl3+74iRCy+FMPVadBe7PAtuboGX+LWOhZb4tDxIfT8t8Wu4KLWmJtCxJWuqRlnqkpR5pqUepljj9lvVruaTnrtFFpMctjeYtj/P34cZKz7tk29Zw7Gvn0hub8p0zGKdEy5TX98OEsaUT04KW04CWepBo6X/nWhu0jEeiZQx7xiPjftJsysa978utJesxHXetR1sTWk4D19L/Gzv/urwmaJkPs0iboGV+jNmy67yghZbjs+05vK73mLQcH1rqgZZ5Evv5Vd2YjrQcnyE/+18F9p/6vOnDrmMuLQzVcunt3zHU8yakY+zrKaQYu6UEtNze+nkjWo5H3y2b/jeUJLSk5dSgpR5oqQda6oGWeiihZSnQUg9DtHwzvhrfqzxbSpwTHsM+OzpD+5dkiDmW7B80QhSx
+   eJztnbtuFDEUQL0lXWoqOkQqioTUPLKpeaXnL6Ck4zdSJNQUhF+gBfH8Az4DjzSWBmN77M14rvf6HOlIm5lZK9ZZr3ZnJ5tTY8wpNunW/MuTBn4npGXv0lKPtNQjLfVISz3SUo+0bNuXBZ57LV94+6Xn0rP+Oht4GNiWC+tUvuUj6+PxNi33U9fymfX5ePtpLFQGtJRvOeVVYFsutGyr5U2gJS2RlkhLjdJSj7TUIy31uETLI+vxqPR8enZoeWm9Cvh+0it2zCBrsQ2Hlh+t1wE/TVrGjrmmZTPSUo9Dy+/WHwF/TlrGjhnkM8w2vMlrnzejPm6dmgbm15NLvyd5bWipoeXQ8Z2hpYaWDlrKtfw8FyfAQWIfLeVa/kp0iXEnsY+Wci1/J7rEuJ/YR0u5lrusyxS0rGvq2uU/c3EKoWU9S16rvrVuvG2byPYYtGyj5YUJt7woGIOWbbT8YP5veXfcngst22i5BLSkJdKyJ2mpR1rqkZZ6pKUepVri/recXsslPXeNHmf6INHoKHE/fwx3rPS8eza1hnOfO7fesSXfOYN5SrQseX6/V3Bs65xUHj+nBS2X4azy+LTUg0RL/zvXUtAyH4mWOdyyHlpvF82mb9z7vtZash7L2YymmtByP3At/b+x86/Li0HLdthEPPF+jkHL9vBbnpl6LefOCw7Qcn12PYc39x6TlutDSz3Qsk1yP7+amtORlutT87P/88D4pY+bJZx7zaWFWi233viOWo+bkI61r6eQYu2WEtByd6fnjWi5Hku3jP1vKEloSct9g5Z6oKUeaKkHWuqhh5a9QEs91Gj51frF+s202VLinPAaLtnRGRpfkhpz7Nm/jYEcGQ==
   </data>
  </layer>
  <objectgroup name="Objects" width="115" height="77">
@@ -22,9 +22,89 @@
     <property name="range" value="4"/>
    </properties>
   </object>
+  <object type="Penguin" x="826" y="1712"/>
+  <object type="Penguin" x="824" y="1962"/>
+  <object type="PenguinScientist" x="831" y="1840"/>
+  <object type="PenguinScientist" x="850" y="1778">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object type="PenguinScientist" x="850" y="1891">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object type="TriggerEnemies" x="867" y="1676" width="404" height="337">
+   <properties>
+    <property name="direction" value="6"/>
+    <property name="location" value="2"/>
+    <property name="number" value="2"/>
+    <property name="speed" value="2"/>
+    <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
+  <object type="PenguinScientist" x="1139" y="1762"/>
+  <object type="Penguin" x="1192" y="1972"/>
+  <object type="Penguin" x="1614" y="1692"/>
+  <object type="ElectricSnake" x="1654" y="1835"/>
+  <object type="TriggerEnemies" x="1936" y="1730" width="107" height="464">
+   <properties>
+    <property name="direction" value="0"/>
+    <property name="location" value="4"/>
+    <property name="number" value="1"/>
+    <property name="speed" value="3"/>
+    <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
+  <object type="TriggerEnemies" x="2576" y="1702" width="459" height="391">
+   <properties>
+    <property name="direction" value="6"/>
+    <property name="location" value="2"/>
+    <property name="number" value="3"/>
+    <property name="speed" value="1.4"/>
+    <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
+  <object type="ElectricSnake" x="3026" y="909"/>
+  <object type="ExplosiveBarrel" x="3175" y="724" width="49" height="58"/>
+  <object type="Penguin" x="3057" y="468"/>
+  <object type="Penguin" x="3467" y="542"/>
+  <object x="3186" y="489" width="1"/>
+  <object type="PenguinScientist" x="3183" y="508" width="23" height="25"/>
+  <object type="PenguinScientist" x="3347" y="545"/>
+  <object type="Cannon" x="3371" y="359"/>
+  <object type="Penguin" x="3218" y="862"/>
+  <object type="Penguin" x="3264" y="859"/>
+  <object type="Penguin" x="3055" y="1401"/>
+  <object type="Penguin" x="3115" y="1337"/>
+  <object type="Penguin" x="3232" y="1335"/>
+  <object type="Penguin" x="3289" y="1404"/>
+  <object type="PenguinScientist" x="3169" y="1363"/>
+  <object type="Cannon" x="3594" y="2281"/>
+  <object type="Life" x="3566" y="2339"/>
+  <object type="Heart" x="1054" y="2365"/>
+  <object type="Heart" x="1091" y="2364"/>
+  <object type="BigAnt" x="2802" y="2368"/>
+  <object x="3145" y="1621" width="1"/>
+  <object x="3085" y="1629" width="168" height="324">
+   <properties>
+    <property name="direction" value="2"/>
+    <property name="location" value="0"/>
+    <property name="number" value="4"/>
+    <property name="type" value="mouse"/>
+   </properties>
+  </object>
+  <object type="Cannon" x="3168" y="1515"/>
+  <object type="TriggerWarp" x="3319" y="25" width="108" height="68">
+   <properties>
+    <property name="respawn" value="down"/>
+    <property name="url" value="Maps/W3M4.json"/>
+   </properties>
+  </object>
  </objectgroup>
- <objectgroup name="RespawnPoints" width="115" height="77" visible="0">
-  <object name="Spawn" type="RespawnPoint" x="89" y="1770" width="65" height="56">
+ <objectgroup name="RespawnPoints" width="115" height="77">
+  <object name="Spawn" type="RespawnPoint" x="2331" y="1967" width="65" height="56">
    <properties>
     <property name="location" value="init"/>
    </properties>
