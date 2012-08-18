@@ -1,203 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="30" height="30" tilewidth="32" tileheight="32">
- <tileset firstgid="1" name="Jungle" tilewidth="32" tileheight="32">
-  <image source="../Images/Tilesets/Jungle.png" width="512" height="512"/>
-  <tile id="1">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="3">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="5">
-   <properties>
-    <property name="type" value="Foreground"/>
-   </properties>
-  </tile>
-  <tile id="6">
-   <properties>
-    <property name="type" value="Foreground"/>
-   </properties>
-  </tile>
-  <tile id="7">
-   <properties>
-    <property name="type" value="Foreground"/>
-   </properties>
-  </tile>
-  <tile id="8">
-   <properties>
-    <property name="type" value="Foreground"/>
-   </properties>
-  </tile>
-  <tile id="9">
-   <properties>
-    <property name="type" value="Foreground"/>
-   </properties>
-  </tile>
-  <tile id="13">
-   <properties>
-    <property name="type" value="Foreground"/>
-   </properties>
-  </tile>
-  <tile id="16">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="17">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="18">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="20">
-   <properties>
-    <property name="type" value="Foreground"/>
-   </properties>
-  </tile>
-  <tile id="21">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="22">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="24">
-   <properties>
-    <property name="type" value="Foreground"/>
-   </properties>
-  </tile>
-  <tile id="25">
-   <properties>
-    <property name="type" value="Foreground"/>
-   </properties>
-  </tile>
-  <tile id="26">
-   <properties>
-    <property name="type" value="Foreground"/>
-   </properties>
-  </tile>
-  <tile id="27">
-   <properties>
-    <property name="type" value="Foreground"/>
-   </properties>
-  </tile>
-  <tile id="28">
-   <properties>
-    <property name="type" value="Foreground"/>
-   </properties>
-  </tile>
-  <tile id="29">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="40">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="64">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="65">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="66">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="80">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="81">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="82">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="96">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="97">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="98">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="113">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
- </tileset>
- <layer name="Background" width="30" height="30">
+<map version="1.0" orientation="orthogonal" width="48" height="40" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" source="Jungle.tsx"/>
+ <layer name="Background" width="48" height="40">
   <data encoding="base64" compression="zlib">
-   eJztlcsKwkAMRQv6Bf6B9bGpLnxC1S58gtUu1P//FzMwgUtMxxltXUgXB6SUOb1JzLSjKGo3NPyA2EFCjIDxm/fjirxrYgNkf+RNlDpeiLN15kRRg9dkW4l+GtKArJ94TbarAufVvkmbtyr6q/VYI6vBy3XAPsta1OGVubM3z1wu3AfaLugALkciej92OFuiZyvh74pv6HnkxT77enPbJz5vQkyBWYnXZE0DvAb8zxT2TD5vS+yAvfByfaTTx6vlZ++NuAMP4cV5lhQB3lh4fee5TwwEwwq9PPtcV1NnM4NzYkEs7XsH+zvUW7YHU6gt7gnpjT/0lu1AvIf4fspsviNxgpqHesvuhGv0evddlGeYveo96QKz+3obGr7lCcMPVag=
+   eJztmL1Ow0AMgO9ZKmCBbhSJn26ABCVvAH0CYOlGgREWYCgS3AA8AfCMOFKsnox958SJ0kCHT2qTxvfV9+fcwDk3WHC2gM0F8Oiy/ytwUJFDYD/4/tJSDntGroBpS32h8V8HNgj94t6E/I86+zdE6tvc3yf8d4E9wpD5XTiWYvG9kBPMC/4+zI3Ut7H8P5f0XwFWC1LxuZhSXF/CfxZ4l81/2EY4x7kxuK3wx2f6FfOPjIATQpbwx35YS+Sb8/fkmWHCPxxnFrg2MD80B0eC/46brw1a/9T8jc0NrT8dz1yf0r7V+lvzPnPyHMP43JrSI/foZ/yPWcP+vvDi2rh387mQ4hQ4KxiTe3eCfyp+GJNjrGhDyzlwUXBpjMXF5KirnaV/N/zL1lPXwE2EW1df3azxp+tZU/tWCi6PYa6kvOB+VdeeW9Uf8xirzbX7oYRU42ra0frHakOrf6rmirXzH/zz/uXqaKxBNfVIm/6xdxico5r8S+Ncesdo2h9raO340b5blGlH45/Xl9J7gFQzc/V+Vf9UbZ7y95G2Y/515d/qL83frvjH2v0L/g/AI+GpQ/5vwDvhg/GPvUunzgys/sdM7PxaVsLfsh9b/EeFJz2PyK/lZ6mfwBfh2+AvnWNZ6h9k4n6v69L8nTJunnme3peuW9Z/Gjv8bD3P0FLl3EHjYT3PWLKkLX4AG4WuKg==
   </data>
  </layer>
- <layer name="Foreground" width="30" height="30">
+ <layer name="Foreground" width="48" height="40">
   <data encoding="base64" compression="zlib">
-   eJzVVlkKAjEMHQXXjwERlXGZX3Eu4BG8/41MoYUQmualdAQfPGgWmq2Edt1/YUvcEfdOG+Jr6QbiVbmvZNN8c3fndC+h5+dgm8C43JffrekWkbw2ftZykrDy1Wrgen6eCjnJeJ65INBySsj19ReYI541X3T+NSjNF7HXwpqvZX9WxvX0b0lcEzdM966I2Ud6+ncmXmIOAZ+KuGNk7Zs9CPmo+PWKvuVbvRHvxAfTjQX/1vsIRYv9sHL4Ij1G53ByxA1AejzHHJAez72nPbYWaPUnQoD+e1r0WO5Xq5ZWfU77NQGpZcjE98qoD0fKTfbGK6M+ufjyTVjyBPog+FWdEjJHS0Z9Ar5B9BgY
+   eJzVWTtuwzAM1dTfkLG/wXt7njQnKHKCtidohmRuh+S0FQETfaVJiaJloHkA4dixpGeKj6LldUrp5Z/aZ7bvbO+jfWXbwf+bbK/inv9mH+kXb+JZtiP/bWrH3rh+GI9DtlWlj6ts19luAuMzb42/xQ1xNK6fxiNxH0Rfku99todsj47xJIj3Lun8LW4tYP9TXzwnGt+nbM+B/imWKIai8UMozT9xHsbfJ7ge5auBuJPGkf9Ftktne2v+KWaIM/n/IBvNgPQX5x7U+G22u4Y+NX9yzJD/T5MWcaC/1mnq+55g//cG+4t9vxR/gsw/hDk5E8G6pRy0Me6ZOxbnH4TUTHQM5s/rmIY5+ZlA/tf0SzHAeSI6Rmn9kmNF8h3FDfmfdKA9A+aJyBhe/hLefEhxg/lfajmqbdaTxb/GT8uHK8dxqJx7wHqio8X/JO7XeEowlwHOreul8xqwneRf8tk+TX1m9S3/l9xq515I/uiLffr7rMc09a0FfEarju2xBmjxw9zm1J8YD9xPz7qZQBqN5p8ScN4QPetmAmm0xB9zUMtcc27Q2jLf3vWDxh9zUMtcy1yitcVrvd8frdxfm2vWqZaftLZ8LaKD0voVrdVR71bNY6FVBzxWTb/R9yaueZZGrX6IcpAx1EuvEp76IQKPhntA44/rpWcPCIEalm177jkwNP6ow9Y1mO/Hd66WvYxWWPHT6ncJjJ3WvQwPWJ8W/x57b0uC9VnLn3PnwcKS9QNyXmoetHwUeaaafiOw1jypY5mPIjm2tX72xJO15+bRsTfHluqfUs2Ac2M9i/ddtjROzU+l+kdbe7WxrDjzfHPhcSyeVt+Shzd+WusJ7/t4q9YkD+SP3/TOxXjvHL/pnZvRd4sfkt/NpQ==
   </data>
  </layer>
- <objectgroup name="Objects" width="30" height="30">
-  <object name="PenguinJetpack0" type="PenguinJetpack" x="458" y="461" width="22" height="23"/>
-  <object name="PenguinJetpack1" type="PenguinJetpack" x="226" y="374" width="22" height="23"/>
-  <object name="TriggerWarpW1M3Right" type="TriggerWarp" x="71" y="458" width="87" height="109">
+ <objectgroup name="Objects" width="48" height="40">
+  <object name="Penguin0" type="Penguin" x="947" y="177" width="49" height="48"/>
+  <object name="Penguin1" type="Penguin" x="983" y="280" width="49" height="48"/>
+  <object name="Penguin2" type="Penguin" x="1075" y="316" width="49" height="48"/>
+  <object name="Penguin3" type="Penguin" x="1313" y="379" width="49" height="48"/>
+  <object name="Penguin4" type="Penguin" x="1225" y="379" width="49" height="48"/>
+  <object name="Penguin5" type="Penguin" x="1180" y="307" width="49" height="48"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="1337" y="755" width="49" height="48"/>
+  <object name="PenguinJetpack1" type="PenguinJetpack" x="1045" y="655" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="1138" y="1003" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="1245" y="935" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="1054" y="907" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="918" y="795" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="811" y="1003" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="992" y="1011" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="1179" y="739" width="49" height="48"/>
+  <object name="Snake" type="TriggerEnemies" x="574" y="871" width="386" height="343">
    <properties>
-    <property name="respawn" value="right"/>
-    <property name="url" value="Maps/W1M3.json"/>
+    <property name="direction" value="1"/>
+    <property name="location" value="8"/>
+    <property name="number" value="3"/>
+    <property name="type" value="snake"/>
    </properties>
   </object>
-  <object name="Penguin0" type="Penguin" x="698" y="659" width="26" height="27"/>
-  <object name="Penguin1" type="Penguin" x="656" y="460" width="26" height="27"/>
-  <object name="Penguin2" type="Penguin" x="296" y="627" width="26" height="27"/>
-  <object name="Penguin3" type="Penguin" x="175" y="760" width="26" height="27"/>
-  <object name="Penguin4" type="Penguin" x="186" y="309" width="26" height="27"/>
-  <object name="Penguin2" type="Penguin" x="232" y="718" width="26" height="27"/>
-  <object name="Penguin2" type="Penguin" x="285" y="683" width="26" height="27"/>
-  <object name="Penguin0" type="Penguin" x="635" y="736" width="26" height="27"/>
-  <object name="Penguin1" type="Penguin" x="566" y="560" width="26" height="27"/>
-  <object name="PenguinJetpack1" type="PenguinJetpack" x="711" y="201" width="22" height="23"/>
-  <object name="Penguin4" type="Penguin" x="212" y="269" width="26" height="27"/>
-  <object name="Penguin4" type="Penguin" x="182" y="225" width="26" height="27"/>
-  <object name="Penguin1" type="Penguin" x="554" y="442" width="26" height="27"/>
-  <object name="Penguin1" type="Penguin" x="493" y="466" width="26" height="27"/>
+  <object name="Penguin5" type="Penguin" x="1140" y="377" width="49" height="48"/>
+  <object name="Snake" type="TriggerEnemies" x="1052" y="707" width="336" height="329">
+   <properties>
+    <property name="direction" value="0"/>
+    <property name="location" value="4"/>
+    <property name="number" value="3"/>
+    <property name="type" value="snake"/>
+   </properties>
+  </object>
+  <object name="Penguin6" type="Penguin" x="821" y="929" width="49" height="48"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="168" y="1083" width="67" height="37"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="163" y="1153" width="67" height="37"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="745" y="1169" width="67" height="37"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="244" y="454" width="67" height="37"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="211" y="95" width="67" height="37"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="340" y="110" width="67" height="37"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="547" y="108" width="67" height="37"/>
+  <object name="Penguin6" type="Penguin" x="501" y="969" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="497" y="1039" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="270" y="767" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="509" y="777" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="420" y="608" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="477" y="613" width="49" height="48"/>
+  <object name="PenguinJetpack1" type="PenguinJetpack" x="265" y="900" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="562" y="359" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="70" y="199" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="60" y="255" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="69" y="320" width="49" height="48"/>
+  <object name="PenguinJetpack1" type="PenguinJetpack" x="80" y="383" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="256" y="273" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="364" y="344" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="437" y="259" width="49" height="48"/>
+  <object name="Snake" type="TriggerEnemies" x="312" y="373" width="328" height="369">
+   <properties>
+    <property name="direction" value="4"/>
+    <property name="location" value="0"/>
+    <property name="number" value="4"/>
+    <property name="type" value="mosquito"/>
+   </properties>
+  </object>
+  <object name="Life0" type="Life" x="275" y="1127" width="23" height="24"/>
  </objectgroup>
- <objectgroup name="RespawnPoints" width="30" height="30">
-  <object name="RespawnPointTop" type="RespawnPoint" x="417" y="175" width="113" height="46">
+ <objectgroup name="RespawnPoints" width="48" height="40">
+  <object name="RespawnPointW1M2Top" type="RespawnPoint" x="1328" y="87" width="113" height="99">
    <properties>
     <property name="location" value="top"/>
    </properties>
   </object>
+  <object name="RespawnPointW1M2Init" type="RespawnPoint" x="1162" y="160" width="113" height="99">
+   <properties>
+    <property name="location" value="init"/>
+   </properties>
+  </object>
  </objectgroup>
- <objectgroup name="DisabledObjects" width="30" height="30"/>
 </map>
