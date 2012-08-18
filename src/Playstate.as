@@ -183,7 +183,7 @@ package
 			depthBuffer.addElement(m_rectLadyBug, DepthBuffer.s_cursorGroup);
 			m_sceneManager = new SceneManager();
 
-			m_sceneManager.loadScene("Maps/W3M2.json");
+			m_sceneManager.loadScene("Maps/W3M1.json");
 			//m_sceneManager.loadScene("Maps/test500.json");
 			//m_sceneManager.loadScene("Maps/test2.json");
 			//m_sceneManager.loadScene("Maps/W2M1.json");
@@ -378,7 +378,7 @@ package
 				return;
 			if ( ! FlxG.keys.justPressed("SPACE") )
 				return;
-			if (Global.soloPlayer.m_state == "respawn")
+			if (Global.soloPlayer.m_state == "respawn" || Global.soloPlayer.isRushing())
 				return;
 			//check if the player is not on a hole
 			var tilesType:Array = Global.soloPlayer.tilesUnder() 

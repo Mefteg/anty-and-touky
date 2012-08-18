@@ -53,6 +53,13 @@ package GameObject.Item
 			}
 		}
 		
+		public static function Heart(X:Number, Y:Number):Collectable {
+			var heart:Collectable = new Collectable(X, Y);
+			heart.m_url = "Images/Menu/icon_heart_basic.png";
+			heart.m_width = 9; heart.m_height = 9;
+			return heart;
+		}
+		
 		public static function HeartDrop():Collectable {
 			var heart:Collectable = new Collectable(0, 0);
 			heart.m_url = "Images/Menu/icon_heart_basic.png";
