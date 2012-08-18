@@ -58,7 +58,8 @@ package GameObject
 				case "Centipede" : return new Centipede(object.x, object.y,object.width,object.height); break;
 				case "MonkeyTest": return new GameObject.Enemy.MonkeyTest(object.x,object.y); break;
 				case "ElectricSnake": return new ElectricSnake(object.x, object.y); break;
-				case "Cannon" : return new Cannon(object.x, object.y,object.properties.lift); break;
+				case "Cannon" : return new Cannon(object.x, object.y, object.properties.lift); break;
+				case "FlyingCannon" : return new GameObject.Enemy.FlyingCannon(object.x, object.y); break;
 				case "WhiteSquare":  return new GameObject.Enemy.WhiteSquare(object.x, object.y); break;
 				case "BlackSquare":  return new GameObject.Enemy.BlackSquare(object.x, object.y); break;
 				case "TriggerEnemies": return new TriggerEnemies(object); break;

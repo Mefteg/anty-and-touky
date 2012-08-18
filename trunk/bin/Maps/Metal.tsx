@@ -266,6 +266,31 @@
    <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
+ <tile id="199">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="208">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="209">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="210">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="211">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
  <tile id="212">
   <properties>
    <property name="type" value="PhysicalTile"/>
@@ -277,6 +302,21 @@
   </properties>
  </tile>
  <tile id="214">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="215">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="216">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="231">
   <properties>
    <property name="type" value="PhysicalTile"/>
   </properties>
