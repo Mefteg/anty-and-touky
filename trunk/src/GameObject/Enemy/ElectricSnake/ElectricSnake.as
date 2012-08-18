@@ -23,9 +23,9 @@ package GameObject.Enemy.ElectricSnake
 			m_width = 64; m_height = 64;
 			m_collideEvtFree = true;
 			if(Global.nbPlayers == 1)
-				m_stats.initHP(10);
+				m_stats.initHP(12);
 			else
-				m_stats.initHP(15)
+				m_stats.initHP(20)
 			setHitbox(8, 20, 48, 32);
 			m_state = "MovingUp";
 			m_direction = new FlxPoint(0, -1);

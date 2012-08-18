@@ -28,8 +28,11 @@ package Scene
 			m_physicalObjects.push(object);
 		}
 		
-		public function removeObject(object:PhysicalObject) : void{
-			m_physicalObjects.splice(m_physicalObjects.indexOf(object), 1);
+		public function removeObject(object:PhysicalObject) : void {
+			var i:int = m_physicalObjects.indexOf(object);
+			if (i < 0)
+				return;
+			m_physicalObjects.splice(i, 1);
 		}
 		
 		override public function postUpdate():void {

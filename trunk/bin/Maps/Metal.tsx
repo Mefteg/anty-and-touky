@@ -121,6 +121,11 @@
    <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
+ <tile id="86">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
  <tile id="90">
   <properties>
    <property name="type" value="PhysicalTile"/>
