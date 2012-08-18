@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="115" height="77" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" source="../Metal.tsx"/>
+ <layer name="Background" width="115" height="77">
+  <data encoding="base64" compression="zlib">
+   eJztnEmO1DAUhi0xFFuaodhSTQ9bGiE17LsFnADYcwHgBMAJgAPzLGHJsWLnufw85OX/pF9KK4kzfOV0YjsxBozMV8o3yvfeOwKK+UH5SfnVe0dAMXCpB7jUA1zqAS71AJd6+E35Q/nbe0dAEQ8oDyknlEed9wVMuUu5R7nPnLYun1MOlFPKLpgP+vGY8oTylDn9zExd7oP5oB8vKGeUc+b0pZm6vAjmg76cZObgJZwH+nIQDOgLXOoBLvUAl3qASz3ApR7gUg9wqAfJegmv/bBt5XCpA9tWXuru/H/gsi+2rbzU5T74G/TjSyKuTySVWB/mTZvdBx53EuG4jPVhwmV7Sl3G+jDhsj2lLmN9mHDZHm6/c+4zCVy2p9bzJVy2Z87HlRe4XA+hCzsmy3/HkvM/Ey7bcxPEchXklZm+Z/ByZplU/G0BeXLGNNs2Wt/lLmNdO+0cwmUdcsY02zZa/52Rfca6aCuoT86YZttG678zcpGxLtoK6iP93JEKrrF1aenSAZd1gEs9wKUe4FIPcKkHuNQDXOqhpUsXuOwLt85xygjb8WsFxCnx6K8Pj/2J9VdyCV3mfndmS9MlZXCQdpn73ZktTZeUwUHaZe53Z7Y0XVIGB0mXti/0mvKmMG9NfNznseWnygzLXVq2dbhIurRjFN5R3gskdk5Lyk958sv9EFnmmFwvbJeTHdOFdL2Uchk7pxLlz9Xb1HY514Kl30jJ78ON21lC0uWlWYfL3O1ythlz9ZHyifI5Mp8TN25nCUmXp8zjXptL52MuSy4l4sbtzI2r88fgbcFlzEMsOXVI4hqaWz/nnnP8b4pKuHSM5LL2OW7pcm5cnT8GT/r50mSea7hMh/sMZu+9RnUZu9ZtzSX3eO32R3SZOi+jurSRbr+wCe+7agKXdY4zlprMuZTgmGMpvSc9JqnnFcn75R4ue8VS09koqQlcrt+la2uAy/W7dG0NcLl+l2dm+k02TS4l+qnW5HJuTKUWly3b5eCyrkuJfqpadbsGml2OXLdrAJf16/ZWXd6ase9ZSuIfVw1GdDnyPUtJ/OOqwWgubV57AcfT22OPrBHusf0D0Xnqyw==
+  </data>
+ </layer>
+ <layer name="Foreground" width="115" height="77">
+  <data encoding="base64" compression="zlib">
+   eJztnUtOwzAUANMlV+ACCNYte37d8+uewwEnoFyBLYjvDTgGtlRLwXISu03ynOcZaaQ2uBHW1FWahnJRVdUFZumy+s95Br8T0rJ0aalHWuqRlnqkpR5pqUda5u1tgiuv5Y33c+m5lKy/ziwngW2xsE7lW54azza3aTlNXcsr4/Xm9mVTqAhoKd+yzl1gWyy0zKvlLtCSlkhLpKVGaalHWuqRlnrso+XcuNgoPZ+StS3vjQ8BH2u9msZYWYt5aFs+GdcBn2stm8asaZmNtNSjbflh/Az4VWvZNMbKZ5h52PdxrMWt0yqD+ZUkLfVISz3SUo+25UtXnERoKdfyuytOIrSUa/nTFScRWsq1ZF1Oy7Zrl3+74iRCy+FMPVadBe7PAtuboGX+LWOhZb4tDxIfT8t8Wu4KLWmJtCxJWuqRlnqkpR5pqUepljj9lvVruaTnrtFFpMctjeYtj/P34cZKz7tk29Zw7Gvn0hub8p0zGKdEy5TX98OEsaUT04KW04CWepBo6X/nWhu0jEeiZQx7xiPjftJsysa978utJesxHXetR1sTWk4D19L/Gzv/urwmaJkPs0iboGV+jNmy67yghZbjs+05vK73mLQcH1rqgZZ5Evv5Vd2YjrQcnyE/+18F9p/6vOnDrmMuLQzVcunt3zHU8yakY+zrKaQYu6UEtNze+nkjWo5H3y2b/jeUJLSk5dSgpR5oqQda6oGWeiihZSnQUg9DtHwzvhrfqzxbSpwTHsM+OzpD+5dkiDmW7B80QhSx
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="115" height="77">
+  <object name="Lift3" type="Lift" x="3331" y="258" width="74" height="66">
+   <properties>
+    <property name="range" value="7"/>
+   </properties>
+  </object>
+  <object name="Lift2" type="Lift" x="3106" y="1153" width="72" height="60">
+   <properties>
+    <property name="range" value="4"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="RespawnPoints" width="115" height="77" visible="0">
+  <object name="Spawn" type="RespawnPoint" x="89" y="1770" width="65" height="56">
+   <properties>
+    <property name="location" value="init"/>
+   </properties>
+  </object>
+  <object name="Spawn" type="RespawnPoint" x="53" y="1772" width="65" height="56">
+   <properties>
+    <property name="location" value="left"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

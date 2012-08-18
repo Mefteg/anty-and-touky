@@ -1,14 +1,336 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="60" height="22" tilewidth="32" tileheight="32">
- <tileset firstgid="1" source="../Metal.tsx"/>
+ <tileset firstgid="1" name="Metal" tilewidth="32" tileheight="32">
+  <image source="../../Images/Tilesets/Metal.png" width="512" height="512"/>
+  <tile id="2">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="23">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="35">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="36">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="37">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="38">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="39">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="47">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="58">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="59">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="68">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="74">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="75">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="76">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="80">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="90">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="91">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="92">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="96">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="99">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="100">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="101">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="119">
+   <properties>
+    <property name="type" value="PhysicalType"/>
+   </properties>
+  </tile>
+  <tile id="120">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="135">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="142">
+   <properties>
+    <property name="type" value="PhysicalType"/>
+   </properties>
+  </tile>
+  <tile id="151">
+   <properties>
+    <property name="type" value="Pipe"/>
+   </properties>
+  </tile>
+  <tile id="152">
+   <properties>
+    <property name="type" value="Pipe"/>
+   </properties>
+  </tile>
+  <tile id="167">
+   <properties>
+    <property name="type" value="Pipe"/>
+   </properties>
+  </tile>
+  <tile id="168">
+   <properties>
+    <property name="type" value="Pipe"/>
+   </properties>
+  </tile>
+  <tile id="170">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="171">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="172">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="173">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="174">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="175">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="183">
+   <properties>
+    <property name="type" value="Pipe"/>
+   </properties>
+  </tile>
+  <tile id="184">
+   <properties>
+    <property name="type" value="Pipe"/>
+   </properties>
+  </tile>
+  <tile id="186">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="187">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="188">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="189">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="190">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="191">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="199">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="208">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="209">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="210">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="211">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="212">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="213">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="214">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="215">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="216">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="231">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+ </tileset>
  <layer name="Background" width="60" height="22">
   <data encoding="base64" compression="zlib">
-   eJztl0tuwjAQQC3xi8RnVSgSoRKftEjtopfgJi17jtBdzwGcoHAC4GCMlVgdWdM442QCSlk8YRzk4U1mHGeplFr+U6YVxnYdAnWgATSt8dcf80WN7f8mEYPyfQD6wKDkse0rEYPynQMR8Fzy2PaViEH5XqOvZsTcpOAYLRXXdeOGfb8RPus+ofGjiuu6z/DtCvri/AcC9/dFxXUdqd/nUCDgss7oi/M/FPDFGF8dpyMUo+fwxflflOSr47yi+TbwhuDk4p3xW+37AXwmrHL4ZqknfK4aIb8Q2ABbYGddy8LY8d3kT/vWLIwvVRe61wPl339p58gfYA8cPNdOw9RSmi9FK/nk+lJnZ1zDOv9H4ASck2tjBOfeUoQ5fM0+zukpyhf3r12/oWN9X7i+Zi/nnhcoX8opyx7gym2RvmYvXxTgK4ErX1xfXyR8056zVfT1wceX0y+U6zWdqfcFyft6p9pcAGARzE0=
+   eJztl0tOwzAQhi1BaSQeKwqVmlbiUagECy7RC8AVCnuOwI5zFE4AnAA4GL+VWIxGQ5xxMi0KLD7VdRpPvvHYcefOufkf5bjDcNch2AQ9sMXaDz/0t9Xmz2YRQ/LdBwNwsOI297WIIfmegik4a9C+BjfKe7lvk+cI8Xm/5LuOdXUi9B21HKPvirru/WLfR0LKuBPSPnRFXQ8UvruGvjT/mcH8nruirqfu+z2UGbjc1/Sl+R8a+FKCr4+zYxRjL+JL8z9bka+Pc0H6t8ElQZOLK8Vvve8C3JbcNfCtU0/0XDUifjlYgifwzK7VYRz5HvLnfTcYwVeqC7/WM5e+/qrOkS/gFbwljl1FqKUqX4l++an1lc7OtIZ9/t/BB/gsr40JmrmVyBv4hn1cs6YkX7p+ef3mkfFT0fqGvVx7XpB8Jac6e0Ast236hr181oKvBbF8aX1TsfCtes920TeFFF/NepFc1+ks/V+wnNd/us0XCEHNBA==
   </data>
  </layer>
  <layer name="Foreground" width="60" height="22">
   <data encoding="base64" compression="zlib">
-   eJztlssNwjAMhtMNGCEjcGjhDBR65n1mC9iANRiBDcmhUSPLiW2apBT4JKt5NLb/NLGq1O9yHMjWwFL4h2xAf07szYKYl6ytVacV5hEjnxoZg3Eap/0Q+F8aWwViY2s5ehvPOPSJxefoPTvtZ8A/ZGdsT+S2RfLB9F49+YR8YvEPqjvbFt++puAC+pjem7F7+3zHJ0VOvRB3/09grmgtNjBObjBNBbBYxP62k/ZZIGM+xqxXM8dcQnpin+ccd3dKzHM1lcYqYzNBbLumavtD1ioptpZTObv3x63/irH2k7C1nKqv2mlj/xuS80GB1SaqXqWE83/VB80cy4VEb6zaSNWrGPhyTf19OTn0QXo3cupNgRa+P3a9EsrAXPWF9ue3eAF5kTpi
+   eJztlssNwjAMhtMNGCEjcGjhDBR6RuJxZgvYgDUYgQ3JIVUjy4ntNkkp5ZOs5tHY/tPEqlLz5TyS7YGl8A85gP6a2JsNMS9ZW6tOK8wjRj41MgbjNE77JfC/NbYLxMbWcvQ2nnHoE4vP0Xt12u+Af0hhLcQRyQfTe/fkE/KJxT+p7my3+PY1BTfQx/Q+jD3ts49Pipx6Ie7+X8Ac57z0AcbJDaapABaL2N92YZ8FMuZjyno1c8wlpCf2ec5xd5fEPFdTaawythLEbtdUtj9mrZLS1nIqZ/f+uPVfMdZ+E20tp+qrdtrY/4bkfFBgtYmqVynh/F8NQTPHciHRG6s2UvUqBr5cU39fTg5DkN6NnHpToIXvT12vhDIwV/2g/ZkXH7UGORw=
   </data>
  </layer>
  <objectgroup name="Objects" width="60" height="22">
@@ -32,6 +354,7 @@
   <object name="ToM2" type="TriggerWarp" x="1867" y="233" width="47" height="130">
    <properties>
     <property name="respawn" value="left"/>
+    <property name="url" value="Maps/W3M2.json"/>
    </properties>
   </object>
  </objectgroup>

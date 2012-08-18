@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="../Metal.tsx"/>
  <layer name="Background" width="63" height="77">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="Foreground" width="63" height="77">
@@ -128,7 +128,7 @@
    </properties>
   </object>
   <object type="ExplosiveBarrel" x="1929" y="1623"/>
-  <object name="TriggerMice" type="TriggerEnemies" x="1380" y="2242" width="330" height="223">
+  <object name="TriggerFC" type="TriggerEnemies" x="1380" y="2242" width="330" height="223">
    <properties>
     <property name="direction" value="6"/>
     <property name="location" value="2"/>
