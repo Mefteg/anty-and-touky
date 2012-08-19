@@ -27,10 +27,13 @@ package GameObject.Other
 		{
 			super(X, Y);
 			m_state = "idle";
-			loadXML("Dialogues/" + urlXml + ".xml");
+			if(urlXml && urlXml != "")
+				loadXML("Dialogues/" + urlXml + ".xml");
 		}
 		
 		private function speak(player:PlayableObject ):void {
+			if (m_messages == null)
+				return;
 			Global.frozen = true;
 			m_currentPlayer = player;
 			facing = getFacingToTarget(m_currentPlayer);
