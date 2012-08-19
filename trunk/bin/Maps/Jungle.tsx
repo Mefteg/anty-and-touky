@@ -63,17 +63,12 @@
  </tile>
  <tile id="16">
   <properties>
-   <property name="type" value="PhysicalTile"/>
-  </properties>
- </tile>
- <tile id="17">
-  <properties>
    <property name="" value=""/>
   </properties>
  </tile>
  <tile id="18">
   <properties>
-   <property name="type" value="PhysicalTile"/>
+   <property name="" value=""/>
   </properties>
  </tile>
  <tile id="20">

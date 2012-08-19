@@ -13,14 +13,26 @@
  </layer>
  <objectgroup name="Objects" width="48" height="40">
   <object name="Penguin0" type="Penguin" x="947" y="177" width="49" height="48"/>
-  <object name="Penguin1" type="Penguin" x="983" y="280" width="49" height="48"/>
+  <object name="Penguin1" type="Penguin" x="983" y="280" width="49" height="48">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object name="Penguin2" type="Penguin" x="1075" y="316" width="49" height="48"/>
-  <object name="Penguin3" type="Penguin" x="1313" y="379" width="49" height="48"/>
+  <object name="Penguin3" type="Penguin" x="1290" y="380" width="49" height="48"/>
   <object name="Penguin4" type="Penguin" x="1225" y="379" width="49" height="48"/>
-  <object name="Penguin5" type="Penguin" x="1180" y="307" width="49" height="48"/>
+  <object name="Penguin5" type="Penguin" x="1180" y="307" width="49" height="48">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object name="PenguinJetpack0" type="PenguinJetpack" x="1337" y="755" width="49" height="48"/>
   <object name="PenguinJetpack1" type="PenguinJetpack" x="1045" y="655" width="49" height="48"/>
-  <object name="Penguin6" type="Penguin" x="1138" y="1003" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="1138" y="1003" width="49" height="48">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object name="Penguin6" type="Penguin" x="1245" y="935" width="49" height="48"/>
   <object name="Penguin6" type="Penguin" x="1054" y="907" width="49" height="48"/>
   <object name="Penguin6" type="Penguin" x="918" y="795" width="49" height="48"/>
@@ -35,7 +47,7 @@
     <property name="type" value="snake"/>
    </properties>
   </object>
-  <object name="Penguin5" type="Penguin" x="1140" y="377" width="49" height="48"/>
+  <object name="Penguin5" type="Penguin" x="1152" y="381" width="49" height="48"/>
   <object name="Snake" type="TriggerEnemies" x="1052" y="707" width="336" height="329">
    <properties>
     <property name="direction" value="0"/>
@@ -44,13 +56,17 @@
     <property name="type" value="snake"/>
    </properties>
   </object>
-  <object name="Penguin6" type="Penguin" x="821" y="929" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="814" y="939" width="49" height="48"/>
   <object name="WaterPenguin0" type="WaterPenguin" x="168" y="1083" width="67" height="37"/>
   <object name="WaterPenguin0" type="WaterPenguin" x="163" y="1153" width="67" height="37"/>
   <object name="WaterPenguin0" type="WaterPenguin" x="745" y="1169" width="67" height="37"/>
   <object name="WaterPenguin0" type="WaterPenguin" x="244" y="454" width="67" height="37"/>
   <object name="WaterPenguin0" type="WaterPenguin" x="211" y="95" width="67" height="37"/>
-  <object name="WaterPenguin0" type="WaterPenguin" x="340" y="110" width="67" height="37"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="340" y="110" width="67" height="37">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object name="WaterPenguin0" type="WaterPenguin" x="547" y="108" width="67" height="37"/>
   <object name="Penguin6" type="Penguin" x="501" y="969" width="49" height="48"/>
   <object name="Penguin6" type="Penguin" x="497" y="1039" width="49" height="48"/>
@@ -58,16 +74,20 @@
   <object name="Penguin6" type="Penguin" x="509" y="777" width="49" height="48"/>
   <object name="Penguin6" type="Penguin" x="420" y="608" width="49" height="48"/>
   <object name="Penguin6" type="Penguin" x="477" y="613" width="49" height="48"/>
-  <object name="PenguinJetpack1" type="PenguinJetpack" x="265" y="900" width="49" height="48"/>
+  <object name="PenguinJetpack1" type="PenguinJetpack" x="271" y="977" width="49" height="48"/>
   <object name="Penguin6" type="Penguin" x="562" y="359" width="49" height="48"/>
-  <object name="Penguin6" type="Penguin" x="70" y="199" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="70" y="199" width="49" height="48">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object name="Penguin6" type="Penguin" x="60" y="255" width="49" height="48"/>
   <object name="Penguin6" type="Penguin" x="69" y="320" width="49" height="48"/>
   <object name="PenguinJetpack1" type="PenguinJetpack" x="80" y="383" width="49" height="48"/>
   <object name="Penguin6" type="Penguin" x="256" y="273" width="49" height="48"/>
   <object name="Penguin6" type="Penguin" x="364" y="344" width="49" height="48"/>
   <object name="Penguin6" type="Penguin" x="437" y="259" width="49" height="48"/>
-  <object name="Snake" type="TriggerEnemies" x="312" y="373" width="328" height="369">
+  <object name="Snake" type="TriggerEnemies" x="323" y="373" width="328" height="369">
    <properties>
     <property name="direction" value="4"/>
     <property name="location" value="0"/>
@@ -76,6 +96,13 @@
    </properties>
   </object>
   <object name="Life0" type="Life" x="275" y="1127" width="23" height="24"/>
+  <object name="Penguin6" type="Penguin" x="1309" y="1071" width="49" height="48"/>
+  <object name="PenguinJetpack1" type="PenguinJetpack" x="345" y="636" width="49" height="48">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="Heart" type="Heart" x="585" y="195" width="47" height="40"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="48" height="40">
   <object name="RespawnPointW1M2Top" type="RespawnPoint" x="1328" y="87" width="113" height="99">
