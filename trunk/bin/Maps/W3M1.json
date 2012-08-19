@@ -146,6 +146,18 @@
                  "width":47,
                  "x":1867,
                  "y":233
+                }, 
+                {
+                 "height":0,
+                 "name":"Penguin",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":0,
+                 "x":1384,
+                 "y":251
                 }],
          "opacity":1,
          "type":"objectgroup",
