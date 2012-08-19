@@ -362,6 +362,7 @@
     <property name="url" value="Maps/W3M2.json"/>
    </properties>
   </object>
+  <object name="Penguin" type="Penguin" x="1384" y="251"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="60" height="22">
   <object name="RespInit" type="RespawnPoint" x="137" y="397">

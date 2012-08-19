@@ -3,12 +3,12 @@
  <tileset firstgid="1" source="../Metal.tsx"/>
  <layer name="Background" width="55" height="70">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="Foreground" width="55" height="70">
   <data encoding="base64" compression="zlib">
-   eJztm0tSwzAMhsWdSk/Q9ASFSwD7MsCit4Bld7BkBzfolsei3KDHwJlJBo9rK7YsJXaRZv5JJg/JX+QmtpI2ANAUrBxzfV0Iayq2JeH8jbV+ZXRtdIMcv4B0NuxaYZbLtrXW74zujR6Q41PZhtq0QPblsr0mHl8TW4rt4HTZ9lAW28zonKC5x9dPYWypbcF8lZY3TrbDCbNR/Cmbsinbn0LjvMtAvBVyToofaTbpZ32MKZuyKdt4pmzKVipb49mnbHWxNdaydjbquFTZpjNlo81xfPWsMU2SbcrczZB21chm10tjuahsDdBrspS6bgoPBxs1Brfv/8gWqrv0tZta2WLuB1ztsGOtCmIDgVjSuZNgi603Tsm2I7TB52/j2daadL/E2PZMbFvPtt4kc4exHQjx235322ndnY+985+KLTU+ZQymbMpWGlvovdWYbCDEhsWsPW+5MYcU+t6ln2NxXqex2ULtsv2DANtZJ3u915hsXHnD5tvzytl6n6GxdO1sSzjug7YosWtgo8bOYYMTZuPOGyBctbHZ94ih31tt95JYNmrskLhqeEN90sfmsnPeJzn7Rw6ba9xsvrZwstltlqr9D/VF19w5Vg5b7HeGuWxUC+Uxhs3uI49GT4kxYrU+dhllXGzPRi+JMWLVxqDwcbG9Gb0nxqihT0o/u2Ps0+jD6KtbfmewDT2vbasxb66F+Epja0X5b5LE802CrRT9AvMGRf4=
+   eJztm0tSwzAMht3jsC/lAk25QOESwL4MsOgtYNkFryULWrhBtzwW7Q16DJQZezAeW7EVK7GLNfNPM3lI+iLnpTSVEKJKWG3M9HXCrL7YJoTt59r0GegcdIGsPxbhbNi+wqwt20KbvgJdg26Q9UPZmnIaI8vasr0Erp8TW4itxf6ybURabEPQIUEji69tYmyhuWC+UqtbTLbdHrNR/BW2wlbYfuW6zzt1xJsi24T44Wbjvtb7WGErbIWtOytshS1VtsqyrLDlxVZpv7mzUe9LC1t/Vthozzi2flaXxsnWZ+2GSF45sun9Ul8uKlsl6D1ZSl83hCcGGzVGbN//kc3Vd1G9m1zZfM4HsfLQY00TYhMMsbhrx8Hm22/sk21NyMHmb26ZVxv3uMTYNpHYFpZ5yjhrh7HtCPHrcXcpNZPbY+/8+2ILjU+5BytshS01Ntd7qy7ZBBObsgNLzNzrpoyDrZbr/y7qGSvmfuqazZWX7l8wsA2kFNtAU5dsseqGPW+PMmdTPl330rmzTcTf8WeKEjsHNmrsNmxij9li100gXLmx6eeIpuMtt3OJLxs1tkuxenhNY9LGZrLHPE/GHB+1L9VjCWUzLTabLZdQti2Sr54zV++/aSyaZj5jYWwbhw+Xr1jf7piimquOPnW7Bz2AHkG3oDs5/8gzhq9mgmYYW1PdXkFL0Ar0BHqW84+1dWYR2AZEvjZ109neQO8Gk8qnLRvVYtWN89rtY5+gD9CX/P1uYKvrpo4pm5YWNpulWLe6F61qg2klfbn4UmOrRfk2ieP6xsGWin4AS3NmNg==
   </data>
  </layer>
  <objectgroup name="Objects" width="55" height="70">
@@ -76,7 +76,7 @@
     <property name="wait" value="0.6"/>
    </properties>
   </object>
-  <object type="Generator" x="1503" y="340">
+  <object type="Generator" x="1488" y="329">
    <properties>
     <property name="door" value="Door"/>
    </properties>
@@ -116,6 +116,8 @@
     <property name="url" value="Maps/W3M6.json"/>
    </properties>
   </object>
+  <object type="BigEgg" x="544" y="599"/>
+  <object type="Cannon" x="1214" y="1586"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="55" height="70">
   <object name="Respawn" type="RespawnPoint" x="171" y="2180">
