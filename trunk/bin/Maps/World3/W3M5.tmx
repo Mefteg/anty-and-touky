@@ -1,6 +1,348 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="55" height="70" tilewidth="32" tileheight="32">
- <tileset firstgid="1" source="../Metal.tsx"/>
+ <tileset firstgid="1" name="Metal" tilewidth="32" tileheight="32">
+  <image source="../../Images/Tilesets/Metal.png" width="512" height="512"/>
+  <tile id="2">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="23">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="35">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="36">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="37">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="38">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="39">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="47">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="58">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="59">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="68">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="74">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="75">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="76">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="80">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="86">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="90">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="91">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="92">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="96">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="99">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="100">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="101">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="119">
+   <properties>
+    <property name="type" value="PhysicalType"/>
+   </properties>
+  </tile>
+  <tile id="120">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="135">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="142">
+   <properties>
+    <property name="type" value="PhysicalType"/>
+   </properties>
+  </tile>
+  <tile id="145">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="146">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="147">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="151">
+   <properties>
+    <property name="type" value="Pipe"/>
+   </properties>
+  </tile>
+  <tile id="152">
+   <properties>
+    <property name="type" value="Pipe"/>
+   </properties>
+  </tile>
+  <tile id="167">
+   <properties>
+    <property name="type" value="Pipe"/>
+   </properties>
+  </tile>
+  <tile id="168">
+   <properties>
+    <property name="type" value="Pipe"/>
+   </properties>
+  </tile>
+  <tile id="170">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="171">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="172">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="173">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="174">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="175">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="183">
+   <properties>
+    <property name="type" value="Pipe"/>
+   </properties>
+  </tile>
+  <tile id="184">
+   <properties>
+    <property name="type" value="Pipe"/>
+   </properties>
+  </tile>
+  <tile id="186">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="187">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="188">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="189">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="190">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="191">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="199">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="208">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="209">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="210">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="211">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="212">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="213">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="214">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="215">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="216">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="231">
+   <properties>
+    <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+ </tileset>
  <layer name="Background" width="55" height="70">
   <data encoding="base64" compression="zlib">
    eJztm01v1DAQhi2V7fZSJD7a3UOF1JRlK8EFuFDuK5U9I/FxRyq9FfgFhUPPwA9mRhur08EzsZNxko0S6VVTx56dx3a840nWuf4eq4bq82HJhv/fA01Au5nOV6ycXpPY8Nipwc/rPQYdgA4zna9YOb0mHVI/4d8ige0paAF6lul8xcrptdCh9feBwhViKzIr9R7X+nsxALYdRSNbmG0llI9sI1sdtjegs4GyfQR9GijbkOdkLJv3XWNL5dsTyqeJbHsGbJL/GjdKivXQpwvQV6JL0Exp48+5na7YpFhvDjoHvSNal2xVMTW30xWbFOudCmxLpY0/53a6YtM+l7OhzhS9rbDXdC15xWTNpmmdme0L05DYQm1HtpFtZBvZqH8hjWzDYHvINCQ2y5jL7425KA8t/2zMRuPIOmxVfNp41hknKskfq3Frm62Kp2s2P1e1OZjCkJMtRWjnAeiRk/dVVmrCVscvbHMMOmmZLbVeyLcqW12wTVw4NzUtr0kcIcWynUTUt2DD3Ms8cH3m7j7Di5lzsWzTltgWbpN34deX7u4zPEu2WUtsl0qdiwQuX0/LWxYl27Icu9xsa6XOeQ02LW9J20yVfugrm5a3pG38vAz1Qx/ZcN7dED1X2izd7f3O+6Epm/fHkm1OuIoKtiLSdm62mDUQhfPuBdFRz9lifKgbZ+RaK/vCFlor22JzGdmk51ZWbFX1crJJz60s2ar2OKkx15WBb22xteHPtrNJeyP/vT8ENuT4BvoO+uE262VXbBZ7HGoL45dr0E/QL7dZL+eJtrpk21c+E+OX36A/oL9us16eKrb6xlb1mU1taXIJbLF9NbK1yxbKc80GwDYR2GgOb1vZYnJ428ZWlOOFsamWw4vdY8X48z7AF4pRmnLRvJomvsdKZXsi2PJl3i7/7U4TNp5Xo+9y8bnJf1dTd9yoLV8m/XanCRvma/xcxHwoje+OST2+x2rCRm35Mjz/QMpvjNh8PgrZrt1tfEfZpGf8ddhi/LFi83PwNWN76f5/55C/e2jN5nVlYIveu4eMTctnW7Ldz9RP1N/dBDbJntW4WYiuSyi659Dem94Gtn8WfBM+
@@ -93,7 +435,7 @@
   </object>
   <object name="Lift" type="Lift" x="1026" y="1756" width="95" height="86">
    <properties>
-    <property name="range" value="3"/>
+    <property name="range" value="5"/>
    </properties>
   </object>
   <object type="SwitchMetal" x="1001" y="1774">
@@ -108,9 +450,9 @@
    </properties>
   </object>
   <object type="PenguinScientist" x="787" y="1540"/>
-  <object type="PenguinScientist" x="920" y="1536"/>
+  <object type="Penguin" x="875" y="2017"/>
   <object type="Cannon" x="1066" y="1795"/>
-  <object name="Warp" type="TriggerWarp" x="1023" y="1655" width="96" height="18">
+  <object name="Warp" type="TriggerWarp" x="1024" y="1716" width="96" height="18">
    <properties>
     <property name="respawn" value="down"/>
     <property name="url" value="Maps/W3M6.json"/>
@@ -118,6 +460,46 @@
   </object>
   <object type="BigEgg" x="544" y="599"/>
   <object type="Cannon" x="1214" y="1586"/>
+  <object type="Raccoon" x="259" y="2001">
+   <properties>
+    <property name="url" value="World3/racoonM5"/>
+   </properties>
+  </object>
+  <object x="126" y="1447"/>
+  <object type="Penguin" x="267" y="1463"/>
+  <object x="806" y="2102"/>
+  <object type="Penguin" x="920" y="1536" width="20" height="16"/>
+  <object type="PenguinScientist" x="1138" y="2130"/>
+  <object name="Flystuff" type="TriggerEnemies" x="751" y="579" width="594" height="329">
+   <properties>
+    <property name="direction" value="6"/>
+    <property name="location" value="2"/>
+    <property name="number" value="3"/>
+    <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
+  <object type="Penguin" x="951" y="1181" width="20" height="16"/>
+  <object type="Penguin" x="850" y="866" width="20" height="16"/>
+  <object type="Penguin" x="1051" y="852" width="20" height="16"/>
+  <object type="Penguin" x="673" y="175" width="20" height="16"/>
+  <object type="Penguin" x="145" y="180" width="20" height="16"/>
+  <object type="Penguin" x="204" y="185" width="20" height="16"/>
+  <object name="Flystuff" type="TriggerEnemies" x="342" y="132" width="402" height="112">
+   <properties>
+    <property name="direction" value="6"/>
+    <property name="location" value="2"/>
+    <property name="number" value="2"/>
+    <property name="type" value="mouse"/>
+   </properties>
+  </object>
+  <object name="Flystuff" type="TriggerEnemies" x="343" y="155" width="454" height="98">
+   <properties>
+    <property name="direction" value="6"/>
+    <property name="location" value="2"/>
+    <property name="number" value="2"/>
+    <property name="type" value="mouse"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="55" height="70">
   <object name="Respawn" type="RespawnPoint" x="171" y="2180">

@@ -1,341 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="63" height="77" tilewidth="32" tileheight="32">
- <tileset firstgid="1" name="Metal" tilewidth="32" tileheight="32">
-  <image source="../../Images/Tilesets/Metal.png" width="512" height="512"/>
-  <tile id="2">
-   <properties>
-    <property name="type" value="Hole"/>
-   </properties>
-  </tile>
-  <tile id="3">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="4">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="5">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="6">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="7">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="19">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="20">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="21">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="22">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="23">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="35">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="36">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="37">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="38">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="39">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="47">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="58">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="59">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="68">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="74">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="75">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="76">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="80">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="86">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="90">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="91">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="92">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="96">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="99">
-   <properties>
-    <property name="type" value="Hole"/>
-   </properties>
-  </tile>
-  <tile id="100">
-   <properties>
-    <property name="type" value="Hole"/>
-   </properties>
-  </tile>
-  <tile id="101">
-   <properties>
-    <property name="type" value="Hole"/>
-   </properties>
-  </tile>
-  <tile id="119">
-   <properties>
-    <property name="type" value="PhysicalType"/>
-   </properties>
-  </tile>
-  <tile id="120">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="135">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="142">
-   <properties>
-    <property name="type" value="PhysicalType"/>
-   </properties>
-  </tile>
-  <tile id="151">
-   <properties>
-    <property name="type" value="Pipe"/>
-   </properties>
-  </tile>
-  <tile id="152">
-   <properties>
-    <property name="type" value="Pipe"/>
-   </properties>
-  </tile>
-  <tile id="167">
-   <properties>
-    <property name="type" value="Pipe"/>
-   </properties>
-  </tile>
-  <tile id="168">
-   <properties>
-    <property name="type" value="Pipe"/>
-   </properties>
-  </tile>
-  <tile id="170">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="171">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="172">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="173">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="174">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="175">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="183">
-   <properties>
-    <property name="type" value="Pipe"/>
-   </properties>
-  </tile>
-  <tile id="184">
-   <properties>
-    <property name="type" value="Pipe"/>
-   </properties>
-  </tile>
-  <tile id="186">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="187">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="188">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="189">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="190">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="191">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="199">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="208">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="209">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="210">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="211">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="212">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="213">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="214">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="215">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="216">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
-  <tile id="231">
-   <properties>
-    <property name="type" value="PhysicalTile"/>
-   </properties>
-  </tile>
- </tileset>
+ <tileset firstgid="1" source="../Metal.tsx"/>
  <layer name="Background" width="63" height="77">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="Foreground" width="63" height="77">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <objectgroup name="Objects" width="63" height="77">
@@ -366,7 +39,7 @@
   <object name="TriggerWarp" type="TriggerWarp" x="1986" y="2247" width="27" height="147">
    <properties>
     <property name="respawn" value="left"/>
-    <property name="url" value="W3M3.json"/>
+    <property name="url" value="Maps/W3M3.json"/>
    </properties>
   </object>
   <object name="Alarm" type="Alarm" x="236" y="765"/>
@@ -480,14 +153,19 @@
   </object>
   <object type="Heart" x="172" y="935"/>
   <object x="1738" y="2281"/>
+  <object name="Raccoon" type="Raccoon" x="945" y="2001">
+   <properties>
+    <property name="url" value="World3/raccoonM2"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="63" height="77">
-  <object name="Respawn" type="RespawnPoint" x="1931" y="2052" width="48" height="34">
+  <object name="Respawn" type="RespawnPoint" x="722" y="2059" width="48" height="34">
    <properties>
     <property name="location" value="init"/>
    </properties>
   </object>
-  <object name="Respawn" type="RespawnPoint" x="41" y="944" width="50" height="40">
+  <object name="Respawn" type="RespawnPoint" x="48" y="943" width="50" height="40">
    <properties>
     <property name="location" value="left"/>
    </properties>

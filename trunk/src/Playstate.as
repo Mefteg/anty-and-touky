@@ -118,9 +118,9 @@ package
 			m_controlsPanel = new FlxSprite(0, 0);
 			m_controlsPanel.scrollFactor = new FlxPoint(0, 0);
 			if (Global.nbPlayers == 1)
-				m_panelPath = "Images/Menu/controlpanelsolo.png";
+				m_panelPath = "Images/Menu/controlpanelsolo.jpg";
 			else
-				m_panelPath = "Images/Menu/controlpanel.png";
+				m_panelPath = "Images/Menu/controlpanel.jpg";
 			m_library.addUniqueBitmap(m_panelPath);
 			m_timerEnd = new FlxTimer();
 			

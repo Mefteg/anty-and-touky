@@ -124,6 +124,12 @@
   <object type="FlyingCannon" x="438" y="877"/>
   <object type="Heart" x="406" y="2445"/>
   <object type="Heart" x="450" y="1596"/>
+  <object name="Alarm" type="Alarm" x="332" y="857"/>
+  <object name="Alarm" type="Alarm" x="536" y="860"/>
+  <object name="Alarm" type="Alarm" x="615" y="2134" width="26" height="17"/>
+  <object name="Alarm" type="Alarm" x="305" y="3076" width="26" height="17"/>
+  <object name="Alarm" type="Alarm" x="325" y="3706" width="26" height="17"/>
+  <object name="Alarm" type="Alarm" x="533" y="3707" width="26" height="17"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="30" height="130" visible="0">
   <object type="RespawnPoint" x="422" y="3979">
