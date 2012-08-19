@@ -58,7 +58,7 @@ package
 			m_ladyBug = new FlxSprite(410 , 320);//for CASUAL GAME CUP
 			//m_ladyBug = new FlxSprite(200 , 150);
 			m_ladyBug.loadGraphic(LadyBugScreen, false, false, 300, 200, true);
-			Global.library.addBitmap("Images/Menu/menustate_background.png");
+			Global.library.addBitmap("Images/Menu/menustate_background.jpg");
 			
 			//trailer de merde
 			m_trailer = new MovieClip();
