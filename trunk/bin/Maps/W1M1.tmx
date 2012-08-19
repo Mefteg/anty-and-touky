@@ -371,6 +371,13 @@
     <property name="url" value="raccoonTalk"/>
    </properties>
   </object>
+  <object name="Penguin0" type="Penguin" x="680" y="800" width="46" height="34"/>
+  <object name="Penguin0" type="Penguin" x="782" y="801" width="46" height="34"/>
+  <object name="TriggerCutSceneHelp" type="TriggerCutScene" x="63" y="479" width="529" height="258">
+   <properties>
+    <property name="url" value="CutScenes/w1m1_cutscene1"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="30" height="30">
   <object name="RespawnInit" type="RespawnPoint" x="95" y="96" width="64" height="62">
