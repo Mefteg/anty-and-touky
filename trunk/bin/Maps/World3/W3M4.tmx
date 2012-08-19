@@ -81,7 +81,11 @@
     <property name="coop" value=""/>
    </properties>
   </object>
-  <object type="Penguin" x="496" y="2300"/>
+  <object type="Cannon" x="496" y="2300">
+   <properties>
+    <property name="lift" value=""/>
+   </properties>
+  </object>
   <object type="FlyingCannon" x="555" y="2683"/>
   <object type="TriggerEnemies" x="45" y="1970" width="653" height="215">
    <properties>
@@ -118,6 +122,8 @@
   <object type="FlyingCannon" x="276" y="1165"/>
   <object type="FlyingCannon" x="546" y="1077"/>
   <object type="FlyingCannon" x="438" y="877"/>
+  <object type="Heart" x="406" y="2445"/>
+  <object type="Heart" x="450" y="1596"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="30" height="130" visible="0">
   <object type="RespawnPoint" x="422" y="3979">

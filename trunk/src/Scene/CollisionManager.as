@@ -65,32 +65,34 @@ package Scene
 					repulseBoth();
 				//if the currentObject is heavier than the other
 				}else if (m_currentObject.m_weight > m_currentOther.m_weight) {
-					processCollisions(m_currentObject, m_currentOther)
+					//processCollisions(m_currentObject, m_currentOther)
+					repulseObject(m_currentOther);
 				//otherwise
 				}else if (m_currentObject.m_weight < m_currentOther.m_weight) {
-					processCollisions(m_currentOther, m_currentObject);
+					repulseObject(m_currentObject);
+					//processCollisions(m_currentOther, m_currentObject);
 				}
 			}
 		}
 		
 		private function processCollisions(superior:PhysicalObject, inferior:PhysicalObject) : void {
 			//if no force from the pusher, do nothing
-			if (superior.m_direction.x == 0 && superior.m_direction.y==0) {
+			if (superior.m_direction.x == 0 && superior.m_direction.y == 0) {
 				repulseObject(inferior);
 				return;
 			}
 			
-			if ( superior.m_direction.x > 0 && inferior.collideFromLeft(superior)){
+			/*if ( superior.m_direction.x > 0 && inferior.collideFromLeft(superior)){
 				pushRight(superior, inferior);
 			}else if (superior.m_direction.x < 0 && inferior.collideFromRight(superior)) {
 				pushLeft(superior, inferior);
-			}else if ( superior.m_direction.y< 0 && inferior.collideFromDown(superior) ){
+			}else if ( superior.m_direction.y < 0 && inferior.collideFromDown(superior) ) {
 				pushUp(superior, inferior);
 			}else if ( superior.m_direction.y> 0  && inferior.collideFromUp(superior)){
 				pushDown(superior, inferior);
 			}else {
 				repulseObject(inferior);
-			}
+			}*/
 		}
 		
 		private function repulseBoth():void {

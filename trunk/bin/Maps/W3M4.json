@@ -192,9 +192,9 @@
                  "name":"",
                  "properties":
                     {
-
+                     "lift":""
                     },
-                 "type":"Penguin",
+                 "type":"Cannon",
                  "width":0,
                  "x":496,
                  "y":2300
@@ -306,6 +306,30 @@
                  "width":0,
                  "x":438,
                  "y":877
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Heart",
+                 "width":0,
+                 "x":406,
+                 "y":2445
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Heart",
+                 "width":0,
+                 "x":450,
+                 "y":1596
                 }],
          "opacity":1,
          "type":"objectgroup",
