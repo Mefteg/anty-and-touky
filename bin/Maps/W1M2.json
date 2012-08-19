@@ -43,7 +43,7 @@
                  "name":"Penguin1",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":49,
@@ -71,8 +71,8 @@
                     },
                  "type":"Penguin",
                  "width":49,
-                 "x":1313,
-                 "y":379
+                 "x":1290,
+                 "y":380
                 }, 
                 {
                  "height":48,
@@ -91,7 +91,7 @@
                  "name":"Penguin5",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":49,
@@ -127,7 +127,7 @@
                  "name":"Penguin6",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":49,
@@ -230,8 +230,8 @@
                     },
                  "type":"Penguin",
                  "width":49,
-                 "x":1140,
-                 "y":377
+                 "x":1152,
+                 "y":381
                 }, 
                 {
                  "height":329,
@@ -257,8 +257,8 @@
                     },
                  "type":"Penguin",
                  "width":49,
-                 "x":821,
-                 "y":929
+                 "x":814,
+                 "y":939
                 }, 
                 {
                  "height":37,
@@ -325,7 +325,7 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"WaterPenguin",
                  "width":67,
@@ -425,8 +425,8 @@
                     },
                  "type":"PenguinJetpack",
                  "width":49,
-                 "x":265,
-                 "y":900
+                 "x":271,
+                 "y":977
                 }, 
                 {
                  "height":48,
@@ -445,7 +445,7 @@
                  "name":"Penguin6",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":49,
@@ -536,7 +536,7 @@
                     },
                  "type":"TriggerEnemies",
                  "width":328,
-                 "x":312,
+                 "x":323,
                  "y":373
                 }, 
                 {
@@ -550,6 +550,42 @@
                  "width":23,
                  "x":275,
                  "y":1127
+                }, 
+                {
+                 "height":48,
+                 "name":"Penguin6",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":49,
+                 "x":1309,
+                 "y":1071
+                }, 
+                {
+                 "height":48,
+                 "name":"PenguinJetpack1",
+                 "properties":
+                    {
+                     "coop":""
+                    },
+                 "type":"PenguinJetpack",
+                 "width":49,
+                 "x":345,
+                 "y":636
+                }, 
+                {
+                 "height":40,
+                 "name":"Heart",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Heart",
+                 "width":47,
+                 "x":585,
+                 "y":195
                 }],
          "opacity":1,
          "type":"objectgroup",

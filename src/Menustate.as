@@ -65,10 +65,6 @@ package
 			m_trailer.scaleX = 0.6;
 			m_trailer.scaleY = 0.6;
 			m_trailer.scaleZ = 0.6;
-			
-
-			
-			FlxG.mouse.show();
 		}
 		
 		override public function create() : void {

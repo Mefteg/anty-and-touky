@@ -56,6 +56,8 @@ package
 			if (!depthBuffer)
 				depthBuffer = new DepthBuffer();
 			depthBuffer.addElement(m_screenFade, DepthBuffer.s_cursorGroup);
+			
+			FlxG.mouse.show();
 		}
 		
 		override public function update() : void {
