@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="19" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" source="Jungle.tsx"/>
+ <layer name="Calque de Tile 1" width="30" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxTYWBgUKUzVgNiEyA2pTM2G7V31N5Re0ftHbV31N5RewfEXhcgdqUidiECuwExALhCdfo=
+  </data>
+ </layer>
+ <layer name="Calque 2" width="30" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYGBgKGYgDCYB8WQi1IHADDT+ZiCuJlIvNUEXDvFOEs0RIVH9LBziM8k0jxRAS7NJAehpYLgD5Dw0WOJgFAxtsAlK0zs9IeddUstKaoGZhJVQDEDh2oXGJ9ccUgGojkCuE3HVVZTYgy3u0M3AVlcR4xZ8gNy4A7kF1M4gpj2CDmYg0YuRxKugNAASGxI/
+  </data>
+ </layer>
+</map>

@@ -75,6 +75,42 @@
                  "width":46,
                  "x":281,
                  "y":638
+                }, 
+                {
+                 "height":34,
+                 "name":"Penguin0",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":46,
+                 "x":680,
+                 "y":800
+                }, 
+                {
+                 "height":34,
+                 "name":"Penguin0",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":46,
+                 "x":782,
+                 "y":801
+                }, 
+                {
+                 "height":258,
+                 "name":"TriggerCutSceneHelp",
+                 "properties":
+                    {
+                     "url":"CutScenes\/w1m1_cutscene1"
+                    },
+                 "type":"TriggerCutScene",
+                 "width":529,
+                 "x":63,
+                 "y":479
                 }],
          "opacity":1,
          "type":"objectgroup",
