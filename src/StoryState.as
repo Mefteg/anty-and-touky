@@ -81,7 +81,7 @@ package
 				default : break;
 			}
 			
-			if ( FlxG.keys.justPressed("ENTER") ) {
+			if ( FlxG.keys.justPressed("ENTER") || FlxG.keys.justPressed("ESCAPE") ) {
 				this.end();
 			}
 		}

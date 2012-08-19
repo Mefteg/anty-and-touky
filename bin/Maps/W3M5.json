@@ -249,7 +249,7 @@
                  "name":"Lift",
                  "properties":
                     {
-                     "range":"3"
+                     "range":"5"
                     },
                  "type":"Lift",
                  "width":95,
@@ -300,10 +300,10 @@
                     {
 
                     },
-                 "type":"PenguinScientist",
+                 "type":"Penguin",
                  "width":0,
-                 "x":920,
-                 "y":1536
+                 "x":875,
+                 "y":2017
                 }, 
                 {
                  "height":0,
@@ -327,8 +327,8 @@
                     },
                  "type":"TriggerWarp",
                  "width":96,
-                 "x":1023,
-                 "y":1655
+                 "x":1024,
+                 "y":1716
                 }, 
                 {
                  "height":0,
@@ -353,6 +353,195 @@
                  "width":0,
                  "x":1214,
                  "y":1586
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "url":"World3\/racoonM5"
+                    },
+                 "type":"Raccoon",
+                 "width":0,
+                 "x":282,
+                 "y":2000
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"",
+                 "width":0,
+                 "x":126,
+                 "y":1447
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":0,
+                 "x":267,
+                 "y":1463
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"",
+                 "width":0,
+                 "x":806,
+                 "y":2102
+                }, 
+                {
+                 "height":16,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":20,
+                 "x":920,
+                 "y":1536
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"PenguinScientist",
+                 "width":0,
+                 "x":1138,
+                 "y":2130
+                }, 
+                {
+                 "height":329,
+                 "name":"Flystuff",
+                 "properties":
+                    {
+                     "direction":"6",
+                     "location":"2",
+                     "number":"3",
+                     "type":"flyingCannon"
+                    },
+                 "type":"TriggerEnemies",
+                 "width":594,
+                 "x":751,
+                 "y":579
+                }, 
+                {
+                 "height":16,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":20,
+                 "x":951,
+                 "y":1181
+                }, 
+                {
+                 "height":16,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":20,
+                 "x":850,
+                 "y":866
+                }, 
+                {
+                 "height":16,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":20,
+                 "x":1051,
+                 "y":852
+                }, 
+                {
+                 "height":16,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":20,
+                 "x":673,
+                 "y":175
+                }, 
+                {
+                 "height":16,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":20,
+                 "x":145,
+                 "y":180
+                }, 
+                {
+                 "height":16,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Penguin",
+                 "width":20,
+                 "x":204,
+                 "y":185
+                }, 
+                {
+                 "height":112,
+                 "name":"Flystuff",
+                 "properties":
+                    {
+                     "direction":"6",
+                     "location":"2",
+                     "number":"2",
+                     "type":"mouse"
+                    },
+                 "type":"TriggerEnemies",
+                 "width":402,
+                 "x":342,
+                 "y":132
+                }, 
+                {
+                 "height":98,
+                 "name":"Flystuff",
+                 "properties":
+                    {
+                     "direction":"6",
+                     "location":"2",
+                     "number":"2",
+                     "type":"mouse"
+                    },
+                 "type":"TriggerEnemies",
+                 "width":454,
+                 "x":343,
+                 "y":155
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -441,6 +630,18 @@
              "142":
                 {
                  "type":"PhysicalType"
+                },
+             "145":
+                {
+                 "type":"PhysicalTile"
+                },
+             "146":
+                {
+                 "type":"PhysicalTile"
+                },
+             "147":
+                {
+                 "type":"PhysicalTile"
                 },
              "151":
                 {

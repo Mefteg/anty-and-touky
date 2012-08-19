@@ -176,9 +176,19 @@
    <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
+ <tile id="141">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
  <tile id="142">
   <properties>
-   <property name="type" value="PhysicalType"/>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="143">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
  <tile id="151">

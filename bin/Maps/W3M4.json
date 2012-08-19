@@ -330,6 +330,78 @@
                  "width":0,
                  "x":450,
                  "y":1596
+                }, 
+                {
+                 "height":0,
+                 "name":"Alarm",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Alarm",
+                 "width":0,
+                 "x":332,
+                 "y":857
+                }, 
+                {
+                 "height":0,
+                 "name":"Alarm",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Alarm",
+                 "width":0,
+                 "x":536,
+                 "y":860
+                }, 
+                {
+                 "height":17,
+                 "name":"Alarm",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Alarm",
+                 "width":26,
+                 "x":615,
+                 "y":2134
+                }, 
+                {
+                 "height":17,
+                 "name":"Alarm",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Alarm",
+                 "width":26,
+                 "x":305,
+                 "y":3076
+                }, 
+                {
+                 "height":17,
+                 "name":"Alarm",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Alarm",
+                 "width":26,
+                 "x":325,
+                 "y":3706
+                }, 
+                {
+                 "height":17,
+                 "name":"Alarm",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Alarm",
+                 "width":26,
+                 "x":533,
+                 "y":3707
                 }],
          "opacity":1,
          "type":"objectgroup",

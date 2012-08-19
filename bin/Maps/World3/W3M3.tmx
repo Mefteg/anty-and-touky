@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="../Metal.tsx"/>
  <layer name="Background" width="115" height="77">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="Foreground" width="115" height="77">
@@ -102,9 +102,12 @@
     <property name="url" value="Maps/W3M4.json"/>
    </properties>
   </object>
+  <object type="Penguin" x="3115" y="592"/>
+  <object name="Alarm" type="Alarm" x="3312" y="1125"/>
+  <object name="Alarm" type="Alarm" x="3006" y="1127"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="115" height="77">
-  <object name="Spawn" type="RespawnPoint" x="2331" y="1967" width="65" height="56">
+  <object name="Spawn" type="RespawnPoint" x="486" y="1785" width="65" height="56">
    <properties>
     <property name="location" value="init"/>
    </properties>
