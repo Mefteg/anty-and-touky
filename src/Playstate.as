@@ -183,8 +183,8 @@ package
 			depthBuffer.addElement(m_rectLadyBug, DepthBuffer.s_cursorGroup);
 			m_sceneManager = new SceneManager();
 
-			m_sceneManager.loadScene("Maps/W3M1.json");
-			//m_sceneManager.loadScene("Maps/test500.json");
+			m_sceneManager.loadScene("Maps/W3M5.json");
+			//m_sceneManager.loadScene("Maps/W1M1.json");
 			//m_sceneManager.loadScene("Maps/test2.json");
 			//m_sceneManager.loadScene("Maps/W2M1.json");
 
@@ -423,6 +423,8 @@ package
 		}
 		public function clearPhysical():void {
 			m_collisionManager.m_physicalObjects = new Vector.<PhysicalObject>;
+			m_collisionManager.addObject(Global.player1 as GameObject.PhysicalObject);
+			m_collisionManager.addObject(Global.player2 as GameObject.PhysicalObject);
 		}
 		//TALKERS
 		public function addTalkers(object:MovableObject):void {

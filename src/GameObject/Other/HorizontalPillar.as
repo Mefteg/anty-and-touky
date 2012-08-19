@@ -119,9 +119,9 @@ package GameObject.Other
 		}
 		
 		override public function move() : void {
-			m_oldPos.x = x; m_oldPos.y = y;
+			m_oldPos.x = x; //m_oldPos.y = y;
 			this.x = this.x + (m_direction.x * m_speed);
-			this.y = this.y + (m_direction.y * m_speed);
+			//this.y = this.y + (m_direction.y * m_speed);
 		}
 		
 	}
