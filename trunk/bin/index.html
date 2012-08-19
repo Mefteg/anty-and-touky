@@ -28,18 +28,43 @@
 	</script>-->
 	<style>
 		html, body { height:100%; overflow:hidden; }
-		body { background-image: url(Images/Web/grass.png); margin:0; }
+		body { background-image: url(Images/Web/tile_grass_center.jpg); margin:0; }
 		object { padding: 0px; margin: 0px; }
-		#flash { border: 5px solid black; width: 640px; height: 480px; text-align: center; padding: 0px; margin: auto; margin-top: 50px; }
+		#main
+		{
+			border: 0px solid black;
+			border-top: 0px;
+			border-bottom: 0px;
+			width: 980px;
+			height: 608px;
+			text-align: center;
+			padding: 0px;
+			padding-top: 64px;
+			margin: auto;
+			background-image: url(Images/Web/main_background.jpg);
+			background-repeat: no-repeat;
+		}
+		#flash
+		{
+			border: 5px solid black;
+			width: 640px;
+			height: 480px;
+			text-align: center;
+			padding: 0px;
+			margin: auto;
+			margin-top: 0px;
+		}
 	</style>
 </head>
 <body>
-	<div id="flash">
-		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="640" height="480">
-			<param name="movie" value="AntyAndTouky.swf">
-			<param name="quality" value="high">
-			<embed src="AntyAndTouky.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="640" height="480"></embed>
-		</object>
+	<div id="main">
+		<div id="flash">
+			<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="640" height="480">
+				<param name="movie" value="AntyAndTouky.swf">
+				<param name="quality" value="high">
+				<embed src="AntyAndTouky.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="640" height="480"></embed>
+			</object>
+		</div>
 	</div>
 </body>
 </html>
