@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-	<item type="background" positionx="0" positiony="0" sizex="640" sizey="480" name="backgroundMenu" backgroundImg="Images/Menu/menustate_background.jpg" />
-	<item type="button" positionx="220" positiony="280" sizex="200" sizey="50" name="start1p" label="Start 1P !" backgroundOnOver="4294967295" backgroundOnOut="4294967295" textOnOut="4293926655" textOnOver="4278190080" fontSize="20" textPaddingY="15" />
-	<item type="button" positionx="220" positiony="340" sizex="200" sizey="50" name="start2p" label="Start 2P !" backgroundOnOver="4294967295" backgroundOnOut="4294967295" textOnOut="4293926655" textOnOver="4278190080" fontSize="20" textPaddingY="15"/>
-	<item type="button" positionx="220" positiony="400" sizex="200" sizey="50" name="options" label="Options !" backgroundOnOver="4294967295" backgroundOnOut="4294967295" textOnOut="4293926655" textOnOver="4278190080" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="220" positiony="280" sizex="200" sizey="50" name="start1p" label="Start 1P !" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15" />
+	<item type="button" positionx="220" positiony="340" sizex="200" sizey="50" name="start2p" label="Start 2P !" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="220" positiony="400" sizex="200" sizey="50" name="options" label="Options !" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
 </data>

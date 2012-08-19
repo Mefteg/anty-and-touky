@@ -26,7 +26,7 @@ package GameObject.Menu
 		
 		override public function update() : void {
 			if ( m_infos.length > 0 ) {
-				if ( m_buttons.length == 0 ) {
+				if ( m_buttons.length == 0 && m_backgrounds.length == 0 ) {
 					// creer les boutons
 					this.createButtons();
 				}
@@ -38,10 +38,12 @@ package GameObject.Menu
 		}
 		
 		public function createButtons() : void {
-			for ( var i:int = 0; i < m_infos.length; i++ ) {
+			for ( var i:int = 0; i < m_infos.length; i++ )
+			{
 				var type:String = m_infos[i]["type"];
 				
-				switch ( type ) {
+				switch ( type )
+				{
 					case "button":
 						var mybutton:MyButton = new MyButton(m_infos[i]);
 						m_buttons.push(mybutton);
