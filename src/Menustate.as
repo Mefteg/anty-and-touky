@@ -37,6 +37,7 @@ package
 		private var m_menuAppeared:Boolean = false;
 		private var m_ending:Boolean = false;
 		
+		protected var m_mvcBackground:MVCButton;
 		protected var m_mvcButton:MVCButton;
 
 		public function Menustate()
@@ -79,6 +80,7 @@ package
 			m_timerLB.start(2);
 			FlxG.stage.addChild(m_trailer);
 			
+			m_mvcBackground = new MVCButton("Menu/menubackground.xml");
 			m_mvcButton = new MVCButton("Menu/menustate.xml");
 		}
 		
@@ -89,7 +91,7 @@ package
 			}
 			//make the menu appear via fade in
 			if (!m_menuAppeared && m_timer.finished) {
-				//m_mvcButton = new MVCButton("Menu/menustate.xml");
+				depthBuffer.addElement(m_mvcBackground, DepthBuffer.s_menuGroup);
 				depthBuffer.addElement(m_mvcButton, DepthBuffer.s_menuGroup);
 				m_menuAppeared = true;
 				FlxG.stage.removeChild(m_trailer);
