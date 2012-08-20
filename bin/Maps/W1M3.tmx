@@ -8,7 +8,34 @@
  </layer>
  <layer name="Foreground" width="40" height="48">
   <data encoding="base64" compression="zlib">
-   eJztWcFtwzAM5AQZwVOlnSDoBG0naB/xO33E01aH9gCGkCXRohI/cgDhyEKs00miSfooIi87tddkp2Q/yT52Zpdkb//8cI3CIdkU8Bzw+pZ4fuAGjnPnc97lT8NofgA4LtLP8SRj+AHQcOl8xih+0K1lDx4KfcdkXzLmfNR0I6/SHOhXNL+z3M7pnPnfLOV5t+g2SX1vkhevGPOq/su25kJtIvzHIuV5Wn56TM0BV+oawQvg/Gvr2+qfqWsUOH+PfhEojacB/bAmUfq1QK8X129WffwNXtDvWnleND9y4/h8h5zV79yZuxc/UeNr6LY+czWOI/h5zpDlaH3viP3nhfW12peN2n9eWH9PnnvQr4S96LeGHL81DXDf7t/Z9EcjFx+snXvct7ED/VntPRDFT/umHMjbxg6190AUvxpGaFTCCP8ciSe/Pjz59aGHH/0eoeNQ6z+31hC28mPuzTgTbfrqSW5zx54awhZ+drxJtW3+11pDiOLnHS+i9uLhV8uno7FlfVvqElGI2H85RPH38muJo3TcZZGrK+XaW/OPlrzV5o/0kbquxHuc7yy3cWRP/lHbf7qPY1ndOU/GjYvk48gR+y/Xl4tfW/yUt34fWV9rgbd+r/fOveCpj2Nvjco11tDKL+JbgRee+v29cyNA1+9xTh79rdIatINuOCeP/la5Zp/JfgGfqsYp
+   eJztWcFtwzAM5AQdwVOlnSDoBG0naB/xu33E01aH9gCakCVKphI/cgCRyFKg00mkKeYkIs8HtZdk52Q/yd4PZt/JXv/54TMKT8kmxziMuRT6wetL4vlhXnCcHWOvhb43+dMwmh8Ajov4OJZwljH8AGi4OMaUMIofdPOewS2NT8k+ZYx/eHUrjWVc0fwustY851+zlPel5pccU9OYvPiJOa/qt2xrLlxvbe9KfkksUl6n5afn1ByohzeuecD1t+hXAnX1zl0D19+iXwQ8vgFgDdiTKP080PvF/ZtVH7+DF9ZQO6PR/MiN8/MdclHfcz53K36i5tfQbe1znndHNL8W/7Ycbewdcf5aYWOtjmWjzl8rbLwnzyPoV8JR9NtCjt+WBnhuz+9s+qORyw+2/B7Pbe7AeFZ7D0Tx07EpB/K2uYMnV4ngV8MIjUoYEZ8j8eC3Dw9++7CHH+MeofNQGz97awi9/HgvZJ6JNmP1JOs7tzffj+Jn55tU297/vDWEKH6t8/XqRrTyq92no9Gzv6V6TjQizl8OUfxb+XnyKJ13WeTqSrl27/3Dc2+190fGSF1X4jOud5Z1Hrnn/lE7f7qPc1nduU7mjYvk88gR5y/Xl8tfPXGqtX4fWV/zoLV+76mLRqOlPo6zNequsQUvvz3v+V601O9vfTcCdP0efnLv/yqtQTvoBj+593+VW/aR7BcukMr/
   </data>
  </layer>
+ <objectgroup name="Objects" width="40" height="48">
+  <object name="Box0" type="Box" x="1103" y="461" width="40" height="40"/>
+  <object name="BoxHole0" type="BoxHole" x="1108" y="124" width="40" height="36">
+   <properties>
+    <property name="door" value="Spikes0"/>
+   </properties>
+  </object>
+  <object name="Spikes0" type="Spikes" x="991" y="139" width="41" height="39">
+   <properties>
+    <property name="respawn" value="top"/>
+   </properties>
+  </object>
+  <object name="BreakableRock0" type="BreakableRock" x="644" y="350" width="35" height="36"/>
+  <object name="BreakableRock1" type="BreakableRock" x="646" y="310" width="35" height="36"/>
+ </objectgroup>
+ <objectgroup name="RespawnPoints" width="40" height="48">
+  <object name="RespawnPointW3M1Top" type="RespawnPoint" x="1199" y="135" width="44" height="45">
+   <properties>
+    <property name="location" value="top"/>
+   </properties>
+  </object>
+  <object name="RespawnPointW3M1Init" type="RespawnPoint" x="1095" y="206" width="44" height="45">
+   <properties>
+    <property name="location" value="init"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
