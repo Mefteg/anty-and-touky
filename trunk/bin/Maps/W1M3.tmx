@@ -3,12 +3,12 @@
  <tileset firstgid="1" source="Jungle.tsx"/>
  <layer name="Background" width="40" height="48">
   <data encoding="base64" compression="zlib">
-   eJztmEtOw0AMQOcsCG5AOUG5BZ8cAAo3oCvYQOkKNhRyAKg4AJ9egM+RcKREsiyPx05mRknp4q0ycl6SscfOyDk32rD23AP7hDth/RvwXvMRiI3XvgI3iJnyvnvAFuGaxMLcAqc1k4DfCVq7AhaIR+a+Y+Qq+T2QWJRUftvATk1uvxJ4QSyBA+Cw5gi4VH7fZxIL89TSj1sbul5xhd5pA/cclpgx/azgmHPnzyNNLqX2k/aoZq9a/I6Z5y965HfGxD4PxCydP480uZTar+uewftzrvD7ROtXGfzo/aS1F+R7VN9uavCznMtt/LTvxremzXv9Ab5qfo1+vtrmq2kpapnkZ60ZQ/TjeksfUs/J3aN0fE3De+Y74Mf1Hj52jX7Wb5TDz1IvNbk1i+xH91nXvcv1yF38aH3um1+s/Vc9W5VLy5765cjfUG8snStNbqX00/SeEv/dr3RybxwitV+MM57Orngeb2ZyfD23nxQ/Vo0Ymh83h7apQbSGFZH8uDkvBtwsto5+3JzXpQ41TCP55cijIfpVeUnP+CKxH52fpBlJ+/+F+ln7HAzt/6Uzrq1fl5yl/TX3/75Pftz/e1w3tDkfq8+h/b+mh8kJ7W+k//IbbPwBtfFyUg==
+   eJztmMtNxEAMQKcWBB2wVABd8EkB/DpgT3CBZU9wYSEFwIoC+GwDfErCkRLJsjweO5kZJUsO75SR85KMPXYmzrnJyNpzD+wR7oT1b8B7zUcgNl77CtwgZsr77gAbhGsSC3MLnNScBvyO0doVsEA8MvfdRa6S3wOJRUnltwls1eT2K4EXxBLYBw5qDoFL5fd9JrEwTy39uLWh6xVX6J02cM9hiRnTzwqOOXf+PNLkUmo/aY9q9qrF74h5/qJHfmdM7PNAzNL580iTS6n9uu4ZvD/nCr9PtH6VwY/eT1p7Qb5H9e2mBj/LudzGT/tufGvavNcf4Kvm1+jnq22+mpailkl+1poxRD+ut/Qh9ZzcPUrH1zS8Z74Dflzv4WPb6Gf9RkPya3Jr1lM/qUce/fS5teypX478CPXG0rnS9CIp/TS9p8R/9yud3BuHSO0X44ynsyuex5uZHF/P7SfFj1UjhubHzaFtahCtYUUkP27OiwE3i62jHzfndalDDdNIfjnyaIh+VV7SM75I7EfnJ2lG0v5/oX7WPgdD+3/pjGvr1yVnaX/N/b/vkx/3/x7XDW3Ox+pzaP+v6WFyQvsb6b/8iI0/1RNw6A==
   </data>
  </layer>
  <layer name="Foreground" width="40" height="48">
   <data encoding="base64" compression="zlib">
-   eJztWcFtwzAM5AQdwVOlnSDoBG0naB/xu33E01aH9gCakCVKphI/cgCRyFKg00mkKeYkIs8HtZdk52Q/yd4PZt/JXv/54TMKT8kmxziMuRT6wetL4vlhXnCcHWOvhb43+dMwmh8Ajov4OJZwljH8AGi4OMaUMIofdPOewS2NT8k+ZYx/eHUrjWVc0fwustY851+zlPel5pccU9OYvPiJOa/qt2xrLlxvbe9KfkksUl6n5afn1ByohzeuecD1t+hXAnX1zl0D19+iXwQ8vgFgDdiTKP080PvF/ZtVH7+DF9ZQO6PR/MiN8/MdclHfcz53K36i5tfQbe1znndHNL8W/7Ycbewdcf5aYWOtjmWjzl8rbLwnzyPoV8JR9NtCjt+WBnhuz+9s+qORyw+2/B7Pbe7AeFZ7D0Tx07EpB/K2uYMnV4ngV8MIjUoYEZ8j8eC3Dw9++7CHH+MeofNQGz97awi9/HgvZJ6JNmP1JOs7tzffj+Jn55tU297/vDWEKH6t8/XqRrTyq92no9Gzv6V6TjQizl8OUfxb+XnyKJ13WeTqSrl27/3Dc2+190fGSF1X4jOud5Z1Hrnn/lE7f7qPc1nduU7mjYvk88gR5y/Xl8tfPXGqtX4fWV/zoLV+76mLRqOlPo6zNequsQUvvz3v+V601O9vfTcCdP0efnLv/yqtQTvoBj+593+VW/aR7BcukMr/
+   eJzdWUFOAzEM9BE4cAYOPQPvKbyg4gXAC+DQPcOh+1piwUiulThO1tlWjGS126T1xLEdx90S0dOZynOSXZLvJG9nJl9JXv748WsUrpNsHPN4zt4YZ16fFM+P9TLHyTH3YIy90q8No/kxmONMPo4WdjSGH4NtODvmWBjFj+3m9cGSjbdJPmhMfHjtZs1FXpH89nRs81x8TWTvSy0uMadmY/DCK+s8iO/iWXLBemt7Z8UlMJO9Ts1P6pQcYA9vXvMA62+xnwXY1au7Bqy/xX4R8MQGg9fAexJlPw/kfmH/JjGG98yL11Dz0Wh+4Ab9OEP24n0u5tbiR0K/hHyWMec5O6L5tcS35qhz7wj/K+EiyWWSqwxHmWtlLhvlfzncJLlNcpcZ0/kePNe0332ShySPDb+3pv0kSnutkeNXsgF/rv13UuNeWHtt8UN+1bqQv3TtgHxWOwc05F5btizVB7pmRP4Cb107eGqVEixbWv6XO0OjahcJK25G5GcPlsTHGuiNj7XgzYWn4ufFf+aHvAfIOlTnz94eQi8/3AtRZ/IzcvWGjvOnt96P4qf1bcSzPHvQe1mSM1v5efTJu3mv3YBWfrX7NLDkvJPo2V+rnxONCP/LIYp/Kz9PHSXrLo1cXyn33Hv/8Nxb9f0RsSL7SvgM653ouI5ccv+o+Z8cgy5td6wTcTRTvo4c4X+5sVw8e/Jia/8+sr/mQWv/3tMXjUZLf5x9Kyr3euHlt+Sc70VL/35NvwNk/57j5NT/VWph27HdOE5O/V9lSd6T/ACKC9IX
   </data>
  </layer>
  <objectgroup name="Objects" width="40" height="48">
@@ -25,6 +25,22 @@
   </object>
   <object name="BreakableRock0" type="BreakableRock" x="644" y="350" width="35" height="36"/>
   <object name="BreakableRock1" type="BreakableRock" x="646" y="310" width="35" height="36"/>
+  <object name="Box1" type="Box" x="205" y="405" width="40" height="40"/>
+  <object name="Spikes1" type="Spikes" x="203" y="732" width="41" height="39">
+   <properties>
+    <property name="respawn" value="top"/>
+   </properties>
+  </object>
+  <object name="BoxHole1" type="BoxHole" x="131" y="172" width="40" height="36">
+   <properties>
+    <property name="door" value="Spikes1"/>
+   </properties>
+  </object>
+  <object name="BreakableRock3" type="BreakableRock" x="632" y="1112" width="35" height="36"/>
+  <object name="Heart0" type="Heart" x="679" y="511" width="22" height="17"/>
+  <object name="Heart1" type="Heart" x="718" y="511" width="22" height="17"/>
+  <object name="Life0" type="Life" x="211" y="1358" width="22" height="17"/>
+  <object name="BreakableRock2" type="BreakableRock" x="631" y="1151" width="35" height="36"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="40" height="48">
   <object name="RespawnPointW3M1Top" type="RespawnPoint" x="1199" y="135" width="44" height="45">
@@ -32,7 +48,7 @@
     <property name="location" value="top"/>
    </properties>
   </object>
-  <object name="RespawnPointW3M1Init" type="RespawnPoint" x="1095" y="206" width="44" height="45">
+  <object name="RespawnPointW3M1Init" type="RespawnPoint" x="874" y="1135" width="44" height="45">
    <properties>
     <property name="location" value="init"/>
    </properties>
