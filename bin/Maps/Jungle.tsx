@@ -201,6 +201,16 @@
    <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
+ <tile id="94">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="95">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
  <tile id="96">
   <properties>
    <property name="type" value="PhysicalTile"/>
@@ -241,6 +251,16 @@
    <property name="type" value="Hole"/>
   </properties>
  </tile>
+ <tile id="110">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="111">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
  <tile id="112">
   <properties>
    <property name="type" value="Hole"/>
@@ -264,6 +284,16 @@
  <tile id="117">
   <properties>
    <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="126">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="127">
+  <properties>
+   <property name="type" value="Hole"/>
   </properties>
  </tile>
  <tile id="128">
@@ -301,6 +331,16 @@
    <property name="type" value="Hole"/>
   </properties>
  </tile>
+ <tile id="142">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="143">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
  <tile id="144">
   <properties>
    <property name="type" value="PhysicalTile"/>
@@ -326,7 +366,22 @@
    <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
+ <tile id="158">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="159">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
  <tile id="160">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="167">
   <properties>
    <property name="type" value="PhysicalTile"/>
   </properties>
@@ -336,9 +391,84 @@
    <property name="type" value="Hole"/>
   </properties>
  </tile>
+ <tile id="174">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="175">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
  <tile id="176">
   <properties>
    <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="183">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="187">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="188">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="189">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="199">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="200">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="201">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="202">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="203">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="204">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="205">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="206">
+  <properties>
+   <property name="type" value="Hole"/>
+  </properties>
+ </tile>
+ <tile id="207">
+  <properties>
+   <property name="type" value="Hole"/>
   </properties>
  </tile>
 </tileset>
