@@ -3,12 +3,12 @@
  <tileset firstgid="1" source="Jungle.tsx"/>
  <layer name="Background" width="40" height="48">
   <data encoding="base64" compression="zlib">
-   eJztmMtNxEAMQKcWBB2wVABd8EkB/DpgT3CBZU9wYSEFwIoC+GwDfErCkRLJsjweO5kZJUsO75SR85KMPXYmzrnJyNpzD+wR7oT1b8B7zUcgNl77CtwgZsr77gAbhGsSC3MLnNScBvyO0doVsEA8MvfdRa6S3wOJRUnltwls1eT2K4EXxBLYBw5qDoFL5fd9JrEwTy39uLWh6xVX6J02cM9hiRnTzwqOOXf+PNLkUmo/aY9q9qrF74h5/qJHfmdM7PNAzNL580iTS6n9uu4ZvD/nCr9PtH6VwY/eT1p7Qb5H9e2mBj/LudzGT/tufGvavNcf4Kvm1+jnq22+mpailkl+1poxRD+ut/Qh9ZzcPUrH1zS8Z74Dflzv4WPb6Gf9RkPya3Jr1lM/qUce/fS5teypX478CPXG0rnS9CIp/TS9p8R/9yud3BuHSO0X44ynsyuex5uZHF/P7SfFj1UjhubHzaFtahCtYUUkP27OiwE3i62jHzfndalDDdNIfjnyaIh+VV7SM75I7EfnJ2lG0v5/oX7WPgdD+3/pjGvr1yVnaX/N/b/vkx/3/x7XDW3Ox+pzaP+v6WFyQvsb6b/8iI0/1RNw6A==
+   eJztmDlOQzEQQH2InCCCGxBOALdgyQHYbkAqaCBEIEHDEkFDARESDQVLSgq2I2FLtjSazIw9tn8EUoqnrySO/b7tscfuGGM6MxqlVfk/Ob+dWZYRp8L/ny0vnteIKyz7YDkE9BPbXbS0PY/+eYDqghxZNj1bkfffAGXHlgvAJWg3sARcKb/AOaoLQ/lRaP3mLPOemn7c3IF+Q8s9YGRZsax61ix7wviGsXXcobogV5n9R5WN/e7YB30aoN5DU2dNPy2wzoHh40iKpTAnavjhuQXrlOZoSixp/NaJ9+9G3nmafttE3TtEP0oxqY2lmn5NzGk4PwdMmdAvzu8NlB9PwQ+3J5XdRePhxq6n8NPsyzl+Utst8OTK5PTrt+XT86P049Y2bk3DftSel5OvcbGpXTOa2Auk/qvhR+WWHFTuJ/kNDb2mwTnzFfFzuce15cZM5kht8L0rs6D0044R50d5BSf4uUk/HNchtvqCH+5DyY+Kj5L+k3JkjmmOb02/FtMG54fXMClvGCW6lcZHyrqqjY/S8Y3lxtK+EnKRJv1Sck8J6Hf8x/1SHLV+QyPnxjGw30llv9I9/tZMnl3heTycyeHv0/Sj4h7WX7pH1cyRqDWSaiO2juX65axBeA3rNji+pbHOnRX/i19p/lKyDgV6Ffsv5yxZg9T8Jbefnwrc3P0Q3uO7yvfg1gf8/bt/4vOTdEZKvX/Bfto8B4Lzf2mPS/HTnpNj4Pyaur8v7b+aftT9fcDdD6XGfK08B+f/KTlMCh+GPqNr71dwfiPdy8/Q8QtCtnD5
   </data>
  </layer>
  <layer name="Foreground" width="40" height="48">
   <data encoding="base64" compression="zlib">
-   eJzdWUFOAzEM9BE4cAYOPQPvKbyg4gXAC+DQPcOh+1piwUiulThO1tlWjGS126T1xLEdx90S0dOZynOSXZLvJG9nJl9JXv748WsUrpNsHPN4zt4YZ16fFM+P9TLHyTH3YIy90q8No/kxmONMPo4WdjSGH4NtODvmWBjFj+3m9cGSjbdJPmhMfHjtZs1FXpH89nRs81x8TWTvSy0uMadmY/DCK+s8iO/iWXLBemt7Z8UlMJO9Ts1P6pQcYA9vXvMA62+xnwXY1au7Bqy/xX4R8MQGg9fAexJlPw/kfmH/JjGG98yL11Dz0Wh+4Ab9OEP24n0u5tbiR0K/hHyWMec5O6L5tcS35qhz7wj/K+EiyWWSqwxHmWtlLhvlfzncJLlNcpcZ0/kePNe0332ShySPDb+3pv0kSnutkeNXsgF/rv13UuNeWHtt8UN+1bqQv3TtgHxWOwc05F5btizVB7pmRP4Cb107eGqVEixbWv6XO0OjahcJK25G5GcPlsTHGuiNj7XgzYWn4ufFf+aHvAfIOlTnz94eQi8/3AtRZ/IzcvWGjvOnt96P4qf1bcSzPHvQe1mSM1v5efTJu3mv3YBWfrX7NLDkvJPo2V+rnxONCP/LIYp/Kz9PHSXrLo1cXyn33Hv/8Nxb9f0RsSL7SvgM653ouI5ccv+o+Z8cgy5td6wTcTRTvo4c4X+5sVw8e/Jia/8+sr/mQWv/3tMXjUZLf5x9Kyr3euHlt+Sc70VL/35NvwNk/57j5NT/VWph27HdOE5O/V9lSd6T/ACKC9IX
+   eJzNWUFSHDEM9CmQHDgCyWHPIe8BXkDxgiQvSA6753DY/QHkBcALWD6FVEwXvSpbI3u8A12lmvFYW27Lkix7z1NKFx9ULkWuRG5Efn0w+SdyPfDTJ+NQ5LPIl1SPI5FFQE91lk6/8vpb4Hcq8lXkWwO/xcBxFdBdO30/06sNc/y+i5yJ/Gjgp1COmxTj6OEqvfGbsqY5qA03AR0PzG/Kmlqo3aI+WLLxucgf4jd1TYEau3m6yCvsf8u0a/NcfK2Svy5jcQmdMRuDF5465pp+izZzwXzH1s6LS2CT/Hlafjwmc4A9onktAsy/xn4eYNfo2GPA/Gvs1wOR2FDoHHRNetkvAl4vrN+K+vCuvHQOYz7amx+4YXzsIUt6z8XcXPwSjc/gNsdcZO/oza8mvi1Hm3v34X8llPZ2m2s5l+3L/3Lw9nab78FzTvu17O1z2q8FOX4lG+h3678r098bufogF/fIX7Z2QD4b2wc8eDVxqT6wNSPyF3jb2iFSq5TgxY3nf7k9tLd/Kby42Ud+7ok5+UXOXlZnTn6Rs5fVmZNfJD9bnbn975PIQYX+FH7IewDXoblcrf3HIicz8MO5EHWmtpGrF2k3f3LOrEULP3u+WFCb9x7cvUzJmbX8IuPx2bzFZoxafmPnaWDKfsdoWV+7N9+J3A7P/514AT3870Hkfng+Dt+m3vm18svVUVuRp+H5nHbrrlujm7tXyrVbzx+RcyvXXU/pLVb4XgnfMF/wtnVmD/+z4D6MZe2+Ns8N6fIe08P/LHJ9NfHMe4x3f1/ito8atQTv/j6HyL1oDe7ovVQf8v34GNS3puRejWfOkQ/EsVQfRvlF7/U8aJ58pPZ24KjI1Yf2/t5DD7/TfPNsvm0dfb6/1zh57/8qrajt1G4aJ+/9X2VJfou8AAn059Y=
   </data>
  </layer>
  <objectgroup name="Objects" width="40" height="48">
@@ -18,7 +18,7 @@
     <property name="door" value="Spikes0"/>
    </properties>
   </object>
-  <object name="Spikes0" type="Spikes" x="991" y="139" width="41" height="39">
+  <object name="Spikes0" type="Spikes" x="990" y="133" width="41" height="39">
    <properties>
     <property name="respawn" value="top"/>
    </properties>
@@ -41,6 +41,26 @@
   <object name="Heart1" type="Heart" x="718" y="511" width="22" height="17"/>
   <object name="Life0" type="Life" x="211" y="1358" width="22" height="17"/>
   <object name="BreakableRock2" type="BreakableRock" x="631" y="1151" width="35" height="36"/>
+  <object name="Penguin0" type="Penguin" x="1147" y="444" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="1065" y="446" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="850" y="145" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="1106" y="490" width="33" height="31">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="Penguin0" type="Penguin" x="1106" y="350" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="791" y="333" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="859" y="333" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="717" y="330" width="33" height="31"/>
+  <object name="TriggerEnemies0" type="TriggerEnemies" x="745" y="179" width="160" height="187">
+   <properties>
+    <property name="direction" value="1"/>
+    <property name="location" value="5"/>
+    <property name="number" value="3"/>
+    <property name="type" value="mosquito"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="40" height="48">
   <object name="RespawnPointW3M1Top" type="RespawnPoint" x="1199" y="135" width="44" height="45">
@@ -48,7 +68,7 @@
     <property name="location" value="top"/>
    </properties>
   </object>
-  <object name="RespawnPointW3M1Init" type="RespawnPoint" x="874" y="1135" width="44" height="45">
+  <object name="RespawnPointW3M1Init" type="RespawnPoint" x="1100" y="188" width="44" height="45">
    <properties>
     <property name="location" value="init"/>
    </properties>
