@@ -4,4 +4,17 @@
  <objecttype name="PenguinJetpack" color="#550000"/>
  <objecttype name="TriggerEnemies" color="#005500"/>
  <objecttype name="WaterPenguin" color="#00007f"/>
+ <objecttype name="PenguinScientist" color="#ffffff"/>
+ <objecttype name="ElectricSnake" color="#0000ff"/>
+ <objecttype name="Cannon" color="#ff0000"/>
+ <objecttype name="Box" color="#ffaa00"/>
+ <objecttype name="BoxHole" color="#550000"/>
+ <objecttype name="Switch" color="#aaaaff"/>
+ <objecttype name="SwitchMetal" color="#a0a0a4"/>
+ <objecttype name="Barrel" color="#a0a0a4"/>
+ <objecttype name="BarrelHole" color="#a0a0a4"/>
+ <objecttype name="Spikes" color="#a0a0a4"/>
+ <objecttype name="Cylinders" color="#a0a0a4"/>
+ <objecttype name="Lift" color="#a0a0a4"/>
+ <objecttype name="Alarm" color="#ff0000"/>
 </objecttypes>
