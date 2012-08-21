@@ -101,8 +101,10 @@ package
 			//lady Bug for loading screens
 			m_ladyBug = new FlxSprite(FlxG.width - 60 , FlxG.height - 60);
 			m_ladyBug.loadGraphic(LadyBug, false, false, 32, 32, true);
+			m_ladyBug.scrollFactor = new FlxPoint(0, 0);
 			m_rectLadyBug = new FlxSprite(m_ladyBug.x, m_ladyBug.y);
-			m_rectLadyBug.makeGraphic(32, 32,FlxG.bgColor);
+			m_rectLadyBug.makeGraphic(32, 32, FlxG.bgColor);
+			m_rectLadyBug.scrollFactor = new FlxPoint(0, 0);
 			m_initPosRect = m_rectLadyBug.y;
 			//PAUSE BUTTON
 			m_pauseButton = new FlxButton(600, 460, "",pause);
@@ -159,6 +161,7 @@ package
 		public function changeScene(sceneName:String, respawn:String ) : void {
 			Global.player1.resetSpecial();
 			Global.player2.resetSpecial();
+			m_ladyBug.y = m_initPosRect;
 			fadeOut();
 			m_sceneToLoad = sceneName;
 			m_respawnToLoad = respawn;
@@ -183,7 +186,7 @@ package
 			m_sceneManager = new SceneManager();
 
 			//m_sceneManager.loadScene("Maps/Tuto4.json");
-			m_sceneManager.loadScene("Maps/W1M3.json");
+			m_sceneManager.loadScene("Maps/W1M1.json");
 			//m_sceneManager.loadScene("Maps/test500.json");
 			//m_sceneManager.loadScene("Maps/test2.json");
 			//m_sceneManager.loadScene("Maps/W2M1.json");
