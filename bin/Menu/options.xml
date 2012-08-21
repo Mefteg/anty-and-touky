@@ -3,5 +3,6 @@
 	<item type="button" positionx="10" positiony="280" sizex="200" sizey="50" name="difficultyDown" label="Difficulty - !" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15" />
 	<item type="button" positionx="220" positiony="280" sizex="200" sizey="50" name="printDifficulty" label="" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
 	<item type="button" positionx="430" positiony="280" sizex="200" sizey="50" name="difficultyUp" label="Difficulty + !" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="220" positiony="340" sizex="200" sizey="50" name="credits" label="Credits !" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
 	<item type="button" positionx="220" positiony="400" sizex="200" sizey="50" name="backToMenu" label="Back !" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
 </data>

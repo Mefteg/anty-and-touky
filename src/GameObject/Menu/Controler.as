@@ -53,6 +53,9 @@ package GameObject.Menu
 				case "difficultyUp":
 					this.onClickDifficultyUp(button);
 					break;
+				case "credits":
+					this.onClickCredits(button);
+					break;
 				case "backToMenu":
 					this.onClickBackToMenu(button);
 					break;
@@ -143,6 +146,12 @@ package GameObject.Menu
 			if ( Global.difficulty > 3 ) {
 				Global.difficulty = 3;
 			}
+		}
+		
+		protected function onClickCredits(button:MyButton) : void {
+			m_model.clearInfos();
+			m_view.clear();
+			m_model.loadUrl("Menu/credits.xml");
 		}
 		
 		protected function onClickBackToMenu(button:MyButton) : void {
