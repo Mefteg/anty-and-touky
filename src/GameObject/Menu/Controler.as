@@ -93,7 +93,20 @@ package GameObject.Menu
 		
 		protected function onOutPrintDifficulty(button:MyButton) : void {
 			m_view.changeToColorOut(button);
-			button.m_text = Global.difficulty.toString();
+			switch ( Global.difficulty )
+			{
+				case 1:
+					button.m_text = "Medium";
+					break;
+				case 2:
+					button.m_text = "Hardcore";
+					break;
+				case 3:
+					button.m_text = "Possessed";
+					break;
+				default:
+					break;
+			}
 		}
 		
 		//// ONCLICK ////
