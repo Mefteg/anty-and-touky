@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objecttypes>
+ <objecttype name="Penguin" color="#ffffff"/>
+ <objecttype name="PenguinJetpack" color="#550000"/>
+ <objecttype name="TriggerEnemies" color="#005500"/>
+ <objecttype name="WaterPenguin" color="#00007f"/>
+</objecttypes>
