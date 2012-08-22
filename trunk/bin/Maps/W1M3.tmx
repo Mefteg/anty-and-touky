@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="Jungle.tsx"/>
  <layer name="Background" width="40" height="48">
   <data encoding="base64" compression="zlib">
-   eJztmDlOQzEQQH2InCCCGxBOALdgyQHYbkAqaCBEIEHDEkFDARESDQVLSgq2I2FLtjSazIw9tn8EUoqnrySO/b7tscfuGGM6MxqlVfk/Ob+dWZYRp8L/ny0vnteIKyz7YDkE9BPbXbS0PY/+eYDqghxZNj1bkfffAGXHlgvAJWg3sARcKb/AOaoLQ/lRaP3mLPOemn7c3IF+Q8s9YGRZsax61ix7wviGsXXcobogV5n9R5WN/e7YB30aoN5DU2dNPy2wzoHh40iKpTAnavjhuQXrlOZoSixp/NaJ9+9G3nmafttE3TtEP0oxqY2lmn5NzGk4PwdMmdAvzu8NlB9PwQ+3J5XdRePhxq6n8NPsyzl+Utst8OTK5PTrt+XT86P049Y2bk3DftSel5OvcbGpXTOa2Auk/qvhR+WWHFTuJ/kNDb2mwTnzFfFzuce15cZM5kht8L0rs6D0044R50d5BSf4uUk/HNchtvqCH+5DyY+Kj5L+k3JkjmmOb02/FtMG54fXMClvGCW6lcZHyrqqjY/S8Y3lxtK+EnKRJv1Sck8J6Hf8x/1SHLV+QyPnxjGw30llv9I9/tZMnl3heTycyeHv0/Sj4h7WX7pH1cyRqDWSaiO2juX65axBeA3rNji+pbHOnRX/i19p/lKyDgV6Ffsv5yxZg9T8Jbefnwrc3P0Q3uO7yvfg1gf8/bt/4vOTdEZKvX/Bfto8B4Lzf2mPS/HTnpNj4Pyaur8v7b+aftT9fcDdD6XGfK08B+f/KTlMCh+GPqNr71dwfiPdy8/Q8QtCtnD5
+   eJztmM9OlDEQwPsQ+wQETws3MRHhhgf58wYo+wCIvIGc8KJAIIGL4kYvHoSQcPEgf44eQH0kpkknTIbptNP220DC4Zcvu9ttf1/baaedcs5NPdIpvcb/KfntAHjJ2Ff+/xs4C5wnXGnZE+ATYSuz3WfAWOA0PD+yuijbwNvAWuL9V0nZS+AL4ZC0i8wRV8kP+czq4kh+Ela/ceBJoKVfbO5QvyFwRDgGloHXgTfApjK+OLaen6wuytfC/pPKpn73fCB9ikjvYamzpZ8VWueOi8eRFks4J1r48blF69TmaE4sWfxWhPcfJN55lH7vhLrXhX7UYtIaSy39upjTdH7uRMpgv3i/C1L+cgR+vD2t7Hs2Hn7sNgx+ln25xE9ru0eesTIl/foPuA78N/rF1rbYmsb9pD2vJF+LxaZ1zehiL9D6r4WflFvGkHI/zW/o5DWNzpm/CT+fe3wDvru7OdIY+d6XeWr0s45RzA9d+sBEYDI49cnnLv14XGNsbRG/F8BMYDp4PQ+fZxN+UnzU9J+UI1O/eWAReJXp13p8uV+f9BX6oLN3XVL8epE2Yn58DdPyhmOh7/j4etfa+MhZV7X44H4U7EurXyo31vYVzEXQb8HdzrVWfjm5pwb12w2OiwJL98APHaU1GrH6DZ2eG6fgfnuN/Wr3+B/u7tmVnsfxTE5/H6WfFPe0/to9qmWOJK2RUhupdazUr2QN4mvYoMPxrY312FnxofjV5i816xCy0bD/Ss6SLcjNX0r7+VeFm78f4nv8wPgesfWBf/8nPPn5STsj5d6/cD9rnkOh+X9qj8vxs56TU/A7cun+vrb/WvpJ9/eIvx/KjflWeQ7m/5YcJocrJ5/RrfcrPL/R7uUfsXEDC1h27Q==
   </data>
  </layer>
  <layer name="Foreground" width="40" height="48">
@@ -23,7 +23,7 @@
     <property name="respawn" value="top"/>
    </properties>
   </object>
-  <object name="BreakableRock0" type="BreakableRock" x="644" y="350" width="35" height="36"/>
+  <object name="BreakableRock0" type="BreakableRock" x="645" y="349" width="35" height="36"/>
   <object name="BreakableRock1" type="BreakableRock" x="646" y="310" width="35" height="36"/>
   <object name="Box1" type="Box" x="205" y="405" width="40" height="40"/>
   <object name="Spikes1" type="Spikes" x="203" y="732" width="41" height="39">
@@ -50,7 +50,11 @@
    </properties>
   </object>
   <object name="Penguin0" type="Penguin" x="1106" y="350" width="33" height="31"/>
-  <object name="Penguin0" type="Penguin" x="791" y="333" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="791" y="333" width="33" height="31">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object name="Penguin0" type="Penguin" x="859" y="333" width="33" height="31"/>
   <object name="Penguin0" type="Penguin" x="717" y="330" width="33" height="31"/>
   <object name="TriggerEnemies0" type="TriggerEnemies" x="745" y="179" width="160" height="187">
@@ -61,6 +65,141 @@
     <property name="type" value="mosquito"/>
    </properties>
   </object>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="218" y="203" width="33" height="31"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="220" y="102" width="33" height="31"/>
+  <object name="TriggerEnemies1" type="TriggerEnemies" x="319" y="70" width="312" height="209">
+   <properties>
+    <property name="direction" value="4"/>
+    <property name="location" value="7"/>
+    <property name="number" value="4"/>
+    <property name="type" value="mosquito"/>
+   </properties>
+  </object>
+  <object name="TriggerEnemies2" type="TriggerEnemies" x="320" y="49" width="315" height="179">
+   <properties>
+    <property name="coop" value=""/>
+    <property name="direction" value="4"/>
+    <property name="location" value="1"/>
+    <property name="number" value="4"/>
+    <property name="type" value="mosquito"/>
+   </properties>
+  </object>
+  <object name="Penguin0" type="Penguin" x="182" y="176" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="133" y="237" width="33" height="31">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="Penguin0" type="Penguin" x="71" y="175" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="78" y="111" width="33" height="31">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="276" y="573" width="33" height="31"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="478" y="338" width="33" height="31"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="506" y="617" width="33" height="31">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="149" y="1378" width="33" height="31">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="269" y="1305" width="33" height="31"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="1029" y="1382" width="33" height="31"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="766" y="1329" width="33" height="31"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="763" y="1380" width="33" height="31"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="911" y="1357" width="33" height="31">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="Penguin0" type="Penguin" x="315" y="571" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="265" y="451" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="147" y="450" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="434" y="611" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="471" y="114" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="518" y="114" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="143" y="1308" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="504" y="888" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="503" y="927" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="256" y="912" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="447" y="910" width="33" height="31">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="Penguin0" type="Penguin" x="895" y="644" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="895" y="864" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="947" y="990" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="983" y="975" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="1020" y="991" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="1022" y="832" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="1080" y="804" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="958" y="671" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="865" y="802" width="33" height="31">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="Penguin0" type="Penguin" x="1129" y="1134" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="674" y="1119" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="675" y="1157" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="501" y="1413" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="543" y="1413" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="990" y="465" width="33" height="31">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="WaterPenguin0" type="WaterPenguin" x="1167" y="386" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="763" y="67" width="33" height="31">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="WaterPenguin0" type="WaterPenguin" x="768" y="115" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="706" y="258" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="569" y="223" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="572" y="94" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="324" y="104" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="288" y="265" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="417" y="392" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="67" y="417" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="68" y="544" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="124" y="642" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="314" y="480" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="123" y="834" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="69" y="931" width="33" height="31">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="WaterPenguin0" type="WaterPenguin" x="69" y="971" width="33" height="31">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="WaterPenguin0" type="WaterPenguin" x="126" y="1118" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="82" y="1426" width="33" height="31">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="WaterPenguin0" type="WaterPenguin" x="208" y="1427" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="75" y="1265" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="288" y="1136" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="312" y="834" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="507" y="783" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="799" y="513" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="759" y="622" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="956" y="572" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="1103" y="1043" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="1185" y="707" width="33" height="31"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="1185" y="835" width="33" height="31"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="40" height="48">
   <object name="RespawnPointW3M1Top" type="RespawnPoint" x="1199" y="135" width="44" height="45">
