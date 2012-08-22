@@ -41,6 +41,7 @@ package GameObject.Menu
 		
 		public function trigger(time:Number , reverse = false):void {
 			m_state = "display";
+			m_timer = new FlxTimer();
 			m_timer.start(time);
 			m_reverse = reverse;
 			addToStage();
@@ -56,7 +57,7 @@ package GameObject.Menu
 			}
 		}
 		public function resetTime():void {
-			m_timer.stop();
+			m_timer = new FlxTimer();
 		}
 		
 		public function manageGraphic():void {
