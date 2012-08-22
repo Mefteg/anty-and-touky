@@ -413,29 +413,34 @@ package GameObject
 		}
 		
 		public function addSpecial(spec:int):void {
-			if(m_onSpecial){
+			if (m_onSpecial) {
+				var time:Number = m_timerSpecial.time;
+				var timeLeft:Number = m_timerSpecial.timeLeft;
+				m_timerSpecial = new FlxTimer();
 				//si on va ajouter trop de temps
-				if (m_timerSpecial.time - m_timerSpecial.timeLeft < spec) {
+				if (time - timeLeft < spec) {
 					//relancer un timer entier
-					m_timerSpecial.start(m_timerSpecial.time);
-					m_camembert.trigger(m_timerSpecial.time, true);
+					m_timerSpecial.start(time);
+					m_camembert.trigger(time, true);
 				}else { //sinon
 					//relancer un timer avec le temps ajouté
-					m_timerSpecial.start(m_timerSpecial.timeLeft + spec);
-					m_camembert.trigger(m_timerSpecial.timeLeft + spec, true);			
+					m_timerSpecial.start(timeLeft + spec);
+					m_camembert.trigger(timeLeft + spec, true);			
 				}
 			}else {
 				if (m_timerSpecialAvailable.finished)
 					return;
+				var time:Number = m_timerSpecialAvailable.time;
+				var timeLeft:Number = m_timerSpecialAvailable.timeLeft;
+				m_timerSpecialAvailable = new FlxTimer();
 				//si on va enlever trop de temps
-				if ( m_timerSpecialAvailable.timeLeft - spec < 0) {
+				if ( timeLeft - spec < 0) {
 					//stopper le timer
-					m_timerSpecialAvailable.stop();
 					m_camembert.resetTime();
 				}else { //sinon
 					//relancer un timer avec le temps ajouté
-					m_timerSpecialAvailable.start(m_timerSpecialAvailable.timeLeft - spec);
-					m_camembert.trigger(m_timerSpecialAvailable.timeLeft - spec, false);			
+					m_timerSpecialAvailable.start(timeLeft - spec);
+					m_camembert.trigger(timeLeft - spec, false);			
 				}
 			}
 		}

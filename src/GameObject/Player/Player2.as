@@ -157,8 +157,8 @@ package GameObject.Player
 			if (!t_found)
 				return;
 			m_onSpecial = true;
-			m_timerSpecial.start(15);
-			m_camembert.trigger(15,true);
+			m_timerSpecial.start(10);
+			m_camembert.trigger(10,true);
 		}
 		
 		override public function unspecial():void {
