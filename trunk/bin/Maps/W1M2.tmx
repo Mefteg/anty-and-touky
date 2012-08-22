@@ -103,6 +103,12 @@
    </properties>
   </object>
   <object name="Heart" type="Heart" x="585" y="195" width="47" height="40"/>
+  <object name="TriggerWarpW1M3Top" type="TriggerWarp" x="31" y="256" width="25" height="65">
+   <properties>
+    <property name="respawn" value="top"/>
+    <property name="url" value="Maps/W1M3.json"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="48" height="40">
   <object name="RespawnPointW1M2Top" type="RespawnPoint" x="1328" y="87" width="113" height="99">

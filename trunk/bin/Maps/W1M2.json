@@ -586,6 +586,19 @@
                  "width":47,
                  "x":585,
                  "y":195
+                }, 
+                {
+                 "height":65,
+                 "name":"TriggerWarpW1M3Top",
+                 "properties":
+                    {
+                     "respawn":"top",
+                     "url":"Maps\/W1M3.json"
+                    },
+                 "type":"TriggerWarp",
+                 "width":25,
+                 "x":31,
+                 "y":256
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -679,6 +692,14 @@
                 {
                  "type":"Foreground"
                 },
+             "110":
+                {
+                 "type":"Hole"
+                },
+             "111":
+                {
+                 "type":"Hole"
+                },
              "112":
                 {
                  "type":"Hole"
@@ -702,6 +723,14 @@
              "12":
                 {
                  "type":"Foreground"
+                },
+             "126":
+                {
+                 "type":"Hole"
+                },
+             "127":
+                {
+                 "type":"Hole"
                 },
              "128":
                 {
@@ -735,6 +764,14 @@
                 {
                  "type":"Hole"
                 },
+             "142":
+                {
+                 "type":"Hole"
+                },
+             "143":
+                {
+                 "type":"Hole"
+                },
              "144":
                 {
                  "type":"PhysicalTile"
@@ -755,19 +792,35 @@
                 {
                  "type":"PhysicalTile"
                 },
+             "158":
+                {
+                 "type":"Hole"
+                },
+             "159":
+                {
+                 "type":"Hole"
+                },
              "16":
                 {
-                 "type":"PhysicalTile"
+                 "":""
                 },
              "160":
                 {
                  "type":"PhysicalTile"
                 },
-             "17":
+             "167":
                 {
-                 "":""
+                 "type":"PhysicalTile"
                 },
              "172":
+                {
+                 "type":"Hole"
+                },
+             "174":
+                {
+                 "type":"Hole"
+                },
+             "175":
                 {
                  "type":"Hole"
                 },
@@ -777,11 +830,63 @@
                 },
              "18":
                 {
+                 "":""
+                },
+             "183":
+                {
+                 "type":"PhysicalTile"
+                },
+             "187":
+                {
+                 "type":"Hole"
+                },
+             "188":
+                {
+                 "type":"Hole"
+                },
+             "189":
+                {
+                 "type":"Hole"
+                },
+             "199":
+                {
                  "type":"PhysicalTile"
                 },
              "20":
                 {
                  "type":"Foreground"
+                },
+             "200":
+                {
+                 "type":"PhysicalTile"
+                },
+             "201":
+                {
+                 "type":"PhysicalTile"
+                },
+             "202":
+                {
+                 "type":"PhysicalTile"
+                },
+             "203":
+                {
+                 "type":"Hole"
+                },
+             "204":
+                {
+                 "type":"Hole"
+                },
+             "205":
+                {
+                 "type":"Hole"
+                },
+             "206":
+                {
+                 "type":"Hole"
+                },
+             "207":
+                {
+                 "type":"Hole"
                 },
              "21":
                 {
@@ -910,6 +1015,14 @@
              "9":
                 {
                  "type":"Foreground"
+                },
+             "94":
+                {
+                 "type":"Hole"
+                },
+             "95":
+                {
+                 "type":"Hole"
                 },
              "96":
                 {
