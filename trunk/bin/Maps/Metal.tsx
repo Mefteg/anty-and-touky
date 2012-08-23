@@ -191,6 +191,21 @@
    <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
+ <tile id="145">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="146">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="147">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
  <tile id="151">
   <properties>
    <property name="type" value="Pipe"/>
@@ -199,6 +214,11 @@
  <tile id="152">
   <properties>
    <property name="type" value="Pipe"/>
+  </properties>
+ </tile>
+ <tile id="153">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
   </properties>
  </tile>
  <tile id="167">
@@ -288,7 +308,7 @@
  </tile>
  <tile id="208">
   <properties>
-   <property name="type" value="PhysicalTile"/>
+   <property name="type" value="Pipe"/>
   </properties>
  </tile>
  <tile id="209">
@@ -298,7 +318,7 @@
  </tile>
  <tile id="210">
   <properties>
-   <property name="type" value="PhysicalTile"/>
+   <property name="type" value="Pipe"/>
   </properties>
  </tile>
  <tile id="211">
@@ -323,15 +343,35 @@
  </tile>
  <tile id="215">
   <properties>
-   <property name="type" value="PhysicalTile"/>
+   <property name="type" value="Pipe"/>
   </properties>
  </tile>
  <tile id="216">
   <properties>
-   <property name="type" value="PhysicalTile"/>
+   <property name="type" value="Pipe"/>
   </properties>
  </tile>
  <tile id="231">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="233">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="234">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="235">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="236">
   <properties>
    <property name="type" value="PhysicalTile"/>
   </properties>

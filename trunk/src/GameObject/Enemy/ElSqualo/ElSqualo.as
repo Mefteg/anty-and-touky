@@ -10,6 +10,7 @@ package GameObject.Enemy.ElSqualo
 	import org.flixel.FlxG;
 	import org.flixel.FlxPoint;
 	import org.flixel.FlxTimer;
+	import Scene.CutScene.CutScene;
 	/**
 	 * ...
 	 * @author ...
@@ -34,9 +35,11 @@ package GameObject.Enemy.ElSqualo
 		
 		private var m_penguinManager:ElSqualoPenguinManager;
 		
+		private var m_cutscene:CutScene;
+		
 		public function ElSqualo(X:Number, Y:Number,areaWidth:int,areaHeight:int) 
 		{
-			super(X, Y);
+			super(X + areaWidth*0.5-32, Y);
 			m_url = "Images/Enemies/ElSqualo/body.png";
 			m_width = 64; m_height = 64;
 			m_rightArm = new SqualoRightArm(this);
@@ -49,8 +52,10 @@ package GameObject.Enemy.ElSqualo
 			m_smoke = EnemySmoke.Explosion();
 			m_collideEvtFree = true;
 			m_activeOffscreen = true;
-			m_stats.initHP(120);
+			m_stats.initHP(1);// 20);
 			m_penguinManager = new ElSqualoPenguinManager(this);
+			
+			m_cutscene = new CutScene("CutScenes/squaloFinalWords");
 		}
 		
 		private function jump():void {
@@ -192,13 +197,16 @@ package GameObject.Enemy.ElSqualo
 			m_stats.m_hp_current -= damage;
 			m_FXhit.play();
 			//check death
-			if (m_stats.m_hp_current <= 0) {
+			if (m_stats.m_hp_current <= 0 && !m_dead) {
 				if(!Global.soloPlayer)
 					m_killer = player;
 				m_timerDeath.start(1);
 				m_dead = true;
 				m_state = "dying";
 				m_smoke.playSmoke(x + m_width / 2, y + m_height / 2);
+				m_penguinManager.blam();
+				m_missilesManager.blam();
+				m_cutscene.start();
 			}
 			//for twinkling
 			changeTwinkleColor(_twinkleHit);

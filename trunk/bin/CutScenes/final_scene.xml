@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+
+<cutscene name="cutscene1">
+	
+	<actiongroup sync="1">
+		<action type="music" name="stop" />
+		<action type="wait" time = "2" />
+		<action type="message" executor="ElSqualo" text="At last we meet!"/>
+		<action type="wait" time = "1" />
+		<action type="message" executor="ElSqualo" text="You've caused some trouble you both !"/>
+		<action type="wait" time = "1" />
+		<action type="message" executor="ElSqualo" text="Well, I'm trying to act cool,"/>
+		<action type="message" executor="ElSqualo" text="but you actually destroyed my whole army..."/>
+		<action type="wait" time = "1" />
+		<action type="message" executor="ElSqualo" text="Anyway, what i'm trying to say is :"/>
+		<action type="wait" time = "1" />
+		<action type="music" name="EvilMachinery" />
+		<action type="message" executor="ElSqualo" text="I'm going to KILL YOU BASTARDS !!"/>
+	</actiongroup>
+	
+</cutscene>

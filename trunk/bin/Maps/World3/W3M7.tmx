@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="24" height="40" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" source="../Metal.tsx"/>
+ <layer name="Background" width="24" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztlkkKwkAQRbOIwwHUztY4bo1n8EAOJ1AXWasH9gsGik/yMxhFsRcPquHn0RWKpuIgCOISNiXnV/l1f5/OvYaeEHRAl+o8f1FW+QdgCEZUR5RzIuuEfwpmYE71knILkVX+NvB+Dc+Wym4b3t/OU9v359l657/yfCd157LJHHs8nyZvr1B7giUxKH9ITrUnZEzADuzBAYwLctnbb51qT7D+IziBs/Bnb791PvpNqX9mTf6VyKaG5NlHGRH5XcXvquL93v/v/gu4gltN/x08toPk
+  </data>
+ </layer>
+ <layer name="Foreground" width="24" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztlssNwjAMhjMUbECZgDILKzADzzvPO88jI8AGjMF/oFKxAq4dB5GIX/oOVdtPSVvXLpxzBUPXvabT4B4JKflLD33i7725rhSuU5NPe8vJPwUzMGd8IzAGE6F/DTZgy/gXYAlWQv8RnMCZ8e/AHhyex/Tbov4L45OG+q+R/bfE/bGfzz3A1QJtgmX9cv/Vyh+jduv+GLVb92trt6lfm1/x/9+vf16gc4I0vrkihwyMXRW5xbq302h6l2RNmt4V2k+HzHnreYDGeh74tj9k3kghDx5keKo=
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="24" height="40">
+  <object type="Lift" x="322" y="1217" width="93" height="56">
+   <properties>
+    <property name="range" value="11"/>
+   </properties>
+  </object>
+  <object type="Cylinders" x="726" y="426"/>
+  <object type="TriggerWarp" x="306" y="41" width="117" height="79">
+   <properties>
+    <property name="respawn" value="down"/>
+    <property name="url" value="Maps/W3B.json"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="RespawnPoints" width="24" height="40">
+  <object type="RespawnPoint" x="353" y="1239">
+   <properties>
+    <property name="location" value="down"/>
+   </properties>
+  </object>
+  <object type="RespawnPoint" x="358" y="1226">
+   <properties>
+    <property name="location" value="init"/>
+   </properties>
+  </object>
+  <object type="RespawnPoint" x="629" y="442">
+   <properties>
+    <property name="location" value="right"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

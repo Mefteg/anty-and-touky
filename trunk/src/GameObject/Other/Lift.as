@@ -32,10 +32,13 @@ package GameObject.Other
 		}
 		
 		override public function update():void {
+			if (Global.frozen)
+				return;
 			switch(m_state) {
 				case "idle" : waitForPlayers(); break;
 				case "movingUp": moveUp(); break;
 				case "stopped" : stay(); break;
+				case "done" : done(); break;
 				default : break;					
 			}
 		}
@@ -97,6 +100,22 @@ package GameObject.Other
 			}
 			if (m_player1Off && m_player2Off)
 				m_state = "done";
+		}
+		
+		private function done():void {
+			if (collide(Global.player1)) {
+				//prevent players from going down
+				if (Global.player1.y + 48 > y +m_height) {
+					Global.player1.y = y+m_height-48;
+				}
+			}
+			
+			if (collide(Global.player2)) {
+				//prevent players from going down
+				if (Global.player2.y + 48 > y +m_height) {
+					Global.player2.y = y+m_height-48;
+				}
+			}
 		}
 		
 		function preventFalling():void {

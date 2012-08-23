@@ -54,8 +54,11 @@ package GameObject.Enemy.ElSqualo
 			m_state = "idle";
 			
 			m_smoke = EnemySmoke.Explosion();
-			m_stats.initHP(100);
+			m_stats.initHP(1);// 00);
 			m_speed = 1;
+			
+			x = m_body.x + 26; 
+			y = m_body.y +16;
 		}
 		
 		override public function attack():void {

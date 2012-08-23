@@ -44,6 +44,8 @@ package GameObject.Enemy.ElSqualo
 		}
 						
 		private function shootPineapple():void {
+			if (m_state == "end")
+				return;
 			m_state = "waitForShooting";
 			m_timerFirstShoot.start(TIME_FIRST_SHOOT);
 			m_currentShot = 0;
@@ -125,6 +127,12 @@ package GameObject.Enemy.ElSqualo
 			m_pineapples = new Array();
 			for (var i:int = 0 ; i < NB_PINEAPPLES ; i++)
 				m_pineapples.push(new Pineapple(m_squalo.m_area));
+		}
+		
+		public function blam():void {
+			m_state = "end";
+			for (var i:int = 0 ; i < NB_PINEAPPLES ; i++)
+				m_pineapples[i].die();
 		}
 		
 		public function isOver():Boolean {
