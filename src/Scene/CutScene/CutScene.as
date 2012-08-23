@@ -66,11 +66,15 @@ package Scene.CutScene
 		}
 		
 		public function end():void {
+			m_state = "END";
 			Global.currentPlaystate.m_enablePanels = true;
 			Global.frozen = false;
 			trace(m_talkers.length);
-			for (var i:int = 0; i < m_talkers.length ; i++) 
-				m_talkers[i].unblock();
+			for (var i:int = 0; i < m_talkers.length ; i++){
+				if(m_talkers[i] != null){
+					m_talkers[i].unblock();
+				}
+			}
 			Global.currentState.remove(this);
 		}
 		
@@ -91,8 +95,9 @@ package Scene.CutScene
 					case "move" : createMover(act); break;
 					case "message": createTalker(act); break;
 					case "music" : m_currentActors.push(new CutSceneMusicObject(act.@name.toString())); break;
-					//case "scroll" : m_currentActors.push( new CutSceneScrollCamera(new GameObject(act.@targetX, act.@targetY),m_player1,m_player2)); break;
-					//case "scrollBack" : m_currentActors.push( new CutSceneScrollCamera(m_player1 , m_player1, m_player2,true)); break;
+					case "wait" : m_currentActors.push(new CutSceneWait(act.@time)); break;
+					case "scroll" : m_currentActors.push( new CutSceneScrollCamera(new GameObject(act.@targetX, act.@targetY),m_player1,m_player2)); break;
+					case "scrollBack" : m_currentActors.push( new CutSceneScrollCamera(m_player1 , m_player1, m_player2,true)); break;
 					default: m_nbActionGroup--; trace("Failed : ",act.@type.toString()); break;
 				}
 			}
@@ -136,6 +141,7 @@ package Scene.CutScene
 		public function next():void {
 			//if the scene is over
 			if (m_currentActionGroup >= m_nbActionGroup) {
+				m_currentActor = 0;
 				end();
 				return;				
 			}

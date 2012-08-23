@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<cutscene name="cutscene1">
+	
+	<actiongroup sync="1">
+		<action type="music" name="stop" />
+		<action type="wait" time = "2" />
+		<action type="message" executor="ElSqualo" text="Aaaargh, I lose..."/>
+		<action type="wait" time = "1" />
+		<action type="message" executor="ElSqualo" text="... I ..."/>
+		<action type="wait" time = "1" />
+		<action type="message" executor="ElSqualo" text="... I ..."/>
+		<action type="wait" time = "1" />
+		<action type="message" executor="ElSqualo" text="... I hate you ..."/>
+	</actiongroup>
+	
+</cutscene>

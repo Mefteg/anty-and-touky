@@ -89,7 +89,7 @@ package GameObject.Enemy
 			}
 		}
 		
-		protected function explode():void {
+		public function explode():void {
 			m_explosion.playSmoke(x, y);
 			removeFromStage();
 			if (m_targetHit)

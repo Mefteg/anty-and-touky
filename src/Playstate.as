@@ -186,7 +186,7 @@ package
 			m_sceneManager = new SceneManager();
 
 			//m_sceneManager.loadScene("Maps/Tuto4.json");
-			m_sceneManager.loadScene("Maps/W1M1.json");
+			m_sceneManager.loadScene("Maps/W3M7.json");
 			//m_sceneManager.loadScene("Maps/test500.json");
 			//m_sceneManager.loadScene("Maps/test2.json");
 			//m_sceneManager.loadScene("Maps/W2M1.json");
@@ -364,7 +364,8 @@ package
 				Global.player1.x = Global.player2.x = 320;
 				Global.player1.y = Global.player2.y = 240;
 				depthBuffer.clearBuffers();
-				m_sceneManager.m_music.stop();
+				if(m_sceneManager.m_music!=null)
+					m_sceneManager.m_music.stop();
 				Global.camera = null;
 				FlxG.switchState(new Menustate());
 				return;

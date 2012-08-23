@@ -38,6 +38,11 @@ package GameObject.Enemy.ElSqualo
 			}
 		}
 		
+		public function blam():void {
+			for (var i:int = 0; i < m_pinguins.length; i++)
+				m_pinguins[i].explode();
+		}
+		
 		override public function update():void {
 			switch(m_state){
 				case "moving" : var boo:Boolean = true;

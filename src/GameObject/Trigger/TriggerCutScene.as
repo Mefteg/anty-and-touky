@@ -17,6 +17,8 @@ package GameObject.Trigger
 		}
 		
 		override public function update():void {
+			if (Global.frozen)
+				return;
 			if (!m_active && ( collide(Global.player1) || collide(Global.player2))) {
 				m_active = true;
 				m_cutscene.start();
