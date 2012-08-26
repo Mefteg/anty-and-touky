@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="Jungle.tsx"/>
  <layer name="Background" width="40" height="48">
   <data encoding="base64" compression="zlib">
-   eJztmD1OXDEQgH2IPQEK1YYuRAJCF4oQuAE/ewCScINQQUMAJVLSBFhBQwEIiYYihC1TAMmRGEseMRrGY4/tRUSi+PS0+/z8vmd77LHHnXPjzwyVTuNnSu79AGYY35XnfwGXgd8JV1r2DPhC2Mp872tgJHAerpusLso28CHwMfH9K6TsANgl7JH3Im+Jq+SH/GR1cSQ/CavfC2A00NIvNnaoXx84IZwCC8BiYAlYV/oX+9ZzzOqi7Be2n1Q2dd+zQdoUkb7DUmdLPyu0zh0XjyMtlnBMtPDjY4vWqY3RnFiy+C0L399LfPNj+n0S6l4V2lGLSWsstfQrqfMauAncCvfp+NyJ1IHt4v2uSPlBA78U/H1a2c+sP3zfrRn8LOtyiZ/27g65xsqUtOtfd9///4x+sbktNqdxP2nNK8nXYrFpnTOGsRZo7dfCT8otY0i5n+bXd/KcRsfMbeRZ9PO5xwFw6B7mSCPkf1/mldHP2kcxP3TpAi8DY8GpS34P04/HNcbWFvGbAt4EJoPXRPg9nfCT4qOm/aQcmfrNAnPAu0y/1v3L/bqkrdAHnb3rvOLXibwj5sfnMC1vOBXajvevd62Nj5x5VYsP7kfBtrT6pXJjbV3BXAT93rv7sdbKLyf31KB+X4PjnMD8E/BDR2mORqx+fafnxim437fGfrVr/JF7uHel+3Hck9P7j+knxT2tv3aNapkjSXOk9I7UPFbqVzIH8TmsN8T+rY312F7xf/GrzV9q5iFkrWH7lewlW5Cbv5S280WFmz8f4mt8z/gdsfmB//8nXPn+Sdsj5Z6/cD9rnkOh+X9qjcvxs+6TU/Azcun8vrb9WvpJ5/eIPx/KjflWeQ7m/5YcJofYuZ71fIXnN9q5/DM27gAGiXlN
+   eJztmLFukzEQgP0QeYKoTIGtqQSlWxkKzRsUyAPQljdopnahpQIJllIiWDqUCImlQ2kzdqBpH4mz5FNO1/PZ59+JQOrwKUp+x/5+22ef3XXOde+ZKa3K/yl59hl4xvik/P8c+B24SLjSsj+BfcJBZrtLQDvwK3y+Y3VR3gObga3E+78hZcfAF8IxaRdZJa6SH3LE6uJIfhJWvwXgQaCmX2zuUL8h8IMwAjaAl4FXwK4yvji2nlNWF+VrYf9JZVPPPXukTxHpPSx11vSzQus8dPE40mIJ50QNPz63aJ3aHM2JJYvfa+H9+4l3nqfftlD3W6EftZi0xlJNv5I6/wDXgYnwnM7Pw0gd2C/e75KUH1fwS8Hb08rusPHwYzcw+Fn25RI/re0W+YyVKenXGzcd/1ujX2xti61p3E/a80rytVhsWteMWewFWv/V8JNyyxhS7qf5DZ28ptE5M4n8F/187vEN+O7u5kht8rsvs2j0yx2jq4QfunSAh4FHwalDvs/KT4prjK0D4rcMPA08CV6Pw/eVhJ8UH9Y5Ls1dmiNTv+fAOrCW6VcjBjW/Dukr9EFn79pT/FqRNmJ+fA3T8oaR0Hd8fL1r0/jIWVe1+OB+FOxLq18qN9b2FR4fL9x0rtXyy8k9U+D8+xAc1wV6/4AfOkprNGL1Gzo9N84B48PzsbJf0z3+xN09u9LzOJ7J6fN5+klxT+tvukfVzJGkNVJqI7WOlfqVrEF8DevPcHxrxLp0Fvtf/JrmL03XIc+gYv+VnCVrkJu/lPbzWQM3fz/E9/i+8T1i6wP/Hc8E/PyknZFy71+4nzXPodD8P7XH5fhZz8mW/CF2f9+0/2r6Sff3iL8fyo35WnkOzW9yc5gcYvd61vsVnt9o9/L32PgLshJ9IA==
   </data>
  </layer>
  <layer name="Foreground" width="40" height="48">
@@ -78,7 +78,7 @@
     <property name="type" value="mosquito"/>
    </properties>
   </object>
-  <object name="TriggerEnemies2" type="TriggerEnemies" x="320" y="49" width="315" height="179">
+  <object name="TriggerEnemies2" type="TriggerEnemies" x="315" y="73" width="315" height="179">
    <properties>
     <property name="coop" value=""/>
     <property name="direction" value="4"/>
@@ -207,7 +207,7 @@
   </object>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="40" height="48">
-  <object name="RespawnPointW3M1Top" type="RespawnPoint" x="1199" y="135" width="44" height="45">
+  <object name="RespawnPointW3M1Top" type="RespawnPoint" x="1161" y="135" width="44" height="45">
    <properties>
     <property name="location" value="top"/>
    </properties>

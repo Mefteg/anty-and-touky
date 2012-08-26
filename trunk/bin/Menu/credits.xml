@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-	<item type="button" positionx="10" positiony="220" sizex="230" sizey="50" name="Fanny" label="Fanny Robin" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15" />
-	<item type="button" positionx="250" positiony="220" sizex="380" sizey="50" name="artist" label="Artist !" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15" />
-	<item type="button" positionx="10" positiony="280" sizex="230" sizey="50" name="Tom" label="Tom Gimenez" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
-	<item type="button" positionx="250" positiony="280" sizex="380" sizey="50" name="programmer" label="Programmer !" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
-	<item type="button" positionx="10" positiony="340" sizex="230" sizey="50" name="Vincent" label="Vincent Roumier" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
-	<item type="button" positionx="250" positiony="340" sizex="380" sizey="50" name="programmer" label="Programmer - Pixel Artist !" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="10" positiony="160" sizex="230" sizey="50" name="Fanny" label="Fanny Robin" backgroundOnOver="0xff76277b" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15" />
+	<item type="button" positionx="250" positiony="160" sizex="380" sizey="50" name="artist" label="Artist !" backgroundOnOver="0xff76277b" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15" />
+	
+	<item type="button" positionx="10" positiony="220" sizex="230" sizey="50" name="Tom" label="Tom Gimenez" backgroundOnOver="0xff0758c6" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="250" positiony="220" sizex="380" sizey="50" name="programmer" label="Programmer !" backgroundOnOver="0xff0758c6" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	
+	<item type="button" positionx="10" positiony="280" sizex="230" sizey="50" name="Vincent" label="Vincent Roumier" backgroundOnOver="0xffff0083" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="250" positiony="280" sizex="380" sizey="50" name="programmer" label="Programmer !" backgroundOnOver="0xffff0083" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="250" positiony="340" sizex="185" sizey="50" name="composer" label="Composer !" backgroundOnOver="0xffff0083" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="445" positiony="340" sizex="185" sizey="50" name="pixelArtist" label="Pixel Artist !" backgroundOnOver="0xffff0083" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	
 	<item type="button" positionx="220" positiony="400" sizex="200" sizey="50" name="options" label="Back !" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
 </data>
