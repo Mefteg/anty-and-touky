@@ -238,7 +238,7 @@ package Scene
 							Global.player1.x = respawn.x;
 							Global.player1.y = respawn.y;
 							Global.player2.x = respawn.x;
-							Global.player2.y = respawn.y+Global.player1.m_hitbox.height+1;
+							Global.player2.y = respawn.y;
 						}
 					}
 				}
