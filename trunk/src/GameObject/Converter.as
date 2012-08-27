@@ -25,6 +25,7 @@ package GameObject
 	import GameObject.Other.BoxHole;
 	import GameObject.Other.Breakable;
 	import GameObject.Other.Butterfly;
+	import GameObject.Other.Clouds.CloudManager;
 	import GameObject.Other.Door;
 	import GameObject.Other.Generator;
 	import GameObject.Other.NPC;
@@ -94,6 +95,7 @@ package GameObject
 				case "Generator" : return new Generator(object.x, object.y, object.properties.door); break;
 				case "Lift" : return new GameObject.Other.Lift(object.x, object.y, object.properties.range); break;
 				case "HorizontalPillar" : return new GameObject.Other.HorizontalPillar(object); break;
+				case "CloudManager" : return new CloudManager();
 				//animated objects
 				case "Alarm" : return AnimatedObject.Alarm(object.x, object.y); break;
 				
