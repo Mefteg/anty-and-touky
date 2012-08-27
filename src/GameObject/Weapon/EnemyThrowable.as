@@ -128,7 +128,7 @@ package GameObject.Weapon
 		}
 		
 		public static function Harpoon():EnemyThrowable {
-			var har:EnemyThrowable = new EnemyThrowable(1, "Images/Weapons/harpoon.png");
+			var har:EnemyThrowable = new EnemyThrowable(1, "Images/Weapons/harpoon.png",2);
 			har.m_fourDirection = true;
 			har.m_width = 32; har.m_height = 32;
 			har.setHitbox(6, 6, 20, 20);

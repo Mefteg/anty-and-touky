@@ -173,21 +173,22 @@ package GameObject
 		override public function onScreen(cam:FlxCamera = null ) : Boolean {
 			if (!Global.camera)
 			return super.onScreen();
-				var t_cam:Camera = Global.camera;
-				
-				var xCam:int = t_cam.scroll.x;
-				var yCam:int = t_cam.scroll.y;
-				var xCamBound:int = xCam + t_cam.width;
-				var yCamBound:int = yCam + t_cam.height;
 			
-				if ( this.x + this.width < xCam || this.x > xCamBound ) {
-					return false;
-				}
-				if ( this.y + this.height < yCam || this.y > yCamBound ) {
-					return false;
-				}
-				
-				return true;
+			var t_cam:Camera = Global.camera;
+			
+			var xCam:int = t_cam.scroll.x;
+			var yCam:int = t_cam.scroll.y;
+			var xCamBound:int = xCam + t_cam.width;
+			var yCamBound:int = yCam + t_cam.height;
+		
+			if ( this.x + this.width < xCam || this.x > xCamBound ) {
+				return false;
+			}
+			if ( this.y + this.height < yCam || this.y > yCamBound ) {
+				return false;
+			}
+			
+			return true;
 		}
 		
 		//COLLISION RECTANGLES FOR SIDING
