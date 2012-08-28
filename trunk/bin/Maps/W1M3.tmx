@@ -78,12 +78,12 @@
     <property name="type" value="mosquito"/>
    </properties>
   </object>
-  <object name="TriggerEnemies2" type="TriggerEnemies" x="315" y="73" width="315" height="179">
+  <object name="TriggerEnemies2" type="TriggerEnemies" x="334" y="100" width="281" height="156">
    <properties>
     <property name="coop" value=""/>
     <property name="direction" value="4"/>
     <property name="location" value="1"/>
-    <property name="number" value="4"/>
+    <property name="number" value="3"/>
     <property name="type" value="mosquito"/>
    </properties>
   </object>
