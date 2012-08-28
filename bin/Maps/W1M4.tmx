@@ -3,22 +3,95 @@
  <tileset firstgid="1" source="Jungle.tsx"/>
  <layer name="Background" width="100" height="18">
   <data encoding="base64" compression="zlib">
-   eJztmLsNwjAQQDMEEyBlA8IGmYMMwG8DUkFFhQQ0NNDQ0ISGAqgpgJlwJFs6new4vtjBiVI80UDuuHf+XKIgCKKOjg4pMWJr+flnD/4j5EX4zYix5iSO8+tzMv45cBADO9kF+h6ANahSCxv9MGMcOHPNd++MB+JJ8JFztexDVYshY89jbhQxYQ10tehZzNnEhyzumDFBTBXPxX0ZIx+ZZR+qnIc8nnBS1YervhEsGBdOqvmuiQ9RhyJc7FeyPHIXp4KYsAZla1GGm2OXFB/HmnyIXPEaWTFCwNKhewHc1032c1OauD7+AayTqj4U8H3N1IfYI+r0YXuP8MlHUZw2rg9bd6c348P5dj68gTIPmvRJ3T7wnJZ4UGMXdaVC8SE7Q8rO53gucDUT+I7qTDTxge+ZIXKC53NZ79Ttg9K/cO61/T5Olx88pyjnFfajmwXwnJZ64gAC53/VevftPWebgedk2+8nTaDJPn5rSawf
+   eJztmLsNwjAQhjMEEyCxAWGDzAED8NoAKqiokICGBhoamtBQADUFMBNGsqXTya8zduJEKT7RmNj5P78uaZIkaUNDg5QMsfH8/FME7wh5Ovynz1hxBoHH1+bk/LcboA/sZJuY5wDMQJWFTbY+5sOEsedMDW1vjDvi4eDjx8WzD1UWPcaO97lW9AkzMGXR8jhmig9Zv0PGCDFWPBfPywz5yD37UI25x/sTTv71EWreCGaMM2duaEvxIXLQEWK/ko3j5+Ko6RNmYJuFDdfALl18HAryIcaK18iS0QEsAroXwH2dsp9TqeL6KAOYkyofF/CdgupD7BFF+vC9R8TkQ9dPHdeH7d3J1O7FeHM+jY9ocKkHKf6L9oHrtEEEGYfI1RUXH7IzxLY+x3VBqJqgjCwpqM5Eig98z+wgJ7g+l71v0T4omYu2sO71/T3OND54TrmcV9iPqRbAddq8JAe6mhrW/6r1Htt3zjoDz8m630+qQJV9fAEdgazC
   </data>
  </layer>
  <layer name="Foreground" width="100" height="18">
   <data encoding="base64" compression="zlib">
-   eJztmN9twjAQxm8CRuhUlAkqJmg7ATw0z/AAG7SdoDABsFTzKTklWPHFDne2kfKTTrGUyDnn8/2Jl0T0OlsRtqrtrbZ9bR+zZbVdbetWD1yt+DacewoLCvPpx9oRB9bBWo8/Sr82H9DihRqfxji11187d+5IoQfWcqFubbmBFtDkEvDstb2ehWcWD3vUkUIPXstVfCodHB+hIK/dhPsxc43BOmzITg+sJVW8hxD7/UJyrVaMQI8tNb3Vp9KcQ0jxXjqcayVNtGLknboey5LSYiQW5Fpf/dOsH8C6t2KeOUYANHH3VEW69QNwzlopz+si1cSUTN3PqOvunjo+6IvLkppaniJnSVQj978U38X9biyo60N7Srvf3VO6nOUD+0z65gfFd8X2u4zvf8Wi382pB+vQ/+bVwHgshkJAjzQ1Pnxoxm4JekCH/pow5rxc9cYauRo9Umx8SPsAc2nGbgl6gINnrF0v0SPF5hfJB4veivVAj5XjvH+2zvicBP+Fuc78Z7s3nJP8A5sh4+Y=
+   eJztmNtRwzAQRbeClEBVIRUwVBCoAD7wN/kwHQQqACpIaArfsXesCGm9UvRixmdmx2+NpKt9WFsiul2tCdsNdjfYYbCH1ara62D3kx445uKYse0YNqTr03vujliwDlo9OuH6Rfjuk8qPzQe0uKGxT0t8TcePfN25IEQPzPebdc+87umvXgBjOdE8ttpAC2hyUrx7no7fwjubq3s0E6JHr2jP1gvwWM6OZzVg/9CCuPYjPA9pawnW4Yni8ocvRpl+grGU8ncNofOnibWpfAR6PNNYWz1GfO/zGdtPJH9vHY61kiapfGRPc42Vk9Z8JBTEWl/+S5k/QO5al/nPPgKgib2mEJdT5g/AMWuXuF0bKSeWJHY9I6/ba8pVv1zDlsZcXiJmSbjqZBPp3yYUrndDQV53ranU9e6BysUsH1hn0pxram0tofUu4/tfyVHv1tSDdTDnvHOcL/mQBtRIsf7hI6XvtqAHdDDHZO4DdMZ5iliNGinUP6R1gLZS+m4LeoDec546X6JGCo0vUh9y1FasB2qsGvv9q83G+yT4L6y157/apWGf5BelDevc
   </data>
  </layer>
- <objectgroup name="Objects" width="100" height="18"/>
+ <objectgroup name="Objects" width="100" height="18">
+  <object name="Penguin0" type="Penguin" x="411" y="448" width="29" height="32"/>
+  <object name="Penguin0" type="Penguin" x="488" y="419" width="29" height="32"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="378" y="145" width="29" height="32"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="568" y="193" width="29" height="32"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="935" y="465" width="29" height="32"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="1200" y="409" width="29" height="32"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="1718" y="96" width="29" height="32"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="1403" y="459" width="29" height="32"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="2356" y="473" width="29" height="32"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="2085" y="86" width="29" height="32"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="2285" y="297" width="29" height="32"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="2946" y="447" width="29" height="32"/>
+  <object name="WaterPenguin0" type="WaterPenguin" x="2947" y="128" width="29" height="32"/>
+  <object name="Penguin0" type="Penguin" x="958" y="158" width="29" height="32"/>
+  <object name="Penguin0" type="Penguin" x="1021" y="192" width="29" height="32"/>
+  <object name="Penguin0" type="Penguin" x="1256" y="145" width="29" height="32"/>
+  <object name="Penguin0" type="Penguin" x="1327" y="143" width="29" height="32"/>
+  <object name="Penguin0" type="Penguin" x="1785" y="458" width="29" height="32"/>
+  <object name="Penguin0" type="Penguin" x="2356" y="131" width="29" height="32"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="2403" y="95" width="29" height="32"/>
+  <object name="Penguin0" type="Penguin" x="2754" y="139" width="29" height="32"/>
+  <object name="Penguin0" type="Penguin" x="2756" y="269" width="29" height="32"/>
+  <object name="Penguin0" type="Penguin" x="2756" y="400" width="29" height="32"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="2210" y="449" width="29" height="32"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="738" y="354" width="29" height="32"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="1698" y="481" width="29" height="32">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="Spikes0" type="Spikes" x="1893" y="239" width="29" height="32">
+   <properties>
+    <property name="respawn" value="left"/>
+   </properties>
+  </object>
+  <object name="Switch1" type="Switch" x="1743" y="467" width="29" height="32">
+   <properties>
+    <property name="door" value="Spikes1"/>
+    <property name="time" value="6"/>
+   </properties>
+  </object>
+  <object name="Spikes1" type="Spikes" x="1894" y="295" width="29" height="32">
+   <properties>
+    <property name="respawn" value="left"/>
+   </properties>
+  </object>
+  <object name="Switch0" type="Switch" x="1743" y="468" width="29" height="32">
+   <properties>
+    <property name="door" value="Spikes0"/>
+    <property name="time" value="6"/>
+   </properties>
+  </object>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="2209" y="223" width="29" height="32">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object name="Heart0" type="Heart" x="2175" y="86" width="29" height="32"/>
+  <object name="Heart0" type="Heart" x="1086" y="450" width="29" height="32"/>
+  <object name="Life0" type="Life" x="2290" y="83" width="29" height="32"/>
+  <object name="Heart0" type="Heart" x="2565" y="481" width="29" height="32"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="3083" y="277" width="29" height="32"/>
+  <object name="TriggerEnemies0" type="TriggerEnemies" x="1336" y="197" width="493" height="186">
+   <properties>
+    <property name="direction" value="5"/>
+    <property name="number" value="5"/>
+    <property name="position" value="2"/>
+    <property name="type" value="mosquito"/>
+   </properties>
+  </object>
+  <object name="FallenResetChecker0" type="FallenResetChecker" x="15" y="523" width="115" height="39"/>
+  <object name="PenguinJetpack0" type="PenguinJetpack" x="1835" y="273" width="29" height="32"/>
+ </objectgroup>
  <objectgroup name="RespawnPoints" width="100" height="18">
   <object name="RespawnPointW1M4Left" type="RespawnPoint" x="69" y="269" width="64" height="45">
    <properties>
     <property name="location" value="left"/>
    </properties>
   </object>
-  <object name="RespawnPointW1M4Init" type="RespawnPoint" x="73" y="351" width="64" height="45">
+  <object name="RespawnPointW1M4Init" type="RespawnPoint" x="75" y="181" width="64" height="45">
    <properties>
     <property name="location" value="init"/>
    </properties>
