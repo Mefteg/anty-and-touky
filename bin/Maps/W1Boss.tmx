@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="21" height="16" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" source="Jungle.tsx"/>
+ <layer name="Background" width="21" height="16">
+  <data encoding="base64" compression="zlib">
+   eJxTYmBgUBpCOByIIyjAkVjMTAfiDApwJh4zs4G4ggScRYSZMDltINbBg3Vx6MNnpjUQ2+DBtqNmkmSmNxD74MG+JJgZzUBaWo8iwkxqpvlyBtLSOjquxGLmYMcAE/BXww==
+  </data>
+ </layer>
+ <layer name="Foreground" width="21" height="16">
+  <data encoding="base64" compression="zlib">
+   eJwLYWBgCKUiDgPiFCCeCsSlVMBTgDgNaiaIpgaAmTVq5qiZo2YOXjNbGahTJrVAzSxhoE6ZBMNlQAwAH1M0sw==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="21" height="16">
+  <object name="Centipede" type="Centipede" x="31" y="33" width="608" height="446"/>
+  <object name="MusicBoss" type="Music" x="7" y="11" width="52" height="40">
+   <properties>
+    <property name="url" value="wrath of the coconuts"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="RespawnPoints" width="21" height="16">
+  <object name="RespawnPointW1BossInit" type="RespawnPoint" x="323" y="331" width="65" height="49">
+   <properties>
+    <property name="location" value="init"/>
+   </properties>
+  </object>
+  <object name="RespawnPointW1BossTop" type="RespawnPoint" x="323" y="259" width="65" height="49">
+   <properties>
+    <property name="location" value="top"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
