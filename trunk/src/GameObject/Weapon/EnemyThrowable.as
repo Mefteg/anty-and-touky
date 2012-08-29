@@ -12,6 +12,8 @@ package GameObject.Weapon
 		
 		public var m_enemy:Enemy;
 		
+		public var m_deflectPlayer:PlayableObject;
+		
 		public function EnemyThrowable(power:int,url:String,speed:int = 4) 
 		{
 			super(power, url,speed );
@@ -26,6 +28,7 @@ package GameObject.Weapon
 		}
 		
 		override public function CheckDamageDealt():Boolean {
+			
 			var result:Boolean = false;
 			if ( Global.soloPlayer) {
 				if (collide(Global.soloPlayer) && Global.soloPlayer.visible){
@@ -41,6 +44,26 @@ package GameObject.Weapon
 			if (collide(Global.player2) && Global.player2.visible){
 				Global.player2.takeDamage();
 				result = m_fragile;
+			}
+				
+			return result;
+		}
+		
+		public function CheckDamageDealtAfterRejection():Boolean {
+			var m_enemies:Vector.<Enemy> = Global.currentPlaystate.m_enemies;
+			var result:Boolean = false;
+			//check enemies for damage
+			for (var i:int = 0; i < m_enemies.length; i++) {
+				var enemy:Enemy = m_enemies[i];
+				if (enemy == null || enemy.isDead() || !enemy.m_stopBullets )
+					continue;
+				//if collision with an enemy
+				if (collide(enemy)) {
+					result = true;
+					//deal damage
+					enemy.takeDamage(m_deflectPlayer , this);
+					break;
+				}
 			}
 			return result;
 		}
@@ -61,16 +84,23 @@ package GameObject.Weapon
 		
 		private function Reject(player:PlayableObject) : void {
 			player.m_didDeflect = true;
+			m_deflectPlayer = player;
 			var dir:uint = player.facing;
 			if(dir==RIGHT || dir==LEFT){
 				m_direction.x = 0;
-				m_direction.y = 1;
+				if (player.m_state == "attack2")
+					m_direction.y = -1;
+				else
+					m_direction.y = 1;
 			}else {
-				m_direction.x = 1;
+				if (player.m_state == "attack2")
+					m_direction.x = -1;
+				else
+					m_direction.x = 1;
 				m_direction.y = 0;
 			}
 			m_speed *= 1.5;
-			m_state == "rejected";
+			m_state = "rejected";
 		}
 		
 		override public function update():void {
@@ -84,11 +114,13 @@ package GameObject.Weapon
 								if (!onScreen() || CheckDamageDealt()) {
 									//deactivate the object
 									touched();
+								}else{
+									CheckRejection();
 								}
-								CheckRejection();
 								break;
-				case "rejected": if (!onScreen())
+				case "rejected": if (!onScreen() || CheckDamageDealt() || CheckDamageDealtAfterRejection()) 
 									touched();
+								
 								break;
 				default : break;
 			}
