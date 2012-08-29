@@ -373,12 +373,13 @@
   </object>
   <object name="Penguin0" type="Penguin" x="680" y="800" width="46" height="34"/>
   <object name="Penguin0" type="Penguin" x="782" y="801" width="46" height="34"/>
-  <object name="TriggerCutSceneHelp" type="TriggerCutScene" x="92" y="514" width="484" height="219">
+  <object name="TriggerCutSceneHelp" type="TriggerCutScene" x="58" y="516" width="483" height="220">
    <properties>
     <property name="url" value="CutScenes/w1m1_cutscene1"/>
    </properties>
   </object>
   <object name="Penguin0" type="Penguin" x="648" y="438" width="46" height="34"/>
+  <object name="CloudManager0" type="CloudManager" x="97" y="20" width="79" height="28"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="30" height="30">
   <object name="RespawnInit" type="RespawnPoint" x="95" y="96" width="64" height="62">

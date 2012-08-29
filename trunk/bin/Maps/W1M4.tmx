@@ -109,6 +109,7 @@
     <property name="url" value="Maps/W1Boss.json"/>
    </properties>
   </object>
+  <object name="CloudManager0" type="CloudManager" x="21" y="14" width="96" height="45"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="100" height="18">
   <object name="RespawnPointW1M4Left" type="RespawnPoint" x="69" y="269" width="64" height="45">
