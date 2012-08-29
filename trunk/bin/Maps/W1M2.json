@@ -52,18 +52,6 @@
                 }, 
                 {
                  "height":48,
-                 "name":"Penguin2",
-                 "properties":
-                    {
-
-                    },
-                 "type":"Penguin",
-                 "width":49,
-                 "x":1075,
-                 "y":316
-                }, 
-                {
-                 "height":48,
                  "name":"Penguin3",
                  "properties":
                     {
@@ -79,7 +67,7 @@
                  "name":"Penguin4",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":49,
@@ -139,7 +127,7 @@
                  "name":"Penguin6",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":49,
@@ -361,7 +349,7 @@
                  "name":"Penguin6",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":49,
@@ -505,7 +493,7 @@
                  "name":"Penguin6",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":49,

@@ -340,12 +340,12 @@
  </tileset>
  <layer name="Background" width="30" height="30">
   <data encoding="base64" compression="zlib">
-   eJzllr9OAkEQh/ch7gmI0IidWnjawSWI1mpAW0gEGgs1QUttwEITbIACWuAZ/V0ylwyX2b3lbjlILL7m9jLfzp9spqCUKvxDDkE5A0cU5wbcargTvD44z8AFxWmBtoYGu0Oe3kfwQkTeOrjakJrgfWax47ym6L+EL3jzQOd92pFXwuVdXNf5O0evrYv/u425sunHvs3zPnhnjmqbJt+54ewAFGM0wT3xwL6XHNb5GJwwPNABXaLHzk634PVY/D54I97BKINX18N4vjx+xAAMwZfBazNHm3rHYAKmgvdMJe8iSV4vhddmJ7DN91Otz/cCLMEK/KTwSj2WvDrCOoRvtGlHkXYRU76/oCowErwu3pTIy2tbonqGb8qH0s+bC680z/Ezl96KUNtAcxZQHUzeOvX4Elxb3NMlfkKuu/D+AZ8Arns=
+   eJzllrtOAkEUhuch9gmI0IidULjSIYkCtRjBFhIvjYWaqKU2QIEJNGghLfCM/Btnk8PmnJ3Z3eGSWHzZZGdzvjmXzE5OKZX7hxyCYgaOdJxL0BK4Yrw+OM1ARcfpgp7ANdnDNr234FkTeuugkZBzxvtEYkd5SdF/Dp/xbgPJ+7gjL4fLvXDeLzASnqZ4owxeySnFtHXRb13na9uPfZvnffD+OqptmnxnMWsHIB+hDTqaG/K+4LDOx6BE8MAduNc8kLXyBrweif8K3jTvYJzBK/Uwmi+NH9IHAzCM8drMUVLvFHyDH8Z7osx3EZPXS+G1uRPY5vup1ud7DhZgqf7OvaRersecVyKoQ3Dmxt1RuLtIXL4TcMYwZrwuzpTQS2tb0PUMzpQPJc+bCy83z9E1l94qU9uasFZT5v9pXff4AjQt9ukS35DrLrwr28m3tg==
   </data>
  </layer>
  <layer name="Foreground" width="30" height="30">
   <data encoding="base64" compression="zlib">
-   eJztl/sJAjEMxvOXrwF8baDzVCcQJ9CbQMEBdF9TuHIlNDXpCz0MfFzptfzarwm0BgAOjXVEnVAv1LWRnqhzz7XfEvEQjLmgusJcTaRwZ6g5atGYu0ZtUNvIeri2gSGvUnzeofaR9XBtx6Nc6uEENU1cT6jNcamHS9RKwf0UIa7bW8hDIGNKciV7y90/53Pt0HBz6pXO1XC5epUEnav1OZZrmrm/cL7fzJXmXmmuNPdq+CzJvbGc7587fi5Xw35/DS5Xw5L7VW5wNRy6X92hzhvIhfH6bz3XvhtqvIM6j0sZ9t8bGwheRw==
+   eJztl20KwjAMhvPLrwPo9ATqeaYnEE+gO4GCB9D7moLBEJI1tWtB2AsvltrxNGnarS0AHCr7iD6hX+hrJT/R5w83/Gp6GP2WPOMv6C7CLalfuDP0HL2oyA25bNBr9KZnPla7hW9dadzYWu3Qe+UZmk9jtIknuTKHE/Q0MgdrPlrb4socLtGrBG5MGpdi03IIYsyQXE9sufFbeS6tFG7qfrX2UCrX2q+e8fLZ1Dz31RqJYtuCvZ9KrK8nLyW4FGdfPQzN5Swed05decRZfH1z68ojrfZkjf3DuTFyR26QdV7w/prnpOf7KlfW+0P7vrpDmTsQqWX9tw833BtK3IM6xpWM8N8bIOBjnw==
   </data>
  </layer>
  <objectgroup name="Objects" width="30" height="30">
@@ -373,11 +373,12 @@
   </object>
   <object name="Penguin0" type="Penguin" x="680" y="800" width="46" height="34"/>
   <object name="Penguin0" type="Penguin" x="782" y="801" width="46" height="34"/>
-  <object name="TriggerCutSceneHelp" type="TriggerCutScene" x="63" y="479" width="529" height="258">
+  <object name="TriggerCutSceneHelp" type="TriggerCutScene" x="92" y="514" width="484" height="219">
    <properties>
     <property name="url" value="CutScenes/w1m1_cutscene1"/>
    </properties>
   </object>
+  <object name="Penguin0" type="Penguin" x="648" y="438" width="46" height="34"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="30" height="30">
   <object name="RespawnInit" type="RespawnPoint" x="95" y="96" width="64" height="62">
