@@ -220,12 +220,6 @@ package GameObject
 			m_camembert.resetTime();
 			resetTwinkle();
 		}
-		public function resetTwinkle():void {
-			//twinkling reset
-			m_timerTwinkle.stop();
-			alpha = 1;
-			_twinkleOn = false;			
-		}
 		
 		public function magicAttack(i:int):void {
 			/*if (i >= m_magics.length || isBusy())
@@ -374,6 +368,7 @@ package GameObject
 		
 		override public function respawn() : void {
 			visible = false;
+			unspecial();
 			m_timerMagicCast.start(4);
 			m_lifes --;
 			m_state = "respawn";

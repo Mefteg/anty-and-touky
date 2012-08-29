@@ -76,6 +76,7 @@ package GameObject.Enemy.ElSqualo
 			m_state = "moving";
 			m_nbPg = nbPing;
 			for (var i:int = 0; i < m_nbPg; i++) {
+				m_pinguins[i].resetTwinkle();
 				putAtRandomPosition(m_pinguins[i]);
 			}
 			initPDone();
