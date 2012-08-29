@@ -55,10 +55,14 @@ package GameObject.Other
 						Global.soloPlayer.takeDamage();
 					return;
 				}
-				if (canInteract(Global.player1))
+				if (canInteract(Global.player1)){
+					Global.player1.resetTwinkle();
 					Global.player1.takeDamage();
-				if (canInteract(Global.player2))
+				}
+				if (canInteract(Global.player2)){
+					Global.player2.resetTwinkle():
 					Global.player2.takeDamage();
+				}
 			}
 		}
 		
