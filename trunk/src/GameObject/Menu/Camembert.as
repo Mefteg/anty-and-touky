@@ -64,6 +64,8 @@ package GameObject.Menu
 					m_state = "idle";
 					visible = false;
 				}
+			}else {
+				visible = false;
 			}
 		}
 		public function resetTime():void {
