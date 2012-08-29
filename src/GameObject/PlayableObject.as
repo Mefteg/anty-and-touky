@@ -144,6 +144,7 @@ package GameObject
 			Global.currentPlaystate.depthBuffer.addElement(this, DepthBufferPlaystate.s_playerGroup);
 			//add the equipement
 			m_equipement.addToStage();
+			m_camembert.addToStage();
 		}
 		
 		override public function load():void {
@@ -216,7 +217,8 @@ package GameObject
 		
 		public function resetSpecial():void {
 			unspecial();
-			m_timerSpecialAvailable.start(0.1);
+			play("idle" + facing);
+			m_timerSpecialAvailable.start(0.01);
 			m_camembert.resetTime();
 			resetTwinkle();
 		}
@@ -420,7 +422,7 @@ package GameObject
 				}else { //sinon
 					//relancer un timer avec le temps ajouté
 					m_timerSpecial.start(timeLeft + spec);
-					m_camembert.trigger(timeLeft + spec, true);			
+					m_camembert.removeTime(spec);			
 				}
 			}else {
 				if (m_timerSpecialAvailable.finished)
@@ -435,7 +437,7 @@ package GameObject
 				}else { //sinon
 					//relancer un timer avec le temps ajouté
 					m_timerSpecialAvailable.start(timeLeft - spec);
-					m_camembert.trigger(timeLeft - spec, false);			
+					m_camembert.addTime(spec);			
 				}
 			}
 		}

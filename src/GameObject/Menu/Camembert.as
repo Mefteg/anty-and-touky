@@ -24,6 +24,7 @@ package GameObject.Menu
 			m_timer = new FlxTimer();
 			m_url = "Images/Menu/camenbert.png";
 			m_width = 16; m_height = 16;
+			visible = false;
 		}
 		
 		override public function addToStage():void {
@@ -43,21 +44,31 @@ package GameObject.Menu
 			m_state = "display";
 			m_timer = new FlxTimer();
 			m_timer.start(time);
-			m_reverse = reverse;
-			addToStage();
+			m_reverse = reverse; 
+			visible = true;
 		}
+		
+		public function addTime(time:Number) {
+			m_timer._timeCounter += time;
+		}
+		
+		public function removeTime(time:Number) {
+			m_timer._timeCounter -= time;
+		}
+		
 		override public function update():void {
 			if (m_state == "display") {
 				x = m_target.x; y = m_target.y - 16;
 				manageGraphic();				
 				if (m_timer.finished) {
 					m_state = "idle";
-					removeFromStage();
+					visible = false;
 				}
 			}
 		}
 		public function resetTime():void {
 			m_timer = new FlxTimer();
+			visible = false;
 		}
 		
 		public function manageGraphic():void {
