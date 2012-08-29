@@ -33,9 +33,11 @@ package GameObject.Player
 			m_stringNext = "NUMPADTWO";
 			m_stringPrevious = "NUMPADTHREE";*/
 			setHitbox(16, 16, 16, 16);
-			m_stringValidate = "K";
-			m_stringNext = "L";
-			m_stringPrevious = "M";	
+			if(Global.nbPlayers == 2){
+				m_stringValidate = "K";
+				m_stringNext = "L";
+				m_stringPrevious = "M";	
+			}
 			
 			m_equipement.m_throwable = PlayerThrowable.Egg();
 			m_equipement.m_weapon.visible = false;
@@ -93,10 +95,10 @@ package GameObject.Player
 			addAnimation("attack2" + DOWN, [32,31,30], 10, false);
 			addAnimation("attack2" + LEFT, [29,28,27], 10, false);
 			//throw anim
-			addAnimation("throw" + UP, [21,22], 15, false);
-			addAnimation("throw" + RIGHT,[3,4], 15, false);
-			addAnimation("throw" + DOWN, [15, 16], 15, false);
-			addAnimation("throw" + LEFT, [9,10], 15, false);
+			addAnimation("throw" + UP, [21,22], 10, false);
+			addAnimation("throw" + RIGHT,[3,4], 10, false);
+			addAnimation("throw" + DOWN, [15, 16], 10, false);
+			addAnimation("throw" + LEFT, [9,10], 10, false);
 			//rush anim
 			addAnimation("rush" + UP, [23], 10, false);
 			addAnimation("rush" + RIGHT, [5], 10, false);

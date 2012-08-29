@@ -400,7 +400,8 @@ package
 				if ( type == TilesManager.HOLE_TILE || type == TilesManager.PIPE_TILE  )
 					return;
 			}
-			if (Global.soloPlayer.m_name == Global.player1.m_name){
+			Global.soloPlayer.resetTwinkle();
+			if (Global.soloPlayer.m_name == Global.player1.m_name) {
 				Global.soloPlayer = Global.player2;
 				Global.soloPlayer.visible = true;
 				Global.soloPlayer.m_camembert.visible = true;
