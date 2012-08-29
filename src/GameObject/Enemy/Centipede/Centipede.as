@@ -18,7 +18,7 @@ package GameObject.Enemy.Centipede
 		private var TIME_WAIT_IN:int = 1;
 		
 		private var m_parts:Array;
-		private var m_nbParts:int = 1;// 13;
+		private var m_nbParts:int = 13;
 		private var m_livingParts:int;
 		private var m_area:Rectangle;
 		
