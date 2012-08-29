@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 
-<cutscene name="tuto1_cutscene1">
+<cutscene name="tuto3_cutscene1">
 	<actiongroup sync="1">
 		<action type="message" executor="MexicanRaccoon" text="Now, we'll see if you can use your head."/>
 		<action type="message" executor="MexicanRaccoon" text="Place you in front of the rock and press H button with Anty."/>

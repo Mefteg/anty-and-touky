@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 
-<cutscene name="tuto1_cutscene1">
+<cutscene name="tuto2_cutscene1">
 	<actiongroup sync="1">
 		<action type="message" executor="MexicanRaccoon" text="Nice Job"/>
 		<action type="message" executor="MexicanRaccoon" text="Try to defend yourself with your tongue or beak with G or L button!"/>
