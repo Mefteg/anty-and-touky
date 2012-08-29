@@ -60,6 +60,7 @@ package GameObject.Weapon
 		}
 		
 		private function Reject(player:PlayableObject) : void {
+			player.m_didDeflect = true;
 			var dir:uint = player.facing;
 			if(dir==RIGHT || dir==LEFT){
 				m_direction.x = 0;

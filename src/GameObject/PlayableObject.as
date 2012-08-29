@@ -44,6 +44,8 @@ package GameObject
 		public var m_timerMagicCast:FlxTimer;
 		public var m_timerAttack2:FlxTimer;
 		
+		public var m_didDeflect:Boolean = false;
+		
 		public var m_timerSpecial:FlxTimer;
 		protected var m_timerSpecialAvailable:FlxTimer;
 		
@@ -169,7 +171,7 @@ package GameObject
 		}
 		
 		public function isAttacking():Boolean {
-			return (m_state == "attack") || (m_state == "attack2") || (m_state == "waitForAttack2" && finished) ;
+			return (m_state == "attack") || (m_state == "attack2") || (m_state == "waitForAttack2" && !m_didDeflect && finished) ;
 		}
 		
 		public function isRushing():Boolean {
@@ -177,6 +179,7 @@ package GameObject
 		}
 		
 		public function attack():void {
+			m_didDeflect = false;
 			if (isBusy() && !m_state=="waitForAttack2")
 				return;
 			//if it the second attack
