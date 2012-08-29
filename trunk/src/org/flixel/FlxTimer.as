@@ -37,7 +37,7 @@ package org.flixel
 		/**
 		 * Internal tracker for the actual timer counting up.
 		 */
-		protected var _timeCounter:Number;
+		public var _timeCounter:Number;
 		/**
 		 * Internal tracker for the loops counting up.
 		 */
