@@ -5,6 +5,6 @@
 		<action type="message" executor="MexicanRaccoon4" text="Just one more thing."/>
 		<action type="message" executor="MexicanRaccoon4" text="Anty can't jump but Touky can carry him!"/>
 		<action type="message" executor="MexicanRaccoon4" text="Touky has to overlap ( hum hum ) and press M."/>
-		<action type="message" executor="MexicanRaccoon4" text="In this pose, Anty is the only one who can trhow things."/>
+		<action type="message" executor="MexicanRaccoon4" text="In this pose, Anty is the only one who can throw things."/>
 	</actiongroup>
 </cutscene>
