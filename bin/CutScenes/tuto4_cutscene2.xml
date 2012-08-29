@@ -5,6 +5,5 @@
 		<action type="message" executor="MexicanRaccoon4" text="Oh! I forgot"/>
 		<action type="message" executor="MexicanRaccoon4" text="Touky can carry some objects."/>
 		<action type="message" executor="MexicanRaccoon4" text="Try to put this box on the switch."/>
-		<action type="message" executor="MexicanRaccoon4" text="In this pose, Anty is the only one who can trhow things."/>
 	</actiongroup>
 </cutscene>

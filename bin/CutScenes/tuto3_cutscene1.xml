@@ -4,5 +4,6 @@
 	<actiongroup sync="1">
 		<action type="message" executor="MexicanRaccoon" text="Now, we'll see if you can use your head."/>
 		<action type="message" executor="MexicanRaccoon" text="Place you in front of the rock and press H button with Anty."/>
+		<action type="message" executor="MexicanRaccoon" text="If Touky is with you, he has top sit on Anty's back."/>
 	</actiongroup>
 </cutscene>
