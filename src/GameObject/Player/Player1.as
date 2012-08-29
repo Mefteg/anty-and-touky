@@ -25,9 +25,15 @@ package GameObject.Player
 			super(X, Y, null);
 			m_url = "Images/Players/anty.png";
 			Global.player1 = this;
-			m_stringNext = "G";
-			m_stringPrevious = "H";
-			m_stringValidate = "F";
+			if (Global.nbPlayers == 1) {
+				m_stringNext = "L";
+				m_stringPrevious = "M";
+				m_stringValidate = "K";
+			}else{
+				m_stringNext = "G";
+				m_stringPrevious = "H";
+				m_stringValidate = "F";
+			}
 			
 			m_name = "Player1";
 			setHitbox(8, 18, 31, 20);
