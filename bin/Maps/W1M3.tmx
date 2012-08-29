@@ -42,7 +42,11 @@
   <object name="Life0" type="Life" x="211" y="1358" width="22" height="17"/>
   <object name="BreakableRock2" type="BreakableRock" x="631" y="1160" width="35" height="36"/>
   <object name="Penguin0" type="Penguin" x="1147" y="444" width="33" height="31"/>
-  <object name="Penguin0" type="Penguin" x="850" y="145" width="33" height="31"/>
+  <object name="Penguin0" type="Penguin" x="850" y="145" width="33" height="31">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object name="Penguin0" type="Penguin" x="1061" y="484" width="33" height="31">
    <properties>
     <property name="coop" value=""/>
@@ -74,7 +78,7 @@
    <properties>
     <property name="direction" value="4"/>
     <property name="location" value="7"/>
-    <property name="number" value="4"/>
+    <property name="number" value="3"/>
     <property name="type" value="mosquito"/>
    </properties>
   </object>

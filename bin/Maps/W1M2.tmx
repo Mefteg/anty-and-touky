@@ -18,9 +18,12 @@
     <property name="coop" value=""/>
    </properties>
   </object>
-  <object name="Penguin2" type="Penguin" x="1075" y="316" width="49" height="48"/>
   <object name="Penguin3" type="Penguin" x="1290" y="380" width="49" height="48"/>
-  <object name="Penguin4" type="Penguin" x="1225" y="379" width="49" height="48"/>
+  <object name="Penguin4" type="Penguin" x="1225" y="379" width="49" height="48">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object name="Penguin5" type="Penguin" x="1180" y="307" width="49" height="48">
    <properties>
     <property name="coop" value=""/>
@@ -33,7 +36,11 @@
     <property name="coop" value=""/>
    </properties>
   </object>
-  <object name="Penguin6" type="Penguin" x="1245" y="935" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="1245" y="935" width="49" height="48">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object name="Penguin6" type="Penguin" x="1054" y="907" width="49" height="48"/>
   <object name="Penguin6" type="Penguin" x="918" y="795" width="49" height="48"/>
   <object name="Penguin6" type="Penguin" x="811" y="1003" width="49" height="48"/>
@@ -69,7 +76,11 @@
   </object>
   <object name="WaterPenguin0" type="WaterPenguin" x="547" y="108" width="67" height="37"/>
   <object name="Penguin6" type="Penguin" x="501" y="969" width="49" height="48"/>
-  <object name="Penguin6" type="Penguin" x="497" y="1039" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="497" y="1039" width="49" height="48">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object name="Penguin6" type="Penguin" x="270" y="767" width="49" height="48"/>
   <object name="Penguin6" type="Penguin" x="509" y="777" width="49" height="48"/>
   <object name="Penguin6" type="Penguin" x="420" y="608" width="49" height="48"/>
@@ -85,7 +96,11 @@
   <object name="Penguin6" type="Penguin" x="69" y="320" width="49" height="48"/>
   <object name="PenguinJetpack1" type="PenguinJetpack" x="80" y="383" width="49" height="48"/>
   <object name="Penguin6" type="Penguin" x="256" y="273" width="49" height="48"/>
-  <object name="Penguin6" type="Penguin" x="364" y="344" width="49" height="48"/>
+  <object name="Penguin6" type="Penguin" x="364" y="344" width="49" height="48">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object name="Penguin6" type="Penguin" x="437" y="259" width="49" height="48"/>
   <object name="Snake" type="TriggerEnemies" x="323" y="373" width="328" height="369">
    <properties>
