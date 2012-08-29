@@ -374,7 +374,10 @@ package GameObject
 		override public function respawn() : void {
 			visible = false;
 			unspecial();
-			m_timerMagicCast.start(4);
+			if (Global.nbPlayers == 1)
+				m_timerMagicCast.start(1.2);
+			else
+				m_timerMagicCast.start(4);
 			m_lifes --;
 			m_state = "respawn";
 			m_smoke.playSmoke(x, y);
