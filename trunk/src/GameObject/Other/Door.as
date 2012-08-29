@@ -60,7 +60,7 @@ package GameObject.Other
 					Global.player1.takeDamage();
 				}
 				if (canInteract(Global.player2)){
-					Global.player2.resetTwinkle():
+					Global.player2.resetTwinkle();
 					Global.player2.takeDamage();
 				}
 			}
