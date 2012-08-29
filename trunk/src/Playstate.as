@@ -186,7 +186,7 @@ package
 			m_sceneManager = new SceneManager();
 
 			//m_sceneManager.loadScene("Maps/Tuto4.json");
-			m_sceneManager.loadScene("Maps/W3M7.json");
+			m_sceneManager.loadScene("Maps/W1M3.json");
 			//m_sceneManager.loadScene("Maps/test500.json");
 			//m_sceneManager.loadScene("Maps/test2.json");
 			//m_sceneManager.loadScene("Maps/W2M1.json");
@@ -232,6 +232,15 @@ package
 			m_textLife2.text = "x" + Global.player2.m_lifes;
 			m_textScore1.text = ""+Global.player1.m_score;
 			m_textScore2.text = "" + Global.player2.m_score;
+			
+			if (FlxG.keys.pressed("X")) {
+				Global.player1.m_collideEvtFree = true;
+				Global.player2.m_collideEvtFree = true;
+			}
+			else if (FlxG.keys.justReleased("X")) {
+				Global.player1.m_collideEvtFree = false;
+				Global.player2.m_collideEvtFree = false;
+			}
 			
 			super.update();
 		}
@@ -397,6 +406,7 @@ package
 				Global.soloPlayer.m_camembert.visible = true;
 				Global.player1.visible = false;
 				Global.player1.m_camembert.visible = false;
+				Global.player2.replaceWithNoCollision();
 			}else {
 				Global.soloPlayer = Global.player1;
 				Global.soloPlayer.visible = true;

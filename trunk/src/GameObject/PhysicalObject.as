@@ -157,5 +157,73 @@ package GameObject
 			
 			return tiles;
 		}
+		
+		public function replaceWithNoCollision() : void 
+		{
+			var didCollide:Boolean = true;
+			while (didCollide) {
+				didCollide = false;
+				var tilesManager:TilesManager = Global.tilesManager;
+				// get the top left corner of the object
+				var topleft:FlxPoint = new FlxPoint(this.x + m_hitbox.x, this.y + m_hitbox.y);
+				// get the bottom right corner of the object
+				var bottomright:FlxPoint = new FlxPoint(topleft.x + m_hitbox.width, topleft.y + m_hitbox.height);
+				
+				// convert them for the grid
+				var topleftToGrid:FlxPoint = new FlxPoint(int(topleft.x/Global.tile_width), int(topleft.y/Global.tile_height));
+				var bottomrightToGrid:FlxPoint = new FlxPoint(int(bottomright.x / Global.tile_width), int(bottomright.y / Global.tile_height));
+				
+				// for each tile under the object
+				for ( var i:int = topleftToGrid.x; i <= bottomrightToGrid.x; i++ ) {
+					for ( var j:int = topleftToGrid.y; j <= bottomrightToGrid.y; j++ ) {
+						var index:int = j * Global.nb_tiles_width + i;
+						var type:int = tilesManager.getTileType(0, index);
+							if (type == TilesManager.PHYSICAL_TILE) {
+							didCollide = true;
+							var xTile:int = i * 32;
+							var yTile:int = j * 32;
+							//if the object is colliding from the left
+							/*if (x < xTile)
+								x = xTile - m_width;
+							//else
+							else
+								x = xTile + 32;*/
+							//if the object is colliding from the left
+							if (y < yTile)
+								y = yTile - m_height;
+							//else
+							else
+								y = yTile + 32 - m_hitbox.y;
+						}
+					}
+				}
+							
+				// for each tile under the object
+				for ( var i:int = topleftToGrid.x; i <= bottomrightToGrid.x; i++ ) {
+					for ( var j:int = topleftToGrid.y; j <= bottomrightToGrid.y; j++ ) {
+						var index:int = j * Global.nb_tiles_width + i;
+						var type:int = tilesManager.getTileType(1, index);
+						if (type == TilesManager.PHYSICAL_TILE) {
+							didCollide = true;
+							var xTile:int = i * 32;
+							var yTile:int = j * 32;
+							//if the object is colliding from the left
+							/*if (x < xTile)
+								x = xTile - m_width;
+							//else
+							else
+								x = xTile + 32;*/
+							//if the object is colliding from the left
+							if (y < yTile)
+								y = yTile - m_height;
+							//else
+							else
+								y = yTile + 32 - m_hitbox.y;
+						}
+					}
+				}
+			}
+			
+		}
 	}
 }

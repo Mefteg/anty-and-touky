@@ -91,6 +91,14 @@ package GameObject
 			_twinkleCount = 0;
 		}
 		
+		
+		public function resetTwinkle():void {
+			//twinkling reset
+			m_timerTwinkle.stop();
+			alpha = 1;
+			_twinkleOn = false;			
+		}
+		
 		public function respawn() : void {
 		}
 	}
