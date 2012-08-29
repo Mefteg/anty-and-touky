@@ -595,6 +595,18 @@
                  "width":41,
                  "x":3139,
                  "y":256
+                }, 
+                {
+                 "height":45,
+                 "name":"CloudManager0",
+                 "properties":
+                    {
+
+                    },
+                 "type":"CloudManager",
+                 "width":96,
+                 "x":21,
+                 "y":14
                 }],
          "opacity":1,
          "type":"objectgroup",

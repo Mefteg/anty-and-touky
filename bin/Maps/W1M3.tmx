@@ -74,7 +74,7 @@
   </object>
   <object name="PenguinJetpack0" type="PenguinJetpack" x="218" y="203" width="33" height="31"/>
   <object name="PenguinJetpack0" type="PenguinJetpack" x="220" y="102" width="33" height="31"/>
-  <object name="TriggerEnemies1" type="TriggerEnemies" x="101" y="405" width="247" height="262">
+  <object name="TriggerEnemies1" type="TriggerEnemies" x="124" y="437" width="190" height="231">
    <properties>
     <property name="direction" value="4"/>
     <property name="location" value="7"/>
@@ -209,6 +209,7 @@
     <property name="url" value="Maps/W1M4.json"/>
    </properties>
   </object>
+  <object name="CloudManager0" type="CloudManager" x="17" y="10" width="82" height="46"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="40" height="48">
   <object name="RespawnPointW3M1Top" type="RespawnPoint" x="1161" y="135" width="44" height="45">

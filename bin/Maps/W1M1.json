@@ -101,16 +101,16 @@
                  "y":801
                 }, 
                 {
-                 "height":219,
+                 "height":220,
                  "name":"TriggerCutSceneHelp",
                  "properties":
                     {
                      "url":"CutScenes\/w1m1_cutscene1"
                     },
                  "type":"TriggerCutScene",
-                 "width":484,
-                 "x":92,
-                 "y":514
+                 "width":483,
+                 "x":58,
+                 "y":516
                 }, 
                 {
                  "height":34,
@@ -123,6 +123,18 @@
                  "width":46,
                  "x":648,
                  "y":438
+                }, 
+                {
+                 "height":28,
+                 "name":"CloudManager0",
+                 "properties":
+                    {
+
+                    },
+                 "type":"CloudManager",
+                 "width":79,
+                 "x":97,
+                 "y":20
                 }],
          "opacity":1,
          "type":"objectgroup",

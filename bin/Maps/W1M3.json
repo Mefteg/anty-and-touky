@@ -199,7 +199,7 @@
                  "name":"Penguin0",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":33,
@@ -306,19 +306,19 @@
                  "y":102
                 }, 
                 {
-                 "height":262,
+                 "height":231,
                  "name":"TriggerEnemies1",
                  "properties":
                     {
                      "direction":"4",
                      "location":"7",
-                     "number":"4",
+                     "number":"3",
                      "type":"mosquito"
                     },
                  "type":"TriggerEnemies",
-                 "width":247,
-                 "x":101,
-                 "y":405
+                 "width":190,
+                 "x":124,
+                 "y":437
                 }, 
                 {
                  "height":156,
@@ -1020,6 +1020,18 @@
                  "width":28,
                  "x":1221,
                  "y":1345
+                }, 
+                {
+                 "height":46,
+                 "name":"CloudManager0",
+                 "properties":
+                    {
+
+                    },
+                 "type":"CloudManager",
+                 "width":82,
+                 "x":17,
+                 "y":10
                 }],
          "opacity":1,
          "type":"objectgroup",
