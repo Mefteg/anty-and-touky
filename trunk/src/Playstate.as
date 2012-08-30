@@ -186,7 +186,7 @@ package
 			m_sceneManager = new SceneManager();
 
 			//m_sceneManager.loadScene("Maps/Tuto4.json");
-			m_sceneManager.loadScene("Maps/W1M3.json");
+			m_sceneManager.loadScene("Maps/W1Boss.json");
 			//m_sceneManager.loadScene("Maps/test500.json");
 			//m_sceneManager.loadScene("Maps/test2.json");
 			//m_sceneManager.loadScene("Maps/W2M1.json");
@@ -355,9 +355,11 @@ package
 			if(Global.frozen){
 				Global.frozen = false;
 				m_screenFade.alpha = 0.0;
+				m_sceneManager.m_music.resume();
 			}else {
 				Global.frozen = true;
 				m_screenFade.alpha = 0.5;
+				m_sceneManager.m_music.pause();
 			}
 		}
 		
