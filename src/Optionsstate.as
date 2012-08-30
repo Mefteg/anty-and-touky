@@ -2,6 +2,7 @@ package
 {
 	import GameObject.Menu.MenuBegin;
 	import GameObject.Menu.MenuOptions;
+	import org.flixel.FlxInputText;
 	import org.flixel.FlxText;
 	import Scene.Library;
 	/**
@@ -11,6 +12,8 @@ package
 	public class Optionsstate extends State 
 	{
 		protected var m_menuOptions:MenuOptions;
+		
+		protected var m_textField:FlxInputText;
 		
 		public function Optionsstate()
 		{
@@ -25,6 +28,9 @@ package
 			//text displaying loading advancement
 			m_loadProgression = new FlxText(400, 400, 600);
 			add(m_loadProgression);
+			//text field
+			m_textField = new FlxInputText(0, 0, 100, 10, "Your cheat here");
+			add(m_textField);
 		}
 		
 		override public function create() : void {

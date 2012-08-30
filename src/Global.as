@@ -40,7 +40,11 @@ package
 		static public var frozen:Boolean = false;
 		static public var hasSeenControls:Boolean = false;
 		static public var nbPlayers:int=1;
-		static public var difficulty:int=1;
+		static public var difficulty:int = 1;
+		
+		static public var superUnlimited:Boolean = false;
+		static public var specialUnlimited:Boolean = false;
+		static public var firstLevel:String = "Maps/W1M1.json";
 		
 		//OPTIONS
 		static public var nbLifesMax = 3;

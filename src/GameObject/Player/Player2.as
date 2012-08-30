@@ -159,16 +159,27 @@ package GameObject.Player
 			if (!t_found)
 				return;
 			m_onSpecial = true;
-			m_timerSpecial.start(10);
-			m_camembert.trigger(10,true);
+			if (Global.specialUnlimited) {
+				m_timerSpecial.start(Number.MAX_VALUE);
+				//m_camembert.trigger(Number.MAX_VALUE,true);
+			}else{
+				m_timerSpecial.start(10);
+				m_camembert.trigger(10,true);
+			}
 		}
 		
 		override public function unspecial():void {
 			if (!m_onSpecial)
 				return;
 			m_onSpecial = false;
-			m_timerSpecialAvailable.start(5);
-			m_camembert.trigger(5);
+			if (Global.specialUnlimited) {
+				m_timerSpecialAvailable.start(0.1);
+				//m_camembert.trigger(0.1);
+			}else {
+				m_timerSpecialAvailable.start(5);
+				m_camembert.trigger(5);
+			}
+						
 			if ( m_objectCarried == Global.player1 ) {
 				var tiles:Array = Global.player1.tilesUnder();
 				var i:int = 0;
@@ -224,7 +235,7 @@ package GameObject.Player
 			m_state = "idle"; 
 			var thr:PlayerThrowable = getThrowable();
 			if (!thr) return;
-			if (m_superShot) {
+			if (m_superShot || Global.superUnlimited) {
 				thr.m_explosive = true;
 				m_superShotCount --;
 				if (m_superShotCount == 0)

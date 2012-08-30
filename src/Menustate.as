@@ -39,6 +39,8 @@ package
 		
 		protected var m_mvcBackground:MVCButton;
 		protected var m_mvcButton:MVCButton;
+		
+		protected var m_passwordManager:PasswordManager;
 
 		public function Menustate()
 		{
@@ -59,6 +61,8 @@ package
 			//m_ladyBug = new FlxSprite(200 , 150);
 			m_ladyBug.loadGraphic(LadyBugScreen, false, false, 300, 200, true);
 			Global.library.addBitmap("Images/Menu/menustate_background.jpg");
+			
+			m_passwordManager = new PasswordManager();
 			
 			//trailer de merde
 			m_trailer = new MovieClip();
@@ -82,6 +86,8 @@ package
 			
 			m_mvcBackground = new MVCButton("Menu/menubackground.xml");
 			m_mvcButton = new MVCButton("Menu/menustate.xml");
+			
+			add(m_passwordManager);
 		}
 		
 		override public function update() : void {
@@ -143,6 +149,12 @@ package
 			FlxG.mouse.load(Cursor);
 			FlxG.mouse.hide();
 			FlxG.switchState( new StoryState() );
+		}
+		
+		override public function chargeMusic(url:String):void {
+			m_music.loadStream("Music/" + url + ".mp3", true );
+			m_music.name = url ;
+			m_music.play();
 		}
 	}
 

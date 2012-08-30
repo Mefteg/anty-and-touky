@@ -196,8 +196,13 @@ package GameObject.Player
 			m_speed = m_normalSpeed;
 			Global.player2.m_state = "idle";
 			Global.player2.x = x; Global.player2.y = y;
-			m_timerSpecialAvailable.start(10);
-			m_camembert.trigger(10);
+			if (Global.specialUnlimited) {
+				m_timerSpecialAvailable.start(0.1);
+				//m_camembert.trigger(0.1);
+			}else{
+				m_timerSpecialAvailable.start(10);
+				m_camembert.trigger(10);
+			}
 		}
 		
 		override public function placeOtherPlayer():void {
@@ -263,7 +268,7 @@ package GameObject.Player
 				thr.setAnimationWithDirection(m_directionFacing);
 			placeThrowable(thr);
 			thr.attack(facing);
-			if (m_superShot) {
+			if (m_superShot || Global.superUnlimited) {
 				for (var i:int = 0; i < 2 ; i++){
 					thr = getThrowable();
 					if (!thr) return;

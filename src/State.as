@@ -140,6 +140,10 @@ package
 				m_screenFade.alpha = 0;
 			}
 		}
+		
+		public function chargeMusic(si:String):void {
+			
+		}
 	}
 
 }
