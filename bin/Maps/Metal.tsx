@@ -161,6 +161,21 @@
    <property name="type" value="Hole"/>
   </properties>
  </tile>
+ <tile id="113">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="114">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
+ <tile id="115">
+  <properties>
+   <property name="type" value="PhysicalTile"/>
+  </properties>
+ </tile>
  <tile id="119">
   <properties>
    <property name="type" value="PhysicalType"/>

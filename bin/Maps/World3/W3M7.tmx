@@ -3,12 +3,12 @@
  <tileset firstgid="1" source="../Metal.tsx"/>
  <layer name="Background" width="24" height="40">
   <data encoding="base64" compression="zlib">
-   eJztlkkKwkAQRbOIwwHUztY4bo1n8EAOJ1AXWasH9gsGik/yMxhFsRcPquHn0RWKpuIgCOISNiXnV/l1f5/OvYaeEHRAl+o8f1FW+QdgCEZUR5RzIuuEfwpmYE71knILkVX+NvB+Dc+Wym4b3t/OU9v359l657/yfCd157LJHHs8nyZvr1B7giUxKH9ITrUnZEzADuzBAYwLctnbb51qT7D+IziBs/Bnb791PvpNqX9mTf6VyKaG5NlHGRH5XcXvquL93v/v/gu4gltN/x08toPk
+   eJzt1ksKwjAYBOAs6uMAarq1Ppdaz+CBfJxAXXStHtgRGghD+qeNVRSz+CCB6dCUn5JMKZV5bD37V/16f5/2vcCeBDrQpbWrvyor9Q9gCCNap5TTQlYL/VOYwZzWS8othKzU34bYL+PZkrK7wPe356nt9+fZeue3ir5T07kMmeMo+jTXvUK6J9hyi9SfUKd0TzAmsIcDHGFckTP/frtTuicYKzjBGS7l3pUz/36783negs7PNtS/FrKFJS/P4ZNSv675XF2xP/b/e/8VbnBv2P8AtdaEAA==
   </data>
  </layer>
  <layer name="Foreground" width="24" height="40">
   <data encoding="base64" compression="zlib">
-   eJztlssNwjAMhjMUbECZgDILKzADzzvPO88jI8AGjMF/oFKxAq4dB5GIX/oOVdtPSVvXLpxzBUPXvabT4B4JKflLD33i7725rhSuU5NPe8vJPwUzMGd8IzAGE6F/DTZgy/gXYAlWQv8RnMCZ8e/AHhyex/Tbov4L45OG+q+R/bfE/bGfzz3A1QJtgmX9cv/Vyh+jduv+GLVb92trt6lfm1/x/9+vf16gc4I0vrkihwyMXRW5xbq302h6l2RNmt4V2k+HzHnreYDGeh74tj9k3kghDx5keKo=
+   eJztlskNwjAQRV0CJVAEdECogFBLSoAaWO+sd9YjJUAHlME/gBRGweMZ24ARX3oHx8mTszgzmTEmY2ib57QcrpGQkj+voEv8nRfn5cJ1amK7t1/yj8EETBnfAAzBSOhfghVYM/4ZmIOF0L8HB3Bk/BuwBbv7mH5b1H9ifNJQ/zmy/5K4P/bzuXq4GqBJCLl/uf/qwx9j75b9MfZu2a/du65+bb7F/3+/1f0C7ROkqeorXFJjxr6pM2MuhWLOdrywzNP0hMc/mdC1nUZTuyRr0tQu33raZ+ZD9wM0ofuBd/t9+o0UcgMwensK
   </data>
  </layer>
  <objectgroup name="Objects" width="24" height="40">
@@ -31,7 +31,7 @@
     <property name="location" value="down"/>
    </properties>
   </object>
-  <object type="RespawnPoint" x="358" y="1226">
+  <object type="RespawnPoint" x="371" y="786">
    <properties>
     <property name="location" value="init"/>
    </properties>
