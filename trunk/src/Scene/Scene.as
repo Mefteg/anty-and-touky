@@ -116,7 +116,7 @@ package Scene
 				if (diff > 0) {
 					//if the current difficulty is inferior to the object's
 					if (Global.difficulty < diff )
-						return;
+						continue;
 				}
 				//instantiate the object
 				var newElement:GameObject = Converter.convertJsonObject(object);

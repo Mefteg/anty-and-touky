@@ -138,8 +138,22 @@
   <object type="Penguin" x="3346" y="389"/>
   <object type="Penguin" x="3166" y="407"/>
   <object type="Penguin" x="3284" y="456"/>
+  <object type="TriggerWarp" x="3753" y="2" width="184" height="88">
+   <properties>
+    <property name="respawn" value="down"/>
+    <property name="url" value="Maps/W3M8.json"/>
+   </properties>
+  </object>
+  <object name="DoorCoop" type="Cylinders" x="3819" y="131" width="26" height="32"/>
+  <object type="SwitchMetal" x="3020" y="269">
+   <properties>
+    <property name="coop" value=""/>
+    <property name="door" value="DoorCoop"/>
+    <property name="time" value="-1"/>
+   </properties>
+  </object>
  </objectgroup>
- <objectgroup name="RespawnPoints" width="220" height="60">
+ <objectgroup name="RespawnPoints" width="220" height="60" visible="0">
   <object name="RespDOWN" type="RespawnPoint" x="2866" y="1139">
    <properties>
     <property name="location" value="init"/>
@@ -148,14 +162,6 @@
   <object name="RespDOWN" type="RespawnPoint" x="6825" y="1862">
    <properties>
     <property name="location" value="down"/>
-   </properties>
-  </object>
-  <object name="DoorCoop" type="Cylinders" x="3818" y="102"/>
-  <object type="Switch" x="3020" y="269">
-   <properties>
-    <property name="coop" value=""/>
-    <property name="door" value="DoorCoop"/>
-    <property name="time" value="-1"/>
    </properties>
   </object>
   <object type="PenguinJetpack" x="2447" y="428"/>

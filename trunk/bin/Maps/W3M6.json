@@ -762,6 +762,45 @@
                  "width":0,
                  "x":3284,
                  "y":456
+                }, 
+                {
+                 "height":88,
+                 "name":"",
+                 "properties":
+                    {
+                     "respawn":"down",
+                     "url":"Maps\/W3M8.json"
+                    },
+                 "type":"TriggerWarp",
+                 "width":184,
+                 "x":3753,
+                 "y":2
+                }, 
+                {
+                 "height":32,
+                 "name":"DoorCoop",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Cylinders",
+                 "width":26,
+                 "x":3819,
+                 "y":131
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "coop":"",
+                     "door":"DoorCoop",
+                     "time":"-1"
+                    },
+                 "type":"SwitchMetal",
+                 "width":0,
+                 "x":3020,
+                 "y":269
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -797,32 +836,6 @@
                  "width":0,
                  "x":6825,
                  "y":1862
-                }, 
-                {
-                 "height":0,
-                 "name":"DoorCoop",
-                 "properties":
-                    {
-
-                    },
-                 "type":"Cylinders",
-                 "width":0,
-                 "x":3818,
-                 "y":102
-                }, 
-                {
-                 "height":0,
-                 "name":"",
-                 "properties":
-                    {
-                     "coop":"",
-                     "door":"DoorCoop",
-                     "time":"-1"
-                    },
-                 "type":"Switch",
-                 "width":0,
-                 "x":3020,
-                 "y":269
                 }, 
                 {
                  "height":0,
@@ -992,7 +1005,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "width":220,
          "x":0,
          "y":0
@@ -1026,6 +1039,18 @@
              "101":
                 {
                  "type":"Hole"
+                },
+             "113":
+                {
+                 "type":"PhysicalTile"
+                },
+             "114":
+                {
+                 "type":"PhysicalTile"
+                },
+             "115":
+                {
+                 "type":"PhysicalTile"
                 },
              "119":
                 {
