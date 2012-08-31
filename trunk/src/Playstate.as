@@ -186,9 +186,9 @@ package
 			m_sceneManager = new SceneManager();
 
 			//A GARDER AU FINAL !!!!
-			m_sceneManager.loadScene(Global.firstLevel);
+			//m_sceneManager.loadScene(Global.firstLevel);
 			//m_sceneManager.loadScene("Maps/Tuto4.json");
-			//m_sceneManager.loadScene("Maps/W3M8.json");
+			m_sceneManager.loadScene("Maps/W1Boss.json");
 			//m_sceneManager.loadScene("Maps/test500.json");
 			//m_sceneManager.loadScene("Maps/test2.json");
 			//m_sceneManager.loadScene("Maps/W2M1.json");
