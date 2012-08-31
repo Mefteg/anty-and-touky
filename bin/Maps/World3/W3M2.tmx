@@ -158,6 +158,11 @@
     <property name="url" value="World3/raccoonM2"/>
    </properties>
   </object>
+  <object type="Raccoon" x="1921" y="1057">
+   <properties>
+    <property name="url" value="World3/raccoonMusic"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="63" height="77">
   <object name="Respawn" type="RespawnPoint" x="722" y="2059" width="48" height="34">

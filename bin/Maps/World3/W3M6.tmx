@@ -8,7 +8,7 @@
  </layer>
  <layer name="Foreground" width="220" height="60">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <objectgroup name="Objects" width="220" height="60">
@@ -76,10 +76,10 @@
   <object type="Penguin" x="3927" y="623"/>
   <object type="ElectricSnake" x="4050" y="679"/>
   <object type="ElectricSnake" x="3817" y="672"/>
-  <object type="Penguin" x="3846" y="558"/>
-  <object type="Penguin" x="3983" y="557"/>
+  <object type="Penguin" x="3693" y="559"/>
+  <object type="Penguin" x="4170" y="557"/>
   <object type="Barrel" x="3655" y="725"/>
-  <object type="BarrelHole" x="4571" y="519">
+  <object type="BarrelHole" x="4547" y="539">
    <properties>
     <property name="door" value="DoorBarrel"/>
    </properties>
@@ -98,7 +98,7 @@
   <object type="TriggerWarp" x="3227" y="100" width="103" height="35">
    <properties>
     <property name="respawn" value="down"/>
-    <property name="url" value="Maps/W3Final.json"/>
+    <property name="url" value="Maps/W3M7.json"/>
    </properties>
   </object>
   <object type="GoldFeather" x="2406" y="800">
@@ -106,7 +106,11 @@
     <property name="coop" value=""/>
    </properties>
   </object>
-  <object type="GoldFeather" x="2246" y="480"/>
+  <object type="GoldFeather" x="2246" y="480">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object type="GoldFeather" x="1697" y="530">
    <properties>
     <property name="coop" value=""/>
@@ -152,22 +156,14 @@
     <property name="time" value="-1"/>
    </properties>
   </object>
- </objectgroup>
- <objectgroup name="RespawnPoints" width="220" height="60" visible="0">
-  <object name="RespDOWN" type="RespawnPoint" x="2866" y="1139">
+  <object type="TriggerEnemies" x="1639" y="387" width="271" height="279">
    <properties>
-    <property name="location" value="init"/>
+    <property name="direction" value="1"/>
+    <property name="location" value="5"/>
+    <property name="number" value="1"/>
+    <property name="type" value="flyingCannon"/>
    </properties>
   </object>
-  <object name="RespDOWN" type="RespawnPoint" x="6825" y="1862">
-   <properties>
-    <property name="location" value="down"/>
-   </properties>
-  </object>
-  <object type="PenguinJetpack" x="2447" y="428"/>
-  <object type="FlyingCannon" x="2441" y="800"/>
-  <object type="FlyingCannon" x="2381" y="619"/>
-  <object type="BigAnt" x="2064" y="425"/>
   <object type="TriggerEnemies" x="1742" y="335" width="550" height="278">
    <properties>
     <property name="coop" value=""/>
@@ -177,26 +173,34 @@
     <property name="type" value="flyingCannon"/>
    </properties>
   </object>
-  <object type="TriggerEnemies" x="1639" y="387" width="271" height="279">
-   <properties>
-    <property name="direction" value="1"/>
-    <property name="location" value="5"/>
-    <property name="number" value="1"/>
-    <property name="type" value="flyingCannon"/>
-   </properties>
-  </object>
-  <object type="flyingCannon" x="1638" y="1075"/>
-  <object type="flyingCannon" x="2034" y="1389"/>
-  <object type="PenguinJetpack" x="3026" y="1625"/>
-  <object type="flyingCannon" x="2325" y="1494"/>
-  <object type="flyingCannon" x="2514" y="1517"/>
-  <object type="ElectricSnake" x="2764" y="1617"/>
+  <object type="BigAnt" x="2055" y="423" width="26" height="27"/>
+  <object type="FlyingCannon" x="2381" y="619"/>
+  <object type="PenguinJetpack" x="2447" y="428"/>
   <object type="TriggerEnemies" x="2637" y="1509" width="371" height="151">
    <properties>
     <property name="direction" value="2"/>
     <property name="location" value="6"/>
     <property name="number" value="2"/>
     <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
+  <object type="flyingCannon" x="2514" y="1517"/>
+  <object type="flyingCannon" x="2325" y="1494"/>
+  <object type="flyingCannon" x="2034" y="1389"/>
+  <object type="ElectricSnake" x="2764" y="1617"/>
+  <object type="PenguinJetpack" x="3026" y="1625"/>
+  <object type="flyingCannon" x="1638" y="1075"/>
+  <object type="FlyingCannon" x="2441" y="800"/>
+ </objectgroup>
+ <objectgroup name="RespawnPoints" width="220" height="60">
+  <object name="RespDOWN" type="RespawnPoint" x="2866" y="1139">
+   <properties>
+    <property name="location" value="init"/>
+   </properties>
+  </object>
+  <object name="RespDOWN" type="RespawnPoint" x="6825" y="1862">
+   <properties>
+    <property name="location" value="down"/>
    </properties>
   </object>
  </objectgroup>

@@ -23,7 +23,11 @@ package GameObject.Enemy.ElSqualo
 			m_arm = arm;
 			m_url = "Images/Enemies/ElSqualo/spikes.png";
 			m_width = 32; m_height = 32;
-			m_speed = 4;
+			switch(Global.difficulty){
+				case 1 : m_speed = 4; break;
+				case 2 : m_speed = 5; break;
+				case 3 : m_speed = 6; break;
+			}
 			m_state = "idle";
 			m_invincible = true;
 			m_collideEvtFree = true;

@@ -653,6 +653,18 @@
                  "width":0,
                  "x":945,
                  "y":2001
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "url":"World3\/raccoonMusic"
+                    },
+                 "type":"Raccoon",
+                 "width":0,
+                 "x":1921,
+                 "y":1057
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -726,6 +738,18 @@
                 {
                  "type":"Hole"
                 },
+             "113":
+                {
+                 "type":"PhysicalTile"
+                },
+             "114":
+                {
+                 "type":"PhysicalTile"
+                },
+             "115":
+                {
+                 "type":"PhysicalTile"
+                },
              "119":
                 {
                  "type":"PhysicalType"
@@ -750,6 +774,18 @@
                 {
                  "type":"PhysicalTile"
                 },
+             "145":
+                {
+                 "type":"PhysicalTile"
+                },
+             "146":
+                {
+                 "type":"PhysicalTile"
+                },
+             "147":
+                {
+                 "type":"PhysicalTile"
+                },
              "151":
                 {
                  "type":"Pipe"
@@ -757,6 +793,10 @@
              "152":
                 {
                  "type":"Pipe"
+                },
+             "153":
+                {
+                 "type":"PhysicalTile"
                 },
              "167":
                 {
@@ -840,7 +880,7 @@
                 },
              "208":
                 {
-                 "type":"PhysicalTile"
+                 "type":"Pipe"
                 },
              "209":
                 {
@@ -852,7 +892,7 @@
                 },
              "210":
                 {
-                 "type":"PhysicalTile"
+                 "type":"Pipe"
                 },
              "211":
                 {
@@ -872,11 +912,11 @@
                 },
              "215":
                 {
-                 "type":"PhysicalTile"
+                 "type":"Pipe"
                 },
              "216":
                 {
-                 "type":"PhysicalTile"
+                 "type":"Pipe"
                 },
              "22":
                 {
@@ -887,6 +927,22 @@
                  "type":"PhysicalTile"
                 },
              "231":
+                {
+                 "type":"PhysicalTile"
+                },
+             "233":
+                {
+                 "type":"PhysicalTile"
+                },
+             "234":
+                {
+                 "type":"PhysicalTile"
+                },
+             "235":
+                {
+                 "type":"PhysicalTile"
+                },
+             "236":
                 {
                  "type":"PhysicalTile"
                 },
