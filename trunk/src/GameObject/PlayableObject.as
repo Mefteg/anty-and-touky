@@ -113,6 +113,12 @@ package GameObject
 			m_itemManager = new GameObject.Item.ItemManager(this);
 			getWeapon().m_player = this;
 			createThrowables();
+			switch(Global.difficulty) {
+				case 1 : m_thresoldScore = 5000; m_lifes = 3; break;
+				case 2 : m_thresoldScore = 7000; m_lifes = 2; break;
+				case 3 : m_thresoldScore = 10000; m_lifes = 1; break;
+				default : break;
+			}
 		}
 		
 		public function createThrowables() :void {}

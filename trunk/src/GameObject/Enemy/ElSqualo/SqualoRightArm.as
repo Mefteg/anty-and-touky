@@ -86,7 +86,7 @@ package GameObject.Enemy.ElSqualo
 			switch(stage) {
 				case 0 : m_attackMax = Utils.random(1, 2);
 						TIME_MIN = 1;
-						TIME_MAX = 4;
+						TIME_MAX = 2;
 						break;
 				case 1 : m_attackMax = Utils.random(1, 2);
 						TIME_MIN = 1;
