@@ -60,7 +60,7 @@ package
 			m_ladyBug = new FlxSprite(410 , 320);//for CASUAL GAME CUP
 			//m_ladyBug = new FlxSprite(200 , 150);
 			m_ladyBug.loadGraphic(LadyBugScreen, false, false, 300, 200, true);
-			Global.library.addBitmap("Images/Menu/menustate_background.jpg");
+			Global.library.addBitmap("Images/Menu/menu.jpg");
 			
 			m_passwordManager = new PasswordManager();
 			
@@ -86,8 +86,6 @@ package
 			
 			m_mvcBackground = new MVCButton("Menu/menubackground.xml");
 			m_mvcButton = new MVCButton("Menu/menustate.xml");
-			
-			add(m_passwordManager);
 		}
 		
 		override public function update() : void {
@@ -101,6 +99,7 @@ package
 				depthBuffer.addElement(m_mvcButton, DepthBuffer.s_menuGroup);
 				m_menuAppeared = true;
 				FlxG.stage.removeChild(m_trailer);
+				m_passwordManager.addToStage();
 				fadeIn();
 			}
 			manageLadyBug();

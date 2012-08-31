@@ -356,13 +356,14 @@ package GameObject.Enemy.Centipede
 			m_state = "dying";
 			m_direction = new FlxPoint(0, 0);
 			killParts();
-			m_timerDeath.start(2);
+			m_timerDeath.start(5);
 		}
 		
 		override public function die():void {
 			if (m_timerDeath.finished) {
 				m_state = "ending";
-				m_timerDeath.start(5);
+				m_timerDeath.start(20);
+				Global.currentPlaystate.chargeMusic("GoodGameBro");
 				m_smoke.playSmoke(x+6, y-4);
 				visible = false;
 				if(m_killer)
@@ -372,7 +373,7 @@ package GameObject.Enemy.Centipede
 		
 		private function ending():void {
 			if (m_timerDeath.finished)
-				Global.currentPlaystate.end();
+				Global.currentPlaystate.changeScene("Maps/W3M1.json","init");
 		}
 		
 	}

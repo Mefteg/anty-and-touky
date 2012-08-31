@@ -16,6 +16,9 @@ package
 		public function PasswordManager() 
 		{
 			super();
+		}
+		
+		public function addToStage():void {
 			m_textField = new FlxInputText(FlxG.width-180, FlxG.height - 40, 200, 30, "Your password here !");
 			m_textField.size = 13;
 			m_textField.filterMode=FlxInputText.ONLY_ALPHANUMERIC;
