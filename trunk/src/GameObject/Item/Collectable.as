@@ -27,8 +27,8 @@ package GameObject.Item
 			
 			if (m_FXurl) {
 				m_sound = new FlxSound();
-				m_sound.volume = 0.7;
 				m_sound.loadStream(m_FXurl);
+				m_sound.volume = 0.2;
 			}
 		}
 		

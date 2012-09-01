@@ -63,6 +63,7 @@ package GameObject
 		public var FX_shieldClang:FlxSound;
 		public var FX_drawWeapon:FlxSound;
 		public var FX_hit:FlxSound;
+		public var FX_life:FlxSound;
 		
 		public var m_enemies:Vector.<GameObject.Enemy.Enemy>;
 		
@@ -74,7 +75,7 @@ package GameObject
 		
 		public var m_score:int = 0;
 		public var m_thresoldScore:int = 0;
-		public var m_thresoldDelta:int = 5000;
+		public var m_thresoldDelta:int;
 		
 		//SuperShots
 		public var m_superShot:Boolean = false;
@@ -108,15 +109,16 @@ package GameObject
 			FX_shieldClang = new FlxSound();
 			FX_drawWeapon = new FlxSound();
 			FX_hit = new FlxSound();
+			FX_life = new FlxSound();
 			m_magics.push(Magic.Tornado());
 			m_magics.push(Magic.Fireball());
 			m_itemManager = new GameObject.Item.ItemManager(this);
 			getWeapon().m_player = this;
 			createThrowables();
 			switch(Global.difficulty) {
-				case 1 : m_thresoldScore = 5000; m_lifes = 3; break;
-				case 2 : m_thresoldScore = 7000; m_lifes = 2; break;
-				case 3 : m_thresoldScore = 10000; m_lifes = 1; break;
+				case 1 : m_thresoldDelta = 5000; m_lifes = 3; break;
+				case 2 : m_thresoldDelta = 7000; m_lifes = 2; break;
+				case 3 : m_thresoldDelta = 10000; m_lifes = 1; break;
 				default : break;
 			}
 		}
@@ -164,6 +166,8 @@ package GameObject
 			FX_shieldClang.loadStream("FX/clang.mp3");
 			FX_drawWeapon.loadStream("FX/swordDrawn.mp3");
 			FX_hit.loadStream("FX/hit.mp3");
+			FX_life.loadStream("FX/Life.mp3");
+			FX_life.volume = 0.7;
 			//magic
 			/*for (var i:int = 0; i < m_magics.length; i++){
 				m_magics[i].load();
@@ -458,6 +462,7 @@ package GameObject
 			m_score += n;
 			if (m_score >= m_thresoldScore) {
 				m_thresoldScore += m_thresoldDelta;
+				FX_life.play();
 				m_lifes++;
 			}
 		}
