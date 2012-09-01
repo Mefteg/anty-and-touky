@@ -2,6 +2,7 @@ package GameObject.Item
 {
 	import GameObject.DrawableObject;
 	import GameObject.PlayableObject;
+	import org.flixel.FlxSound;
 	
 	/**
 	 * ...
@@ -10,16 +11,25 @@ package GameObject.Item
 	public class Collectable extends DrawableObject 
 	{
 		var m_target:PlayableObject;
-		var m_power:int=1;
+		var m_power:int = 1;
+		var m_sound:FlxSound;
+		var m_FXurl:String;
 		
 		public function Collectable(X:Number, Y:Number) 
 		{
 			super(X, Y);
+			m_FXurl = "FX/ding.mp3";
 		}
 		
 		override public function load():void {
 			super.load();
 			addAnimation("idle", [0, 1, 2], 10, true);
+			
+			if (m_FXurl) {
+				m_sound = new FlxSound();
+				m_sound.volume = 0.7;
+				m_sound.loadStream(m_FXurl);
+			}
 		}
 		
 		override public function addToStage():void {
@@ -29,6 +39,8 @@ package GameObject.Item
 		}
 		
 		override public function act():void {
+			if (m_sound)
+				m_sound.play();
 			m_target.addEnergy(m_power);
 			removeFromStage();
 		}

@@ -78,6 +78,8 @@ package GameObject.Weapon
 			var ant:PlayerThrowable = new PlayerThrowable(1, "Images/Weapons/ant.png");
 			ant.setAnimationAttack(false);
 			//ant.setAnimationDead(8, 9, 10, 11);
+			ant.m_FXurl = "FX/pomp.mp3"
+			ant.m_FX.volume = 1.0;
 			ant.setHitbox(12, 13, 9, 11);
 			return ant;
 		}

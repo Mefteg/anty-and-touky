@@ -122,6 +122,13 @@ package
 		}
 		
 		private function manageLadyBug():void {
+			if (m_menuAppeared)
+				return;
+			if (FlxG.keys.ENTER && Global.library.loadComplete()) {
+				m_timer.start(0.01);
+				m_ladyBug.visible = false;
+			}
+			
 			switch(m_stateLB) {
 				case "done":break;
 				case "idle": if (m_timerLB.finished) m_stateLB = "appearing"; break;

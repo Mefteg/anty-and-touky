@@ -24,7 +24,7 @@ package GameObject.Enemy
 			super.load();
 			addAnimation("pouf", [0, 1, 2, 3, 4, 5, 6, 7], 20, false);
 			m_sound.loadStream("FX/smoke_enemy.mp3");
-			m_sound.volume = 0.5;
+			m_sound.volume = 0.3;
 		}
 		
 		public function playSmoke(X:Number, Y:Number ):void {

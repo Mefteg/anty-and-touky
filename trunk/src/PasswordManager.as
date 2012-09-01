@@ -19,17 +19,20 @@ package
 		}
 		
 		public function addToStage():void {
+			
 			m_textField = new FlxInputText(FlxG.width-180, FlxG.height - 40, 200, 30, "Your password here !");
 			m_textField.size = 13;
 			m_textField.filterMode=FlxInputText.ONLY_ALPHANUMERIC;
-			m_textInfo = new FlxText(m_textField.x , m_textField.y - 30 , 200);
+			m_textInfo = new FlxText(m_textField.x , m_textField.y - 25 , 200);
 			m_textInfo.size = 9;
+			m_textInfo.color = 0;
 			Global.currentState.add(m_textInfo);
 			Global.currentState.add(m_textField);
+			Global.currentState.add(this);
 		}
 		
 		public function usePassword(password:String):String {
-			var res:String = "";
+			var res:String = "Wrong Password";
 			switch(password) {
 				//SPECIAL POWERS
 				case "InYourFace" :
