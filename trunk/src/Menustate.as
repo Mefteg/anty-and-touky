@@ -115,7 +115,7 @@ package
 				//cache them
 				Global.library.cacheObjects();
 				//load future images of story state
-				StoryState.loadAllBitmaps();
+				//StoryState.loadAllBitmaps();
 				m_state = "Loaded";
 			}
 			

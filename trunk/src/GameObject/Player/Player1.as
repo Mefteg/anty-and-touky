@@ -10,6 +10,7 @@ package GameObject.Player
 	import GameObject.Weapon.PlayerThrowable;
 	import org.flixel.FlxG;
 	import org.flixel.FlxPoint;
+	import org.flixel.FlxTimer;
 	import Server.URLRequestPHP;
 	/**
 	 * ...
@@ -197,9 +198,11 @@ package GameObject.Player
 			Global.player2.m_state = "idle";
 			Global.player2.x = x; Global.player2.y = y;
 			if (Global.specialUnlimited) {
+				m_timerSpecialAvailable = new FlxTimer();
 				m_timerSpecialAvailable.start(0.1);
 				//m_camembert.trigger(0.1);
-			}else{
+			}else {
+				m_timerSpecialAvailable = new FlxTimer();
 				m_timerSpecialAvailable.start(10);
 				m_camembert.trigger(10);
 			}

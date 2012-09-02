@@ -4,6 +4,7 @@ package GameObject.Other
 	import GameObject.PhysicalObject;
 	import GameObject.PlayableObject;
 	import org.flixel.FlxPoint;
+	import org.flixel.FlxSound;
 	
 	/**
 	 * ...
@@ -16,7 +17,7 @@ package GameObject.Other
 		
 		public var m_animationSpeed:int = 0;
 		public var m_frameOpen:int = 1;
-		
+				
 		public function Door(X:Number, Y:Number, name:String, respawn:String ) 
 		{
 			super(X, Y);

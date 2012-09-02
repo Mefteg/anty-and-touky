@@ -11,6 +11,7 @@ package GameObject.Player
 	import GameObject.Weapon.Throwable;
 	import GameObject.Weapon.Weapon;
 	import org.flixel.FlxG;
+	import org.flixel.FlxTimer;
 	/**
 	 * ...
 	 * @author ...
@@ -160,9 +161,11 @@ package GameObject.Player
 				return;
 			m_onSpecial = true;
 			if (Global.specialUnlimited) {
+				m_timerSpecial = new FlxTimer();
 				m_timerSpecial.start(Number.MAX_VALUE);
 				//m_camembert.trigger(Number.MAX_VALUE,true);
 			}else{
+				m_timerSpecial = new FlxTimer();
 				m_timerSpecial.start(10);
 				m_camembert.trigger(10,true);
 			}
@@ -173,9 +176,11 @@ package GameObject.Player
 				return;
 			m_onSpecial = false;
 			if (Global.specialUnlimited) {
+				m_timerSpecialAvailable = new FlxTimer();
 				m_timerSpecialAvailable.start(0.1);
 				//m_camembert.trigger(0.1);
 			}else {
+				m_timerSpecialAvailable = new FlxTimer();
 				m_timerSpecialAvailable.start(5);
 				m_camembert.trigger(5);
 			}

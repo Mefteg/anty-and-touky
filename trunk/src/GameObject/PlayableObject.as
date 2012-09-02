@@ -85,7 +85,6 @@ package GameObject
 		public function PlayableObject(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, SimpleGraphic);
-			m_thresoldScore += m_thresoldDelta;
 			m_speed = 1.9;
 			m_typeName = "Player";
 			m_url = "Images/Players/anty.png";
@@ -116,11 +115,12 @@ package GameObject
 			getWeapon().m_player = this;
 			createThrowables();
 			switch(Global.difficulty) {
-				case 1 : m_thresoldDelta = 5000; m_lifes = 3; break;
-				case 2 : m_thresoldDelta = 7000; m_lifes = 2; break;
-				case 3 : m_thresoldDelta = 10000; m_lifes = 1; break;
-				default : break;
+				case 1 : m_thresoldDelta = 10000; m_lifes = 3; break;
+				case 2 : m_thresoldDelta = 15000; m_lifes = 2; break;
+				case 3 : m_thresoldDelta = 20000; m_lifes = 1; break;
+				default : m_thresoldDelta = 5000;break;
 			}
+			m_thresoldScore += m_thresoldDelta;
 		}
 		
 		public function createThrowables() :void {}
@@ -231,6 +231,7 @@ package GameObject
 		public function resetSpecial():void {
 			unspecial();
 			play("idle" + facing);
+			m_timerSpecialAvailable = new FlxTimer();
 			m_timerSpecialAvailable.start(0.01);
 			m_camembert.resetTime();
 			resetTwinkle();
