@@ -23,6 +23,8 @@ package GameObject.Weapon
 		
 		public var m_fragile:Boolean = true;
 		
+		public var m_loopFX:Boolean = false;
+		
 		static public var s_type:String = "Throwable";
 		
 		public function Throwable(power:Number , url:String, speed:Number = 2 ) 
@@ -45,6 +47,7 @@ package GameObject.Weapon
 			if (m_state == "idle")
 				return;
 			m_state = "idle";
+			m_FX.stop();
 			m_direction.x = 0;
 			m_direction.y = 0;
 			x = 0; y = 0;
@@ -98,7 +101,7 @@ package GameObject.Weapon
 			loadGraphic2(Global.library.getBitmap(m_url), true, false, m_width, m_height);
 						
 			//sound
-			m_FX.loadStream(m_FXurl);
+			m_FX.loadStream(m_FXurl,m_loopFX);
 			m_FX.volume = 0.3;
 		}
 		

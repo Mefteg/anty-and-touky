@@ -152,6 +152,8 @@ package GameObject.Weapon
 		
 		public static function ElecBall():EnemyThrowable {
 			var ball:EnemyThrowable = new EnemyThrowable(1, "Images/Enemies/ElectricSnake/elecBall.png", 2);
+			ball.m_FXurl = "FX/electric.mp3";
+			ball.m_loopFX = true;
 			ball.m_width = 24; ball.m_height = 24;
 			ball.setHitbox(0, 9, 24, 24);
 			ball.setAnimationAttack(true, 0, 1, 2);

@@ -57,11 +57,15 @@ package GameObject.Other
 		override public function act():void {
 			//check if the player is not on a hole
 			var tiles:Array = Global.player2.tilesUnder();
+			var count:int = 0;
 			for each (var tile:int in tiles) {
-				if (tile == TilesManager.HOLE_TILE) {
-					respawn();
-					return;
+				if (tile == TilesManager.NORMAL_TILE) {
+					count ++;
 				}
+			}
+			if (count < 1){
+				respawn();
+				return;
 			}
 			var holes:Vector.<BoxHole> = Global.currentPlaystate.m_holeboxes;
 			var goodHole:BoxHole;
