@@ -141,7 +141,7 @@ package
 			}
 		}
 		
-		public function chargeMusic(si:String):void {
+		public function chargeMusic(si:String,loop:Boolean = true):void {
 			
 		}
 	}
