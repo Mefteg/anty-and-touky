@@ -9,6 +9,7 @@ package GameObject.Other
 	import GameObject.PhysicalObject;
 	import GameObject.PlayableObject;
 	import org.flixel.FlxG;
+	import org.flixel.FlxSound;
 	import Scene.CutScene.CutSceneMessageObject;
 	
 	/**
@@ -22,6 +23,8 @@ package GameObject.Other
 		private var m_currentMessage:Message;
 		private var m_currentPlayer:PlayableObject;
 		private var m_nbMessage:int = 0;
+		protected var m_sound:FlxSound;
+		protected var m_urlFX:String;
 		
 		public function NPC(X:Number, Y:Number,urlXml:String) 
 		{
@@ -34,6 +37,7 @@ package GameObject.Other
 		private function speak(player:PlayableObject ):void {
 			if (m_messages == null)
 				return;
+			m_sound.play();
 			Global.frozen = true;
 			m_currentPlayer = player;
 			facing = getFacingToTarget(m_currentPlayer);
@@ -82,6 +86,10 @@ package GameObject.Other
 			addAnimation(UP.toString(), [1]);
 			addAnimation(RIGHT.toString(), [2]);
 			addAnimation(LEFT.toString(), [3]);
+			if (m_urlFX){
+				m_sound = new FlxSound();
+				m_sound.loadStream(m_urlFX);
+			}
 		}
 		
 		override public function addToStage():void {
@@ -121,6 +129,7 @@ package GameObject.Other
 			var raccoon:NPC = new NPC(X, Y,url);
 			raccoon.m_url = "Images/NPC/racoon.png";
 			raccoon.m_width = 48; raccoon.m_height = 48;
+			raccoon.m_urlFX = "FX/raccoon.mp3";
 			raccoon.setHitbox(5, 5, 35, 35);
 			return raccoon;
 		}

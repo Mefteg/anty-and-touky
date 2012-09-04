@@ -2,6 +2,7 @@ package GameObject.Enemy
 {
 	import GameObject.Weapon.EnemyThrowable;
 	import org.flixel.FlxPoint;
+	import org.flixel.FlxSound;
 	import org.flixel.FlxTimer;
 	/**
 	 * ...
@@ -10,11 +11,14 @@ package GameObject.Enemy
 	public class Penguin extends Enemy 
 	{
 		protected var m_timerDraw:FlxTimer;
+		protected var m_sound:FlxSound;
 		
 		public function Penguin(X:Number, Y:Number ) 
 		{
 			super(X, Y);
 			m_url = "Images/Enemies/penguin_pistol.png";
+			m_sound = new FlxSound();
+			m_sound.loadStream("FX/penguin.mp3");
 			m_width = 32;
 			m_height = 32;
 			createThrowables();
@@ -75,8 +79,11 @@ package GameObject.Enemy
 		override public function update():void {
 			if ( !commonEnemyUpdate()) return;
 			switch(m_state) {
-				case "offScreen" : m_timerAttack.start(Utils.random(1, 2));
-									m_state = "idle";
+				case "offScreen" : m_timerAttack.start(Utils.random(1, 2));{
+										m_state = "idle";
+										if( Utils.random(0,100) > 40 )
+											m_sound.play();
+									}
 									break;
 				case "idle": 
 							facing = getFacingToTarget(m_target);
