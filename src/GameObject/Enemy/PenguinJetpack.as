@@ -25,6 +25,7 @@ package GameObject.Enemy
 			}
 			m_state = "idle";
 			m_explosion = EnemySmoke.Explosion();
+			m_points = 40;
 		}
 		
 		override public function addBitmap():void {

@@ -52,7 +52,14 @@ package GameObject.Enemy.ElSqualo
 			createFlames();
 			m_timerSwing = new FlxTimer();
 			m_smoke = EnemySmoke.Explosion();
-			m_stats.initHP(100);
+			switch(Global.difficulty) {
+				case 1 : m_stats.initHP(65); break;
+				case 2 : m_stats.initHP(100); break;
+				case 3 : m_stats.initHP(130); break;
+				default : break;
+			}
+			if (Global.nbPlayers > 1)
+				m_stats.initHP(m_stats.m_hp_current * 1.5);
 			m_speed = 1;
 			x = m_body.x - 26; 
 			y = m_body.y +16;

@@ -2,6 +2,7 @@ package GameObject.Enemy.ElSqualo
 {
 	import GameObject.Enemy.Enemy;
 	import org.flixel.FlxPoint;
+	import org.flixel.FlxSound;
 	/**
 	 * ...
 	 * @author ...
@@ -14,6 +15,7 @@ package GameObject.Enemy.ElSqualo
 		var m_positionArrayIdle:FlxPoint;
 		var m_positionArrayAttack:FlxPoint;
 		static var m_offset:int = 2;
+		protected var m_shotSound:FlxSound;
 		
 		public function SqualoSpike(id:int,arm:SqualoLeftArm) 
 		{
@@ -31,6 +33,9 @@ package GameObject.Enemy.ElSqualo
 			m_state = "idle";
 			m_invincible = true;
 			m_collideEvtFree = true;
+			m_shotSound = new FlxSound();
+			m_shotSound.loadStream("FX/spike_go.mp3");
+			m_shotSound.volume = 0.2;
 		}
 		
 		private function moving():void {
@@ -58,7 +63,8 @@ package GameObject.Enemy.ElSqualo
 		}
 		
 		override public function attack():void {
-			m_state == "moving";
+			m_state = "moving";
+			m_shotSound.play();
 		}
 		
 		override public function update():void {
@@ -66,7 +72,7 @@ package GameObject.Enemy.ElSqualo
 				case "idle" : placeFromArm(); break;
 				case "prepare": placeFromArm();
 								if (m_timerAttack.finished)
-									m_state = "moving";
+									attack();
 								break;
 				case "moving" : moving(); break;
 				default : placeFromArm(); break;

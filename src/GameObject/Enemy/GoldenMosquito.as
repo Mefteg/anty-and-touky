@@ -13,6 +13,7 @@ package GameObject.Enemy
 		{
 			super(X, Y);
 			m_url = "Images/Enemies/mosquito_shiny.png";
+			m_points = 25;
 		}
 		
 		override public function addBitmap():void {

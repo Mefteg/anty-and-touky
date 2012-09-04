@@ -33,6 +33,7 @@ package GameObject.Enemy.ElectricSnake
 			m_angle = 0;
 			createParts();
 			createThrowables();
+			m_points = 250;
 		}
 		
 		override protected function createThrowables():void {

@@ -22,6 +22,7 @@ package GameObject.Enemy
 			m_state = "offScreen";
 			m_direction = new FlxPoint(0, 0);
 			m_directionFacing = new FlxPoint(0, 0);
+			m_points = 50;
 		}
 		
 		public function prepareShot():void {
