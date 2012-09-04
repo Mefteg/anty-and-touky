@@ -83,12 +83,12 @@ package Scene
 						
 		}
 		
-		public function chargeMusic(url:String) : void {
+		public function chargeMusic(url:String, loop:Boolean ) : void {
 			if (url == "stop") {
 				m_music.stop();
 				return;
 			}
-			m_music.loadStream("Music/" + url + ".mp3", true );
+			m_music.loadStream("Music/" + url + ".mp3", loop );
 			m_music.name = url ;
 			m_music.play();
 		}
