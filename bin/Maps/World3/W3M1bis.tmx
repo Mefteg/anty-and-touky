@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="40" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" source="../Metal.tsx"/>
+ <layer name="Background" width="40" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztlVEKwjAQRPOhbQ+g1e+i1Yv0bj22WygiQ8KyadZGnI8HA92UIRNmhxDCQAghhBBC3hyEo9BU4CXGSTgLfQVekE64CXdhFNqdckvpDs60ynxMl8gtpa9w5qLMx3SOtwlyS+knnHso8zGd62/vt/3v/uYVb3813uUv+ftm5+b6s/Qtam9/S+da+ha1h7/PvbV0rqVvUWvvd1rv2ZIJ7tVSWaS+98ZMcK96+xuNmeBe9fbn+X9thv7KZe1B7f4I2cILY4bQnQ==
+  </data>
+ </layer>
+ <layer name="Foreground" width="40" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztldENgCAMBWEndQJxAmEWxxcTPwghplhbIL4m9wfhAuXVGWMcAAAAAIAiPqG1S84WsQlrB069+HkCIfPbifu4PXHdC7VsxdpSSftxC35j+h030n5TZBaE69db5o7m9yZzpWfyl/9X4v61/WrfJCj6aWZtqf7uR8nnpaEfpb+fzoAfLZM481V7fgMwCieQrVRm
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="40" height="40">
+  <object name="Door" type="ElectricDoor" x="457" y="860"/>
+  <object type="Generator" x="903" y="1025">
+   <properties>
+    <property name="door" value="Door"/>
+   </properties>
+  </object>
+  <object type="ExplosiveBarrel" x="994" y="645"/>
+  <object type="MexicanRaccoon" x="789" y="559">
+   <properties>
+    <property name="url" value="World3/racoonTutoBarrel"/>
+   </properties>
+  </object>
+  <object type="MexicanRaccoon" x="985" y="947">
+   <properties>
+    <property name="url" value="World3/mexicanRaccoon1"/>
+   </properties>
+  </object>
+  <object type="TriggerWarp" x="1219" y="597" width="56" height="158">
+   <properties>
+    <property name="respawn" value="left"/>
+    <property name="url" value="Maps/W3M2.json"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="RespawnPoints" width="40" height="40" visible="0">
+  <object type="RespawnPoint" x="46" y="1053">
+   <properties>
+    <property name="location" value="left"/>
+   </properties>
+  </object>
+  <object type="RespawnPoint" x="55" y="1057">
+   <properties>
+    <property name="location" value="init"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

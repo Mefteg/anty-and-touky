@@ -37,7 +37,8 @@ package GameObject.Other
 		private function speak(player:PlayableObject ):void {
 			if (m_messages == null)
 				return;
-			m_sound.play();
+			if(m_sound)
+				m_sound.play();
 			Global.frozen = true;
 			m_currentPlayer = player;
 			facing = getFacingToTarget(m_currentPlayer);
