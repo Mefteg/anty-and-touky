@@ -6,6 +6,7 @@ package GameObject.Other
 	import GameObject.Tile.Hole;
 	import GameObject.TileObject;
 	import org.flixel.FlxPoint;
+	import org.flixel.FlxSound;
 	
 	/**
 	 * ...
@@ -18,6 +19,8 @@ package GameObject.Other
 		
 		private var m_smokeDestroy:EnemySmoke;
 		
+		private var m_sound:FlxSound;
+		
 		public function Box(X:Number,Y:Number ) 
 		{
 			super(X, Y);
@@ -25,6 +28,8 @@ package GameObject.Other
 			m_typeName = "Box";
 			m_url = "Images/Others/box.png";
 			m_width = 32; m_height = 32;
+			m_sound = new FlxSound();
+			m_sound.loadStream("FX/door.mp3");
 			m_offset = new FlxPoint(10, 34);
 			m_initPos = new FlxPoint(X, Y);
 			m_smokeDestroy = EnemySmoke.PlayerSmoke();
@@ -75,7 +80,8 @@ package GameObject.Other
 					break;
 				}
 			}
-			if (goodHole){
+			if (goodHole) {
+				m_sound.play();
 				goodHole.act();
 				x = goodHole.x; y = goodHole.y;
 				Global.currentPlaystate.removeBox(this);

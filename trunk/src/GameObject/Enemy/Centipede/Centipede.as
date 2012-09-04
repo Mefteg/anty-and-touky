@@ -362,7 +362,7 @@ package GameObject.Enemy.Centipede
 		override public function die():void {
 			if (m_timerDeath.finished) {
 				m_state = "ending";
-				m_timerDeath.start(20);
+				m_timerDeath.start(7);
 				Global.currentPlaystate.chargeMusic("GoodGameBro");
 				m_smoke.playSmoke(x+6, y-4);
 				visible = false;

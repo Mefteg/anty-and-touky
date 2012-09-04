@@ -326,8 +326,8 @@
                      "url":"Maps\/W3M6.json"
                     },
                  "type":"TriggerWarp",
-                 "width":96,
-                 "x":1024,
+                 "width":139,
+                 "x":1007,
                  "y":1716
                 }, 
                 {
@@ -363,8 +363,8 @@
                     },
                  "type":"Raccoon",
                  "width":0,
-                 "x":282,
-                 "y":2000
+                 "x":259,
+                 "y":2001
                 }, 
                 {
                  "height":0,

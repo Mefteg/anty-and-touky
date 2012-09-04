@@ -11,6 +11,7 @@ package
 	import org.flixel.FlxText;
 	import org.flixel.FlxTimer;
 	import Scene.Library;
+	import Scene.SWFLoader;
 	/**
 	 * ...
 	 * @author ...
@@ -18,13 +19,14 @@ package
 	public class StoryState extends State 
 	{
 		
-		[Embed(source = "../bin/Images/Menu/intro.swf")] protected var Intro:Class;
+		//[Embed(source = "../bin/Images/Menu/intro.swf")] protected var Intro:Class;
 		
 		private var m_timerSwitch:FlxTimer;
 		//images to display
 		private var m_timerMessage:FlxTimer;
 		
 		private var m_intro:MovieClip;
+		private var m_swfLoader:SWFLoader;
 		
 		public function StoryState() 
 		{
@@ -33,9 +35,11 @@ package
 			m_state = "Loading";
 			m_library = Global.library;
 			m_timerSwitch = new FlxTimer();
-			m_intro = new Intro();
-			FlxG.stage.addChild(m_intro);
-			m_intro.play();
+			//m_intro = new Intro();
+			//FlxG.stage.addChild(m_intro);
+			//m_intro.play();
+			m_swfLoader = new SWFLoader();
+			m_swfLoader.load("../bin/Images/Menu/intro.swf");
 		}
 		
 		override public function create():void {
