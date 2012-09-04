@@ -20,6 +20,7 @@ package GameObject.Enemy
 			}
 			m_url = "Images/Enemies/water_penguin.png";
 			m_state = "onCover";
+			m_points = 70;
 		}
 		
 		override public function load():void {

@@ -5,6 +5,7 @@ package GameObject.Enemy.ElSqualo
 	import GameObject.Enemy.EnemySmoke;
 	import GameObject.PlayableObject;
 	import GameObject.Weapon.Weapon;
+	import org.flixel.FlxSound;
 	import org.flixel.FlxTimer;
 	
 	/**
@@ -37,6 +38,8 @@ package GameObject.Enemy.ElSqualo
 		private var m_initY:Number;
 		public var m_dead:Boolean = false;
 		
+		protected var m_recupSound:FlxSound;
+		
 		public function SqualoLeftArm(body:ElSqualo) 
 		{
 			m_body = body;
@@ -51,10 +54,22 @@ package GameObject.Enemy.ElSqualo
 			m_timerRetract = new FlxTimer();
 			m_timerWaitRespawn = new FlxTimer();
 			
+			m_recupSound = new FlxSound();
+			m_recupSound.loadStream("FX/clang.mp3");
+			m_recupSound.volume = 0.15;
+			
+			
 			m_state = "idle";
 			
 			m_smoke = EnemySmoke.Explosion();
-			m_stats.initHP(100);
+			switch(Global.difficulty) {
+				case 1 : m_stats.initHP(80); break;
+				case 2 : m_stats.initHP(110); break;
+				case 3 : m_stats.initHP(150); break;
+				default : break;
+			}
+			if (Global.nbPlayers > 1)
+				m_stats.initHP(m_stats.m_hp_current * 1.5);
 			m_speed = 1;
 			
 			x = m_body.x + 26; 
@@ -93,6 +108,7 @@ package GameObject.Enemy.ElSqualo
 								}
 								break;
 				case "waitRespawn": if (m_timerWaitRespawn.finished) {
+										m_recupSound.play();
 										for (var i:int = 0; i < m_spikes.length ; i++)
 											m_spikes[i].getBack();
 										m_attackCount++;

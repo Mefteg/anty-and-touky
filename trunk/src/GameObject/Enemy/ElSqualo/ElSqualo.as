@@ -9,6 +9,7 @@ package GameObject.Enemy.ElSqualo
 	import GameObject.Weapon.Weapon;
 	import org.flixel.FlxG;
 	import org.flixel.FlxPoint;
+	import org.flixel.FlxSound;
 	import org.flixel.FlxTimer;
 	import Scene.CutScene.CutScene;
 	/**
@@ -37,6 +38,8 @@ package GameObject.Enemy.ElSqualo
 		
 		private var m_cutscene:CutScene;
 		
+		private var m_jumpSound:FlxSound;
+		
 		public function ElSqualo(X:Number, Y:Number,areaWidth:int,areaHeight:int) 
 		{
 			super(X + areaWidth*0.5-32, Y);
@@ -52,8 +55,19 @@ package GameObject.Enemy.ElSqualo
 			m_smoke = EnemySmoke.Explosion();
 			m_collideEvtFree = true;
 			m_activeOffscreen = true;
-			m_stats.initHP(120);
+			switch(Global.difficulty) {
+				case 1 : m_stats.initHP(100); break;
+				case 2 : m_stats.initHP(130); break;
+				case 3 : m_stats.initHP(150); break;
+				default : break;
+			}
+			if (Global.nbPlayers > 1)
+				m_stats.initHP(m_stats.m_hp_current * 1.5);
 			m_penguinManager = new ElSqualoPenguinManager(this);
+			
+			m_jumpSound = new FlxSound();
+			m_jumpSound.loadStream("FX/jump.mp3");
+			m_jumpSound.volume = 0.8;
 			
 			m_cutscene = new CutScene("CutScenes/squaloFinalWords");
 		}
@@ -62,6 +76,7 @@ package GameObject.Enemy.ElSqualo
 			m_direction.y = -1;
 			m_state = "jumping";
 			m_penguinManager.popPinguins(m_stage);
+			m_jumpSound.play();
 		}
 		
 		private function jumping():void {

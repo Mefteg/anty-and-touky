@@ -20,7 +20,7 @@ package GameObject.Enemy
 			m_height = 32; m_width = 32;
 			m_smoke = EnemySmoke.Explosion();
 			
-			m_points = 200;
+			m_points = 130;
 			m_state = "offScreen";
 			if (lift != null){
 				m_straight = false;
