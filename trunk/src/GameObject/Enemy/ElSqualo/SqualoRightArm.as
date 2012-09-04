@@ -6,6 +6,7 @@ package GameObject.Enemy.ElSqualo
 	import GameObject.PlayableObject;
 	import GameObject.Weapon.Weapon;
 	import org.flixel.FlxPoint;
+	import org.flixel.FlxSound;
 	import org.flixel.FlxTimer;
 	
 	/**
@@ -43,6 +44,8 @@ package GameObject.Enemy.ElSqualo
 		private var m_initY:Number;
 		public var m_dead:Boolean = false;
 		
+		private var m_sound:FlxSound;
+		
 		public function SqualoRightArm(body:ElSqualo) 
 		{
 			m_body = body;
@@ -52,6 +55,9 @@ package GameObject.Enemy.ElSqualo
 			createFlames();
 			m_timerSwing = new FlxTimer();
 			m_smoke = EnemySmoke.Explosion();
+			m_sound = new FlxSound();
+			m_sound.loadStream("FX/fire.mp3", true);
+			m_sound.volume = 0.6;
 			switch(Global.difficulty) {
 				case 1 : m_stats.initHP(65); break;
 				case 2 : m_stats.initHP(100); break;
@@ -114,6 +120,7 @@ package GameObject.Enemy.ElSqualo
 		override public function attack():void {
 			frame = 1;
 			m_state = "drawFlames";
+			m_sound.play();
 			m_currentFlame = 0;
 			m_flames[0].place(x+12, y+45);
 			m_flames[0].addToStage();
@@ -181,6 +188,7 @@ package GameObject.Enemy.ElSqualo
 		}
 		
 		private function hideFlames():void {
+			m_sound.stop();
 			frame = 0;
 			m_dirTab[0] = false; m_dirTab[1] = false;
 			for (var i:int = 0; i < NB_FLAMES; i++) {
