@@ -19,12 +19,24 @@ package GameObject.Enemy
 			m_url = "Images/Enemies/cannon.png";
 			m_height = 32; m_width = 32;
 			m_smoke = EnemySmoke.Explosion();
-			m_stats.initHP(7);
+			
 			m_points = 200;
 			m_state = "offScreen";
 			if (lift != null){
 				m_straight = false;
-				m_stats.initHP(3);
+				switch(Global.difficulty) {
+					case 1 : m_stats.initHP(2); break;
+					case 2 : m_stats.initHP(3); break;
+					case 3 : m_stats.initHP(3); break;
+					default : m_stats.initHP(2); break;
+				}
+			}else {
+				switch(Global.difficulty) {
+					case 1 : m_stats.initHP(5); break;
+					case 2 : m_stats.initHP(6); break;
+					case 3 : m_stats.initHP(7); break;
+					default : m_stats.initHP(2); break;
+				}
 			}
 			createThrowables();
 		}

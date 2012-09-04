@@ -96,10 +96,10 @@ package GameObject.Player
 			addAnimation("attack2" + DOWN, [32,31,30], 10, false);
 			addAnimation("attack2" + LEFT, [29,28,27], 10, false);
 			//throw anim
-			addAnimation("throw" + UP, [21,22], 10, false);
-			addAnimation("throw" + RIGHT,[3,4], 10, false);
-			addAnimation("throw" + DOWN, [15, 16], 10, false);
-			addAnimation("throw" + LEFT, [9,10], 10, false);
+			addAnimation("throw" + UP, [21,22], 12, false);
+			addAnimation("throw" + RIGHT,[3,4], 12, false);
+			addAnimation("throw" + DOWN, [15, 16], 12, false);
+			addAnimation("throw" + LEFT, [9,10], 12, false);
 			//rush anim
 			addAnimation("rush" + UP, [23], 10, false);
 			addAnimation("rush" + RIGHT, [5], 10, false);

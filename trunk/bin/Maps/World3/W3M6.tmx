@@ -75,7 +75,11 @@
   <object type="Penguin" x="3896" y="927"/>
   <object type="Penguin" x="3927" y="623"/>
   <object type="ElectricSnake" x="4050" y="679"/>
-  <object type="ElectricSnake" x="3817" y="672"/>
+  <object type="ElectricSnake" x="3817" y="672">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
   <object type="Penguin" x="3693" y="559"/>
   <object type="Penguin" x="4170" y="557"/>
   <object type="Barrel" x="3655" y="725"/>
@@ -136,7 +140,6 @@
     <property name="coop" value=""/>
    </properties>
   </object>
-  <object type="Barrel" x="2830" y="1053"/>
   <object type="Penguin" x="3393" y="1010"/>
   <object type="Penguin" x="3235" y="1080"/>
   <object type="Penguin" x="3346" y="389"/>
@@ -191,6 +194,26 @@
   <object type="PenguinJetpack" x="3026" y="1625"/>
   <object type="flyingCannon" x="1638" y="1075"/>
   <object type="FlyingCannon" x="2441" y="800"/>
+  <object type="Penguin" x="3295" y="948">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object type="Penguin" x="3330" y="1082">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object type="PenguinScientist" x="3239" y="318">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
+  <object type="PenguinScientist" x="5048" y="1273">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="220" height="60">
   <object name="RespDOWN" type="RespawnPoint" x="2866" y="1139">

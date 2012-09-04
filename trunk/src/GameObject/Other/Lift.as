@@ -106,7 +106,8 @@ package GameObject.Other
 			if (collide(Global.player1)) {
 				//prevent players from going down
 				if (Global.player1.y + 48 > y +m_height) {
-					Global.player1.y = y+m_height-48;
+					Global.player1.y = y + m_height - 48;
+					Global.player1.unspecial();
 				}
 			}
 			
@@ -119,8 +120,10 @@ package GameObject.Other
 		}
 		
 		function preventFalling():void {
-			if ( !isPlayerOn(Global.player1))
+			if ( !isPlayerOn(Global.player1)){
 				Global.player1.replaceToOld();
+				Global.player1.unspecial();
+			}
 			if ( !isPlayerOn(Global.player2))
 				Global.player2.replaceToOld();
 		}

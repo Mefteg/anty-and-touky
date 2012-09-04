@@ -12,6 +12,12 @@ package GameObject.Enemy
 		public function PenguinWater(X:Number, Y:Number ) 
 		{
 			super(X, Y);
+			switch(Global.difficulty) {
+				case 1 : m_stats.initHP(3); break;
+				case 2 : m_stats.initHP(4); break;
+				case 3 : m_stats.initHP(4); break;
+				default : m_stats.initHP(3); break;
+			}
 			m_url = "Images/Enemies/water_penguin.png";
 			m_state = "onCover";
 		}

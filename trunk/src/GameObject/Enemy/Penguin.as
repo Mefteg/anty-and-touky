@@ -20,6 +20,12 @@ package GameObject.Enemy
 			createThrowables();
 			m_timerDraw = new FlxTimer();
 			m_state = "offScreen";
+			switch(Global.difficulty) {
+				case 1 : m_stats.initHP(2); break;
+				case 2 : m_stats.initHP(3); break;
+				case 3 : m_stats.initHP(4); break;
+				default : break;
+			}
 		}
 		
 		override public function load():void {
@@ -96,7 +102,12 @@ package GameObject.Enemy
 		public static function Scientist(X:Number, Y:Number) {
 			var scientist:Penguin = new Penguin(X, Y);
 			scientist.m_url = "Images/Enemies/pinguin_scientist.png";
-			scientist.m_stats.initHP(6);
+			switch(Global.difficulty){
+				case 1 : scientist.m_stats.initHP(4);
+				case 2 : scientist.m_stats.initHP(5);
+				case 3 : scientist.m_stats.initHP(6);
+				default : break;
+			}
 			return scientist;
 		}
 	}

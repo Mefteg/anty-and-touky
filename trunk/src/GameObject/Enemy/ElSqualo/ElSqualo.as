@@ -52,7 +52,7 @@ package GameObject.Enemy.ElSqualo
 			m_smoke = EnemySmoke.Explosion();
 			m_collideEvtFree = true;
 			m_activeOffscreen = true;
-			m_stats.initHP(1);// 20);
+			m_stats.initHP(120);
 			m_penguinManager = new ElSqualoPenguinManager(this);
 			
 			m_cutscene = new CutScene("CutScenes/squaloFinalWords");

@@ -100,6 +100,7 @@ package GameObject.Weapon
 					result = true;
 					//deal damage
 					enemy.takeDamage(m_player , this);
+					m_player.m_didDeflect = true;
 					m_enemiesHit.push(i);
 					break;
 				}
