@@ -503,7 +503,7 @@
                  "name":"",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"ElectricSnake",
                  "width":0,
@@ -690,18 +690,6 @@
                  "width":0,
                  "x":3013,
                  "y":1629
-                }, 
-                {
-                 "height":0,
-                 "name":"",
-                 "properties":
-                    {
-
-                    },
-                 "type":"Barrel",
-                 "width":0,
-                 "x":2830,
-                 "y":1053
                 }, 
                 {
                  "height":0,
@@ -967,6 +955,54 @@
                  "width":0,
                  "x":2441,
                  "y":800
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "coop":""
+                    },
+                 "type":"Penguin",
+                 "width":0,
+                 "x":3295,
+                 "y":948
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "coop":""
+                    },
+                 "type":"Penguin",
+                 "width":0,
+                 "x":3330,
+                 "y":1082
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "coop":""
+                    },
+                 "type":"PenguinScientist",
+                 "width":0,
+                 "x":3239,
+                 "y":318
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "coop":""
+                    },
+                 "type":"PenguinScientist",
+                 "width":0,
+                 "x":5048,
+                 "y":1273
                 }],
          "opacity":1,
          "type":"objectgroup",

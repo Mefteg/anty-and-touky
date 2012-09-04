@@ -18,7 +18,11 @@ package GameObject.Enemy
 			m_width = 32; m_height = 32;
 			m_timerAttack = new FlxTimer();
 			m_timerAttack.start(4);
-			m_stats.initHP(2);
+			switch(Global.difficulty){
+				case 1 : m_stats.initHP(1); break;
+				case 2 : m_stats.initHP(2); break;
+				case 3 : m_stats.initHP(2); break;
+			}
 			m_state = "idle";
 			m_explosion = EnemySmoke.Explosion();
 		}

@@ -54,7 +54,7 @@ package GameObject.Enemy.ElSqualo
 			m_state = "idle";
 			
 			m_smoke = EnemySmoke.Explosion();
-			m_stats.initHP(1);// 00);
+			m_stats.initHP(100);
 			m_speed = 1;
 			
 			x = m_body.x + 26; 

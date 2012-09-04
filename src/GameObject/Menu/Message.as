@@ -24,7 +24,7 @@ package GameObject.Menu
 		
 		public var m_index:int;
 				
-		public function Message( text:String,object:GameObject,player:PlayableObject= null ,width:int=130, height:int=75 ) 
+		public function Message( text:String,object:GameObject,player:PlayableObject= null ,width:int=180, height:int=104 ) 
 		{
 			super(0, 0);
 			m_url = "Images/Menu/bulle.png";
@@ -33,7 +33,7 @@ package GameObject.Menu
 			else
 				m_player = player;
 			m_objectText = new FlxText(0, 0, width);
-			m_objectText.size = 10;
+			m_objectText.size = 13;
 			m_width = width;
 			m_height = height;
 			m_target = object;
@@ -48,6 +48,7 @@ package GameObject.Menu
 		}
 		
 		public function displayMessage(msg:String) :void {
+			
 			m_text = msg;
 			m_index = 0;
 			m_currentText = "";
@@ -68,10 +69,26 @@ package GameObject.Menu
 			loadGraphic2(Global.library.getBitmap(m_url), true, false, m_width, m_height);
 		}
 		
+		private function checkOffScreen():void {
+			var t_cam:Camera = Global.camera;
+			if ( ! t_cam )
+				return;
+			if (x < t_cam.scroll.x)
+				x = t_cam.scroll.x;
+			if (x + m_width > t_cam.scroll.x + FlxG.width)
+				x = t_cam.scroll.x + FlxG.width - m_width;
+			if (y < t_cam.scroll.y)
+				y = t_cam.scroll.y;
+			if (y + m_height > t_cam.scroll.y + FlxG.height)
+				y = t_cam.scroll.y + FlxG.height - m_height;
+		}
+		
 		override public function update():void {
 			super.update();
 			//place the sprite
-			x = m_target.x-m_width/2; y = m_target.y-m_height;
+			x = m_target.x - m_width / 2; y = m_target.y - m_height;
+			//check if not out of the screen
+			checkOffScreen();
 			//place the text
 			m_objectText.x = x + 1;
 			m_objectText.y = y + 1;
