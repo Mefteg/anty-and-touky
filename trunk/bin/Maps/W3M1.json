@@ -123,24 +123,12 @@
                  "y":89
                 }, 
                 {
-                 "height":50,
-                 "name":"MexicanRaccoon",
-                 "properties":
-                    {
-                     "url":"World3\/mexicanRaccoon1"
-                    },
-                 "type":"MexicanRaccoon",
-                 "width":53,
-                 "x":1752,
-                 "y":163
-                }, 
-                {
                  "height":130,
                  "name":"ToM2",
                  "properties":
                     {
                      "respawn":"left",
-                     "url":"Maps\/W3M2.json"
+                     "url":"Maps\/W3M1Bis.json"
                     },
                  "type":"TriggerWarp",
                  "width":47,

@@ -351,15 +351,10 @@
   <object name="Penguin" type="Penguin" x="1217" y="567"/>
   <object name="Alarm" type="Alarm" x="1470" y="86"/>
   <object name="Alarm" type="Alarm" x="565" y="89"/>
-  <object name="MexicanRaccoon" type="MexicanRaccoon" x="1752" y="163" width="53" height="50">
-   <properties>
-    <property name="url" value="World3/mexicanRaccoon1"/>
-   </properties>
-  </object>
   <object name="ToM2" type="TriggerWarp" x="1867" y="233" width="47" height="130">
    <properties>
     <property name="respawn" value="left"/>
-    <property name="url" value="Maps/W3M2.json"/>
+    <property name="url" value="Maps/W3M1Bis.json"/>
    </properties>
   </object>
   <object name="Penguin" type="Penguin" x="1384" y="251"/>

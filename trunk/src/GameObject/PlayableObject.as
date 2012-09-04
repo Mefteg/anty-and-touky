@@ -85,7 +85,7 @@ package GameObject
 		public function PlayableObject(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y, SimpleGraphic);
-			m_speed = 1.9;
+			m_speed = 2.2;
 			m_typeName = "Player";
 			m_url = "Images/Players/anty.png";
 			m_width = 48;
