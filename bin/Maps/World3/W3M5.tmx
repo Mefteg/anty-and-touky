@@ -452,7 +452,7 @@
   <object type="PenguinScientist" x="787" y="1540"/>
   <object type="Penguin" x="875" y="2017"/>
   <object type="Cannon" x="1066" y="1795"/>
-  <object name="Warp" type="TriggerWarp" x="1024" y="1716" width="96" height="18">
+  <object name="Warp" type="TriggerWarp" x="1007" y="1716" width="139" height="18">
    <properties>
     <property name="respawn" value="down"/>
     <property name="url" value="Maps/W3M6.json"/>

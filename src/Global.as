@@ -39,7 +39,8 @@ package
 		//static public var serverAddress:String = "http://localhost/minority-resort/bin";
 		static public var frozen:Boolean = false;
 		static public var hasSeenControls:Boolean = false;
-		static public var nbPlayers:int=1;
+		static public var nbPlayers:int = 1;
+		
 		static public var difficulty:int = 1;
 		
 		static public var superUnlimited:Boolean = false;

@@ -1,6 +1,7 @@
 package GameObject.Other 
 {
 	import GameObject.DrawableObject;
+	import org.flixel.FlxSound;
 	import org.flixel.FlxTimer;
 	/**
 	 * ...
@@ -13,6 +14,7 @@ package GameObject.Other
 		private var m_time:int;
 		private var m_timerClose:FlxTimer;
 		private var m_permanent:Boolean = false;
+		private var m_sound:FlxSound;
 		
 		public function Switch(X:Number,Y:Number,target:String,time:int) 
 		{
@@ -24,6 +26,8 @@ package GameObject.Other
 			m_target = target;
 			m_time = time;
 			m_timerClose = new FlxTimer();
+			m_sound = new FlxSound();
+			m_sound.loadStream("FX/door.mp3");
 			
 			if (m_time == 0 || !Global.soloPlayer)
 				m_timerClose.start(0.1);
@@ -44,6 +48,7 @@ package GameObject.Other
 			var door:Door = Global.currentPlaystate.getDoor(m_target);
 			if (door)
 				door.act();	
+			m_sound.play();
 			frame = 1;
 			m_active = true;
 		}
@@ -52,6 +57,7 @@ package GameObject.Other
 			var door:Door = Global.currentPlaystate.getDoor(m_target);
 			if (door)
 				door.close();	
+			m_sound.play();
 			frame = 0;
 			m_active = false;
 			m_state = "idle";
