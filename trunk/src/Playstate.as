@@ -189,7 +189,7 @@ package
 			m_sceneManager.loadScene(Global.firstLevel);
 			
 			//m_sceneManager.loadScene("Maps/Tuto4.json");
-			//m_sceneManager.loadScene("Maps/W1Boss.json");
+			//m_sceneManager.loadScene("Maps/W3B.json");
 			//m_sceneManager.loadScene("Maps/W1M1.json");
 
 			m_state = "Loading";
@@ -310,8 +310,8 @@ package
 			m_state = "Loading";
 		}
 		
-		override public function chargeMusic(name:String) : void{
-			m_sceneManager.chargeMusic(name);
+		override public function chargeMusic(name:String , loop:Boolean = true) : void{
+			m_sceneManager.chargeMusic(name , loop);
 		}
 		
 		public function getCurrentScene():Scene 

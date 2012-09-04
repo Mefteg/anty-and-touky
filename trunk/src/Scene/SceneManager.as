@@ -74,7 +74,7 @@ package Scene
 								m_currentScene.spawnPlayers();
 								//play music
 								if (m_currentScene.m_music && m_currentScene.m_music != m_music.name) {
-									chargeMusic(m_currentScene.m_music);
+									chargeMusic(m_currentScene.m_music,true);
 								}
 								m_state = "Loaded"; 
 								break;

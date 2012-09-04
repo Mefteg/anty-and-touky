@@ -157,8 +157,8 @@ package
 			FlxG.switchState( new StoryState() );
 		}
 		
-		override public function chargeMusic(url:String):void {
-			m_music.loadStream("Music/" + url + ".mp3", true );
+		override public function chargeMusic(url:String, loop:Boolean = true ):void {
+			m_music.loadStream("Music/" + url + ".mp3", loop );
 			m_music.name = url ;
 			m_music.play();
 		}

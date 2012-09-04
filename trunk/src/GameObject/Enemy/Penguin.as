@@ -12,6 +12,8 @@ package GameObject.Enemy
 	{
 		protected var m_timerDraw:FlxTimer;
 		protected var m_sound:FlxSound;
+		protected var m_playedSound:Boolean = true;
+		protected var m_timerShout:FlxTimer;
 		
 		public function Penguin(X:Number, Y:Number ) 
 		{
@@ -22,6 +24,7 @@ package GameObject.Enemy
 			m_width = 32;
 			m_height = 32;
 			createThrowables();
+			m_timerShout = new FlxTimer();
 			m_timerDraw = new FlxTimer();
 			m_state = "offScreen";
 			switch(Global.difficulty) {
@@ -81,11 +84,15 @@ package GameObject.Enemy
 			switch(m_state) {
 				case "offScreen" : m_timerAttack.start(Utils.random(1, 2));{
 										m_state = "idle";
-										if( Utils.random(0,100) > 40 )
-											m_sound.play();
+										//only some penguins will shout
+										if ( Utils.random(0, 100) > 40 ) {
+											// give a timer to avoid crowd
+											m_timerShout.start( Utils.random(0, 1));
+											m_playedSound = false;
+										}
 									}
 									break;
-				case "idle": 
+				case "idle": playSound();
 							facing = getFacingToTarget(m_target);
 							play("idle" + facing);
 							if (m_timerAttack.finished) {
@@ -103,6 +110,16 @@ package GameObject.Enemy
 								break;
 				case "dead": die();
 							break;
+			}
+		}
+		
+		public function playSound():void {
+			if (m_playedSound)
+				return;
+			if (m_timerShout.finished) {
+				m_sound.volume = Utils.random(0.5, 0.9);
+				m_playedSound = true;
+				m_sound.play();
 			}
 		}
 		
