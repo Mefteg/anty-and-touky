@@ -7,6 +7,7 @@ package GameObject.Enemy.Centipede
 	import GameObject.Weapon.Weapon;
 	import org.flixel.FlxG;
 	import org.flixel.FlxPoint;
+	import org.flixel.FlxSound;
 	import org.flixel.FlxTimer;
 	/**
 	 * ...
@@ -34,6 +35,9 @@ package GameObject.Enemy.Centipede
 	
 		private var m_dead:Boolean = false;
 		
+		private var m_stepSound:FlxSound;
+		private var m_stepSound2:FlxSound;
+		
 		public function Centipede(X:Number, Y:Number, areaWidth:int, areaHeight:int ) 
 		{
 			super(X, Y);
@@ -42,9 +46,18 @@ package GameObject.Enemy.Centipede
 			m_height = 32;
 			m_speed = 3.0;
 			m_initSpeed = m_speed;
-			m_stats.initHP(1);//12);
+			switch(Global.difficulty) {
+				case 1: m_stats.initHP(5); m_nbParts = 10; break;
+				case 2: m_stats.initHP(10);m_nbParts = 13; break;
+				case 3: m_stats.initHP(15); m_nbParts = 15; break;
+				default : m_stats.initHP(5); break;
+			}			
 			m_points = 1000;
 			m_invincible = true;
+			m_stepSound = new FlxSound();
+			m_stepSound.loadStream("FX/centipede.mp3", true);
+			m_stepSound2 = new FlxSound();
+			m_stepSound2.loadStream("FX/centipede2.mp3", true);
 			createParts();
 			m_livingParts = m_nbParts;
 			m_area = new Rectangle(X, Y, areaWidth, areaHeight);
@@ -166,6 +179,8 @@ package GameObject.Enemy.Centipede
 					goTo(getRandomPlayer());
 				}
 				initPartsMove();
+				m_stepSound.play();
+				m_stepSound2.play();
 			}
 		}
 		
@@ -181,6 +196,8 @@ package GameObject.Enemy.Centipede
 				m_direction = new FlxPoint(0, 0);
 				m_state = "waitingOutside";
 				m_timerWait.start(TIME_WAIT_OUT);
+				m_stepSound.stop();
+				m_stepSound2.stop();
 			}
 				
 		}
@@ -355,6 +372,8 @@ package GameObject.Enemy.Centipede
 			m_dead = true;
 			m_state = "dying";
 			m_direction = new FlxPoint(0, 0);
+			m_stepSound.stop();
+			m_stepSound2.stop();
 			killParts();
 			m_timerDeath.start(5);
 		}
@@ -362,8 +381,8 @@ package GameObject.Enemy.Centipede
 		override public function die():void {
 			if (m_timerDeath.finished) {
 				m_state = "ending";
-				m_timerDeath.start(7);
-				Global.currentPlaystate.chargeMusic("GoodGameBro");
+				m_timerDeath.start(10);
+				Global.currentPlaystate.chargeMusic("GoodGameBro",false);
 				m_smoke.playSmoke(x+6, y-4);
 				visible = false;
 				if(m_killer)
