@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<item type="button" positionx="220" positiony="340" sizex="200" sizey="50" name="tryAgain" label="Try Again !" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="220" positiony="400" sizex="200" sizey="50" name="backToMenuState" label="Back To Menu !" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+</data>
