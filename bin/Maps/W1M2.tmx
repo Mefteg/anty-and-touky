@@ -146,6 +146,8 @@
    </properties>
   </object>
   <object name="CloudManager0" type="CloudManager" x="17" y="15" width="136" height="52"/>
+  <object name="BigAnt0" type="BigAnt" x="773" y="607" width="32" height="32"/>
+  <object name="BigEgg0" type="BigEgg" x="81" y="814" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="48" height="40">
   <object name="RespawnPointW1M2Top" type="RespawnPoint" x="1328" y="87" width="113" height="99">

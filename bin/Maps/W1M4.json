@@ -732,6 +732,30 @@
                  "width":29,
                  "x":2945,
                  "y":272
+                }, 
+                {
+                 "height":32,
+                 "name":"BigAnt0",
+                 "properties":
+                    {
+
+                    },
+                 "type":"BigAnt",
+                 "width":29,
+                 "x":998,
+                 "y":120
+                }, 
+                {
+                 "height":32,
+                 "name":"BigEgg0",
+                 "properties":
+                    {
+
+                    },
+                 "type":"BigEgg",
+                 "width":29,
+                 "x":1965,
+                 "y":441
                 }],
          "opacity":1,
          "type":"objectgroup",

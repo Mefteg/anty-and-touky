@@ -40,7 +40,7 @@
   <object name="Heart0" type="Heart" x="679" y="511" width="22" height="17"/>
   <object name="Heart1" type="Heart" x="718" y="511" width="22" height="17"/>
   <object name="Life0" type="Life" x="211" y="1358" width="22" height="17"/>
-  <object name="BreakableRock2" type="BreakableRock" x="631" y="1160" width="35" height="36"/>
+  <object name="BreakableRock2" type="BreakableRock" x="633" y="1157" width="35" height="36"/>
   <object name="Penguin0" type="Penguin" x="1147" y="444" width="33" height="31"/>
   <object name="Penguin0" type="Penguin" x="850" y="145" width="33" height="31">
    <properties>
@@ -274,6 +274,8 @@
     <property name="mode" value="2"/>
    </properties>
   </object>
+  <object name="BigEgg0" type="BigEgg" x="635" y="185" width="33" height="31"/>
+  <object name="BigAnt0" type="BigAnt" x="794" y="929" width="33" height="31"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="40" height="48">
   <object name="RespawnPointW3M1Top" type="RespawnPoint" x="1161" y="135" width="44" height="45">
