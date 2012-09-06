@@ -286,27 +286,27 @@
                  "name":"PenguinJetpack0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"PenguinJetpack",
                  "width":33,
-                 "x":218,
-                 "y":203
+                 "x":348,
+                 "y":72
                 }, 
                 {
                  "height":31,
                  "name":"PenguinJetpack0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"PenguinJetpack",
                  "width":33,
-                 "x":220,
-                 "y":102
+                 "x":447,
+                 "y":69
                 }, 
                 {
-                 "height":231,
+                 "height":161,
                  "name":"TriggerEnemies1",
                  "properties":
                     {
@@ -316,9 +316,9 @@
                      "type":"mosquito"
                     },
                  "type":"TriggerEnemies",
-                 "width":190,
-                 "x":124,
-                 "y":437
+                 "width":141,
+                 "x":159,
+                 "y":465
                 }, 
                 {
                  "height":156,
@@ -328,6 +328,7 @@
                      "coop":"",
                      "direction":"4",
                      "location":"1",
+                     "mode":"2",
                      "number":"3",
                      "type":"mosquito"
                     },
@@ -377,7 +378,8 @@
                  "name":"Penguin0",
                  "properties":
                     {
-                     "coop":""
+                     "coop":"",
+                     "mode":"2"
                     },
                  "type":"Penguin",
                  "width":33,
@@ -509,7 +511,7 @@
                  "name":"Penguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"Penguin",
                  "width":33,
@@ -569,7 +571,7 @@
                  "name":"Penguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"Penguin",
                  "width":33,
@@ -621,15 +623,15 @@
                     },
                  "type":"Penguin",
                  "width":33,
-                 "x":1022,
-                 "y":832
+                 "x":951,
+                 "y":789
                 }, 
                 {
                  "height":31,
                  "name":"Penguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"Penguin",
                  "width":33,
@@ -665,7 +667,7 @@
                  "name":"Penguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"Penguin",
                  "width":33,
@@ -701,7 +703,7 @@
                  "name":"Penguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"Penguin",
                  "width":33,
@@ -713,7 +715,7 @@
                  "name":"Penguin0",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"Penguin",
                  "width":33,
@@ -833,7 +835,7 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"WaterPenguin",
                  "width":33,
@@ -893,7 +895,7 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"WaterPenguin",
                  "width":33,
@@ -905,7 +907,7 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"WaterPenguin",
                  "width":33,
@@ -929,7 +931,7 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"WaterPenguin",
                  "width":33,
@@ -953,7 +955,7 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"WaterPenguin",
                  "width":33,
@@ -977,7 +979,7 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"WaterPenguin",
                  "width":33,
@@ -1032,6 +1034,19 @@
                  "width":82,
                  "x":17,
                  "y":10
+                }, 
+                {
+                 "height":31,
+                 "name":"Penguin0",
+                 "properties":
+                    {
+                     "coop":"",
+                     "mode":"2"
+                    },
+                 "type":"Penguin",
+                 "width":33,
+                 "x":477,
+                 "y":334
                 }],
          "opacity":1,
          "type":"objectgroup",
