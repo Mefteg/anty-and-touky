@@ -150,7 +150,7 @@
   <object name="BigEgg0" type="BigEgg" x="81" y="814" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="48" height="40">
-  <object name="RespawnPointW1M2Top" type="RespawnPoint" x="1328" y="87" width="113" height="99">
+  <object name="RespawnPointW1M2Top" type="RespawnPoint" x="1312" y="78" width="64" height="54">
    <properties>
     <property name="location" value="top"/>
    </properties>
@@ -158,6 +158,11 @@
   <object name="RespawnPointW1M2Init" type="RespawnPoint" x="1162" y="160" width="113" height="99">
    <properties>
     <property name="location" value="init"/>
+   </properties>
+  </object>
+  <object name="RespawnPointW1M2Right" type="RespawnPoint" x="1397" y="161" width="64" height="54">
+   <properties>
+    <property name="location" value="right"/>
    </properties>
   </object>
  </objectgroup>
