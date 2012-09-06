@@ -115,7 +115,8 @@
                  "name":"Penguin6",
                  "properties":
                     {
-                     "coop":""
+                     "coop":"",
+                     "mode":"2"
                     },
                  "type":"Penguin",
                  "width":49,
@@ -265,7 +266,7 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"WaterPenguin",
                  "width":67,
@@ -373,7 +374,7 @@
                  "name":"Penguin6",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"Penguin",
                  "width":49,
@@ -421,7 +422,7 @@
                  "name":"Penguin6",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"Penguin",
                  "width":49,
@@ -457,7 +458,7 @@
                  "name":"Penguin6",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"Penguin",
                  "width":49,
@@ -469,12 +470,12 @@
                  "name":"PenguinJetpack1",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"PenguinJetpack",
                  "width":49,
-                 "x":80,
-                 "y":383
+                 "x":603,
+                 "y":219
                 }, 
                 {
                  "height":48,

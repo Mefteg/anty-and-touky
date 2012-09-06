@@ -17,4 +17,6 @@
  <objecttype name="Cylinders" color="#a0a0a4"/>
  <objecttype name="Lift" color="#a0a0a4"/>
  <objecttype name="Alarm" color="#ff0000"/>
+ <objecttype name="Butterfly" color="#ffaaff"/>
+ <objecttype name="GoldFeather" color="#ffff00"/>
 </objecttypes>

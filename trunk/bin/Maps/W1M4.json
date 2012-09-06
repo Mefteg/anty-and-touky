@@ -31,7 +31,7 @@
                  "name":"Penguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"Penguin",
                  "width":29,
@@ -55,7 +55,7 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"WaterPenguin",
                  "width":29,
@@ -115,7 +115,7 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"WaterPenguin",
                  "width":29,
@@ -131,8 +131,8 @@
                     },
                  "type":"WaterPenguin",
                  "width":29,
-                 "x":2356,
-                 "y":473
+                 "x":2354,
+                 "y":471
                 }, 
                 {
                  "height":32,
@@ -151,7 +151,7 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"WaterPenguin",
                  "width":29,
@@ -163,7 +163,7 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"WaterPenguin",
                  "width":29,
@@ -175,7 +175,7 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"WaterPenguin",
                  "width":29,
@@ -187,7 +187,7 @@
                  "name":"Penguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"Penguin",
                  "width":29,
@@ -247,7 +247,7 @@
                  "name":"Penguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"Penguin",
                  "width":29,
@@ -283,7 +283,7 @@
                  "name":"Penguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"Penguin",
                  "width":29,
@@ -453,7 +453,7 @@
                  "name":"PenguinJetpack0",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"PenguinJetpack",
                  "width":29,
@@ -504,7 +504,7 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"WaterPenguin",
                  "width":29,
@@ -540,7 +540,7 @@
                  "name":"Penguin0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"Penguin",
                  "width":29,
@@ -564,7 +564,8 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-                     "coop":""
+                     "coop":"",
+                     "mode":"2"
                     },
                  "type":"WaterPenguin",
                  "width":29,
@@ -576,7 +577,8 @@
                  "name":"WaterPenguin0",
                  "properties":
                     {
-                     "coop":""
+                     "coop":"",
+                     "mode":"2"
                     },
                  "type":"WaterPenguin",
                  "width":29,
@@ -607,6 +609,129 @@
                  "width":96,
                  "x":21,
                  "y":14
+                }, 
+                {
+                 "height":61,
+                 "name":"MexicanRaccoonM4",
+                 "properties":
+                    {
+                     "coop":"",
+                     "url":"mexicanRaccoon_W1M4"
+                    },
+                 "type":"MexicanRaccoon",
+                 "width":75,
+                 "x":73,
+                 "y":398
+                }, 
+                {
+                 "height":446,
+                 "name":"TriggerEnemies0",
+                 "properties":
+                    {
+                     "coop":"",
+                     "direction":"0",
+                     "location":"2",
+                     "number":"1",
+                     "speed":"0.8",
+                     "type":"goldenMosquito"
+                    },
+                 "type":"TriggerEnemies",
+                 "width":255,
+                 "x":63,
+                 "y":64
+                }, 
+                {
+                 "height":223,
+                 "name":"TriggerEnemies1",
+                 "properties":
+                    {
+                     "coop":"",
+                     "direction":"0",
+                     "location":"2",
+                     "number":"1",
+                     "speed":"0.8",
+                     "type":"goldenMosquito"
+                    },
+                 "type":"TriggerEnemies",
+                 "width":255,
+                 "x":578,
+                 "y":286
+                }, 
+                {
+                 "height":281,
+                 "name":"TriggerEnemies1",
+                 "properties":
+                    {
+                     "direction":"2",
+                     "location":"3",
+                     "number":"1",
+                     "speed":"0.8",
+                     "type":"goldenMosquito"
+                    },
+                 "type":"TriggerEnemies",
+                 "width":344,
+                 "x":2123,
+                 "y":222
+                }, 
+                {
+                 "height":36,
+                 "name":"GoldFeather0",
+                 "properties":
+                    {
+                     "coop":""
+                    },
+                 "type":"GoldFeather",
+                 "width":66,
+                 "x":799,
+                 "y":468
+                }, 
+                {
+                 "height":36,
+                 "name":"GoldFeather0",
+                 "properties":
+                    {
+                     "coop":""
+                    },
+                 "type":"GoldFeather",
+                 "width":66,
+                 "x":1552,
+                 "y":80
+                }, 
+                {
+                 "height":36,
+                 "name":"GoldFeather0",
+                 "properties":
+                    {
+
+                    },
+                 "type":"GoldFeather",
+                 "width":66,
+                 "x":2491,
+                 "y":63
+                }, 
+                {
+                 "height":36,
+                 "name":"GoldFeather0",
+                 "properties":
+                    {
+                     "coop":""
+                    },
+                 "type":"GoldFeather",
+                 "width":66,
+                 "x":2873,
+                 "y":363
+                }, 
+                {
+                 "height":32,
+                 "name":"WaterPenguin0",
+                 "properties":
+                    {
+
+                    },
+                 "type":"WaterPenguin",
+                 "width":29,
+                 "x":2945,
+                 "y":272
                 }],
          "opacity":1,
          "type":"objectgroup",
