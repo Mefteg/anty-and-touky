@@ -59,6 +59,12 @@ package GameObject.Menu
 				case "backToMenu":
 					this.onClickBackToMenu(button);
 					break;
+				case "tryAgain":
+					this.onClickTryAgain(button);
+					break;
+				case "backToMenuState":
+					this.onClickBackToMenuState(button);
+					break;
 				default:
 					this.onClickButton(button);
 					break;
@@ -158,6 +164,14 @@ package GameObject.Menu
 			m_model.clearInfos();
 			m_view.clear();
 			m_model.loadUrl("Menu/menustate.xml");
+		}
+		
+		protected function onClickTryAgain(button:MyButton) : void {
+			FlxG.switchState(new Playstate());
+		}
+		
+		protected function onClickBackToMenuState(button:MyButton) : void {
+			FlxG.switchState(new Menustate());
 		}
 	}
 
