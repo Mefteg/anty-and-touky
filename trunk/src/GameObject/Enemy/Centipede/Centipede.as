@@ -9,6 +9,7 @@ package GameObject.Enemy.Centipede
 	import org.flixel.FlxPoint;
 	import org.flixel.FlxSound;
 	import org.flixel.FlxTimer;
+	import Scene.Transition;
 	/**
 	 * ...
 	 * @author ...
@@ -38,6 +39,9 @@ package GameObject.Enemy.Centipede
 		private var m_stepSound:FlxSound;
 		private var m_stepSound2:FlxSound;
 		
+		private var m_beginTransition:Transition;
+		private var m_endTransition:Transition;
+		
 		public function Centipede(X:Number, Y:Number, areaWidth:int, areaHeight:int ) 
 		{
 			super(X, Y);
@@ -58,6 +62,8 @@ package GameObject.Enemy.Centipede
 			m_stepSound.loadStream("FX/centipede.mp3", true);
 			m_stepSound2 = new FlxSound();
 			m_stepSound2.loadStream("FX/centipede2.mp3", true);
+			m_beginTransition = new Transition("Images/centipede.swf", 5, true);
+			m_endTransition = new Transition("Images/entrée-technodrome.swf", 5, false);
 			createParts();
 			m_livingParts = m_nbParts;
 			m_area = new Rectangle(X, Y, areaWidth, areaHeight);
@@ -75,7 +81,7 @@ package GameObject.Enemy.Centipede
 			m_currentSpawn = new CentipedeSpawnPoint(new FlxPoint(x, y), LEFT, m_direction);
 			placeParts();
 			m_timerWait = new FlxTimer();
-			m_state = "waitingOutside";
+			m_state = "trans";
 			m_timerWait.start(TIME_WAIT_OUT);
 		}
 			
@@ -98,6 +104,7 @@ package GameObject.Enemy.Centipede
 			if(!m_dead)
 				checkPlayersDamage();
 			switch(m_state) {
+				case "trans" : if (m_beginTransition.isOver()) { m_state = "waitingOutside"; } break;
 				case "waitingOutside": waitingOutside(); break;
 				case "waitingInside": waitingInside(); break;
 				case "moving" : moving(); break;
@@ -295,6 +302,7 @@ package GameObject.Enemy.Centipede
 			super.addToStage();
 			for (var i:int = 0; i < m_nbParts; i++)
 				m_parts[i].addToStage();
+			m_beginTransition.play();
 		}
 				
 		override public function addBitmap():void {
@@ -327,7 +335,7 @@ package GameObject.Enemy.Centipede
 		}
 		
 		override public function takeDamage(player:PlayableObject, weapon:Weapon):void
-		{
+		{	
 			if (m_invincible)
 				return;
 			//calculate damage
@@ -375,7 +383,7 @@ package GameObject.Enemy.Centipede
 			m_stepSound.stop();
 			m_stepSound2.stop();
 			killParts();
-			m_timerDeath.start(5);
+			m_timerDeath.start(2);
 		}
 		
 		override public function die():void {
@@ -391,8 +399,11 @@ package GameObject.Enemy.Centipede
 		}
 		
 		private function ending():void {
-			if (m_timerDeath.finished)
-				Global.currentPlaystate.changeScene("Maps/W3M1.json","init");
+			if (m_timerDeath.finished){
+				Global.currentPlaystate.changeScene("Maps/W3M1.json", "init");
+				m_endTransition.play();
+				m_state = "pitiful";
+			}
 		}
 		
 	}

@@ -115,11 +115,13 @@ package GameObject
 			getWeapon().m_player = this;
 			createThrowables();
 			switch(Global.difficulty) {
-				case 1 : m_thresoldDelta = 5000; m_lifes = 3; break;
-				case 2 : m_thresoldDelta = 10000; m_lifes = 2; break;
-				case 3 : m_thresoldDelta = 15000; m_lifes = 1; break;
+				case 1 : m_thresoldDelta = 6000; m_lifes = 3; break;
+				case 2 : m_thresoldDelta = 8000; m_lifes = 2; break;
+				case 3 : m_thresoldDelta = 12000; m_lifes = 1; break;
 				default : m_thresoldDelta = 5000;break;
 			}
+			if (Global.nbPlayers > 1)
+				m_thresoldDelta *= 0.7;
 			m_thresoldScore += m_thresoldDelta;
 		}
 		
