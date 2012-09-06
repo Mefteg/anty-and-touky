@@ -637,16 +637,16 @@
          "name":"RespawnPoints",
          "objects":[
                 {
-                 "height":99,
+                 "height":54,
                  "name":"RespawnPointW1M2Top",
                  "properties":
                     {
                      "location":"top"
                     },
                  "type":"RespawnPoint",
-                 "width":113,
-                 "x":1328,
-                 "y":87
+                 "width":64,
+                 "x":1312,
+                 "y":78
                 }, 
                 {
                  "height":99,
@@ -659,6 +659,18 @@
                  "width":113,
                  "x":1162,
                  "y":160
+                }, 
+                {
+                 "height":54,
+                 "name":"RespawnPointW1M2Right",
+                 "properties":
+                    {
+                     "location":"right"
+                    },
+                 "type":"RespawnPoint",
+                 "width":64,
+                 "x":1397,
+                 "y":161
                 }],
          "opacity":1,
          "type":"objectgroup",

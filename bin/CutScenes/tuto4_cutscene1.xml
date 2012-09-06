@@ -3,8 +3,8 @@
 <cutscene name="tuto4_cutscene1">
 	<actiongroup sync="1">
 		<action type="message" executor="MexicanRaccoon4" text="Just one more thing."/>
-		<action type="message" executor="MexicanRaccoon4" text="Anty can't jump but Touky can carry him!"/>
-		<action type="message" executor="MexicanRaccoon4" text="Touky has to overlap ( hum hum ) and press M."/>
+		<action type="message" executor="MexicanRaccoon4" text="Anty can't swim but Touky can carry him!"/>
+		<action type="message" executor="MexicanRaccoon4" text="Anty and Touky have to overlap each other ( hum hum ). Then press M."/>
 		<action type="message" executor="MexicanRaccoon4" text="In this pose, Anty is the only one who can throw things."/>
 	</actiongroup>
 </cutscene>

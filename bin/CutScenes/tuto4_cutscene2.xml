@@ -3,7 +3,8 @@
 <cutscene name="tuto4_cutscene2">
 	<actiongroup sync="1">
 		<action type="message" executor="MexicanRaccoon4" text="Oh! I forgot"/>
-		<action type="message" executor="MexicanRaccoon4" text="Touky can carry some objects."/>
-		<action type="message" executor="MexicanRaccoon4" text="Try to put this box on the switch."/>
+		<action type="message" executor="MexicanRaccoon4" text="Touky can carry some objects. Just press M when your on top of them."/>
+		<action type="message" executor="MexicanRaccoon4" text="To release an object, press M again."/>
+		<action type="message" executor="MexicanRaccoon4" text="Try to put this box on the switch... Do it now lazy boy!"/>
 	</actiongroup>
 </cutscene>

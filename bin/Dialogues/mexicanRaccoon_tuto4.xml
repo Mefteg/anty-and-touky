@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <root>
 	<message text="Just one more thing." />
-	<message text="Anty can't jump but Touky can carry him!" />
-	<message text="Touky has to overlap ( hum hum ) and press M." />
+	<message text="Anty can't swim but Touky can carry him!" />
+	<message text="Anty and Touky have to overlap each other ( hum hum ). Then press M." />
 	<message text="In this pose, Anty is the only one who can throw things." />
 </root>
