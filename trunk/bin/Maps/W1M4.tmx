@@ -212,6 +212,8 @@
    </properties>
   </object>
   <object name="WaterPenguin0" type="WaterPenguin" x="2945" y="272" width="29" height="32"/>
+  <object name="BigAnt0" type="BigAnt" x="998" y="120" width="29" height="32"/>
+  <object name="BigEgg0" type="BigEgg" x="1965" y="441" width="29" height="32"/>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="100" height="18">
   <object name="RespawnPointW1M4Left" type="RespawnPoint" x="69" y="269" width="64" height="45">

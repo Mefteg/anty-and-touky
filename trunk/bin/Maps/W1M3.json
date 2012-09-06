@@ -179,8 +179,8 @@
                     },
                  "type":"BreakableRock",
                  "width":35,
-                 "x":631,
-                 "y":1160
+                 "x":633,
+                 "y":1157
                 }, 
                 {
                  "height":31,
@@ -1047,6 +1047,30 @@
                  "width":33,
                  "x":477,
                  "y":334
+                }, 
+                {
+                 "height":31,
+                 "name":"BigEgg0",
+                 "properties":
+                    {
+
+                    },
+                 "type":"BigEgg",
+                 "width":33,
+                 "x":635,
+                 "y":185
+                }, 
+                {
+                 "height":31,
+                 "name":"BigAnt0",
+                 "properties":
+                    {
+
+                    },
+                 "type":"BigAnt",
+                 "width":33,
+                 "x":794,
+                 "y":929
                 }],
          "opacity":1,
          "type":"objectgroup",
