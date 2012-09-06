@@ -17,6 +17,8 @@ package Scene
 		protected var m_currentScene:Scene.Scene;
 		protected var m_previousScene:Scene.Scene;
 		
+		public var m_pauseMusic:Boolean = false;
+		
 		public var m_state:String;
 		
 		public var m_music:FlxSound;
@@ -90,7 +92,8 @@ package Scene
 			}
 			m_music.loadStream("Music/" + url + ".mp3", loop );
 			m_music.name = url ;
-			m_music.play();
+			if (!m_pauseMusic)
+				m_music.play();
 		}
 		
 		public function findObjectByType(name:String):GameObject {

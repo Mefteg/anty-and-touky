@@ -12,6 +12,7 @@ package GameObject.Enemy.ElSqualo
 	import org.flixel.FlxSound;
 	import org.flixel.FlxTimer;
 	import Scene.CutScene.CutScene;
+	import Scene.Transition;
 	/**
 	 * ...
 	 * @author ...
@@ -40,6 +41,8 @@ package GameObject.Enemy.ElSqualo
 		
 		private var m_jumpSound:FlxSound;
 		
+		private var m_beginTransition:Transition;
+		
 		public function ElSqualo(X:Number, Y:Number,areaWidth:int,areaHeight:int) 
 		{
 			super(X + areaWidth*0.5-32, Y);
@@ -49,6 +52,7 @@ package GameObject.Enemy.ElSqualo
 			m_leftArm = new SqualoLeftArm(this);
 			m_area = new Rectangle(X, Y, areaWidth, areaHeight);
 			m_missilesManager = new SqualoMissilesManager(NB_PINEAPPLES, this);
+			m_beginTransition = new Transition("Images/elsqualo.swf", 5, true);
 			m_invincible = true;
 			m_tabExplode = new Array( new FlxPoint(0, 0), new FlxPoint(40, 10), new FlxPoint(10, 60), new FlxPoint(30, 30), new FlxPoint(10, 10) );
 			m_state = "onGround";
@@ -182,6 +186,7 @@ package GameObject.Enemy.ElSqualo
 			m_leftArm.addToStage();
 			m_missilesManager.addToStage();
 			m_penguinManager.addToStage();
+			m_beginTransition.play();
 		}
 		
 		private function setVisible(vis:Boolean) {

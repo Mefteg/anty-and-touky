@@ -58,8 +58,7 @@ package
 		private var m_ladyBug:FlxSprite;
 		private var m_rectLadyBug:FlxSprite;
 		private var m_initPosRect:Number;
-		
-		
+			
 		//buttons
 		public var m_enablePanels:Boolean = true;
 		protected var m_pauseButton:FlxButton;
@@ -312,6 +311,17 @@ package
 		
 		override public function chargeMusic(name:String , loop:Boolean = true) : void{
 			m_sceneManager.chargeMusic(name , loop);
+		}
+		
+		public function pauseMusic():void {
+			if(m_sceneManager.m_music.isPlaying())
+				m_sceneManager.m_music.pause();
+			m_sceneManager.m_pauseMusic = true;
+		}
+		public function resumeMusic():void {
+			if (m_sceneManager.m_music.name && m_sceneManager.m_music.name !="")
+				m_sceneManager.m_music.play();
+			m_sceneManager.m_pauseMusic = false;
 		}
 		
 		public function getCurrentScene():Scene 

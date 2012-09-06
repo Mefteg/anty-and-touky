@@ -40,18 +40,24 @@ package
 			//m_intro.play();
 			m_swfLoader = new SWFLoader();
 			m_swfLoader.load("../bin/Images/Menu/intro.swf");
+			m_sound = new FlxSound();
+			m_sound.loadStream("Music/Intro.mp3", false);
 		}
 		
 		override public function create():void {
 			super.create();
-			m_timerSwitch.start(30);
 		}
 		
 		override public function update():void {
 			doStateUpdate();
 			switch(m_state) {
 				//load images
-				case "Loading": if (m_timerSwitch.finished) end(); break;
+				case "Loading": if (m_swfLoader.isComplete()) {
+									m_sound.play();
+									m_state = "Playing";
+									m_timerSwitch.start(27);
+								}
+				case "Playing": if (m_timerSwitch.finished) end(); break;
 				case "Ending":ending(); break;
 				default : break;
 			}
@@ -65,8 +71,9 @@ package
 			
 		override public function end():void {
 			m_state = "Ending";
-			FlxG.stage.removeChild(m_intro);
-			fadeOut(4);
+			m_swfLoader.stopSWF();
+			m_sound.stop();
+			//fadeOut(4);
 		}
 		
 		override protected function ending():void {

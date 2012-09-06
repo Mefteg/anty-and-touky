@@ -6,6 +6,7 @@ package Scene
 	 */
 	public class SWFLoader 
 	{
+		import flash.display.MovieClip;
 		import flash.net.URLRequest;
 		import flash.display.Loader;
 		import flash.events.Event;
@@ -16,6 +17,7 @@ package Scene
 		protected var m_eventLoaded:Event;
 		
 		var m_loader:Loader;
+		var m_movie:MovieClip;
 		
 		public function SWFLoader() 
 		{
@@ -36,6 +38,12 @@ package Scene
 			m_complete = true;
 			m_eventLoaded = loadEvent;
 			FlxG.stage.addChild(m_loader);
+		}
+		public function isComplete():Boolean {
+			return m_complete;
+		}
+		public function stopSWF():void {
+			m_loader.parent.removeChild(m_loader);
 		}
 		
 		function onProgressHandler(mProgress:ProgressEvent)
