@@ -70,7 +70,7 @@ package GameObject
 		public var m_onSpecial:Boolean = false;	
 		
 		public var m_lifes:int = 3;
-		public var m_initHealth:int = 5;
+		public var m_initHealth:int = 1;// 5;
 		protected var m_smoke:EnemySmoke;
 		
 		public var m_score:int = 0;
@@ -121,7 +121,7 @@ package GameObject
 				default : m_thresoldDelta = 5000;break;
 			}
 			if (Global.nbPlayers > 1)
-				m_thresoldDelta *= 0.7;
+				m_thresoldDelta *= 0.5;
 			m_thresoldScore += m_thresoldDelta;
 		}
 		

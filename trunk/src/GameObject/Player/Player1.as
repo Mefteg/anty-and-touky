@@ -197,6 +197,7 @@ package GameObject.Player
 			m_speed = m_normalSpeed;
 			Global.player2.m_state = "idle";
 			Global.player2.x = x; Global.player2.y = y;
+			Global.player2.replaceWithNoCollision();
 			if (Global.specialUnlimited) {
 				m_timerSpecialAvailable = new FlxTimer();
 				m_timerSpecialAvailable.start(0.1);
@@ -218,14 +219,7 @@ package GameObject.Player
 			else
 				move();
 		}
-		
-		override public function takeDamage():Boolean {
-			if ( !super.takeDamage())
-				return false;
-			Global.menuPlayer1.takeDamage();
-			return true;
-		}
-		
+				
 		override public function placeThrowable(thr:PlayerThrowable):void {
 			var pt:FlxPoint = m_tabPlaceThrowable[Utils.getDirectionID(m_directionFacing)];
 			thr.place(x + pt.x, y + pt.y);
@@ -304,6 +298,33 @@ package GameObject.Player
 			
 			return collide;
 		}
+		
+		override public function takeDamage():Boolean {
+			if (Global.soloPlayer && Global.soloPlayer.m_name != m_name)
+				return false;
+			if (!m_timerTwinkle.finished || isRushing() || m_state == "respawn")
+				return false;
+			Global.menuPlayer1.takeDamage();
+			FX_hit.play();
+			//start timer during when the enemy is hit
+			changeTwinkleColor(_twinkleHit);
+			beginTwinkle(20, 1.5);
+			m_stats.m_hp_current --;
+			//if no more health
+			if (m_stats.m_hp_current == 0 ){
+				if (m_lifes > 0) { 
+					respawn();
+					if (Global.player2.isCarryingPlayer()){
+						Global.player2.unspecial();
+						m_state = "waitToukyPosition";
+					}
+				}else{
+					die();
+					return false;
+				}
+			}
+			return true;
+		} 
 	}
 
 }

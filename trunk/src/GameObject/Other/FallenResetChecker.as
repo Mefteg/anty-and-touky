@@ -16,7 +16,7 @@ package GameObject.Other
 		{
 			super(X, Y);
 			anty = Global.player1;
-			touky = Global.player1;
+			touky = Global.player2;
 		}
 		
 		override public function addToStage():void {
@@ -25,13 +25,8 @@ package GameObject.Other
 			super.addToStage();
 		}
 		override public function update():void {
-			if (anty.hasFallen()) {
+			if (anty.hasFallen() && anty.m_lifes > 0) {
 				anty.respawn();
-				Global.currentPlaystate.rebootScene();
-			}
-			
-			if (touky.m_stats.m_hp_current <= 0) {
-				touky.respawn();
 				Global.currentPlaystate.rebootScene();
 			}
 		}

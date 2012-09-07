@@ -21,7 +21,7 @@ package GameObject.Other.Clouds
 			m_state = "ready";
 			m_direction = new FlxPoint( -1, 0);
 			m_directionFacing = m_direction;
-			alpha = 0.5;
+			alpha = 0.3;
 			m_bufferGroup = DepthBufferPlaystate.s_foregroundGroup;
 		}
 		

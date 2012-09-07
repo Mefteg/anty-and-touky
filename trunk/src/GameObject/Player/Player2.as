@@ -219,14 +219,26 @@ package GameObject.Player
 		}
 		
 		override public function takeDamage():Boolean {
-			if ( !super.takeDamage())
+			if (Global.soloPlayer && Global.soloPlayer.m_name != m_name)
 				return false;
-			
-			//FOR SPECIAL MOVES
-			if (m_onSpecial) {
-				Global.player1.takeDamage();
-			}
+			if (!m_timerTwinkle.finished || isRushing() || m_state == "respawn")
+				return false;
 			Global.menuPlayer2.takeDamage();
+			FX_hit.play();
+			//start timer during when the enemy is hit
+			changeTwinkleColor(_twinkleHit);
+			beginTwinkle(20, 1.5);
+			m_stats.m_hp_current --;
+			//if no more health
+			if (m_stats.m_hp_current <= 0 ) {
+				unspecial();
+				if(m_lifes > 0){ 
+					respawn();
+				}else{
+					die();
+					return false;
+				}
+			}
 			return true;
 		}
 		

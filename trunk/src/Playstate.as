@@ -186,6 +186,7 @@ package
 
 			//A GARDER AU FINAL !!!!
 			m_sceneManager.loadScene(Global.firstLevel);
+			m_sceneToLoad = Global.firstLevel;
 			
 			//m_sceneManager.loadScene("Maps/Tuto4.json");
 			//m_sceneManager.loadScene("Maps/W3B.json");
@@ -386,7 +387,7 @@ package
 				Global.player1.x = Global.player2.x = 320;
 				Global.player1.y = Global.player2.y = 240;
 				depthBuffer.clearBuffers();
-				if(m_sceneManager.m_music!=null)
+				if(m_sceneManager && m_sceneManager.m_music!=null)
 					m_sceneManager.m_music.stop();
 				Global.camera = null;
 				FlxG.switchState(new Menustate());
