@@ -70,7 +70,7 @@ package GameObject
 		public var m_onSpecial:Boolean = false;	
 		
 		public var m_lifes:int = 3;
-		public var m_initHealth:int = 1;// 5;
+		public var m_initHealth:int = 5;
 		protected var m_smoke:EnemySmoke;
 		
 		public var m_score:int = 0;

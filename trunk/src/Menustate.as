@@ -61,6 +61,7 @@ package
 			//m_ladyBug = new FlxSprite(200 , 150);
 			m_ladyBug.loadGraphic(LadyBugScreen, false, false, 300, 200, true);
 			Global.library.addBitmap("Images/Menu/menu.jpg");
+			Global.library.addBitmap("Images/Weapons/egg.png");
 			
 			m_passwordManager = new PasswordManager();
 			
