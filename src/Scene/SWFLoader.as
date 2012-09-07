@@ -15,6 +15,7 @@ package Scene
 		
 		protected var m_complete:Boolean = false;
 		protected var m_eventLoaded:Event;
+		var percent:Number;
 		
 		var m_loader:Loader;
 		var m_movie:MovieClip;
@@ -48,8 +49,11 @@ package Scene
 		
 		function onProgressHandler(mProgress:ProgressEvent)
 		{
-			var percent:Number = mProgress.bytesLoaded/mProgress.bytesTotal;
-			trace(percent);
+			percent = mProgress.bytesLoaded/mProgress.bytesTotal;
+		}
+		
+		public function progress():Number {
+			return percent;
 		}
 	}
 
