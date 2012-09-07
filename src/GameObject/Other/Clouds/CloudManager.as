@@ -15,7 +15,7 @@ package GameObject.Other.Clouds
 		public function CloudManager() 
 		{
 			super(0, 0);
-			m_nbClouds = 4;
+			m_nbClouds = 3;
 			createClouds();
 			addBitmap();
 		}

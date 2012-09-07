@@ -68,7 +68,7 @@ package GameObject.Enemy.ElSqualo
 		///PINGINS .....
 		
 		private function createPinguins():void {
-			for (var i:int = 0; i < 4 ; i++)
+			for (var i:int = 0; i < 6 ; i++)
 				m_pinguins.push(new PenguinJetpack(0, 0));
 		}
 		
@@ -76,7 +76,8 @@ package GameObject.Enemy.ElSqualo
 			m_state = "moving";
 			m_nbPg = nbPing;
 			for (var i:int = 0; i < m_nbPg; i++) {
-				m_pinguins[i].resetTwinkle();
+				m_pinguins[i].removeFromStage();
+				m_pinguins[i] = new PenguinJetpack(0, 0);
 				putAtRandomPosition(m_pinguins[i]);
 			}
 			initPDone();
