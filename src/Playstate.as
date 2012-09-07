@@ -45,6 +45,8 @@ package
 		protected var m_menu_p1:Menu;
 		protected var m_menu_p2:Menu;
 		
+		public var m_transitionComplete:Boolean = true;
+		
 		//arrays for collisions
 		public var m_physicalObjects:Vector.<PhysicalObject>;
 		public var m_collisionManager:CollisionManager;	
@@ -250,7 +252,7 @@ package
 			if(h!=0)
 				m_rectLadyBug.y = m_initPosRect - ( m_rectLadyBug.height - h);
 			//if the scene manager has finished the loading
-			if (m_sceneManager.isLoadComplete()) {
+			if (m_sceneManager.isLoadComplete() && m_transitionComplete) {
 				//stop displaying advancement
 				m_loadProgression.text = "";
 				m_state = "Done";
