@@ -63,7 +63,7 @@ package GameObject.Enemy.Centipede
 			m_stepSound2 = new FlxSound();
 			m_stepSound2.loadStream("FX/centipede2.mp3", true);
 			m_beginTransition = new Transition("Images/centipede.swf", 5, true);
-			m_endTransition = new Transition("Images/entrée-technodrome.swf", 5, false);
+			m_endTransition = new Transition("Images/entreetechnodrome.swf", 5, false);
 			createParts();
 			m_livingParts = m_nbParts;
 			m_area = new Rectangle(X, Y, areaWidth, areaHeight);
@@ -335,7 +335,7 @@ package GameObject.Enemy.Centipede
 		}
 		
 		override public function takeDamage(player:PlayableObject, weapon:Weapon):void
-		{	
+		{	triggerDeath();
 			if (m_invincible)
 				return;
 			//calculate damage

@@ -34,6 +34,7 @@ package Scene
 		}
 		
 		public function play():void {
+			Global.currentPlaystate.m_transitionComplete = false;
 			m_swfLoader.load(m_url);
 			Global.currentPlaystate.pauseMusic();
 			Global.currentPlaystate.add(this);
@@ -50,6 +51,7 @@ package Scene
 			}
 			if (m_timer.finished && m_state != "over" ) {
 				m_state = "over";
+				Global.currentPlaystate.m_transitionComplete = true;
 				Global.currentPlaystate.resumeMusic();
 				m_swfLoader.stopSWF();
 				Global.currentPlaystate.remove(this);
