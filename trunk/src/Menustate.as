@@ -40,9 +40,7 @@ package
 		protected var m_mvcBackground:MVCButton;
 		protected var m_mvcButton:MVCButton;
 		
-		protected var m_passwordManager:PasswordManager;
-
-		public function Menustate(trailer:Boolean = false )
+		public function Menustate(trailer:Boolean = true )
 		{
 			m_state = "Loading";
 			m_music = new FlxSound();
@@ -64,8 +62,6 @@ package
 			m_ladyBug.loadGraphic(LadyBugScreen, false, false, 300, 200, true);
 			Global.library.addBitmap("Images/Menu/menu.jpg");
 			Global.library.addBitmap("Images/Weapons/egg.png");
-			
-			m_passwordManager = new PasswordManager();
 			
 			//trailer de merde
 			if(trailer){
@@ -106,7 +102,6 @@ package
 				m_menuAppeared = true;
 				if(m_trailer)
 					FlxG.stage.removeChild(m_trailer);
-				m_passwordManager.addToStage();
 				fadeIn();
 			}
 			manageLadyBug();
@@ -131,7 +126,7 @@ package
 		private function manageLadyBug():void {
 			if (m_menuAppeared)
 				return;
-			if (FlxG.keys.ENTER && Global.library.loadComplete()) {
+			if ((FlxG.keys.ENTER || FlxG.keys.ESCAPE) && Global.library.loadComplete()) {
 				m_timer.start(0.01);
 				m_ladyBug.visible = false;
 			}

@@ -3,6 +3,7 @@ package
 	import org.flixel.FlxBasic;
 	import org.flixel.FlxG;
 	import org.flixel.FlxInputText;
+	import org.flixel.FlxPoint;
 	import org.flixel.FlxText;
 	/**
 	 * ...
@@ -10,28 +11,69 @@ package
 	 */
 	public class PasswordManager extends FlxBasic
 	{
+		public var m_name:String;
+		public var m_position:FlxPoint;
+		public var m_size:FlxPoint;
+		
+		public var m_backgroundOnOver:uint;
+		public var m_backgroundOnOut:uint;
+		public var m_textOnOver:uint;
+		public var m_textOnOut:uint;
+		public var m_fontSize:uint;
+		public var m_paddingY:int;
+		public var m_text:String;
+		
 		protected var m_textField:FlxInputText;
 		protected var m_textInfo:FlxText;
 		
-		public function PasswordManager() 
+		public function PasswordManager(infos:Array) 
 		{
-			super();
-		}
-		
-		public function addToStage():void {
+			m_position = infos["position"];
+			m_size = infos["size"];
+			m_name = infos["name"];
+			m_backgroundOnOver = infos["backgroundOnOver"];
+			m_backgroundOnOut = infos["backgroundOnOut"];
+			m_textOnOver = infos["textOnOver"];
+			m_textOnOut = infos["textOnOut"];
+			m_fontSize = infos["fontSize"];
+			m_paddingY = infos["textPaddingY"];
 			
-			m_textField = new FlxInputText(FlxG.width-180, FlxG.height - 40, 200, 30, "Your password here !");
-			m_textField.size = 13;
+			m_text = infos["label"];
+			
+			m_textField = new FlxInputText(m_position.x, m_position.y, m_size.x, m_size.y, m_text);
+			//m_textField.size = 13;
+			m_textField.size = m_fontSize;
 			m_textField.filterMode=FlxInputText.ONLY_ALPHANUMERIC;
-			m_textInfo = new FlxText(m_textField.x , m_textField.y - 25 , 200);
-			m_textInfo.size = 9;
+			m_textInfo = new FlxText(m_size.x, m_size.y, 200);
+			m_textInfo.size = m_fontSize;
 			m_textInfo.color = 0;
-			Global.currentState.add(m_textInfo);
-			Global.currentState.add(m_textField);
-			Global.currentState.add(this);
+			
+			Global.password = m_text;
+			
+			Global.currentState.depthBuffer.addElement(m_textInfo, DepthBuffer.s_menuGroup);
+			Global.currentState.depthBuffer.addElement(m_textField, DepthBuffer.s_menuGroup);
+			Global.currentState.depthBuffer.addElement(this, DepthBuffer.s_menuGroup);
 		}
 		
-		public function usePassword(password:String):String {
+				
+		override public function update():void {
+			Global.password = m_textField.text;
+			/*if (FlxG.keys.justPressed("ENTER"))
+			{
+				PasswordManager.UsePassword(Global.password);
+				//m_textInfo.text = PasswordManager.UsePassword(Global.password);
+				//m_textField.text = PasswordManager.UsePassword(Global.password);
+			}*/
+		}
+		
+		override public function destroy() : void {
+			Global.currentState.depthBuffer.removeElement(m_textInfo, DepthBuffer.s_menuGroup);
+			Global.currentState.depthBuffer.removeElement(m_textField, DepthBuffer.s_menuGroup);
+			m_textField.destroy();
+			Global.currentState.depthBuffer.removeElement(this, DepthBuffer.s_menuGroup);
+		}
+		
+		public static function UsePassword(password:String):String {
 			var res:String = "Wrong Password";
 			switch(password) {
 				//SPECIAL POWERS
@@ -71,13 +113,6 @@ package
 				default : break;
 			}
 			return res;
-		}
-		
-		override public function update():void {
-			if (FlxG.keys.justPressed("ENTER")){
-				m_textInfo.text = usePassword(m_textField.text);
-				m_textField.text = "";
-			}
 		}
 	}
 

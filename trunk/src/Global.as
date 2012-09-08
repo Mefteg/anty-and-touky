@@ -50,6 +50,7 @@ package
 		//OPTIONS
 		static public var nbLifesMax = 3;
 		static public var nbContinuesMax = 3;
+		static public var password = "";
 		
 		//ELEMENTS
 		public static var elementsID:Object = { "fire":0, "ice":1, "thunder":2, "water":3, "earth":4, "wind":5 };

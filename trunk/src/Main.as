@@ -14,6 +14,8 @@ package
 			super(640, 480, Menustate, 1);
 			//super(640, 480, Playstate, 1);
 			//super(640, 480, StoryState, 1);
+			//super(640, 480, GameOverstate, 1);
+			//super(640, 480, Victorystate, 1);
 		}
 		
 		override protected function create(FlashEvent:Event) : void
