@@ -42,6 +42,7 @@ package GameObject.Enemy.ElSqualo
 		private var m_jumpSound:FlxSound;
 		
 		private var m_beginTransition:Transition;
+		private var m_endTransition:Transition;
 		
 		public function ElSqualo(X:Number, Y:Number,areaWidth:int,areaHeight:int) 
 		{
@@ -53,6 +54,7 @@ package GameObject.Enemy.ElSqualo
 			m_area = new Rectangle(X, Y, areaWidth, areaHeight);
 			m_missilesManager = new SqualoMissilesManager(NB_PINEAPPLES, this);
 			m_beginTransition = new Transition("Images/elsqualo.swf", 5, true);
+			m_endTransition = new Transition("Images/el_squalo_mort.swf", 5, true);
 			m_invincible = true;
 			m_tabExplode = new Array( new FlxPoint(0, 0), new FlxPoint(40, 10), new FlxPoint(10, 60), new FlxPoint(30, 30), new FlxPoint(10, 10) );
 			m_state = "onGround";
@@ -239,7 +241,8 @@ package GameObject.Enemy.ElSqualo
 				m_currentExplosion ++;
 				if (m_currentExplosion >= m_tabExplode.length){
 					removeFromStage();
-					Global.currentPlaystate.end();
+					m_endTransition.play();
+					//Global.currentPlaystate.end();
 				}
 			}
 		}
