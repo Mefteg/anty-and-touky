@@ -42,7 +42,7 @@ package
 		
 		protected var m_passwordManager:PasswordManager;
 
-		public function Menustate()
+		public function Menustate(trailer:Boolean = false )
 		{
 			m_state = "Loading";
 			m_music = new FlxSound();
@@ -57,8 +57,10 @@ package
 			//text displaying loading advancement
 			m_loadProgression = new FlxText(400, 400, 600,"");
 			//add(m_loadProgression);
-			m_ladyBug = new FlxSprite(410 , 320);//for CASUAL GAME CUP
-			//m_ladyBug = new FlxSprite(200 , 150);
+			if(trailer)
+				m_ladyBug = new FlxSprite(410 , 320);//for CASUAL GAME CUP
+			else
+				m_ladyBug = new FlxSprite(200 , 150);
 			m_ladyBug.loadGraphic(LadyBugScreen, false, false, 300, 200, true);
 			Global.library.addBitmap("Images/Menu/menu.jpg");
 			Global.library.addBitmap("Images/Weapons/egg.png");
@@ -66,11 +68,13 @@ package
 			m_passwordManager = new PasswordManager();
 			
 			//trailer de merde
-			m_trailer = new MovieClip();
-			m_trailer = new Trailer();
-			m_trailer.scaleX = 0.6;
-			m_trailer.scaleY = 0.6;
-			m_trailer.scaleZ = 0.6;
+			if(trailer){
+				m_trailer = new MovieClip();
+				m_trailer = new Trailer();
+				m_trailer.scaleX = 0.6;
+				m_trailer.scaleY = 0.6;
+				m_trailer.scaleZ = 0.6;
+			}
 		}
 		
 		override public function create() : void {
@@ -83,7 +87,8 @@ package
 			depthBuffer.addElement(m_ladyBug, DepthBuffer.s_cursorGroup);
 			m_ladyBug.alpha = 0;
 			m_timerLB.start(2);
-			FlxG.stage.addChild(m_trailer);
+			if(m_trailer)
+				FlxG.stage.addChild(m_trailer);
 			
 			m_mvcBackground = new MVCButton("Menu/menubackground.xml");
 			m_mvcButton = new MVCButton("Menu/menustate.xml");
@@ -99,7 +104,8 @@ package
 				depthBuffer.addElement(m_mvcBackground, DepthBuffer.s_menuGroup);
 				depthBuffer.addElement(m_mvcButton, DepthBuffer.s_menuGroup);
 				m_menuAppeared = true;
-				FlxG.stage.removeChild(m_trailer);
+				if(m_trailer)
+					FlxG.stage.removeChild(m_trailer);
 				m_passwordManager.addToStage();
 				fadeIn();
 			}
