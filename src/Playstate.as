@@ -188,7 +188,10 @@ package
 
 			//A GARDER AU FINAL !!!!
 			m_sceneManager.loadScene(Global.firstLevel);
-			m_sceneToLoad = Global.firstLevel;
+			
+			//m_sceneManager.loadScene("Maps/Tuto4.json");
+			//m_sceneManager.loadScene("Maps/W3B.json");
+			//m_sceneManager.loadScene("Maps/W1M4.json");
 
 			m_state = "Loading";
 			//creating player 1

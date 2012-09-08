@@ -1,6 +1,7 @@
 package GameObject.Menu 
 {
 	import org.flixel.FlxG;
+	import org.flixel.FlxPoint;
 	/**
 	 * ...
 	 * @author ...
@@ -64,6 +65,9 @@ package GameObject.Menu
 					break;
 				case "backToMenuState":
 					this.onClickBackToMenuState(button);
+					break;
+				case "passwordSubmit":
+					this.onClickPasswordSubmit(button);
 					break;
 				default:
 					this.onClickButton(button);
@@ -171,7 +175,26 @@ package GameObject.Menu
 		}
 		
 		protected function onClickBackToMenuState(button:MyButton) : void {
-			FlxG.switchState(new Menustate());
+			FlxG.switchState(new Menustate(false));
+		}
+		
+		protected function onClickPasswordSubmit(button:MyButton) : void {
+			var txt:String = PasswordManager.UsePassword(Global.password);
+			
+			var infos:Array = new Array();
+			infos["type"] = "tempButton";
+			infos["position"] = new FlxPoint(120, 100);
+			infos["size"] = new FlxPoint(400, 60);
+			infos["name"] = "tempButton";
+			infos["label"] = txt;
+			infos["backgroundOnOver"] = 0xfff67210;
+			infos["backgroundOnOut"] = 0xfff67210;
+			infos["textOnOver"] = 0xff000000;
+			infos["textOnOut"] = 0xff000000;
+			infos["fontSize"] = 20;
+			infos["textPaddingY"] = 15;
+			infos["duration"] = 2;
+			m_view.addTempButton(infos);
 		}
 	}
 

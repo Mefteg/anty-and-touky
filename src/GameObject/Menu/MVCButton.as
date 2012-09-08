@@ -24,6 +24,7 @@ package GameObject.Menu
 			m_controler.setModel(m_model);
 			m_controler.setView(m_view);
 			
+			// Model and View extend FlxBasic to override the update function
 			Global.currentState.depthBuffer.addElement(m_model, DepthBuffer.s_menuGroup);
 			Global.currentState.depthBuffer.addElement(m_view, DepthBuffer.s_menuGroup);
 		}		

@@ -17,11 +17,15 @@ package GameObject.Menu
 		protected var m_infos:Array;
 		protected var m_buttons:Array;
 		protected var m_backgrounds:Array;
+		protected var m_passwords:Array;
+		protected var m_tempButtons:Array;
 		
 		public function View() {
 			m_infos = new Array();
 			m_buttons = new Array();
 			m_backgrounds = new Array();
+			m_passwords = new Array();
+			m_tempButtons = new Array();
 		}
 		
 		override public function update() : void {
@@ -33,6 +37,10 @@ package GameObject.Menu
 				
 				for ( var i:int = 0; i < m_buttons.length; i++ ) {
 					this.checkButton(m_buttons[i]);
+				}
+				
+				for ( var i:int = 0; i < m_tempButtons.length; i++ ) {
+					this.checkTempButton(m_tempButtons[i]);
 				}
 			}
 		}
@@ -54,6 +62,14 @@ package GameObject.Menu
 						Global.library.addUniqueBitmap(myBackground.m_url);
 						m_backgrounds.push(myBackground);
 						break;
+					case "password":
+						var password:PasswordManager = new PasswordManager(m_infos[i]);
+						m_passwords.push(password);
+						break;
+					case "tempButton":
+						var myTempButton:MyTempButton = new MyTempButton(m_infos[i]);
+						m_tempButtons.push(myTempButton);
+						break;
 					default:
 						break;
 				}
@@ -71,6 +87,27 @@ package GameObject.Menu
 			
 			if ( isClicked(button) ) {
 				m_controler.onClick(button);
+			}
+		}
+		
+		public function checkTempButton(_tmpButton:MyTempButton) : void {
+			if ( isActive(_tmpButton) == true )
+			{
+				if ( isOver(_tmpButton) ) {
+					m_controler.onOver(_tmpButton);
+				}
+				
+				if ( isOut(_tmpButton) ) {
+					m_controler.onOut(_tmpButton);
+				}
+				
+				if ( isClicked(_tmpButton) ) {
+					m_controler.onClick(_tmpButton);
+				}
+			}
+			else
+			{
+				_tmpButton.destroy();
 			}
 		}
 		
@@ -105,6 +142,11 @@ package GameObject.Menu
 			
 			return isClicked;
 		}
+		
+		public function isActive(tmpButton:MyTempButton) : Boolean
+		{
+			return tmpButton.isActive();
+		}
 				
 		public function print() : void {			
 			trace("PRINT!");
@@ -113,6 +155,8 @@ package GameObject.Menu
 		public function clear() : void {
 			this.destroyButtons();
 			this.destroyBackgrounds();
+			this.destroyPasswords();
+			this.destroyTempButtons();
 			m_infos = new Array();
 		}
 		
@@ -130,6 +174,25 @@ package GameObject.Menu
 				b.destroy();
 			}
 			m_buttons = new Array();
+		}
+		
+		protected function destroyPasswords() : void {
+			for ( var i:int = 0; i < m_passwords.length; i++ ) {
+				var b:PasswordManager = m_passwords[i];
+				b.destroy();
+			}
+			m_passwords = new Array();
+		}
+		
+		protected function destroyTempButtons() : void {
+			for ( var i:int = 0; i < m_tempButtons.length; i++ ) {
+				if ( m_tempButtons[i] != null )
+				{
+					var b:MyTempButton = m_tempButtons[i];
+					b.destroy();
+				}
+			}
+			m_tempButtons = new Array();
 		}
 		
 		public function changeToColorOver(button:MyButton) : void {
@@ -152,6 +215,12 @@ package GameObject.Menu
 		
 		public function setControler(controler:Controler) : void {
 			m_controler = controler;
+		}
+		
+		public function addTempButton(_infos:Array)
+		{
+			var mybutton:MyTempButton = new MyTempButton(_infos);
+			m_tempButtons.push(mybutton);
 		}
 	}
 
