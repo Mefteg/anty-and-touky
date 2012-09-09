@@ -12,6 +12,8 @@ package
 	import org.flixel.FlxTimer;
 	import Scene.Library;
 	import Scene.SceneManager;
+	import Scene.SWFLoader;
+	import Scene.Transition;
 	
 	/**
 	 * ...
@@ -19,12 +21,14 @@ package
 	 */
 	public class Victorystate extends State 
 	{
-		[Embed(source = "../bin/Images/trailerJeuxCom.swf")] protected var Trailer:Class;
 		[Embed(source = "../bin/Images/Menu/LadyBugRidersScreen.png")] protected var LadyBugScreen:Class;
 		[Embed(source = "../bin/Images/Menu/cursor.png")] protected var Cursor:Class;
 		
 		protected var m_timer:FlxTimer;
 		protected var m_music:FlxSound;
+		
+		protected var m_swfLoader:SWFLoader;
+		protected var m_swfTimer:FlxTimer;
 		
 		//trailer de merde
 		protected var m_trailer:MovieClip;
@@ -57,6 +61,8 @@ package
 			m_ladyBug = new FlxSprite(410 , 320);//for CASUAL GAME CUP
 			//m_ladyBug = new FlxSprite(200 , 150);
 			m_ladyBug.loadGraphic(LadyBugScreen, false, false, 300, 200, true);
+			
+			
 		}
 		
 		override public function create() : void {
@@ -67,6 +73,11 @@ package
 			depthBuffer.addElement(m_ladyBug, DepthBuffer.s_cursorGroup);
 			m_ladyBug.alpha = 0;
 			m_timerLB.start(1);
+			
+			m_swfLoader = new SWFLoader();
+			m_swfLoader.load("Images/bravo.swf");
+			m_swfTimer = new FlxTimer();
+			m_swfTimer.start(3);
 			
 			m_mvcButton = new MVCButton("Menu/victorystate.xml");
 		}
@@ -86,6 +97,12 @@ package
 			manageLadyBug();
 			if (m_ending)
 				ending();
+				
+			if ( m_swfTimer.finished == true && m_swfTimer.paused == false )
+			{
+				m_swfLoader.stopSWF();
+				m_swfTimer.paused = true;
+			}
 		}
 		
 		override protected function loading() : void {
