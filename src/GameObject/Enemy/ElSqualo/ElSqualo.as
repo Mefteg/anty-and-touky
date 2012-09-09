@@ -5,6 +5,7 @@ package GameObject.Enemy.ElSqualo
 	import GameObject.Enemy.Enemy;
 	import GameObject.Enemy.EnemySmoke;
 	import GameObject.Enemy.PenguinJetpack;
+	import GameObject.MovableObject;
 	import GameObject.PlayableObject;
 	import GameObject.Weapon.Weapon;
 	import org.flixel.FlxG;
@@ -44,6 +45,8 @@ package GameObject.Enemy.ElSqualo
 		private var m_beginTransition:Transition;
 		private var m_endTransition:Transition;
 		
+		private var m_endSceneDone:Boolean = false;
+		
 		public function ElSqualo(X:Number, Y:Number,areaWidth:int,areaHeight:int) 
 		{
 			super(X + areaWidth*0.5-32, Y);
@@ -55,12 +58,12 @@ package GameObject.Enemy.ElSqualo
 			m_missilesManager = new SqualoMissilesManager(NB_PINEAPPLES, this);
 			m_beginTransition = new Transition("Images/elsqualo.swf", 5, true);
 			m_endTransition = new Transition("Images/el_squalo_mort.swf", 5, true);
-			m_invincible = true;
 			m_tabExplode = new Array( new FlxPoint(0, 0), new FlxPoint(40, 10), new FlxPoint(10, 60), new FlxPoint(30, 30), new FlxPoint(10, 10) );
 			m_state = "onGround";
 			m_smoke = EnemySmoke.Explosion();
 			m_collideEvtFree = true;
 			m_activeOffscreen = true;
+			m_invincible = true;
 			switch(Global.difficulty) {
 				case 1 : m_stats.initHP(100); break;
 				case 2 : m_stats.initHP(130); break;
@@ -127,6 +130,7 @@ package GameObject.Enemy.ElSqualo
 				case "inAir":inAir(); break;
 				case "goDown":goDown(); break;
 				case "dying": dying(); break;
+				case "finish": lastTalk(); break;
 				default : break;
 			}
 		}
@@ -189,9 +193,14 @@ package GameObject.Enemy.ElSqualo
 			m_missilesManager.addToStage();
 			m_penguinManager.addToStage();
 			m_beginTransition.play();
+			Global.currentPlaystate.addTalkers(this as MovableObject);
 		}
 		
-		private function setVisible(vis:Boolean) {
+		override public function removeFromStage():void {
+			super.removeFromStage();
+			Global.currentPlaystate.removeTalkers(this as MovableObject);
+		}
+		private function setVisible(vis:Boolean) : void{
 			visible = vis;
 			if (!m_rightArm.m_dead)
 				m_rightArm.visible = vis;
@@ -228,7 +237,6 @@ package GameObject.Enemy.ElSqualo
 				m_smoke.playSmoke(x + m_width / 2, y + m_height / 2);
 				m_penguinManager.blam();
 				m_missilesManager.blam();
-				m_cutscene.start();
 			}
 			//for twinkling
 			changeTwinkleColor(_twinkleHit);
@@ -240,10 +248,21 @@ package GameObject.Enemy.ElSqualo
 				m_smoke.playSmoke(x + m_tabExplode[m_currentExplosion].x, y + m_tabExplode[m_currentExplosion].y);
 				m_currentExplosion ++;
 				if (m_currentExplosion >= m_tabExplode.length){
-					removeFromStage();
 					m_endTransition.play();
-					//Global.currentPlaystate.end();
+					Global.currentPlaystate.pauseMusic();
+					m_state = "finish";
 				}
+			}
+		}
+		
+		protected function lastTalk():void {
+			if(!m_endSceneDone && m_endTransition.isOver()){
+				m_cutscene.start();
+				m_endSceneDone = true;
+			}
+			if (m_endSceneDone && !Global.frozen){
+				removeFromStage();
+				Global.currentPlaystate.end();
 			}
 		}
 	}

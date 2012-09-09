@@ -194,13 +194,11 @@ package
 		protected function addEnemy(element:FlxBasic):void
 		{
 			m_enemies.add(element);
-			m_playstate.addTalkers(element as MovableObject);
 			m_playstate.addEnemy(element as Enemy);
 			//m_stage.addPhysical(element as PhysicalObject);
 		}
 		protected function removeEnemy(element:FlxBasic):void {
 			m_enemies.remove(element);
-			m_playstate.removeTalkers(element as MovableObject);
 			m_playstate.removeEnemy(element as Enemy);
 			//m_stage.removePhysical(element as PhysicalObject);
 		}

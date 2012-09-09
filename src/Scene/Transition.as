@@ -17,7 +17,7 @@ package Scene
 		private var TIME:Number;
 		private var m_state:String;
 		private var m_url:String;
-		
+	
 		public function Transition(url:String, time:Number, boss:Boolean = true ) 
 		{
 			super();

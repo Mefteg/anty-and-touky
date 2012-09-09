@@ -410,6 +410,7 @@ package GameObject
 		public function die():void {
 			visible = false;
 			m_smoke.playSmoke(x, y);
+			Global.currentPlaystate.m_gameOver = true;
 			Global.currentPlaystate.end();
 		}
 		
