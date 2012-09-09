@@ -19,7 +19,6 @@ package
 	 */
 	public class GameOverstate extends State 
 	{
-		[Embed(source = "../bin/Images/trailerJeuxCom.swf")] protected var Trailer:Class;
 		[Embed(source = "../bin/Images/Menu/LadyBugRidersScreen.png")] protected var LadyBugScreen:Class;
 		[Embed(source = "../bin/Images/Menu/cursor.png")] protected var Cursor:Class;
 		
