@@ -46,6 +46,7 @@ package
 		protected var m_menu_p2:Menu;
 		
 		public var m_transitionComplete:Boolean = true;
+		public var m_gameOver:Boolean = false;
 		
 		//arrays for collisions
 		public var m_physicalObjects:Vector.<PhysicalObject>;
@@ -316,8 +317,7 @@ package
 		}
 		
 		public function pauseMusic():void {
-			if(m_sceneManager.m_music.isPlaying())
-				m_sceneManager.m_music.pause();
+			m_sceneManager.m_music.pause();
 			m_sceneManager.m_pauseMusic = true;
 		}
 		public function resumeMusic():void {
@@ -391,7 +391,10 @@ package
 				if(m_sceneManager && m_sceneManager.m_music!=null)
 					m_sceneManager.m_music.stop();
 				Global.camera = null;
-				FlxG.switchState(new Menustate());
+				if (m_gameOver)
+					FlxG.switchState(new GameOverstate());
+				else 
+					FlxG.switchState( new Victorystate());
 				return;
 			}
 			if (m_timerEnd.finished) {

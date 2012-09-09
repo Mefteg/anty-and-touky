@@ -109,7 +109,9 @@ package
 				case "Music7": 
 					Global.currentState.chargeMusic("TwoBuddies");
 					res = "Music : Two Buddies"; break;
-					
+				case "Music8": 
+					Global.currentState.chargeMusic("Credits");
+					res = "Music : Credits"; break;	
 				default : break;
 			}
 			return res;

@@ -62,7 +62,7 @@ package
 			//m_ladyBug = new FlxSprite(200 , 150);
 			m_ladyBug.loadGraphic(LadyBugScreen, false, false, 300, 200, true);
 			
-			
+			m_sound = new FlxSound();
 		}
 		
 		override public function create() : void {
@@ -76,6 +76,10 @@ package
 			
 			m_swfLoader = new SWFLoader();
 			m_swfLoader.load("Images/bravo.swf");
+			//play congrats sound
+			m_sound.loadStream("Music/GoodGameBro.mp3");
+			m_sound.play();
+			
 			m_swfTimer = new FlxTimer();
 			m_swfTimer.start(3);
 			
