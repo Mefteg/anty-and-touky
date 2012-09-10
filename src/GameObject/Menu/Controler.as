@@ -18,6 +18,9 @@ package GameObject.Menu
 		public function onOver(button:MyButton) : void {
 			var action:String = button.m_name;
 			switch ( action ) {
+				case "move":
+					this.onOverMove(button);
+					break;
 				default:
 					this.onOverButton(button);
 					break;
@@ -29,6 +32,9 @@ package GameObject.Menu
 			switch ( action ) {
 				case "printDifficulty":
 					this.onOutPrintDifficulty(button);
+					break;
+				case "move":
+					this.onOutMove(button);
 					break;
 				default:
 					this.onOutButton(button);
@@ -75,6 +81,18 @@ package GameObject.Menu
 			}
 		}
 		
+		public function updateBackground(_background:MyBackground)
+		{
+			var action:String = _background.m_name;
+			switch ( action ) {
+				case "move":
+					this.updateBackgroundMove(_background);
+					break;
+				default:
+					break;
+			}
+		}
+		
 		public function updatePrint() : void {
 			m_view.clear();
 			m_view.print();
@@ -98,6 +116,16 @@ package GameObject.Menu
 			m_view.changeToColorOver(button);
 		}
 		
+		protected function onOverMove(_button:MyButton) : void
+		{
+			onOverButton(_button);
+			_button.move(0, -0.5);
+			if ( _button.getPosition().y < -100 )
+			{
+				_button.setToOrigin();
+			}
+		}
+		
 		//// ONOUT ////
 		
 		protected function onOutButton(button:MyButton) : void {
@@ -119,6 +147,16 @@ package GameObject.Menu
 					break;
 				default:
 					break;
+			}
+		}
+		
+		protected function onOutMove(_button:MyButton) : void
+		{
+			onOutButton(_button);
+			_button.move(0, -0.5);
+			if ( _button.getPosition().y < -100 )
+			{
+				_button.setToOrigin();
 			}
 		}
 		
@@ -195,6 +233,16 @@ package GameObject.Menu
 			infos["textPaddingY"] = 15;
 			infos["duration"] = 2;
 			m_view.addTempButton(infos);
+		}
+		
+		//// updateBackground ////
+		protected function updateBackgroundMove(_background:MyBackground) : void
+		{
+			_background.y -= 0.5;
+			if ( _background.y < -960 )
+			{
+				_background.setToOrigin();
+			}
 		}
 	}
 
