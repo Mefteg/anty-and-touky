@@ -122,7 +122,11 @@
     <property name="type" value="mosquito"/>
    </properties>
   </object>
-  <object name="FallenResetChecker0" type="FallenResetChecker" x="15" y="523" width="115" height="39"/>
+  <object name="FallenResetChecker0" type="FallenResetChecker" x="15" y="523" width="115" height="39">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
   <object name="PenguinJetpack0" type="PenguinJetpack" x="1835" y="273" width="29" height="32"/>
   <object name="WaterPenguin0" type="WaterPenguin" x="1598" y="277" width="29" height="32">
    <properties>

@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <root>
-	<message text="Hey! I bet you can kick this penguin's ass with ants or eggs!" />
+	<message text="Hey! First of all, if you're alone, you can switch between Anty and Touky with the SPACE BAR!" />
+	<message text="Now, I bet you can kick this penguin's ass with ants or eggs!" />
 	<message text="Just press F or K button to throw something in front of you!" />
 	<message text="Hurry! I want you to teach him how ugly he is mwahahahaaa! Prick..." />
 </root>

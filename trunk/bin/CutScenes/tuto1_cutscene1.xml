@@ -2,7 +2,8 @@
 
 <cutscene name="tuto1_cutscene1">
 	<actiongroup sync="1">
-		<action type="message" executor="MexicanRaccoon" text="Hey! I bet you can kick this penguin's ass with ants or eggs!"/>
+		<action type="message" executor="MexicanRaccoon" text="Hey! First of all, if you're alone, you can switch between Anty and Touky with the SPACE BAR!"/>
+		<action type="message" executor="MexicanRaccoon" text="Now, I bet you can kick this penguin's ass with ants or eggs!"/>
 		<action type="message" executor="MexicanRaccoon" text="Just press F or K button to throw something in front of you!"/>
 		<action type="message" executor="MexicanRaccoon" text="Hurry! I want you to teach him how ugly he is mwahahahaaa! Prick..."/>
 	</actiongroup>

@@ -480,7 +480,7 @@
                  "name":"FallenResetChecker0",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
                  "type":"FallenResetChecker",
                  "width":115,

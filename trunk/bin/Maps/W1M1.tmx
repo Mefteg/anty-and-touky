@@ -77,6 +77,11 @@
     <property name="type" value="PhysicalTile"/>
    </properties>
   </tile>
+  <tile id="19">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
   <tile id="20">
    <properties>
     <property name="type" value="Foreground"/>
@@ -207,6 +212,16 @@
     <property name="type" value="PhysicalTile"/>
    </properties>
   </tile>
+  <tile id="94">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="95">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
   <tile id="96">
    <properties>
     <property name="type" value="PhysicalTile"/>
@@ -239,12 +254,22 @@
   </tile>
   <tile id="107">
    <properties>
-    <property name="type" value="PhysicalTile"/>
+    <property name="type" value="Hole"/>
    </properties>
   </tile>
   <tile id="109">
    <properties>
-    <property name="type" value="PhysicalTile"/>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="110">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="111">
+   <properties>
+    <property name="type" value="Hole"/>
    </properties>
   </tile>
   <tile id="112">
@@ -270,6 +295,11 @@
   <tile id="117">
    <properties>
     <property name="type" value="PhysicalTile"/>
+   </properties>
+  </tile>
+  <tile id="126">
+   <properties>
+    <property name="type" value="Hole"/>
    </properties>
   </tile>
   <tile id="128">
@@ -304,7 +334,17 @@
   </tile>
   <tile id="140">
    <properties>
-    <property name="type" value="PhysicalTile"/>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="142">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="143">
+   <properties>
+    <property name="type" value="Hole"/>
    </properties>
   </tile>
   <tile id="144">
@@ -322,6 +362,16 @@
     <property name="type" value="PhysicalTile"/>
    </properties>
   </tile>
+  <tile id="158">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="159">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
   <tile id="160">
    <properties>
     <property name="type" value="PhysicalTile"/>
@@ -329,7 +379,17 @@
   </tile>
   <tile id="172">
    <properties>
-    <property name="type" value="PhysicalTile"/>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="174">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="175">
+   <properties>
+    <property name="type" value="Hole"/>
    </properties>
   </tile>
   <tile id="176">
@@ -337,7 +397,48 @@
     <property name="type" value="PhysicalTile"/>
    </properties>
   </tile>
+  <tile id="187">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="188">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="189">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="203">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="204">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="205">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="206">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
+  <tile id="207">
+   <properties>
+    <property name="type" value="Hole"/>
+   </properties>
+  </tile>
  </tileset>
+ <tileset firstgid="257" source="Jungle.tsx"/>
  <layer name="Background" width="30" height="30">
   <data encoding="base64" compression="zlib">
    eJzllrtOAkEUhuch9gmI0IidULjSIYkCtRjBFhIvjYWaqKU2QIEJNGghLfCM/Btnk8PmnJ3Z3eGSWHzZZGdzvjmXzE5OKZX7hxyCYgaOdJxL0BK4Yrw+OM1ARcfpgp7ANdnDNr234FkTeuugkZBzxvtEYkd5SdF/Dp/xbgPJ+7gjL4fLvXDeLzASnqZ4owxeySnFtHXRb13na9uPfZvnffD+OqptmnxnMWsHIB+hDTqaG/K+4LDOx6BE8MAduNc8kLXyBrweif8K3jTvYJzBK/Uwmi+NH9IHAzCM8drMUVLvFHyDH8Z7osx3EZPXS+G1uRPY5vup1ud7DhZgqf7OvaRersecVyKoQ3Dmxt1RuLtIXL4TcMYwZrwuzpTQS2tb0PUMzpQPJc+bCy83z9E1l94qU9uasFZT5v9pXff4AjQt9ukS35DrLrwr28m3tg==
