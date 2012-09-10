@@ -9,6 +9,7 @@ package
 	import org.flixel.FlxSprite;
 	import org.flixel.FlxState;
 	import org.flixel.FlxText;
+	import org.flixel.FlxTileblock;
 	import org.flixel.FlxTimer;
 	import Scene.Library;
 	import Scene.SceneManager;
@@ -40,6 +41,8 @@ package
 		protected var m_mvcButton:MVCButton;
 		
 		protected var m_passwordManager:PasswordManager;
+		
+		protected var m_wholeTimer:FlxTimer;
 
 		public function Genericstate()
 		{
@@ -59,6 +62,9 @@ package
 			Global.library.addBitmap("Images/Menu/anty_dust.jpg");
 			Global.library.addBitmap("Images/Menu/touky_beer.jpg");
 			Global.library.addBitmap("Images/Menu/elsqualo_toilets.jpg");
+			m_sound = new FlxSound();
+			m_sound.loadStream("Music/Credits.mp3");
+			m_wholeTimer = new FlxTimer();
 		}
 		
 		override public function create() : void {
@@ -75,6 +81,11 @@ package
 		
 		override public function update() : void {
 			super.update();
+			if (m_wholeTimer.finished) {
+				m_sound.stop();
+				FlxG.switchState(new Victorystate());
+			}
+				
 			if (! m_library.loadComplete()) {
 				m_library.loadAll();
 			}
@@ -83,6 +94,8 @@ package
 				depthBuffer.addElement(m_mvcBackground, DepthBuffer.s_menuGroup);
 				depthBuffer.addElement(m_mvcButton, DepthBuffer.s_menuGroup);
 				m_menuAppeared = true;
+				m_wholeTimer.start(58);
+				m_sound.play();
 				fadeIn();
 			}
 			manageLadyBug();

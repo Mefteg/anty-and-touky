@@ -394,7 +394,7 @@ package
 				if (m_gameOver)
 					FlxG.switchState(new GameOverstate());
 				else 
-					FlxG.switchState( new Victorystate());
+					FlxG.switchState( new Genericstate());
 				return;
 			}
 			if (m_timerEnd.finished) {
