@@ -82,7 +82,7 @@ package GameObject.Weapon
 			return false;
 		}
 		
-		private function Reject(player:PlayableObject) : void {
+		protected function Reject(player:PlayableObject) : void {
 			player.m_didDeflect = true;
 			m_deflectPlayer = player;
 			var dir:uint = player.facing;
@@ -160,14 +160,6 @@ package GameObject.Weapon
 			ball.m_fragile = false;
 			//ball.m_FXurl = "FX/pistol_fire.mp3";
 			return ball;
-		}
-		
-		public static function Harpoon():EnemyThrowable {
-			var har:EnemyThrowable = new EnemyThrowable(1, "Images/Weapons/harpoon.png",2);
-			har.m_fourDirection = true;
-			har.m_width = 32; har.m_height = 32;
-			har.setHitbox(6, 6, 20, 20);
-			return har;
 		}
 	}
 

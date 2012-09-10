@@ -75,6 +75,7 @@ package GameObject.Player
 		
 		override public function load():void {
 			super.load();
+			m_otherPlayer = Global.player1;
 			//IDLE ANIM
 			addAnimation("idle" + UP, [18,19,20,19], 15, true);
 			addAnimation("idle" + RIGHT, [0,1,2,1], 15, true);
@@ -232,7 +233,7 @@ package GameObject.Player
 			//if no more health
 			if (m_stats.m_hp_current <= 0 ) {
 				unspecial();
-				if(m_lifes > 0){ 
+				if(m_lifes > 0 || m_otherPlayer.m_lifes >0){ 
 					respawn();
 				}else{
 					die();

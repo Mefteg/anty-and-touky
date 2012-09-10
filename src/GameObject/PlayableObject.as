@@ -81,6 +81,8 @@ package GameObject
 		public var m_superShot:Boolean = false;
 		public var m_superShotCount:int;
 		private var SHOT_COUNT_MAX:int = 15;
+		
+		protected var m_otherPlayer:GameObject.PlayableObject;
 				
 		public function PlayableObject(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
@@ -348,7 +350,7 @@ package GameObject
 			m_stats.m_hp_current --;
 			//if no more health
 			if (m_stats.m_hp_current == 0 ){
-				if(m_lifes > 0){ 
+				if(m_lifes > 0 || m_otherPlayer.m_lifes > 0){ 
 					respawn();
 				}else{
 					die();
@@ -391,7 +393,10 @@ package GameObject
 				m_timerMagicCast.start(1.2);
 			else
 				m_timerMagicCast.start(4);
-			m_lifes --;
+			if(m_lifes > 0)
+				m_lifes --;
+			else
+				m_otherPlayer.m_lifes --;
 			m_state = "respawn";
 			m_smoke.playSmoke(x, y);
 		}

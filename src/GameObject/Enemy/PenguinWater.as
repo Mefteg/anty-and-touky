@@ -1,6 +1,7 @@
 package GameObject.Enemy 
 {
 	import GameObject.Weapon.EnemyThrowable;
+	import GameObject.Weapon.Harpoon;
 	/**
 	 * ...
 	 * @author ...
@@ -34,7 +35,7 @@ package GameObject.Enemy
 			m_throwables = new Vector.<EnemyThrowable>;
 			var thr:EnemyThrowable;
 			for (var i:int = 0; i < 3; i++) {
-				thr = EnemyThrowable.Harpoon();
+				thr = new Harpoon();
 				thr.setCaster(this);
 				m_throwables.push(thr);
 			}

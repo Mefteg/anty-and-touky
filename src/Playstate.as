@@ -384,12 +384,12 @@ package
 		
 		override protected function ending():void {
 			if (m_goSwitch && !m_fadeOut) {
+				if(m_sceneManager && m_sceneManager.m_music!=null)
+					m_sceneManager.m_music.stop();
 				m_sceneManager = null;
 				Global.player1.x = Global.player2.x = 320;
 				Global.player1.y = Global.player2.y = 240;
 				depthBuffer.clearBuffers();
-				if(m_sceneManager && m_sceneManager.m_music!=null)
-					m_sceneManager.m_music.stop();
 				Global.camera = null;
 				if (m_gameOver)
 					FlxG.switchState(new GameOverstate());
@@ -409,7 +409,7 @@ package
 				return;
 			if ( ! FlxG.keys.justPressed("SPACE") )
 				return;
-			if (Global.soloPlayer.m_state == "respawn" || Global.soloPlayer.isRushing())
+ 			if (Global.soloPlayer.m_state == "respawn" || Global.soloPlayer.isRushing())
 				return;
 			//check if the player is not on a hole
 			var tilesType:Array = Global.soloPlayer.tilesUnder() 
