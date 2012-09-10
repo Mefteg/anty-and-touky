@@ -197,7 +197,8 @@ package GameObject.Player
 			m_speed = m_normalSpeed;
 			Global.player2.m_state = "idle";
 			Global.player2.x = x; Global.player2.y = y;
-			Global.player2.replaceWithNoCollision();
+			if(Global.nbPlayers > 1)
+				Global.player2.replaceWithNoCollision();
 			if (Global.specialUnlimited) {
 				m_timerSpecialAvailable = new FlxTimer();
 				m_timerSpecialAvailable.start(0.1);
@@ -214,6 +215,7 @@ package GameObject.Player
 		}
 		
 		override public function rushAttack():void {
+			trace("rush");
 			if (collideWithEnv())
 				unspecial();
 			else

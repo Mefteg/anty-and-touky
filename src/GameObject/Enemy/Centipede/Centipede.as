@@ -335,7 +335,7 @@ package GameObject.Enemy.Centipede
 		}
 		
 		override public function takeDamage(player:PlayableObject, weapon:Weapon):void
-		{	triggerDeath();
+		{	
 			if (m_invincible)
 				return;
 			//calculate damage
@@ -380,6 +380,7 @@ package GameObject.Enemy.Centipede
 			m_dead = true;
 			m_state = "dying";
 			m_direction = new FlxPoint(0, 0);
+			m_invincible = true;
 			m_stepSound.stop();
 			m_stepSound2.stop();
 			killParts();

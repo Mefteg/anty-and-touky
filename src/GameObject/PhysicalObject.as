@@ -179,26 +179,26 @@ package GameObject
 						var index:int = j * Global.nb_tiles_width + i;
 						var type:int = tilesManager.getTileType(0, index);
 							if (type == TilesManager.PHYSICAL_TILE) {
-							didCollide = true;
-							var xTile:int = i * 32;
-							var yTile:int = j * 32;
-							//if the object is colliding from the left
-							/*if (x < xTile)
-								x = xTile - m_width;
-							//else
-							else
-								x = xTile + 32;*/
-							//if the object is colliding from the left
-							if (y < yTile)
-								y = yTile - m_height;
-							//else
-							else
-								y = yTile + 32 - m_hitbox.y;
-						}
+								didCollide = true;
+								var xTile:int = i * 32;
+								var yTile:int = j * 32;
+								//if the object is colliding from the left
+								if (x < xTile)
+									x = xTile - m_width;
+								//else
+								else
+									x = xTile + 32;
+								//if the object is colliding from the top
+								if (y < yTile)
+									y = yTile - m_height;
+								//else
+								else
+									y = yTile + 32 - m_hitbox.y;
+							}
 					}
 				}
 							
-				// for each tile under the object
+				// for each tile top of the object
 				for ( var i:int = topleftToGrid.x; i <= bottomrightToGrid.x; i++ ) {
 					for ( var j:int = topleftToGrid.y; j <= bottomrightToGrid.y; j++ ) {
 						var index:int = j * Global.nb_tiles_width + i;
@@ -208,11 +208,11 @@ package GameObject
 							var xTile:int = i * 32;
 							var yTile:int = j * 32;
 							//if the object is colliding from the left
-							/*if (x < xTile)
+							if (x < xTile)
 								x = xTile - m_width;
 							//else
 							else
-								x = xTile + 32;*/
+								x = xTile + 32;
 							//if the object is colliding from the left
 							if (y < yTile)
 								y = yTile - m_height;

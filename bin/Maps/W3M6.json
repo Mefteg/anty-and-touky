@@ -373,7 +373,7 @@
                     {
 
                     },
-                 "type":"",
+                 "type":"Life",
                  "width":0,
                  "x":2777,
                  "y":1306
@@ -826,7 +826,7 @@
                  "name":"",
                  "properties":
                     {
-
+                     "coop":""
                     },
                  "type":"BigAnt",
                  "width":26,
@@ -854,8 +854,8 @@
                     },
                  "type":"PenguinJetpack",
                  "width":0,
-                 "x":2447,
-                 "y":428
+                 "x":2416,
+                 "y":449
                 }, 
                 {
                  "height":151,
@@ -879,7 +879,7 @@
                     {
 
                     },
-                 "type":"flyingCannon",
+                 "type":"FlyingCannon",
                  "width":0,
                  "x":2514,
                  "y":1517
@@ -891,7 +891,7 @@
                     {
 
                     },
-                 "type":"flyingCannon",
+                 "type":"FlyingCannon",
                  "width":0,
                  "x":2325,
                  "y":1494
@@ -903,7 +903,7 @@
                     {
 
                     },
-                 "type":"flyingCannon",
+                 "type":"FlyingCannon",
                  "width":0,
                  "x":2034,
                  "y":1389
@@ -939,7 +939,7 @@
                     {
 
                     },
-                 "type":"flyingCannon",
+                 "type":"FlyingCannon",
                  "width":0,
                  "x":1638,
                  "y":1075
@@ -1003,6 +1003,130 @@
                  "width":0,
                  "x":5048,
                  "y":1273
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"FlyingCannon",
+                 "width":0,
+                 "x":1947,
+                 "y":1493
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "mode":"2"
+                    },
+                 "type":"FlyingCannon",
+                 "width":0,
+                 "x":2465,
+                 "y":669
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "mode":"2"
+                    },
+                 "type":"FlyingCannon",
+                 "width":0,
+                 "x":1993,
+                 "y":515
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "mode":"2"
+                    },
+                 "type":"FlyingCannon",
+                 "width":0,
+                 "x":1726,
+                 "y":866
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "mode":"2"
+                    },
+                 "type":"FlyingCannon",
+                 "width":0,
+                 "x":1780,
+                 "y":1275
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"PenguinScientist",
+                 "width":0,
+                 "x":5099,
+                 "y":961
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"PenguinScientist",
+                 "width":0,
+                 "x":4917,
+                 "y":712
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "mode":"2"
+                    },
+                 "type":"PenguinScientist",
+                 "width":0,
+                 "x":4851,
+                 "y":661
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "mode":"2"
+                    },
+                 "type":"PenguinScientist",
+                 "width":0,
+                 "x":5316,
+                 "y":559
+                }, 
+                {
+                 "height":159,
+                 "name":"Trigger Mice",
+                 "properties":
+                    {
+                     "direction":"0",
+                     "location":"5",
+                     "mode":"2",
+                     "number":"2",
+                     "type":"mouse"
+                    },
+                 "type":"TriggerEnemies",
+                 "width":173,
+                 "x":6120,
+                 "y":1156
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1038,6 +1162,18 @@
                  "width":0,
                  "x":6825,
                  "y":1862
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"Heart",
+                 "width":0,
+                 "x":4940,
+                 "y":889
                 }],
          "opacity":1,
          "type":"objectgroup",

@@ -78,6 +78,7 @@ package GameObject.Enemy.ElSqualo
 			for (var i:int = 0; i < m_nbPg; i++) {
 				m_pinguins[i].removeFromStage();
 				m_pinguins[i] = new PenguinJetpack(0, 0);
+				m_pinguins[i].load();
 				putAtRandomPosition(m_pinguins[i]);
 			}
 			initPDone();

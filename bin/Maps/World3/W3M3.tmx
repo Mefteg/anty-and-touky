@@ -87,7 +87,7 @@
   <object type="Heart" x="1091" y="2364"/>
   <object type="BigAnt" x="2802" y="2368"/>
   <object x="3145" y="1621" width="1"/>
-  <object x="3085" y="1629" width="168" height="324">
+  <object type="TriggerEnemies" x="3085" y="1629" width="168" height="324">
    <properties>
     <property name="direction" value="2"/>
     <property name="location" value="0"/>
@@ -105,6 +105,39 @@
   <object type="Penguin" x="3115" y="592"/>
   <object name="Alarm" type="Alarm" x="3312" y="1125"/>
   <object name="Alarm" type="Alarm" x="3006" y="1127"/>
+  <object type="Penguin" x="3350" y="906">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object type="TriggerEnemies" x="3026" y="1486" width="237" height="429">
+   <properties>
+    <property name="direction" value="4"/>
+    <property name="location" value="0"/>
+    <property name="mode" value="2"/>
+    <property name="number" value="1"/>
+    <property name="speed" value="1.5"/>
+    <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
+  <object type="TriggerEnemies" x="3101" y="1628" width="168" height="324">
+   <properties>
+    <property name="direction" value="2"/>
+    <property name="location" value="0"/>
+    <property name="number" value="4"/>
+    <property name="type" value="mouse"/>
+   </properties>
+  </object>
+  <object type="TriggerEnemies" x="3043" y="1486" width="237" height="429">
+   <properties>
+    <property name="direction" value="4"/>
+    <property name="location" value="0"/>
+    <property name="mode" value="2"/>
+    <property name="number" value="1"/>
+    <property name="speed" value="1.5"/>
+    <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="115" height="77">
   <object name="Spawn" type="RespawnPoint" x="486" y="1785" width="65" height="56">
