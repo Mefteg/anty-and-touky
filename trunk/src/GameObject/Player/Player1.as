@@ -247,10 +247,10 @@ package GameObject.Player
 			var findRightPlace:Boolean = false;
 			var i:int = 0;
 			while ( i < tiles.length && findRightPlace == false ) {
-				var tile:TileObject = tiles[i];
-				if ( tile.collideWith(this) == false ) {
-					this.x = tile.x;
-					this.y = tile.y;
+				var tile:int = tiles[i];
+				if ( this.collideWithTileType(tile) == false ) {
+					this.x = touky.x;
+					this.y = touky.y;
 					if ( this.collideWithEnv() == false ) {
 						m_state = "respawn";
 						findRightPlace = true;
