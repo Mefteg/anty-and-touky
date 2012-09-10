@@ -123,7 +123,7 @@ package GameObject
 				default : m_thresoldDelta = 5000;break;
 			}
 			if (Global.nbPlayers > 1)
-				m_thresoldDelta *= 0.5;
+				m_thresoldDelta *= 0.3;
 			m_thresoldScore += m_thresoldDelta;
 		}
 		

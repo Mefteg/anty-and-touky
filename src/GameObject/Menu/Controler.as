@@ -75,6 +75,9 @@ package GameObject.Menu
 				case "passwordSubmit":
 					this.onClickPasswordSubmit(button);
 					break;
+				case "skipToVictory" :
+					this.onClickSkipToVictoryState(button);
+					break;
 				default:
 					this.onClickButton(button);
 					break;
@@ -216,6 +219,11 @@ package GameObject.Menu
 			FlxG.switchState(new Menustate(false));
 		}
 		
+		protected function onClickSkipToVictoryState(button:MyButton) : void {
+			Global.currentState.m_sound.stop();
+			FlxG.switchState( new Victorystate());
+		}
+		
 		protected function onClickPasswordSubmit(button:MyButton) : void {
 			var txt:String = PasswordManager.UsePassword(Global.password);
 			
@@ -239,10 +247,10 @@ package GameObject.Menu
 		protected function updateBackgroundMove(_background:MyBackground) : void
 		{
 			_background.y -= 0.5;
-			if ( _background.y < -960 )
+			/*if ( _background.y < -960 )
 			{
 				_background.setToOrigin();
-			}
+			}*/
 		}
 	}
 
