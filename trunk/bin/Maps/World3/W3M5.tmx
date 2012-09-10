@@ -500,6 +500,15 @@
     <property name="type" value="mouse"/>
    </properties>
   </object>
+  <object name="Flystuff" type="TriggerEnemies" x="1315" y="222" width="178" height="324">
+   <properties>
+    <property name="direction" value="4"/>
+    <property name="location" value="0"/>
+    <property name="mode" value="2"/>
+    <property name="number" value="1"/>
+    <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="55" height="70">
   <object name="Respawn" type="RespawnPoint" x="171" y="2180">

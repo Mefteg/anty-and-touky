@@ -358,6 +358,31 @@
    </properties>
   </object>
   <object name="Penguin" type="Penguin" x="1384" y="251"/>
+  <object name="Penguin" type="Penguin" x="945" y="395">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object name="Penguin" type="Penguin" x="574" y="282">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object name="Penguin" type="Penguin" x="566" y="512">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object name="Penguin" type="Penguin" x="1617" y="215">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object name="Penguin" type="Penguin" x="1690" y="283">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="60" height="22">
   <object name="RespInit" type="RespawnPoint" x="137" y="397">

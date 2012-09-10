@@ -152,7 +152,7 @@
    </properties>
   </object>
   <object type="Heart" x="172" y="935"/>
-  <object x="1738" y="2281"/>
+  <object type="BigEgg" x="1738" y="2281"/>
   <object name="Raccoon" type="Raccoon" x="945" y="2001">
    <properties>
     <property name="url" value="World3/raccoonM2"/>
@@ -161,6 +161,64 @@
   <object type="Raccoon" x="1921" y="1057">
    <properties>
     <property name="url" value="World3/raccoonMusic"/>
+   </properties>
+  </object>
+  <object type="Penguin" x="904" y="588" width="26" height="26">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object type="Penguin" x="948" y="630" width="26" height="26">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object type="Penguin" x="1623" y="365">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object type="Penguin" x="1592" y="409">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object type="Cannon" x="1378" y="875">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object type="Cannon" x="336" y="1357">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object name="Penguin" type="Penguin" x="447" y="2183">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object name="Penguin" type="Penguin" x="521" y="2116">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object name="TriggerFC" type="TriggerEnemies" x="1422" y="2287" width="330" height="223">
+   <properties>
+    <property name="direction" value="6"/>
+    <property name="location" value="2"/>
+    <property name="mode" value="2"/>
+    <property name="number" value="3"/>
+    <property name="type" value="flyingCannon"/>
+   </properties>
+  </object>
+  <object name="TriggerFC" type="TriggerEnemies" x="1432" y="2267" width="330" height="223">
+   <properties>
+    <property name="coop" value=""/>
+    <property name="direction" value="6"/>
+    <property name="location" value="2"/>
+    <property name="number" value="1"/>
+    <property name="type" value="flyingCannon"/>
    </properties>
   </object>
  </objectgroup>

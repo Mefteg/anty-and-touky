@@ -64,7 +64,7 @@
   </object>
   <object name="Door1" type="Cylinders" x="2766" y="1085"/>
   <object x="2601" y="1095"/>
-  <object x="2777" y="1306"/>
+  <object type="Life" x="2777" y="1306"/>
   <object type="Cannon" x="5673" y="643"/>
   <object type="Cannon" x="5272" y="960"/>
   <object type="Cannon" x="3904" y="984"/>
@@ -176,9 +176,13 @@
     <property name="type" value="flyingCannon"/>
    </properties>
   </object>
-  <object type="BigAnt" x="2055" y="423" width="26" height="27"/>
+  <object type="BigAnt" x="2055" y="423" width="26" height="27">
+   <properties>
+    <property name="coop" value=""/>
+   </properties>
+  </object>
   <object type="FlyingCannon" x="2381" y="619"/>
-  <object type="PenguinJetpack" x="2447" y="428"/>
+  <object type="PenguinJetpack" x="2416" y="449"/>
   <object type="TriggerEnemies" x="2637" y="1509" width="371" height="151">
    <properties>
     <property name="direction" value="2"/>
@@ -187,12 +191,12 @@
     <property name="type" value="flyingCannon"/>
    </properties>
   </object>
-  <object type="flyingCannon" x="2514" y="1517"/>
-  <object type="flyingCannon" x="2325" y="1494"/>
-  <object type="flyingCannon" x="2034" y="1389"/>
+  <object type="FlyingCannon" x="2514" y="1517"/>
+  <object type="FlyingCannon" x="2325" y="1494"/>
+  <object type="FlyingCannon" x="2034" y="1389"/>
   <object type="ElectricSnake" x="2764" y="1617"/>
   <object type="PenguinJetpack" x="3026" y="1625"/>
-  <object type="flyingCannon" x="1638" y="1075"/>
+  <object type="FlyingCannon" x="1638" y="1075"/>
   <object type="FlyingCannon" x="2441" y="800"/>
   <object type="Penguin" x="3295" y="948">
    <properties>
@@ -214,6 +218,48 @@
     <property name="coop" value=""/>
    </properties>
   </object>
+  <object type="FlyingCannon" x="1947" y="1493"/>
+  <object type="FlyingCannon" x="2465" y="669">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object type="FlyingCannon" x="1993" y="515">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object type="FlyingCannon" x="1726" y="866">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object type="FlyingCannon" x="1780" y="1275">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object type="PenguinScientist" x="5099" y="961"/>
+  <object type="PenguinScientist" x="4917" y="712"/>
+  <object type="PenguinScientist" x="4851" y="661">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object type="PenguinScientist" x="5316" y="559">
+   <properties>
+    <property name="mode" value="2"/>
+   </properties>
+  </object>
+  <object name="Trigger Mice" type="TriggerEnemies" x="6120" y="1156" width="173" height="159">
+   <properties>
+    <property name="direction" value="0"/>
+    <property name="location" value="5"/>
+    <property name="mode" value="2"/>
+    <property name="number" value="2"/>
+    <property name="type" value="mouse"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="220" height="60">
   <object name="RespDOWN" type="RespawnPoint" x="2866" y="1139">
@@ -226,5 +272,6 @@
     <property name="location" value="down"/>
    </properties>
   </object>
+  <object type="Heart" x="4940" y="889"/>
  </objectgroup>
 </map>

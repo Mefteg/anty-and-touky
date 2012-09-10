@@ -542,6 +542,22 @@
                  "width":454,
                  "x":343,
                  "y":155
+                }, 
+                {
+                 "height":324,
+                 "name":"Flystuff",
+                 "properties":
+                    {
+                     "direction":"4",
+                     "location":"0",
+                     "mode":"2",
+                     "number":"1",
+                     "type":"flyingCannon"
+                    },
+                 "type":"TriggerEnemies",
+                 "width":178,
+                 "x":1315,
+                 "y":222
                 }],
          "opacity":1,
          "type":"objectgroup",

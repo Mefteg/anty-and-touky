@@ -637,7 +637,7 @@
                     {
 
                     },
-                 "type":"",
+                 "type":"BigEgg",
                  "width":0,
                  "x":1738,
                  "y":2281
@@ -665,6 +665,134 @@
                  "width":0,
                  "x":1921,
                  "y":1057
+                }, 
+                {
+                 "height":26,
+                 "name":"",
+                 "properties":
+                    {
+                     "mode":"2"
+                    },
+                 "type":"Penguin",
+                 "width":26,
+                 "x":904,
+                 "y":588
+                }, 
+                {
+                 "height":26,
+                 "name":"",
+                 "properties":
+                    {
+                     "mode":"2"
+                    },
+                 "type":"Penguin",
+                 "width":26,
+                 "x":948,
+                 "y":630
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "mode":"2"
+                    },
+                 "type":"Penguin",
+                 "width":0,
+                 "x":1623,
+                 "y":365
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "mode":"2"
+                    },
+                 "type":"Penguin",
+                 "width":0,
+                 "x":1592,
+                 "y":409
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "mode":"2"
+                    },
+                 "type":"Cannon",
+                 "width":0,
+                 "x":1378,
+                 "y":875
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "mode":"2"
+                    },
+                 "type":"Cannon",
+                 "width":0,
+                 "x":336,
+                 "y":1357
+                }, 
+                {
+                 "height":0,
+                 "name":"Penguin",
+                 "properties":
+                    {
+                     "mode":"2"
+                    },
+                 "type":"Penguin",
+                 "width":0,
+                 "x":447,
+                 "y":2183
+                }, 
+                {
+                 "height":0,
+                 "name":"Penguin",
+                 "properties":
+                    {
+                     "mode":"2"
+                    },
+                 "type":"Penguin",
+                 "width":0,
+                 "x":521,
+                 "y":2116
+                }, 
+                {
+                 "height":223,
+                 "name":"TriggerFC",
+                 "properties":
+                    {
+                     "direction":"6",
+                     "location":"2",
+                     "mode":"2",
+                     "number":"3",
+                     "type":"flyingCannon"
+                    },
+                 "type":"TriggerEnemies",
+                 "width":330,
+                 "x":1422,
+                 "y":2287
+                }, 
+                {
+                 "height":223,
+                 "name":"TriggerFC",
+                 "properties":
+                    {
+                     "coop":"",
+                     "direction":"6",
+                     "location":"2",
+                     "number":"1",
+                     "type":"flyingCannon"
+                    },
+                 "type":"TriggerEnemies",
+                 "width":330,
+                 "x":1432,
+                 "y":2267
                 }],
          "opacity":1,
          "type":"objectgroup",

@@ -225,6 +225,8 @@ package GameObject
 		}
 		
 		public function getHitboxRect():Rectangle {
+			if (!m_hitbox)
+				return new Rectangle();
 			return new Rectangle(x + m_hitbox.x, y + m_hitbox.y, m_hitbox.width, m_hitbox.height);
 		}
 	}
