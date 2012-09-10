@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<item type="background" positionx="0" positiony="0" sizex="640" sizey="480" name="move" backgroundImg="Images/Menu/anty_dust.jpg" />
+	<item type="background" positionx="0" positiony="480" sizex="640" sizey="480" name="move" backgroundImg="Images/Menu/touky_beer.jpg" />
+	<item type="background" positionx="0" positiony="960" sizex="640" sizey="480" name="move" backgroundImg="Images/Menu/elsqualo_toilets.jpg" />
+	
+	<item type="button" positionx="10" positiony="580" sizex="230" sizey="50" name="move" label="Fanny Robin" backgroundOnOver="0xff76277b" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15" />
+	<item type="button" positionx="250" positiony="580" sizex="380" sizey="50" name="move" label="Artist !" backgroundOnOver="0xff76277b" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15" />
+	
+	<item type="button" positionx="10" positiony="680" sizex="230" sizey="50" name="move" label="Tom Gimenez" backgroundOnOver="0xff0758c6" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="250" positiony="680" sizex="380" sizey="50" name="move" label="Programmer !" backgroundOnOver="0xff0758c6" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	
+	<item type="button" positionx="10" positiony="780" sizex="230" sizey="50" name="move" label="Vincent Roumier" backgroundOnOver="0xffff0083" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="250" positiony="780" sizex="380" sizey="50" name="move" label="Programmer !" backgroundOnOver="0xffff0083" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="250" positiony="840" sizex="185" sizey="50" name="move" label="Composer !" backgroundOnOver="0xffff0083" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	<item type="button" positionx="445" positiony="840" sizex="185" sizey="50" name="move" label="Pixel Artist !" backgroundOnOver="0xffff0083" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+	
+	<item type="button" positionx="220" positiony="400" sizex="200" sizey="50" name="backToMenuState" label="Back To Menu !" backgroundOnOver="0xfff67210" backgroundOnOut="0xfffa4d11" textOnOut="0xff000000" textOnOver="0xff222222" fontSize="20" textPaddingY="15"/>
+</data>

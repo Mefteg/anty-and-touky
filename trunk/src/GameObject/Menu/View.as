@@ -39,8 +39,12 @@ package GameObject.Menu
 					this.checkButton(m_buttons[i]);
 				}
 				
-				for ( var i:int = 0; i < m_tempButtons.length; i++ ) {
-					this.checkTempButton(m_tempButtons[i]);
+				for ( var k:int = 0; k < m_backgrounds.length; k++ ) {
+					this.checkBackground(m_backgrounds[k]);
+				}
+				
+				for ( var j:int = 0; j < m_tempButtons.length; j++ ) {
+					this.checkTempButton(m_tempButtons[j]);
 				}
 			}
 		}
@@ -90,6 +94,10 @@ package GameObject.Menu
 			}
 		}
 		
+		public function checkBackground(_background:MyBackground) : void {
+			m_controler.updateBackground(_background);
+		}
+		
 		public function checkTempButton(_tmpButton:MyTempButton) : void {
 			if ( isActive(_tmpButton) == true )
 			{
@@ -114,7 +122,7 @@ package GameObject.Menu
 		public function isOver(button:MyButton) : Boolean {
 			var isOver:Boolean = false;
 			
-			var pos:FlxPoint = button.m_position;
+			var pos:FlxPoint = button.getPosition();
 			var size:FlxPoint = button.m_size;
 			
 			var mouseX:int = FlxG.mouse.screenX;

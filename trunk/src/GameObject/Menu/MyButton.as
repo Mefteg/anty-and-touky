@@ -28,6 +28,8 @@ package GameObject.Menu
 		protected var m_background:FlxSprite;
 		protected var m_label:FlxText;
 		
+		protected var m_origin:FlxPoint;
+		
 		public function MyButton(infos:Array) 
 		{
 			m_position = infos["position"];
@@ -49,6 +51,8 @@ package GameObject.Menu
 			m_label.alignment = "center";
 			m_label.size = m_fontSize;
 			
+			m_origin = infos["position"];
+			
 			Global.currentState.depthBuffer.addElement(m_background, DepthBuffer.s_menuGroup);
 			Global.currentState.depthBuffer.addElement(m_label, DepthBuffer.s_menuGroup);
 			Global.currentState.depthBuffer.addElement(this, DepthBuffer.s_menuGroup);
@@ -64,6 +68,40 @@ package GameObject.Menu
 		
 		public function changeTextColor(_color:uint) : void {
 			m_label.color = _color;
+		}
+		
+		public function move(_x:Number, _y:Number) : void
+		{
+			m_background.x += _x;
+			m_background.y += _y;
+			
+			m_label.x += _x;
+			m_label.y += _y;
+		}
+		
+		public function setToOrigin() : void
+		{
+			m_background.x = m_origin.x;
+			m_background.y = m_origin.y;
+			
+			m_label.x = m_origin.x;
+			m_label.y = m_origin.y + m_paddingY;
+			
+			m_background.x = m_origin.x;
+			m_background.y = 550;
+			
+			m_label.x = m_origin.x;
+			m_label.y = 550 + m_paddingY;
+		}
+		
+		public function getOrigin() : FlxPoint
+		{
+			return m_origin;
+		}
+		
+		public function getPosition() : FlxPoint
+		{
+			return new FlxPoint(m_background.x, m_background.y);
 		}
 		
 		override public function destroy() : void {
