@@ -131,8 +131,8 @@ package GameObject.Enemy.ElSqualo
 			m_attackCount = 0;
 			switch(stage) {
 				case 0 : m_attackMax = 2;
-						TIME_MIN = 1;
-						TIME_MAX = 3;
+						TIME_MIN = 0.5;
+						TIME_MAX = 2;
 						break;
 				case 1 : m_attackMax = 3;
 						TIME_MIN = 0.5;
