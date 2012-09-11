@@ -2,6 +2,6 @@
 <root>
 	<message text="That's some trouble you've been through. " />
 	<message text="I'll tell you something" />
-	<message text="if you type the password [InYourFace] in the options menu " />
+	<message text="if you type the password InYourFace in the options menu " />
 	<message text="you'll have a good surprise when restarting the game ! " />
 </root>
