@@ -193,8 +193,7 @@ package GameObject.Player
 				while ( i < tiles.length && find == false ) {
 					var tile:int = tiles[i];
 					if ( tile == TilesManager.HOLE_TILE ) {
-						Global.player1.takeDamage();
-						Global.player1.respawn();
+						Global.player1.fallInWater();
 						Global.player1.m_state = "waitToukyPosition";
 						find = true;
 					}
