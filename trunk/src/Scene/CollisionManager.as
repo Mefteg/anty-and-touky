@@ -96,6 +96,17 @@ package Scene
 		}
 		
 		private function repulseBoth():void {
+			if (m_currentObject.m_typeName == "Breakable" && m_currentOther.m_typeName == "Breakable")
+				return;
+			//on rush repulse only one player to avoid any bug
+			//when player 1 is rushing, check if it's a collision between player 2 and breakable
+			if (Global.player1.isRushing()) {
+				if ( (m_currentObject.m_typeName == "Breakable" || m_currentOther.m_typeName == "Breakable") &&
+						(m_currentObject.m_name == "Player2" || m_currentOther.m_name == "Player2") ) {
+							return;
+				}
+				
+			}
 			//if the X directions are not the same
 			if (m_currentObject.m_direction.x * m_currentOther.m_direction.x <= 0) {
 				if(m_currentObject.m_direction.x != 0)
@@ -109,7 +120,7 @@ package Scene
 			}
 		}
 		
-		private function repulseObject(obj:PhysicalObject) {
+		private function repulseObject(obj:PhysicalObject) : void {
 			obj.x = obj.m_oldPos.x;
 			obj.y = obj.m_oldPos.y;
 		}

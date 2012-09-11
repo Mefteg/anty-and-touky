@@ -386,6 +386,21 @@ package GameObject
 			Global.currentPlaystate.loadNewBitmaps(magic);
 		}
 		
+		public function fallInWater():void {
+			takeDamage();
+			//in case anty died from falling
+			if (m_state == "respawn")
+				return;
+			visible = false;
+			unspecial();
+			if (Global.nbPlayers == 1)
+				m_timerMagicCast.start(1.2);
+			else
+				m_timerMagicCast.start(4);
+			m_state = "respawn";
+			m_smoke.playSmoke(x, y);
+		}
+		
 		override public function respawn() : void {
 			visible = false;
 			unspecial();
@@ -405,8 +420,10 @@ package GameObject
 			if (m_timerMagicCast.finished) {
 				visible = true;
 				m_state = "idle";
-				m_stats.initHP(m_initHealth);
-				m_menu.reInitHearts();
+				if(m_stats.m_hp_current <= 0){
+					m_stats.initHP(m_initHealth);
+					m_menu.reInitHearts();
+				}
 				changeTwinkleColor(_twinkleHit);
 				beginTwinkle(20, 3);
 			}
