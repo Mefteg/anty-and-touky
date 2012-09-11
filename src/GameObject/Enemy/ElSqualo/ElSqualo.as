@@ -65,9 +65,9 @@ package GameObject.Enemy.ElSqualo
 			m_activeOffscreen = true;
 			m_invincible = true;
 			switch(Global.difficulty) {
-				case 1 : m_stats.initHP(100); break;
-				case 2 : m_stats.initHP(130); break;
-				case 3 : m_stats.initHP(150); break;
+				case 1 : m_stats.initHP(50); break;
+				case 2 : m_stats.initHP(80); break;
+				case 3 : m_stats.initHP(110); break;
 				default : break;
 			}
 			if (Global.nbPlayers > 1)
@@ -261,7 +261,6 @@ package GameObject.Enemy.ElSqualo
 				m_endSceneDone = true;
 			}
 			if (m_endSceneDone && !Global.frozen){
-				removeFromStage();
 				Global.currentPlaystate.end();
 			}
 		}

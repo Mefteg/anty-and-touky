@@ -58,7 +58,6 @@ package GameObject.Menu
 			m_menuShield = new GameObject.Menu.MenuShield(m_player, this.x, this.y);
 			m_menuShield.m_parent = this;
 			m_menuShield.m_shift = new FlxPoint(10, 8);
-			//this.add(m_menuShield);			
 		}
 		
 		override public function addElementToStage(element:FlxBasic):void {

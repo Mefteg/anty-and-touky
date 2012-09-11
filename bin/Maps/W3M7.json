@@ -68,6 +68,7 @@
                  "name":"",
                  "properties":
                     {
+                     "mode":"2",
                      "url":"World3\/supershot"
                     },
                  "type":"Raccoon",

@@ -16,7 +16,7 @@ package GameObject.Enemy
 			super(0,0);
 			m_url = "Images/Enemies/enemy_smoke.png";
 			m_width = 48; m_height = 48;
-			m_bufferGroup = DepthBufferPlaystate.s_enemyGroup;
+			m_bufferGroup = DepthBufferPlaystate.s_nppGroup;
 			m_sound = new FlxSound();
 		}
 		

@@ -474,7 +474,10 @@ package
 			m_enemies.push(object);
 		}
 		public function removeEnemy(object:Enemy):void {
-			m_enemies.splice(m_enemies.indexOf(object), 1);
+			var i:int = m_enemies.indexOf(object);
+			if (i < 0)
+				return;
+			m_enemies.splice(i, 1);
 		}
 		public function clearEnemies():void {
 			m_enemies = new Vector.<Enemy>;

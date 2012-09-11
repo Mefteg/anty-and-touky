@@ -26,6 +26,7 @@
   </object>
   <object type="Raccoon" x="468" y="251">
    <properties>
+    <property name="mode" value="2"/>
     <property name="url" value="World3/supershot"/>
    </properties>
   </object>
