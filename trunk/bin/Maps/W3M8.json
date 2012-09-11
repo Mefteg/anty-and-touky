@@ -167,9 +167,9 @@
                  "name":"",
                  "properties":
                     {
-
+                     "mode":"2"
                     },
-                 "type":"",
+                 "type":"BigAnt",
                  "width":0,
                  "x":303,
                  "y":184
@@ -293,6 +293,18 @@
                  "width":0,
                  "x":519,
                  "y":975
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "url":"World3\/special"
+                    },
+                 "type":"Raccoon",
+                 "width":0,
+                 "x":409,
+                 "y":183
                 }],
          "opacity":1,
          "type":"objectgroup",

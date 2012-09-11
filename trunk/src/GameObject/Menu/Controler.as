@@ -125,7 +125,7 @@ package GameObject.Menu
 			_button.move(0, -0.5);
 			if ( _button.getPosition().y < -100 )
 			{
-				_button.setToOrigin();
+				//_button.setToOrigin();
 			}
 		}
 		
@@ -159,7 +159,7 @@ package GameObject.Menu
 			_button.move(0, -0.5);
 			if ( _button.getPosition().y < -100 )
 			{
-				_button.setToOrigin();
+				//_button.setToOrigin();
 			}
 		}
 		

@@ -383,6 +383,12 @@
     <property name="mode" value="2"/>
    </properties>
   </object>
+  <object type="Raccoon" x="113" y="172">
+   <properties>
+    <property name="mode" value="2"/>
+    <property name="url" value="World3/raccoonMetal"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="60" height="22">
   <object name="RespInit" type="RespawnPoint" x="137" y="397">
