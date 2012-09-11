@@ -24,6 +24,7 @@ package GameObject.Item
 		
 		override public function act():void {
 			m_player.addSpecial(m_power);
+			m_sound.play();
 			removeFromStage();
 		}
 		

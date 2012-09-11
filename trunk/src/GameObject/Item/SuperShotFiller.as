@@ -14,6 +14,7 @@ package GameObject.Item
 		
 		override public function act():void {
 			m_player.addSuperShots();
+			m_sound.play();
 			removeFromStage();
 		}
 		
