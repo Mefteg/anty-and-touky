@@ -30,6 +30,7 @@ package
 		protected var m_trailer:MovieClip;
 		
 		private var m_ladyBug:FlxSprite;
+		private var m_ladyBug2:FlxSprite;
 		
 		private var m_stateLB:String = "idle";
 		private var m_timerLB:FlxTimer = new FlxTimer();
@@ -56,10 +57,10 @@ package
 			m_loadProgression = new FlxText(400, 400, 600,"");
 			//add(m_loadProgression);
 			if(trailer)
-				m_ladyBug = new FlxSprite(410 , 320);//for CASUAL GAME CUP
+				m_ladyBug = new FlxSprite(-10 , 150);//for CASUAL GAME CUP
 			else
 				m_ladyBug = new FlxSprite(200 , 150);
-			m_ladyBug.loadGraphic(LadyBugScreen, false, false, 300, 200, true);
+			m_ladyBug.loadGraphic(LadyBugScreen, false, false, 155, 125, true);
 			Global.library.addBitmap("Images/Menu/menu.jpg");
 			Global.library.addBitmap("Images/Weapons/egg.png");
 			
@@ -67,9 +68,17 @@ package
 			if(trailer){
 				m_trailer = new MovieClip();
 				m_trailer = new Trailer();
-				m_trailer.scaleX = 0.6;
-				m_trailer.scaleY = 0.6;
-				m_trailer.scaleZ = 0.6;
+				m_trailer.scaleX = 0.5;
+				m_trailer.scaleY = 0.5;
+				m_trailer.scaleZ = 0.5;
+				m_trailer.x = 124;
+				m_trailer.y = 76;
+				m_ladyBug2 = new FlxSprite(505, 150);
+				m_ladyBug2.loadGraphic(LadyBugScreen, false, false, 155, 125, true);
+				m_ladyBug2.scale.x = 0.9;
+				m_ladyBug2.scale.y = 0.9;
+				m_ladyBug.scale.x = 0.9;
+				m_ladyBug.scale.y = 0.9;
 			}
 		}
 		
@@ -82,6 +91,10 @@ package
 			//LADYBUG
 			depthBuffer.addElement(m_ladyBug, DepthBuffer.s_cursorGroup);
 			m_ladyBug.alpha = 0;
+			if(m_trailer){
+				depthBuffer.addElement(m_ladyBug2, DepthBuffer.s_cursorGroup);
+				m_ladyBug2.alpha = 0;
+			}
 			m_timerLB.start(2);
 			if(m_trailer)
 				FlxG.stage.addChild(m_trailer);
@@ -135,9 +148,13 @@ package
 				case "done":break;
 				case "idle": if (m_timerLB.finished) m_stateLB = "appearing"; break;
 				case "appearing": m_ladyBug.alpha += 0.01; 
+									if(m_trailer)
+										m_ladyBug2.alpha += 0.01; 
 								if (m_ladyBug.alpha > 0.9) { m_ladyBug.alpha = 1; m_stateLB = "staying"; m_timerLB.start(6);} break;
 				case "staying": if (m_timerLB.finished) m_stateLB = "disappearing"; break;
 				case "disappearing":m_ladyBug.alpha -= 0.01; 
+									if(m_trailer)
+										m_ladyBug2.alpha -= 0.01; 
 								if (m_ladyBug.alpha < 0.1) { m_ladyBug.alpha = 0; m_stateLB = "done";} break;
 				default : break;
 			}
