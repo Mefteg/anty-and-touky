@@ -59,7 +59,7 @@ package
 			if(trailer)
 				m_ladyBug = new FlxSprite(-10 , 150);//for CASUAL GAME CUP
 			else
-				m_ladyBug = new FlxSprite(200 , 150);
+				m_ladyBug = new FlxSprite(250 , 160);
 			m_ladyBug.loadGraphic(LadyBugScreen, false, false, 155, 125, true);
 			Global.library.addBitmap("Images/Menu/menu.jpg");
 			Global.library.addBitmap("Images/Weapons/egg.png");
