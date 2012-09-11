@@ -2,7 +2,7 @@
 <root>
 	<message text="Hey" />
 	<message text="Did you know you can listen music in the menu screen?" />
-	<message text="Just type Music1 to listen to the first music" />
-	<message text="Then Music2 for the second..." /> 
+	<message text="Just type [Music1] to listen to the first music" />
+	<message text="Then [Music2] for the second..." /> 
 	<message text="...well I think you understood." />
 </root>

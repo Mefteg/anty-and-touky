@@ -206,6 +206,19 @@
                  "width":0,
                  "x":1690,
                  "y":283
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "mode":"2",
+                     "url":"World3\/raccoonMetal"
+                    },
+                 "type":"Raccoon",
+                 "width":0,
+                 "x":113,
+                 "y":172
                 }],
          "opacity":1,
          "type":"objectgroup",

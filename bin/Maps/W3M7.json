@@ -62,6 +62,18 @@
                  "width":117,
                  "x":306,
                  "y":41
+                }, 
+                {
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+                     "url":"World3\/supershot"
+                    },
+                 "type":"Raccoon",
+                 "width":0,
+                 "x":468,
+                 "y":251
                 }],
          "opacity":1,
          "type":"objectgroup",
