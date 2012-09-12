@@ -74,8 +74,8 @@ package GameObject.Other
 									m_state = "broken";
 									m_collideWithObjects = false;
 									play("broken");
-									item.place(x +10 , y+10);
-									item.addToStage();
+									//item.place(x +10 , y+10);
+									//item.addToStage();
 								}
 								break;
 				default:break;
