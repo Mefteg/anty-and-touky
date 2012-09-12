@@ -64,18 +64,6 @@
                 }, 
                 {
                  "height":36,
-                 "name":"BreakableRock0",
-                 "properties":
-                    {
-
-                    },
-                 "type":"BreakableRock",
-                 "width":35,
-                 "x":645,
-                 "y":349
-                }, 
-                {
-                 "height":36,
                  "name":"BreakableRock1",
                  "properties":
                     {
@@ -83,8 +71,8 @@
                     },
                  "type":"BreakableRock",
                  "width":35,
-                 "x":646,
-                 "y":310
+                 "x":647,
+                 "y":324
                 }, 
                 {
                  "height":40,
@@ -131,8 +119,8 @@
                     },
                  "type":"BreakableRock",
                  "width":35,
-                 "x":632,
-                 "y":1110
+                 "x":631,
+                 "y":1122
                 }, 
                 {
                  "height":17,
@@ -169,18 +157,6 @@
                  "width":22,
                  "x":211,
                  "y":1358
-                }, 
-                {
-                 "height":36,
-                 "name":"BreakableRock2",
-                 "properties":
-                    {
-
-                    },
-                 "type":"BreakableRock",
-                 "width":35,
-                 "x":633,
-                 "y":1157
                 }, 
                 {
                  "height":31,

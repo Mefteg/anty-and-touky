@@ -199,6 +199,8 @@ package GameObject.Player
 					}
 					i++;
 				}
+				if (Global.player1.m_state != "waitToukyPosition")
+					Global.player1.replaceWithNoCollision();
 			}
 			if (m_objectCarried.m_typeName == "Box") {
 				m_objectCarried.act();

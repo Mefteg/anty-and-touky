@@ -31,7 +31,7 @@ package GameObject.Other
 			m_FX.loadStream(m_FXurl);
 			item.load();
 			if(Global.nbPlayers >1)
-				m_hitboxInteraction = new Hitbox(m_hitbox.x - 50,m_hitbox.y - 50, m_hitbox.width + 50,m_hitbox.height + 50);
+				m_hitboxInteraction = new Hitbox(m_hitbox.x - 50,m_hitbox.y - 50, m_hitbox.width + 63,m_hitbox.height + 63);
 		}
 		
 		override public function addToStage():void {

@@ -142,6 +142,7 @@ package
 			if ((FlxG.keys.ENTER || FlxG.keys.ESCAPE) && Global.library.loadComplete()) {
 				m_timer.start(0.01);
 				m_ladyBug.visible = false;
+				m_ladyBug2.visible = false;
 			}
 			
 			switch(m_stateLB) {
