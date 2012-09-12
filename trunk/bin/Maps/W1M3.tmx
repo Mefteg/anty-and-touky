@@ -23,8 +23,7 @@
     <property name="respawn" value="top"/>
    </properties>
   </object>
-  <object name="BreakableRock0" type="BreakableRock" x="645" y="349" width="35" height="36"/>
-  <object name="BreakableRock1" type="BreakableRock" x="646" y="310" width="35" height="36"/>
+  <object name="BreakableRock1" type="BreakableRock" x="647" y="324" width="35" height="36"/>
   <object name="Box1" type="Box" x="205" y="405" width="40" height="40"/>
   <object name="Spikes1" type="Spikes" x="203" y="732" width="41" height="39">
    <properties>
@@ -36,11 +35,10 @@
     <property name="door" value="Spikes1"/>
    </properties>
   </object>
-  <object name="BreakableRock3" type="BreakableRock" x="632" y="1110" width="35" height="36"/>
+  <object name="BreakableRock3" type="BreakableRock" x="631" y="1122" width="35" height="36"/>
   <object name="Heart0" type="Heart" x="679" y="511" width="22" height="17"/>
   <object name="Heart1" type="Heart" x="718" y="511" width="22" height="17"/>
   <object name="Life0" type="Life" x="211" y="1358" width="22" height="17"/>
-  <object name="BreakableRock2" type="BreakableRock" x="633" y="1157" width="35" height="36"/>
   <object name="Penguin0" type="Penguin" x="1147" y="444" width="33" height="31"/>
   <object name="Penguin0" type="Penguin" x="850" y="145" width="33" height="31">
    <properties>
