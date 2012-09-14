@@ -40,11 +40,11 @@ package GameObject.Menu
 			addAnimation("display", [0, 1, 2, 3, 4, 5, 6, 7], 12, false);
 		}
 		
-		public function trigger(time:Number , reverse = false):void {
+		public function trigger(time:Number , rev = false):void {
 			m_state = "display";
 			m_timer = new FlxTimer();
 			m_timer.start(time);
-			m_reverse = reverse; 
+			m_reverse = rev; 
 			visible = true;
 		}
 		

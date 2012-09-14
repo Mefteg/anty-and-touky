@@ -216,7 +216,6 @@ package GameObject.Player
 		}
 		
 		override public function rushAttack():void {
-			trace("rush");
 			if (collideWithEnv())
 				unspecial();
 			else
