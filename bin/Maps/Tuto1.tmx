@@ -19,7 +19,7 @@
    </properties>
   </object>
   <object name="Penguin0" type="Penguin" x="451" y="336" width="32" height="32"/>
-  <object name="MexicanRaccoon" type="MexicanRaccoon" x="216" y="433" width="86" height="27">
+  <object name="MexicanRaccoon" type="MexicanRaccoon" x="260" y="433" width="86" height="27">
    <properties>
     <property name="url" value="mexicanRaccoon_tuto1"/>
    </properties>
@@ -27,6 +27,11 @@
   <object name="TriggerCutSceneThrowable" type="TriggerCutScene" x="132" y="225" width="66" height="255">
    <properties>
     <property name="url" value="CutScenes/tuto1_cutscene1"/>
+   </properties>
+  </object>
+  <object type="Indication" x="215" y="159" width="42" height="28">
+   <properties>
+    <property name="type" value="shoot"/>
    </properties>
   </object>
  </objectgroup>

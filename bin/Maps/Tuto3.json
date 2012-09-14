@@ -74,6 +74,18 @@
                  "width":23,
                  "x":521,
                  "y":455
+                }, 
+                {
+                 "height":54,
+                 "name":"",
+                 "properties":
+                    {
+                     "type":"rush"
+                    },
+                 "type":"Indication",
+                 "width":114,
+                 "x":404,
+                 "y":152
                 }],
          "opacity":1,
          "type":"objectgroup",

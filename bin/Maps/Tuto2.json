@@ -86,6 +86,18 @@
                  "width":32,
                  "x":448,
                  "y":362
+                }, 
+                {
+                 "height":39,
+                 "name":"",
+                 "properties":
+                    {
+                     "type":"deflect"
+                    },
+                 "type":"Indication",
+                 "width":265,
+                 "x":109,
+                 "y":157
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -166,9 +178,25 @@
                 {
                  "type":"PhysicalTile"
                 },
+             "107":
+                {
+                 "type":"Hole"
+                },
+             "109":
+                {
+                 "type":"Hole"
+                },
              "11":
                 {
                  "type":"Foreground"
+                },
+             "110":
+                {
+                 "type":"Hole"
+                },
+             "111":
+                {
+                 "type":"Hole"
                 },
              "112":
                 {
@@ -193,6 +221,14 @@
              "12":
                 {
                  "type":"Foreground"
+                },
+             "126":
+                {
+                 "type":"Hole"
+                },
+             "127":
+                {
+                 "type":"Hole"
                 },
              "128":
                 {
@@ -222,6 +258,18 @@
                 {
                  "type":"PhysicalTile"
                 },
+             "140":
+                {
+                 "type":"Hole"
+                },
+             "142":
+                {
+                 "type":"Hole"
+                },
+             "143":
+                {
+                 "type":"Hole"
+                },
              "144":
                 {
                  "type":"PhysicalTile"
@@ -234,17 +282,45 @@
                 {
                  "type":"PhysicalTile"
                 },
-             "16":
+             "152":
                 {
                  "type":"PhysicalTile"
+                },
+             "153":
+                {
+                 "type":"PhysicalTile"
+                },
+             "158":
+                {
+                 "type":"Hole"
+                },
+             "159":
+                {
+                 "type":"Hole"
+                },
+             "16":
+                {
+                 "":""
                 },
              "160":
                 {
                  "type":"PhysicalTile"
                 },
-             "17":
+             "167":
                 {
                  "type":"PhysicalTile"
+                },
+             "172":
+                {
+                 "type":"Hole"
+                },
+             "174":
+                {
+                 "type":"Hole"
+                },
+             "175":
+                {
+                 "type":"Hole"
                 },
              "176":
                 {
@@ -252,11 +328,63 @@
                 },
              "18":
                 {
+                 "":""
+                },
+             "183":
+                {
+                 "type":"PhysicalTile"
+                },
+             "187":
+                {
+                 "type":"Hole"
+                },
+             "188":
+                {
+                 "type":"Hole"
+                },
+             "189":
+                {
+                 "type":"Hole"
+                },
+             "199":
+                {
                  "type":"PhysicalTile"
                 },
              "20":
                 {
                  "type":"Foreground"
+                },
+             "200":
+                {
+                 "type":"PhysicalTile"
+                },
+             "201":
+                {
+                 "type":"PhysicalTile"
+                },
+             "202":
+                {
+                 "type":"PhysicalTile"
+                },
+             "203":
+                {
+                 "type":"Hole"
+                },
+             "204":
+                {
+                 "type":"Hole"
+                },
+             "205":
+                {
+                 "type":"Hole"
+                },
+             "206":
+                {
+                 "type":"Hole"
+                },
+             "207":
+                {
+                 "type":"Hole"
                 },
              "21":
                 {
@@ -385,6 +513,14 @@
              "9":
                 {
                  "type":"Foreground"
+                },
+             "94":
+                {
+                 "type":"Hole"
+                },
+             "95":
+                {
+                 "type":"Hole"
                 },
              "96":
                 {

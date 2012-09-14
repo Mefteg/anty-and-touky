@@ -30,6 +30,11 @@
    </properties>
   </object>
   <object name="Penguin1" type="Penguin" x="448" y="362" width="32" height="32"/>
+  <object type="Indication" x="109" y="157" width="265" height="39">
+   <properties>
+    <property name="type" value="deflect"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="RespawnPoints" width="30" height="30">
   <object name="RespawnPointLeftTuto2" type="RespawnPoint" x="71" y="320" width="33" height="64">

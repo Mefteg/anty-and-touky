@@ -60,7 +60,7 @@
                     },
                  "type":"MexicanRaccoon",
                  "width":86,
-                 "x":216,
+                 "x":260,
                  "y":433
                 }, 
                 {
@@ -74,6 +74,18 @@
                  "width":66,
                  "x":132,
                  "y":225
+                }, 
+                {
+                 "height":28,
+                 "name":"",
+                 "properties":
+                    {
+                     "type":"shoot"
+                    },
+                 "type":"Indication",
+                 "width":42,
+                 "x":148,
+                 "y":160
                 }],
          "opacity":1,
          "type":"objectgroup",
