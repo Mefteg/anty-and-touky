@@ -20,6 +20,8 @@ package GameObject
 	import GameObject.Item.Item;
 	import GameObject.Item.SpecialFiller;
 	import GameObject.Item.SuperShotFiller;
+	import GameObject.Menu.Indication;
+	import GameObject.Menu.Menu;
 	import GameObject.Other.AnimatedObject;
 	import GameObject.Other.Box;
 	import GameObject.Other.BoxHole;
@@ -64,6 +66,8 @@ package GameObject
 				case "FlyingCannon" : return new GameObject.Enemy.FlyingCannon(object.x, object.y); break;
 				case "TriggerEnemies": return new TriggerEnemies(object); break;
 				case "ElSqualo" : return new ElSqualo(object.x, object.y, object.width, object.height); break;
+				//TUTO
+				case "Indication" : return new GameObject.Menu.Indication(object.x,object.y,object.properties.type); break;
 				//NPC
 				case "Raccoon" : return NPC.Raccoon(object.x, object.y, object.properties.url); break;
 				case "MexicanRaccoon" : return NPC.MexicanRaccoon(object.x, object.y,object.properties.url); break;
